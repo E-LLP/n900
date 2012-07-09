@@ -30,7 +30,7 @@
 #include "kerneldisplay.h"
 #include "oemfuncs.h"
 #include "sgxinfo.h"
-#include "pdump_km.h"
+#include "pvr_pdump.h"
 #include "sgxinfokm.h"
 #include "syslocal.h"
 #include "sysconfig.h"
@@ -160,6 +160,8 @@ unsigned long sgx_get_max_freq(void)
 		}
 	}
 	BUG();
+
+	return 0;
 }
 
 #else
@@ -303,10 +305,16 @@ enum PVRSRV_ERROR SysInitialise(struct platform_device *pdev)
 	    SYS_OMAP3430_GP11TIMER_PHYS_BASE + SYS_OMAP3430_GPTIMER_REGS;
 	gpsSysData->pvSOCTimerRegisterKM = NULL;
 	gpsSysData->hSOCTimerRegisterOSMemHandle = NULL;
-	OSReservePhys(TimerRegPhysBase, 4,
+	eError = OSReservePhys(TimerRegPhysBase, 4,
 		      PVRSRV_HAP_MULTI_PROCESS | PVRSRV_HAP_UNCACHED,
 		      (void **)&gpsSysData->pvSOCTimerRegisterKM,
 		      &gpsSysData->hSOCTimerRegisterOSMemHandle);
+	if (eError != PVRSRV_OK) {
+		PVR_DPF(PVR_DBG_ERROR, "%s: OSReservePhys failed");
+		SysDeinitialise(gpsSysData);
+		gpsSysData = NULL;
+		return eError;
+	}
 
 	gpsSysSpecificData->ui32SrcClockDiv = 3;
 

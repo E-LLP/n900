@@ -30,15 +30,17 @@
 #include "sgxinfokm.h"
 #if defined(PDUMP)
 #include "sgxapi_km.h"
-#include "pdump_km.h"
+#include "pvr_pdump.h"
 #endif
 #include "sgx_bridge_km.h"
 #include "osfunc.h"
 #include "pvr_debug.h"
 #include "sgxutils.h"
+#include "perproc.h"
+#include "pvr_trace_cmd.h"
 
 enum PVRSRV_ERROR SGXDoKickKM(void *hDevHandle, struct SGX_CCB_KICK *psCCBKick,
-			      int max_3dstat_vals)
+			      struct PVRSRV_PER_PROCESS_DATA *proc)
 {
 	enum PVRSRV_ERROR eError;
 	struct PVRSRV_KERNEL_SYNC_INFO *psSyncInfo;
@@ -48,6 +50,8 @@ enum PVRSRV_ERROR SGXDoKickKM(void *hDevHandle, struct SGX_CCB_KICK *psCCBKick,
 	u32 i;
 	struct PVRSRV_DEVICE_NODE *psDeviceNode;
 	struct PVRSRV_SGXDEV_INFO *psDevInfo;
+	struct pvr_trcmd_sgxkick *ktrace;
+	int trcmd_type;
 
 	psDeviceNode = (struct PVRSRV_DEVICE_NODE *)hDevHandle;
 	psDevInfo = (struct PVRSRV_SGXDEV_INFO *)psDeviceNode->pvDevice;
@@ -66,31 +70,27 @@ enum PVRSRV_ERROR SGXDoKickKM(void *hDevHandle, struct SGX_CCB_KICK *psCCBKick,
 	    CCB_DATA_FROM_OFFSET(struct SGXMKIF_CMDTA_SHARED, psCCBMemInfo,
 				 psCCBKick, ui32CCBOffset);
 
-	if (psCCBKick->hTA3DSyncInfo) {
-		struct PVRSRV_DEVICE_SYNC_OBJECT *ta3d_dep;
+	trcmd_type = psCCBKick->bFirstKickOrResume ?
+				PVR_TRCMD_SGX_FIRSTKICK : PVR_TRCMD_SGX_KICK;
+	pvr_trcmd_lock();
+	ktrace = pvr_trcmd_alloc(trcmd_type, proc->ui32PID, proc->name,
+				 sizeof(*ktrace));
 
+	if (psCCBKick->hTA3DSyncInfo) {
 		psSyncInfo =
 		    (struct PVRSRV_KERNEL_SYNC_INFO *)psCCBKick->hTA3DSyncInfo;
-
-		ta3d_dep = &psTACmd->sTA3DDependency;
-		/*
-		 * Ugly hack to account for the two possible sizes of
-		 * struct SGXMKIF_CMDTA_SHARED which is based on the
-		 * corresponding IOCTL ABI version used.
-		 */
-		if (max_3dstat_vals != SGX_MAX_3D_STATUS_VALS)
-			ta3d_dep =  (struct PVRSRV_DEVICE_SYNC_OBJECT *)
-				((u8 *)ta3d_dep - sizeof(struct CTL_STATUS) *
-				 (SGX_MAX_3D_STATUS_VALS - max_3dstat_vals));
-
-		ta3d_dep->sWriteOpsCompleteDevVAddr =
+		psTACmd->sTA3DDependency.sWriteOpsCompleteDevVAddr =
 		    psSyncInfo->sWriteOpsCompleteDevVAddr;
 
-		ta3d_dep->ui32WriteOpsPendingVal =
+		psTACmd->sTA3DDependency.ui32WriteOpsPendingVal =
 		    psSyncInfo->psSyncData->ui32WriteOpsPending;
 
 		if (psCCBKick->bTADependency)
 			psSyncInfo->psSyncData->ui32WriteOpsPending++;
+
+		pvr_trcmd_set_syn(&ktrace->ta3d_syn, psSyncInfo);
+	} else {
+		pvr_trcmd_clear_syn(&ktrace->ta3d_syn);
 	}
 
 	if (psCCBKick->hTASyncInfo != NULL) {
@@ -106,6 +106,10 @@ enum PVRSRV_ERROR SGXDoKickKM(void *hDevHandle, struct SGX_CCB_KICK *psCCBKick,
 		    psSyncInfo->psSyncData->ui32ReadOpsPending++;
 		psTACmd->ui32TATQSyncWriteOpsPendingVal =
 		    psSyncInfo->psSyncData->ui32WriteOpsPending;
+
+		pvr_trcmd_set_syn(&ktrace->tatq_syn, psSyncInfo);
+	} else {
+		pvr_trcmd_clear_syn(&ktrace->tatq_syn);
 	}
 
 	if (psCCBKick->h3DSyncInfo != NULL) {
@@ -121,6 +125,10 @@ enum PVRSRV_ERROR SGXDoKickKM(void *hDevHandle, struct SGX_CCB_KICK *psCCBKick,
 		    psSyncInfo->psSyncData->ui32ReadOpsPending++;
 		psTACmd->ui323DTQSyncWriteOpsPendingVal =
 		    psSyncInfo->psSyncData->ui32WriteOpsPending;
+
+		pvr_trcmd_set_syn(&ktrace->_3dtq_syn, psSyncInfo);
+	} else {
+		pvr_trcmd_clear_syn(&ktrace->_3dtq_syn);
 	}
 
 	psTACmd->ui32NumTAStatusVals = psCCBKick->ui32NumTAStatusVals;
@@ -152,24 +160,49 @@ enum PVRSRV_ERROR SGXDoKickKM(void *hDevHandle, struct SGX_CCB_KICK *psCCBKick,
 		}
 	}
 
-	psTACmd->ui32NumSrcSyncs = psCCBKick->ui32NumSrcSyncs;
-	for (i = 0; i < psCCBKick->ui32NumSrcSyncs; i++) {
-		psSyncInfo =
-		    (struct PVRSRV_KERNEL_SYNC_INFO *)psCCBKick->
-		    ahSrcKernelSyncInfo[i];
+	/* check for duplicates while creating the new list */
+	psTACmd->ui32NumSrcSyncs = 0;
+	for (i = 0; ((i < SGX_MAX_SRC_SYNCS) &&
+		     (i < psCCBKick->ui32NumSrcSyncs)); i++) {
+		int j;
 
-		psTACmd->asSrcSyncs[i].sWriteOpsCompleteDevVAddr =
+		psSyncInfo = (struct PVRSRV_KERNEL_SYNC_INFO *)
+			psCCBKick->ahSrcKernelSyncInfo[i];
+
+		for (j = 0; j < i; j++) {
+			struct PVRSRV_KERNEL_SYNC_INFO *tmp =
+				psCCBKick->ahSrcKernelSyncInfo[j];
+			if (tmp->psSyncData == psSyncInfo->psSyncData) {
+				pr_err("%s: Duplicate SRC Sync detected: %p\n",
+				       __func__, tmp->psSyncData);
+				break;
+			}
+		}
+		if (j != i)
+			continue;
+
+		/* beat the 80 char limit. */
+		j = psTACmd->ui32NumSrcSyncs;
+
+		psTACmd->asSrcSyncs[j].sWriteOpsCompleteDevVAddr =
 			psSyncInfo->sWriteOpsCompleteDevVAddr;
-		psTACmd->asSrcSyncs[i].sReadOpsCompleteDevVAddr =
+		psTACmd->asSrcSyncs[j].sReadOpsCompleteDevVAddr =
 			psSyncInfo->sReadOpsCompleteDevVAddr;
 
-		psTACmd->asSrcSyncs[i].ui32ReadOpsPendingVal =
+		psTACmd->asSrcSyncs[j].ui32ReadOpsPendingVal =
 			psSyncInfo->psSyncData->ui32ReadOpsPending++;
 
-		psTACmd->asSrcSyncs[i].ui32WriteOpsPendingVal =
+		psTACmd->asSrcSyncs[j].ui32WriteOpsPendingVal =
 			psSyncInfo->psSyncData->ui32WriteOpsPending;
 
+		pvr_trcmd_set_syn(&ktrace->src_syn[j], psSyncInfo);
+
+		psTACmd->ui32NumSrcSyncs++;
 	}
+
+	/* clear the remaining src syncs */
+	for (i = psTACmd->ui32NumSrcSyncs; i < SGX_MAX_SRC_SYNCS; i++)
+		pvr_trcmd_clear_syn(&ktrace->src_syn[i]);
 
 	if (psCCBKick->bFirstKickOrResume &&
 	    psCCBKick->ui32NumDstSyncObjects > 0) {
@@ -216,6 +249,8 @@ enum PVRSRV_ERROR SGXDoKickKM(void *hDevHandle, struct SGX_CCB_KICK *psCCBKick,
 			    ui32WriteOpsPendingVal =
 				    psSyncInfo->psSyncData->
 							ui32WriteOpsPending++;
+
+			pvr_trcmd_set_syn(&ktrace->dst_syn, psSyncInfo);
 
 #if defined(PDUMP)
 			if (PDumpIsCaptureFrameKM()) {
@@ -307,7 +342,11 @@ enum PVRSRV_ERROR SGXDoKickKM(void *hDevHandle, struct SGX_CCB_KICK *psCCBKick,
 			    ui32ReadOpsPendingVal = 0;
 			psHWDeviceSyncList->asSyncData[i].
 			    ui32WriteOpsPendingVal = 0;
+
+			pvr_trcmd_clear_syn(&ktrace->dst_syn);
 		}
+	} else {
+		pvr_trcmd_clear_syn(&ktrace->dst_syn);
 	}
 #if defined(PDUMP)
 	if (PDumpIsCaptureFrameKM()) {
@@ -409,6 +448,9 @@ enum PVRSRV_ERROR SGXDoKickKM(void *hDevHandle, struct SGX_CCB_KICK *psCCBKick,
 		}
 	}
 #endif
+
+	pvr_trcmd_set_data(&ktrace->ctx, psCCBKick->sCommand.ui32Data[1]);
+	pvr_trcmd_unlock();
 
 	/* to aid in determining the next power down delay */
 	sgx_mark_new_command(psDeviceNode);

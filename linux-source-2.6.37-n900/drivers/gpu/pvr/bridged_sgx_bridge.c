@@ -41,8 +41,9 @@
 #include "bridged_pvr_bridge.h"
 #include "bridged_sgx_bridge.h"
 #include "sgxutils.h"
-#include "pdump_km.h"
+#include "pvr_pdump.h"
 #include "pvr_events.h"
+#include "pvr_trace_cmd.h"
 
 int SGXGetClientInfoBW(u32 ui32BridgeID,
 	      struct PVRSRV_BRIDGE_IN_GETCLIENTINFO *psGetClientInfoIN,
@@ -129,30 +130,6 @@ int SGXGetInternalDevInfoBW(u32 ui32BridgeID,
 	return 0;
 }
 
-/* Convert the IOCTL parameter from "old" to "new" format. */
-static int kick_compat_conv(struct PVRSRV_BRIDGE_IN_DOKICK *kick,
-			    size_t in_size)
-{
-	struct SGX_CCB_KICK *ccb;
-	size_t diff;
-
-	ccb = &kick->sCCBKick;
-
-	diff = sizeof(ccb->ah3DStatusSyncInfo[0]) *
-		(SGX_MAX_3D_STATUS_VALS - SGX_MAX_3D_STATUS_VALS_OLD);
-	if (sizeof(*kick) - in_size != diff)
-		return -EINVAL;
-
-	/* Trailing size at the end of struct to move. */
-	diff = sizeof(*kick) - offsetof(typeof(*kick),
-			sCCBKick.ah3DStatusSyncInfo[SGX_MAX_3D_STATUS_VALS]);
-	memmove(&kick->sCCBKick.ah3DStatusSyncInfo[SGX_MAX_3D_STATUS_VALS],
-		&kick->sCCBKick.ah3DStatusSyncInfo[SGX_MAX_3D_STATUS_VALS_OLD],
-		diff);
-
-	return 0;
-}
-
 int SGXDoKickBW(u32 ui32BridgeID,
 		       struct PVRSRV_BRIDGE_IN_DOKICK *psDoKickIN,
 		       struct PVRSRV_BRIDGE_RETURN *psRetOUT,
@@ -160,20 +137,10 @@ int SGXDoKickBW(u32 ui32BridgeID,
 		       struct PVRSRV_PER_PROCESS_DATA *psPerProc)
 {
 	void *hDevCookieInt;
-	int max_3dstat_vals;
 	u32 i;
 
 	PVRSRV_BRIDGE_ASSERT_CMD(ui32BridgeID, PVRSRV_BRIDGE_SGX_DOKICK);
 
-	max_3dstat_vals = SGX_MAX_3D_STATUS_VALS;
-	if (unlikely(in_size != sizeof(*psDoKickIN))) {
-		max_3dstat_vals = SGX_MAX_3D_STATUS_VALS_OLD;
-		if (kick_compat_conv(psDoKickIN, in_size) != 0) {
-			psRetOUT->eError = PVRSRV_ERROR_INVALID_PARAMS;
-			return -EINVAL;
-		}
-
-	}
 	psRetOUT->eError = PVRSRVLookupHandle(psPerProc->psHandleBase,
 					      &hDevCookieInt,
 					      psDoKickIN->hDevCookie,
@@ -254,7 +221,7 @@ int SGXDoKickBW(u32 ui32BridgeID,
 			return 0;
 	}
 
-	if (psDoKickIN->sCCBKick.ui32Num3DStatusVals > max_3dstat_vals) {
+	if (psDoKickIN->sCCBKick.ui32Num3DStatusVals > SGX_MAX_3D_STATUS_VALS) {
 		psRetOUT->eError = PVRSRV_ERROR_INVALID_PARAMS;
 		return 0;
 	}
@@ -290,7 +257,7 @@ int SGXDoKickBW(u32 ui32BridgeID,
 	}
 
 	psRetOUT->eError = SGXDoKickKM(hDevCookieInt, &psDoKickIN->sCCBKick,
-					max_3dstat_vals);
+					psPerProc);
 
 	return 0;
 }
@@ -392,7 +359,8 @@ int SGXSubmitTransferBW(u32 ui32BridgeID,
 			return 0;
 	}
 
-	psRetOUT->eError = SGXSubmitTransferKM(hDevCookieInt, psKick);
+	psRetOUT->eError = SGXSubmitTransferKM(hDevCookieInt, psKick,
+						psPerProc);
 
 	return 0;
 }
@@ -582,6 +550,7 @@ int SGXDevInitPart2BW(u32 ui32BridgeID,
 	IMG_BOOL bLookupFailed = IMG_FALSE;
 	IMG_BOOL bReleaseFailed = IMG_FALSE;
 	void *hDummy;
+	void **edm_mi;
 	u32 i;
 
 	PVRSRV_BRIDGE_ASSERT_CMD(ui32BridgeID, PVRSRV_BRIDGE_SGX_DEVINITPART2);
@@ -640,13 +609,12 @@ int SGXDevInitPart2BW(u32 ui32BridgeID,
 				    PVRSRV_HANDLE_TYPE_MEM_INFO);
 	bLookupFailed |= (IMG_BOOL) (eError != PVRSRV_OK);
 
-#if defined(PVRSRV_USSE_EDM_STATUS_DEBUG)
-	eError = PVRSRVLookupHandle(psPerProc->psHandleBase, &hDummy,
-				    psSGXDevInitPart2IN->sInitInfo.
-					    hKernelEDMStatusBufferMemInfo,
-				    PVRSRV_HANDLE_TYPE_MEM_INFO);
-	bLookupFailed |= (IMG_BOOL) (eError != PVRSRV_OK);
-#endif
+	edm_mi = &psSGXDevInitPart2IN->sInitInfo.hKernelEDMStatusBufferMemInfo;
+	if (*edm_mi) {
+		eError = PVRSRVLookupHandle(psPerProc->psHandleBase, &hDummy,
+					  *edm_mi, PVRSRV_HANDLE_TYPE_MEM_INFO);
+		bLookupFailed |= eError != PVRSRV_OK;
+	}
 
 	for (i = 0; i < SGX_MAX_INIT_MEM_HANDLES; i++) {
 		void *hHandle =
@@ -724,15 +692,12 @@ int SGXDevInitPart2BW(u32 ui32BridgeID,
 					      PVRSRV_HANDLE_TYPE_MEM_INFO);
 	bReleaseFailed |= (IMG_BOOL)(eError != PVRSRV_OK);
 
-#if defined(PVRSRV_USSE_EDM_STATUS_DEBUG)
-	eError = PVRSRVLookupAndReleaseHandle(psPerProc->psHandleBase,
-					      &psSGXDevInitPart2IN->sInitInfo.
-						  hKernelEDMStatusBufferMemInfo,
-					      psSGXDevInitPart2IN->sInitInfo.
-						  hKernelEDMStatusBufferMemInfo,
+	if (*edm_mi) {
+		eError = PVRSRVLookupAndReleaseHandle(psPerProc->psHandleBase,
+					      edm_mi, *edm_mi,
 					      PVRSRV_HANDLE_TYPE_MEM_INFO);
-	bReleaseFailed |= (IMG_BOOL)(eError != PVRSRV_OK);
-#endif
+		bReleaseFailed |= eError != PVRSRV_OK;
+	}
 
 	for (i = 0; i < SGX_MAX_INIT_MEM_HANDLES; i++) {
 		void **phHandle =
@@ -791,12 +756,10 @@ int SGXDevInitPart2BW(u32 ui32BridgeID,
 						hKernelHWPerfCBMemInfo);
 	bDissociateFailed |= (IMG_BOOL) (eError != PVRSRV_OK);
 
-#if defined(PVRSRV_USSE_EDM_STATUS_DEBUG)
-	eError = PVRSRVDissociateDeviceMemKM(hDevCookieInt,
-					psSGXDevInitPart2IN->sInitInfo.
-						hKernelEDMStatusBufferMemInfo);
-	bDissociateFailed |= (IMG_BOOL) (eError != PVRSRV_OK);
-#endif
+	if (*edm_mi) {
+		eError = PVRSRVDissociateDeviceMemKM(hDevCookieInt, *edm_mi);
+		bDissociateFailed |= eError != PVRSRV_OK;
+	}
 
 	for (i = 0; i < SGX_MAX_INIT_MEM_HANDLES; i++) {
 		void *hHandle =
@@ -1033,6 +996,22 @@ int SGXFlushHWRenderTargetBW(u32 ui32BridgeID,
 	return 0;
 }
 
+static void trace_query_cmd(struct PVRSRV_PER_PROCESS_DATA *proc, int type,
+			     struct PVRSRV_KERNEL_SYNC_INFO *si)
+{
+	struct pvr_trcmd_syn *ts;
+	size_t size;
+
+	size = si ? sizeof(*ts) : 0;
+	pvr_trcmd_lock();
+
+	ts = pvr_trcmd_alloc(type, proc->ui32PID, proc->name, size);
+	if (si)
+		pvr_trcmd_set_syn(ts, si);
+
+	pvr_trcmd_unlock();
+}
+
 int SGX2DQueryBlitsCompleteBW(struct file *filp, u32 ui32BridgeID,
      struct PVRSRV_BRIDGE_IN_2DQUERYBLTSCOMPLETE *ps2DQueryBltsCompleteIN,
      struct PVRSRV_BRIDGE_RETURN *psRetOUT,
@@ -1055,6 +1034,15 @@ int SGX2DQueryBlitsCompleteBW(struct file *filp, u32 ui32BridgeID,
 
 	if (ps2DQueryBltsCompleteIN->type == _PVR_SYNC_WAIT_FLIP ||
 	    ps2DQueryBltsCompleteIN->type == _PVR_SYNC_WAIT_UPDATE) {
+		int	cmd_type;
+
+		if (ps2DQueryBltsCompleteIN->type == _PVR_SYNC_WAIT_FLIP)
+			cmd_type = PVR_TRCMD_SGX_QBLT_FLPREQ;
+		else
+			cmd_type = PVR_TRCMD_SGX_QBLT_UPDREQ;
+
+		trace_query_cmd(psPerProc, cmd_type, NULL);
+
 		if (pvr_flip_event_req(priv,
 				       (long)ps2DQueryBltsCompleteIN->
 						       hKernSyncInfo,
@@ -1081,6 +1069,10 @@ int SGX2DQueryBlitsCompleteBW(struct file *filp, u32 ui32BridgeID,
 				(struct PVRSRV_KERNEL_SYNC_INFO *)pvSyncInfo,
 				ps2DQueryBltsCompleteIN->user_data))
 			psRetOUT->eError = PVRSRV_ERROR_OUT_OF_MEMORY;
+		else
+			trace_query_cmd(psPerProc,
+					 PVR_TRCMD_SGX_QBLT_SYNREQ,
+					 pvSyncInfo);
 
 		return 0;
 	}
@@ -1090,6 +1082,8 @@ int SGX2DQueryBlitsCompleteBW(struct file *filp, u32 ui32BridgeID,
 				      (struct PVRSRV_KERNEL_SYNC_INFO *)
 							      pvSyncInfo,
 			ps2DQueryBltsCompleteIN->type == _PVR_SYNC_WAIT_BLOCK);
+
+	trace_query_cmd(psPerProc, PVR_TRCMD_SGX_QBLT_SYNCHK, pvSyncInfo);
 
 	return 0;
 }
@@ -1505,13 +1499,12 @@ static void DumpBufferArray(struct PVRSRV_PER_PROCESS_DATA *psPerProc,
 				PDUMPCBP(psCtrlMemInfoKM, ui32Offset,
 					 psBuffer->ui32Start,
 					 psBuffer->ui32SpaceUsed,
-					 psBuffer->ui32BufferSize, 0,
+					 psBuffer->ui32BufferSize,
 					 MAKEUNIQUETAG(psCtrlMemInfoKM));
 			}
 
 			PDUMPCOMMENTWITHFLAGS(0, "%s\r\n", pszName);
-			PDUMPMEMUM(psPerProc,
-				   NULL, psBuffer->pvLinAddr,
+			PDUMPMEMUM(NULL, psBuffer->pvLinAddr,
 				   (struct PVRSRV_KERNEL_MEM_INFO *)psBuffer->
 							   hKernelMemInfo,
 				   psBuffer->ui32Start,
@@ -1526,12 +1519,11 @@ static void DumpBufferArray(struct PVRSRV_PER_PROCESS_DATA *psPerProc,
 				PDUMPCBP(psCtrlMemInfoKM, ui32Offset,
 					 psBuffer->ui32Start,
 					 psBuffer->ui32BackEndLength,
-					 psBuffer->ui32BufferSize, 0,
+					 psBuffer->ui32BufferSize,
 					 MAKEUNIQUETAG(psCtrlMemInfoKM));
 			}
 			PDUMPCOMMENTWITHFLAGS(0, "%s (part 1)\r\n", pszName);
-			PDUMPMEMUM(psPerProc,
-				   NULL, psBuffer->pvLinAddr,
+			PDUMPMEMUM(NULL, psBuffer->pvLinAddr,
 				   (struct PVRSRV_KERNEL_MEM_INFO *)psBuffer->
 							   hKernelMemInfo,
 				   psBuffer->ui32Start,
@@ -1541,7 +1533,6 @@ static void DumpBufferArray(struct PVRSRV_PER_PROCESS_DATA *psPerProc,
 				PDUMPMEMPOL(psCtrlMemInfoKM, ui32Offset,
 					    0, 0xFFFFFFFF,
 					    PDUMP_POLL_OPERATOR_NOTEQUAL,
-					    IMG_FALSE, IMG_FALSE,
 					    MAKEUNIQUETAG(psCtrlMemInfoKM));
 
 				PDUMPCOMMENTWITHFLAGS(0,
@@ -1549,11 +1540,11 @@ static void DumpBufferArray(struct PVRSRV_PER_PROCESS_DATA *psPerProc,
 						      pszName);
 				PDUMPCBP(psCtrlMemInfoKM, ui32Offset, 0,
 					 psBuffer->ui32End,
-					 psBuffer->ui32BufferSize, 0,
+					 psBuffer->ui32BufferSize,
 					 MAKEUNIQUETAG(psCtrlMemInfoKM));
 			}
 			PDUMPCOMMENTWITHFLAGS(0, "%s (part 2)\r\n", pszName);
-			PDUMPMEMUM(psPerProc, NULL, psBuffer->pvLinAddr,
+			PDUMPMEMUM(NULL, psBuffer->pvLinAddr,
 				   (struct PVRSRV_KERNEL_MEM_INFO *)psBuffer->
 						   hKernelMemInfo,
 				   0, psBuffer->ui32End, 0, hUniqueTag);
@@ -1655,7 +1646,6 @@ int SGXPDump3DSignatureRegistersBW(u32 ui32BridgeID,
 
 	PDump3DSignatureRegisters(psPDump3DSignatureRegistersIN->
 							  ui32DumpFrameNum,
-				  psPDump3DSignatureRegistersIN->bLastFrame,
 				  pui32Registers,
 				  psPDump3DSignatureRegistersIN->
 							  ui32NumRegisters);
@@ -1705,7 +1695,6 @@ int SGXPDumpCounterRegistersBW(u32 ui32BridgeID,
 	}
 
 	PDumpCounterRegisters(psPDumpCounterRegistersIN->ui32DumpFrameNum,
-			      psPDumpCounterRegistersIN->bLastFrame,
 			      pui32Registers,
 			      psPDumpCounterRegistersIN->ui32NumRegisters);
 
@@ -1758,7 +1747,6 @@ int SGXPDumpTASignatureRegistersBW(u32 ui32BridgeID,
 							  ui32DumpFrameNum,
 				  psPDumpTASignatureRegistersIN->
 							  ui32TAKickCount,
-				  psPDumpTASignatureRegistersIN->bLastFrame,
 				  pui32Registers,
 				  psPDumpTASignatureRegistersIN->
 							  ui32NumRegisters);
@@ -1803,69 +1791,3 @@ int SGXPDumpHWPerfCBBW(u32 ui32BridgeID,
 }
 
 #endif
-
-void SetSGXDispatchTableEntry(void)
-{
-
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_GETCLIENTINFO,
-			      SGXGetClientInfoBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_RELEASECLIENTINFO,
-			      SGXReleaseClientInfoBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_GETINTERNALDEVINFO,
-			      SGXGetInternalDevInfoBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_DOKICK, SGXDoKickBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_GETPHYSPAGEADDR, DummyBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_READREGISTRYDWORD, DummyBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_SCHEDULECOMMAND, DummyBW);
-
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_2DQUERYBLTSCOMPLETE,
-			      SGX2DQueryBlitsCompleteBW);
-
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_GETMMUPDADDR, DummyBW);
-
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_SUBMITTRANSFER,
-			      SGXSubmitTransferBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_GETMISCINFO, SGXGetMiscInfoBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGXINFO_FOR_SRVINIT,
-			      SGXGetInfoForSrvinitBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_DEVINITPART2,
-			      SGXDevInitPart2BW);
-
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_FINDSHAREDPBDESC,
-			      SGXFindSharedPBDescBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_UNREFSHAREDPBDESC,
-			      SGXUnrefSharedPBDescBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_ADDSHAREDPBDESC,
-			      SGXAddSharedPBDescBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_REGISTER_HW_RENDER_CONTEXT,
-			      SGXRegisterHWRenderContextBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_FLUSH_HW_RENDER_TARGET,
-			      SGXFlushHWRenderTargetBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_UNREGISTER_HW_RENDER_CONTEXT,
-			      SGXUnregisterHWRenderContextBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_REGISTER_HW_TRANSFER_CONTEXT,
-			      SGXRegisterHWTransferContextBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_UNREGISTER_HW_TRANSFER_CONTEXT,
-			      SGXUnregisterHWTransferContextBW);
-
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_READ_DIFF_COUNTERS,
-			      SGXReadDiffCountersBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_READ_HWPERF_CB,
-			      SGXReadHWPerfCBBW);
-
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_SCHEDULE_PROCESS_QUEUES,
-			      SGXScheduleProcessQueuesBW);
-
-#if defined(PDUMP)
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_PDUMP_BUFFER_ARRAY,
-			      SGXPDumpBufferArrayBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_PDUMP_3D_SIGNATURE_REGISTERS,
-			      SGXPDump3DSignatureRegistersBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_PDUMP_COUNTER_REGISTERS,
-			      SGXPDumpCounterRegistersBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_PDUMP_TA_SIGNATURE_REGISTERS,
-			      SGXPDumpTASignatureRegistersBW);
-	SetDispatchTableEntry(PVRSRV_BRIDGE_SGX_PDUMP_HWPERFCB,
-			      SGXPDumpHWPerfCBBW);
-#endif
-}

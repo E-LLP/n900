@@ -32,7 +32,7 @@
 #include "buffer_manager.h"
 #include "sgxinfo.h"
 #include "sysconfig.h"
-#include "pdump_km.h"
+#include "pvr_pdump.h"
 #include "mmu.h"
 #include "pvr_bridge.h"
 #include "sgx_bridge_km.h"
@@ -40,15 +40,19 @@
 #include "osfunc.h"
 #include "pvr_debug.h"
 #include "sgxutils.h"
+#include "perproc.h"
+#include "pvr_trace_cmd.h"
 
 enum PVRSRV_ERROR SGXSubmitTransferKM(void *hDevHandle,
-				struct PVRSRV_TRANSFER_SGX_KICK *psKick)
+					struct PVRSRV_TRANSFER_SGX_KICK *psKick,
+					struct PVRSRV_PER_PROCESS_DATA *proc)
 {
 	struct PVRSRV_KERNEL_MEM_INFO *psCCBMemInfo =
 	    (struct PVRSRV_KERNEL_MEM_INFO *)psKick->hCCBMemInfo;
 	struct SGXMKIF_COMMAND sCommand = { 0 };
 	struct SGXMKIF_TRANSFERCMD_SHARED *psSharedTransferCmd;
 	struct PVRSRV_KERNEL_SYNC_INFO *psSyncInfo;
+	struct pvr_trcmd_sgxtransfer *ttrace;
 	enum PVRSRV_ERROR eError;
 
 	if (!CCB_OFFSET_IS_VALID
@@ -63,6 +67,10 @@ enum PVRSRV_ERROR SGXSubmitTransferKM(void *hDevHandle,
 	    CCB_DATA_FROM_OFFSET(struct SGXMKIF_TRANSFERCMD_SHARED,
 				 psCCBMemInfo, psKick, ui32SharedCmdCCBOffset);
 
+	pvr_trcmd_lock();
+	ttrace = pvr_trcmd_alloc(PVR_TRCMD_TFER_KICK, proc->ui32PID, proc->name,
+				 sizeof(*ttrace));
+
 	if (psKick->hTASyncInfo != NULL) {
 		psSyncInfo = (struct PVRSRV_KERNEL_SYNC_INFO *)
 			psKick->hTASyncInfo;
@@ -76,9 +84,13 @@ enum PVRSRV_ERROR SGXSubmitTransferKM(void *hDevHandle,
 		    psSyncInfo->sWriteOpsCompleteDevVAddr;
 		psSharedTransferCmd->sTASyncReadOpsCompleteDevVAddr =
 		    psSyncInfo->sReadOpsCompleteDevVAddr;
+
+		pvr_trcmd_set_syn(&ttrace->ta_syn, psSyncInfo);
 	} else {
 		psSharedTransferCmd->sTASyncWriteOpsCompleteDevVAddr.uiAddr = 0;
 		psSharedTransferCmd->sTASyncReadOpsCompleteDevVAddr.uiAddr = 0;
+
+		pvr_trcmd_clear_syn(&ttrace->ta_syn);
 	}
 
 	if (psKick->h3DSyncInfo != NULL) {
@@ -94,9 +106,13 @@ enum PVRSRV_ERROR SGXSubmitTransferKM(void *hDevHandle,
 		    psSyncInfo->sWriteOpsCompleteDevVAddr;
 		psSharedTransferCmd->s3DSyncReadOpsCompleteDevVAddr =
 		    psSyncInfo->sReadOpsCompleteDevVAddr;
+
+		pvr_trcmd_set_syn(&ttrace->_3d_syn, psSyncInfo);
 	} else {
 		psSharedTransferCmd->s3DSyncWriteOpsCompleteDevVAddr.uiAddr = 0;
 		psSharedTransferCmd->s3DSyncReadOpsCompleteDevVAddr.uiAddr = 0;
+
+		pvr_trcmd_clear_syn(&ttrace->_3d_syn);
 	}
 
 	if ((psKick->ui32Flags & SGXMKIF_TQFLAGS_KEEPPENDING) == 0UL) {
@@ -133,13 +149,24 @@ enum PVRSRV_ERROR SGXSubmitTransferKM(void *hDevHandle,
 						psKick->ahSrcSyncInfo[0];
 			psSyncInfo->psSyncData->ui32ReadOpsPending++;
 
+			pvr_trcmd_set_syn(&ttrace->src_syn, psSyncInfo);
+		} else {
+			pvr_trcmd_clear_syn(&ttrace->src_syn);
 		}
+
 		if (psKick->ui32NumDstSync > 0) {
 			psSyncInfo =
 			    (struct PVRSRV_KERNEL_SYNC_INFO *)psKick->
 							    ahDstSyncInfo[0];
 			psSyncInfo->psSyncData->ui32WriteOpsPending++;
+
+			pvr_trcmd_set_syn(&ttrace->dst_syn, psSyncInfo);
+		} else {
+			pvr_trcmd_clear_syn(&ttrace->dst_syn);
 		}
+	} else {
+		pvr_trcmd_clear_syn(&ttrace->src_syn);
+		pvr_trcmd_clear_syn(&ttrace->dst_syn);
 	}
 
 	if (psKick->ui32NumDstSync > 1 || psKick->ui32NumSrcSync > 1) {
@@ -240,6 +267,10 @@ enum PVRSRV_ERROR SGXSubmitTransferKM(void *hDevHandle,
 
 	sCommand.ui32Data[0] = PVRSRV_CCBFLAGS_TRANSFERCMD;
 	sCommand.ui32Data[1] = psKick->sHWTransferContextDevVAddr.uiAddr;
+
+	pvr_trcmd_set_data(&ttrace->ctx,
+			   psKick->sHWTransferContextDevVAddr.uiAddr);
+	pvr_trcmd_unlock();
 
 	/* To aid in determining the next power down delay */
 	sgx_mark_new_command(hDevHandle);

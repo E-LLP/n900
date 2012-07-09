@@ -30,6 +30,8 @@
 #include <linux/io.h>
 #include <linux/slab.h>
 #include <linux/sched.h>
+#include <linux/mm.h>
+#include <linux/vmalloc.h>
 
 #include "sgxdefs.h"
 #include "sgxmmu.h"
@@ -43,16 +45,24 @@
 #include "pvr_bridge_km.h"
 #include "sgx_bridge_km.h"
 #include "resman.h"
+#include "bridged_support.h"
 
-#include "pdump_km.h"
+#include "pvr_pdump.h"
 #include "ra.h"
 #include "mmu.h"
+#include "mm.h"
 #include "handle.h"
 #include "perproc.h"
 
 #include "sgxutils.h"
 #include "pvrversion.h"
 #include "sgx_options.h"
+
+#include "pvr_trace_cmd.h"
+
+#ifdef CONFIG_DEBUG_FS
+#include "pvr_debugfs.h"
+#endif
 
 static IMG_BOOL SGX_ISRHandler(void *pvData);
 
@@ -124,11 +134,8 @@ static enum PVRSRV_ERROR InitDevInfo(struct PVRSRV_PER_PROCESS_DATA *psPerProc,
 
 	psDevInfo->psKernelHWPerfCBMemInfo =
 	    (struct PVRSRV_KERNEL_MEM_INFO *)psInitInfo->hKernelHWPerfCBMemInfo;
-#ifdef PVRSRV_USSE_EDM_STATUS_DEBUG
 	psDevInfo->psKernelEDMStatusBufferMemInfo =
-	    (struct PVRSRV_KERNEL_MEM_INFO *)psInitInfo->
-						  hKernelEDMStatusBufferMemInfo;
-#endif
+				    psInitInfo->hKernelEDMStatusBufferMemInfo;
 
 	eError = OSAllocMem(PVRSRV_OS_PAGEABLE_HEAP,
 			    sizeof(struct PVRSRV_SGX_CCB_INFO),
@@ -164,6 +171,8 @@ static enum PVRSRV_ERROR InitDevInfo(struct PVRSRV_PER_PROCESS_DATA *psPerProc,
 	OSMemCopy(&psDevInfo->asSGXDevData, &psInitInfo->asInitDevData,
 		  sizeof(psDevInfo->asSGXDevData));
 
+	psDevInfo->state_buf_ofs = psInitInfo->state_buf_ofs;
+
 	return PVRSRV_OK;
 
 failed_allockernelccb:
@@ -183,35 +192,47 @@ static enum PVRSRV_ERROR SGXRunScript(struct PVRSRV_SGXDEV_INFO *psDevInfo,
 	     ui32PC < ui32NumInitCommands; ui32PC++, psComm++) {
 		switch (psComm->eOp) {
 		case SGX_INIT_OP_WRITE_HW_REG:
-			{
-				OSWriteHWReg(psDevInfo->pvRegsBaseKM,
-					     psComm->sWriteHWReg.ui32Offset,
-					     psComm->sWriteHWReg.ui32Value);
-				PDUMPREG(psComm->sWriteHWReg.ui32Offset,
-					 psComm->sWriteHWReg.ui32Value);
-				break;
-			}
-#if defined(PDUMP)
-		case SGX_INIT_OP_PDUMP_HW_REG:
-			{
-				PDUMPREG(psComm->sPDumpHWReg.ui32Offset,
-					 psComm->sPDumpHWReg.ui32Value);
-				break;
-			}
-#endif
+			OSWriteHWReg(psDevInfo->pvRegsBaseKM,
+				     psComm->sWriteHWReg.ui32Offset,
+				     psComm->sWriteHWReg.ui32Value);
+			PDUMPREG(psComm->sWriteHWReg.ui32Offset,
+				 psComm->sWriteHWReg.ui32Value);
+			break;
 		case SGX_INIT_OP_HALT:
-			{
-				return PVRSRV_OK;
+			/* Old OP_PDUMP_HW_REG masked OP_HALT */
+			if (psComm->sWriteHWReg.ui32Offset) {
+				pr_warning("%s: Init Script HALT command "
+					   "contains data!\n", __func__);
+				pr_warning("PVR: Is userspace built with "
+					   "incompatible PDUMP support?\n");
 			}
-		case SGX_INIT_OP_ILLEGAL:
+			return PVRSRV_OK;
+		case SGX_INIT_OP_PDUMP_HW_REG:
+#if defined(PDUMP)
+			if (!psComm->sPDumpHWReg.ui32Offset &&
+			    !psComm->sPDumpHWReg.ui32Value) {
+				pr_warning("%s: Init Script PDUMP command "
+					   "contains no offset/value!\n",
+					   __func__);
+				pr_warning("PVR: Is userspace built without "
+					   "PDUMP support?\n");
+			}
 
+			PDUMPREG(psComm->sPDumpHWReg.ui32Offset,
+				 psComm->sPDumpHWReg.ui32Value);
+			break;
+#else
+			pr_err("%s: Init Script contains PDUMP writes!\n",
+			       __func__);
+			pr_err("PVR: ERROR: Userspace built with PDUMP "
+			       "support!\n");
+			return PVRSRV_ERROR_GENERIC;
+#endif /* PDUMP */
+		case SGX_INIT_OP_ILLEGAL:
 		default:
-			{
-				PVR_DPF(PVR_DBG_ERROR,
-				     "SGXRunScript: PC %d: Illegal command: %d",
-				      ui32PC, psComm->eOp);
-				return PVRSRV_ERROR_GENERIC;
-			}
+			pr_err("PVR: ERROR: %s: PC %d: Illegal operation: "
+			       "0x%02X\n", __func__, ui32PC, psComm->eOp);
+			return PVRSRV_ERROR_GENERIC;
 		}
 
 	}
@@ -342,6 +363,8 @@ static enum PVRSRV_ERROR DevInitSGXPart1(void *pvDeviceNode)
 
 	hKernelDevMemContext = BM_CreateContext(psDeviceNode, &sPDDevPAddr,
 						NULL, NULL);
+	if (!hKernelDevMemContext)
+		goto err1;
 
 	psDevInfo->sKernelPDDevPAddr = sPDDevPAddr;
 
@@ -357,6 +380,9 @@ static enum PVRSRV_ERROR DevInitSGXPart1(void *pvDeviceNode)
 				    BM_CreateHeap(hKernelDevMemContext,
 						  &psDeviceMemoryHeap[i]);
 
+				if (!hDevMemHeap)
+					goto err2;
+
 				psDeviceMemoryHeap[i].hDevMemHeap = hDevMemHeap;
 				break;
 			}
@@ -367,10 +393,28 @@ static enum PVRSRV_ERROR DevInitSGXPart1(void *pvDeviceNode)
 	if (eError != PVRSRV_OK) {
 		PVR_DPF(PVR_DBG_ERROR,
 			 "DevInitSGX : Failed to alloc memory for BIF reset");
-		return PVRSRV_ERROR_GENERIC;
+		goto err2;
 	}
 
 	return PVRSRV_OK;
+err2:
+	while (i) {
+		int type;
+
+		i--;
+		type = psDeviceMemoryHeap[i].DevMemHeapType;
+		if (type != DEVICE_MEMORY_HEAP_KERNEL &&
+		    type != DEVICE_MEMORY_HEAP_SHARED &&
+		    type != DEVICE_MEMORY_HEAP_SHARED_EXPORTED)
+			continue;
+		BM_DestroyHeap(psDeviceMemoryHeap[i].hDevMemHeap);
+	}
+	BM_DestroyContext(hKernelDevMemContext);
+err1:
+	OSFreeMem(PVRSRV_OS_NON_PAGEABLE_HEAP,
+		  sizeof(struct PVRSRV_SGXDEV_INFO), psDevInfo, NULL);
+
+	return PVRSRV_ERROR_GENERIC;
 }
 
 enum PVRSRV_ERROR SGXGetInfoForSrvinitKM(void *hDevHandle,
@@ -589,65 +633,35 @@ static enum PVRSRV_ERROR DevDeInitSGX(void *pvDeviceNode)
 	return PVRSRV_OK;
 }
 
-#ifdef PVRSRV_USSE_EDM_STATUS_DEBUG
-
-#define SGXMK_TRACE_BUFFER_SIZE		512
-
-static void dump_edm(struct PVRSRV_SGXDEV_INFO *psDevInfo)
-{
-	u32 *trace_buffer =
-		psDevInfo->psKernelEDMStatusBufferMemInfo->pvLinAddrKM;
-	u32 last_code, write_offset;
-	int i;
-
-	last_code = *trace_buffer;
-	trace_buffer++;
-	write_offset = *trace_buffer;
-
-	pr_err("Last SGX microkernel status code: 0x%x\n", last_code);
-
-	trace_buffer++;
-	/* Dump the status values */
-
-	for (i = 0; i < SGXMK_TRACE_BUFFER_SIZE; i++) {
-		u32     *buf;
-		buf = trace_buffer + (((write_offset + i) %
-					SGXMK_TRACE_BUFFER_SIZE) * 4);
-		pr_err("(MKT%u) %8.8X %8.8X %8.8X %8.8X\n", i,
-				buf[2], buf[3], buf[1], buf[0]);
-	}
-}
-#else
-static void dump_edm(struct PVRSRV_SGXDEV_INFO *psDevInfo) {}
-#endif
-
-static void dump_process_info(struct PVRSRV_DEVICE_NODE *dev)
+static struct PVRSRV_PER_PROCESS_DATA *find_cur_proc_data(
+					struct PVRSRV_DEVICE_NODE *dev)
 {
 	struct PVRSRV_SGXDEV_INFO *dev_info = dev->pvDevice;
 	u32 page_dir = readl(dev_info->pvRegsBaseKM +
 				EUR_CR_BIF_DIR_LIST_BASE0);
 	struct BM_CONTEXT *bm_ctx;
 	struct RESMAN_CONTEXT *res_ctx = NULL;
+	struct PVRSRV_PER_PROCESS_DATA *proc_data = NULL;
 
 	bm_ctx = bm_find_context(dev->sDevMemoryInfo.pBMContext, page_dir);
 	if (bm_ctx)
 		res_ctx = pvr_get_resman_ctx(bm_ctx);
 
-	if (res_ctx) {
-		struct task_struct *tsk;
-		struct PVRSRV_PER_PROCESS_DATA *proc;
-		int pid;
+	if (res_ctx)
+		proc_data = pvr_get_proc_by_ctx(res_ctx);
 
-		proc = pvr_get_proc_by_ctx(res_ctx);
-		pid = proc->ui32PID;
-		rcu_read_lock();
-		tsk = pid_task(find_vpid(pid), PIDTYPE_PID);
-		pr_err("PID = %d, process name = %s\n", pid, tsk->comm);
-		rcu_read_unlock();
-	}
+	return proc_data;
 }
 
-static void dump_sgx_registers(struct PVRSRV_SGXDEV_INFO *psDevInfo)
+static void pr_err_process_info(struct PVRSRV_PER_PROCESS_DATA *proc)
+{
+	if (!proc)
+		return;
+
+	pr_err("PID = %d, process name = %s\n", proc->ui32PID, proc->name);
+}
+
+static void pr_err_sgx_registers(struct PVRSRV_SGXDEV_INFO *psDevInfo)
 {
 	pr_err("EVENT_STATUS =     0x%08X\n"
 		"EVENT_STATUS2 =    0x%08X\n"
@@ -665,14 +679,57 @@ static void dump_sgx_registers(struct PVRSRV_SGXDEV_INFO *psDevInfo)
 		readl(psDevInfo->pvRegsBaseKM + EUR_CR_CLKGATECTL));
 }
 
+#ifdef CONFIG_PVR_TRACE_CMD
+static void pr_err_cmd_trace(void)
+{
+	u8 *snapshot;
+	size_t snapshot_size;
+	loff_t snapshot_ofs;
+	char *str_buf;
+	size_t str_len;
+	int r;
+
+	str_buf = kmalloc(PAGE_SIZE, GFP_KERNEL);
+	if (!str_buf) {
+		pr_err("%s: out of mem\n", __func__);
+		return;
+	}
+
+	pvr_trcmd_lock();
+
+	r = pvr_trcmd_create_snapshot(&snapshot, &snapshot_size);
+	if (r < 0) {
+		pvr_trcmd_unlock();
+		kfree(str_buf);
+		pr_err("%s: can't create snapshot (%d)\n", __func__, r);
+
+		return;
+	}
+
+	pvr_trcmd_unlock();
+
+	snapshot_ofs = 0;
+	do {
+		str_len = pvr_trcmd_print(str_buf, PAGE_SIZE, snapshot,
+					snapshot_size, &snapshot_ofs);
+		printk(KERN_DEBUG "%s", str_buf);
+	} while (str_len);
+
+	pvr_trcmd_destroy_snapshot(snapshot);
+	kfree(str_buf);
+}
+#endif
+
 /* Should be called with pvr_lock held */
-void HWRecoveryResetSGX(struct PVRSRV_DEVICE_NODE *psDeviceNode)
+void
+HWRecoveryResetSGX(struct PVRSRV_DEVICE_NODE *psDeviceNode, const char *caller)
 {
 	enum PVRSRV_ERROR eError;
 	struct PVRSRV_SGXDEV_INFO *psDevInfo =
 	    (struct PVRSRV_SGXDEV_INFO *)psDeviceNode->pvDevice;
 	struct SGXMKIF_HOST_CTL __iomem *psSGXHostCtl =
 					psDevInfo->psSGXHostCtl;
+	struct PVRSRV_PER_PROCESS_DATA *proc;
 	u32 l;
 	int max_retries = 10;
 
@@ -682,11 +739,22 @@ void HWRecoveryResetSGX(struct PVRSRV_DEVICE_NODE *psDeviceNode)
 	l |= PVRSRV_USSE_EDM_INTERRUPT_HWR;
 	writel(l, &psSGXHostCtl->ui32InterruptClearFlags);
 
-	pr_err("%s: SGX Hardware Recovery triggered\n", __func__);
+	pr_err("SGX Hardware Recovery triggered (from %s)\n", caller);
 
-	dump_process_info(psDeviceNode);
-	dump_sgx_registers(psDevInfo);
-	dump_edm(psDevInfo);
+	proc = find_cur_proc_data(psDeviceNode);
+
+	pr_err_process_info(proc);
+	pr_err_sgx_registers(psDevInfo);
+#ifdef PVRSRV_USSE_EDM_STATUS_DEBUG
+	edm_trace_print(psDevInfo, NULL, 0);
+#endif
+#ifdef CONFIG_PVR_TRACE_CMD
+	pr_err_cmd_trace();
+#endif
+
+#ifdef CONFIG_DEBUG_FS
+	pvr_hwrec_dump(proc, psDevInfo);
+#endif
 
 	PDUMPSUSPEND();
 
@@ -785,7 +853,7 @@ static void SGXOSTimer(struct work_struct *work)
 		l++;
 		writel(l, &psSGXHostCtl->ui32HostDetectedLockups);
 
-		HWRecoveryResetSGX(psDeviceNode);
+		HWRecoveryResetSGX(psDeviceNode, __func__);
 		pvr_dev_unlock();
 	}
 
@@ -923,7 +991,7 @@ static void SGX_MISRHandler(void *pvData)
 
 	if ((l1 & PVRSRV_USSE_EDM_INTERRUPT_HWR) &&
 	    !(l2 & PVRSRV_USSE_EDM_INTERRUPT_HWR))
-		HWRecoveryResetSGX(psDeviceNode);
+		HWRecoveryResetSGX(psDeviceNode, __func__);
 
 	if (psDeviceNode->bReProcessDeviceCommandComplete)
 		SGXScheduleProcessQueues(psDeviceNode);
@@ -1202,7 +1270,8 @@ enum PVRSRV_ERROR SGXDevInitCompatCheck(struct PVRSRV_DEVICE_NODE *psDeviceNode)
 	struct PVRSRV_KERNEL_MEM_INFO *psMemInfo;
 	enum PVRSRV_ERROR eError;
 #if !defined(NO_HARDWARE)
-	u32 ui32BuildOptions, ui32BuildOptionsMismatch;
+	u32 opts;
+	u32 opt_mismatch;
 	struct PVRSRV_SGX_MISCINFO_FEATURES *psSGXFeatures;
 #endif
 
@@ -1219,8 +1288,7 @@ enum PVRSRV_ERROR SGXDevInitCompatCheck(struct PVRSRV_DEVICE_NODE *psDeviceNode)
 
 	eError = SGXGetBuildInfoKM(psDevInfo, psDeviceNode);
 	if (eError != PVRSRV_OK) {
-		PVR_DPF(PVR_DBG_ERROR, "SGXDevInitCompatCheck: "
-				"Unable to validate device DDK version");
+		pr_err("pvr: unable to validate device DDK version\n");
 		goto exit;
 	}
 	psSGXFeatures =
@@ -1230,9 +1298,8 @@ enum PVRSRV_ERROR SGXDevInitCompatCheck(struct PVRSRV_DEVICE_NODE *psDeviceNode)
 	     ((PVRVERSION_MAJ << 16) | (PVRVERSION_MIN << 8) |
 	      PVRVERSION_BRANCH)) ||
 	     (psSGXFeatures->ui32DDKBuild != PVRVERSION_BUILD)) {
-		PVR_DPF(PVR_DBG_ERROR, "SGXDevInitCompatCheck: "
-			"Incompatible driver DDK revision (%ld)"
-			"/device DDK revision (%ld).",
+		pr_err("pvr: incompatible driver DDK revision (%d)"
+			"/device DDK revision (%d).\n",
 			 PVRVERSION_BUILD, psSGXFeatures->ui32DDKBuild);
 		eError = PVRSRV_ERROR_DDK_VERSION_MISMATCH;
 		goto exit;
@@ -1242,24 +1309,20 @@ enum PVRSRV_ERROR SGXDevInitCompatCheck(struct PVRSRV_DEVICE_NODE *psDeviceNode)
 			 PVRVERSION_BUILD, psSGXFeatures->ui32DDKBuild);
 	}
 
-	ui32BuildOptions = psSGXFeatures->ui32BuildOptions;
-	if (ui32BuildOptions != (SGX_BUILD_OPTIONS)) {
-		ui32BuildOptionsMismatch =
-		    ui32BuildOptions ^ (SGX_BUILD_OPTIONS);
-		if (((SGX_BUILD_OPTIONS) & ui32BuildOptionsMismatch) != 0)
-			PVR_DPF(PVR_DBG_ERROR, "SGXInit: "
-				"Mismatch in driver and microkernel build "
+	opts = psSGXFeatures->ui32BuildOptions;
+	opt_mismatch = opts ^ SGX_BUILD_OPTIONS;
+	/* we support the ABIs both with and without EDM tracing option */
+	opt_mismatch &= ~PVRSRV_USSE_EDM_STATUS_DEBUG_SET_OFFSET;
+	if (opt_mismatch) {
+		if (SGX_BUILD_OPTIONS & opt_mismatch)
+			pr_err("pvr: mismatch in driver and microkernel build "
 				"options; extra options present in driver: "
-				"(0x%lx)",
-				 (SGX_BUILD_OPTIONS) &
-				 ui32BuildOptionsMismatch);
+				"(0x%x)", SGX_BUILD_OPTIONS & opt_mismatch);
 
-		if ((ui32BuildOptions & ui32BuildOptionsMismatch) != 0)
-			PVR_DPF(PVR_DBG_ERROR, "SGXInit: "
-				"Mismatch in driver and microkernel build "
+		if (opts & opt_mismatch)
+			pr_err("pvr: Mismatch in driver and microkernel build "
 				"options; extra options present in "
-				"microkernel: (0x%lx)",
-				 ui32BuildOptions & ui32BuildOptionsMismatch);
+				"microkernel: (0x%x)", opts & opt_mismatch);
 		eError = PVRSRV_ERROR_BUILD_MISMATCH;
 		goto exit;
 	} else {
@@ -1514,6 +1577,38 @@ enum PVRSRV_ERROR SGXGetMiscInfoKM(struct PVRSRV_SGXDEV_INFO *psDevInfo,
 	}
 }
 
+
+
+static bool sgxps_active;
+static unsigned long sgxps_timeout;
+
+IMG_BOOL isSGXPerfServerActive(void)
+{
+	if (!sgxps_active)
+		return 0;
+
+	if (time_before_eq((unsigned long)OSClockus(), sgxps_timeout))
+		return 1;
+
+	sgxps_active = false;
+	PVR_DPF(DBGPRIV_WARNING, "pvr: perf server inactive\n");
+
+	return 0;
+}
+
+
+void SGXPerfServerMonitor(u32 u32TimeStamp)
+{
+	if (!sgxps_active) {
+		PVR_DPF(DBGPRIV_WARNING, "pvr: perf server active\n");
+		sgxps_active = true;
+	}
+
+	/* turn off after 1 second of inactivity */
+	sgxps_timeout = u32TimeStamp + 1000000;
+}
+
+
 enum PVRSRV_ERROR SGXReadDiffCountersKM(void *hDevHandle, u32 ui32Reg,
 				   u32 *pui32Old, IMG_BOOL bNew, u32 ui32New,
 				   u32 ui32NewReset, u32 ui32CountersReg,
@@ -1558,6 +1653,8 @@ enum PVRSRV_ERROR SGXReadDiffCountersKM(void *hDevHandle, u32 ui32Reg,
 		sNew.ui32Time[0] = OSClockus();
 		*pui32Time = sNew.ui32Time[0];
 		if (sNew.ui32Time[0] != psPrev->ui32Time[0] && bPowered) {
+
+			SGXPerfServerMonitor(*pui32Time);
 
 			*pui32Old =
 			    OSReadHWReg(psDevInfo->pvRegsBaseKM, ui32Reg);

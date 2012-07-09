@@ -30,7 +30,7 @@
 #include "sgxinfokm.h"
 #include "sgxconfig.h"
 
-#include "pdump_km.h"
+#include "pvr_pdump.h"
 
 static void SGXResetSoftReset(struct PVRSRV_SGXDEV_INFO *psDevInfo,
 				  IMG_BOOL bResetBIF, u32 ui32PDUMPFlags,
@@ -205,7 +205,7 @@ void SGXReset(struct PVRSRV_SGXDEV_INFO *psDevInfo, u32 ui32PDUMPFlags)
 			     psDevInfo->sKernelPDDevPAddr.uiAddr);
 		PDUMPPDREGWITHFLAGS(ui32EDMDirListReg,
 				    psDevInfo->sKernelPDDevPAddr.uiAddr,
-				    ui32PDUMPFlags, PDUMP_PD_UNIQUETAG);
+				    ui32PDUMPFlags);
 	}
 
 	SGXResetInvalDC(psDevInfo, ui32PDUMPFlags, IMG_TRUE);

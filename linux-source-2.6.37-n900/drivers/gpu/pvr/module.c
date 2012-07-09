@@ -54,6 +54,10 @@
 #include "private_data.h"
 #include "pvr_events.h"
 
+#ifdef CONFIG_DEBUG_FS
+#include "pvr_debugfs.h"
+#endif
+
 #define DRVNAME		"pvrsrvkm"
 
 #ifdef CONFIG_PVR_DEBUG_EXTRA
@@ -91,6 +95,7 @@ static int pvr_open(struct inode unref__ * inode, struct file *filp)
 
 	priv->ui32OpenPID = pid;
 	priv->hBlockAlloc = block_alloc;
+	priv->proc = PVRSRVPerProcessData(pid);
 	filp->private_data = priv;
 
 	INIT_LIST_HEAD(&priv->event_list);
@@ -234,6 +239,10 @@ static int __init pvr_init(void)
 	PVRDebugSetLevel(debug);
 #endif
 
+#ifdef CONFIG_DEBUG_FS
+	pvr_debugfs_init();
+#endif
+
 	error = CreateProcEntries();
 	if (error < 0)
 		goto err1;
@@ -283,6 +292,9 @@ static void __exit pvr_cleanup(void)
 
 	PVR_TRACE("pvr_cleanup: unloading");
 
+#ifdef CONFIG_DEBUG_FS
+	pvr_debugfs_cleanup();
+#endif
 	pvr_dbg_cleanup();
 }
 

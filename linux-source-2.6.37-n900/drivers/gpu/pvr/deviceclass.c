@@ -355,11 +355,10 @@ ErrorExit:
 
 	if (psBCInfo->psFuncTable)
 		OSFreeMem(PVRSRV_OS_PAGEABLE_HEAP,
-			  sizeof(struct PVRSRV_BC_SRV2BUFFER_KMJTABLE *),
-			  psBCInfo->psFuncTable, NULL);
+			  sizeof(*psBCInfo->psFuncTable), psBCInfo->psFuncTable,
+			  NULL);
 
-	OSFreeMem(PVRSRV_OS_PAGEABLE_HEAP,
-		  sizeof(struct PVRSRV_BUFFERCLASS_INFO), psBCInfo, NULL);
+	OSFreeMem(PVRSRV_OS_PAGEABLE_HEAP, sizeof(*psBCInfo), psBCInfo, NULL);
 
 	return PVRSRV_ERROR_OUT_OF_MEMORY;
 }
@@ -487,8 +486,10 @@ enum PVRSRV_ERROR PVRSRVOpenDCDeviceKM(
 {
 	struct PVRSRV_DISPLAYCLASS_INFO *psDCInfo;
 	struct PVRSRV_DISPLAYCLASS_PERCONTEXT_INFO *psDCPerContextInfo;
+	struct PVRSRV_DC_SRV2DISP_KMJTABLE *jtbl;
 	struct PVRSRV_DEVICE_NODE *psDeviceNode;
 	struct SYS_DATA *psSysData;
+	enum PVRSRV_ERROR eError;
 
 	if (!phDeviceKM || !hDevCookie) {
 		PVR_DPF(PVR_DBG_ERROR,
@@ -532,15 +533,14 @@ FoundDevice:
 	OSMemSet(psDCPerContextInfo, 0, sizeof(*psDCPerContextInfo));
 
 	if (psDCInfo->ui32RefCount++ == 0) {
-		enum PVRSRV_ERROR eError;
-		struct PVRSRV_DC_SRV2DISP_KMJTABLE *jtbl;
-
 		psDeviceNode = (struct PVRSRV_DEVICE_NODE *)hDevCookie;
 
 		jtbl = psDCInfo->psFuncTable;
 		if (!try_module_get(jtbl->owner)) {
 			PVR_DPF(PVR_DBG_ERROR, "%s: can't get DC module");
-			return PVRSRV_ERROR_INVALID_DEVICE;
+			eError = PVRSRV_ERROR_INVALID_DEVICE;
+
+			goto err1;
 		}
 
 		psDCInfo->hDevMemContext =
@@ -555,9 +555,8 @@ FoundDevice:
 		if (eError != PVRSRV_OK) {
 			PVR_DPF(PVR_DBG_ERROR,
 			       "PVRSRVOpenDCDeviceKM: Failed sync info alloc");
-			psDCInfo->ui32RefCount--;
-			module_put(jtbl->owner);
-			return eError;
+
+			goto err2;
 		}
 
 		eError = jtbl->pfnOpenDCDevice(ui32DeviceID,
@@ -568,11 +567,7 @@ FoundDevice:
 		if (eError != PVRSRV_OK) {
 			PVR_DPF(PVR_DBG_ERROR, "PVRSRVOpenDCDeviceKM: "
 					"Failed to open external DC device");
-			psDCInfo->ui32RefCount--;
-			module_put(jtbl->owner);
-			PVRSRVFreeSyncInfoKM(psDCInfo->sSystemBuffer.
-					   sDeviceClassBuffer.psKernelSyncInfo);
-			return eError;
+			goto err3;
 		}
 	}
 
@@ -585,6 +580,17 @@ FoundDevice:
 	*phDeviceKM = (void *) psDCPerContextInfo;
 
 	return PVRSRV_OK;
+err3:
+	PVRSRVFreeSyncInfoKM(psDCInfo->sSystemBuffer.
+			     sDeviceClassBuffer.psKernelSyncInfo);
+err2:
+	module_put(jtbl->owner);
+	psDCInfo->ui32RefCount--;
+err1:
+	OSFreeMem(PVRSRV_OS_PAGEABLE_HEAP, sizeof(*psDCPerContextInfo),
+		  psDCPerContextInfo, NULL);
+
+	return eError;
 }
 
 enum PVRSRV_ERROR PVRSRVEnumDCFormatsKM(void *hDeviceKM,
@@ -1305,6 +1311,7 @@ enum PVRSRV_ERROR PVRSRVOpenBCDeviceKM(
 	struct PVRSRV_BUFFERCLASS_INFO *psBCInfo;
 	struct PVRSRV_BUFFERCLASS_PERCONTEXT_INFO *psBCPerContextInfo;
 	struct PVRSRV_DEVICE_NODE *psDeviceNode;
+	struct BUFFER_INFO sBufferInfo;
 	struct SYS_DATA *psSysData;
 	u32 i;
 	enum PVRSRV_ERROR eError;
@@ -1352,8 +1359,6 @@ FoundDevice:
 	OSMemSet(psBCPerContextInfo, 0, sizeof(*psBCPerContextInfo));
 
 	if (psBCInfo->ui32RefCount++ == 0) {
-		struct BUFFER_INFO sBufferInfo;
-
 		psDeviceNode = (struct PVRSRV_DEVICE_NODE *)hDevCookie;
 
 		psBCInfo->hDevMemContext =
@@ -1365,7 +1370,7 @@ FoundDevice:
 		if (eError != PVRSRV_OK) {
 			PVR_DPF(PVR_DBG_ERROR, "PVRSRVOpenBCDeviceKM: "
 					"Failed to open external BC device");
-			return eError;
+			goto err1;
 		}
 
 		eError =
@@ -1374,7 +1379,7 @@ FoundDevice:
 		if (eError != PVRSRV_OK) {
 			PVR_DPF(PVR_DBG_ERROR,
 				"PVRSRVOpenBCDeviceKM : Failed to get BC Info");
-			return eError;
+			goto err2;
 		}
 
 		psBCInfo->ui32BufferCount = sBufferInfo.ui32BufferCount;
@@ -1387,7 +1392,7 @@ FoundDevice:
 		if (eError != PVRSRV_OK) {
 			PVR_DPF(PVR_DBG_ERROR, "PVRSRVOpenBCDeviceKM: "
 					"Failed to allocate BC buffers");
-			return eError;
+			goto err2;
 		}
 		OSMemSet(psBCInfo->psBuffer, 0,
 			 sizeof(struct PVRSRV_BC_BUFFER) *
@@ -1402,7 +1407,7 @@ FoundDevice:
 			if (eError != PVRSRV_OK) {
 				PVR_DPF(PVR_DBG_ERROR, "PVRSRVOpenBCDeviceKM: "
 						"Failed sync info alloc");
-				goto ErrorExit;
+				goto err3;
 			}
 
 			eError = psBCInfo->psFuncTable->pfnGetBCBuffer(
@@ -1415,7 +1420,7 @@ FoundDevice:
 			if (eError != PVRSRV_OK) {
 				PVR_DPF(PVR_DBG_ERROR, "PVRSRVOpenBCDeviceKM: "
 						"Failed to get BC buffers");
-				goto ErrorExit;
+				goto err3;
 			}
 
 			psBCInfo->psBuffer[i].sDeviceClassBuffer.
@@ -1438,8 +1443,7 @@ FoundDevice:
 
 	return PVRSRV_OK;
 
-ErrorExit:
-
+err3:
 	for (i = 0; i < psBCInfo->ui32BufferCount; i++) {
 		if (psBCInfo->psBuffer[i].sDeviceClassBuffer.psKernelSyncInfo) {
 			PVRSRVFreeSyncInfoKM(psBCInfo->psBuffer[i].
@@ -1447,12 +1451,15 @@ ErrorExit:
 							     psKernelSyncInfo);
 		}
 	}
-
-	if (psBCInfo->psBuffer) {
-		OSFreeMem(PVRSRV_OS_PAGEABLE_HEAP,
-			  sizeof(struct PVRSRV_BC_BUFFER), psBCInfo->psBuffer,
-			  NULL);
-	}
+	OSFreeMem(PVRSRV_OS_PAGEABLE_HEAP,
+		  sizeof(struct PVRSRV_BC_BUFFER) * sBufferInfo.ui32BufferCount,
+		  psBCInfo->psBuffer, NULL);
+err2:
+	psBCInfo->psFuncTable->pfnCloseBCDevice(psBCInfo->hExtDevice);
+err1:
+	OSFreeMem(PVRSRV_OS_PAGEABLE_HEAP, sizeof(*psBCPerContextInfo),
+		  psBCPerContextInfo, NULL);
+	psBCInfo->ui32RefCount--;
 
 	return eError;
 }

@@ -31,7 +31,7 @@
 #include "pvr_bridge_km.h"
 #include "handle.h"
 #include "perproc.h"
-#include "pdump_km.h"
+#include "pvr_pdump.h"
 #include "ra.h"
 #include "pvr_events.h"
 
@@ -145,10 +145,6 @@ enum PVRSRV_ERROR PVRSRVInit(struct SYS_DATA *psSysData)
 
 	psSysData->eCurrentPowerState = PVRSRV_POWER_STATE_D0;
 	psSysData->eFailedPowerState = PVRSRV_POWER_Unspecified;
-
-#if defined(PDUMP)
-	psSysData->bPowerUpPDumped = IMG_FALSE;
-#endif
 
 	if (OSAllocMem(PVRSRV_PAGEABLE_SELECT,
 		       sizeof(struct PVRSRV_EVENTOBJECT),
@@ -697,25 +693,6 @@ enum PVRSRV_ERROR PVRSRVGetMiscInfoKM(struct PVRSRV_MISC_INFO *psMiscInfo)
 				UPDATE_SPACE(pszStr, i32Count, ui32StrLen);
 			}
 		}
-	}
-
-	return PVRSRV_OK;
-}
-
-enum PVRSRV_ERROR PVRSRVGetFBStatsKM(u32 *pui32Total, u32 *pui32Available)
-{
-	u32 ui32Total = 0, i = 0;
-	u32 ui32Available = 0;
-
-	*pui32Total = 0;
-	*pui32Available = 0;
-
-	while (BM_ContiguousStatistics(i, &ui32Total, &ui32Available) ==
-	       IMG_TRUE) {
-		*pui32Total += ui32Total;
-		*pui32Available += ui32Available;
-
-		i++;
 	}
 
 	return PVRSRV_OK;

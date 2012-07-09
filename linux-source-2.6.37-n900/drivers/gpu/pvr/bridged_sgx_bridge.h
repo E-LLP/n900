@@ -27,8 +27,6 @@
 #ifndef __BRIDGED_SGX_BRIDGE_H__
 #define __BRIDGED_SGX_BRIDGE_H__
 
-void SetSGXDispatchTableEntry(void);
-
 int SGXGetClientInfoBW(u32 ui32BridgeID,
        struct PVRSRV_BRIDGE_IN_GETCLIENTINFO *psGetClientInfoIN,
        struct PVRSRV_BRIDGE_OUT_GETCLIENTINFO *psGetClientInfoOUT,
@@ -76,9 +74,9 @@ int SGXReadHWPerfCBBW(u32 ui32BridgeID,
        struct PVRSRV_PER_PROCESS_DATA *psPerProc);
 
 int SGXDevInitPart2BW(u32 ui32BridgeID,
-       struct PVRSRV_BRIDGE_IN_SGXDEVINITPART2 *psSGXDevInitPart2IN,
-       struct PVRSRV_BRIDGE_RETURN *psRetOUT,
-       struct PVRSRV_PER_PROCESS_DATA *psPerProc);
+	struct PVRSRV_BRIDGE_IN_SGXDEVINITPART2 *psSGXDevInitPart2IN,
+	struct PVRSRV_BRIDGE_RETURN *psRetOUT,
+	struct PVRSRV_PER_PROCESS_DATA *psPerProc);
 
 int SGXRegisterHWRenderContextBW(u32 ui32BridgeID,
        struct PVRSRV_BRIDGE_IN_SGX_REGISTER_HW_RENDER_CONTEXT

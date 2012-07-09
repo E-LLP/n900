@@ -33,6 +33,9 @@
 #include <linux/string.h>
 #endif
 
+#include "services.h"
+#include "servicesext.h"
+
 #define PVRSRV_PAGEABLE_SELECT		PVRSRV_OS_PAGEABLE_HEAP
 
 #define KERNEL_ID			0xffffffffL
@@ -212,5 +215,7 @@ enum PVRSRV_ERROR OSAcquirePhysPageAddr(void *pvCPUVAddr, u32 ui32Bytes,
 				   struct IMG_SYS_PHYADDR *psSysPAddr,
 					void **phOSWrapMem);
 enum PVRSRV_ERROR OSReleasePhysPageAddr(void *hOSWrapMem);
+
+void get_proc_name(int pid, char *buf, size_t buf_size);
 
 #endif

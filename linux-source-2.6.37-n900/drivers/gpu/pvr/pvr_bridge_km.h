@@ -90,7 +90,7 @@ enum PVRSRV_ERROR PVRSRVCreateDeviceMemContextKM(void *hDevCookie,
 		IMG_BOOL *pbShared);
 
 enum PVRSRV_ERROR PVRSRVDestroyDeviceMemContextKM(void *hDevCookie,
-		void *hDevMemContext, IMG_BOOL *pbCreated);
+		void *hDevMemContext);
 
 enum PVRSRV_ERROR PVRSRVGetDeviceMemHeapInfoKM(void *hDevCookie,
 		void *hDevMemContext, u32 *pui32ClientHeapCount,
@@ -204,8 +204,6 @@ enum PVRSRV_ERROR PVRSRVFreeSyncInfoKM(
 		struct PVRSRV_KERNEL_SYNC_INFO *psKernelSyncInfo);
 
 enum PVRSRV_ERROR PVRSRVGetMiscInfoKM(struct PVRSRV_MISC_INFO *psMiscInfo);
-
-enum PVRSRV_ERROR PVRSRVGetFBStatsKM(u32 *pui32Total, u32 *pui32Available);
 
 enum PVRSRV_ERROR PVRSRVAllocSharedSysMemoryKM(
 		struct PVRSRV_PER_PROCESS_DATA *psPerProc, u32 ui32Flags,

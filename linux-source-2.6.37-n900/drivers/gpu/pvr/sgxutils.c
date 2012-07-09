@@ -33,7 +33,7 @@
 #include "sgxinfo.h"
 #include "sgxinfokm.h"
 #include "sysconfig.h"
-#include "pdump_km.h"
+#include "pvr_pdump.h"
 #include "mmu.h"
 #include "pvr_bridge_km.h"
 #include "sgx_bridge_km.h"
@@ -69,6 +69,9 @@ void SGXTestActivePowerEvent(struct PVRSRV_DEVICE_NODE *psDeviceNode)
 	struct PVRSRV_SGXDEV_INFO *psDevInfo = psDeviceNode->pvDevice;
 	struct SGXMKIF_HOST_CTL __iomem *psSGXHostCtl = psDevInfo->psSGXHostCtl;
 	u32 l;
+
+	if (isSGXPerfServerActive())
+		return;
 
 	l = readl(&psSGXHostCtl->ui32InterruptFlags);
 	if (!(l & PVRSRV_USSE_EDM_INTERRUPT_ACTIVE_POWER))
@@ -172,7 +175,7 @@ enum PVRSRV_ERROR SGXScheduleCCBCommand(struct PVRSRV_SGXDEV_INFO *psDevInfo,
 		PDUMPMEMPOL(psKernelCCB->psCCBCtlMemInfo,
 			    offsetof(struct PVRSRV_SGX_CCB_CTL, ui32ReadOffset),
 			    (psKernelCCB->ui32CCBDumpWOff + 1) & 0xff, 0xff,
-			    PDUMP_POLL_OPERATOR_NOTEQUAL, IMG_FALSE, IMG_FALSE,
+			    PDUMP_POLL_OPERATOR_NOTEQUAL,
 			    MAKEUNIQUETAG(psKernelCCB->psCCBCtlMemInfo));
 
 		PDUMPCOMMENTWITHFLAGS(0, "Kernel CCB command\r\n");
@@ -441,8 +444,7 @@ void SGXCleanupRequest(struct PVRSRV_DEVICE_NODE *psDeviceNode,
 			    offsetof(struct SGXMKIF_HOST_CTL, ui32ResManFlags),
 			    PVRSRV_USSE_EDM_RESMAN_CLEANUP_COMPLETE,
 			    PVRSRV_USSE_EDM_RESMAN_CLEANUP_COMPLETE,
-			    PDUMP_POLL_OPERATOR_EQUAL, IMG_FALSE, IMG_FALSE,
-			    hUniqueTag);
+			    PDUMP_POLL_OPERATOR_EQUAL, hUniqueTag);
 #endif
 
 		l = readl(&psSGXHostCtl->ui32ResManFlags);
@@ -642,16 +644,26 @@ enum PVRSRV_ERROR SGXUnregisterHWTransferContextKM(void *hHWTransferContext)
 	return PVRSRV_OK;
 }
 
+
+
+static inline int sync_cnt_after_eq(u32 c1, u32 c2)
+{
+	return (int)(c1 - c2) >= 0;
+}
+
+
+
 static inline IMG_BOOL SGX2DQuerySyncOpsComplete(
 				struct PVRSRV_KERNEL_SYNC_INFO *psSyncInfo,
 				u32 ui32ReadOpsPending, u32 ui32WriteOpsPending)
 {
 	struct PVRSRV_SYNC_DATA *psSyncData = psSyncInfo->psSyncData;
 
-	return (IMG_BOOL)((psSyncData->ui32ReadOpsComplete >=
-				ui32ReadOpsPending) &&
-			   (psSyncData->ui32WriteOpsComplete >=
-				ui32WriteOpsPending));
+	return (IMG_BOOL)(
+		sync_cnt_after_eq(
+			psSyncData->ui32ReadOpsComplete, ui32ReadOpsPending) &&
+		sync_cnt_after_eq(
+			psSyncData->ui32WriteOpsComplete, ui32WriteOpsPending));
 }
 
 enum PVRSRV_ERROR SGX2DQueryBlitsCompleteKM(

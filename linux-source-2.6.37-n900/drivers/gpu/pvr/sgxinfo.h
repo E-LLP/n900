@@ -56,9 +56,7 @@ struct SGX_BRIDGE_INIT_INFO {
 	u32 ui32HostKickAddress;
 	u32 ui32GetMiscInfoAddress;
 	void *hKernelHWPerfCBMemInfo;
-#if defined(PVRSRV_USSE_EDM_STATUS_DEBUG)
 	void *hKernelEDMStatusBufferMemInfo;
-#endif
 
 	u32 ui32EDMTaskReg0;
 	u32 ui32EDMTaskReg1;
@@ -73,6 +71,7 @@ struct SGX_BRIDGE_INIT_INFO {
 
 	struct SGX_INIT_SCRIPTS sScripts;
 
+	u32 state_buf_ofs;
 };
 
 struct SGXMKIF_COMMAND {
@@ -198,13 +197,14 @@ struct SGXMKIF_HOST_CTL {
 
 	u32 ui32HWPerfFlags;
 
-#if defined(PVRSRV_USSE_EDM_STATUS_DEBUG)
 	/* !< See SGXMK_STATUS_BUFFER */
 	struct IMG_DEV_VIRTADDR sEDMStatusBuffer;
-#endif
 
 	/*< to count time wraps in the Timer task */
 	u32 ui32TimeWraps;
+
+	u32 render_state_buf_ta_handle;
+	u32 render_state_buf_3d_handle;
 };
 
 struct SGX_CLIENT_INFO {
@@ -246,10 +246,6 @@ struct SGXMKIF_CMDTA_SHARED {
 	struct PVRSRV_DEVICE_SYNC_OBJECT asSrcSyncs[SGX_MAX_SRC_SYNCS];
 
 	struct CTL_STATUS sCtlTAStatusInfo[SGX_MAX_TA_STATUS_VALS];
-	/*
-	 * Note that the actual size of sCtl3DStatusInfo changes based
-	 * on the IOCTL ABI version used.
-	 */
 	struct CTL_STATUS sCtl3DStatusInfo[SGX_MAX_3D_STATUS_VALS];
 
 	struct PVRSRV_DEVICE_SYNC_OBJECT sTA3DDependency;

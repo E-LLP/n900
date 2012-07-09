@@ -33,7 +33,7 @@
 #include "sgxapi_km.h"
 #include "sgxinfokm.h"
 #include "sgxutils.h"
-#include "pdump_km.h"
+#include "pvr_pdump.h"
 
 #define MS_TO_NS(x)			((x) * 1000000ULL)
 #define SGX_CMD_BURST_THRESHOLD_NS	MS_TO_NS(3)
@@ -309,7 +309,7 @@ static enum PVRSRV_ERROR SGXPrePowerState(void *hDevHandle,
 		PDUMPMEMPOL(psDevInfo->psKernelSGXHostCtlMemInfo,
 			    offsetof(struct SGXMKIF_HOST_CTL, ui32PowerStatus),
 			    ui32CompleteStatus, ui32CompleteStatus,
-			    PDUMP_POLL_OPERATOR_EQUAL, IMG_FALSE, IMG_FALSE,
+			    PDUMP_POLL_OPERATOR_EQUAL,
 			    MAKEUNIQUETAG(psDevInfo->
 					  psKernelSGXHostCtlMemInfo));
 #endif

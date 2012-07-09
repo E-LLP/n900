@@ -99,10 +99,9 @@ struct PVRSRV_SGXDEV_INFO {
 	struct PVRSRV_SGXDEV_DIFF_INFO sDiffInfo;
 	u32 ui32HWGroupRequested;
 	u32 ui32HWReset;
-#ifdef PVRSRV_USSE_EDM_STATUS_DEBUG
+
 	/*!< Meminfo for EDM status buffer */
 	struct PVRSRV_KERNEL_MEM_INFO *psKernelEDMStatusBufferMemInfo;
-#endif
 
 	u32 ui32ClientRefCount;
 
@@ -150,6 +149,7 @@ struct PVRSRV_SGXDEV_INFO {
 
 	u32 asSGXDevData[SGX_MAX_DEV_DATA];
 
+	u32 state_buf_ofs;
 };
 
 struct SGX_TIMING_INFORMATION {
@@ -214,7 +214,8 @@ struct timer_work_data *
 SGXOSTimerInit(struct PVRSRV_DEVICE_NODE *psDeviceNode);
 void SGXOSTimerDeInit(struct timer_work_data *data);
 
-void HWRecoveryResetSGX(struct PVRSRV_DEVICE_NODE *psDeviceNode);
+void HWRecoveryResetSGX(struct PVRSRV_DEVICE_NODE *psDeviceNode,
+			const char *caller);
 void SGXReset(struct PVRSRV_SGXDEV_INFO *psDevInfo, u32 ui32PDUMPFlags);
 
 enum PVRSRV_ERROR SGXInitialise(struct PVRSRV_SGXDEV_INFO *psDevInfo,

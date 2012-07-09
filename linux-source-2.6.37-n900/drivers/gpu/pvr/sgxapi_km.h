@@ -29,6 +29,7 @@
 
 
 #include "sgxdefs.h"
+#include "img_types.h"
 
 #if defined(__KERNEL__)
 #include <linux/unistd.h>
@@ -50,7 +51,6 @@
 #define SGX_MAX_HEAP_ID					10
 
 #define SGX_MAX_TA_STATUS_VALS				32
-#define SGX_MAX_3D_STATUS_VALS_OLD			2
 #define SGX_MAX_3D_STATUS_VALS				4
 
 #define SGX_MAX_SRC_SYNCS				4
@@ -177,6 +177,23 @@ struct SGX_MISC_INFO {
 		u32 ui32NewHWPerfStatus;
 		struct SGX_MISC_INFO_HWPERF_RETRIEVE_CB sRetrieveCB;
 	} uData;
+};
+
+enum render_state_buf_type {
+	RSB_USSE_VERTEX_PROG,
+	RSB_USSE_FRAGMENT_PROG,
+};
+
+struct render_state_buf_info {
+	u32				buf_id;
+	u32				offset;
+	u32				size;
+	enum render_state_buf_type      type;
+};
+
+struct render_state_buf_list {
+	u32				cnt;
+	struct render_state_buf_info    info[20];
 };
 
 #define SGX_KICKTA_DUMPBITMAP_MAX_NAME_LENGTH		256

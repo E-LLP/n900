@@ -24,23 +24,18 @@
  *
  ******************************************************************************/
 
-#include <linux/io.h>
 #include <linux/uaccess.h>
 #include <linux/kernel.h>
 #include <linux/hardirq.h>
 #include <linux/module.h>
 #include <linux/spinlock.h>
-#include <linux/tty.h>
-#include <linux/debugfs.h>
-#include <stdarg.h>
+
 #include "img_types.h"
 #include "servicesext.h"
 #include "pvr_debug.h"
 #include "proc.h"
-#include "syscommon.h"
-#include "sgxinfokm.h"
-#include "sgxutils.h"
-#include "pvr_bridge_km.h"
+
+#ifdef CONFIG_PVR_DEBUG
 
 u32 gPVRDebugLevel = DBGPRIV_WARNING;
 
@@ -251,108 +246,17 @@ int PVRDebugProcGetLevel(char *page, char **start, off_t off, int count,
 	return 0;
 }
 
-#ifdef CONFIG_DEBUG_FS
-
-static struct dentry *debugfs_dentry;
-static u32 pvr_reset;
-
-static struct PVRSRV_DEVICE_NODE *get_sgx_node(void)
-{
-	struct SYS_DATA *sysdata;
-	struct PVRSRV_DEVICE_NODE *node;
-
-	if (SysAcquireData(&sysdata) != PVRSRV_OK)
-		return NULL;
-
-	for (node = sysdata->psDeviceNodeList; node; node = node->psNext)
-		if (node->sDevId.eDeviceType == PVRSRV_DEVICE_TYPE_SGX)
-			break;
-
-	return node;
-}
-
-static int pvr_dbg_reset(void *data, u64 val)
-{
-	struct PVRSRV_DEVICE_NODE *node;
-	enum PVRSRV_ERROR err;
-	int r = 0;
-
-	if (val != 1)
-		return 0;
-
-	pvr_lock();
-
-	if (pvr_is_disabled()) {
-		r = -ENODEV;
-		goto exit;
-	}
-
-	node = get_sgx_node();
-	if (!node) {
-		r =  -ENODEV;
-		goto exit;
-	}
-
-	err = PVRSRVSetDevicePowerStateKM(node->sDevId.ui32DeviceIndex,
-					     PVRSRV_POWER_STATE_D0);
-	if (err != PVRSRV_OK) {
-		r = -EIO;
-		goto exit;
-	}
-
-	HWRecoveryResetSGX(node);
-
-	SGXTestActivePowerEvent(node);
-exit:
-	pvr_unlock();
-
-	return r;
-}
-
-static int pvr_dbg_set(void *data, u64 val)
-{
-	u32 *var = data;
-
-	if (var == &pvr_reset)
-		return pvr_dbg_reset(data, val);
-
-	BUG();
-}
-
-DEFINE_SIMPLE_ATTRIBUTE(pvr_dbg_fops, NULL, pvr_dbg_set, "%llu\n");
-
-static int pvr_init_debugfs(void)
-{
-	debugfs_dentry = debugfs_create_file("reset_sgx", S_IWUGO, NULL,
-			&pvr_reset, &pvr_dbg_fops);
-
-	return debugfs_dentry ? 0 : -ENODEV;
-}
-
-static void pvr_cleanup_debugfs(void)
-{
-	debugfs_remove(debugfs_dentry);
-}
-
-#else		/* !CONFIG_DEBUG_FS */
-
-static int pvr_init_debugfs(void)
-{
-	return 0;
-}
-
-static void pvr_cleanup_debugfs(void) { }
-
 #endif
 
 void pvr_dbg_init(void)
 {
+#if defined(CONFIG_PVR_DEBUG) || defined(TIMING)
 	mutex_init(&gsDebugMutexNonIRQ);
-	pvr_init_debugfs();
+#endif
 }
 
 void pvr_dbg_cleanup(void)
 {
-	pvr_cleanup_debugfs();
+
 }
 

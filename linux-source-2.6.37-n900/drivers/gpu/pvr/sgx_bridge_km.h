@@ -36,11 +36,13 @@
 
 
 enum PVRSRV_ERROR SGXSubmitTransferKM(void *hDevHandle,
-		struct PVRSRV_TRANSFER_SGX_KICK *psKick);
+				struct PVRSRV_TRANSFER_SGX_KICK *psKick,
+				struct PVRSRV_PER_PROCESS_DATA *proc);
 
 
-enum PVRSRV_ERROR SGXDoKickKM(void *hDevHandle, struct SGX_CCB_KICK *psCCBKick,
-			      int max_3dstat_val);
+enum PVRSRV_ERROR SGXDoKickKM(void *hDevHandle,
+				struct SGX_CCB_KICK *psCCBKick,
+				struct PVRSRV_PER_PROCESS_DATA *proc);
 
 enum PVRSRV_ERROR SGXGetPhysPageAddrKM(void *hDevMemHeap,
 		struct IMG_DEV_VIRTADDR sDevVAddr,
@@ -105,5 +107,8 @@ enum PVRSRV_ERROR SGXGetInternalDevInfoKM(void *hDevCookie,
 			struct SGX_INTERNAL_DEVINFO *psSGXInternalDevInfo);
 
 int sgx_force_reset(void);
+
+IMG_BOOL isSGXPerfServerActive(void);
+void	   SGXPerfServerMonitor(u32 u32TimeStamp);
 
 #endif
