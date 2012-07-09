@@ -1,0 +1,30 @@
+Name: nokia-n900-configs
+Summary: Provides configs for Nokia N900
+Version: 0.7.0
+Release: 0
+Group: System/Device Mode Adaptation
+License: GPLv2
+Sources:
+    - nokia-n900-input-rules.conf
+    - nokia-n900-keys.map
+    - "%{name}.sh"
+    - nokia-n900-force-backlight.desktop
+    - n900-setbacklight.sh
+    - pipelines.conf
+    - n900-qt-mtf-config.sh
+    - "%{name}.service"
+    - getty@ttyO2.service
+Description: Provides configs for Nokia N900 device.
+
+Requires:
+    # Required by nokia-n900-setup.init
+    - kbd
+RequiresPost:
+    - systemd
+RequiresPostUn:
+    - systemd
+
+Configure: none
+Builder: none
+NoSetup: yes
+ExclusiveArch: "%{arm}"

@@ -1,0 +1,11 @@
+[Unit]
+Description=Nokia N900 Configs
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/sbin/nokia-n900-configs.sh start
+ExecStop=/usr/sbin/nokia-n900-configs.sh stop
+
+[Install]
+WantedBy=multi-user.target

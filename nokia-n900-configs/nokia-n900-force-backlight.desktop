@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=N900 force backlight
+Exec=/usr/bin/n900-setbacklight.sh 100
+Terminal=False
+Type=Application

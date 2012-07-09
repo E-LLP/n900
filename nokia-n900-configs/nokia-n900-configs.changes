@@ -1,0 +1,166 @@
+* Wed Jun 01 2011 Marko Saukko <marko.saukko@cybercom.com> - 0.7.0
+- Initial changes from sysvinit to systemd (FEA#16109).
+
+* Thu Apr 28 2011 Marko Saukko <marko.saukko@cybercom.com> - 0.6.20
+- Renamed n900-qt-config.sh to n900-qt-mtf-config.sh and added QT_GRAPHICSSYSTEM
+  export (BMC#16660).
+
+* Wed Apr 13 2011 Joonas Tanskanen <joonas.tanskanen@sasken.com> - 0.6.19
+- n900-qt-config.sh added. The script adds QT_USE_DRAG_DISTANCE
+  environment variable for BMC#15323
+
+* Wed Mar 30 2011 Carsten Munk <carsten@maemo.org> - 0.6.18
+- BMC#12714 - Texas Instruments OMAP3 SoC does not enter deeper power saving states
+- Refactor init scripts into nokia-n900-setup init script.
+- Followup to BMC#14201, need this for proper keyboard map handling.
+
+* Mon Mar 21 2011 Sami Sirkia <sami.sirkia@cybercom.com> - 0.6.17
+- Removed /etc/skel/.pulse/default.pa and dependencies as unnecessary.
+  It was moved to pulseaudio-settings-n900 as /etc/pulse/arm_nokia_rx_51_board.pa
+- Removed dependency to udev-rules-nokia-n900 as it is part of the package group.
+- Removed dependency to uxlaunch as unnecessary.
+- Added   dependency to xorg-x11-xkb-utils required by nokia-n900-keypad.desktop .
+
+* Mon Mar 7 2011 Sami Sirkia <sami.sirkia@cybercom.com> - 0.6.16
+- Fixes BMC#14406, Removed /etc/asound_n900.state, init.d/n900-alsamixer-settings.
+  Alsa settings are initialized and handled by resource policy.
+- Removed /usr/bin/n900-alsamixer-set-*.sh as unnecessary.
+- Removed dependency for alsa-utils and alsa-plugins-pulseaudio.
+
+* Fri Mar 4 2011 Sami Sirkia <sami.sirkia@cybercom.com> - 0.6.15
+- Partial fix for BMC#8108: [N900] Volume control does not work
+  Added loading of module-meego-mainvolume to default.pa
+
+* Tue Feb 25 2011 Sami Sirkia <sami.sirkia@cybercom.com> - 0.6.14
+- Added missing pulseaudio loading for module-meego-music and module-meego-record.
+- This does not require the modules, which will be added to the image soon.
+
+* Mon Jan 03 2011 Marko Saukko <marko.saukko@cybercom.com> - 0.6.13
+- Added spectacle support and did some cleanup.
+
+* Thu Dec 31 2010 Teemu Tuominen <teemu.tuominen@cybercom.com> - 0.6.12
+- Updated pipelines.conf according to new upstream version
+
+* Tue Dec 28 2010 Sami Sirkia <sami.sirkia@cybercom.com> - 0.6.11
+- Used correct order of audio paths to make IHF as default.
+- Addressed sink by its name not by a number.
+
+* Mon Dec 20 2010 Sami Sirkia <sami.sirkia@cybercom.com> - 0.6.10
+- This is part of fullfilling FEA#6701
+- Other parts will come from devel:resourcepolicy
+- Requires pulseaudio-0.9.19
+- Added policyconfig paths into /home/meego/.pulse/default.pa
+- Removed loading of audio-test-server in default.pa as unnecessary
+- Commented out modules that will not work with pulseaudio 0.9.19
+- Updated /etc/asound_n900.state
+
+* Thu Dec 2 2010 Teemu Tuominen <teemu.tuominen@cybercom.com> - 0.6.9
+- Added /etc/camera/pipelines.conf
+- few cleanup tricks with spec-file 
+
+* Thu Oct 26 2010 Jouni Peltonen <jouni.peltonen@cybercom.com> - 0.6.8.2
+- Default.pa changed to include alsa_sink_old (sink.hw0) as new default sink.
+- Default.pa changed to include alsa_source_old (source.hw0) as new default source.
+- Fragment sizes for alsa_sink_old changed to work better with call audio and
+  video audio. Primary fragment size is used for normal playback and alternative
+  fragment size is for call audio. Part of the fix for BMC#8423, BMC#8428 and BMC#8605.
+
+* Thu Oct 21 2010 Marko Saukko <marko.saukko@cybercom.com> - 0.6.8.1
+- Removed the btrfs readahead_kb hack. This will be fix elsewhere for 1.2.
+
+* Sun Oct 18 2010 Marko Saukko <marko.saukko@cybercom.com> - 0.6.8
+- Merged fixes from 1.1 branch.
+- Set package to "ExclusiveArch: %{arm}"
+
+* Sun Oct 17 2010 Carsten Munk <carsten@maemo.org> - 0.6.7.2
+- Set btrfs readahead_kb to 0kb on boot. 4mb is way too tough for N900 MMC + CPU. 
+  This fixes serious performance problems in Fennec-qt for N900, BMC#8582
+  Thanks to stephg for figuring out the problem.
+
+* Thu Oct 14 2010 Marko Saukko <marko.saukko@cybercom.com> - 0.6.7.1
+- Rebased default.pa to /etc/pulseaudio/default.pa and changed default route to fix BMC#8428
+
+* Tue Oct 6 2010 Sami Sirkia <sami.sirkia@cybercom.com> - 0.6.7
+- Added call audio quality related module loading into default.pa.
+- Changed package into noarch by using: "ExclusiveArch: %{arm} noarch"
+
+* Mon Oct 4 2010 Carsten Munk <carsten@maemo.org> - 0.6.6
+- Add Option "SendCoreEvents" "On" to touchscreen Xorg config as in Aava configs.
+
+* Mon Sep 20 2010 Markus Lehtonen <markus.lehtonen@nokia.com> - 0.6.5
+- modify .desktop file of backlight hack to work with uxlaunch
+  (related to BMC#6091)
+
+* Fri Sep 17 2010 Carsten Munk <carsten@maemo.org> - 0.6.4
+- Add support for cell modem powerup and audio settings. Part of implementation
+  for FEA#4134 FEA#4135 FEA#4136 on ARM (Dialer - Make a Call, Receive a Call, End Call).
+
+* Wed Sep 8 2010 Topi Santakivi <topi.santakivi@digia.com> - 0.6.3
+- Added .nofail and .fail statements to loading of alsasrc/sink
+
+* Wed Sep 8 2010 Topi Santakivi <topi.santakivi@digia.com> - 0.6.2
+- If alsasink/src are loaded in default.pa, pulseaudio fails
+  to start properly and that prevents audio/video playback
+  related use cases. BMC#5419 BMC#6372.
+
+* Tue Sep 7 2010 Markus Lehtonen <markus.lehtonen@nokia.com> - 0.6.1
+- backlight hack: add a .desktop file that forces backlight brightness up
+  when X starts. Part of fix for BMC#6091
+
+* Thu Aug 19 2010 Markus Lehtonen <markus.lehtonen@nokia.com> - 0.6
+- Remove default evdev rule in n900-input-rules. It caused problems in
+  some cases apparently because there already is an identical (duplicate)
+  rule in MeeGo's '00-input-default.conf'.
+
+* Thu Jul 29 2010 Pekka Pessi <pekka.pessi@nokia.com> - 0.5.9
+- Added setup script for n900 modem control gpio lines
+
+* Thu Jul 29 2010 Sami Sirkia <sami.sirkia@cybercom.com> - 0.5.8
+- Moved /home/meego/.pulse/default.pa to /etc/skel/.pulse/default.pa
+
+* Tue Jul 27 2010 Sami Sirkia <sami.sirkia@cybercom.com> - 0.5.7
+- Loaded alsasink and source in PA, enabled speaker at startup + /usr/bin/n900-alsamixer-*
+
+* Wed Jul 14 2010 Marko Saukko <marko.saukko@cybercom.com> - 0.5.6
+- Added keymap for N900 made by Torne.
+
+* Mon Jul 12 2010 Ameya Palande <ameya.palande@nokia.com> - 0.5.5
+- Remove nokia-n900-wl1251_spi.conf as wl1251_spi driver is fixed for
+  autoloading
+
+* Wed Jul 6 2010 Carsten Munk <carsten@maemo.org> - 0.5.4
+- Merged Markus Lehtonen's disable autoconfiguration of accelerometers in xorg config
+
+* Tue Jun 22 2010 Marko Saukko <marko.saukko@gmail.com> - 0.5.3
+- Added "ExclusiveArch: %{arm}"
+
+* Thu Jun 17 2010 Marko Saukko <marko.saukko@gmail.com> - 0.5.2
+- Temporary fix for the keypad problems. 
+
+* Thu Jun 03 2010 Marko Saukko <marko.saukko@gmail.com> - 0.5.1
+- Fixed keyboard configuration
+- Removed uxlaunch file editing, this should be done in .ks level if required.
+
+* Mon May 10 2010 Kalle Lampila <kalle.lampila@iki.fi> - 0.5
+- Added wl1251_spi.conf to autoload wl1251_spi kernel module
+
+* Tue Apr 20 09:00:00 UTC 2010 - marko.saukko@gmail.com - 0.4
+- Removed the uxlaunch init script. This startup is done with
+  /usr/sbin/moblin-dm file.
+- Added devices.conf for libmeegotouch
+- Moved nokia-usb-networking init script to nokia-usb-networking package
+- Moved audio udev rules to udev-rules-nokia-n900 package.
+- Removed .tar.gz package and added each config file as seperate source.
+
+* Thu Apr  8 14:00:00 UTC 2010 - marko.saukko@gmail.com - 0.3.1
+- Added gpio-keys to n900 input rules for 2.6.33 kernel.
+
+* Thu Apr  1 12:00:00 UTC 2010 - markus.lehtonen@nokia.com - 0.3
+- Fixes N900 touchscreen issues by changing xorg.configs.
+  Utilizes Xorgs new inputclass/udev support.
+
+* Tue Mar 30 18:00:00 UTC 2010 - marko.saukko@gmail.com
+- Added uxlaunch and nokia-usb-networking init scripts.
+
+* Tue Mar 30 14:00:00 UTC 2010 - marko.saukko@gmail.com
+- Initial release of configs package for n900.
