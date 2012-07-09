@@ -611,6 +611,7 @@ KBUILD_CFLAGS   += $(call cc-option,-fconserve-stack)
 ifeq ($(shell $(CONFIG_SHELL) $(srctree)/scripts/gcc-goto.sh $(CC)), y)
 	KBUILD_CFLAGS += -DCC_HAVE_ASM_GOTO
 endif
+	KBUILD_CFLAGS	+= -mno-unaligned-access
 
 # Add user supplied CPPFLAGS, AFLAGS and CFLAGS as the last assignments
 # But warn user when we do so
