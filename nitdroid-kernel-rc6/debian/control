@@ -1,0 +1,23 @@
+Source: nitdroid-kernel-2.6.28-07
+Section: user/system
+Priority: extra
+Maintainer: Jay Cartman <jay.cartman@gmail.com>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: nitdroid-kernel-2.6.28-07
+Architecture: armel
+Section: user/system
+Depends: 
+Provides: nitdroid-kernel
+Description: Linux kernel for NITDroid
+ This package installs a kernel for NITDroid, an Android port to N900.
+ .
+ Before this package can be installed, you MUST have your NITDroid
+ partition mounted on '/and'.
+ .
+ Otherwise please follow the installation instructions in 
+ the NITDroid release announcement.
+ .
+XB-Maemo-Display-Name: NITdroid kernel for N900.
+XB-Maemo-Flags: system-update
