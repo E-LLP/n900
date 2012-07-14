@@ -1,0 +1,239 @@
+#!/usr/bin/make -f
+#
+
+RELEASE := $(shell dpkg-parsechangelog | sed -ne 's/^Version: 1:\(.*\)/\1/p' | sed 's/-10/.10-/')
+REVISION := $(shell echo "$(RELEASE)" | sed 's/.*\./\./')
+EXTRAVERSION := EXTRAVERSION=$(REVISION)
+
+PACKAGE := kernel-power
+FLASHER_PACKAGE := $(PACKAGE)-flasher
+SOURCE_PACKAGE := $(PACKAGE)-source
+KERNEL_PACKAGE := $(PACKAGE)
+BOOTIMG_PACKAGE := $(PACKAGE)-bootimg
+MODULES_PACKAGE := $(PACKAGE)-modules
+HEADERS_PACKAGE := $(PACKAGE)-headers
+KBUILD_PACKAGE := $(PACKAGE)-kbuild
+DEBUG_PACKAGE := $(PACKAGE)-debug
+DEBUG_MODULES_PACKAGE := $(PACKAGE)-modules-debug
+LIBC_PACKAGE := linux-$(PACKAGE)-headers
+
+MULTIBOOTDIR := etc/multiboot.d
+MULTIBOOTFILE := $(MULTIBOOTDIR)/20-Maemo5-$(PACKAGE)-$(RELEASE).item
+BOOTMENUDIR := etc/bootmenu.d
+BOOTMENUFILE := $(BOOTMENUDIR)/20-Maemo5-$(PACKAGE)-$(RELEASE).item
+
+BUILDTMP := $(CURDIR)/debian/build
+KSRC := $(BUILDTMP)/$(PACKAGE)
+
+DEFCONFIG := rx51_defconfig
+ARCH = $(shell dpkg-architecture -qDEB_HOST_ARCH_CPU)
+INCLUDE_HEADERS_ARCH = asm-$(ARCH) config linux
+INCLUDE_HEADERS = asm-$(ARCH) linux acpi asm-generic crypto drm Kbuild keys math-emu media mtd net pcmcia rdma rxrpc scsi sound video xen
+RM_SCRIPTS = bloat-o-meter show_delta
+DEBUG_MODULES = oprofile.ko
+
+ifneq (,$(findstring parallel,$(DEB_BUILD_OPTIONS)))
+    PARALLEL_JOBS := $(shell echo $(DEB_BUILD_OPTIONS) | \
+        sed -e 's/.*parallel=\([0-9]\+\).*/\1/')
+    ifeq ($(DEB_BUILD_OPTIONS),$(PARALLEL_JOBS))
+        PARALLEL_JOBS := $(shell if [ -f /proc/cpuinfo ]; \
+            then echo `cat /proc/cpuinfo | grep 'processor' | wc -l`; \
+            else echo 1; fi)
+    endif
+    NJOBS := -j$(PARALLEL_JOBS)
+endif
+
+get-orig-source:
+	wget http://repository.maemo.org/pool/maemo5.0/free/k/kernel/kernel_2.6.28.orig.tar.gz -O kernel-power_2.6.28.orig.tar.gz
+
+source-stamp:
+	dh_testdir
+	mkdir -p $(KSRC)
+	tar cf - `echo * | sed -e 's/ debian / /g;s/ [^ ]*\.deb / /g;s/ [^ ]*\.gz / /g;s/ [^ ]*fiasco[^ ]* / /g'` 2>/dev/null | ( cd $(KSRC); umask 000; tar xspf - )
+	cd $(KSRC) && ( QUILT_PATCHES=$(CURDIR)/debian/patches quilt push -a -q || test $$? = 2 )
+	cd $(BUILDTMP) && tar --exclude=".pc" --bzip2 -cf $(SOURCE_PACKAGE)-$(RELEASE).tar.bz2 $(PACKAGE)
+	touch $@
+
+configure-stamp: source-stamp
+	$(MAKE) -C $(KSRC) $(NJOBS) $(EXTRAVERSION) $(DEFCONFIG)
+	touch $@
+
+kernel-stamp: configure-stamp
+	$(MAKE) -C $(KSRC) $(NJOBS) $(EXTRAVERSION) zImage
+	touch $@
+
+modules-stamp: configure-stamp
+	$(MAKE) -C $(KSRC) $(NJOBS) $(EXTRAVERSION) modules
+	touch $@
+
+headers: kernel-stamp modules-stamp
+
+clean:
+	dh_testdir
+	dh_testroot
+	rm -rf $(BUILDTMP)
+	rm -f debian/files debian/$(FLASHER_PACKAGE).postinst debian/$(MODULES_PACKAGE).postinst debian/$(MODULES_PACKAGE).postrm
+	rm -f source-stamp configure-stamp kernel-stamp modules-stamp
+	dh_clean
+
+install-kernel:
+	dh_testdir
+	dh_testroot
+	mkdir -p $(CURDIR)/debian/$(KERNEL_PACKAGE)/boot
+	fiasco-gen -o $(CURDIR)/debian/$(KERNEL_PACKAGE)/boot/zImage-$(RELEASE).fiasco -g -k $(KSRC)/arch/arm/boot/zImage -v $(RELEASE)
+	chmod 644 $(CURDIR)/debian/$(KERNEL_PACKAGE)/boot/zImage-$(RELEASE).fiasco
+
+install-bootimg:
+	dh_testdir
+	dh_testroot
+	mkdir -p $(CURDIR)/debian/$(BOOTIMG_PACKAGE)/boot
+	mkdir -p $(CURDIR)/debian/$(BOOTIMG_PACKAGE)/$(MULTIBOOTDIR)
+	mkdir -p $(CURDIR)/debian/$(BOOTIMG_PACKAGE)/$(BOOTMENUDIR)
+	install -m644 $(KSRC)/arch/arm/boot/zImage $(CURDIR)/debian/$(BOOTIMG_PACKAGE)/boot/zImage-$(RELEASE)
+	echo "ITEM_NAME=\"Maemo 5 with $(PACKAGE) $(RELEASE)\"" > $(CURDIR)/debian/$(BOOTIMG_PACKAGE)/$(MULTIBOOTFILE)
+	echo "ITEM_KERNEL=\"$(RELEASE)\"" >> $(CURDIR)/debian/$(BOOTIMG_PACKAGE)/$(MULTIBOOTFILE)
+	echo "ITEM_MODULES=\"ext3\"" >> $(CURDIR)/debian/$(BOOTIMG_PACKAGE)/$(MULTIBOOTFILE)
+	echo "ITEM_USEATAG=1" >> $(CURDIR)/debian/$(BOOTIMG_PACKAGE)/$(MULTIBOOTFILE)
+	cp $(CURDIR)/debian/$(BOOTIMG_PACKAGE)/$(MULTIBOOTFILE) $(CURDIR)/debian/$(BOOTIMG_PACKAGE)/$(BOOTMENUFILE)
+	chmod 644 $(CURDIR)/debian/$(BOOTIMG_PACKAGE)/$(MULTIBOOTFILE)
+	chmod 644 $(CURDIR)/debian/$(BOOTIMG_PACKAGE)/$(BOOTMENUFILE)
+
+install-flasher:
+	dh_testdir
+	dh_testroot
+	mkdir -p $(CURDIR)/debian/$(FLASHER_PACKAGE)/etc/sudoers.d
+	mkdir -p $(CURDIR)/debian/$(FLASHER_PACKAGE)/usr/sbin
+	mkdir -p $(CURDIR)/debian/$(FLASHER_PACKAGE)/usr/share/applications/hildon
+	install -m644 $(CURDIR)/debian/kernel-power-flasher.sudoers $(CURDIR)/debian/$(FLASHER_PACKAGE)/etc/sudoers.d
+	install -m755 $(CURDIR)/debian/kernel-power-uninstall $(CURDIR)/debian/$(FLASHER_PACKAGE)/usr/sbin
+	install -m644 $(CURDIR)/debian/kernel-power-uninstall.desktop $(CURDIR)/debian/$(FLASHER_PACKAGE)/usr/share/applications/hildon
+
+install-debug: install-modules
+	mkdir -p $(CURDIR)/debian/$(DEBUG_PACKAGE)/usr/lib/debug/lib/modules/$(RELEASE)
+	mkdir -p $(CURDIR)/debian/$(DEBUG_PACKAGE)/lib/modules/$(RELEASE)
+	install -m644 $(KSRC)/vmlinux $(CURDIR)/debian/$(DEBUG_PACKAGE)/usr/lib/debug/vmlinux-$(RELEASE)
+	for f in $$(find $(CURDIR)/debian/$(MODULES_PACKAGE) -name "*.ko"); do \
+		objcopy --only-keep-debug $$f $(CURDIR)/debian/$(DEBUG_PACKAGE)/usr/lib/debug/lib/modules/$(RELEASE)/$$(basename $$f); \
+		strip --remove-section=.comment --remove-section=.note --strip-unneeded  $(CURDIR)/debian/$(MODULES_PACKAGE)/lib/modules/$(RELEASE)/$$(basename $$f); \
+		objcopy --add-gnu-debuglink $(CURDIR)/debian/$(DEBUG_PACKAGE)/usr/lib/debug/lib/modules/$(RELEASE)/$$(basename $$f) $(CURDIR)/debian/$(MODULES_PACKAGE)/lib/modules/$(RELEASE)/$$(basename $$f); \
+	done
+
+install-modules-debug: install-debug
+	mkdir -p $(CURDIR)/debian/$(DEBUG_MODULES_PACKAGE)/lib/modules/$(RELEASE)
+	-for f in $(DEBUG_MODULES); do \
+		mv $(CURDIR)/debian/$(MODULES_PACKAGE)/lib/modules/$(RELEASE)/$$f  \
+		   $(CURDIR)/debian/$(DEBUG_MODULES_PACKAGE)/lib/modules/$(RELEASE)/$$f; \
+	done
+
+install-modules:
+	dh_testdir
+	dh_testroot
+	mkdir -p $(CURDIR)/debian/$(MODULES_PACKAGE)/lib/modules/$(RELEASE)
+	mkdir -p $(CURDIR)/debian/$(MODULES_PACKAGE)/etc/modprobe.d
+	for f in $$(find $(KSRC) -name "*.ko"); do \
+		install -c -m644 $$f $(CURDIR)/debian/$(MODULES_PACKAGE)/lib/modules/$(RELEASE)/$$(basename $$f); \
+		strip --remove-section=.comment --remove-section=.note --strip-unneeded  $(CURDIR)/debian/$(MODULES_PACKAGE)/lib/modules/$(RELEASE)/$$(basename $$f); \
+	done
+	install -m644 $(CURDIR)/debian/kernel-power.blacklist $(CURDIR)/debian/$(MODULES_PACKAGE)/etc/modprobe.d
+
+install-headers:
+	dh_testdir
+	dh_testroot
+	mkdir -p $(CURDIR)/debian/$(HEADERS_PACKAGE)/usr/src/$(HEADERS_PACKAGE)/
+	install -p -m644 $(KSRC)/.config  $(CURDIR)/debian/$(HEADERS_PACKAGE)/usr/src/$(HEADERS_PACKAGE)/
+	install -p -m644 $(KSRC)/Makefile $(CURDIR)/debian/$(HEADERS_PACKAGE)/usr/src/$(HEADERS_PACKAGE)/
+	install -p -m644 $(KSRC)/Module.symvers $(CURDIR)/debian/$(HEADERS_PACKAGE)/usr/src/$(HEADERS_PACKAGE)/
+	cd $(KSRC) && install -p -m 644 -D include/config/auto.conf \
+		$(CURDIR)/debian/$(HEADERS_PACKAGE)/usr/src/$(HEADERS_PACKAGE)/include/config/auto.conf
+	cd $(KSRC) && install -p -m 644 -D include/config/kernel.release \
+		$(CURDIR)/debian/$(HEADERS_PACKAGE)/usr/src/$(HEADERS_PACKAGE)/include/config/kernel.release
+	cd $(KSRC) && \
+		find arch/$(ARCH) $(foreach dir,$(INCLUDE_HEADERS),include/$(dir)) -name '*.h' \
+			-exec install -D -m644 {} $(CURDIR)/debian/$(HEADERS_PACKAGE)/usr/src/$(HEADERS_PACKAGE)/{} \;
+	cd $(KSRC) && \
+		find $(foreach dir,$(INCLUDE_HEADERS_ARCH),include/$(dir)) -name '*.h' \
+			-exec install -D -m644 {} $(CURDIR)/debian/$(HEADERS_PACKAGE)/usr/src/$(HEADERS_PACKAGE)/{} \;
+	cd $(KSRC) && \
+		find ./ -path "./debian" -prune -o -path "./.pc" -prune -o \( -name Makefile -or -name Kbuild -or -name Kconfig\* \) \
+			-exec install -D -m644 {} $(CURDIR)/debian/$(HEADERS_PACKAGE)/usr/src/$(HEADERS_PACKAGE)/{} \;
+	ln -sf asm-$(ARCH) $(CURDIR)/debian/$(HEADERS_PACKAGE)/usr/src/$(HEADERS_PACKAGE)/include/asm
+	rm -rf $(CURDIR)/debian/$(HEADERS_PACKAGE)/usr/src/$(HEADERS_PACKAGE)/scripts
+	ln -sf ../$(KBUILD_PACKAGE)/scripts $(CURDIR)/debian/$(HEADERS_PACKAGE)/usr/src/$(HEADERS_PACKAGE)
+	cp $(KSRC)/arch/$(ARCH)/kernel/asm-offsets.s $(CURDIR)/debian/$(HEADERS_PACKAGE)/usr/src/$(HEADERS_PACKAGE)/arch/$(ARCH)/kernel
+#install /lib/modules symlink
+	mkdir -p $(CURDIR)/debian/$(HEADERS_PACKAGE)/lib/modules/$(RELEASE)
+	ln -sf /usr/src/$(HEADERS_PACKAGE) $(CURDIR)/debian/$(HEADERS_PACKAGE)/lib/modules/$(RELEASE)/build
+#install kbuild
+	mkdir -p $(CURDIR)/debian/$(HEADERS_PACKAGE)/usr/src/$(KBUILD_PACKAGE)
+	cp -a $(KSRC)/scripts $(CURDIR)/debian/$(HEADERS_PACKAGE)/usr/src/$(KBUILD_PACKAGE)
+#kbuild fixes
+	cd $(CURDIR)/debian/$(HEADERS_PACKAGE)/usr/src/$(KBUILD_PACKAGE)/scripts && rm -f $(RM_SCRIPTS) && chmod a-x mkcompile_h
+	#find $(CURDIR)/debian/$(HEADERS_PACKAGE) -name ".gitignore" -delete
+
+install-libc-headers: source-stamp
+	dh_testdir
+	dh_testroot
+	$(MAKE) -C $(KSRC) headers_check ARCH=$(ARCH)
+	$(MAKE) -C $(KSRC) headers_install ARCH=$(ARCH) INSTALL_HDR_PATH=$(CURDIR)/debian/$(LIBC_PACKAGE)/usr
+
+install-indep:
+	dh_testdir
+	dh_testroot
+	mkdir -p debian/$(SOURCE_PACKAGE)/usr/src
+	install -m 644 $(BUILDTMP)/$(SOURCE_PACKAGE)-$(RELEASE).tar.bz2 debian/$(SOURCE_PACKAGE)/usr/src
+
+install-arch: build-arch install-kernel install-bootimg install-flasher install-modules install-debug install-modules-debug install-headers install-libc-headers
+
+ifeq ($(ARCH),arm)
+build-arch: kernel-stamp modules-stamp headers
+else
+build-arch:
+endif
+
+build-indep: source-stamp
+
+build: build-arch build-indep
+
+binary-indep: install-indep
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs -i
+	dh_installdocs -i
+	dh_installdeb -i
+	dh_gencontrol -i
+	dh_md5sums -i
+	dh_builddeb -i
+
+ifeq ($(ARCH),arm)
+binary-arch: build-arch install-arch
+else
+binary-arch: install-libc-headers
+endif
+	sed \
+		-e 's,@RELEASE@,$(RELEASE),g' \
+		< $(CURDIR)/debian/$(FLASHER_PACKAGE).postinst.in \
+		> $(CURDIR)/debian/$(FLASHER_PACKAGE).postinst
+	sed \
+		-e 's,@RELEASE@,$(RELEASE),g' \
+		< $(CURDIR)/debian/$(MODULES_PACKAGE).postinst.in \
+		> $(CURDIR)/debian/$(MODULES_PACKAGE).postinst
+	sed \
+		-e 's,@RELEASE@,$(RELEASE),g' \
+		< $(CURDIR)/debian/$(MODULES_PACKAGE).postrm.in \
+		> $(CURDIR)/debian/$(MODULES_PACKAGE).postrm
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs -s
+	dh_installdocs -s
+ifeq ($(ARCH),arm)
+	dh_strip -p$(HEADERS_PACKAGE)
+endif
+	dh_compress -s
+	dh_fixperms -s --exclude /usr/src/kernel-headers
+	dh_installdeb -s
+	dh_shlibdeps -s
+	dh_gencontrol -s
+	dh_md5sums -s
+	dh_builddeb -s
+binary: binary-arch binary-indep
+.PHONY: build clean binary-indep binary-arch binary install

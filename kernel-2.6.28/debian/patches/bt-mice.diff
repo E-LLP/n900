@@ -1,0 +1,11 @@
+--- a/net/bluetooth/hci_conn.c	2012-01-30 12:53:26.208588006 -0500
++++ b/net/bluetooth/hci_conn.c	2012-01-30 12:45:59.891069000 -0500
+@@ -498,7 +498,7 @@
+ 	if (test_bit(HCI_RAW, &hdev->flags))
+ 		return;
+ 
+-	if (conn->mode != HCI_CM_SNIFF)
++	if (conn->mode != HCI_CM_SNIFF || (((conn->dev_class[1]&0x1f) == 0x05) && !conn->power_save))
+ 		goto timer;
+ 
+ 	if (!test_and_set_bit(HCI_CONN_MODE_CHANGE_PEND, &conn->pend)) {
