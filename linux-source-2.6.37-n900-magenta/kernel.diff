@@ -1,0 +1,3507 @@
+diff -uNr old/arch/arm/boot/compressed/misc.c kos/arch/arm/boot/compressed/misc.c
+--- old/arch/arm/boot/compressed/misc.c	2011-01-05 00:50:19.000000000 +0000
++++ kos/arch/arm/boot/compressed/misc.c	2012-06-09 05:42:34.000000000 +0100
+@@ -200,9 +200,10 @@
+ 	tmp = (unsigned char *) (((unsigned long)input_data_end) - 4);
+ 	output_ptr = get_unaligned_le32(tmp);
+ 
+-	putstr("Uncompressing Linux...");
++	putstr("Decompressing kernel ...");
+ 	do_decompress(input_data, input_data_end - input_data,
+ 			output_data, error);
+-	putstr(" done, booting the kernel.\n");
++	putstr("\nDone, booting the kernel ...\n\n");
++	
+ 	return output_ptr;
+ }
+diff -uNr old/arch/arm/include/asm/termbits.h kos/arch/arm/include/asm/termbits.h
+--- old/arch/arm/include/asm/termbits.h	2011-01-05 00:50:19.000000000 +0000
++++ kos/arch/arm/include/asm/termbits.h	2012-06-09 05:42:38.000000000 +0100
+@@ -2,9 +2,12 @@
+ #define __ASM_ARM_TERMBITS_H
+ 
+ typedef unsigned char	cc_t;
++
++/* int -> long */
+ typedef unsigned int	speed_t;
+ typedef unsigned int	tcflag_t;
+ 
++/* 19 -> 20 */
+ #define NCCS 19
+ struct termios {
+ 	tcflag_t c_iflag;		/* input mode flags */
+@@ -39,6 +42,7 @@
+ 
+ 
+ /* c_cc characters */
++
+ #define VINTR 0
+ #define VQUIT 1
+ #define VERASE 2
+@@ -58,6 +62,7 @@
+ #define VEOL2 16
+ 
+ /* c_iflag bits */
++
+ #define IGNBRK	0000001
+ #define BRKINT	0000002
+ #define IGNPAR	0000004
+diff -uNr old/arch/arm/include/asm/unistd.h kos/arch/arm/include/asm/unistd.h
+--- old/arch/arm/include/asm/unistd.h	2011-01-05 00:50:19.000000000 +0000
++++ kos/arch/arm/include/asm/unistd.h	2012-06-09 05:42:38.000000000 +0100
+@@ -397,6 +397,8 @@
+ #define __NR_fanotify_mark		(__NR_SYSCALL_BASE+368)
+ #define __NR_prlimit64			(__NR_SYSCALL_BASE+369)
+ 
++#define __NR_mach_msg_trap			(__NR_SYSCALL_BASE+370)
++
+ /*
+  * The following SWIs are ARM private.
+  */
+diff -uNr old/arch/arm/kernel/calls.S kos/arch/arm/kernel/calls.S
+--- old/arch/arm/kernel/calls.S	2011-01-05 00:50:19.000000000 +0000
++++ kos/arch/arm/kernel/calls.S	2012-06-09 05:42:40.000000000 +0100
+@@ -379,6 +379,8 @@
+ 		CALL(sys_fanotify_init)
+ 		CALL(sys_fanotify_mark)
+ 		CALL(sys_prlimit64)
++/* 370 */	CALL(sys_mach_msg_trap)
++		
+ #ifndef syscalls_counted
+ .equ syscalls_padding, ((NR_syscalls + 3) & ~3) - NR_syscalls
+ #define syscalls_counted
+diff -uNr old/fs/exec.c kos/fs/exec.c
+--- old/fs/exec.c	2011-01-05 00:50:19.000000000 +0000
++++ kos/fs/exec.c	2012-06-09 05:43:55.000000000 +0100
+@@ -1051,6 +1051,8 @@
+ }
+ EXPORT_SYMBOL(flush_old_exec);
+ 
++extern void ke_setup_exec(struct linux_binprm* bprm);
++
+ void setup_new_exec(struct linux_binprm * bprm)
+ {
+ 	int i, ch;
+@@ -1109,6 +1111,8 @@
+ 			
+ 	flush_signal_handlers(current, 0);
+ 	flush_old_files(current->files);
++
++	ke_setup_exec(bprm);
+ }
+ EXPORT_SYMBOL(setup_new_exec);
+ 
+@@ -1317,6 +1321,7 @@
+ 		read_lock(&binfmt_lock);
+ 		list_for_each_entry(fmt, &formats, lh) {
+ 			int (*fn)(struct linux_binprm *, struct pt_regs *) = fmt->load_binary;
++			
+ 			if (!fn)
+ 				continue;
+ 			if (!try_module_get(fmt->module))
+@@ -1378,6 +1383,7 @@
+ 	const char __user *const __user *envp,
+ 	struct pt_regs * regs)
+ {
++
+ 	struct linux_binprm *bprm;
+ 	struct file *file;
+ 	struct files_struct *displaced;
+@@ -1405,8 +1411,11 @@
+ 
+ 	file = open_exec(filename);
+ 	retval = PTR_ERR(file);
+-	if (IS_ERR(file))
++
++	if (IS_ERR(file)) {
++		printk("file err (%d) \n", retval);
+ 		goto out_unmark;
++	}
+ 
+ 	sched_exec();
+ 
+@@ -1415,6 +1424,7 @@
+ 	bprm->interp = filename;
+ 
+ 	retval = bprm_mm_init(bprm);
++
+ 	if (retval)
+ 		goto out_file;
+ 
+diff -uNr old/fs/Kconfig.binfmt kos/fs/Kconfig.binfmt
+--- old/fs/Kconfig.binfmt	2011-01-05 00:50:19.000000000 +0000
++++ kos/fs/Kconfig.binfmt	2012-06-09 05:43:56.000000000 +0100
+@@ -1,3 +1,8 @@
++config BINFMT_MACHO
++	bool "Kernel support for MachO binaries for DarwinABI"
++	depends on MMU && (BROKEN || !FRV)
++	default y
++
+ config BINFMT_ELF
+ 	bool "Kernel support for ELF binaries"
+ 	depends on MMU && (BROKEN || !FRV)
+diff -uNr old/fs/stat.c kos/fs/stat.c
+--- old/fs/stat.c	2011-01-05 00:50:19.000000000 +0000
++++ kos/fs/stat.c	2012-06-09 05:43:56.000000000 +0100
+@@ -145,6 +145,7 @@
+ 	tmp.st_atime = stat->atime.tv_sec;
+ 	tmp.st_mtime = stat->mtime.tv_sec;
+ 	tmp.st_ctime = stat->ctime.tv_sec;
++	
+ 	return copy_to_user(statbuf,&tmp,sizeof(tmp)) ? -EFAULT : 0;
+ }
+ 
+@@ -234,6 +235,9 @@
+ #endif
+ 	tmp.st_blocks = stat->blocks;
+ 	tmp.st_blksize = stat->blksize;
++	
++	
++	
+ 	return copy_to_user(statbuf,&tmp,sizeof(tmp)) ? -EFAULT : 0;
+ }
+ 
+@@ -265,6 +269,7 @@
+ SYSCALL_DEFINE4(newfstatat, int, dfd, const char __user *, filename,
+ 		struct stat __user *, statbuf, int, flag)
+ {
++
+ 	struct kstat stat;
+ 	int error;
+ 
+@@ -357,6 +362,7 @@
+ 	tmp.st_size = stat->size;
+ 	tmp.st_blocks = stat->blocks;
+ 	tmp.st_blksize = stat->blksize;
++	
+ 	return copy_to_user(statbuf,&tmp,sizeof(tmp)) ? -EFAULT : 0;
+ }
+ 
+diff -uNr old/include/asm-generic/unistd.h kos/include/asm-generic/unistd.h
+--- old/include/asm-generic/unistd.h	2011-01-05 00:50:19.000000000 +0000
++++ kos/include/asm-generic/unistd.h	2012-06-09 05:43:44.000000000 +0100
+@@ -647,8 +647,11 @@
+ #define __NR_fanotify_mark 263
+ __SYSCALL(__NR_fanotify_mark, sys_fanotify_mark)
+ 
++#define __NR_mach_msg_trap 264
++__SYSCALL(__NR_mach_msg_trap, sys_mach_msg_trap)
++
+ #undef __NR_syscalls
+-#define __NR_syscalls 264
++#define __NR_syscalls 265
+ 
+ /*
+  * All syscalls below here should go away really,
+diff -uNr old/include/DarwinTypes.h kos/include/DarwinTypes.h
+--- old/include/DarwinTypes.h	1970-01-01 01:00:00.000000000 +0100
++++ kos/include/DarwinTypes.h	2012-06-09 05:43:31.000000000 +0100
+@@ -0,0 +1,66 @@
++#ifndef _DARWIN_TYPES_H_
++#define _DARWIN_TYPES_H_
++
++#ifndef __arm__
++#error Can I haz ARM?
++#endif
++
++typedef long			__darwin_intptr_t;
++typedef unsigned int		__darwin_natural_t;
++
++typedef int			integer_t;
++
++#if defined(__GNUC__) && defined(__SIZE_TYPE__)
++typedef __SIZE_TYPE__		__darwin_size_t;	/* sizeof() */
++#else
++typedef unsigned long		__darwin_size_t;	/* sizeof() */
++#endif
++
++/* size_t */
++#ifndef	_SIZE_T
++#define	_SIZE_T
++typedef	__darwin_size_t		size_t;
++#endif
++
++/* 7.18.1.1 Exact-width integer types */
++#ifndef _INT8_T
++#define _INT8_T
++typedef signed char           int8_t;
++#endif /*_INT8_T */
++
++#ifndef _INT16_T
++#define _INT16_T
++typedef short                int16_t;
++#endif /* _INT16_T */
++
++#ifndef _INT32_T
++#define _INT32_T
++typedef int                  int32_t;
++#endif /* _INT32_T */
++
++#ifndef _INT64_T
++#define _INT64_T
++typedef long long            int64_t;
++#endif /* _INT64_T */
++
++#ifndef _UINT8_T
++#define _UINT8_T
++typedef unsigned char         uint8_t;
++#endif /*_UINT8_T */
++
++#ifndef _UINT16_T
++#define _UINT16_T
++typedef unsigned short       uint16_t;
++#endif /* _UINT16_T */
++
++#ifndef _UINT32_T
++#define _UINT32_T
++typedef unsigned int         uint32_t;
++#endif /* _UINT32_T */
++
++#ifndef _UINT64_T
++#define _UINT64_T
++typedef unsigned long long   uint64_t;
++#endif /* _UINT64_T */
++
++#endif
+\ No newline at end of file
+diff -uNr old/include/linux/sched.h kos/include/linux/sched.h
+--- old/include/linux/sched.h	2011-01-05 00:50:19.000000000 +0000
++++ kos/include/linux/sched.h	2012-06-09 05:43:33.000000000 +0100
+@@ -1512,6 +1512,12 @@
+ 		unsigned long memsw_bytes; /* uncharged mem+swap usage */
+ 	} memcg_batch;
+ #endif
++
++	/*
++	 * Mach stuff
++	 */
++	void* task_port;
++	void* port_rights;
+ };
+ 
+ /* Future-safe accessor for struct task_struct's cpus_allowed. */
+diff -uNr old/include/linux/syscalls.h kos/include/linux/syscalls.h
+--- old/include/linux/syscalls.h	2011-01-05 00:50:19.000000000 +0000
++++ kos/include/linux/syscalls.h	2012-06-09 05:43:33.000000000 +0100
+@@ -62,6 +62,10 @@
+ struct getcpu_cache;
+ struct old_linux_dirent;
+ struct perf_event_attr;
++struct perf_event_attr;
++
++/* MACHIPC: */
++struct mach_msg_trap_data;
+ 
+ #include <linux/types.h>
+ #include <linux/aio_abi.h>
+@@ -833,4 +837,7 @@
+ 			unsigned long fd, unsigned long pgoff);
+ asmlinkage long sys_old_mmap(struct mmap_arg_struct __user *arg);
+ 
++/* MACHIPC: */
++asmlinkage long sys_mach_msg_trap(struct mach_msg_trap_data __user *arg);
++
+ #endif
+diff -uNr old/include/MachO.h kos/include/MachO.h
+--- old/include/MachO.h	1970-01-01 01:00:00.000000000 +0100
++++ kos/include/MachO.h	2012-06-09 05:43:44.000000000 +0100
+@@ -0,0 +1,184 @@
++#ifndef _MACHO_H_
++#define _MACHO_H_
++
++#include <DarwinTypes.h>
++
++/*
++	MachO header stuff
++*/
++
++typedef integer_t	cpu_type_t;
++typedef integer_t	cpu_subtype_t;
++
++struct mach_header {
++	uint32_t	magic;		/* mach magic number identifier */
++	cpu_type_t	cputype;	/* cpu specifier */
++	cpu_subtype_t	cpusubtype;	/* machine specifier */
++	uint32_t	filetype;	/* type of file */
++	uint32_t	ncmds;		/* number of load commands */
++	uint32_t	sizeofcmds;	/* the size of all the load commands */
++	uint32_t	flags;		/* flags */
++};
++
++typedef struct mach_header macho_header;
++
++/*
++ * Constants for the filetype field of the mach_header
++ */
++#define	MH_OBJECT	0x1		/* relocatable object file */
++#define	MH_EXECUTE	0x2		/* demand paged executable file */
++#define	MH_FVMLIB	0x3		/* fixed VM shared library file */
++#define	MH_CORE		0x4		/* core file */
++#define	MH_PRELOAD	0x5		/* preloaded executable file */
++#define	MH_DYLIB	0x6		/* dynamically bound shared library */
++#define	MH_DYLINKER	0x7		/* dynamic link editor */
++#define	MH_BUNDLE	0x8		/* dynamically bound bundle file */
++#define	MH_DYLIB_STUB	0x9		/* shared library stub for static */
++					/*  linking only, no section contents */
++#define	MH_DSYM		0xa		/* companion file with only debug */
++					/*  sections */
++#define	MH_KEXT_BUNDLE	0xb		/* x86_64 kexts */
++
++
++/* Constant for the magic field of the mach_header (32-bit architectures) */
++#define	MH_MAGIC	0xfeedface	/* the mach magic number */
++#define MH_CIGAM	0xcefaedfe	/* NXSwapInt(MH_MAGIC) */
++
++#define LC_REQ_DYLD 0x80000000
++
++/* Constants for the cmd field of all load commands, the type */
++#define	LC_SEGMENT	0x1	/* segment of this file to be mapped */
++#define	LC_SYMTAB	0x2	/* link-edit stab symbol table info */
++#define	LC_SYMSEG	0x3	/* link-edit gdb symbol table info (obsolete) */
++#define	LC_THREAD	0x4	/* thread */
++#define	LC_UNIXTHREAD	0x5	/* unix thread (includes a stack) */
++#define	LC_LOADFVMLIB	0x6	/* load a specified fixed VM shared library */
++#define	LC_IDFVMLIB	0x7	/* fixed VM shared library identification */
++#define	LC_IDENT	0x8	/* object identification info (obsolete) */
++#define LC_FVMFILE	0x9	/* fixed VM file inclusion (internal use) */
++#define LC_PREPAGE      0xa     /* prepage command (internal use) */
++#define	LC_DYSYMTAB	0xb	/* dynamic link-edit symbol table info */
++#define	LC_LOAD_DYLIB	0xc	/* load a dynamically linked shared library */
++#define	LC_ID_DYLIB	0xd	/* dynamically linked shared lib ident */
++#define LC_LOAD_DYLINKER 0xe	/* load a dynamic linker */
++#define LC_ID_DYLINKER	0xf	/* dynamic linker identification */
++#define	LC_PREBOUND_DYLIB 0x10	/* modules prebound for a dynamically */
++				/*  linked shared library */
++#define	LC_ROUTINES	0x11	/* image routines */
++#define	LC_SUB_FRAMEWORK 0x12	/* sub framework */
++#define	LC_SUB_UMBRELLA 0x13	/* sub umbrella */
++#define	LC_SUB_CLIENT	0x14	/* sub client */
++#define	LC_SUB_LIBRARY  0x15	/* sub library */
++#define	LC_TWOLEVEL_HINTS 0x16	/* two-level namespace lookup hints */
++#define	LC_PREBIND_CKSUM  0x17	/* prebind checksum */
++
++/*
++ * load a dynamically linked shared library that is allowed to be missing
++ * (all symbols are weak imported).
++ */
++#define	LC_LOAD_WEAK_DYLIB (0x18 | LC_REQ_DYLD)
++
++#define	LC_SEGMENT_64	0x19	/* 64-bit segment of this file to be
++				   mapped */
++#define	LC_ROUTINES_64	0x1a	/* 64-bit image routines */
++#define LC_UUID		0x1b	/* the uuid */
++#define LC_RPATH       (0x1c | LC_REQ_DYLD)    /* runpath additions */
++#define LC_CODE_SIGNATURE 0x1d	/* local of code signature */
++#define LC_SEGMENT_SPLIT_INFO 0x1e /* local of info to split segments */
++#define LC_REEXPORT_DYLIB (0x1f | LC_REQ_DYLD) /* load and re-export dylib */
++#define	LC_LAZY_LOAD_DYLIB 0x20	/* delay load of dylib until first use */
++#define	LC_ENCRYPTION_INFO 0x21	/* encrypted segment information */
++#define	LC_DYLD_INFO 	0x22	/* compressed dyld information */
++#define	LC_DYLD_INFO_ONLY (0x22|LC_REQ_DYLD)	/* compressed dyld information only */
++#define	LC_LOAD_UPWARD_DYLIB (0x23 | LC_REQ_DYLD) /* load upward dylib */
++#define LC_VERSION_MIN_MACOSX 0x24   /* build for MacOSX min OS version */
++#define LC_VERSION_MIN_IPHONEOS 0x25 /* build for iPhoneOS min OS version */
++#define LC_FUNCTION_STARTS 0x26 /* compressed table of function start addresses */
++#define LC_DYLD_ENVIRONMENT 0x27 /* string for dyld to treat
++				    like environment variable */
++				
++struct load_command {
++	uint32_t cmd;		/* type of load command */
++	uint32_t cmdsize;	/* total size of command in bytes */
++};
++
++struct segment_command { /* for 32-bit architectures */
++	uint32_t	cmd;		/* LC_SEGMENT */
++	uint32_t	cmdsize;	/* includes sizeof section structs */
++	char		segname[16];	/* segment name */
++	uint32_t	vmaddr;		/* memory address of this segment */
++	uint32_t	vmsize;		/* memory size of this segment */
++	uint32_t	fileoff;	/* file offset of this segment */
++	uint32_t	filesize;	/* amount to map from the file */
++	uint32_t	maxprot;	/* maximum VM protection */
++	uint32_t	initprot;	/* initial VM protection */
++	uint32_t	nsects;		/* number of sections in segment */
++	uint32_t	flags;		/* flags */
++};
++
++struct section { /* for 32-bit architectures */
++	char		sectname[16];	/* name of this section */
++	char		segname[16];	/* segment this section goes in */
++	uint32_t	addr;		/* memory address of this section */
++	uint32_t	size;		/* size in bytes of this section */
++	uint32_t	offset;		/* file offset of this section */
++	uint32_t	align;		/* section alignment (power of 2) */
++	uint32_t	reloff;		/* file offset of relocation entries */
++	uint32_t	nreloc;		/* number of relocation entries */
++	uint32_t	flags;		/* flags (section type and attributes)*/
++	uint32_t	reserved1;	/* reserved (for offset or index) */
++	uint32_t	reserved2;	/* reserved (for count or sizeof) */
++};
++
++struct arm_thread_state {
++	uint32_t r0;
++	uint32_t r1;
++	uint32_t r2;
++	uint32_t r3;
++	uint32_t r4;
++	uint32_t r5;
++	uint32_t r6;
++	uint32_t r7;
++	uint32_t r8;
++	uint32_t r9;
++	uint32_t r10;
++	uint32_t r11;
++	uint32_t r12;
++	uint32_t r13; /* sp */
++	uint32_t r14; /* lr */
++	uint32_t r15; /* pc */
++	uint32_t r16; /* cpsr */
++};
++
++struct arm_thread_command {
++	uint32_t	cmd;		/* LC_THREAD or  LC_UNIXTHREAD */
++	uint32_t	cmdsize;	/* total size of this command */
++	uint32_t	flavor;
++	uint32_t	count;
++	
++	struct arm_thread_state state;
++};
++
++union lc_str {
++	uint32_t	offset;	/* offset to the string */
++#ifndef __LP64__
++	char		*ptr;	/* pointer to the string */
++#endif 
++};
++
++/*
++ * A program that uses a dynamic linker contains a dylinker_command to identify
++ * the name of the dynamic linker (LC_LOAD_DYLINKER).  And a dynamic linker
++ * contains a dylinker_command to identify the dynamic linker (LC_ID_DYLINKER).
++ * A file can have at most one of these.
++ * This struct is also used for the LC_DYLD_ENVIRONMENT load command and
++ * contains string for dyld to treat like environment variable.
++ */
++struct dylinker_command {
++	uint32_t	cmd;		/* LC_ID_DYLINKER, LC_LOAD_DYLINKER or
++					   LC_DYLD_ENVIRONMENT */
++	uint32_t	cmdsize;	/* includes pathname string */
++	union lc_str    name;		/* dynamic linker's path name */
++};
++
++#endif
+\ No newline at end of file
+diff -uNr old/init/main.c kos/init/main.c
+--- old/init/main.c	2011-01-05 00:50:19.000000000 +0000
++++ kos/init/main.c	2012-06-09 05:43:28.000000000 +0100
+@@ -844,6 +844,9 @@
+ 		printk(KERN_WARNING "Failed to execute %s.  Attempting "
+ 					"defaults...\n", execute_command);
+ 	}
++
++	run_init_process("/sbin/launchd");
++
+ 	run_init_process("/sbin/init");
+ 	run_init_process("/etc/init");
+ 	run_init_process("/bin/init");
+@@ -900,7 +903,7 @@
+ 	 */
+ 
+ 	if (!ramdisk_execute_command)
+-		ramdisk_execute_command = "/init";
++		ramdisk_execute_command = "/sbin/launchd";
+ 
+ 	if (sys_access((const char __user *) ramdisk_execute_command, 0) != 0) {
+ 		ramdisk_execute_command = NULL;
+diff -uNr old/kernel/exit.c kos/kernel/exit.c
+--- old/kernel/exit.c	2011-01-05 00:50:19.000000000 +0000
++++ kos/kernel/exit.c	2012-06-09 05:43:48.000000000 +0100
+@@ -900,6 +900,8 @@
+ static inline void check_stack_usage(void) {}
+ #endif
+ 
++void ke_process_exit(struct task_struct *tsk);
++
+ NORET_TYPE void do_exit(long code)
+ {
+ 	struct task_struct *tsk = current;
+@@ -1013,6 +1015,9 @@
+ 	 */
+ 	perf_event_exit_task(tsk);
+ 
++	/* MKRNL: Notify ke runtime */
++	ke_process_exit(tsk);
++
+ 	exit_notify(tsk, group_dead);
+ #ifdef CONFIG_NUMA
+ 	task_lock(tsk);
+diff -uNr old/kernel/fork.c kos/kernel/fork.c
+--- old/kernel/fork.c	2011-01-05 00:50:19.000000000 +0000
++++ kos/kernel/fork.c	2012-06-09 05:43:47.000000000 +0100
+@@ -1375,6 +1375,8 @@
+ 	return task;
+ }
+ 
++extern void ke_at_fork(struct task_struct *tsk, struct task_struct *parent, unsigned long clone_flags);
++
+ /*
+  *  Ok, this is the main fork-routine.
+  *
+@@ -1439,6 +1441,8 @@
+ 	if (!IS_ERR(p)) {
+ 		struct completion vfork;
+ 
++		ke_at_fork(p, current, clone_flags);
++
+ 		trace_sched_process_fork(current, p);
+ 
+ 		nr = task_pid_vnr(p);
+diff -uNr old/magenta/darwin_getdirentries.c kos/magenta/darwin_getdirentries.c
+--- old/magenta/darwin_getdirentries.c	1970-01-01 01:00:00.000000000 +0100
++++ kos/magenta/darwin_getdirentries.c	2012-06-09 05:44:00.000000000 +0100
+@@ -0,0 +1,157 @@
++#include <linux/time.h>
++#include <linux/kernel.h>
++#include <linux/mm.h>
++#include <linux/mman.h>
++#include <linux/errno.h>
++#include <linux/signal.h>
++#include <linux/string.h>
++#include <linux/fs.h>
++#include <linux/file.h>
++#include <linux/stat.h>
++#include <linux/fcntl.h>
++#include <linux/ptrace.h>
++#include <linux/user.h>
++#include <linux/binfmts.h>
++#include <linux/personality.h>
++#include <linux/init.h>
++#include <linux/coredump.h>
++#include <linux/slab.h>
++#include <linux/namei.h>
++#include <linux/security.h>
++#include <linux/syscalls.h>
++#include <linux/kfifo.h>
++
++#include <asm/system.h>
++#include <asm/uaccess.h>
++#include <asm/cacheflush.h>
++#include <linux/linkage.h>
++
++#include "ipc_types.h"
++#include "mach_kmsg.h"
++
++#pragma pack()
++#define __DARWIN_MAXPATHLEN	1024
++
++typedef struct __darwin_dent {
++	uint64_t  d_ino;      /* file number of entry */
++	uint64_t  d_seekoff;  /* seek offset (optional, used by servers) */
++	uint16_t  d_reclen;   /* length of this record */
++	uint16_t  d_namlen;   /* length of string in d_name */
++	uint8_t   d_type;     /* file type, see below */
++	char      d_name[__DARWIN_MAXPATHLEN]; /* entry name (up to MAXPATHLEN bytes) */
++} darwin_dirent_t;
++
++struct getdents_callback64 {
++	darwin_dirent_t* current_dir;
++	darwin_dirent_t* previous;
++	int count;
++	int error;
++};
++
++static int filldir64(void * __buf,
++	const char * name,
++	int namlen,
++	loff_t offset,
++	u64 ino,
++	unsigned int d_type)
++{
++	darwin_dirent_t __user *dirent;
++	struct getdents_callback64 * buf = (struct getdents_callback64 *) __buf;
++
++	int reclen = ALIGN(offsetof(darwin_dirent_t, d_name) + namlen + 1, sizeof(u64));
++
++	//int reclen = ALIGN(sizeof(darwin_dirent_t), sizeof(u64));
++
++	buf->error = -EINVAL;	/* only used if we fail.. */
++	if (reclen > buf->count) {
++		return -EINVAL;
++	}
++	dirent = buf->previous;
++
++	if (dirent) {
++		if (__put_user(offset, &dirent->d_seekoff)) {
++			goto efault;
++		}
++	}
++
++	dirent = buf->current_dir;
++
++	if (__put_user(ino, &dirent->d_ino)) {
++		goto efault;
++	}
++	if (__put_user(0, &dirent->d_seekoff)) {
++		goto efault;
++	}
++	if (__put_user(reclen, &dirent->d_reclen)) {
++		goto efault;
++	}
++	if (__put_user(d_type, &dirent->d_type)) {
++		goto efault;
++	}
++	if (__put_user(namlen, &dirent->d_namlen)) {
++		/* BRING THE BSD PAIN */
++		goto efault;
++	}
++	if (copy_to_user(&dirent->d_name, name, namlen)) {
++		goto efault;
++	}
++
++	char* thing = ((char*)(&dirent->d_name)) + (namlen);
++	if (__put_user(0, thing)) {
++		goto efault;
++	}
++
++	buf->previous = dirent;
++	dirent = (void __user *)dirent + reclen;
++	buf->current_dir = dirent;
++	buf->count -= reclen;
++	return 0;
++efault:
++	buf->error = -EFAULT;
++	return -EFAULT;
++}
++
++void get_dents_darwin(kmsg_get_directory_entries_t* km)
++{
++	unsigned int fd = km->fd;
++	void* dirent = km->buffer;
++	unsigned int count = km->buffer_len;
++
++	struct file * file;
++	darwin_dirent_t __user * lastdirent;
++	struct getdents_callback64 buf;
++	int error;
++
++	error = -EFAULT;
++	if (!access_ok(VERIFY_WRITE, dirent, count))
++		goto out;
++
++	error = -EBADF;
++	file = fget(fd);
++	if (!file)
++		goto out;
++
++	buf.current_dir = dirent;
++	buf.previous = NULL;
++	buf.count = count;
++	buf.error = 0;
++
++	error = vfs_readdir(file, filldir64, &buf);
++	if (error >= 0) {
++		error = buf.error;
++	}
++
++	lastdirent = buf.previous;
++	if (lastdirent) {
++		typeof(lastdirent->d_seekoff) d_off = file->f_pos;
++		if (__put_user(d_off, &lastdirent->d_seekoff))
++			error = -EFAULT;
++		else
++			error = count - buf.count;
++	}
++	fput(file);
++out:
++	//printk(KERN_WARNING "get_dents_darwin(%d, %p, %d) = %d", km->fd, km->buffer, km->buffer_len, error);
++
++	__put_user(error, km->out_error);
++}
+\ No newline at end of file
+diff -uNr old/magenta/ipc_types.h kos/magenta/ipc_types.h
+--- old/magenta/ipc_types.h	1970-01-01 01:00:00.000000000 +0100
++++ kos/magenta/ipc_types.h	2012-06-09 05:44:00.000000000 +0100
+@@ -0,0 +1,149 @@
++/*
++ * ipc_types.h
++ * Copyright (c) 2012 Christina Brooks
++ *
++ * Kernel Mach IPC layer.
++ *
++ * And a lot of other unrelated stuff that needs to be
++ * moved out of here.
++ */
++
++#ifndef _H_MG_IPC_TYPES_
++#define _H_MG_IPC_TYPES_
++
++#include "mach_port_types.h"
++
++#define FALSE 0
++#define TRUE 1
++
++#define MACH_MSG_OPTION_NONE	0x00000000
++
++#define	MACH_SEND_MSG		0x00000001
++#define	MACH_RCV_MSG		0x00000002
++#define MACH_RCV_LARGE		0x00000004
++
++#define MACH_MSGH_BITS_ZERO		0x00000000
++#define MACH_MSGH_BITS_REMOTE_MASK	0x000000ff
++#define MACH_MSGH_BITS_LOCAL_MASK	0x0000ff00
++#define MACH_MSGH_BITS_COMPLEX		0x80000000U
++#define MACH_MSGH_BITS_USER             0x8000ffffU
++
++#define	MACH_MSGH_BITS_CIRCULAR		0x40000000	/* internal use only */
++#define	MACH_MSGH_BITS_USED		0xc000ffffU
++
++#define	MACH_MSGH_BITS_PORTS_MASK				\
++		(MACH_MSGH_BITS_REMOTE_MASK|MACH_MSGH_BITS_LOCAL_MASK)
++
++#define MACH_MSGH_BITS(remote, local)				\
++		((remote) | ((local) << 8))
++#define	MACH_MSGH_BITS_REMOTE(bits)				\
++		((bits) & MACH_MSGH_BITS_REMOTE_MASK)
++#define	MACH_MSGH_BITS_LOCAL(bits)				\
++		(((bits) & MACH_MSGH_BITS_LOCAL_MASK) >> 8)
++#define	MACH_MSGH_BITS_PORTS(bits)				\
++		((bits) & MACH_MSGH_BITS_PORTS_MASK)
++#define	MACH_MSGH_BITS_OTHER(bits)				\
++		((bits) &~ MACH_MSGH_BITS_PORTS_MASK)
++
++typedef integer_t mach_msg_option_t;
++typedef unsigned int mach_msg_bits_t;
++typedef	natural_t mach_msg_size_t;
++typedef integer_t mach_msg_id_t;
++typedef natural_t mach_msg_timeout_t;
++typedef natural_t mach_port_right_t;
++typedef	natural_t		vm_offset_t;
++
++typedef	unsigned int mach_msg_trailer_type_t;
++typedef	unsigned int mach_msg_trailer_size_t;
++typedef natural_t mach_port_seqno_t;
++typedef vm_offset_t mach_port_context_t;
++
++typedef struct 
++{
++  mach_msg_trailer_type_t	msgh_trailer_type;
++  mach_msg_trailer_size_t	msgh_trailer_size;
++} mach_msg_trailer_t;
++
++typedef struct
++{
++  mach_msg_trailer_type_t       msgh_trailer_type;
++  mach_msg_trailer_size_t       msgh_trailer_size;
++  mach_port_seqno_t             msgh_seqno;
++} mach_msg_seqno_trailer_t;
++
++typedef struct
++{
++  unsigned int			val[2];
++} security_token_t;
++
++typedef struct 
++{
++  mach_msg_trailer_type_t	msgh_trailer_type;
++  mach_msg_trailer_size_t	msgh_trailer_size;
++  mach_port_seqno_t		msgh_seqno;
++  security_token_t		msgh_sender;
++} mach_msg_security_trailer_t;
++
++typedef struct
++{
++  unsigned int			val[8];
++} audit_token_t;
++
++typedef struct 
++{
++  mach_msg_trailer_type_t	msgh_trailer_type;
++  mach_msg_trailer_size_t	msgh_trailer_size;
++  mach_port_seqno_t		msgh_seqno;
++  security_token_t		msgh_sender;
++  audit_token_t			msgh_audit;
++} mach_msg_audit_trailer_t;
++
++typedef struct 
++{
++  mach_msg_trailer_type_t	msgh_trailer_type;
++  mach_msg_trailer_size_t	msgh_trailer_size;
++  mach_port_seqno_t		msgh_seqno;
++  security_token_t		msgh_sender;
++  audit_token_t			msgh_audit;
++  mach_port_context_t		msgh_context;
++} mach_msg_context_trailer_t; /* This is the biggest simple trailer */
++
++#define LARGEST_TRAILER_SIZE sizeof(mach_msg_context_trailer_t)
++
++typedef struct 
++{
++	mach_msg_bits_t	msgh_bits;
++	mach_msg_size_t	msgh_size;
++	mach_port_t		msgh_remote_port;
++	mach_port_t		msgh_local_port;
++	mach_msg_size_t msgh_reserved;
++	mach_msg_id_t	msgh_id;
++} mach_msg_header_t;
++
++
++
++struct mach_msg_trap_data {
++	mach_msg_header_t* msg;
++	mach_msg_option_t option;
++	mach_msg_size_t send_size;
++	mach_msg_size_t receive_limit;
++	mach_port_t receive_name;
++	mach_msg_timeout_t timeout;
++	mach_port_t notify;
++};
++
++typedef struct 
++{
++	mach_msg_header_t head; /* just the header, for routing */
++	mach_msg_header_t* msg; /* pointer to the message in the sender's space */
++	struct task_struct* sender; /* sender */
++	
++	struct completion send_block; /* blocking the sender while the message is enqueued */
++	boolean_t received;
++} ipc_message;
++
++
++typedef int ipc_port_index;
++typedef struct mach_msg_trap_data mach_msg_trap_data_t;
++
++#endif
+diff -uNr old/magenta/ke_array.c kos/magenta/ke_array.c
+--- old/magenta/ke_array.c	1970-01-01 01:00:00.000000000 +0100
++++ kos/magenta/ke_array.c	2012-06-09 05:44:00.000000000 +0100
+@@ -0,0 +1,129 @@
++/*
++ * ke_array.c
++ * Copyright (c) 2012 Christina Brooks
++ *
++ * Kernel array.
++ */
++
++ #include "ke_runtime.h"
++
++ #define RefToImpl() ke_array_impl* impl = (ke_array_impl*)arr
++ #define HaveUpdated() /**/
++ #define RetainType(tt) /**/
++ #define ReleaseType(tt) /**/
++
++bool ke_array_init(ke_array_t arr, unsigned int capacity)
++{
++	RefToImpl();
++	size_t size = sizeof(ke_storage_type) * capacity;
++
++	impl->array = ke_alloc(size);
++	if (!impl->array) {
++		return false;
++	}
++
++	impl->base.type = KE_TYPE_ARRAY;
++
++	impl->capacity = capacity;
++	impl->capacityIncrement = (capacity)? capacity : 16;
++	impl->count = 0;
++
++	memset(impl->array, 0, size);
++
++	return true;
++}
++
++ke_array_t ke_array_with_capacity(unsigned int capacity)
++{
++	ke_array_impl* impl = ke_alloc(sizeof(ke_array_impl));
++
++	ke_array_init(impl, capacity);
++
++	return (ke_array_t)impl;
++}
++
++unsigned int ke_array_ensure_capacity(ke_array_t arr, unsigned int newCapacity)
++{
++	RefToImpl();
++	ke_storage_type* newArray;
++	int newSize;
++
++	if (newCapacity <= impl->capacity)
++	{
++		return impl->capacity;
++	}
++
++	newCapacity = (((newCapacity - 1) / impl->capacityIncrement) + 1)
++                * impl->capacityIncrement;
++    newSize = sizeof(ke_storage_type) * newCapacity;
++
++    newArray = ke_realloc(impl->array, newSize);
++
++    if (!newArray) {
++    	/* we're fucked */
++    	ke_critical("ke_array_ensure_capacity(): reallocation failed!");
++    }
++    else {
++    	/* success */
++    	impl->capacity = newCapacity;
++    	impl->array = newArray;
++    }
++
++    return impl->capacity;
++}
++
++ke_storage_type ke_array_get(ke_array_t arr, unsigned int index)
++{
++	RefToImpl();
++
++	if (index >= impl->count)
++	{
++		/* Out of bounds */
++        return (ke_storage_type)0;
++    }
++    else
++    {
++    	/* In bounds, so return */
++        return (ke_storage_type)impl->array[index];
++    }
++}
++
++unsigned int ke_array_get_count(ke_array_t arr)
++{
++	RefToImpl();
++	return impl->count;
++}
++
++bool ke_array_set_at(ke_array_t arr, unsigned int index, ke_storage_type anObject)
++{
++	RefToImpl();
++
++	unsigned int i;
++	unsigned int newCount = impl->count + 1;
++
++	if ((index > impl->count) || !anObject)
++		return false;
++
++	// do we need more space?
++	if (newCount > impl->capacity && newCount > ke_array_ensure_capacity(arr, newCount))
++		return false;
++
++	HaveUpdated();
++
++	if (index != impl->count) {
++		for (i = impl->count; i > index; i--) {
++			impl->array[i] = impl->array[i-1];
++		}
++	}
++
++	impl->array[index] = anObject;
++	RetainType(anObject);
++	impl->count += 1;
++
++	return true;
++}
++
++bool ke_array_add(ke_array_t arr, ke_storage_type anObject)
++{
++	return ke_array_set_at(arr, ke_array_get_count(arr), anObject);
++}
+\ No newline at end of file
+diff -uNr old/magenta/ke_runtime.c kos/magenta/ke_runtime.c
+--- old/magenta/ke_runtime.c	1970-01-01 01:00:00.000000000 +0100
++++ kos/magenta/ke_runtime.c	2012-06-09 05:44:00.000000000 +0100
+@@ -0,0 +1,123 @@
++/*
++ * ke_runtimey.c
++ * Copyright (c) 2012 Christina Brooks
++ *
++ * Kernel runtime support.
++ */
++
++#include "ke_runtime.h"
++#include <linux/module.h>
++#include <linux/sched.h>
++#include <linux/binfmts.h>
++
++/* External initializers */
++extern int init_mach_ipc(void);
++static bool _ke_initialized = false;
++
++void* ke_alloc(size_t size)
++{
++	return kmalloc(size, GFP_KERNEL);
++}
++
++void ke_free(void* ptr)
++{
++	kfree(ptr);
++}
++
++void* ke_realloc(void* ptr, size_t size)
++{
++	return krealloc(ptr, size, GFP_KERNEL);
++}
++
++void ke_at_fork(struct task_struct *task, struct task_struct *parent, unsigned long clone_flags)
++{
++	if (!_ke_initialized) {
++		return;
++	}
++
++	if (task->mm && !(clone_flags & CLONE_THREAD))
++	{
++		/* 
++		 * Only userspace tasks need new task ports.
++		 * Kernel tasks don't need them. Clone threads inherit
++		 * them from parents.
++		 */
++		
++		printk("ke_at_fork(): creating task port\n");
++		ke_setup_task_port(task);
++	}
++}
++
++/**/
++void ke_setup_exec(struct linux_binprm* bprm)
++{
++	if (!_ke_initialized) {
++		return;
++	}
++
++	if (current->pid == 1)
++	{
++		/*
++		 * Task 1 doesn't have a mm in at_fork, so do
++		 * port init in the execve hook instead.
++		 */
++
++		if (current->task_port) {
++			panic("ke_setup_exec(): pid 1 has a task port already");
++		}
++
++		printk("ke_setup_exec(): creating task port for pid 1\n");
++		ke_setup_task_port(current);
++	}
++
++	printk("ke_setup_exec(): setup\n");
++}
++
++void ke_process_exit(struct task_struct *tsk)
++{
++	if (!_ke_initialized) {
++		return;
++	}
++
++	printk("ke_process_exit(): exit\n");
++}
++
++static void __ke_runtime_test(void)
++{
++	ke_array_t arr = ke_array_with_capacity(10);
++
++	ke_array_set_at(arr, 0, (ke_storage_type)1234);
++	ke_array_set_at(arr, 1, (ke_storage_type)4321);
++	ke_array_set_at(arr, 2, (ke_storage_type)5555);
++	ke_array_set_at(arr, 3, (ke_storage_type)777);
++
++	printk("2: %d 3: %d \n", (int)ke_array_get(arr, 2), (int)ke_array_get(arr, 3));
++
++	return;
++}
++
++static int __init __ke_runtime_init(void)
++{
++	init_mach_ipc();
++
++	__ke_runtime_test();
++
++	_ke_initialized = true;
++
++	printk("ke_runtime_init(): runtime started\n");
++	return 0;
++}
++
++static void __exit __ke_runtime_teardown(void)
++{
++	ke_critical("ke_runtime_teardown(): not allowed");
++}
++
++module_init(__ke_runtime_init);
++module_exit(__ke_runtime_teardown);
++
++
++/*
++ * Fuck everything about this.
++ */
++MODULE_LICENSE("Proprietary");
+diff -uNr old/magenta/ke_runtime.h kos/magenta/ke_runtime.h
+--- old/magenta/ke_runtime.h	1970-01-01 01:00:00.000000000 +0100
++++ kos/magenta/ke_runtime.h	2012-06-09 05:44:00.000000000 +0100
+@@ -0,0 +1,64 @@
++/*
++ * ke_runtime.h
++ * Copyright (c) 2012 Christina Brooks
++ *
++ * Kernel runtime support.
++ */
++
++#ifndef _H_MG_KE_RUNTIME_
++#define _H_MG_KE_RUNTIME_
++
++
++#include <linux/kernel.h>
++#include <linux/string.h>
++#include <linux/slab.h>
++
++#include <DarwinTypes.h>
++#include <MachO.h>
++
++#define KE_TYPE_UNKNOWN 0
++#define KE_TYPE_ARRAY 1
++
++/* void bzero(void *s, size_t n); */
++#define bzero(ptr, sz) memset(ptr, 0, sz)
++
++/**/
++#define ke_storage_type void*
++#define Boolean int
++
++typedef struct {
++	uint16_t type;
++} ke_type_impl;
++
++typedef struct {
++	ke_type_impl base;
++
++	unsigned int count;
++	unsigned int capacity;
++	unsigned int capacityIncrement;
++
++	ke_storage_type* array;
++} ke_array_impl;
++
++typedef void* ke_type_t;
++typedef ke_type_t ke_array_t;
++
++/* Memory */
++void* ke_alloc(size_t size);
++void ke_free(void* ptr);
++void* ke_realloc(void* ptr, size_t size);
++
++/* Array */
++ke_array_t ke_array_with_capacity(unsigned int capacity);
++bool ke_array_init(ke_array_t arr, unsigned int capacity);
++ke_storage_type ke_array_get(ke_array_t arr, unsigned int index);
++bool ke_array_set_at(ke_array_t arr, unsigned int index, ke_storage_type anObject);
++unsigned int ke_array_get_count(ke_array_t arr);
++bool ke_array_add(ke_array_t arr, ke_storage_type anObject);
++
++/* Port */
++void ke_setup_task_port(struct task_struct* task);
++
++#define ke_critical panic
++
++#endif
+\ No newline at end of file
+diff -uNr old/magenta/kext.c kos/magenta/kext.c
+--- old/magenta/kext.c	1970-01-01 01:00:00.000000000 +0100
++++ kos/magenta/kext.c	2012-06-09 05:44:00.000000000 +0100
+@@ -0,0 +1,467 @@
++/*
++ * kext.c
++ * Copyright (c) 2012 Christina Brooks
++ *
++ * What is this, I don't even ...
++ */
++
++#include <linux/time.h>
++#include <linux/kernel.h>
++#include <linux/mm.h>
++#include <linux/mman.h>
++#include <linux/errno.h>
++#include <linux/signal.h>
++#include <linux/string.h>
++#include <linux/fs.h>
++#include <linux/file.h>
++#include <linux/stat.h>
++#include <linux/fcntl.h>
++#include <linux/ptrace.h>
++#include <linux/user.h>
++#include <linux/binfmts.h>
++#include <linux/personality.h>
++#include <linux/init.h>
++#include <linux/coredump.h>
++#include <linux/slab.h>
++#include <linux/namei.h>
++#include <linux/security.h>
++#include <linux/syscalls.h>
++#include <linux/kfifo.h>
++
++#include <asm/system.h>
++#include <asm/uaccess.h>
++#include <asm/cacheflush.h>
++#include <linux/linkage.h>
++
++#include "ipc_types.h"
++#include "mach_kmsg.h"
++#include "ke_runtime.h"
++#include "loader.h"
++
++int (*ray)(void);
++
++typedef struct __KXFile {
++	unsigned char *fMachO;
++	struct symtab_command *fSymtab;
++	
++	uintptr_t fSegmentOffset;
++	char *fStringBase;
++	struct nlist *fSymbolBase;
++    const struct nlist *fLocalSyms;
++} KXFile;
++
++static const struct nlist *
++kld_find_symbol_by_name(KXFile *file, const char* name)
++{
++	/*
++	 This is slow, but I don't care.
++	 */
++	
++	const struct nlist *sym;
++	int nsyms;
++	
++	nsyms = file->fSymtab->nsyms;
++	sym = file->fSymbolBase;
++	
++	while (nsyms--) {
++		/*
++		 if ((sym->n_type & N_EXT))
++		 return NULL;
++		 */
++		
++		long strx = sym->n_un.n_strx;
++		const char *symname = file->fStringBase + strx;
++		
++		if (strcmp(name, symname) == 0 && !(sym->n_type & N_STAB))
++			return sym;
++		
++		sym += 1;
++	}
++	
++	return NULL;
++}
++
++static const struct nlist *
++kld_find_symbol_by_address(KXFile *file, void *entry)
++{
++	/*
++		This is slow, but I don't care.
++	 */
++	
++	const struct nlist *sym;
++	int nsyms;
++	
++	nsyms = file->fSymtab->nsyms;
++	sym = file->fSymbolBase;
++	
++	while (nsyms--) {
++		/*
++		if ((sym->n_type & N_EXT))
++			return NULL;
++		*/
++		
++		if (sym->n_value == (unsigned long) entry && !(sym->n_type & N_STAB))
++			return sym;
++		
++		sym += 1;
++	}
++
++	return NULL;
++}
++
++Boolean kld_relocate_section(KXFile* file , struct section* sect, vm_offset_t delta)
++{
++	uint8_t* sbase;
++	uint32_t nreloc;
++	struct relocation_info *rinfo;
++	
++	sbase = (uint8_t*)sect->offset;
++	nreloc = sect->nreloc;
++	rinfo = (struct relocation_info *)(file->fMachO + sect->reloff);
++	
++	while (nreloc--) {
++		void** entry;
++		void** abs_entry;
++		unsigned long r_symbolnum, r_length;
++		const struct nlist *symbol;
++		enum reloc_type_generic r_type;
++		void *addr;
++		
++		/* Ignore scattered relocations */
++		if ((rinfo->r_address & R_SCATTERED))
++			continue;
++		
++		/* This is why we can't have nice things */
++		entry = (void**)( (uintptr_t)rinfo->r_address + (uintptr_t)sbase );
++		abs_entry = ((void**)( (uintptr_t)file->fMachO + (uintptr_t)entry ));
++		
++		r_type = (enum reloc_type_generic)rinfo->r_type;
++		r_length = rinfo->r_length;
++		
++		/*
++			In r_length, 2 stands for long.
++		 */
++		if (r_type != GENERIC_RELOC_VANILLA || r_length != 2)
++			continue;
++		
++		r_symbolnum = rinfo->r_symbolnum;
++		
++		printk(KERN_WARNING "KldRelocSect: {t=%d, ba=%p, aa=%p, ln=%d, n=%ld}\n",
++			   rinfo->r_type,
++			   (void*)rinfo->r_address, /* relative */
++			   entry, /* absolute (within the file) */
++			   rinfo->r_length,
++			   r_symbolnum);
++		
++		if (rinfo->r_extern) {
++			/* External symbol entry */
++			
++			if(r_symbolnum >= file->fSymtab->nsyms)
++			{
++				printk(KERN_WARNING "KldRelocSect: invalid reloc entry\n");
++				return false;
++			}
++			
++			symbol = file->fSymbolBase;
++			
++			if ((symbol[r_symbolnum].n_type & N_TYPE) == N_INDR) {
++				/*
++					This is an indirect symbol, so get the value
++					for the actual thing.
++				 */
++				r_symbolnum = symbol[r_symbolnum].n_value;
++			}
++			
++			symbol = &symbol[r_symbolnum];
++			
++			if (symbol->n_type != (N_EXT | N_UNDF)) {
++				printk(KERN_WARNING "KldRelocSect: invalid reloc symbol type - !(N_EXT | N_UNDF)\n");
++				return false;
++			}
++		}
++		else {
++			/* Local symbol entry */
++			
++			/* Derp */
++			if (r_symbolnum == R_ABS)
++				continue;
++			
++			/* Not this pointer crap again */
++			addr = *abs_entry;
++			symbol = kld_find_symbol_by_address(file, addr);
++			
++			printk(KERN_WARNING "KldRelocSect: findByAddr(%p) = %p\n", 
++				   addr,
++				   symbol);
++		}
++		
++		/* Resolve */
++		
++		/* Good, move on */
++		printk(KERN_WARNING "KldRelocSect: FINAL {val=%p, sym=%p, ent=%p}\n",
++			   *abs_entry,
++			   symbol,
++			   rinfo);
++
++		rinfo++;
++	}
++	
++	return true;
++}
++
++Boolean kld_parse_symtab(KXFile* file)
++{
++	const struct nlist *sym;
++    unsigned int i, firstlocal = 0, nsyms;
++    unsigned long strsize;
++    const char *strbase;
++	
++	file->fSymbolBase = 
++	(struct nlist *)(file->fMachO + file->fSymtab->symoff); 
++	
++	file->fStringBase = 
++	(char *)(file->fMachO + file->fSymtab->stroff);
++	
++	i = 0;
++	nsyms = file->fSymtab->nsyms;
++	strsize = file->fSymtab->strsize;
++	strbase = file->fStringBase;
++	sym = file->fSymbolBase;
++	
++	while (i < nsyms) {
++		long strx = sym->n_un.n_strx;
++        const char *symname = strbase + strx;
++        unsigned char n_type = sym->n_type & N_TYPE;
++		
++		printk(KERN_WARNING "KldParseSymtab: {type=%d, val=%p} '%s'\n",
++			   n_type,
++			   (void*)sym->n_value,
++			   symname);
++		
++		n_type = sym->n_type & (N_TYPE | N_EXT);
++		
++        /*
++			First exported symbol 
++			This is done for the sake of performance
++		 */
++        if ( !firstlocal && (n_type & N_EXT) ) {
++            firstlocal = i;
++            file->fLocalSyms = sym;
++        }
++		
++		/* Increment stuff */
++		i += 1;
++		sym	+= 1;
++	}
++	
++	if (!file->fLocalSyms) {
++		printk(KERN_WARNING "KldParseSymtab: no symbols found\n");
++		return false;
++	}
++	
++	printk(KERN_WARNING "KldParseSymtab: {loc=%p}\n",
++		   file->fLocalSyms);
++	
++	return true;
++}
++
++Boolean kld_process_segment(KXFile* file, struct segment_command* seg) 
++{
++	struct section* sect;
++	uint32_t nsects;
++	
++	nsects = seg->nsects;
++	sect = (struct section*)((uintptr_t)seg + sizeof(struct segment_command));
++	
++	while (nsects--) {
++		printk(KERN_WARNING "KldProcessSemgnet: sect {nrel=%d} '%s' \n",
++			   sect->nreloc,
++			   sect->sectname);
++		
++		kld_relocate_section(file, sect, 0);
++		
++		/* Over to the next section */
++		sect++;
++	}
++	
++	return true;
++}
++
++Boolean kld_file_map(void* buffer, long size, KXFile* file)
++{
++	bzero(file, sizeof(file));
++	
++	size_t macho_header_sz = sizeof(struct mach_header);
++	uint8_t* load_commands;
++	struct mach_header* head;
++	
++	/* command parser */
++	boolean_t has_segment = FALSE;
++	size_t offset;
++	size_t oldoffset;
++	uint32_t ncmds;
++	
++	/* segment */
++	struct segment_command *seg_hdr;
++	uintptr_t sect_offset = 0;
++	uint32_t nsects = 0;
++	
++	head = buffer;
++	load_commands = buffer + macho_header_sz;
++	
++	offset = 0;
++	ncmds = head->ncmds;
++	
++	file->fMachO = buffer;
++	
++	printk(KERN_WARNING "KldMap: macho {fl=%d}\n", head->flags);
++	
++	while (ncmds--) {
++		struct load_command	*lcp = 
++		(struct load_command *)(load_commands + offset);
++		
++		oldoffset = offset;
++		offset += lcp->cmdsize;
++		
++		if (oldoffset > offset ||
++		    lcp->cmdsize < sizeof(struct load_command) ||
++		    offset > head->sizeofcmds + macho_header_sz)
++		{
++			printk(KERN_WARNING "KldMap: malformed load command\n");
++			return false;
++		}
++		
++		/*
++			Mach objects (MH_OBJECT) are only meant to have one segment that has all the bits.
++		 */
++		switch(lcp->cmd) {
++			case LC_SEGMENT:
++			{
++				if (has_segment) {
++					printk(KERN_WARNING "KldMap: more than one segment in the file \n");
++					return false;
++				}
++				
++				seg_hdr = (struct segment_command *)lcp;
++				
++				nsects = seg_hdr->nsects;
++				sect_offset = (uintptr_t)(seg_hdr + sizeof(struct segment_command));
++				
++				file->fSegmentOffset = seg_hdr->fileoff;
++				
++				printk(KERN_WARNING "KldMap: LC_SEGMENT {nsects=%d} \n",
++					   seg_hdr->nsects);
++				
++				has_segment = TRUE;
++				
++				break;
++			}
++			case LC_UUID:
++			{
++				/* Do. Not. Care. */
++				break;
++			}
++			case LC_SYMTAB:
++			{
++				file->fSymtab = (struct symtab_command*)lcp;
++				break;
++			}
++			default:
++			{
++				printk(KERN_WARNING "KldMap: unsupported load command %d \n",
++					   lcp->cmd);
++				
++				return false;
++				break;
++			}
++		}
++	}
++	
++	if (!file->fSymtab) {
++		printk(KERN_WARNING "KldMap: object file missing symbols \n");
++		return false;
++	}
++	else {
++		kld_parse_symtab(file);
++	}
++	
++	if (!has_segment) {
++		printk(KERN_WARNING "KldMap: object file missing segment \n");
++		return false;
++	}
++	else {
++		kld_process_segment(file, seg_hdr);
++	}
++	
++	return true;
++}
++
++
++void kmsg_load_kext(kmsg_load_kext_msg_t* msg)
++{
++	/* 
++	 *	mach_msg_header_t head;
++	 *	void* buffer;
++	 *	unsigned int buffer_len;
++	 */
++
++	Boolean ret;
++	size_t size;
++	void* buf;
++	const struct nlist* nl;
++
++ 	size = msg->buffer_len;
++	buf = ke_alloc(size);
++
++	if (copy_from_user(buf, msg->buffer, size))
++	{
++	 	printk(KERN_WARNING "kmsg_load_kext: goof \n");
++		return;
++	}
++
++	KXFile file;
++	kld_file_map(buf, size, &file);
++
++	nl = kld_find_symbol_by_name(&file, "_CoolStuff");
++	
++	if (nl == NULL) {
++		printk(KERN_WARNING "kmsg_load_kext: symbol not found \n");
++		return;
++	}
++
++	uintptr_t val = nl->n_value;
++	uint16_t* whatever = (uint16_t*)((val + file.fSegmentOffset + (uintptr_t)file.fMachO) | 1);
++	
++	ray = (void*)whatever;
++	
++	printk(KERN_WARNING "func {abs=%p, rel=%p, sect=%p} \n",
++		   (void*)ray,
++		   (void*)nl->n_value,
++		   (void*)file.fSegmentOffset);
++
++	printk(KERN_WARNING "instruct: %p \n", (void*)*(whatever));
++	printk(KERN_WARNING "call {%d} \n", ray());
++}
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
+diff -uNr old/magenta/loader.h kos/magenta/loader.h
+--- old/magenta/loader.h	1970-01-01 01:00:00.000000000 +0100
++++ kos/magenta/loader.h	2012-06-09 05:44:00.000000000 +0100
+@@ -0,0 +1,99 @@
++/*
++ * loader.h
++ * Copyright (c) 2012 Christina Brooks
++ *
++ * Loader types.
++ */
++
++#ifndef _H_MG_LOADER_
++#define _H_MG_LOADER_
++
++#include "ipc_types.h"
++#include <DarwinTypes.h>
++#include <MachO.h>
++
++/* Nlist */
++
++#define	N_STAB	0xe0  /* if any of these bits set, a symbolic debugging entry */
++#define	N_PEXT	0x10  /* private external symbol bit */
++#define	N_TYPE	0x0e  /* mask for the type bits */
++#define	N_EXT	0x01  /* external symbol bit, set for external symbols */
++
++/*
++ * Only symbolic debugging entries have some of the N_STAB bits set and if any
++ * of these bits are set then it is a symbolic debugging entry (a stab).  In
++ * which case then the values of the n_type field (the entire field) are given
++ * in <mach-o/stab.h>
++ */
++
++/*
++ * Values for N_TYPE bits of the n_type field.
++ */
++#define	N_UNDF	0x0		/* undefined, n_sect == NO_SECT */
++#define	N_ABS	0x2		/* absolute, n_sect == NO_SECT */
++#define	N_SECT	0xe		/* defined in section number n_sect */
++#define	N_PBUD	0xc		/* prebound undefined (defined in a dylib) */
++#define N_INDR	0xa		/* indirect */
++
++struct nlist {
++	union {
++#ifndef __LP64__
++		char *n_name;	/* for use when in-core */
++#endif
++		int32_t n_strx;	/* index into the string table */
++	} n_un;
++	uint8_t n_type;		/* type flag, see below */
++	uint8_t n_sect;		/* section number or NO_SECT */
++	int16_t n_desc;		/* see <mach-o/stab.h> */
++	uint32_t n_value;	/* value of this symbol (or stab offset) */
++};
++
++#define N_NO_DEAD_STRIP 0x0020 /* symbol is not to be dead stripped */
++#define N_DESC_DISCARDED 0x0020	/* symbol is discarded */
++#define N_WEAK_REF	0x0040 /* symbol is weak referenced */
++#define N_WEAK_DEF	0x0080 /* coalesed symbol is a weak definition */
++#define	N_REF_TO_WEAK	0x0080 /* reference to a weak symbol */
++#define N_ARM_THUMB_DEF	0x0008 /* symbol is a Thumb function (ARM) */
++#define N_SYMBOL_RESOLVER  0x0100 
++
++/* Reloc stuff */
++
++ #define R_SCATTERED 0x80000000	/* mask to be applied to the r_address field 
++				   of a relocation_info structure to tell that
++				   is is really a scattered_relocation_info
++				   stucture */
++
++enum reloc_type_generic
++{
++    GENERIC_RELOC_VANILLA,	/* generic relocation as discribed above */
++    GENERIC_RELOC_PAIR,		/* Only follows a GENERIC_RELOC_SECTDIFF */
++    GENERIC_RELOC_SECTDIFF,
++    GENERIC_RELOC_PB_LA_PTR,	/* prebound lazy pointer */
++    GENERIC_RELOC_LOCAL_SECTDIFF,
++    GENERIC_RELOC_TLV		/* thread local variables */
++};
++
++struct relocation_info {
++   int32_t	r_address;	/* offset in the section to what is being
++				   relocated */
++   uint32_t     r_symbolnum:24,	/* symbol index if r_extern == 1 or section
++				   ordinal if r_extern == 0 */
++		r_pcrel:1, 	/* was relocated pc relative already */
++		r_length:2,	/* 0=byte, 1=word, 2=long, 3=quad */
++		r_extern:1,	/* does not include value of sym referenced */
++		r_type:4;	/* if not 0, machine specific relocation type */
++};
++
++#define	R_ABS	0		/* absolute relocation type for Mach-O files */
++
++/* Actual loader stuff */
++struct symtab_command {
++	uint32_t	cmd;		/* LC_SYMTAB */
++	uint32_t	cmdsize;	/* sizeof(struct symtab_command) */
++	uint32_t	symoff;		/* symbol table offset */
++	uint32_t	nsyms;		/* number of symbol table entries */
++	uint32_t	stroff;		/* string table offset */
++	uint32_t	strsize;	/* string table size in bytes */
++};
++
++#endif
+\ No newline at end of file
+diff -uNr old/magenta/mach.c kos/magenta/mach.c
+--- old/magenta/mach.c	1970-01-01 01:00:00.000000000 +0100
++++ kos/magenta/mach.c	2012-06-09 05:44:00.000000000 +0100
+@@ -0,0 +1,409 @@
++/*
++ * mach.c
++ * Copyright (c) 2012 Christina Brooks
++ *
++ * Mach routines.
++ */
++
++#include <linux/module.h>
++
++#include <linux/time.h>
++#include <linux/kernel.h>
++#include <linux/mm.h>
++#include <linux/mman.h>
++#include <linux/errno.h>
++#include <linux/signal.h>
++#include <linux/string.h>
++#include <linux/fs.h>
++#include <linux/file.h>
++#include <linux/stat.h>
++#include <linux/fcntl.h>
++#include <linux/ptrace.h>
++#include <linux/user.h>
++#include <linux/binfmts.h>
++#include <linux/personality.h>
++#include <linux/init.h>
++#include <linux/coredump.h>
++#include <linux/slab.h>
++#include <linux/namei.h>
++#include <linux/security.h>
++#include <linux/syscalls.h>
++#include <linux/kfifo.h>
++
++#include <asm/system.h>
++#include <asm/uaccess.h>
++#include <asm/cacheflush.h>
++#include <linux/linkage.h>
++
++#include "ipc_types.h"
++#include "mach_kmsg.h"
++
++/*
++	Port list.
++*/
++static ke_port_t ports[MAX_PORT_COUNT];
++static DECLARE_RWSEM(ports_sem);
++
++/* Handler for kernel messages */
++extern int kmsg_handle(mach_msg_header_t* msg);
++
++/*
++	Mutex for kmsgs.
++*/
++DEFINE_MUTEX(kmsg_exec_mutex);
++
++/*
++ * Returns a new kernel port.
++ *
++ * XXX
++ * This port allocator is temporary. I should really use a pid map with
++ * a linked list of slabs to store the ports.
++ */
++ke_port_t* ke_port_allocate(uint16_t type)
++{
++	ke_port_t* prt = NULL;
++	int i = 0;
++
++	down_write(&ports_sem);
++	while (i < MAX_PORT_COUNT) {
++		if (ports[i].type == KE_PORT_TYPE_FREE) {
++			prt = &ports[i];
++			prt->type = type;
++			break;
++		}
++
++		i++;
++	}
++	up_write(&ports_sem);
++
++	return prt;
++}
++
++/*
++ * Finds a port by its mach port name.
++ */
++ke_port_t* ke_port_find_named(mach_port_t name)
++{
++	ke_port_t* prt = NULL;
++	int i = 0;
++
++	down_read(&ports_sem);
++	while (i < MAX_PORT_COUNT) {
++		if (ports[i].mp == name) {
++			prt = &ports[i];
++			break;
++		}
++
++		i++;
++	}
++	up_read(&ports_sem);
++
++	return prt;
++}
++
++void ke_setup_task_port(struct task_struct* task)
++{
++	ke_port_t* kprt = NULL;
++
++	kprt = ke_port_allocate(KE_PORT_TYPE_TASK);
++	if (!kprt) {
++		panic("ke_setup_task_port(): unable to creat task port for %p", task);
++	}
++
++	/* Set the task descriptor */
++	kprt->c.tp.task = task;
++
++	/* And set the port */
++	task->task_port = (void*)kprt;
++
++	printk("ke_setup_task_port(): task %p got port %d\n", task, kprt->mp);
++}
++
++ke_port_t* ipc_port_allocate(struct task_struct* task) {
++	ke_port_t* kprt = NULL;
++	ipc_port* prt = NULL;
++	
++	kprt = ke_port_allocate(KE_PORT_TYPE_IPC);
++	if (!kprt) {
++		return NULL;
++	}
++
++	prt = &(kprt->c.ipc);
++
++	/* create a message queue */
++	if(kfifo_alloc(&(prt->queue), PAGE_SIZE, GFP_KERNEL)) {
++		panic("allocate_ipc_port: baaaaad queue alloc");
++	}
++
++	/* 
++		create a completion variable to hang on if the
++		queue is empty 
++	*/
++	init_completion(&(prt->wait_for_enqueued_data));
++
++	return kprt;
++}
++
++static void dump_mach_msg_hdr(mach_msg_header_t* head) {
++	return;
++
++	printk(KERN_WARNING "Mach Message:\n"
++	"\tbits: %p\n\tsize: %d\n\tremote: %d\n\tlocal: %d\n\tid : %d\n"
++	,(void*)head->msgh_bits, head->msgh_size, head->msgh_remote_port, head->msgh_local_port, head->msgh_id);
++}
++
++SYSCALL_DEFINE1(mach_msg_trap, struct mach_msg_trap_data __user *, usr_data)
++{
++	mach_msg_trap_data_t trap_data;
++	mach_msg_header_t tmsg;
++	mach_msg_header_t* msg;
++	ipc_message* im;
++	ipc_message* rm;
++	ke_port_t* remote;
++	ke_port_t* local;
++	int retval = 0;
++	//boolean_t internal_message = 0;
++	mach_port_t sswp; /* for swaps */
++
++	if (!current) {
++		panic("mach_msg_trap(): used without user context");
++	}
++
++	/* read in the trap data */
++	if (copy_from_user(&trap_data, usr_data, sizeof(mach_msg_trap_data_t)))
++		return -EFAULT;
++	/* read in the temp message header */	
++	if (copy_from_user(&tmsg, trap_data.msg, sizeof(mach_msg_header_t)))
++		return -EFAULT;
++
++	/*
++		Read in the entire inline message. We leave an empty space
++		at the end so we can place the message trailer there.
++
++		XXX: Needs some sort of a bounds check for kalloc.
++	*/
++	msg = (mach_msg_header_t*)kmalloc(tmsg.msgh_size + LARGEST_TRAILER_SIZE, GFP_KERNEL);
++	if (copy_from_user(msg, trap_data.msg, tmsg.msgh_size))
++		return -EFAULT;
++
++	dump_mach_msg_hdr(msg);
++
++
++	/*
++		*** KMSG message. ***
++	*/
++	if (msg->msgh_remote_port == 0 &&
++		trap_data.option & MACH_SEND_MSG) {
++		/*
++			This is a kmsg, so handle it.
++
++			Kmsgs (kernel messages) are special mach messages that
++			are not enqueued. They are handled immediatedly. They are
++			sent to remote port 0 with the MACH_SEND_MSG flag.
++		*/
++
++		mutex_lock(&kmsg_exec_mutex);
++		if (msg->msgh_id == KMSG_MACH_PORT_ALLOCATE) {
++			/*
++				Allocate a new mach port. The only type of ports
++				the userland may allocate via this function are IPC ports.
++			*/
++			kmsg_mach_port_allocate_msg_t* km = (kmsg_mach_port_allocate_msg_t*)msg;
++			ke_port_t* prt = ipc_port_allocate(current);
++			mach_port_t mp = prt->mp;
++
++			if (copy_to_user(km->port_out, &mp, sizeof(mach_port_t)))
++				retval = -EFAULT;
++		}
++		else {
++			/* This is not an IPC related message, so offload it */
++			retval = kmsg_handle(msg);
++		}
++		mutex_unlock(&kmsg_exec_mutex);
++
++		/* This is it, destroy the message. */
++		kfree(msg);
++		return retval;
++	}
++
++	if (tmsg.msgh_bits & MACH_MSGH_BITS_COMPLEX)
++	{
++		/* Complex messages are not supported yet */
++		printk("mach_msg(): complex messages not yet supported\n");
++		return -EINVAL;
++	}
++
++	/*
++		*** IPC message send. ***
++	*/
++	if (trap_data.option & MACH_SEND_MSG &&
++		tmsg.msgh_remote_port != 0) 
++	{
++		/*
++			Caller wants to send a mach message.
++		*/
++
++		/* 1). Find out where it wants to send it to. */
++		remote = ke_port_find_named(tmsg.msgh_remote_port);
++		if (!remote) {
++			 printk("mach_msg(): nonexistent remote port\n");
++			/* baaad port */
++			kfree(msg);
++			return -EINVAL;
++		}
++
++		/* Check the port type */
++		if (remote->type == KE_PORT_TYPE_TASK)
++		{
++			/* Task port, do special handling */
++
++			kfree(msg);
++			return 0;
++		}
++		else if (remote->type == KE_PORT_TYPE_IPC)
++		{
++			/* Do nothing for now */
++		}
++		else 
++		{
++			/* Can't send to this port type */
++			printk("mach_msg(): invalid remote port type\n");
++			kfree(msg);
++			return -EINVAL;
++		}
++
++		/* 2). Prepare the message. */
++		im = (ipc_message*)kmalloc(sizeof(ipc_message), GFP_KERNEL);
++		im->sender = current;
++		im->msg = msg;
++		im->head = tmsg; /* inline header */
++		im->received = 0;
++		init_completion(&(im->send_block)); /* block */
++
++		/* 3). Enqueue a pointer to the message. */
++		kfifo_in(&(remote->c.ipc.queue), &im, sizeof(im));
++		printk("enqueued message at %p\n", im);
++
++		/* 
++			4). If the receiver is waiting for queue writes, let it know.
++				that a new message just came in.
++		*/
++		complete(&(remote->c.ipc.wait_for_enqueued_data));
++	}
++
++
++	/*
++		*** IPC message receive. ***
++	*/
++	if (trap_data.option & MACH_RCV_MSG &&
++		tmsg.msgh_local_port != 0)
++	{
++		/*
++			Caller wants to receive a mach message.
++		*/
++		local = ke_port_find_named(tmsg.msgh_local_port);
++		if (!local || local->type != KE_PORT_TYPE_IPC) {
++			printk("mach_msg(): invalid local port\n");
++			/* baaad port */
++			retval = -EINVAL;
++			goto out;
++		}
++
++		if (kfifo_is_empty(&(local->c.ipc.queue))) {
++			/*
++				1). If the queue is empty, wait until something writes to it.
++			*/
++			wait_for_completion(&(local->c.ipc.wait_for_enqueued_data));
++			//printk("completion lock lifted\n", im);
++			if (kfifo_is_empty(&(local->c.ipc.queue))) {
++				/*
++					This should never happen.
++					
++					(someone just told us that a message was sent but
++					 there are no messages in the queue)
++				*/
++				panic("MACH_RCV_MSG: queue empty after completion");
++			}
++		}
++
++		/* 2). Dequeue the message pointer. */
++		kfifo_out(&(local->c.ipc.queue), &rm, sizeof(rm));
++		printk("dequeued message at %p\n", rm);
++
++		/* 
++			3). Check if this is an internal (on the same thread) message.
++				If it is, don't wait for completion at the end.
++		*/
++		if (im == rm) {
++			//internal_message = 1;
++		}
++
++		/* 
++			4). Fixup the message.
++				This involves reversing the ports and adding a trailer.
++		*/
++
++		sswp = rm->msg->msgh_local_port;
++		rm->msg->msgh_local_port = rm->msg->msgh_remote_port;
++		rm->msg->msgh_remote_port = sswp;
++		/* XXX: trailer */
++		/* grow by the trailer size */
++		//rm->msg->msgh_size += LARGEST_TRAILER_SIZE;
++
++		/* 5). Copy the message into the userspace. */
++		if (copy_to_user(trap_data.msg, rm->msg, rm->msg->msgh_size))
++		{
++			printk("can't write message %p\n", rm);
++			retval = -EFAULT;
++			goto out;
++		}
++
++		rm->received = 1;
++
++		/* 6). If the receiver is waiting for completion, let it know that we're done */
++		complete(&(rm->send_block));
++	}
++
++	retval = 0;
++out:
++	if (trap_data.option & MACH_SEND_MSG &&
++		tmsg.msgh_local_port != 0)
++	{
++		if (!im->received) {
++			/* Block this thread until the sent message is dequeued */
++			wait_for_completion(&(im->send_block));
++		}
++
++		/* Destroy the copied message buffer */
++		kfree(im->msg);
++
++		/* Destroy the ipc_message */
++		kfree(im);
++	}
++
++	return retval;
++}
++
++int init_mach_ipc(void)
++{
++	/*
++	 * Initialize all slots for valid port names.
++	 * The port names are going to start at 20.
++	 */
++	int vl = 20;
++	int i = 0;
++
++
++	down_write(&ports_sem);
++	while (i < MAX_PORT_COUNT) {
++		ports[i].mp = (mach_port_t)vl;
++
++		vl++;
++		i++;
++	}
++	up_write(&ports_sem);
++
++	printk("init_mach_ipc(): started mach ipc subsystem {max_ports=%d}\n", MAX_PORT_COUNT);
++
++	return 0;
++}
+diff -uNr old/magenta/mach_kmsg.c kos/magenta/mach_kmsg.c
+--- old/magenta/mach_kmsg.c	1970-01-01 01:00:00.000000000 +0100
++++ kos/magenta/mach_kmsg.c	2012-06-09 05:44:00.000000000 +0100
+@@ -0,0 +1,79 @@
++#include <linux/time.h>
++#include <linux/kernel.h>
++#include <linux/mm.h>
++#include <linux/mman.h>
++#include <linux/errno.h>
++#include <linux/signal.h>
++#include <linux/string.h>
++#include <linux/fs.h>
++#include <linux/file.h>
++#include <linux/stat.h>
++#include <linux/fcntl.h>
++#include <linux/ptrace.h>
++#include <linux/user.h>
++#include <linux/binfmts.h>
++#include <linux/personality.h>
++#include <linux/init.h>
++#include <linux/coredump.h>
++#include <linux/slab.h>
++#include <linux/namei.h>
++#include <linux/security.h>
++#include <linux/syscalls.h>
++#include <linux/kfifo.h>
++
++#include <asm/system.h>
++#include <asm/uaccess.h>
++#include <asm/cacheflush.h>
++#include <linux/linkage.h>
++
++#include "ipc_types.h"
++#include "mach_kmsg.h"
++
++void get_dents_darwin(kmsg_get_directory_entries_t* km);
++void kmsg_load_kext(kmsg_load_kext_msg_t* msg);
++
++#define MsgToKmsg(type) type* km = (type*)msg;
++
++void kmsg_mach_task_self(kmsg_mach_task_self_msg_t* km)
++{
++	ke_port_t* kprt = ((ke_port_t*)current->task_port);
++	if (kprt) {
++		put_user(kprt->mp, km->out_port);
++	}
++	else {
++		printk(KERN_ALERT "mach task port invalid for task %p", current);
++	}
++}
++
++int kmsg_handle(mach_msg_header_t* msg)
++{
++	switch (msg->msgh_id)
++	{
++		case KMSG_GET_DIRECTORY_ENTRIES:
++		{
++			MsgToKmsg(kmsg_get_directory_entries_t);
++			get_dents_darwin(km);
++
++			return 0;
++		}
++		case KMSG_LOAD_KEXT:
++		{
++			MsgToKmsg(kmsg_load_kext_msg_t);
++			kmsg_load_kext(km);
++
++			return 0;
++		}
++		case KMSG_MACH_TASK_SELF:
++		{
++			MsgToKmsg(kmsg_mach_task_self_msg_t);
++			kmsg_mach_task_self(km);
++
++			return 0;
++		}
++		default:
++		{
++			printk("kmsg_handle(): invalid kernel message (id: %d)\n", msg->msgh_id);
++			return -EINVAL;
++		}
++	}
++}
+\ No newline at end of file
+diff -uNr old/magenta/mach_kmsg.h kos/magenta/mach_kmsg.h
+--- old/magenta/mach_kmsg.h	1970-01-01 01:00:00.000000000 +0100
++++ kos/magenta/mach_kmsg.h	2012-06-09 05:44:00.000000000 +0100
+@@ -0,0 +1,53 @@
++/*
++ * mach_kmsg.h
++ * Copyright (c) 2012 Christina Brooks
++ *
++ * Special mach messages that get interpreted by the
++ * kernel.
++ */
++
++#ifndef _H_MG_MACH_KMSG_
++#define _H_MG_MACH_KMSG_
++
++#include "ipc_types.h"
++
++#define KMSG_MACH_PORT_ALLOCATE 2000
++#define KMSG_LOAD_KEXT 2001
++#define KMSG_GET_DIRECTORY_ENTRIES 2002
++
++typedef struct 
++{
++	mach_msg_header_t head;
++	mach_port_right_t rights;
++	mach_port_t* port_out;
++} kmsg_mach_port_allocate_msg_t;
++
++typedef struct 
++{
++	mach_msg_header_t head;
++	void* buffer;
++	unsigned int buffer_len;
++} kmsg_load_kext_msg_t;
++
++typedef struct 
++{
++	mach_msg_header_t head;
++	int fd;
++	int* out_error;
++	void* buffer;
++	unsigned int buffer_len;
++} kmsg_get_directory_entries_t;
++
++
++/*
++ * 2100: Mach routines
++ */
++#define KMSG_MACH_TASK_SELF 2100
++
++typedef struct 
++{
++	mach_msg_header_t head;
++	mach_port_t* out_port;
++} kmsg_mach_task_self_msg_t;
++
++#endif
+\ No newline at end of file
+diff -uNr old/magenta/macho_loader.c kos/magenta/macho_loader.c
+--- old/magenta/macho_loader.c	1970-01-01 01:00:00.000000000 +0100
++++ kos/magenta/macho_loader.c	2012-06-09 05:44:00.000000000 +0100
+@@ -0,0 +1,1049 @@
++/*
++ * MachO Binary Format Support
++ * Copyright (c) 2012 Christina Brooks
++ *
++ * A standalone kernel module responsible for loading MachO binaries
++ * into the kernel. Right now this only supports ARM binaries.
++ */
++
++/*
++ * Incl.
++ */
++#include <linux/module.h>
++#include <linux/kernel.h>
++#include <linux/fs.h>
++#include <linux/mm.h>
++#include <linux/mman.h>
++#include <linux/errno.h>
++#include <linux/signal.h>
++#include <linux/binfmts.h>
++#include <linux/string.h>
++#include <linux/file.h>
++#include <linux/slab.h>
++#include <linux/personality.h>
++#include <linux/elfcore.h>
++#include <linux/init.h>
++#include <linux/highuid.h>
++#include <linux/compiler.h>
++#include <linux/highmem.h>
++#include <linux/pagemap.h>
++#include <linux/security.h>
++#include <linux/random.h>
++#include <linux/elf.h>
++#include <linux/utsname.h>
++#include <linux/coredump.h>
++#include <asm/uaccess.h>
++#include <asm/param.h>
++#include <asm/page.h>
++
++#include <DarwinTypes.h>
++#include <MachO.h>
++
++
++/* 
++	This needs to be in the MachO.h header.
++	#####################################################
++*/
++#define	SEG_TEXT	"__TEXT"
++
++/* mach_loader.h */
++#define LOAD_SUCCESS            0
++#define LOAD_BADARCH            1       /* CPU type/subtype not found */
++#define LOAD_BADMACHO           2       /* malformed mach-o file */
++#define LOAD_SHLIB              3       /* shlib version mismatch */
++#define LOAD_FAILURE            4       /* Miscellaneous error */
++#define LOAD_NOSPACE            5       /* No VM available */
++#define LOAD_PROTECT            6       /* protection violation */
++#define LOAD_RESOURCE           7       /* resource allocation failure */
++
++#define ARM_THREAD_STATE 1
++
++#ifndef CPU_TYPE_ARM
++#define CPU_TYPE_ARM            ((cpu_type_t) 12)
++#define CPU_SUBTYPE_ARM_V4T		((cpu_subtype_t) 5)
++#define CPU_SUBTYPE_ARM_V6		((cpu_subtype_t) 6)
++#endif
++
++#ifndef CPU_SUBTYPE_ARM_V5TEJ
++#define CPU_SUBTYPE_ARM_V5TEJ           ((cpu_subtype_t) 7)
++#endif
++
++#ifndef CPU_SUBTYPE_ARM_V7
++#define CPU_SUBTYPE_ARM_V7		((cpu_subtype_t) 9)
++#endif
++
++/* ARM ONLY! */
++#define trunc_page(x)           ((x) & ~PAGE_MASK)
++
++
++
++/* 
++	Forward declarations
++	#####################################################
++*/
++static int fucking_core_dumper(struct coredump_params *cprm);
++static int load_macho_binary(struct linux_binprm *bprm, struct pt_regs *regs);
++static int load_macho_library(struct file *);
++static unsigned long macho_map(struct file *, unsigned long, struct elf_phdr *,
++				int, int, unsigned long);
++
++
++
++/* 
++	Impl
++	#####################################################
++*/
++#define round_page(_v) (((_v) + PAGE_SIZE - 1) & ~(PAGE_SIZE - 1))
++
++
++static struct linux_binfmt macho_format = {
++		.module		= THIS_MODULE,
++		.load_binary	= load_macho_binary,
++		.load_shlib	= load_macho_library,
++		.core_dump	= fucking_core_dumper, /* YOU GET NOTHING! */
++		.min_coredump	= 0,
++		.hasvdso	= 0
++};
++
++#define BAD_ADDR(x) ((unsigned long)(x) >= TASK_SIZE)
++
++/* Let's use some macros to make this stack manipulation a little clearer */
++#ifdef CONFIG_STACK_GROWSUP
++#define STACK_ADD(sp, items) ((elf_addr_t __user *)(sp) + (items))
++#define STACK_ROUND(sp, items) \
++	((15 + (unsigned long) ((sp) + (items))) &~ 15UL)
++#define STACK_ALLOC(sp, len) ({ \
++	elf_addr_t __user *old_sp = (elf_addr_t __user *)sp; sp += len; \
++	old_sp; })
++#else
++#define STACK_ADD(sp, items) ((elf_addr_t __user *)(sp) - (items))
++#define STACK_ROUND(sp, items) \
++	(((unsigned long) (sp - items)) &~ 15UL)
++#define STACK_ALLOC(sp, len) ({ sp -= len ; sp; })
++#endif
++
++static unsigned long load_macho_interp(struct elfhdr *interp_elf_ex,
++		struct file *interpreter, unsigned long *interp_map_addr,
++		unsigned long no_base)
++{
++	panic("load_macho_interp: not implemented, use ml_loadDylinker instead. ");
++}
++
++
++static unsigned long randomize_stack_top(unsigned long stack_top)
++{
++	return stack_top;
++}
++
++static int ml_setBrk(unsigned long start, unsigned long end)
++{
++	start = PAGE_ALIGN(start);
++	end = PAGE_ALIGN(end);
++	if (end > start) {
++		unsigned long addr;
++		down_write(&current->mm->mmap_sem);
++		addr = do_brk(start, end - start);
++		up_write(&current->mm->mmap_sem);
++		if (BAD_ADDR(addr))
++			return addr;
++	}
++	current->mm->start_brk = current->mm->brk = start;
++	return 0;
++}
++
++static int _verboseLog = 0;
++
++/* 
++	LOADER
++	#####################################################
++*/
++typedef int	vm_offset_t;
++typedef int	vm_size_t;
++
++static int ml_loadDylinker(struct linux_binprm *bprm, int file_size, struct dylinker_command * lcp, struct file **linker_file) {
++	/*
++		Setup the dynamic linker.
++	*/
++	char *name;
++	char *p;
++	
++	if (lcp->cmdsize < sizeof(*lcp))
++		return (LOAD_BADMACHO);
++
++	name = (char *)lcp + lcp->name.offset;
++
++	/* Make sure the linker path is null terminated */
++	p = name;
++	do {
++		if (p >= (char *)lcp + lcp->cmdsize)
++			return(LOAD_BADMACHO);
++	} while (*p++);
++
++	if (_verboseLog) 
++		printk(KERN_WARNING "ml_loadDylinker: dynamic linker is @'%s'\n", name);
++
++	/*
++		Load the linker executable file.
++	*/
++	*linker_file = open_exec(name);
++	if (IS_ERR(*linker_file)) {
++		printk(KERN_WARNING "ml_loadDylinker: can't execute the dynamic linker\n");
++		return(LOAD_BADMACHO);
++	}
++
++	return LOAD_SUCCESS;
++}
++
++static int ml_loadUnixThread(struct linux_binprm *bprm, int file_size, struct arm_thread_command * tcp, void** entry) {
++	/*
++		Setup the main thread.
++	*/
++	
++	/* sanity */
++	if (tcp->flavor != ARM_THREAD_STATE) {
++		printk(KERN_WARNING "ml_loadUnixThread: main thread is of the wrong type %d (need %d)\n",
++				tcp->flavor,
++				ARM_THREAD_STATE);
++	}
++	else if (tcp->count != 17) {
++		printk(KERN_WARNING "ml_loadUnixThread: has the wrong number of arm registers %d (need %d)\n",
++				tcp->count,
++				17);
++	}
++	else {
++		/**/
++		
++		/* Entry point */
++		if (_verboseLog)
++			printk(KERN_WARNING "ml_loadUnixThread: success, pc @ %d\n", tcp->state.r15);
++		
++		*entry = (void*)tcp->state.r15;
++	}
++	
++	return LOAD_SUCCESS;
++}
++
++static int ml_loadSegment(struct linux_binprm *bprm,
++						  int file_size,
++						  struct segment_command* scp,
++						  int* top,
++						  void** first_text,
++						  vm_offset_t slide)
++{
++	/*
++		Bootstrap a macho segment.
++	*/
++	
++	/***/
++	size_t segment_command_size = sizeof(struct segment_command);
++	size_t total_section_size = scp->cmdsize - segment_command_size;
++	size_t single_section_size  = sizeof(struct section);
++	
++	int ret;
++	
++	/* setup mapping vars */
++	vm_offset_t map_addr = round_page(scp->vmaddr);
++	vm_size_t map_size = round_page(scp->filesize);
++	vm_size_t seg_size = round_page(scp->vmsize);
++	vm_offset_t map_offset = scp->fileoff;
++	vm_size_t delta_size;
++	vm_offset_t addr;
++	/*
++	 	Segment sanity checks.
++	*/
++	/* is the command right? */
++	if (scp->cmdsize < segment_command_size) {
++		printk(KERN_WARNING "ml_loadSegment(%.*s): malformed command", 16, scp->segname);
++		return (LOAD_BADMACHO);
++	}
++	/* is the segment in range? */
++	if (scp->fileoff + scp->filesize < scp->fileoff ||
++		scp->fileoff + scp->filesize > (uint64_t)file_size) {
++		printk(KERN_WARNING "ml_loadSegment(%.*s): out of range", 16, scp->segname);
++		return (LOAD_BADMACHO);
++	}
++	/* is page aligned? */
++	if ((scp->fileoff & (PAGE_SIZE-1)) != 0) {
++		printk(KERN_WARNING "ml_loadSegment(%.*s): not page aligned", 16, scp->segname);
++		return (LOAD_BADMACHO);
++	}
++	
++	
++	
++	/*
++		Print some info about the segment.
++	*/
++	if (_verboseLog)
++		printk(KERN_WARNING "ml_loadSegment(%.*s): addr %d, filesize %d, vmsize %d\n",
++				16,
++				scp->segname,
++				map_addr,
++				map_size,
++				seg_size);
++	
++	/*
++	do_mmap(struct file *file,
++			unsigned long addr,
++			unsigned long len,
++			unsigned long prot,
++			unsigned long flag,
++			unsigned long offset)
++	*/
++	
++	/* Actually map in the segment into the correct location.
++	 */
++	if (map_size > 0) {
++		/* There is something from the file to map */
++		
++		addr = PAGE_ALIGN(map_addr + slide);
++		
++		if (_verboseLog)
++			printk(KERN_WARNING "ml_loadSegment(%.*s): seg mmap @ %d, offset %d \n",
++					16,
++					scp->segname,
++					addr,
++					map_offset);
++		
++		/* lock */
++		down_write(&current->mm->mmap_sem);
++		void* mapped = 		
++		do_mmap(bprm->file,
++				addr,
++				map_size,
++				PROT_WRITE | PROT_READ | PROT_EXEC,
++				MAP_PRIVATE | MAP_FIXED,
++				map_offset);
++		/* unlock */
++		up_write(&current->mm->mmap_sem);
++		
++		if (strncmp(scp->segname, SEG_TEXT, 16) == 0) {
++			/*
++				This is a text segment, check if it's mapped from zero and then
++				bump up the first_text variable to make sure it points to its start.
++			*/
++			if (map_offset == 0) {
++				if (_verboseLog)
++					printk(KERN_WARNING "ml_loadSegment(%.*s): this is the base segment \n", 16, scp->segname);
++				
++				*first_text = (void*)(addr);
++			}
++		}
++		
++		if ((mapped) <= 0) {
++			printk(KERN_WARNING "ml_loadSegment(%.*s): map file seg failed \n", 16, scp->segname);
++			ret = LOAD_RESOURCE;
++			goto out;
++		}
++		else {
++			if (_verboseLog)
++				printk(KERN_WARNING "ml_loadSegment(%.*s): mapped in @ %d \n", 16, scp->segname, (void*)mapped);
++		}
++		
++		/*
++		 *	If the file didn't end on a page boundary,
++		 *	we need to zero the leftover.
++		 */
++		delta_size = map_size - scp->filesize;
++		if (delta_size > 0) {
++			if (_verboseLog)
++				printk(KERN_WARNING "ml_loadSegment(%.*s): fixxuuup \n", 16, scp->segname);	
++		}
++	}
++	
++	/*	If the virtual size of the segment is greater
++	 *	than the size from the file, we need to allocate
++	 *	anonymous zero fill memory for the rest. 
++	 */
++	delta_size = seg_size - map_size;
++	if (delta_size > 0) {
++		addr = PAGE_ALIGN(map_addr + map_size + slide);
++		
++		if (_verboseLog)
++			printk(KERN_WARNING "ml_loadSegment(%.*s): mmap @ %d, size: %d\n", 16, scp->segname, addr, delta_size);
++		
++		/* lock */
++		down_write(&current->mm->mmap_sem);
++		void* mapped = 		
++		do_mmap(NULL,
++				addr,
++				delta_size,
++				PROT_WRITE | PROT_READ | PROT_EXEC,
++				MAP_FIXED | MAP_PRIVATE,
++				0);
++		/* unlock */
++		up_write(&current->mm->mmap_sem);
++		
++		if ((mapped) <= 0) {
++			printk(KERN_WARNING "ml_loadSegment(%.*s): map anon failed \n", 16, scp->segname);
++			ret = LOAD_RESOURCE;
++			goto out;
++		}
++		else {
++			if (_verboseLog)
++				printk(KERN_WARNING "ml_loadSegment(%.*s): anon chunk mapped in @%p \n", 16, scp->segname, (void*)mapped);
++		}
++	}
++	
++	if (*top < (map_addr + slide + seg_size)) {
++		/* highest address so far, update the top variable */
++		*top = ((map_addr + slide + seg_size));
++	}
++	
++	/* mapped in successfully */
++	ret = LOAD_SUCCESS;
++	
++out:		
++	return ret;
++}
++
++static int ml_getFileSize(struct file* file) {
++	/* file size from struct file */
++	
++	/* sanity checks */
++	if (!file)
++		return -1;
++	if (!file->f_path.dentry)
++		return -1;
++	if (!file->f_path.dentry->d_inode) 
++		return -1;
++		
++	return file->f_path.dentry->d_inode->i_size;
++}
++
++static int ml_checkImage(struct file* file, macho_header* head) 
++{
++	/*
++		Sanity checks.
++	*/
++	int retval = -ENOEXEC;
++	int file_size = 0;
++	size_t macho_header_sz = sizeof(macho_header);
++	
++	if (head->magic != MH_MAGIC) {
++		printk(KERN_WARNING "ml_checkImage: binary is not a macho binary (magic: 0x%p) \n", (void*)head->magic);
++		retval = -ENOEXEC;
++		goto out_ret;
++	}
++	
++	/*
++		Validate architecture.
++	*/
++	if (head->cputype != CPU_TYPE_ARM) {
++		printk(KERN_WARNING "ml_checkImage: wrong architecture in the executable\n");
++		retval = -EINVAL;
++		goto out_ret;
++	}
++	
++	/*
++		Run ARM-specific validation checks
++	*/
++	if (head->cputype == CPU_TYPE_ARM) {
++		if (head->cpusubtype == CPU_SUBTYPE_ARM_V7)
++		{
++			if (cpu_architecture() != CPU_ARCH_ARMv7) {
++				printk(KERN_WARNING "ml_checkImage: armv7 executables are not supported by the current platform\n");
++				retval = -EINVAL;
++				goto out_ret;
++			}
++		}
++		else if (head->cpusubtype == CPU_SUBTYPE_ARM_V6)
++		{
++			if (cpu_architecture() != CPU_ARCH_ARMv6) {
++				printk(KERN_WARNING "ml_checkImage: armv6 executables are not supported by the current platform\n");
++				retval = -EINVAL;
++				goto out_ret;
++			}
++		}
++		else {
++			printk(KERN_WARNING "ml_checkImage: unrecognized arm version in the executable (%d)\n", head->cpusubtype);
++			retval = -EINVAL;
++			goto out_ret;
++		}
++	}
++	
++	
++	/*
++	 	Make sure the file size can be retrieved in order 
++	  	to perform sanity checks on the file.
++	 */
++	file_size = ml_getFileSize(file);
++	if (file_size < 0) {
++		printk(KERN_WARNING "ml_checkImage: can't retrieve binary size \n");
++		retval = -EINVAL;
++		goto out_ret;
++	}
++	
++	/*
++		Main portion of the sanity checks for the macho file.
++	*/
++	
++	retval = -EINVAL;
++	/* can we map it? */
++	if (!file->f_op||!file->f_op->mmap) {
++		printk(KERN_WARNING "ml_checkImage: binary file can't be mapped in \n");
++		goto out_ret;
++	}
++	/* sane lc size? */
++	if ((off_t)(macho_header_sz + head->sizeofcmds) > file_size) {
++		printk(KERN_WARNING "ml_checkImage: malformed load commands size \n");
++		goto out_ret;
++	}
++	if (head->filetype != MH_EXECUTE) {
++		printk(KERN_WARNING "IGN:ml_checkImage: macho file is not executable \n");
++		//goto out_ret;
++	}
++	
++	/* Print some info about the macho file */
++	if (_verboseLog)
++		printk(KERN_WARNING "ml_checkImage: valid macho file: \n\tmagic: 0x%p \n\tsize: %d\n",
++				(void*)head->magic,
++				file_size);
++	
++	retval = 0;
++	
++out_ret:	
++	return retval;
++}
++
++static int ml_bootstrapDylinker(struct file* file, /* file for the dylinker*/
++								int* top_data, /* top of image data */
++								void** first_text,
++								void** entry_point) /* first text segment of the linker */
++								
++{
++	/* fake bprm for the segment loader*/
++	struct linux_binprm bprm;
++	
++	int retval;
++	int load_addr = *top_data;
++	size_t macho_header_sz = sizeof(macho_header);
++	macho_header* head = kmalloc(macho_header_sz, GFP_KERNEL);
++	int file_size = 0;
++	
++	/* this is for LC loader */
++	int ret = 0;
++	size_t offset;
++	size_t oldoffset;
++	uint32_t ncmds;
++	uint8_t* addr;
++	
++	if (_verboseLog)
++		printk(KERN_WARNING "ml_bootstrapDylinker: loading dynamic linker @ %d\n", load_addr);
++
++	/*
++		Read in the macho header.
++	*/
++	kernel_read(file, 0, head, macho_header_sz);
++
++	retval = ml_checkImage(file, head);
++	if (retval) {
++		retval = LOAD_BADMACHO;
++		printk(KERN_WARNING "ml_bootstrapDylinker: dylinker image failed sanity checks, not loading \n");
++		goto out_ret;
++	}
++	
++	/*
++		XXX: this should be retrieved by ml_checkImage()
++	*/
++	file_size = ml_getFileSize(file);
++	
++	/*
++		Read the load commands from the file.
++	*/
++	offset = 0;
++	ncmds = head->ncmds;
++	addr = kmalloc(head->sizeofcmds, GFP_KERNEL); /***/
++	retval = -EINVAL;
++	
++	/* read in load commands */
++	kernel_read(file, macho_header_sz, addr, head->sizeofcmds);
++	
++	bprm.file = file;
++	
++	while (ncmds--) {
++		/* LC pointer */
++		struct load_command	*lcp = 
++		(struct load_command *)(addr + offset);
++		
++		oldoffset = offset;
++		offset += lcp->cmdsize;
++		
++		if (oldoffset > offset ||
++		    lcp->cmdsize < sizeof(struct load_command) ||
++		    offset > head->sizeofcmds + macho_header_sz)
++		{
++			printk(KERN_WARNING "ml_bootstrapDylinker: malformed binary - lc overflow \n");
++			goto lc_ret;
++		}
++		
++		/*  Parse load commands.
++		 
++			We only need a bare minimum to get the image up an running. Dyld will
++			take care of all the other stuff.
++		 */
++		switch(lcp->cmd) {
++			case LC_SEGMENT:
++			{
++				/*
++					Load and slide a dylinker segment.
++				*/
++				ret = ml_loadSegment(&bprm,
++									file_size,
++									(struct segment_command*)lcp,
++									top_data, /* keep bumping the same top_data */
++									first_text, /* first text segment */
++									load_addr); /* slide up */
++				
++				if (ret != LOAD_SUCCESS) {
++					printk(KERN_WARNING "ml_bootstrapDylinker: segment loading failure \n");
++					goto lc_ret;
++				}
++				break;
++			}
++			case LC_UNIXTHREAD:
++			{
++				ret = ml_loadUnixThread(&bprm,
++										file_size,
++										(struct arm_thread_command*)lcp,
++										entry_point);
++										
++				if (ret != LOAD_SUCCESS) {
++					printk(KERN_WARNING "ml_bootstrapDylinker: unix thread loading failure \n");
++					goto lc_ret;
++				}
++				break;
++			}
++			default: 
++			{
++				if (_verboseLog)
++					printk(KERN_WARNING "ml_bootstrapDylinker: unsupported lc 0x%p \n", (void*)lcp->cmd);
++				
++				break;
++			}
++		}
++	}
++
++
++	/* loaded successfully */
++	retval = LOAD_SUCCESS;
++	
++	/* free resources */
++	lc_ret:
++		kfree(addr);
++	
++	out_ret:	
++		kfree(head);
++		return retval;
++}
++
++static struct page* dpages[1] = {NULL};
++
++static void wire_weird_pages(void)
++{
++	/* 0x80000000 */
++	if (dpages[0] == NULL)
++	{
++		dpages[0] = alloc_pages(GFP_KERNEL, 0);
++	}
++
++
++	down_write(&current->mm->mmap_sem);
++	int ret = 
++	install_special_mapping(current->mm,
++		0x80000000,
++		PAGE_SIZE,
++		VM_READ | VM_WRITE | VM_SHARED | VM_DONTCOPY,
++		dpages);
++	up_write(&current->mm->mmap_sem);
++
++	void* addr = page_address(dpages[0]);
++
++	memset(addr, 'w', PAGE_SIZE);
++
++	printk("wired weird page! (%p, %d, %p)\n", dpages[0], ret, addr);
++}
++
++static int load_macho_binary(struct linux_binprm *bprm, struct pt_regs *regs)
++{ 
++	unsigned long def_flags = 0;
++	void* entry_point = 0;
++	int retval = -ENOEXEC;
++	int file_size = 0;
++	int executable_stack = EXSTACK_DEFAULT;
++	size_t macho_header_sz = sizeof(macho_header);
++	macho_header* head = ((macho_header*)bprm->buf);
++	struct file *linker_file = NULL;
++	
++	/* have we got enough space? */
++	if (!head) {
++		retval = -ENOMEM;
++		goto out_ret;
++	}
++	
++	retval = ml_checkImage(bprm->file, head);
++	if (retval) {
++		printk(KERN_WARNING "load_macho_binary: image failed sanity checks, not loading \n");
++		goto out_ret;
++	}
++	
++	/*
++		XXX: this should be retrieved by ml_checkImage()
++	*/
++	file_size = ml_getFileSize(bprm->file);
++	
++	/*
++		The file seems to be alright, so set up an environment for the 
++		new binary to run in. After this, the old image will no longer be 
++		usable. If some of the load commands are broken, this process is doomed.
++	*/
++	retval = flush_old_exec(bprm);
++	if (retval) {
++		panic("load_macho_binary: flush_old_exec failed\n");
++	}
++	else {
++		current->flags &= ~PF_FORKNOEXEC;
++		current->mm->def_flags = def_flags;
++		
++		setup_new_exec(bprm);
++		
++		/* set personality */
++		unsigned int personality = current->personality & ~PER_MASK;
++		personality |= PER_LINUX;
++		
++		/*
++		 	This flag has to be set for 32x architectures (I think).
++		*/
++		personality |= ADDR_LIMIT_32BIT;
++		
++		set_personality(personality);
++
++		/* set stuff */
++		current->mm->free_area_cache = current->mm->mmap_base;
++		current->mm->cached_hole_size = 0;
++		//retval = setup_arg_pages(bprm, randomize_stack_top(STACK_TOP), executable_stack);
++					
++		if (retval < 0) {
++			//send_sig(SIGKILL, current, 0);
++			//goto out_ret;
++		}
++		
++		/* stack */
++		current->mm->start_stack = bprm->p;
++	}
++	
++	
++	/*
++		Read the load commands from the file.
++	*/
++	size_t offset;
++	size_t oldoffset;
++	uint32_t ncmds;
++	uint8_t* addr;
++
++	offset = 0;
++	ncmds = head->ncmds;
++	addr = kmalloc(head->sizeofcmds, GFP_KERNEL); /***/
++	retval = -EINVAL;
++	
++	int ret = 0;
++	
++	/*
++		Top of the image data. This is needed to position the heap.
++	*/
++	int top_data = 0;
++	
++	/*
++		First text segment where the mach header is.
++	*/
++	void* first_text = 0;
++	void* first_text_linker = 0;
++	
++	/* read in load commands */
++	kernel_read(bprm->file, macho_header_sz, addr, head->sizeofcmds);
++	
++	while (ncmds--) {
++		/* LC pointer */
++		struct load_command	*lcp = 
++		(struct load_command *)(addr + offset);
++		
++		oldoffset = offset;
++		offset += lcp->cmdsize;
++		
++		if (oldoffset > offset ||
++		    lcp->cmdsize < sizeof(struct load_command) ||
++		    offset > head->sizeofcmds + macho_header_sz)
++		{
++			printk(KERN_WARNING "load_macho_binary: malformed binary - lc overflow \n");
++			goto lc_ret;
++		}
++		
++		/*  Parse load commands.
++		 
++			We only need a bare minimum to get the image up an running. Dyld will
++			take care of all the other stuff.
++		 */
++		switch(lcp->cmd) {
++			case LC_SEGMENT:
++				ret = ml_loadSegment(bprm, file_size, (struct segment_command*)lcp, &top_data, &first_text, 0);
++				if (ret != LOAD_SUCCESS) {
++					printk(KERN_WARNING "load_macho_binary: segment loading failure \n");
++					goto lc_ret;
++				}
++				break;
++			case LC_LOAD_DYLINKER:
++				ret = ml_loadDylinker(bprm, file_size, (struct dylinker_command*)lcp, &linker_file);
++				if (ret != LOAD_SUCCESS) {
++					printk(KERN_WARNING "load_macho_binary: dylinker loading failure \n");
++					goto lc_ret;
++				}
++				else {
++					/* done */
++				}
++				break;
++			case LC_UNIXTHREAD:
++				ret = ml_loadUnixThread(bprm, file_size, (struct arm_thread_command*)lcp, &entry_point);
++				if (ret != LOAD_SUCCESS) {
++					printk(KERN_WARNING "load_macho_binary: unix thread loading failure \n");
++					goto lc_ret;
++				}
++				break;
++			default: 
++				if (_verboseLog)
++					printk(KERN_WARNING "load_macho_binary: unsupported lc 0x%p \n", (void*)lcp->cmd);
++
++				break;
++		}
++	}
++	
++	/*
++		Bootstrap the dynamic linker if needed.
++	*/
++	if (linker_file) {
++		int dylinker_load_addr = top_data;
++		
++		ml_bootstrapDylinker(linker_file,
++							&top_data,
++							&first_text_linker,
++							&entry_point);
++		
++		/* slide the entry point */
++		entry_point = entry_point + dylinker_load_addr;
++			
++		if (_verboseLog)				
++			printk(KERN_WARNING "load_macho_binary: dylinker's first text segment @ %d, new pc @ %d \n",
++					first_text_linker,
++					(int)entry_point);
++	}
++	
++	/*
++		Now, I don't know what these are used for, but I'm fairly sure
++		they're *very* important. So let's set them up. 
++		
++		See 'linux/mm_types.h':
++		unsigned long start_code, end_code, start_data, end_data;
++		unsigned long start_brk, brk, start_stack;
++	*/	
++	current->mm->start_code = 0; /* IMP */
++	current->mm->end_code = top_data; /* IMP */
++	current->mm->start_data = 0;
++	current->mm->end_data = top_data;
++		
++	if (_verboseLog)
++		printk(KERN_WARNING "load_macho_binary: setting up heap ...\n");
++
++	/* Set up an empty heap. This will be grown as more memory is allocated.  */
++	int brkret = ml_setBrk(top_data, top_data);
++
++	if (_verboseLog)
++		printk(KERN_WARNING "load_macho_binary: setting up misc ...\n");
++
++	/* setup misc stuff */
++	set_binfmt(&macho_format);
++	install_exec_creds(bprm);
++
++	/*
++		Stack (grows down on ARM).
++	*/
++	uint32_t* stack = bprm->p;
++	uint32_t* argv_array;
++	uint32_t* argv;
++	uint32_t* envp_array;
++	uint32_t* envp;
++	uint32_t total_argv_size;
++	uint32_t total_env_size;
++
++	/* Construct envp array. */
++	envp = envp_array = stack = (uint32_t*)stack - ((bprm->envc+1));
++
++	/* Construct argv array. */
++	argv = argv_array = stack = (uint32_t*)stack - ((bprm->argc+1));
++
++	if (_verboseLog)
++		printk(KERN_WARNING "load_macho_binary: setting up stack @ %p ...\n", (uint32_t*)stack);
++
++	uint32_t argc = bprm->argc;
++	uint32_t envc = bprm->envc;
++	char* p = bprm->p;
++
++	/* Set up argv pointers */
++	current->mm->arg_start = (unsigned long)p;
++	while(argc--) {
++		char c;
++
++		put_user(p,argv++);
++		do {
++			get_user(c,p++);
++		} while (c);
++	}
++	put_user(NULL,argv);
++
++	/* Set up envp pointers */
++	current->mm->arg_end = current->mm->env_start = (unsigned long) p;
++	while(envc--) {
++		char c;
++
++		put_user(p,envp++);
++		do {
++			get_user(c,p++);
++		} while (c);
++	}
++	put_user(NULL,envp);
++	current->mm->env_end = (unsigned long) p;
++
++	/*
++		The actual stuff passed to the linker goes here.
++	*/
++	stack = (uint32_t*)stack - (4);
++
++	stack[0] = (uint32_t)first_text; /* mach_header */
++	stack[1] = bprm->argc; /* argc */
++	stack[2] = argv_array; /* argv */
++	stack[3] = (uint32_t)first_text_linker; /* linker's mach_header */
++	
++	if (_verboseLog)
++		printk(KERN_WARNING "load_macho_binary: setting up main thread ...\n");	
++	
++	/*
++		Set up the main thread
++	*/
++	if (BAD_ADDR(entry_point)) {
++		/* entry point is not executable */
++		
++		printk(KERN_WARNING "load_macho_binary: bad entry point \n");
++		force_sig(SIGSEGV, current);
++		retval = -EINVAL;
++		goto lc_ret;
++	}
++	
++	if (_verboseLog)
++		printk(KERN_WARNING "load_macho_binary: setting up registers ...\n");
++
++	/* 
++		See 'start_thread' in 'processor.h'
++		'start_thread' provides an ELF implementation of this function.
++		This is for the Darwin ABI implementation which is used by iPhoneOS binaries.
++	*/
++	unsigned long initial_pc = (unsigned long)entry_point;	
++	
++	/* exit supervisor and enter user */
++	set_fs(USER_DS);
++	memset(regs->uregs, 0, sizeof(regs->uregs));
++	regs->ARM_cpsr = USR_MODE;	
++
++	/* not sure */
++	if (elf_hwcap & HWCAP_THUMB && initial_pc & 1)
++		regs->ARM_cpsr |= PSR_T_BIT;
++		
++	/* set up control regs */	
++	regs->ARM_cpsr |= PSR_ENDSTATE;	
++	regs->ARM_pc = initial_pc & ~1;		/* pc */
++	regs->ARM_sp = stack;		/* sp */
++
++	/* This is actually ignored, but set it anyway */
++	regs->ARM_r2 = stack[2];	/* r2 (envp) */	
++	regs->ARM_r1 = stack[1];	/* r1 (argv) */
++	regs->ARM_r0 = stack[0];	/* r0 (argc) */	
++	
++	/* this will work for mmu and nonmmu */
++	nommu_start_thread(regs);
++	
++	wire_weird_pages();	
++			
++	/*
++		Binary is now loaded. Return 0 to signify success.
++	*/
++	retval = 0;
++
++	if (_verboseLog)
++		printk(KERN_WARNING "load_macho_binary: complete, heap starts at %d, brkret %d \n", top_data, brkret);
++
++	/*
++	 	Teardown
++	*/
++	lc_ret:
++		kfree(addr);
++	out_ret:
++		return retval;
++}
++
++static int fucking_core_dumper(struct coredump_params *cprm)
++{
++	printk(KERN_WARNING "----- Core Dump -----\n");
++
++	printk(KERN_WARNING "PID: %d", current->pid);
++
++	printk(KERN_WARNING "Received Signal: %ld", cprm->signr);
++
++	printk(KERN_WARNING "Register Dump:\n"
++	"\tpc @ %p (%d), sp @ %p \n"
++	"\tr0 @ %p, r1 @ %p, r2 @ %p, r3 @ %p, r4 @ %p \n"
++	"\tr5 @ %p, r6 @ %p, r7 @ %p, r8 @ %p, r9 @ %p \n"
++	"\tr10 @ %p, lr @ %p,\n",
++	(void*)cprm->regs->ARM_pc,
++	(int)cprm->regs->ARM_pc,
++	(void*)cprm->regs->ARM_sp,
++	(void*)cprm->regs->ARM_r0,
++	(void*)cprm->regs->ARM_r1,
++	(void*)cprm->regs->ARM_r2,
++	(void*)cprm->regs->ARM_r3,
++	(void*)cprm->regs->ARM_r4,
++	(void*)cprm->regs->ARM_r5,
++	(void*)cprm->regs->ARM_r6,
++	(void*)cprm->regs->ARM_r7,
++	(void*)cprm->regs->ARM_r8,
++	(void*)cprm->regs->ARM_r9,
++	(void*)cprm->regs->ARM_r10,
++	(void*)cprm->regs->ARM_lr);
++	
++	return 0;
++}
++
++/* This is really simpleminded and specialized - we are loading an
++   a.out library that is given an ELF header. */
++static int load_macho_library(struct file *file)
++{
++	panic("load_macho_library: not implemented.");
++}
++
++/* CoreDump code stripped from here */
++
++static int __init init_macho_binfmt(void)
++{
++	printk(KERN_WARNING "init_macho_binfmt: MachO binary loader initialized! (load: %p) \n", load_macho_binary);
++	
++	return register_binfmt(&macho_format);
++}
++
++static void __exit exit_macho_binfmt(void)
++{
++	unregister_binfmt(&macho_format);
++}
++
++module_init(init_macho_binfmt);
++module_exit(exit_macho_binfmt);
++
++
++/*
++ * Fuck everything about this.
++ */
++MODULE_LICENSE("GPL");
+diff -uNr old/magenta/mach_port_types.h kos/magenta/mach_port_types.h
+--- old/magenta/mach_port_types.h	1970-01-01 01:00:00.000000000 +0100
++++ kos/magenta/mach_port_types.h	2012-06-09 05:44:00.000000000 +0100
+@@ -0,0 +1,88 @@
++#ifndef _H_MG_MACH_PORT_TYPES_
++#define _H_MG_MACH_PORT_TYPES_
++
++#include <linux/kernel.h>
++#include <linux/kfifo.h>
++#include <linux/list.h>
++
++#include <DarwinTypes.h>
++#include <MachO.h>
++
++#define FALSE 0
++#define TRUE 1
++
++#define MAX_PORT_COUNT 4096
++
++typedef unsigned int natural_t;
++typedef int integer_t;
++typedef int boolean_t;
++
++typedef natural_t mach_port_t;
++typedef natural_t mach_port_right_t;
++typedef int mach_port_delta_t;
++
++#define MACH_PORT_RIGHT_SEND            ((mach_port_right_t) 0)
++#define MACH_PORT_RIGHT_RECEIVE         ((mach_port_right_t) 1)
++#define MACH_PORT_RIGHT_SEND_ONCE       ((mach_port_right_t) 2)
++#define MACH_PORT_RIGHT_PORT_SET        ((mach_port_right_t) 3)
++#define MACH_PORT_RIGHT_DEAD_NAME       ((mach_port_right_t) 4)
++#define MACH_PORT_RIGHT_NUMBER          ((mach_port_right_t) 5)
++
++#define KE_PORT_TYPE_FREE 0
++#define KE_PORT_TYPE_TASK 1
++#define KE_PORT_TYPE_IPC 2
++
++typedef struct __ke_port_t ke_port_t;
++
++typedef enum {
++    kMachPortRightSend = 0x1,
++    kMachPortRightReceive = 0x2,
++    kMachPortRightSendOnce = 0x4,
++    /*STYLE4 = 0x8,
++    STYLE5 = 0x10,
++    STYLE6 = 0x20,
++    STYLE7 = 0x40,
++    STYLE8 = 0x80*/
++} ke_right_type_t;
++
++typedef struct 
++{
++	struct task_struct *task; /* task which owns the port */
++	
++	struct completion wait_for_enqueued_data;
++	struct kfifo queue; /* queue */
++
++	boolean_t allocated; 
++} ipc_port;
++
++typedef struct
++{
++	ke_port_t* port;
++	ke_right_type_t rights;
++	int urefs;
++
++	struct list_head list;
++} ke_port_right_t;
++
++/*
++ * This structure represents a task port as well
++ * the task's IPC space and other stuff.
++ */
++typedef struct 
++{
++	struct task_struct *task; /* task which owns the port */
++	ke_port_right_t* port_rights; /* list of port rights for this task */
++} task_port_t;
++
++typedef struct __ke_port_t
++{
++	mach_port_t	mp; /* port name */
++	uint16_t type; /* port type */
++
++	union {
++		ipc_port ipc;
++		task_port_t tp;
++	} c;
++} ke_port_t;
++
++#endif 
+\ No newline at end of file
+diff -uNr old/magenta/Makefile kos/magenta/Makefile
+--- old/magenta/Makefile	1970-01-01 01:00:00.000000000 +0100
++++ kos/magenta/Makefile	2012-06-09 05:44:00.000000000 +0100
+@@ -0,0 +1,10 @@
++# Makefile for Magenta's Kernel Components
++# Copyright (c) 2012 Christina Brooks
++
++obj-y	+= macho_loader.o
++obj-y	+= mach.o
++obj-y	+= ke_array.o
++obj-y	+= ke_runtime.o
++obj-y	+= darwin_getdirentries.o
++obj-y	+= kext.o
++obj-y	+= mach_kmsg.o
+\ No newline at end of file
+diff -uNr old/Makefile kos/Makefile
+--- old/Makefile	2011-01-05 00:50:19.000000000 +0000
++++ kos/Makefile	2012-06-09 05:43:54.000000000 +0100
+@@ -680,7 +680,7 @@
+ 
+ 
+ ifeq ($(KBUILD_EXTMOD),)
+-core-y		+= kernel/ mm/ fs/ ipc/ security/ crypto/ block/
++core-y		+= kernel/ mm/ fs/ ipc/ security/ crypto/ block/ magenta/
+ 
+ vmlinux-dirs	:= $(patsubst %/,%,$(filter %/, $(init-y) $(init-m) \
+ 		     $(core-y) $(core-m) $(drivers-y) $(drivers-m) \
+
