@@ -1,0 +1,94 @@
+Federal Communications Commission DA 12-654 
+Before the
+Federal Communications Commission
+Washington, D.C. 20554
+In the Matter of
+Petition for Rulemaking to Amend 
+the Land Mobile-TV Sharing Rules 
+in the 470-512 MHz Band
+Amendment of Section 90.307(e) of the 
+Commission’s Rules Identifying Television
+Stations to be Protected from Land Mobile
+Radio Licensed Operations
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+RM-11527
+ORDER
+Adopted:  April 25, 2012 Released:  April 26, 2012
+By the Chief, Office of Engineering and Technology:  
+1. On February 18, 2009, the National Public Safety Telecommunications Council (NPSTC) 
+filed a Petition for Rulemaking (NPSTC Petition) asking the Commission to amend its rules addressing 
+the land mobile/television sharing criteria in the 470-512 MHz band (TV channels 14-20).1 Subpart L of 
+Part 90 of the Rules sets forth a “special sharing plan” by which land mobile stations are authorized to 
+operate in the 470-512 MHz band in 13 specified urbanized areas by geographically sharing the band with 
+broadcast television stations.2 In its Petition, NPSTC claims that the transition from analog to digital 
+television transmissions provides an opportunity for us to revisit our sharing rules and update them to 
+provide additional flexibility for land mobile users in the 470-512 MHz band.3 The Commission placed 
+the NPSTC Petition on public notice on April 7, 2009, but has not otherwise acted on NPSTC’s request.4
+2. On April 2, 2010, the Association of Public-Safety Communications Officials-International, 
+Inc. (APCO) filed a Petition for Rulemaking (APCO Petition) asking the Commission to update the list of 
+television stations on channels 14-20 that land mobile applicants for 470-512 MHz operations must 
+analyze to comply with our interference protection requirements.5 The Commission has taken no action 
+on APCO’s request. 
+  
+1 Petition for Rulemaking by the National Public Safety Telecommunications Council, filed on February 18, 2009, in 
+RM-11527.  
+2 47 C.F.R. §90.301 et seq.  Land mobile authorizations are not currently available in the 470-512 MHz band in two 
+of these urbanized areas (Cleveland and Detroit).   
+3 Among other things, the Petition asks that we reduce the spacing between land mobile and television stations, 
+extend the land mobile base station area of operation from 80 to 128 kilometers around each city, add Baltimore as a 
+separate urbanized area, and modify the rules pertaining to public safety entity spectrum access and the use of 
+spectrum by both public safety and business radio services.
+4 Consumer & Governmental Affairs Bureau Reference Information Center Petition for Rulemakings Filed, 
+Public Notice, Report No. 2887 (April 7, 2009).
+5 Petition for Rulemaking by the Association of Public-Safety Communications Officials-International, Inc., filed on 
+April 2, 2010.   These TV stations are listed in a Commission publication, “TV stations to be considered in the 
+preparation of Applications for Land Mobile Facilities in the Band 470-512 MHz,” which is described in Section 
+90.307(e) of the Rules.
+Federal Communications Commission DA 12-654 
+2
+3. On February 22, 2012, the President signed into law the “Middle Class Tax Relief and Job 
+Creation Act of 2012” (Spectrum Act).6 Section 6103 of this Act requires the Commission to reallocate 
+the spectrum in the 470-512 MHz band currently used by public safety licensees within 9 years and to 
+begin a system of competitive bidding to grant new initial licenses in the band.7 The relief sought by the 
+NPSTC Petition – in particular, modification of our rules to permit additional flexibility and use of the 
+470-512 MHz band by public safety entities – appears to be inconsistent with the objectives of the 
+Spectrum Act.
+4. In light of the Spectrum Act, we find that it would be imprudent to further consider the 
+NPSTC Petition as filed. Any modification or expansion of the rules governing land mobile use of the 
+470-512 MHz band is best considered in concert with our analysis of the Spectrum Act and as part of the 
+proceedings we initiate to implement its requirements.  For this reason, we conclude that the 
+NPSTC Petition plainly does not warrant further consideration in its current form. 
+5. We also find that the APCO Petition plainly does not warrant further consideration at this 
+time.  As noted, the Spectrum Act requires the Commission to reallocate the spectrum in the 470-512 
+MHz band currently used by public safety licensees.  As the Commission implements this legislation, we 
+expect that the sharing environment between the remaining land mobile operations and television 
+broadcasting in this band will change.  Thus, we conclude that it would be premature to consider changes 
+to the interference protection requirements at this time.
+6. For the reasons stated above, we dismiss the NPTSTC and APCO petitions without prejudice 
+to the petitioners.  To the extent that any of the issues from either petition remains relevant, the petitioners 
+are free to raise them as part of our future proceedings pertaining to the Spectrum Act.
+7. Accordingly, IT IS ORDERED that, pursuant to the authority granted in Sections 4(i), 302, 
+and 303(r) of the Communications Act of 1934, as amended, 47 U.S.C. §§ 4(i), 302(a), 303(r), and 
+Section 1.401(e) of the Commission’s Rules, 47 C.F.R. § 1.401(e), the petitions for rulemaking filed by 
+the National Public Safety Telecommunications Council and the Association of Public-Safety 
+Communications Officials-International, Inc. ARE DISMISSED without prejudice and RM-11527 IS 
+TERMINATED, effective upon issuance of this Order.
+8. For further information regarding this Order, contact Tom Mooring, Office of Engineering 
+and Technology, (202) 418-2450, tom.mooring@fcc.gov.
+FEDERAL COMMUNICATIONS COMMISSION
+Julius P. Knapp
+Chief, Office of Engineering and Technology
+  
+6 See “Middle Class Tax Relief and Job Creation Act of 2012,” Pub. L. No. 112-96, 126 Stat 156 (2012).
+7 Section 6103.  We note that there are other portions of the Act that directly affect public safety users.  See, e.g.,
+Section 6101 (requiring that the Commission reallocate the 700 MHz D Block spectrum (758-763 MHz and 
+788-793 MHz) for use by public safety entities).

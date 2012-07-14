@@ -1,0 +1,1532 @@
+Federal Communications Commission FCC 12-36
+Before the
+Federal Communications Commission
+Washington, D.C. 20554
+In the Matter of
+Unlicensed Operation in the TV Broadcast Bands
+Additional Spectrum for Unlicensed Devices
+Below 900 MHz and in the 3 GHz Band
+)
+)
+)
+)
+)
+)
+ET Docket No. 04-186
+ET Docket No. 02-380
+THIRD MEMORANDUM OPINION AND ORDER
+Adopted:  April 4, 2012 Released:  April 5, 2012
+By the Commission:
+TABLE OF CONTENTS
+Heading Paragraph #
+I. INTRODUCTION.................................................................................................................................. 1
+II. BACKGROUND.................................................................................................................................... 3
+III. DISCUSSION......................................................................................................................................... 6
+A. Height above average terrain (HAAT) limit .................................................................................... 7
+B. Out-of-band emissions ................................................................................................................... 21
+C. Protection of wireless services on channel 52................................................................................ 36
+D. New class of TV bands devices ..................................................................................................... 48
+E. Confidentiality of database information......................................................................................... 53
+F. Other Matters ................................................................................................................................. 58
+1. TV translator, low power TV and Class A TV station receive sites........................................ 59
+2. Protection of radio astronomy ................................................................................................. 61
+IV. PROCEDURAL MATTERS................................................................................................................ 62
+A. Final Regulatory Flexibility Analysis ............................................................................................ 62
+B. Final Paperwork Reduction Act of 1995 Analysis......................................................................... 63
+C. Contact Persons.............................................................................................................................. 64
+V. ORDERING CLAUSES....................................................................................................................... 65
+APPENDIX A – List of Parties Filing Petitions
+APPENDIX B – Final Rules
+APPENDIX C – Final Regulatory Flexibility Analysis
+I. INTRODUCTION
+1. Unlicensed TV bands devices, or “TVBDs,” will operate on frequencies in the TV bands 
+in areas where they are not used by licensed services (“TV white spaces”).  Although the particular 
+unused TV channels vary from location to location, the devices will have the flexibility and agility to 
+locate and operate on the unused channels, no matter where the devices are located.  This type of 
+“opportunistic use” of spectrum has great potential as a model for enabling access to other spectrum 
+bands and improving spectrum efficiency.  
+Federal Communications Commission FCC 12-36
+2
+2. In this Order, we are addressing five petitions for reconsideration of our decisions in the 
+Second Memorandum Opinion and Order (“Second MO&O”) in this proceeding1 and modifying our rules 
+in certain respects.  In particular, we are: (1) increasing the maximum height above average terrain 
+(HAAT) for sites where fixed devices may operate; (2) modifying the adjacent channel emission limits to 
+specify fixed rather than relative levels; and (3) slightly increasing the maximum permissible power 
+spectral density (PSD) for each category of TV bands device. These changes will result in decreased 
+operating costs for fixed TVBDs and allow them to provide greater coverage, thus increasing the 
+availability of wireless broadband services in rural and underserved areas without increasing the risk of 
+interference to incumbent services.  We also are revising and amending several of our rules to better 
+effectuate the Commission’s earlier decisions in this docket and to remove ambiguities.
+II. BACKGROUND
+3. In the Second Report and Order and Memorandum Opinion and Order (“Second Report 
+and Order”) in this proceeding, the Commission adopted rules that allow unlicensed devices to operate in 
+the TV bands at locations where frequencies are not in use by licensed services.2 The TV bands consist of 
+six-megahertz channels designated 2 to 51 in four bands of frequencies in the VHF and UHF regions of 
+the radio spectrum (54-72 MHz, 76-88 MHz, 174-216 MHz, and 470-698 MHz).3 The Commission 
+permitted two categories of unlicensed devices, fixed and personal/portable unlicensed, to operate in the 
+TV bands.4  Fixed devices must incorporate a geo-location capability and a means to access a database 
+that provides a list of available TV channels that may be used at their location.5 Such devices must 
+contact a database to obtain a channel list before operating and re-check the database at least once daily.6  
+Fixed devices are permitted to operate with up to one watt transmitter power output and may use an 
+antenna that provides up to 6 dBi of gain.7 Portable devices can operate either as “Mode I” or “Mode II”.8  
+A Mode II device must incorporate similar geo-location and database access capabilities to fixed devices.9  
+  
+1 See Second Memorandum Opinion and Order in ET Docket Nos. 02-380 and 04-186, 25 FCC Rcd 18661 (2010) 
+(“Second MO&O”).  A list of parties filing petitions for reconsideration is included in Appendix A, which also 
+includes parties filing oppositions to those petitions and replies to the oppositions.
+2 See Second Report and Order and Memorandum Opinion and Order in ET Docket Nos. 02-380 and 04-186, 23 
+FCC Rcd 16807 (2008).  In the First Report and Order and Further Notice of Proposed Rule Making in this 
+proceeding, 21 FCC Rcd 12266 (2006), the Commission allowed fixed unlicensed devices to operate on vacant TV 
+channels, excluding channel 37, and prohibited personal/portable devices from operating on channels 14-20 that are 
+used by public safety operations in some cities.  However, it did not adopt final technical rules at that time.  In the 
+Second Report and Order, the Commission allowed portable devices to operate on channels 21-51, excluding 
+channel 37, and adopted technical rules for both fixed and portable devices.  In the Second Memorandum Opinion 
+and Order in this proceeding, 25 FCC Rcd 18661 (2010), the Commission responded to seventeen petitions for 
+reconsideration of the Second Report and Order.  It upheld the majority of the Commission’s previous decisions but 
+made a number of minor revisions to the rules.
+3 See 47 C.F.R. § 73.603(a).  
+4 See 47 C.F.R. §§ 15.703(c) and 15.703(i).
+5 As an alternative, fixed devices may have their geographic coordinates determined and programmed by a 
+professional installer.  See 47 C.F.R. § 15.711(b)(1).
+6 See 47 C.F.R. § 15.711(b)(3)(i).
+7 See 47 C.F.R. § 15.709(a).
+8 See 47 C.F.R. §§ 15.703(e) and 15.703(f).
+Federal Communications Commission FCC 12-36
+3
+A Mode I device is not required to incorporate geo-location or database access capabilities but instead 
+obtains the list of available channels on which it can operate from either a fixed or Mode II device that 
+has database access.10 Personal/portable devices are permitted to operate with up to 100 mW EIRP except 
+when operating on channels adjacent to a TV service, in which case they may operate with up to 40 mW 
+EIRP.11 The databases used by TV bands devices are established and administered by parties selected by 
+the Commission.12  
+4. In the Second MO&O in this proceeding, the Commission upheld the majority of its prior 
+decisions but made the following changes to the rules that are at issue in one or more of the five petitions 
+for reconsideration that we address in this order:  
+§ Restricted fixed TV bands devices from operating at locations where the ground level is more 
+than 76 meters above the average terrain level in the area.13
+§ Eliminated the requirement that TV bands devices that incorporate geo-location and database 
+access must also listen (sense) to detect the signals of TV stations and low power auxiliary 
+service stations (wireless microphones).14 As part of that change, the Commission also revised 
+the rules in several respects to reflect use of that method as the only means for determining 
+channel availability.15 These changes include requiring Mode I devices to verify channel 
+availability and Mode II devices to verify their operating location at regular time intervals.16
+§ Modified the rules governing the measurement of adjacent channel emissions.17
+§ Required that information in the TV bands databases be publicly available.18
+5. The petitions for reconsideration raise the following issues: (1) the height above average 
+terrain (HAAT) limit for TV bands devices; (2) out-of-band emission limits; (3) protection of wireless 
+services on TV channel 52; (4) establishment of a new category of fixed indoor TV bands devices; and (5) 
+(Continued from previous page)    
+9 See 47 C.F.R. §§ 15.711(b)(2) and 15.711(b)(3)(ii).  Unlike fixed devices, there is no option for a Mode II 
+personal/portable device to be professionally installed as an alternative to incorporation of a geo-location capability.  
+Additionally, a personal/portable device must re-check its location at least once every 60 seconds except when in a 
+sleep mode.
+10 See 47 C.F.R. §§ 15.703(e) and 15.711(b)(3)(iv).
+11 See 47 C.F.R. § 15.709(a)(2).
+12 See 47 C.F.R. § 15.715.  The Office of Engineering and Technology designated ten entities to administer TV 
+bands device databases by two separate Orders.  The ten designated database administrators are: Airity, Inc. 
+(formerly WSdb LLC); Comsearch; Frequency Finder, Inc.; Google, Inc.; LS Telcom; Key Bridge Global LLC; 
+NeuStar, Inc.; Spectrum Bridge, Inc.; Telcordia Technologies, Inc.; and Microsoft Corporation.  See Order in ET 
+Docket Nos. 02-380 and 04-186, 26 FCC Rcd 554 (2011) (designating the first nine of these listed parties as 
+database administrators) and Order in ET Docket Nos. 02-380 and 04-186, 26 FCC Rcd 10599 (2011) (designating 
+Microsoft Corporation at the tenth database administrator).  At this time, Spectrum Bridge has received approval to 
+operate its database system to serve devices and Telcordia has run a public trial of its database system.
+13 See Second MO&O, 25 FCC Rcd 18661, 18689 (2010) at ¶ 66 and 47 C.F.R. § 15.709(b)(2).
+14 See Second MO&O, 25 FCC Rcd 18661, 18684 (2010) at ¶ 54.
+15 See Second MO&O, 25 FCC Rcd 18661, 18685 (2010) at ¶¶ 56-59.
+16 See 47 C.F.R. §§ 15.711(b)(3)(iv) and 15.711(b)(2).
+17 See Second MO&O, 25 FCC Rcd 18661, 18697 (2010) at ¶ 87 and 47 C.F.R. § 15.709(c).
+18 See Second MO&O, 25 FCC Rcd 18661, 18710 (2010) at ¶ 119. This requirement does not apply to any 
+information that the database administrators collect that is not required by our rules to be in the database.
+Federal Communications Commission FCC 12-36
+4
+the confidentiality of certain information in the TV bands database.
+III. DISCUSSION
+6. We find that in the Second MO&O, the Commission generally established the 
+appropriate balance between providing for operation of TV bands devices that will make new broadband 
+services available to the public while protecting incumbent services in the TV bands from interference.  
+Thus, we are upholding the majority of the Commission’s decisions in the Second MO&O that are 
+addressed in the petitions for reconsideration.  We do, however, find merit in some of these requests and 
+are therefore modifying certain rules to enhance TVBD operations, particularly in rural and underserved 
+areas.  In particular, we are increasing the maximum height above average terrain (HAAT) of sites where 
+fixed devices may operate, modifying the adjacent channel (out-of-band) emission limits to specify fixed 
+levels, and slightly increasing the maximum permissible power spectral density (PSD) for each category 
+of TV bands device. These changes will result in decreased operating costs and greater coverage from 
+fixed TV bands devices that we expect will increase the availability of wireless broadband services in 
+rural and underserved areas.  We also find that these changes will not increase the risk of interference to 
+incumbent services.  We also are correcting several of our rules to better effectuate the Commission’s 
+earlier decisions in this docket and to remove ambiguities.  
+A. Height above average terrain (HAAT) limit
+7. Because the range at which a TV bands device can cause interference to authorized users 
+increases as the height of the device’s antenna increases, the Commission adopted a maximum antenna 
+height limit of 30 meters above ground level (AGL) for fixed devices in the Second Report and Order.19  
+The Commission also adopted a table of separation distances between fixed TV bands devices and the 
+service contours of co-channel and adjacent channel TV stations for three different ranges of antenna 
+height: 0 to 3 meters, 3 to 10 meters, and 10 to 30 meters.20 This table specifies the greatest separation 
+distances at the highest antenna height and shorter separation distances at lower antenna heights. 
+8. In the Second MO&O, the Commission declined to increase the maximum permitted 
+transmit antenna height above ground for fixed TV bands devices, stating that the 30 meters AGL was 
+established as a balance between the benefits of increasing TV bands device transmission range and the 
+need to minimize the impact on licensed services.21 However, while the Commission found that 
+specifying a limit on antenna height AGL rather than above average terrain would be satisfactory for 
+controlling interference to authorized services in the majority of cases, it also recognized that the potential 
+for interference increased in instances where a fixed TV bands device antenna is located on a high point 
+such as a hill or mountain.22 In such cases, the antenna height above the surrounding terrain would be 
+significantly greater than if the antenna were located on flat terrain, thus substantially increasing both the 
+distance at which signals would propagate and the potential for interference to authorized operations in 
+the TV bands.  The Commission concluded that a limit on antenna height above average terrain (HAAT) 
+  
+19 See Second Report and Order, 23 FCC Rcd 16807, 16886 (2008) at ¶ 228.  The Commission did not impose 
+height restrictions on personal/portable devices because it found that it is not practical to administer an antenna 
+height limit for those devices and the lower power and limited antenna gain of personal/portable devices would 
+generally result in propagation over a shorter range than fixed devices.
+20 See 47 C.F.R. § 15.712(a)(2).
+21 See Second MO&O, 25 FCC Rcd 18661, 18689 (2010) at ¶ 65.
+22 The antenna height above ground is the distance from the antenna center of radiation to the actual ground directly 
+below the antenna.  To calculate the antenna height above average terrain (HAAT), the average elevation of the 
+surrounding terrain above mean sea level must be determined along at least 8 evenly spaced radials at distances from 
+3 to 16 km from the transmitter site.  The HAAT is the difference between the antenna height above mean sea level 
+(the antenna height above ground plus the site elevation) and the average elevation of the surrounding terrain.
+Federal Communications Commission FCC 12-36
+5
+was necessary to limit the interference potential of fixed TV bands devices.  To accomplish this, the 
+Commission prohibited fixed TV bands devices from operating at sites that are more than 76 meters (249 
+feet) above the average height of the surrounding terrain.23 Therefore, the maximum permissible HAAT 
+for fixed device antennas is the 76 meter site HAAT limit plus the 30 meter maximum antenna height 
+AGL, or 106 meters (348 feet).  To ensure that fixed devices operate only at sites the comply with the 76 
+meter HAAT limit, the Commission required that the TV bands database compute the site HAAT at a 
+fixed device’s location and not provide a list of available channels to the device if the computed HAAT 
+exceeds the limit.24
+9. Petitions and Comments. The Wireless Internet Service Providers Association, 
+Federation of Internet Solution Providers of the Americas, Native American Broadband Association, 
+Spectrum Bridge, Inc., Comsearch, Carlson Wireless Technologies Inc., and Wireless Strategies, Inc. 
+(“Joint Petitioners”) request that the Commission eliminate the 76 meter ground HAAT limit for fixed 
+sites.25 The Joint Petitioners request that the Commission instead allow antenna heights of up to 250 
+meters (820 feet) HAAT.  To offset the increased interference potential from fixed devices operating with 
+higher antenna heights, they request that the Commission amend the table of separation distances in 
+Section 15.712(a)(2) of the rules to provide increased separation distances from the protected contour of 
+co-channel and adjacent channel TV stations for fixed devices operating with antenna heights greater than 
+30 meters up to a maximum of 250 meters HAAT.26 The Joint Petitioners argue that there are significant 
+areas of the country where fixed devices cannot be deployed solely because the 76 meter ground HAAT 
+limit is too low to allow fixed stations to be installed.27 It states that these areas are in rural, mountainous, 
+and hilly areas where broadband service to the public is already lacking and where white space spectrum 
+would provide an affordable and viable broadband access solution. 
+10. In their comments, Stratus Wave, Google, Motorola, PISC, and WCAI support 
+eliminating the 76-meter site HAAT limit, arguing that this limit is unnecessarily restrictive.28 Stratus 
+Wave states that the current height restrictions foreclose white space operation in the majority of the State 
+of West Virginia and that its costs would be reduced by a factor of three if the Commission relaxed these 
+restrictions.29 Stratus Wave, Motorola, and WCAI believe fixed devices should be permitted to operate 
+with a maximum HAAT of 250 meters.30 WCAI states that this higher limit would benefit ISPs and 
+consumers in hilly and mountainous areas and would not harm incumbents if they are protected to the 
+same level as afforded by the current table in the rules.31 Google recommends that the Commission 
+eliminate the use of HAAT altogether and simply specify a 30-meter antenna height above ground limit, 
+but it states that it would support an increase in the maximum HAAT to 250 meters if the Commission 
+chooses not to set a height above ground limit.32  
+  
+23 See Second MO&O, 25 FCC Rcd 18661, 18689 (2010) at ¶ 66.
+24 See 47 C.F.R. § 15.713(e)(6).
+25 See Joint Petitioners petition at 1.
+26 Id, at 12.
+27 Id. at 3.
+28 See Stratus Wave opposition at 1, Google opposition at 3, Motorola opposition at 5, PISC opposition at 9 and 
+WCAI reply to oppositions at 2.
+29 See Stratus Wave opposition at 2.
+30 See Stratus Wave opposition at 1, Motorola opposition at 5, and WCAI reply to oppositions at 2.
+31 See WCAI reply to oppositions at 2.
+32 See Google opposition at 3-4.
+Federal Communications Commission FCC 12-36
+6
+11. NAB does not object to a maximum HAAT of 250 meters but believes that the 
+Commission should maintain the 30-meter limit on antenna height above ground level.33 Cellular South 
+opposes increasing the allowable antenna height for fixed TV bands devices to 250 meters but does not 
+oppose allowing an antenna height AGL of no more than 30 meters where the site HAAT exceeds 76 
+meters.34 However, Motorola, the Joint Petitioners, and WCAI believe that a 30-meter AGL limit is too 
+low.  Motorola argues that the limit unnecessarily penalizes users in flat, rural areas, and the Joint 
+Petitioners and WCAI believe the antenna height limit should be raised to 75 meters AGL.35
+12. Shure argues that the Joint Petitioner’s proposal to more than triple the limit for fixed TV 
+bands device HAAT creates a dramatic imbalance between TVBD transmission range and incumbent 
+protections and that for the Joint Petitioner’s proposal to be viable, increased separation distances would 
+have to apply to all protected incumbent services.36 Shure did not, however, provide any information on 
+what it believes to be the appropriate separation distances.  The Joint Petitioners and Motorola state that 
+the Commission should make corresponding increases in the required separation distances to co-channel 
+and adjacent channel facilities to compensate for higher HAAT.37 NAB argues that if the Commission 
+permits higher HAAT, it should not allow fixed devices at this height to provide channel lists to Mode I 
+devices because there may be a greater distance between the fixed and Mode I devices.38
+13. Decision. We are modifying our rules to establish a maximum HAAT for a fixed device 
+antenna of 250 meters and maintaining the limit for fixed device antenna height AGL at 30 meters. We 
+take this action because we find that the current rule, which limits fixed TV bands devices to sites where 
+the ground HAAT is no greater than 76 meters, unnecessarily precludes the operation of fixed TV bands 
+devices at many locations in the country, particularly in rural and other areas that are currently
+underserved by broadband services.  Under the modification we adopt herein, a site with an elevation of 
+up to 220 meters above average terrain could be used with a 30-meter antenna, or a site with a higher 
+elevation above average terrain could be used with a shorter antenna, provided the sum of the site 
+elevation above average terrain and antenna height above ground does not exceed 250 meters.  These 
+changes will result in lower costs and greater flexibility for fixed device operators by allowing the use of 
+sites that were previously precluded by the rules and permitting greater coverage from each site.  This will 
+increase the availability of wireless broadband services, particularly in rural and underserved areas.
+14. We decline to raise the limit for fixed device antenna height AGL to 75 meters as the 
+Joint Petitioners request.  The Commission previously considered and rejected requests to raise this limit 
+in the Second MO&O, noting that the 30-meter height above ground limit was established as a balance 
+between increasing the TV bands device transmission range and the need to minimize the impact on 
+licensed services.39 While we recognize the Joint Petitioners’ argument that an increased antenna height 
+above ground limit could improve TV bands device range in certain circumstances, we find that the 
+Commission appropriately took a conservative approach to minimize the potential for interference to 
+authorized services by limiting the antenna height AGL to 30 meters.  We therefore decline to increase 
+this limit at this time.  As the Commission previously stated, we could revisit this height limit in the 
+  
+33 See NAB opposition at 9.
+34 See Cellular South opposition at 7.
+35 See Motorola reply to oppositions at 9-10, Joint Petitioners reply to oppositions at 6 and WCAI reply to 
+oppositions at 3.
+36 See Shure opposition at 13-14.
+37 See Motorola opposition at 5 and Joint Petitioners reply to oppositions at 3.
+38 See NAB opposition at 10.
+39 See Second MO&O, 25 FCC Rcd 18661, 18689 (2010) at ¶ 65.
+Federal Communications Commission FCC 12-36
+7
+future if experience with TV bands devices indicates they could operate at higher antenna heights without 
+causing interference.40 Also, as discussed above, the changes we are making by removing the 76-meter 
+site HAAT limit and permitting an antenna HAAT of up to 250 meters will serve to increase the coverage 
+of TV bands devices in many instances.
+15. Because the range at which interference occurs increases as the antenna height is raised, 
+we are making additional changes to offset the increased potential for harmful interference at the higher 
+antenna heights we are permitting.  As recommended by the Joint Petitioners, we are revising the table of 
+minimum required separation distances between fixed devices and the contours of co-channel and 
+adjacent channel TV stations to specify separation distances for HAAT ranging from less than three 
+meters to a maximum of 250 meters.41 We find, however, that the Joint Petitioners’ recommended 
+separation distances are greater than necessary to provide the level of protection to TV services that the 
+Commission decided to provide.42 We are therefore modifying the table as shown and described below.
+Required separation (km) from digital or analog TV (full 
+service or low power) protected contour
+Antenna height above average 
+terrain of unlicensed device Co-channel(km) Adjacent channel(km)
+Less than 3 meters 4.0 0.4
+3-Less than 10 meters 7.3 0.7
+10-Less than 30 meters 11.1 1.2
+30-Less than 50 meters 14.3 1.8
+50-Less than 75 meters 18.0 2.0
+75-Less than 100 meters 21.1 2.1
+100-Less than 150 meters 25.3 2.2
+150-Less than 200 meters 28.5 2.3
+200-250 meters 31.2 2.4
+16. The methodology used by the Joint Petitioners to calculate the required separation 
+distances between TV bands devices and co-channel and adjacent channel TV contours is generally 
+consistent with the methodology described in the Second Report and Order.  The Joint Petitioners 
+calculated separation distances from fixed devices with an antenna HAAT of 30 meters and greater in the 
+same manner as the Commission by using the F(50,10) propagation curves in the rules.43 The Joint 
+Petitioners used the OET TM-91-1 method to calculate separation distances for fixed device antenna 
+heights below 30 meters HAAT because the Commission’s propagation curves are undefined for HAAT 
+  
+40 Id.
+41 See Joint Petitioners petition at 12.
+42 See 47 C.F.R. § 15.712 (a).
+43 See 47 C.F.R. § 73.699, Figures 9, 9a, 10, 10a, 10b and 10c.  Interfering signal contours are generally calculated 
+using the F(50,10) curves.  However, the F(50,10) curves are undefined at distances less than 15 km, so the F(50,50) 
+curves are used to compute interfering contours at distances less than 15 km.  The F(50,50) curves are undefined at 
+distances less than 1.5 km, so other methods such as OET TM-91-1 must be used at very short distances.
+Federal Communications Commission FCC 12-36
+8
+values below 30 meters.44 OET TM-91-1 is a model that the Commission uses for calculating signal 
+levels at short distances and low antenna heights above ground.45 While the Commission used a different 
+propagation model to calculate the separation distances at low antenna heights in the Second Report and 
+Order (the Okumara model), it used the TM-91-1 model in the Second Report and Order to calculate the 
+impact of personal/portable TV bands devices on TV reception at short distances, e.g., up to 
+approximately 1.5 km.46 Based on our comparison of these models, we find that TM-91-1 is appropriate 
+for calculating signal levels at distances less than 1 km (as well as longer distances), whereas the 
+Okumura model was not designed for use at distances less than 1 km.  Thus, we agree with the Joint 
+Petitioners’ suggestion to use the TM-91-1 model to calculate the required separation distances from TV 
+bands devices at antenna heights below 30 meters HAAT where the Commission’s propagation curves are 
+undefined.
+17. While we agree with the Joint Petitioner’s general methodology for determining 
+separation distances, we disagree with certain assumptions it used in its calculations.  First, in 
+determining the recommended adjacent channel separation distances, the Joint Petitioners assumed a 
+significant increase in the current adjacent channel emission limits which would require substantially 
+greater adjacent channel separation distances.  As discussed in more detail below, we decline to 
+substantially increase the adjacent channel emission limits.  Second, the Joint Petitioners assumed a -26 
+dB D/U adjacent channel protection ratio, whereas the Commission used a -33 dB protection ratio in the 
+Second Report and Order.47 As the Commission noted in the Second Report and Order, DTV receivers 
+can operate with adjacent channel D/U ratios of -33 dB or even less.48 Therefore, the Joint Petitioners’ 
+recommended D/U ratio would overprotect adjacent channel TV service.  We therefore used -33 dB in 
+our adjacent channel distance separation calculations.  Third, with regard to co-channel protection, the 
+Joint Petitioners assumed a 16 dB D/U protection ratio, whereas the Commission used a 23 dB ratio in the 
+Second Report and Order.49 The 23 dB ratio is necessary to protect co-channel DTV service at the edge 
+of a TV station’s service contour where the signal-to-noise ratio is low, so we find the Joint Petitioners’ 
+recommended co-channel D/U ratio of 16 dB inappropriate.50 Finally, in calculating both the co-channel 
+and adjacent channel separation distances, the Joint Petitioners assumed a 3 dB factor for polarization 
+mismatch and no correction factor for the TV receive antenna front-to-back ratio, whereas the 
+Commission’s calculations did not consider polarization mismatch but assumed a 14 dB antenna front-to-
+back ratio as specified in the DTV planning factors.51 We disagree with both of the Joint Petitioners’ 
+  
+44 See Joint Petitioners petition at 17.  
+45 See Propagation in Suburban Areas at Distances Less than Ten Miles, FCC/OET TM-91-1, January 25, 1991, 
+available at http://transition.fcc.gov/oet/info/documents/technical/tm91-1.pdf.
+46 See Second Report and Order, 23 FCC Rcd 16807, 16840, 16870 (2008) at footnote 147 and ¶ 181.  Footnote 147 
+erroneously refers to OET TM-91-1 as TM90.
+47 See Second Report and Order, 23 FCC Rcd 16807, 16869 (2008) at ¶ 177.
+48 Id.
+49 See Second Report and Order, 23 FCC Rcd 16807, 16866 (2008) at ¶ 167.
+50 See 47 C.F.R. § 73.623(c)(3).
+51 See Second Report and Order, 23 FCC Rcd 16807, 16867, 16869 (2008) at ¶¶ 172 and 177.  The Commission 
+stated that it expected the polarization mismatch between a vertically polarized TV bands device antenna and a 
+horizontally polarized TV receive antenna to reduce the potential for interference from TV bands devices.  However, 
+it did not include a polarization mismatch factor in its calculations of the separation distances between TV bands 
+devices and TV service contours.  The 14 dB front-to-back ratio for a TV receive antenna is specified in the DTV 
+planning factors that the Commission used for its analysis in the Second Report and Order.  See OET Bulletin No. 
+69, Longley-Rice Methodology for Evaluating TV Coverage and Interference, February 6, 2004 at 10.
+Federal Communications Commission FCC 12-36
+9
+assumptions in this regard.  We find that it is appropriate for us to consider the antenna front-to-back ratio 
+in the calculation because a TV receive antenna near the edge of a service contour will be pointed at the 
+TV station being received, so the back of the antenna will be pointing toward a TV bands device located 
+outside the service contour.  We do not agree that use of a polarization mismatch factor is appropriate for 
+determining fixed device separation distances because manufacturers have the freedom to design systems 
+that use either horizontally or vertically polarized antennas, so we cannot assume or rely upon a 
+polarization mismatch between TV bands devices and TV receive antennas.
+18. We recalculated both the co-channel and adjacent channel separation distances in the 
+Joint Petitioners’ table using the TM-91-1 model and methodology described above, assuming a DTV 
+protected contour of 41 dBu.  In calculating the revised separation distances, we discovered an error in the 
+co-channel separation distances in the current rules.  While the Second Report and Order stated that the 
+separation distances were determined using the maximum fixed device EIRP of 4 watts, we had 
+inadvertently calculated the distances using an effective radiated power (ERP) of 4 watts, which is 
+equivalent to 6.56 watts EIRP.  The use of this higher power in the calculations resulted in the 
+determination of co-channel separation distances that are greater than necessary to provide the degree of 
+protection to TV service that the Commission decided to provide.52 Using the methodology described 
+above and the correct EIRP to calculate the required separation distances, at antenna heights up to 30 
+meters the required co-channel separation distances are reduced by approximately 2 to 3 kilometers as 
+compared to the current rules, while the required adjacent channel separation distances increase by 
+approximately 300 to 500 meters as compared to the current rules. 
+19. We are prohibiting fixed devices with an HAAT greater than the current maximum of 
+106 meters from providing channel lists to Mode I personal/portable devices.  This action is necessary 
+because a Mode I device, which does not incorporate a geo-location capability, obtains a list of available 
+channels from a fixed or Mode II device that is determined by the geographic coordinates of those 
+devices.  Under the current 106 meter limitation, the communication distance between a Mode I device 
+and the fixed or Mode II device that provides a channel list is relatively short, and thus there is a low 
+probability that a Mode I device will operate at a location where its channel list is not valid, i.e., does not 
+meet the minimum separation distances from co-channel and adjacent channels TV stations or other 
+protected services.  However, if the fixed device that obtains the channel list for a Mode I device operates 
+with greater HAAT than the current rules permit, the Mode I device could operate at a greater distance 
+from the coordinates of the fixed device where the available channel list was calculated.  This will 
+increase the chance that the Mode I device could operate at a location where the channel list is not valid.  
+We will therefore require that the TV bands database not provide channel lists for Mode I devices through 
+fixed devices with an antenna HAAT of greater than 106 meters.53  
+20. We are not increasing the minimum required separation of one kilometer between 
+wireless microphones and fixed devices operating at a higher HAAT than the current rules allow, because 
+the higher HAAT will not increase fixed device signal strength at a one kilometer distance.  The OET 
+TM-91-1 model that we use to calculate signal strength at that distance takes into account radiated power, 
+separation distance, and the antenna height AGL, but is independent of the HAAT.54 Because we are not 
+  
+52 See 47 C.F.R. § 15.712(a)(1).
+53 A Mode I device requests a list of available channels through either a fixed or a Mode II personal/portable device.  
+The fixed or Mode II personal/portable device sends the Mode I FCC identification number to the database for 
+verification and requests a list of available channels.  The database will enforce the height limit we are adopting by 
+not providing a list of available channels to a Mode I device if the request comes through a fixed device with an 
+HAAT greater than 106 meters.  The database calculates the HAAT of all fixed devices, so it has the information 
+necessary to determine compliance with this height limit.
+54 See OET TM-91-1 at 6.
+Federal Communications Commission FCC 12-36
+10
+increasing the maximum fixed device antenna height AGL or radiated power, there will be no increase in 
+signal level at one kilometer.  We also are not increasing the size of the exclusion zones around receive 
+sites for MVPDs, low power TV or BAS links, because we have no information demonstrating that the 
+existing requirements are insufficient to provide adequate protection at the higher antenna HAAT that we 
+are permitting for fixed devices.
+B. Out-of-band emissions
+21. In the Second Report and Order, the Commission adopted out-of-band emission limits 
+for TV bands devices to protect other authorized services both inside and outside the TV bands.  For 
+emissions that fall in a TV channel adjacent to the operating channel of a TV bands device, the 
+Commission required that these emissions be at least 55 dB below the highest emission in the operating 
+channel, with both the in-band and out-of-band emissions measured with a 100 kHz bandwidth.55  
+Emissions that are more than one channel removed from the operating channel must comply with the 
+limits specified in Section 15.209 of the rules.56 These field strength limits, measured at a distance of 3 
+meters, are 100 microvolts per meter (30-88 MHz), 150 microvolts per meter (88-216 MHz), 200 
+microvolts per meter (216-960 MHz), and 500 microvolts per meter (above 960 MHz).  
+22. In the Second MO&O, the Commission modified the limits for emissions that fall in TV 
+channels adjacent to the operating channel.  Specifically, it required that in-band emissions be measured 
+within a 6 MHz bandwidth instead of within a 100 kHz bandwidth, and it revised the required level of 
+attenuation from 55 dB to 72.8 dB to compensate for the difference in measurement bandwidths while 
+providing the same level of interference protection.57 The Commission made these changes to ensure 
+consistency in emission measurements, because the in-band power measured within a 100 kHz bandwidth 
+could vary depending on the bandwidth of the transmitted signal, whereas the total power measured 
+within a 6 MHz bandwidth will be the same regardless of whether the signal fills the entire channel or just 
+part.58
+23. Petitions and Comments.  The Joint Petitioners, Motorola, and Wi-Fi Alliance request 
+that the Commission relax the emissions limit in the channel immediately adjacent to the TV bands device 
+operating channel.  Motorola recommends relaxing the limit by 25 dB for frequencies +/-3 MHz outside 
+the channel where a fixed TV bands device operates and increasing the adjacent channel separation 
+distances by a sufficient amount to introduce an additional 25 dB of path loss.59 It states that the relaxed 
+emission mask could apply to all fixed devices or alternatively to a new class of fixed device that would 
+have to meet increased adjacent channel separation distances.  Motorola argues that the emission mask for 
+devices operating in the TV bands is 30-40 dB more stringent than the industry standards for Wi-Fi and 
+WIMAX technologies.60 It states that this results in equipment costs for fixed customer premises 
+equipment that are 65% higher compared to comparable equipment operating in other frequency bands.  
+Motorola further argues that the emission limits impact network capacity and data throughput because 
+  
+55 See Second Report and Order, 23 FCC Rcd 16807, 16889 (2008) at ¶ 236.
+56 Id.
+57  See Second MO&O, 25 FCC Rcd 18661, 18697 (2010) at ¶ 87. An increase in the in-band measurement 
+bandwidth to 6 MHz will result in a measured level that is 17.8 dB greater than the level measured in a 100 kHz 
+bandwidth if the TV band device power is uniformly distributed across a channel.  Therefore, required attenuation in 
+the adjacent channel was changed from 55 dB to 72.8 dB (17.8 dB greater) to provide the same level of interference 
+protection.
+58 See Second MO&O, 25 FCC Rcd 18661, 18697 (2010) at ¶ 87.
+59 See Motorola petition at 7.
+60 Id. at 4.
+Federal Communications Commission FCC 12-36
+11
+part of a 6 MHz channel will need to be used as a transition band to meet the required level of suppression 
+at the channel edge.61 It states that a relaxed emission mask for fixed devices, coupled with a greater 
+distance separation from adjacent channel TV stations, can provide equivalent protection to incumbent 
+services.  The Joint Petitioners state in their petition that they agree with the changes requested by 
+Motorola.62 The Wi-Fi Alliance recommends that the Commission adopt a fixed adjacent channel 
+emission limit of -25.8 dBm/100 kHz for devices with a transmitted power of 100 mW EIRP or less.63 It 
+argues that expensive and complex filtering must be added to devices to meet the out-of-band emission 
+limits, although it does not quantify the claimed increase in equipment cost.  
+24. Google and PISC support the petitioners’ request to modify the adjacent channel 
+emission limits. Google contends that adjusting the out-of-band emission limits could speed deployment 
+of white spaces products and services by making it easier for manufacturers to build products and bring 
+them to market.64 PISC agrees that the Commission should modify the emission mask for fixed TV bands 
+devices, which it claims is overly restrictive.65
+25. Several parties argue that relaxation of the adjacent channel emission limits will result in 
+interference to authorized services.  NCTA states that the Commission should reject the petitions to relax 
+the limits, arguing that the proposed higher limits are not sufficient to protect over-the-air reception.66
+Cellular South argues that the Commission should decline to relax the out-of-band emission mask for TV 
+bands devices without ensuring protection for Lower Block A wireless systems (which occupy former TV 
+channel 52).67 NAB and Shure state that the requested relaxation of the limits would cause interference to 
+TV reception and wireless microphones, and Shure further argues that increased separation distances from 
+adjacent channel TV stations will not prevent interference to wireless microphones.68 Motorola counters 
+that the requested changes would not cause interference if separation distances are increased and that 
+Shure grossly overstates the concern for interference to wireless microphones which can operate adjacent 
+to TV stations, which operate at much higher power than fixed TVBDs.69 The Joint Petitioners state that 
+the Commission could increase the 1 km zone for wireless microphones, enlarge the protected area for 
+cable headends, or retain the current out-of-band emission limit at channel 51.70  
+26. NAB argues that claims that compliance with the emissions mask would be difficult and 
+costly are undermined by Adaptrum’s March 8, 2011 ex parte filing demonstrating that it can comply 
+with the mask.71 It also argues that compliance with the emission mask is easier for fixed devices than 
+portable devices because they have few physical restrictions regarding size and weight.72  NAB and Shure 
+  
+61 Id. at 5.
+62 See Joint Petitioners petition at 8.
+63 See Wi-Fi Alliance petition at 2 and 4.  The Wi-Fi Alliance recommendation is for a fixed, rather than a relative, 
+adjacent channel emission limit.  It is 27 dB greater than the current limit for a 100 milliwatt device.  
+64 See Google opposition at 6.
+65 See PISC opposition at 10.
+66 See NCTA opposition at 7.
+67 See Cellular South opposition at 4.
+68 See NAB opposition at 7, Shure opposition at 11 and Shure reply to oppositions at 3-4.
+69 See Motorola reply to oppositions at 5-6.
+70 See Joint Petitioners reply to oppositions at 7-8.
+71 See NAB opposition at 5-6 and Adaptrum ex parte filing dated March 8, 2011.
+72 See NAB opposition at 6.
+Federal Communications Commission FCC 12-36
+12
+also argue that the petitions to modify the adjacent channel emission limits are procedurally defective 
+because the Commission already considered and rejected similar requests in the Second MO&O.73
+Motorola disagrees, arguing that the Commission is not required to dismiss a petition that requests 
+changes that were previously considered and rejected.74  
+27. Spectrum Bridge filed ex parte comments on November 14, 2011 recommending changes 
+to the rules concerning the adjacent channel emission limits and the power spectral density (PSD) limits.75  
+Specifically, it requested that we increase the maximum permissible spectral density for fixed devices 
+from 12.2 dBm/100 kHz to 18.2 dBm/100 kHz and establish a single adjacent channel emission limit of 
+-42.8 dBm for fixed devices.  It stated that an increase in the PSD limit is necessary to allow for roll-off to 
+meet the adjacent channel emission limits and that an adjacent channel emission limit that is independent 
+of the device power would eliminate the situation where a decrease in the in-band power requires a 
+decrease in the adjacent channel power to meet a relative emission limit.  Spectrum Bridge also stated that 
+the database could determine the appropriate separation distances from protected services if the 
+Commission provides flexibility in the PSD and adjacent channel emission limits, although it did not 
+clearly describe how this would be accomplished.
+28. Decision. We are modifying the rules for adjacent channel emission limits to specify 
+fixed values, rather than vary the limit relative to the in-band power.  Specifically, we are adopting a fixed 
+adjacent channel emission limit for each category of TV bands device that is equivalent to the current 
+emission limit for devices operating at maximum power.  Devices operating at less than the maximum 
+permitted power will not be required to suppress emissions below the fixed limits we are establishing.  
+This eliminates the need for a device operating at less than the maximum permitted power to 
+unnecessarily suppress adjacent channel emissions below the levels needed to prevent interference to 
+other services in the TV bands, thus simplifying equipment design and reducing its cost.  A fixed 
+emission limit also simplifies compliance measurements, because the emission level can be measured 
+directly rather than by comparing the in-band and adjacent channel power measured in two different 
+bandwidths.
+29. We calculate the appropriate fixed adjacent channel emission limits as follows.  The 
+current adjacent channel emission limit is -72.8 dB in a 100 kHz bandwidth, measured relative to the total 
+in-band power in a 6 MHz bandwidth.76 We are defining a fixed adjacent channel emission limit for each 
+of the four maximum power levels at which TV bands devices can operate (fixed: 1 Watt; 
+personal/portable: 100 mW; personal/portable operating adjacent to occupied channels: 40 mW; and 
+sensing-only devices: 50 mW).  The adjacent channel emission limit for each category of device is simply 
+the maximum power permitted in a 6 MHz bandwidth minus 72.8 dB.  A table showing these limits is 
+provided below.
+30. We also are slightly increasing the maximum permissible PSD for each category of TV 
+bands device to address the roll-off concern raised by Spectrum Bridge.  We established the PSD limits to 
+prevent multiple TV bands devices with transmit bandwidths of much less than 6 MHz from sharing a 
+channel, which could result in a total transmitted power within a channel significantly greater than the 
+  
+73 See NAB opposition at 3 and Shure reply to oppositions at 2.
+74 See Motorola reply to oppositions at 4.
+75 See Spectrum Bridge ex parte comments dated November 14, 2011.  Power spectral density is a measure of the 
+transmitter power within a specified bandwidth, which is defined as 100 kHz for TV bands devices.  
+76 The current adjacent channel emission limit is -72.8 dB relative to the in-band power in a 6 MHz bandwidth, 
+which is equivalent to -55 dB relative to the maximum in-band power in a 100 kHz bandwidth, when adjusted to 
+compensate for the difference between measurement bandwidths.  The adjacent channel emissions are measured in a 
+100 kHz bandwidth.
+Federal Communications Commission FCC 12-36
+13
+limits for individual fixed or personal/portable devices.77 These limits were derived using the assumption 
+that the maximum permitted power of a TV bands device is spread uniformly across a 6 MHz channel.  
+However, we recognize that this assumption makes compliance with either the current or the modified 
+adjacent channel emission limits we are adopting impractical if a device operates at the maximum 
+permissible power level.  For a TV bands device to operate at the maximum permissible power, it must 
+fill the entire 6 MHz channel, leaving no margin for a roll-off from the in-band signal to the much lower 
+level it must meet in the adjacent channel.  We are therefore increasing the PSD limit for each category of 
+TV bands device by 0.4 dB, which will allow a TV bands device to operate at the maximum permissible 
+power in a bandwidth of 5.5 MHz instead of 6 MHz.  This will allow 250 kHz for a roll-off from the in-
+band signal to each adjacent channel.  We are not adopting a 6 dB (4 times) increase in the PSD limit as 
+Spectrum Bridge suggests, because that change would allow devices to operate at maximum power in a 
+bandwidth of much less than 6 MHz, thus making it possible for multiple devices to share a channel with 
+a total power greater than the limits currently allowed for an individual device.
+31. The revised PSD and adjacent channel emission limits that we are adopting are as follows.
+Type of TV bands device Power limit (6 MHz) PSD limit (100 kHz) Adjacent channel limit (100 kHz)
+Fixed 30 dBm (1 Watt) 12.6 dBm -42.8 dBm
+Personal/portable (adj. channel) 16 dBm (40 mW) -1.4 dBm -56.8 dBm
+Sensing only 17 dBm (50 mW) -0.4 dBm -55.8 dBm
+All other personal/portable 20 dBm (100 mW) 2.6 dBm -52.8 dBm
+32. In our review of the PSD and adjacent channel emission issues, we discovered some 
+minor inconsistencies and omissions in the rules concerning the measurement of emissions and are 
+correcting them herein.  Specifically, Section 15.709(c) does not specify whether compliance with the 
+adjacent channel emission limits is determined through radiated or conducted measurements.  In addition, 
+Section 15.709(a)(5) requires measurement of the power conducted from the TV bands device into the 
+antenna to determine compliance with the PSD limits.  However, this is not possible for personal/portable 
+devices which are required to have a permanently attached antenna.  This section also does not include a 
+requirement that fixed device PSD must be reduced in the same manner as the maximum conducted 
+output power when the transmit antenna gain exceeds 6 dBi.78 Such a requirement is necessary to ensure 
+that the PSD is proportionally reduced when the maximum output power is reduced to prevent a device 
+from transmitting in a bandwidth of much less than 5.5 MHz at the maximum permissible power level. To 
+correct these omissions and inconsistencies, we are revising Sections 15.709(a) and (c) to specify that the 
+PSD and adjacent channel emission limits are conducted power limits for fixed devices and EIRP 
+(radiated) limits for personal/portable devices.  We are also requiring that the conducted PSD limit for 
+fixed devices be reduced by one dB for each dB that the maximum directional gain of the transmit 
+antenna exceeds 6 dBi.  These rule clarifications will not result in any increased compliance costs for 
+equipment manufacturers.
+33. We decline to relax the out-of-band emission limit to the specific values requested by 
+Motorola, the Joint Petitioners, and the Wi-Fi Alliance.  As the Commission previously noted in the 
+Second MO&O, adjacent channel emissions from a TV bands device appear as co-channel emissions in an 
+  
+77 See Second MO&O, 25 FCC Rcd 18661, 18695 (2010) at ¶ 82.
+78 See 47 C.F.R. § 15.709(a).  This section requires a one dB power reduction for each dB that the maximum antenna 
+gain exceeds 6 dBi.
+Federal Communications Commission FCC 12-36
+14
+adjacent channel used by a TV station or other authorized service, and interference can occur to TV 
+reception at very low undesired co-channel signal levels.79 The Commission also noted that 
+personal/portable TV bands devices are permitted to operate within the protected contours of adjacent 
+channel TV stations, and fixed TV bands devices can operate as close as 0.1 kilometers outside the 
+contours of adjacent channel stations and at significantly higher power than personal/portable TV bands 
+devices.80 Thus, we find it appropriate to require TV bands devices to meet tighter adjacent channel 
+emission limits than other equipment such as Wi-Fi devices that do not typically operate adjacent to 
+services that receive interference at the same low level as the broadcast TV service.  We note that the 
+relaxation of the limit requested by the petitioners is approximately 25 dB (316 times the power), which 
+would be a very significant increase in adjacent channel power over the maximum the rules currently 
+permit and would have the potential to cause interference to adjacent channel users in the TV bands.  
+34. We find that increasing the minimum separation distances between TV bands devices and 
+adjacent channel TV stations as a way to offset the increased interference potential would be effective 
+only in protecting TV reception but not other services that operate in or adjacent to the TV bands.  For 
+example, registered wireless microphones and other low power auxiliary services authorized under Part 
+74 would be impacted by the increased noise that TV bands devices would place in adjacent channels.  
+This increased noise also could limit the use of personal/portable TV bands devices operating adjacent to 
+fixed TV bands devices, thereby impairing efficient use of spectrum.  Increasing the 1 kilometer 
+protection distance around registered wireless microphones would be ineffective because registration 
+provides only co-channel and not adjacent channel protection from TV bands devices.  Further, the 
+increased adjacent channel emission levels could impact wireless services adjacent to the TV bands, such 
+as those above channel 51 (the subject of another petition discussed in detail below), land mobile radio 
+services on frequencies below channels 7 and 14, and the Low Power Radio Service above channel 13.  
+35. For the reasons stated above, we decline to relax the adjacent channel emission limits to 
+prevent interference to authorized services in and adjacent to the TV bands. We conclude that our 
+decision on this issue promotes more efficient use of the TV spectrum by both licensed and unlicensed 
+devices.  We recognize the petitioners’ argument that tighter emission limits could result in higher 
+equipment costs.  We find, however, that the record in this proceeding indicates that at least one 
+equipment manufacturer, Adaptrum, is capable of building a prototype device that complies with the 
+limits adopted in the Second MO&O.81 In addition, another manufacturer, Koos Technical Services, Inc., 
+developed a device that complies with all the requirements for fixed TV bands devices, including the 
+adjacent channel emission limits, and became the first party to obtain certification for a TV bands 
+device.82 Further, tighter out-of-band emission limits can allow users to operate in adjacent frequency 
+bands with less geographic separation between them, thus enabling more efficient and intensive use of 
+spectrum.  Thus, we conclude that the benefits of tighter out-of-band emission limits outweigh any 
+increase in equipment cost that may be necessary to comply with these rules.
+C. Protection of wireless services on channel 52
+36. Prior to the June 12, 2009 digital television transition, full-service TV stations were 
+permitted to operate on channels 52-69 (698 MHz to 806 MHz, also referred to as the 700 MHz band).  
+The Commission reallocated these channels for services other than broadcast television.  Under the band 
+  
+79 See Second MO&O, 25 FCC Rcd 18661, 18697 (2010) at ¶ 88.
+80 Id.
+81 See Adaptrum ex parte dated March 8, 2011.
+82 See Grant of Equipment Authorization for Koos Technical Services, Inc., FCC identification ZBGAWR-1, 
+granted December 22, 2011.  The Commission’s equipment authorization database can be accessed at 
+http://www.fcc.gov/eas. 
+Federal Communications Commission FCC 12-36
+15
+plan that the Commission adopted, there are two channel groupings: 1) the lower 700 MHz band, 
+consisting of channels 52-59, and 2) the upper 700 MHz band, consisting of channels 60-69.83 The lower 
+700 MHz band is divided into five blocks designated A through E, and the upper 700 MHz band is 
+divided into four blocks designated A through D, with two additional bands allocated for public safety 
+use.  Block A in the lower 700 MHz band, which is the subject of Cellular South’s petition for 
+reconsideration in this proceeding, consists of TV channel 52 paired with TV channel 57.  This pairing of 
+channels with a 30 MHz frequency separation between them is designed to allow the use of these 
+channels for two-way wireless operations.  Fixed base stations will transmit to mobile devices using 
+channel 57, while mobile devices will transmit to base stations using channel 52.  Therefore, base stations 
+will incorporate receivers that receive signals from mobile devices on channel 52.  The lower 700 MHz 
+Block A was licensed through Commission Auction 73 in 2008.84 Cellular South is one of the entities 
+that obtained licenses for Block A through this auction.  It did not previously participate in this 
+proceeding.
+37. Prospective bidders were made aware prior to Auction 73 that there would continue to be 
+full-service and low power television stations on channel 51 after the auction.  The Public Notice 
+describing this auction’s procedures cautioned potential bidders about Commission rules and 
+requirements that place limits on the ability of 700 MHz band licensees to use this spectrum.85 The Public 
+Notice specifically pointed to Section 27.60 of the rules that requires wireless licensees to protect co-
+channel and adjacent channel TV stations, including stations on channel 51.86 Thus, prospective bidders 
+for Block A were given notice that there would be TV stations on adjacent channel 51, and the emission 
+levels that a TV station may place in an adjacent channel are clearly specified in the Commission’s 
+rules.87 These limits permit TV stations to place significantly higher power in an adjacent channel than 
+Part 15 TV bands devices.88  
+38. CTIA – the Wireless Association and the Rural Cellular Association filed a petition for 
+rule making and a licensing freeze on March 15, 2011, requesting that the Commission take action to 
+prevent further interference to Block A licensees.89 To permit the Commission to evaluate the matters 
+raised in the petition, the Media Bureau placed a freeze on the filing of new applications and most 
+  
+83 See http://wireless.fcc.gov/auctions/data/bandplans/700MHzBandPlan.pdf. 
+84 See http://wireless.fcc.gov/auctions/default.htm?job=auction_summary&id=73. 
+85 See Auction of 700 MHz Band Licenses Scheduled for January 24, 2008, DA 07-4171, 22 FCC Rcd 18141, 18155 
+(2007) at ¶ 39.
+86 Id.
+87 See 47 C.F.R. § 73.622(h).
+88 Section 73.622(h) requires attenuation of TV station emissions in the adjacent channel ranging from 47 dB in the 
+500 kHz segment closest to the TV station channel to 110 dB at the edge of the adjacent channel furthest from the 
+TV station channel.  These emissions are measured in a 500 kHz bandwidth and compared to the average 
+transmitted power in the 6 MHz TV channel.  Digital TV stations may operate at hundreds of kilowatts effective 
+radiated power (ERP) on channel 51 as compared to fixed TV bands devices that can operate with a maximum of 2.4 
+watts ERP.  Also, TV stations have a less stringent adjacent channel emission suppression requirement than TV 
+bands devices over part of the adjacent channel.  Thus, a TV station on channel 51 could produce emissions on 
+channel 52 that are over a million times (60 dB) greater than those from a TV bands device on channel 51.
+89 See Petition for Rulemaking and Request for Licensing Freezes by CTIA –the Wireless Association and Rural 
+Cellular Association, filed March 15, 2011, RM-11626.
+Federal Communications Commission FCC 12-36
+16
+applications for minor changes to low power and full power television stations on channel 51.90 The 
+Commission took that action to preserve the status quo and to ensure that new applications are not filed in 
+anticipation of the future limitations proposed in the petition.  It has not yet taken any other action with 
+respect to this petition.
+39. Petitions and Comments.  Cellular South argues in its petition that the Commission 
+should modify the TV bands device rules to provide additional protection for wireless services operating 
+adjacent to TV channel 51 in the lower 700 MHz Block A, i.e., on channel 52.  Specifically, it argues that 
+the Commission should: 1) prohibit all fixed TV bands device operation on TV channel 51, 2) limit the 
+power of personal/portable TV bands devices on channel 51 to 40 milliwatts, 3) permit the registration of 
+lower 700 MHz Block A base stations in the TV bands database and require a minimum separation 
+distance of 0.1 kilometers between personal/portable devices and Block A base stations.91 Cellular South 
+states that these steps will provide lower 700 MHz Block A wireless systems with protection equivalent 
+to that granted to other TV band incumbents.  
+40. Cellular South argues that it could not have previously participated in this proceeding 
+because at the time the Second Report and Order was released, equipment for the lower 700 MHz 
+spectrum was not available, so it was impossible to know whether interference from TV bands devices 
+would be likely to occur.92 It claims that the facts presented in its petition were unknown to it prior to the 
+time for filing petitions for reconsideration of the Second Report and Order and that these facts could not 
+have been discovered with the exercise of due diligence.  Cellular South requests that the Commission 
+consider its petition for reconsideration despite not having previously participating in this proceeding.  It 
+argues that the facts presented in its petition raise substantial public interest concerns because they relate 
+to the potential for destructive interference to operations in the lower 700 MHz Block A from TV bands 
+devices.  Cellular South claims that due to these public interest concerns, the Commission is obligated to 
+consider its petition without regard to whether the facts in them could have been presented on 
+reconsideration of the Second Report and Order.
+41. The Wi-Fi Alliance, Motorola, and WISPA support allowing the registration of lower 700 
+MHz Block A base stations in the TV bands database and establishing protection criteria to prevent 
+interference to these stations.93 However, these parties oppose Cellular South’s request for a blanket 
+prohibition on fixed devices operating on channel 51.  
+42. PISC argues that the Commission should reject Cellular South’s request to limit the use 
+of channel 51 as untimely and overly restrictive.94 It states that Cellular South was aware when it 
+purchased its licenses in 2008 that it had no protection from interference from users operating on adjacent 
+channel 51 and for that reason paid a lower price for its spectrum.95 PISC argues that Cellular South 
+could have participated previously in the TV white spaces proceeding but failed to do so.96 It states that if 
+  
+90 See General Freeze on the Filing and Processing of Applications for Channel 51 Effective Immediately and Sixty 
+(60) day Amendment Window for Pending Channel 51 Low Power Television, TV Translator and Class A 
+Applications, DA 11-1428, 26 FCC Rcd 11409 (2011).
+91 See Cellular South petition at 3 and appendix at 7.
+92 See Cellular South petition at 5.
+93 See Wi-Fi Alliance opposition at 4, Motorola opposition at 6, and WISPA opposition at 2. Motorola states that a 
+two kilometer protection zone around each registered base station would provide adequate interference protection 
+from fixed TV bands devices. See Motorola opposition at 6.
+94 See PISC opposition at 6.
+95 Id. at 7.
+96 Id. at 8.
+Federal Communications Commission FCC 12-36
+17
+the Commission decides to adopt interference protection rules for lower 700 MHz Block A base stations, 
+it could require a well-defined exclusion zone around registered stations rather than nationwide 
+restrictions.97
+43. Cellular South disagrees with parties that argue that fixed TV bands devices should be 
+permitted to operate on channel 51.  It states that commenting parties all agree that lower 700 MHz Block 
+A licensees would suffer interference without additional protection and support including base stations in 
+the database.98 Cellular South argues that providing protection to lower 700 MHz Block A licensees that 
+is equivalent to TV station protection requires prohibiting operation by fixed devices on channel 51, 
+which is an adjacent channel to the lower 700 MHz band Block A.99 It states that lower Block A systems 
+will be built throughout the United States and that their aggregate protected service contours will cover 
+the entire country.100 Cellular South argues that the protection distance from lower 700 MHz Block A 
+licensees should be at least 51 km, which is the same separation required from PLMRS systems 
+authorized under waivers.  It states that once lower 700 MHz Block A systems are built out, there are 
+likely to be few locations more than 51 km from base stations.101
+44. Decision. We decline to establish in this docket new requirements to protect wireless 
+operations on channel 52.  As an initial matter, we note that Cellular South’s petition on this issue is not 
+timely filed.  The Commission adopted rules permitting TV band devices to operate on Channel 51 in its 
+2008 Second Report and Order.102 Pursuant to Section 1.429(d) of the Commission’s rules,103 the 
+deadline for seeking reconsideration of that decision was 30 days after the summary of the Second Report 
+and Order was published in the Federal Register. Cellular South filed its petition in January 2011, more 
+than two years after the applicable due date.
+45. As an independent and alternative basis, we dismiss Cellular South’s petition on this 
+issue pursuant to Section 1.429(b) of the Commission’s rules, which precludes parties from relying on 
+facts in petitions for reconsideration that were not presented to the Commission previously, unless those 
+facts have changed or the party could not have known about those facts when it had an opportunity to 
+comment.104 No party raised the issue of protection criteria for services on channel 52 in response the 
+Notice or Further Notice in this proceeding or at any time prior to Cellular South’s petition for 
+reconsideration.  We are not persuaded that Cellular South could not previously participate in this 
+proceeding.  It purchased its licenses at auction in 2008, several months before the adoption of the Second 
+Report and Order, and over two years before the adoption of the Second MO&O.  Cellular South 
+therefore had ample opportunity to make any concerns about potential interference from TV bands 
+devices to wireless services in the lower 700 MHz Block A known to the Commission but failed to do so.  
+While we recognize its argument that the final technical specifications for 700 MHz band equipment were 
+not available until more recently, we do not find that a convincing explanation for not participating in the 
+proceeding.  If the precise technical parameters needed to perform an interference analysis are not known 
+(e.g., receiver bandwidth, noise floor, noise figure, antenna gain, and desired-to-undesired signal ratio), 
+  
+97 Id. at 8-9.
+98 See Cellular South reply to oppositions at 2.
+99 Id. at 4.
+100 Id. at 4.
+101 Id. at 6.
+102 Second Report and Oder, 23 FCC Rcd at 16859 (para. 148).
+103 47 C.F.R. § 1.429(d).
+104 47 C.F.R. §§ 1.429(b)(1) and (2). 
+Federal Communications Commission FCC 12-36
+18
+parties can make reasonable estimates of these parameters.  Cellular South, however, did not provide any 
+analysis or even express to the Commission any general concerns about possible interference prior to 
+filing its petition for reconsideration.
+46. As another independent and alternative basis for dismissing the petition on this issue, we 
+reach the merits and rule against Cellular South.  We find that there is no need to adopt new requirements 
+as Cellular South requests because the current rules appropriately protect wireless operations on channel 
+52.  The emission levels that a TV bands device may place in an adjacent channel are far below the levels 
+that a full-service TV station on channel 51 may place in adjacent channel 52.  Specifically, emissions 
+from TV bands devices in the adjacent channel must be at least 72.8 dB below the level in the 6 MHz 
+channel where the TV bands device operates.  As discussed above, we are modifying the rules to specify 
+maximum adjacent channel emission levels that provide this level of adjacent channel protection.  For a 
+personal/portable TV bands device operating on channel 51 at the maximum allowable power of 100 
+milliwatts EIRP, the maximum radiated emission in the adjacent channel would be -52.8 dBm EIRP or 
+132 microvolts per meter at a distance of three meters.  This is below the Section 15.209 out-of-band 
+emission limit of 200 microvolts per meter at three meters that applies to most Part 15 transmitters in this 
+frequency band.  In the case of fixed TV bands devices operating on channel 51 at the maximum EIRP of 
+4 watts, the maximum permitted emission in the adjacent channel is -36.8 dBm EIRP or 835 microvolts 
+per meter at three meters.105 While this is greater than the Section 15.209 limit, we note that this limit 
+was developed with the assumption that there would be a 10 meter separation between a potentially 
+interfering device and the device being protected.106 We expect that there would typically be a much 
+greater separation distance between a TV bands device and a wireless base station receiving channel 52, 
+thus significantly reducing the signal level at the receiver and the likelihood of interference. 107 Thus, we 
+find that there is a very low probability that TV bands devices on channel 51 will cause harmful 
+interference to wireless services in the adjacent band.  Because we are not adopting here protection 
+criteria between TV bands devices and Block A stations, we see no reason to include 700 MHz Block A 
+base stations in the TV bands databases.
+47. While the Part 15 rules are designed to minimize the likelihood of interference to 
+authorized services, there is always the possibility that interference may occur in certain situations.  
+Therefore TV bands devices, like all other Part 15 devices, operate on a non-interference basis, meaning 
+that in the event a device causes interference to an authorized service, the device must cease operation.108  
+Because fixed TV bands devices must be registered in the TV bands database, if a licensee of a wireless 
+system were to receive interference, it could check the database to find information on the interfering 
+device.  Also, as the Commission stated in the Second Report and Order, we intend to closely oversee the 
+development and introduction of TV bands devices and take whatever actions may be necessary to correct 
+any interference that may occur and will consider any rule changes that might be needed to better protect 
+against harmful interference to incumbent services.109 Because TV bands devices operate under the 
+control of a database that provides a list of available channels to the TV bands devices, in the event of 
+harmful interference the Commission could take steps such as requesting the database operators to limit 
+  
+105 For a fixed device, the maximum radiated power in the adjacent channel would be -42.8 dBm (conducted into the 
+antenna) plus 6 dB for the antenna gain, producing an EIRP of -36.8 dBm.
+106 See First Report and Order in Docket 20780, 46 RR2d 473 (1979) at Appendix C.
+107 We also note that fixed devices and personal portable devices with power levels greater than 40 mW may 
+operate on channel 51 only in locations where no TV station operates on adjacent channel 50, thus reducing the 
+number of locations where higher power TV bands devices could operate in close proximity to Block A base 
+stations.
+108 See 47 C.F.R. § 15.5.
+109 See Second Report and Order, 23 FCC Rcd 16807, 16808 (2008) at ¶ 1.
+Federal Communications Commission FCC 12-36
+19
+the use of certain TV channels in an area.  Thus, we find no need to adopt new protection requirements 
+for wireless services on channel 52 at this time.
+D. New class of TV bands devices
+48. As discussed above, the rules that the Commission adopted in the Second Report and 
+Order allow for two classes of TV bands devices – fixed and personal/portable.110 Fixed devices may 
+operate at power levels up to 4 watts EIRP and must either incorporate a geo-location capability such as 
+GPS or be professionally installed and have the devices’ geographic coordinates manually entered by the 
+installer.111 Personal/portable devices may operate with a power level up to 100 mW EIRP.  Mode II 
+personal/portable devices must incorporate a geo-location capability such as GPS to determine the 
+geographic coordinates to within +/- 50 meters.112 Both fixed and Mode II portable devices must access a 
+database that provides a list of available channels at the devices’ location.113 A Mode II portable device 
+must re-check its location and the database for available channels if it changes location during 
+operation.114  Mode I devices are not required to incorporate geo-location or database access capabilities, 
+and they obtain a list of available channels on which they can operate from either a fixed or Mode II 
+device that accesses a database.115 A portable device can operate in Mode II at locations where it can 
+receive a geo-location signal, and in Mode I at locations where it cannot.  Fixed devices may operate only 
+on vacant TV channels that are not adjacent to occupied TV channels, while personal/portable devices 
+may operate adjacent to occupied TV channels if their maximum EIRP is reduced to no more than 40 
+milliwatts.116  
+49. In the Second MO&O, the Commission decided that a Mode II device must use its geo-
+location capability to check its location at least once every 60 seconds while in operation to determine 
+whether it has moved.117 In addition, the Commission required that a Mode II device check the database 
+when it moves more than 100 meters from the location where it performed its last database check.118
+50. Petitions and Comments.  The Wi-Fi Alliance argues that a significant class of mass 
+market Mode II personal/portable devices will be precluded because they are stationary and operate 
+indoors and will be unable to reliably determine their geographic coordinates to within the limits specified 
+in the rules.119 It requests that the Commission modify the rules to allow a new class of indoor fixed 
+devices that operate at the same power level as Mode II personal/portable devices and that are permitted 
+to operate adjacent to occupied TV channels.120 The Wi-Fi Alliance does not specifically address whether 
+this new class of device would need to incorporate geo-location capability.  However, because it requests
+that they be classified as fixed devices, the current rules would permit manufacturers the option of 
+specifying professional installation in place of incorporating a geo-location technology such as GPS.
+  
+110 See 47 C.F.R. § 15.703(c) and (i).
+111 See 47 C.F.R. §§ 15.709(a)(1) and 15.711(b)(1).
+112 See 47 C.F.R. §§ 15.709(a)(2) and 15.711(b)(2).
+113 See 47 C.F.R. § 15.711(b)(3).
+114 See 47 C.F.R. § 15.711(b)(3)(ii).
+115 See 47 C.F.R. § 15.703(e).
+116 See 47 C.F.R. § 15.712(a)(2).
+117 See Second MO&O, 25 FCC Rcd 18661, 18687 (2010) at ¶ 59.
+118 See Second MO&O, 25 FCC Rcd 18661, 18708 (2010) at ¶ 113.
+119 See Wi-Fi Alliance petition at 2.
+120 See Wi-Fi Alliance petition at 4.
+Federal Communications Commission FCC 12-36
+20
+51. NAB, Shure, and NCTA oppose the Wi-Fi Alliance’s petition.  NAB argues that the 
+intent of the Wi-Fi Alliance’s request is to circumvent the requirement that low power devices used at 
+fixed locations include a geo-location capability.121 Shure argues that a new class of indoor fixed devices 
+will cause interference to wireless microphones on adjacent channels and that the devices the Wi-Fi 
+Alliance describes should be classified as portable devices and meet the portable device requirements.122  
+NCTA believes that the Wi-Fi Alliance is attempting to circumvent the rules for portable devices by 
+placing its proposed new class of devices under the fixed device rules.123
+52. Decision. We decline to establish a new class of fixed indoor devices as requested by the 
+Wi-Fi Alliance.124 The Wi-Fi Alliance states that the devices of interest would be mass market Mode II 
+personal/portable devices, thus indicating to us that they would be small and easily transportable.125 We 
+find that such devices would have a high potential for causing interference to authorized services in the 
+TV bands if they did not incorporate a geo-location capability to accurately determine their location.  The 
+devices could easily be moved to a different location without updating the coordinates, where they would 
+then receive an inaccurate list of available channels.126 In the absence of a geo-location capability, the 
+coordinates would have to be manually entered into a device.  In the case of mass market consumer 
+devices, we would not consider the consumer to be a professional installer.127 We expect that many 
+consumers would lack knowledge or experience in determining and entering a device’s coordinates and 
+therefore would be likely to make more errors than a professional installer or, alternately, would be more 
+likely to enter an improper set of coordinates.  While we are denying the Wi-Fi Alliance’s request to 
+create a new category of TV bands device, as we noted above the current rules do in fact contain 
+provisions that allow TV bands devices to operate without GPS under certain circumstances.  
+Specifically, a personal/portable device can operate without GPS in Mode I if it communicates with either 
+a fixed device or a Mode II personal/portable device that provides it with a list of available channels on 
+which it can operate.
+E. Confidentiality of database information
+53. In the Second MO&O, the Commission decided that all information that is required by 
+the Commission’s rules to be in a TV bands database is to be publicly available, including fixed TV bands 
+device registration and voluntarily submitted protected entity information, such as cable headends.128 The 
+Commission noted that the registration of a protected entity in the database will preclude operation of TV 
+bands devices on one or more channels over specific areas and that there is the possibility of errors in the 
+  
+121 See NAB opposition at 8.
+122 See Shure reply to oppositions at 6-7.
+123 See NCTA opposition at 3.
+124 NAB argues that the request to establish a new class of TV bands device is untimely because the requirement to 
+include a geo-location capability in fixed and Mode II personal/portable devices was adopted in the 2008 Second 
+Report and Order. Because we are denying this request, we will not address NAB’s argument concerning its 
+timeliness.
+125 See Wi-Fi Alliance petition at 2.
+126 Unlike Mode II personal/portable devices, fixed devices are not required to re-establish their coordinates each 
+time they are powered up.  However, an operator would have to re-establish the location of (and update the database 
+registration for) a fixed device if it is moved to another location or if its stored coordinates are altered.  See 47 
+C.F.R. § 15.711(b)(1).
+127 See Second MO&O, 25 FCC Rcd 18661, 18723 (2010) at ¶ 150.
+128 See Second MO&O, 25 FCC Rcd 18661, 18710 (2010) at ¶ 119.
+Federal Communications Commission FCC 12-36
+21
+registration information.129 It further noted that while much of the data will come from Commission 
+databases that already are public sources, errors could result from the inadvertent entry of incorrect data 
+or as a result of a party deliberately entering false data.130 The Commission therefore found that it is 
+appropriate to permit public examination of protected entity registration information to allow the 
+detection and correction of errors.131
+54. Petitions and Replies.  NCTA requests that the Commission reconsider its decision to 
+make all information in the TV bands database publicly available and in particular information identifying 
+the precise geographic coordinates of cable headends and tower receive sites.132 It argues that a lack of 
+security measures to protect this information could endanger critical infrastructure for broadband Internet, 
+VOIP, emergency alert messaging, and other critical communications services.  NCTA further argues that 
+directives from the Department of Homeland Security require greater protections for critical 
+communications infrastructure and that the Commission should require databases to incorporate measures 
+to limit access to registered device manufacturers and operators of broadcasting and communications 
+businesses.133 NCTA believes that devices that receive TV bands database information should receive 
+only the list of channels available for use and that adequate security measures must be incorporated to 
+ensure that sensitive database information cannot be accessed through displays, device ports, or 
+unprotected interfaces.
+55. PISC opposes NCTA’s petition, arguing that NCTA does not suggest any credible reason 
+why cable headends are likely targets for terrorists and saboteurs.134 It argues that NCTA’s request is 
+overly broad and would limit access to information in databases to a handful of TV band incumbents and 
+private companies.135 PISC further argues that cable headend information is already publicly available in 
+cable companies’ public inspection files and that public access to information in the TV bands database is 
+necessary for data that serves as “licensing information” to allow protected entities to reserve TV band 
+channels and preclude TV bands device access.136 NCTA disagrees with PISC, arguing that cable 
+headends are considered “critical infrastructure” by the Federal Government.137 It states that while 
+information on cable headends is already publicly available, the TV bands database would be the first 
+comprehensive repository of headend and tower site information in an easily accessible public 
+database.138 NCTA states that its petition is not a pretext for limiting access to all information in a 
+database and that registered device manufacturers and operators of broadcasting and communications 
+businesses should be permitted to view information on cable headends in the database.139 Google agrees 
+that some information in the database may be sensitive in nature and require protection from public 
+disclosure, although it does not provide any specific examples.140 However, Google does not agree that 
+  
+129 Id.
+130 Id.
+131 Id.
+132 See NCTA petition at 2.
+133 Id. at 4, 7.
+134 See PISC opposition at 2.
+135 Id. at 3.
+136 Id. at 4-5.
+137 See NCTA reply to oppositions at 2.
+138 Id. at 3.
+139 Id. at 3.
+140 See Google opposition at 5.
+Federal Communications Commission FCC 12-36
+22
+the Commission should limit information exchanged between a database and TV bands device to a list of 
+available channels because that could inhibit innovation such as the creation of value-added services.141  
+The Wi-Fi Alliance recommends that the Commission restrict access for viewing the locations of critical 
+communications infrastructure in the database to certain authorized users.142  
+56. Decision. We decline to require that the geographic coordinates or other information 
+concerning cable headends in the TV bands database be kept confidential.  First, we note that NCTA 
+previously participated in this proceeding but never alleged prior to filing its petition that there is any 
+need to keep information on cable headends confidential.  The issue of public availability of database 
+information was raised in the petitions for reconsideration of the Second Report and Order in this 
+proceeding, and NCTA raised no concerns about the confidentiality of headend registrations in its 
+response to these petitions.143 In any case, we are not persuaded that making information about cable 
+headends publicly available poses a security threat to communications infrastructure.  Based on the 
+documents referenced in NCTA’s petition, virtually all communications facilities, including wireline, 
+wireless, satellite, cable, and broadcasting facilities, could be classified as critical infrastructure.144  
+Information on a large number of these communications facilities is already publicly available through the 
+Commission’s databases, and there is no evidence that the public availability of this information has ever 
+posed a threat to the security of communications infrastructure.145 Also, as NCTA and PISC note, 
+information on the locations of cable headends is already publicly available from other sources, and the 
+TV bands databases will only list those facilities that are outside the protected contours of the over-the-air 
+TV stations being received and that the headend operator chooses to register.146
+57. While we are upholding the Commission’s previous decision to make all information in 
+the TV bands database publicly available, we note that the Second MO&O did not include specific text to 
+codify this decision.  We are therefore adding a new paragraph to Section 15.715 of the rules to specify 
+that database administrators must provide a means to allow public access to the information in the 
+database.  Such access will be limited to the information that is required by the rules to be included in the 
+databases and will not include any additional information that the database administrators may choose to 
+collect.  OET will advise the database administrators as necessary to implement this requirement.  
+Codifying this rule does not impose any new costs or other burdens on database administrators because 
+they were already required to provide the capability described.
+  
+141 Id.
+142 See Wi-Fi Alliance opposition at 4.
+143 In its petition for reconsideration of the Second Report and Order, PISC requested that the Commission make all 
+information in the TV bands database publicly available.  See PISC petition for reconsideration of the Second Report 
+and Order at 14.  NCTA also filed a petition for reconsideration of the Second Report and Order and filed 
+comments in response to other petitions, but it raised no objections to PISC’s request to make TV bands database 
+information publicly available.
+144 See NCTA reply to oppositions at 2.  In footnote 5, NCTA cites page 12 of the U.S. Department of Homeland 
+Security’s Communications Sector-Specific Plan to argue that cable headends are classified as critical infrastructure.  
+This document lists all communications sectors, including the wireline, wireless, satellite, cable, and broadcasting 
+sectors.
+145 For example, information on broadcast facilities is publicly available through the Commission’s Consolidated 
+Database System (CDBS), and information on satellite and wireless services is publicly available through the 
+Commission’s Universal Licensing System (ULS).
+146 Headends that are more than 80 km outside the protected contour of the TV station being received may be 
+registered only if the Commission grants a waiver of the 80 km distance limit in Section 15.712(b) of the rules.
+Federal Communications Commission FCC 12-36
+23
+F. Other Matters
+58. As discussed above, OET designated ten parties as TV bands database administrators147  
+and requires them to attend workshops conducted by Commission staff.148  During the course of these 
+workshops, the database administrators have noted that some rules require Commission interpretation and 
+guidance to ensure that they are implemented consistently across all TV White Space databases.  OET 
+staff has provided guidance on how certain rules as written should be implemented by the database 
+administrators.  Information regarding these discussions, including any rule interpretations provided to 
+the database administrators at these workshops, is posted on the Commission’s web site at 
+http://www.fcc.gov/encyclopedia/white-space-database-administration. In two cases, discussed below, we 
+conclude that the rules should be modified to clearly state the requirements for protecting these services. 
+1. TV translator, low power TV and Class A TV station receive sites
+59. The rules require that TV bands databases contain information on the location of receive 
+sites for TV translator, low power TV, and Class A TV stations (collectively low power stations) and the 
+channels of TV signals received for retransmission at such sites.149 Our Consolidated Data Base System 
+(CDBS) has the ability to store receive site information for low power stations, but the receive site 
+information currently contained in the CDBS is incomplete or inaccurate and therefore not always 
+reliable.  For this reason, the Commission adopted rules that require low power stations to register their 
+receive sites with the TV bands database administrators to obtain protection.  Subsequent to the adoption 
+of these rules, we have become concerned that if we were to allow parties to register receive site 
+information both in the TV bands database and the CDBS, there could be conflicts in the data between the 
+CDBS and the database registrations due to data entry errors or updates to the information in one database 
+but not the other.  We therefore find it is necessary to provide for a single registry for low power station 
+receive site information, and that registry is to be the CDBS.  The Commission’s staff has constructed a 
+webpage interface that will allow licensees of low power stations to easily provide us with their correct 
+receive channel information.  The information collected through this webpage interface will be used to 
+update the CDBS.  The Commission will issue a public notice when the interface is available to the public 
+and will provide instructions on how to access it.
+60. In view of our decision to acquire and maintain all low power station receive site data by 
+means of the new receive site update facility and the CDBS system, we no longer find it necessary to 
+require database administrators to provide a separate registration process for this information.  In addition 
+to relieving the database operators of a significant burden, this change will make the low power station 
+receive site data in the CDBS more reliable and also avoid data conflicts between the CDBS and the 
+database registration records.  Accordingly, we are modifying Section 15.713(b)(2) of the rules to remove 
+receive sites of TV translator, low power TV, and Class A TV stations from the list of facilities that are 
+not contained in Commission databases and placing them in Section 15.713(b)(1) in the list of facilities 
+that are contained in Commission databases.  We are also modifying Section 15.715(c) to remove TV 
+translator receive sites as an example of facilities not contained in Commission databases.  These rule 
+changes are procedural in nature in that we are changing the manner in which low power TV receive site 
+information is collected and placed in the TV bands databases, but not the protection afforded to receive 
+  
+147 See supra footnote 12.
+148 The Chief of the OET has delegated authority to develop specific methods that will be used to designate TV 
+bands database managers, to designate these database managers; to develop procedures that these database managers 
+will use to ensure compliance with the requirements for database operations; to make determinations regarding the 
+continued acceptability of individual database managers; and to perform other functions as needed for the 
+administration of the TV bands databases.  See 47 C.F.R. § 0.241(h).
+149 See 47 C.F.R. § 15.713(b)(2).
+Federal Communications Commission FCC 12-36
+24
+sites.  Thus, these changes do not require prior notice under the Administrative Procedure Act (APA).150
+2. Protection of radio astronomy
+61. Section 15.712(h) of the rules prohibits the operation of TV bands devices within 2.4 
+kilometers of certain radio astronomy and other receive sites to prevent interference to operations at those 
+locations.  This rule section specifies the geographic coordinates of receive sites that were provided to the 
+Commission by the National Telecommunications and Information Administration (NTIA) in 2005.  
+NTIA recently discovered inaccuracies in the coordinates for several radio astronomy receive sites and 
+filed a request with the Commission to correct these inaccuracies.151 In particular, it provided corrected 
+coordinates for the Arecibo Observatory in Puerto Rico and the Table Mountain receive site in Colorado.  
+NTIA also requested that we modify the receive site coordinates listed in Section 15.712(h) to match 
+those in footnote US388 to the Table Of Frequency Allocations in Section 2.106 of the rules because it 
+determined that the coordinates in that footnote are correct.152 We find that NTIA’s requested changes to 
+this section will ensure that radio astronomy and other receive sites are protected against interference 
+from TV bands devices and are therefore updating the rules to reflect the correct coordinates. In addition, 
+we note that Section 15.712(h)(1) lists the Naval Radio Research Observatory in Sugar Grove, West 
+Virginia as a protected site but does not specify its geographic coordinates.  We are therefore revising this 
+section to add the coordinates of that observatory.  These rule revisions do not require TV bands devices 
+to protect any additional radio astronomy sites or increase the size of the protected zones around them; 
+they merely provide more precise geographic coordinates for the sites that TV bands devices were already 
+required to protect.  We find that these changes are insignificant in nature and impact, and inconsequential 
+to the industry and the public.  Thus, these rule changes do not require prior notice under the APA.153
+IV. PROCEDURAL MATTERS
+A. Final Regulatory Flexibility Analysis
+62. The Final Regulatory Flexibility Analysis, required by the Regulatory Flexibility Act, see
+5 U.S.C. § 604, is contained in Appendix C.
+B. Final Paperwork Reduction Act of 1995 Analysis
+63. This document contains modified information collection requirements subject to the 
+Paperwork Reduction Act of 1995 (PRA), Public Law 104-13. It will be submitted to the Office of 
+Management and Budget (OMB) for review under Section 3507(d) of the PRA. OMB, the general public, 
+and other Federal agencies are invited to comment on the new or modified information collection 
+requirements contained in this proceeding. In addition, we note that pursuant to the Small Business 
+Paperwork Relief Act of 2002, Public Law 107-198, see 44 U.S.C. 3506(c)(4), we previously sought 
+specific comment on how the Commission might further reduce the information collection burden for 
+  
+150 See 5 U.S.C. § 553(b)(A), which provides an exception to the notice requirement for rules of agency procedure.  
+The “critical feature” of the procedural exception “is that it covers agency actions that do not themselves alter the 
+rights or interests of parties, although it may alter the manner in which the parties present themselves or their 
+viewpoints to the agency.” JEM Broadcasting v. FCC, 22 F.3d 320, 327 (1994), quoting Batterton v. Marshall, 648 
+F.2d 694, 707 (D.C.Cir.1980); citing American Hosp. Ass'n v. Bowen, 834 F.2d 1037, 1047 (D.C.Cir.1987); 
+Neighborhood TV Co. v. FCC, 742 F.2d 629, 637 (D.C.Cir.1984).  
+151 See NTIA letter dated September 2, 2011 to the Chief, Office of Engineering and Technology.
+152 See 47 C.F.R. § 2.106, footnote US388.
+153 See 5 U.S.C. § 553(b)(B).  This exception to the notice requirement is “confined to those situations in which the
+administrative rule is a routine determination, insignificant in nature and impact, and inconsequential to the industry
+and to the public.”  Utility Solid Waste Activities Group v. EPA, 236 F.3d 749, 755 (D.C. Cir., 2001) (Solid Waste), 
+citing Texaco v. FPC, 412 F.2d 740, 743 (3rd Cir., 1969).
+Federal Communications Commission FCC 12-36
+25
+small business concerns with fewer than 25 employees.
+C. Contact Persons
+64. For additional information concerning this Third Memorandum Opinion and Order, 
+please contact Mr. Hugh L. Van Tuyl at (202) 418-7506 or Mr. Alan Stillwell at (202) 418-2925, or via 
+the Internet at Hugh.VanTuyl@fcc.gov or Alan.Stillwell@fcc.gov.
+V. ORDERING CLAUSES
+65. Accordingly, IT IS ORDERED that, pursuant to the authority contained in Sections 4(i), 
+302, 303(e), 303(f), and 307 of the Communications Act of 1934, as amended, 47 U.S.C. §§ 154(i), 302, 
+303(c), 303(f), and 307 this Third Memorandum Opinion and Order IS HEREBY ADOPTED.
+66. IT IS FURTHER ORDERED that, pursuant to Sections 4(i), 302, 303(e) 303(f), 303(g), 
+303(r), and 405 of the Communications Act of 1934, as amended, 47 U.S.C. §§ 154(i), 302, 303(e), 
+303(f), 303(g), 303(r), and 405, the petitions for reconsideration addressed herein ARE GRANTED to the 
+extent discussed above and the remainder of requests in the petitions for reconsideration ARE DENIED 
+as discussed above.
+67. IT IS FURTHER ORDERED that Part 15 of the Commission's rules IS AMENDED as 
+specified in Appendix B, and such rule amendments shall be EFFECTIVE 30 days after the date of 
+publication in the Federal Register, except for Section 15.713, which contains modified information 
+collection requirements that require approval by the Office of Management and Budget (OMB) under the 
+PRA. The Federal Communications Commission will publish a document in the Federal Register 
+announcing such approval and the relevant effective date.
+68. IT IS FURTHER ORDERED that the Commission’s Consumer and Governmental 
+Affairs Bureau, Reference Information Center, SHALL SEND a copy of the Third Memorandum Opinion 
+and Order, including the Final Regulatory Flexibility Analysis, to the Chief Counsel for Advocacy of the 
+U.S. Small Business Administration. 
+FEDERAL COMMUNICATIONS COMMISSION
+Marlene H. Dortch
+Secretary
+Federal Communications Commission FCC 12-36
+26
+APPENDIX A
+Parties Filing Petitions
+Petitions for Reconsideration
+1. Cellular South, Inc.
+2. Motorola Solutions, Inc.
+3. National Cable and Telecommunications Association
+4. Wi-Fi Alliance
+5. Wireless Internet Service Providers Association, Federation of Internet Solution Providers of the 
+Americas, Native American Broadband Association, Spectrum Bridge, Inc., Comsearch, Carlson 
+Wireless Technologies Inc. and Wireless Strategies, Inc.
+Oppositions to Petitions for Reconsideration
+1. Association for Maximum Service Television and National Association of Broadcasters
+2. Cellular South
+3. Google, Inc.
+4. Motorola Solutions, Inc.
+5. National Cable & Telecommunication Association
+6. Public Interest Spectrum Coalition
+7. Shure Incorporated
+8. Stratus Wave Communications
+9. Telcordia Technologies
+10. Wi-Fi Alliance
+11. Wireless Internet Service Providers Association
+Replies to Oppositions to Petitions for Reconsideration
+1. Cellular South
+2. Motorola Solutions, Inc.
+3. Shure Incorporated
+4. Wireless Communications Association International
+5. Wireless Internet Service Providers Association, Federation of Internet Solutions Providers of the 
+Americas, Native American Broadband Association, Spectrum Bridge Inc., Comsearch and Carlson 
+Wireless Technologies Inc.
+Federal Communications Commission FCC 12-36
+27
+APPENDIX B
+Final Rules
+Parts 15 of Title 47 of the Code of Federal Regulations is amended as follows:
+PART 15 RADIO FREQUENCY DEVICES
+1. The authority citation for Part 15 continues to read as follows:
+AUTHORITY:  47 U.S.C. 154, 302a, 303, 304, 307, 336, and 544a
+§ 15.709 General technical requirements.
+(a) * * *
+(5) The power spectral density from the TVBD shall not be greater than the following values when 
+measured in any 100 kHz band during any time interval of continuous transmission.  
+(i) Fixed devices: 12.6 dBm conducted power.  If transmitting antennas of directional gain greater than 6 
+dBi are used, this conducted power level shall be reduced by the amount in dB that the directional gain of 
+the antenna exceeds 6 dBi.
+(ii) Personal/portable device operating adjacent to occupied TV channels: -1.4 dBm EIRP.
+(iii) Sensing-only devices: -0.4 dBm EIRP.
+(iv) All other personal/portable devices: 2.6 dBm EIRP.
+* * * * *
+(b) * * *
+(2) The transmit antenna used with fixed devices may not be more than 30 meters above the ground.  In 
+addition, fixed devices may not be located at sites where the antenna height above average terrain is more 
+than 250 meters.  The HAAT is to be calculated by the TV bands database that the device contacts for 
+available channels using computational software employing the methodology in §73.684(d) of this 
+chapter.
+* * * * *
+(c)* * *
+(1) In the television channels immediately adjacent to the channel in which the TVBD is operating, 
+emissions from the TVBD shall not exceed the following levels.
+(i) Fixed devices: -42.8 dBm conducted power.
+(ii) Personal/portable device operating adjacent to occupied TV channels: -56.8 dBm EIRP.
+(iii) Sensing-only devices: -55.8 dBm EIRP.
+(iv) All other personal/portable devices: -52.8 dBm EIRP.
+(2) Emission measurements in the adjacent channels shall be performed using a minimum resolution 
+bandwidth of 100 kHz with an average detector. A narrower resolution bandwidth may be employed near 
+the band edge, when necessary, provided the measured energy is integrated to show the total power over 
+100 kHz.
+* * * * *
+2. Section 15.711 is amended by revising paragraph (b)(3)(iv) to read as follows:
+§ 15.711 Interference avoidance methods.
+Federal Communications Commission FCC 12-36
+28
+* * * * *
+(b) * * *
+(3) * * *
+(iv) (A) A Mode I personal/portable TVBD may only transmit upon receiving a list of available channels 
+from a fixed or Mode II TVBD.  A fixed or Mode II device may provide a Mode I device with a list of 
+available channels only after it contacts its database, provides the database the FCC Identifier (FCC ID) 
+of the Mode I device requesting available channels, and receives verification that the FCC ID is valid for 
+operation.
+(B) A Mode II device must provide a list of channels to the Mode I device that is the same as the list of 
+channels available to the Mode II device. 
+(C) A fixed device may provide a list of available channels to a Mode I device only if the fixed device 
+HAAT as verified by the TV bands database does not exceed 106 meters.  The fixed device must provide 
+a list of available channels to the Mode I device that is the same as the list of channels available to the 
+fixed device, except that a Mode I device may operate only on those channels that are permissible for its 
+use under §15.707.  A fixed device may also obtain from a database a separate list of available channels 
+that includes adjacent channels that would be available to a Mode I personal/portable device and provide 
+that list to the Mode I device. 
+(D) To initiate contact with a fixed or Mode II device, a Mode I device may transmit on an available 
+channel used by the fixed or Mode II TVBD or on a channel the fixed or Mode II TVBD indicates is 
+available for use by a Mode I device on a signal seeking such contacts.  At least once every 60 seconds, 
+except when in sleep mode, i.e., a mode in which the device is inactive but is not powered-down, a Mode 
+I device must either receive a contact verification signal from the Mode II or fixed device that provided its 
+current list of available channels or contact a Mode II or fixed device to re-verify/re-establish channel 
+availability.  A Mode I device must cease operation immediately if it does not receive a contact 
+verification signal or is not able to re-establish a list of available channels through contact with a fixed or 
+Mode II device on this schedule.  In addition, a Mode II device must re-check/re-establish contact with a 
+fixed or Mode II device to obtain a list of available channels if it loses power. Collaterally, if a Mode II 
+device loses power and obtains a new channel list, it must signal all Mode I devices it is serving to 
+acquire and use a new channel list.
+* * * * *
+3. Section 15.712 is amended by replacing the table in paragraph (a)(2), adding a new paragraph 
+(a)(3) and revising paragraph (h) to read as follows: 
+Federal Communications Commission FCC 12-36
+29
+§ 15.712 Interference protection requirements.
+* * * * *
+(a)(2) Required separation distance. TVBDs must be located outside the contours indicated in paragraph 
+(a)(1) of this section of co-channel and adjacent channel stations by at least the minimum distances 
+specified in the following table. Personal/portable TVBDs operating in Mode II must comply with the 
+separation distances specified for an unlicensed device with an antenna height of less than 3 meters. 
+Alternatively, Mode II personal/portable TVBDs may operate at closer separation distances from the 
+contour of adjacent channel stations than this table permits, including inside the contour of adjacent 
+channel stations, provided the power level is reduced to 40 mW or less as specified in §15.709(a)(2).
+Required separation (km) from digital or analog TV (full 
+service or low power) protected contour
+Antenna height above average 
+terrain of unlicensed device Co-channel(km)
+Adjacent
+channel
+(km)
+Less than 3 meters 4.0 0.4
+3-Less than 10 meters 7.3 0.7
+10-Less than 30 meters 11.1 1.2
+30-Less than 50 meters 14.3 1.8
+50-Less than 75 meters 18.0 2.0
+75-Less than 100 meters 21.1 2.1
+100-Less than 150 meters 25.3 2.2
+150-Less than 200 meters 28.5 2.3
+200-250 meters 31.2 2.4
+(3) The antenna height above ground for a fixed TVBD may not exceed 30 meters.
+* * * * *
+(h)* * *
+(1) The Naval Radio Research Observatory in Sugar Grove, West Virginia at 38 30 58 N and 79 16 48 W.
+(2) The Table Mountain Radio Receiving Zone (TMRZ) at 40 08 02 N and 105 14 40 W.
+Federal Communications Commission FCC 12-36
+30
+(3) The following facilities:
+Observatory
+Latitude
+(deg/min/sec)
+Longitude
+(deg/min/sec)
+Allen Telescope Array 40 49 04 N 121 28 24 W
+Arecibo Observatory 18 20 37 N 066 45 11 W
+Green Bank Telescope (GBT) 38 25 59 N 079 50 23 W
+Very Large Array (VLA) Rectangle between latitudes 33 58 22 N and 34 14 56 N, and 
+longitudes 107 24 40 W and 107 48 22 W
+Very Long Baseline Array (VLBA) 
+Stations:
+Pie Town, NM 34 18 04 N 108 07 09 W
+Kitt Peak, AZ 31 57 23 N 111 36 45 W
+Los Alamos, NM 35 46 30 N 106 14 44 W
+Ft. Davis, TX 30 38 06 N 103 56 41 W
+N. Liberty, IA 41 46 17 N 091 34 27 W
+Brewster, WA 48 07 52 N 119 41 00 W
+Owens Valley, CA 37 13 54 N 118 16 37 W
+St. Croix, VI 17 45 24 N 064 35 01 W
+Hancock, NH 42 56 01 N 071 59 12 W
+Mauna Kea, HI 19 48 05 N 155 27 20 W
+4. Section 15.713 is amended by adding new paragraphs (b)(1)(ix) through (xi), removing 
+paragraphs (b)(2)(ii) through (iv), re-designating paragraphs (b)(2)(v) through (vi) as paragraphs 
+(b)(2)(ii) and (iii), and revising paragraphs (e)(6) to read as follows:
+§ 15.713 TV bands database.
+* * * * *
+(b)* * *
+(1) * * *
+(i)* * *
+(ix) Class A television station receive sites.
+(x) Low power television station receive sites.
+(xi) Television translator station receive sites.
+(2) * * *
+(i) * * *
+(ii) Sites where low power auxiliary stations, including wireless microphones and wireless assist video 
+devices, are used and their schedule for operation.
+(iii) Fixed TVBD registrations.
+Federal Communications Commission FCC 12-36
+31
+* * * * *
+(e) * * *
+(6) A fixed device with an antenna height above ground that exceeds 30 meters or an antenna height 
+above average terrain (HAAT) that exceeds 250 meters shall not be provided a list of available channels.  
+The HAAT is to be calculated using computational software employing the methodology in § 73.684(d) 
+of this chapter.
+* * * * *
+5. Section 15.715 is amended by revising paragraph (c) and adding a new paragraph (m):
+§ 15.715 TV bands database administrator.
+* * * * *
+(c) Establish a process for registering fixed TVBDs and registering and including in the database facilities 
+entitled to protection but not contained in a Commission database, including MVPD receive sites.
+* * * * *
+(m) Provide a means to make all information the rules require the database to contain publicly available, 
+including fixed TVBD registrations and voluntarily submitted protected entity information.
+Federal Communications Commission FCC 12-36
+32
+APPENDIX C
+Final Regulatory Flexibility Analysis
+As required by the Regulatory Flexibility Act (RFA),1 an Initial Regulatory Flexibility Analysis 
+(IRFA) was incorporated in the Notice of Proposed Rule Making (NPRM) in ET Docket No. 04-186,2 and 
+an additional IRFA was incorporated in the First Report and Order and Further Notice of Proposed Rule 
+Making (Further Notice) in ET Docket No. 04-186.3 The Commission sought written public comment on 
+the proposals in the NPRM and in the Further Notice, including comment on the IRFAs.  No comments 
+were received in response to either IRFA.  This present Final Regulatory Flexibility Analysis (FRFA) 
+conforms to the RFA.4
+A. Need for, and Objectives of, the Third Memorandum Opinion and Order 
+This Third Memorandum Opinion and Order responds to five petitions for reconsideration that 
+were filed in response to the Second Memorandum Opinion and Order (“Second MO&O”) in this 
+proceeding.5 It eliminates the 76 meter limitation on the height above average terrain of the sites where 
+fixed TV bands devices may operate and increases the maximum permitted antenna height above average 
+terrain from 106 meters to 250 meters.  The Third Memorandum Opinion and Order also replaces the 
+current relative limit with a fixed limit for TV bands device emissions that fall in the 6 MHz channels 
+adjacent to the operating channel.  Devices operating at the maximum permitted power must suppress 
+adjacent channel emissions to the same level that the current rules require, but devices operating at less 
+than the maximum power do not have to suppress emissions below this level.  However, the Third 
+Memorandum Opinion and Order upholds the majority of the Commission’s prior decisions permitting 
+unlicensed broadband operations in the TV bands while making certain other minor changes and 
+refinements to the rules for TV band devices.  The Commission believes that these changes and 
+clarifications to the rules will better ensure that licensed services are protected from interference while 
+retaining flexibility for unlicensed devices to share spectrum with new services or to change frequencies 
+if TV spectrum is reallocated for other purposes.
+B. Statement of Significant Issues Raised by Public Comments in Response to the IRFA
+There were no public comments filed that specifically addressed the rules and policies proposed 
+in the IRFA.
+C. Response to Comments by the Chief Counsel for Advocacy of the Small Business 
+Administration
+Pursuant to the Small Business Jobs Act of 2010, the Commission is required to respond to any 
+comments filed by the Chief Counsel for Advocacy of the Small Business Administration and to provide 
+  
+1 See 5 U.S.C. § 603.  The RFA, see 5 U.S.C. § 601-612, has been amended by the Small Business Regulatory 
+Enforcement Fairness Act of 1996 (SBREFA), Pub. L. No. 104-121, Title II, 110 Stat. 857 (1996), and the Small 
+Business Jobs Act of 2010, Public Law No. 111-240, 124 Stat. 2504 (2010).
+2 NPRM, 19 FCC Rcd at 10018, 10048 (2004).
+3 Further Notice, 21 FCC Rcd 12266, 12299 (2006).
+4 See 5 U.S.C. 604.
+5 See Second Memorandum Opinion and Order in ET Docket No. 04-186, 25 FCC Rcd 18661 (2010). 
+Federal Communications Commission FCC 12-36
+33
+a detailed statement of any change made to the proposed rules as a result of those comments.  The Chief 
+Counsel did not file any comments in response to the proposed rules in this proceeding.
+D. Description and Estimate of the Number of Small Entities To Which Rules Will Apply
+The RFA directs agencies to provide a description of, and, where feasible, an estimate of, the 
+number of small entities that may be affected by the rules adopted herein.6 The RFA generally defines 
+the term “small entity” as having the same meaning as the terms “small business,” “small organization,” 
+and “small governmental jurisdiction.”7 In addition, the term “small business” has the same meaning as 
+the term “small business concern” under the Small Business Act.8 A “small business concern” is one 
+which: (1) is independently owned and operated; (2) is not dominant in its field of operation; and (3) 
+satisfies any additional criteria established by the Small Business Administration (SBA).9  
+Radio and Television Broadcasting and Wireless Communications Equipment Manufacturing. 
+The Census Bureau defines this category as follows: “This industry comprises establishments primarily 
+engaged in manufacturing radio and television broadcast and wireless communications equipment.FN1  
+Examples of products made by these establishments are: transmitting and receiving antennas, cable 
+television equipment, GPS equipment, pagers, cellular phones, mobile communications equipment, and 
+radio and television studio and broadcasting equipment.”10  In this category, the SBA has deemed a 
+business manufacturing radio and television broadcasting equipment, wireless telecommunications 
+equipment, or both, to be small if it has fewer than 750 employees.11 For this category of manufacturing, 
+Census data for 2007 show that there were 919 firms that operated that year. Of those establishments, 531 
+had between 1 and 19 employees; 240 had between 20 and 99 employees; and 148 had more than 100 
+employees.12 Since 771 establishments had fewer than 100 employees, and since only 148 had more than 
+100 employees, the vast majority of manufacturers in this category would be considered small under 
+applicable standards.
+Wireless Telecommunications Carriers (except satellite). Since 2007, the Census Bureau has 
+placed wireless firms within this new, broad, economic census category.13  Under the present and prior 
+categories, the SBA has deemed a wireless business to be small if it has 1,500 or fewer employees.14 For 
+  
+6 5 U.S.C. § 604(a)(3).
+7 5 U.S.C. § 601(6).
+8 5 U.S.C. § 601(3) (incorporating by reference the definition of “small-business concern” in the Small Business 
+Act, 15 U.S.C. § 632).  Pursuant to 5 U.S.C. § 601(3), the statutory definition of a small business applies “unless an 
+agency, after consultation with the Office of Advocacy of the Small Business Administration and after opportunity 
+for public comment, establishes one or more definitions of such term which are appropriate to the activities of the 
+agency and publishes such definition(s) in the Federal Register.”
+9 15 U.S.C. § 632.
+10 U.S. Census Bureau, 2002 NAICS Definitions, “334220 Radio and Television Broadcasting and Wireless 
+Communications Equipment Manufacturing”; http://www.census.gov/epcd/naics02/def/NDEF334.HTM#N3342.
+11 See 13 C.F.R. § 121.201, NAICS code 334220.
+12 http://factfinder.census.gov/servlet/IBQTable?_bm=y&-geo_id=&-_ skip=300&-ds_name+EC0731I1&-
+_lang=en. 
+13 U.S. Census Bureau, 2007 NAICS Definitions, “517210 Wireless Telecommunications Categories (Except 
+Satellite)”; http://www.census.gov/naics/2007/def/ND517210.HTM#N517210.
+14 13 C.F.R. § 121.201, NAICS code 517210.
+Federal Communications Commission FCC 12-36
+34
+this category, census data for 2007 show that there were 1,383 firms that operated for the entire year.15  
+Of this total, 1,368 firms had employment of 999 or fewer employees and 15 had employment of 1000 
+employees or more.16 Similarly, according to Commission data, 413 carriers reported that they were 
+engaged in the provision of wireless telephony, including cellular service, Personal Communications 
+Service (PCS), and Specialized Mobile Radio (SMR) Telephony services.17 Of these, an estimated 261 
+have 1,500 or fewer employees and 152 have more than 1,500 employees.18 Consequently, the 
+Commission estimates that approximately half or more of these firms can be considered small. Thus, 
+using available data, we estimate that the majority of wireless firms can be considered small.
+E. Description of Projected Reporting, Record Keeping, and Other Compliance Requirements
+TV bands devices are required to be authorized under the Commission's certification procedure as 
+a prerequisite to marketing and importation, and the Third Memorandum Opinion and Order makes no 
+change to that requirement.  However, it makes certain changes to the technical requirements for TV 
+bands devices, which are discussed below.
+F. Steps Taken to Minimize Significant Economic Impact on Small Entities, and Significant 
+Alternatives Considered
+The RFA requires an agency to describe any significant alternatives that it has considered in 
+developing its approach, which may include the following four alternatives (among others): “(1) the 
+establishment of differing compliance or reporting requirements or timetables that take into account the 
+resources available to small entities; (2) the clarification, consolidation, or simplification of compliance 
+and reporting requirements under the rule for such small entities; (3) the use of performance rather than 
+design standards; and (4) an exemption from coverage of the rule, or any part thereof, for such small 
+entities.”19  
+While the Third Memorandum Opinion and Order generally upholds the rules adopted in the 
+Second Memorandum Opinion and Order, the Commission made certain changes to those rules. It 
+believed those changes and clarifications would provide for improved protection of licensed services in 
+the TV bands, resolve certain uncertainties in the rules, and provide manufacturers with greater flexibility 
+in designing products to meet market demands. 
+The Commission eliminated the prohibition on fixed TV bands device operation at sites where the 
+ground elevation is more than 76 meters above the average elevation of the surrounding terrain, while 
+maintaining the current antenna height above ground limit of 30 meters.  In place of the site elevation 
+limit, the Commission adopted a requirement that a fixed device may operate with an antenna height 
+above average terrain of up to 250 meters, which is an increase from the current antenna height above 
+average terrain limit of 106 meters (30 meters antenna height above ground plus 76 meters site above 
+average terrain). Under the new rule, a fixed TV bands device could operate from a site with an elevation 
+  
+15 U.S. Census Bureau, Subject Series: Information, Table 5, “Establishment and Firm Size: Employment Size of 
+Firms for the United States: 2007 NAICS Code 517210” (issued Nov. 2010).
+16 Id. Available census data do not provide a more precise estimate of the number of firms that have employment of 
+1,500 or fewer employees; the largest category provided is for firms with “100 employees or more.”
+17 See Trends in Telephone Service at Table 5.3.
+18 See id.
+19 5 U.S.C. § 603(c)(1) – (c)(4).
+Federal Communications Commission FCC 12-36
+35
+of up to 220 meters above average terrain using an antenna height above ground of 30 meters, resulting in 
+an antenna height above average terrain of 250 meters.  In reaching this decision, the Commission 
+considered the competing views from various parties on whether the ground elevation limit unnecessarily 
+restricts the locations where fixed TV bands devices can operate and whether an increase in the maximum 
+antenna height above ground and average terrain can allow greater coverage by fixed TV bands devices 
+without causing interference to authorized users of the TV bands.  The Commission believes that the 
+changes it adopted will allow for increased availability of wireless broadband services in rural and 
+underserved areas while protecting television and other services that operate in the TV bands.
+The Commission made certain changes to the technical requirements for TV bands devices.  
+Specifically, it modified the limits for emissions that fall in TV channels adjacent to those where a TV 
+bands device operates by specifying limits that are at fixed levels, rather than relative to the in-band 
+power.  This change simplifies compliance measurements, because it will no longer be necessary to 
+compare the in-band and adjacent channel power, which had to be measured with two different 
+bandwidths under the previous rules.  Instead, compliance can be determined by directly measuring the 
+adjacent channel power in a specified bandwidth for comparison to the limit. The rule changes that the 
+Commission adopted also eliminate the need for devices operating at less than the maximum permitted 
+power to suppress adjacent channel emissions to levels below those needed to prevent interference to 
+other services in the TV bands.  In reaching its decision to modify the adjacent channel emission limits, 
+the Commission considered and rejected requests for a greater relaxation of the limit.  The Commission 
+found that the adopted limits are necessary to prevent interference to authorized services in and adjacent 
+to the TV bands and to allow more efficient use of the TV spectrum by both licensed and unlicensed 
+devices.  The Commission recognized petitioners’ arguments that tighter emission limits can result in 
+higher equipment costs.  However, the record indicated that at least one equipment manufacturer is 
+capable of complying with the limits adopted in the Second Memorandum Opinion and Order.20 The 
+Commission noted that tighter out-of-band emission limits can allow users to operate in adjacent 
+frequency bands with less geographic separation between them, thus enabling more efficient and intensive 
+use of spectrum.  Thus, it found that the benefits of tighter out-of-band emission limits outweigh the 
+increase in equipment cost necessary to comply with the limits.
+G. Report to Congress
+The Commission will send a copy of the Third Memorandum Opinion and Order, including this 
+FRFA, in a report to Congress and the Government Accountability Office pursuant to the Congressional 
+Review Act.21 A copy of the Third Memorandum Opinion and Order and FRFA (or summaries thereof) 
+will also be published in the Federal Register.22
+  
+20 See Adaptrum ex parte dated March 8, 2011.
+21 See 5 U.S.C. § 801(a)(1)(A).
+22 See 5 U.S.C. § 604(b).

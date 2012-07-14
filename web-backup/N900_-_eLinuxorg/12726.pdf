@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Page not found</title>
+<meta name="Description" content=" - STMicroelectronics">
+<meta name="DCSext.w_error" content="404">
+<meta name="DCSext.w_link" content="/stonline/products/literature/ds/12726.pdf">
+<script type="text/javascript" language="javascript">
+	if (document.referrer && document.referrer!="") {
+		var meta;
+		if (document.createElement && (meta = document.createElement('meta'))) {
+			// Set properties
+			meta.name = "DCS.dcsref";
+			meta.content = document.referrer;
+			// Add the meta element to the head
+			document.getElementsByTagName('head').item(0).appendChild(meta);
+		}
+	}
+</script>
+<meta name="DCS.dcsuri" content="/stonline/404/404.htm">
+<meta name="WT.ti" content="404 Error Page">
+<meta name="WT.cg_n" content="404 Error Page">
+<meta name="WT.z_country" content="Global">
+<meta name="Keywords" content=" - STMicroelectronics">
+<link type="text/css" rel="stylesheet" href="http://www.st.com/stonline/404/404_ref/style.css">
+<link type="text/css" rel="stylesheet" href="http://www.st.com/stonline/404/404_ref/flexcrollstyles.css">
+<style type="text/css">
+	.submenu{display: none}
+</style>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/pageUtils.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/flexcroll.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/searchbox.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/jquery.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/ddaccordion.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/minisiteProperties.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/AC_OETags.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/cookie.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/checkcookie.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/SpryTabbedPanels.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/arvoutils.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/prototype.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/swfobject.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/scriptaculous.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/builder.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/effects.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/dragdrop.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/controls.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/slider.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/sound.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/swap_dir.js"></script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/banners.js"></script>
+<meta name="mini_site_url" content="st">
+<!--[if IE 7]><link type="text/css" rel="stylesheet" href="http://www.st.com/internet/com/css/ie.css"/><![endif]-->
+<!--[if IE 6]><link type="text/css" rel="stylesheet" href="http://www.st.com/internet/com/css/ie.css"/>
+        <link type="text/css" rel="stylesheet" href="http://www.st.com/internet/com/css/ie6.css"/><![endif]-->
+</head>
+<body>
+<script src="http://www.st.com/stonline/404/404_ref/wz_tooltip.js" type="text/javascript"></script>
+<div style="visibility: hidden; position: absolute; overflow: hidden; padding: 0px; width: 0px; left: 0px; top: 0px;" id="WzTtDiV"></div>
+<!-- EASYNAVI -->
+<script>  
+function myFunc() {
+var mySettings={divStyle:"width:195px; height:195px; position:absolute; left:5px; top:125px; display:block; z-index:50; border:0px none;" };
+ST.ExtranetJS.doAction(mySettings); 
+}
+</script>
+<div id="tboxwrapper">
+	<div id="icontoolbox">
+		<div id="iconcontainer">
+			<div class="toolicon"> <a href="javascript:popup_sel('/stonline/stappl/productcatalog/app?page=productSelector')"><img width="34" src="http://www.st.com/internet/com/common_images/panel_cat.gif" onmouseover="Tip('Parametric Product Catalog')" onmouseout="UnTip()" Onclick="dcsMultiTrack('DCS.dcsuri','/stonline/stappl/st/com/support/404.jsp','WT.ti','EasyNavi - Product Catalog button')" height="50" alt="" /></a> </div>
+			<div class="toolicon"> <a href="javascript:popup_sel('https://my.st.com')"><img width="34" src="http://www.st.com/internet/com/common_images/panel_myst2.gif" onmouseover="Tip('myST')" onmouseout="UnTip()" Onclick="dcsMultiTrack('DCS.dcsuri','/stonline/stappl/st/com/support/404.jsp','WT.ti','EasyNavi - myST button')" height="50" alt="" /></a> </div>
+			<style type="text/css">
+<!--
+#iconcontainer {width:158px;}
+-->
+</style>
+			<div class="toolicon"> <a href="Javascript:self.print()"><img width="34" src="http://www.st.com/internet/com/common_images/panel_print.gif" onmouseover="Tip('Print the page')" onmouseout="UnTip()" Onclick="dcsMultiTrack('DCS.dcsuri','/stonline/stappl/st/com/support/404.jsp','WT.ti','EasyNavi - Print button');" height="50" alt="" /></a> </div>
+			<div class="toolicon"> <a href="#"><img id="searchbutton" width="34" src="http://www.st.com/internet/com/common_images/panel_search.gif" onmouseover="Tip('Search')" onmouseout="UnTip()" Onclick="dcsMultiTrack('DCS.dcsuri','/stonline/stappl/st/com/support/404.jsp','WT.ti','EasyNavi - Search button');" height="50" alt="" /></a> </div>
+		</div>
+		<div id="iconclosehandler" onclick="toggleEasyNavi()"> <img id="easyNavibutton" src="http://www.st.com/internet/com/common_images/easynav_01.gif" alt=""  onmouseover="toggleEasyNaviImage(1)" onmouseout="toggleEasyNaviImage(0)" /> </div>
+	</div>
+	<!-- ***icontoolbox*** -->
+</div>
+<!-- /EASYNAVI -->
+<!-- Multi Search Box-->
+<form id="slidesearch" action="">
+	<div class="clear">
+		<!--comment -->
+	</div>
+	<ul style="display: none;" class="sb_dropdown">
+		<li>
+			<input autocomplete="off" class="sb_input" size="20" id="searchinput">
+			<img src="http://www.st.com/internet/com/common_images/go-but.png" id="submitbutton"></li>
+		<li class="sb_filter">Filter your search</li>
+		<li>
+			<input type="radio" id="search_k" checked="checked" name="searchtype">
+			<label for="search_k">Keyword</label>
+		</li>
+		<li>
+			<input type="radio" id="search_pn" name="searchtype">
+			<label for="search_pn">Part number</label>
+		</li>
+		<li>
+			<input type="radio" id="search_cr" name="searchtype">
+			<label for="search_cr">Cross reference</label>
+		</li>
+	</ul>
+	<div class="clear">
+		<!-- Comment -->
+	</div>
+</form>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+	
+	/* Searchbox */
+	jQuery('#searchbutton').bind('click',function(){
+        jQuery('#slidesearch').find('.sb_down')
+           .addClass('sb_up')
+           .removeClass('sb_down')
+           .andSelf()
+           .find('.sb_dropdown')
+           .slideDown('fast');
+    });
+
+    var searchTimeout = null;
+
+    jQuery('#slidesearch').bind('mouseleave',function(){
+    searchTimeout = window.setTimeout(function() {
+        jQuery('#slidesearch').find('.sb_up')
+           .addClass('sb_down')
+           .removeClass('sb_up')
+           .andSelf()
+           .find('.sb_dropdown')
+           .slideUp('fast');
+    }, 800);
+     });
+				
+	jQuery('#slidesearch').bind("mouseenter",function() {
+	 window.clearTimeout(searchTimeout);
+	});
+
+	jQuery('#slidesearch').find('.sb_dropdown').find('label[for="all"]').prev().bind('click',function(){
+		jQuery(this).parent().siblings().find(':checkbox').attr('checked',this.checked).attr('disabled',this.checked);
+	});
+	
+	function opensearchwindow() {
+		var searchtype = jQuery("input[@name=searchtype]:checked").attr('id');
+		var searchtext = jQuery("#searchinput").val();
+		if(searchtype == 'search_pn' && searchtext != "") 
+		{
+			/* Part Number */
+			popup_sel("http://www.st.com/stonline/stappl/productcatalog/app?page=productSelector&search="+searchtext);
+		}
+		else if(searchtype == 'search_k' && searchtext != "")
+		{
+			/* Generic search */
+			popup_sel("http://www.st.com/internet/com/search/search.jsp?q="+searchtext+"&entqr=3&entsp=a&output=xml_no_dtd&sort=date:D:L:d1&client=ST_COM_PlanA_frontend&ud=1&oe=UTF-8&ie=UTF-8&proxystylesheet=ST_COM_PlanA_frontend&site=ST_COM");
+		}
+		else if(searchtype == 'search_cr' && searchtext != "")
+		{
+			/* Xref */
+			alert("-");
+			popup_sel("http://www.st.com/internet/com/xref/crossref.jsp?partNum="+searchtext);
+		}
+	}
+	
+	jQuery('#submitbutton').bind('click',function(){	
+		opensearchwindow();
+	});
+	
+	jQuery('#slidesearch').submit(function(e) {
+		opensearchwindow();
+	})
+
+});	
+
+/* End Searchbox */
+</script>
+<!-- /EASYNAVI -->
+<!-- Start Header -->
+<div id="header">
+	<div id="central">
+		<div class="floatleft">
+			<div id="st"><img src="http://www.st.com/stonline/404/404_ref/logo.gif" alt=""></div>
+		</div>
+		<div class="floatright">
+			<div class="l1"><img src="http://www.st.com/stonline/404/404_ref/logo_a.gif" alt=""></div>
+		</div>
+		<div class="clear"></div>
+		<!-- Start Menu -->
+		<div class="floatleft">
+			<ul class="menu">
+				<li class="menu"><a href="http://www.st.com/internet/com/home/home.jsp">home</a></li>
+				<li class="menu"><a href="http://www.st.com/internet/com/about_st/st_company_information.jsp">about
+						ST</a></li>
+				<li class="menu"><a href="http://www.st.com/stonline/contactus/index.html">contacts</a></li>
+				<li class="menu"><a href="http://www.st.com/internet/com/press/st_press_releases.jsp">press</a></li>
+				<li class="menu"><a href="http://my.st.com/">login</a></li>
+			</ul>
+		</div>
+		<div class="floatright">
+			<div class="l2"><img src="http://www.st.com/stonline/404/404_ref/logo_b.gif" alt=""></div>
+		</div>
+		<!--End Menu -->
+	</div>
+</div>
+<!-- End Header -->
+<div id="bck">
+	<div id="wrapper">
+		<div id="lang_l2">
+			<div id="sub_header_left">
+				<div class="nav">
+					<div style="display:none" id="st_com_breadcrumb">
+						<!--Comment-->
+					</div>
+					<div class="clear">
+						<!--Comment-->
+					</div>
+				</div>
+				<h1>Page Not Found - 404 Server error</h1>
+				<div class="clear">
+					<!--Clear float-->
+				</div>
+			</div>
+			<div id="sub_header_right">
+				<div id="lang_container"> <a id="en_US" href="#" onclick="changeLanguageUrl(this.id, window.location, 'internet');" onmouseover="document.lang1.src='http://www.st.com/internet/com/common_images/us_h.gif'; Tip('English');" onmouseout="document.lang1.src='http://www.st.com/internet/com/common_images/us.gif';UnTip()"> <img src="http://www.st.com/internet/com/common_images/us_h.gif" onload="getCurrentLanguageFlag(this.id, window.location, 'internet')" name="lang1" id="lang1" alt="" border="0"> </a> <a id="zh_CN" href="http://www.st.com/cn/com/support/404.jsp" onclick="changeLanguageUrl(this.id, window.location, 'cn');" onmouseover="document.lang2.src='http://www.st.com/internet/com/common_images/chi_h.gif'; Tip('简体中文')" onmouseout="document.lang2.src='http://www.st.com/internet/com/common_images/chi.gif';UnTip()"> <img src="http://www.st.com/internet/com/common_images/chi.gif" onload="getCurrentLanguageFlag(this.id, window.location, 'cn')" name="lang2" id="lang2" alt="" border="0"> </a> <a id="ja_JP" href="http://www.st.com/jp/com/support/404.jsp" onclick="changeLanguageUrl(this.id, window.location, 'jp');" onmouseover="document.lang3.src='http://www.st.com/internet/com/common_images/jap_h.gif'; Tip('日本語')" onmouseout="document.lang3.src='http://www.st.com/internet/com/common_images/jap.gif';UnTip()"> <img src="http://www.st.com/internet/com/common_images/jap.gif" onload="getCurrentLanguageFlag(this.id, window.location, 'jp')" name="lang3" id="lang3" alt="" border="0"> </a> </div>
+			</div>
+			<div class="clear">
+				<!--clear float-->
+			</div>
+		</div>
+		<div class="clear">
+			<!--clear float-->
+		</div>
+		<!--Start Left Column-->
+		<div id="leftcolumn_menu" class="marginten">
+			<div class="main_menu_top">&nbsp;</div>
+			<div class="main_menu_content">
+				<p class="font11">Type your request by:</p>
+				<form name="searchbox" method="get" id="searchbox" action="">
+					<div class="form">
+						<div class="inp_bg_left">
+							<input class="input_left" value="keyword" onkeyup="tasto_key()" onfocus="keyword_focus()" onblur="keyword_blur()" onchange="keyword_change();" name="q" type="text">
+						</div>
+						<div class="inp_bg_left">
+							<input class="input_left" value="part number" onkeyup="tasto_part()" onblur="pn_blur()" onfocus="pn_focus()" onchange="pn_change();" name="pnumber" id="pnumber" type="text">
+							<input class="input_left" value="3" name="entqr" type="hidden">
+							<input class="input_left" value="a" name="entsp" type="hidden">
+							<input class="input_left" value="xml_no_dtd" name="output" type="hidden">
+							<input class="input_left" value="date:D:L:d1" name="sort" type="hidden">
+							<input class="input_left" value="ST_COM_frontend" name="client" type="hidden">
+							<input class="input_left" value="1" name="ud" type="hidden">
+							<input class="input_left" value="UTF-8" name="oe" type="hidden">
+							<input class="input_left" value="UTF-8" name="ie" type="hidden">
+							<input class="input_left" value="ST_COM_frontend" name="proxystylesheet" type="hidden">
+							<input class="input_left" value="ST_COM" name="site" type="hidden">
+						</div>
+						<div class="inp_bg_left">
+							<input class="input_left" value="cross reference" onkeyup="tasto_cross()" onfocus="xref_focus()" onblur="xref_blur()" onchange="xref_change();" name="standard" type="text">
+						</div>
+					</div>
+				</form>
+				<input value="" onclick="bottone();toggleEasyNavi();" class="buton  mt_10 ml_115" type="submit">
+			</div>
+			<div class="main_menu_bottom">
+				<!-- clear -->
+			</div>
+		</div>
+		<!--End Left Column-->
+		<div class="container2 floatleft ml_10 w_692">
+			<div class="rc_tl">
+				<!--Clear-->
+			</div>
+			<div class="rc_top w_672">
+				<!--Clear-->
+			</div>
+			<div class="rc_tr">
+				<!--Clear-->
+			</div>
+			<div class="clear">
+				<!--Clear-->
+			</div>
+			<div id="container7">
+				<div class="container6 ml_10s w_670">
+					<div class="rc_tl3">
+						<!--Clear-->
+					</div>
+					<div class="rc_top3 w_650">
+						<!--Clear-->
+					</div>
+					<div class="rc_tr3">
+						<!--Clear-->
+					</div>
+					<div class="clear">
+						<!--Clear-->
+					</div>
+					<div class="mycustomscroll_title w_670">Page Not Found</div>
+					<div tabindex="0" style="overflow: hidden; border-width: 0px; position: relative; text-align: left; padding: 0px;" id="mycustomscroll_app_l1_1box1" class="flexcroll flexcrollactive">
+						<div style="width: 670px; height: 450px; top: 0px; left: 0px; border-bottom: 0px solid black; text-align: left; padding: 0px; position: relative; overflow: hidden; z-index: 2;" class="mcontentwrapper" id="mycustomscroll_app_l1_1box1_mcontentwrapper">
+							<div style="position: relative; top: 0pt; width: 100%; display: block; padding: 0px; left: 0pt;" class="contentwrapper" id="mycustomscroll_app_l1_1box1_contentwrapper">
+								<div>
+									<p align="justify"> <strong>The page or document you requested is not
+											available. </strong> </p>
+									<p>The URL might either be no longer valid or the requested service
+										might be temporarily unavailable. Please verify that the address has
+										been entered correctly. The links below or keyword search may be used
+										to find the requested information.</p>
+									<p align="center"> </p>
+									<table style="margin-left: 10px;" summary="" border="0" cellpadding="0" cellspacing="0" width="90%">
+										<tbody>
+											<tr>
+												<th>Products</th>
+												<th>&nbsp;</th>
+												<th>Applications</th>
+												<th>&nbsp;</th>
+												<th>Support</th>
+											</tr>
+											<tr>
+												<td><a href="http://www.st.com/internet/analog/home/home.jsp">Analog &amp; Power</a></td>
+												<td>&nbsp;</td>
+												<td><a href="http://www.st.com/internet/com/segment/3.jsp">Automotive</a></td>
+												<td>&nbsp;</td>
+												<td><a href="http://www.st.com/internet/com/support/online_tech_support.jsp">Online
+														Technical Support</a></td>
+											</tr>
+											<tr>
+												<td><a href="http://www.st.com/internet/automotive/home/home.jsp">Automotive
+														ICs</a></td>
+												<td>&nbsp;</td>
+												<td><a href="http://www.st.com/internet/com/segment/1.jsp">Communication</a></td>
+												<td>&nbsp;</td>
+												<td><a href="http://www.st.com/internet/com/support/online_sales_support.jsp">Online
+														Sales Support</a></td>
+											</tr>
+											<tr>
+												<td><a href="http://www.st.com/internet/imag_video/home/home.jsp">Entartainment &amp; Connectivity</a></td>
+												<td>&nbsp;</td>
+												<td><a href="http://www.st.com/internet/com/segment/6.jsp">Computer &amp; Peripheral
+														ICs</a></td>
+												<td>&nbsp;</td>
+												<td><a href="http://www.st.com/internet/com/support/tools_and_resources.jsp">Tools &amp; Resources</a></td>
+											</tr>
+											<tr>
+												<td><a href="http://www.st.com/internet/mcu/home/home.jsp">Micros &amp; Memories</a></td>
+												<td>&nbsp;</td>
+												<td><a href="http://www.st.com/internet/com/segment/2.jsp">Consumer</a></td>
+												<td>&nbsp;</td>
+												<td><a href="http://www.st.com/stonline/stappl/resourceSelector/app?page=fullResourceSelector&amp;doctype=TECHNICAL_LITERATURE">Technical
+														Literature</a></td>
+											</tr>
+											<tr>
+												<td>&nbsp;</td>
+												<td>&nbsp;</td>
+												<td><a href="http://www.st.com/internet/com/segment/4.jsp">Industrial</a></td>
+												<td>&nbsp;</td>
+												<td><a href="http://www.st.com/internet/com/Learning/eLearning_home.jsp">E-Learning</a></td>
+											</tr>
+											<tr>
+												<td>&nbsp;</td>
+												<td>&nbsp;</td>
+												<td><a href="http://www.st.com/internet/com/segment/5.jsp">Smarcards &amp; Secure
+														Solutions</a></td>
+												<td>&nbsp;</td>
+												<td><a href="https://my.st.com/public/STe2ecommunities/default.aspx">ST
+														e2e Communities</a></td>
+											</tr>
+											<tr>
+												<td>&nbsp;</td>
+												<td>&nbsp;</td>
+												<td>&nbsp;</td>
+												<td>&nbsp;</td>
+												<td><a href="https://my.st.com/public/FAQ/default.aspx">FAQ</a></td>
+											</tr>
+											<tr>
+												<td>&nbsp;</td>
+												<td>&nbsp;</td>
+												<td>&nbsp;</td>
+												<td>&nbsp;</td>
+												<td><a href="http://www.st.com/internet/com/support/quality_reliability.jsp">Quality</a></td>
+											</tr>
+										</tbody>
+									</table>
+									<p></p>
+								</div>
+							</div>
+						</div>
+						<div style="width: 670px; height: 450px; position: absolute; top: 0px; left: 0px; visibility: visible;" class="scrollwrapper" id="mycustomscroll_app_l1_1box1_scrollwrapper">
+							<div style="font-size: 12px; height: 1em; width: 1em; position: absolute; z-index: -999; visibility: hidden;" class="zoomdetectdiv" id="mycustomscroll_app_l1_1box1_zoomdetectdiv"></div>
+							<div style="height: 450px; left: 655px; visibility: hidden;" class="vscrollerbase scrollgeneric flexinactive" id="mycustomscroll_app_l1_1box1_vscrollerbase">
+								<div style="padding: 0px; height: 322px; top: 10px; z-index: 2; visibility: hidden;" class="vscrollerbar scrollgeneric" id="mycustomscroll_app_l1_1box1_vscrollerbar">
+									<div style="height: 307px;" class="vscrollerbarbeg scrollgeneric" id="mycustomscroll_app_l1_1box1_vscrollerbarbeg"></div>
+									<div style="top: 307px;" class="vscrollerbarend scrollgeneric" id="mycustomscroll_app_l1_1box1_vscrollerbarend"></div>
+								</div>
+								<div style="height: 435px;" class="vscrollerbasebeg scrollgeneric" id="mycustomscroll_app_l1_1box1_vscrollerbasebeg"></div>
+								<div style="top: 435px;" class="vscrollerbaseend scrollgeneric" id="mycustomscroll_app_l1_1box1_vscrollerbaseend"></div>
+							</div>
+							<div style="width: 670px; top: 435px; visibility: hidden;" class="hscrollerbase scrollgeneric flexinactive" id="mycustomscroll_app_l1_1box1_hscrollerbase">
+								<div style="padding: 0px; width: 487px; left: 10px; z-index: 2; visibility: hidden;" class="hscrollerbar scrollgeneric" id="mycustomscroll_app_l1_1box1_hscrollerbar">
+									<div style="width: 472px;" class="hscrollerbarbeg scrollgeneric" id="mycustomscroll_app_l1_1box1_hscrollerbarbeg"></div>
+									<div style="left: 472px;" class="hscrollerbarend scrollgeneric" id="mycustomscroll_app_l1_1box1_hscrollerbarend"></div>
+								</div>
+								<div style="width: 655px;" class="hscrollerbasebeg scrollgeneric" id="mycustomscroll_app_l1_1box1_hscrollerbasebeg"></div>
+								<div style="left: 655px;" class="hscrollerbaseend scrollgeneric" id="mycustomscroll_app_l1_1box1_hscrollerbaseend"></div>
+							</div>
+							<div style="visibility: hidden;" class="scrollerjogbox scrollgeneric" id="mycustomscroll_app_l1_1box1_scrollerjogbox"></div>
+						</div>
+					</div>
+					<div class="rc_bl3">
+						<!--Clear-->
+					</div>
+					<div class="rc_bottom4 w_650">
+						<!--Clear-->
+					</div>
+					<div class="rc_br3">
+						<!--Clear-->
+					</div>
+					<div class="clear">
+						<!--Clear-->
+					</div>
+				</div>
+			</div>
+			<div style="margin-top:-3px" class="rc_bl2">
+				<!--Clear-->
+			</div>
+			<div style="margin-top:-3px" class="rc_bottom3 w_672">
+				<!--Clear-->
+			</div>
+			<div style="margin-top:-3px" class="rc_br2">
+				<!--Clear-->
+				<!--Clear-->
+			</div>
+			<div class="clear">
+				<!--Clear-->
+				<!--Clear-->
+			</div>
+		</div>
+	</div>
+	<div class="clear">
+		<!--Comment-->
+		<!--Clear-->
+	</div>
+</div>
+<!-- Start footer -->
+<div id="footer">
+	<div id="foo">
+		<ul>
+			<li class="foo">All rights reserved &copy;2011 STMicroelectronics </li>
+			<li class="foo">| <a href="http://www.st.com/internet/com/common/terms_of_use.jsp">Terms
+					of use</a> </li>
+			<li class="foo">| <a href="http://www.st.com/internet/com/common/privacy_statement.jsp">Privacy
+					Policy</a></li>
+			<li class="foo">| <a href="http://jobs.st.com/">Careers at ST</a></li>
+		</ul>
+	</div>
+</div>
+<!-- End footer -->
+<script type="text/javascript">
+	toggleEasyNavi();
+</script>
+<script type="text/javascript" src="http://www.st.com/stonline/404/404_ref/float.js"></script>
+<!-- START OF SmartSource Data Collector TAG -->
+<!-- Copyright (c) 1996-2009 WebTrends Inc.  All rights reserved. -->
+<!-- Version: 8.6.2 -->
+<!-- Tag Builder Version: 3.0  -->
+<!-- Created: 9/16/2009 2:35:20 PM -->
+<script src="http://www.st.com/internet/com/common_js/webtrends.js" type="text/javascript"></script>
+<!-- ----------------------------------------------------------------------------------- -->
+<!-- Warning: The two script blocks below must remain inline. Moving them to an external -->
+<!-- JavaScript include file can cause serious problems with cross-domain tracking.      -->
+<!-- ----------------------------------------------------------------------------------- -->
+<script type="text/javascript"> 
+//<![CDATA[
+var _tag=new WebTrends();
+_tag.dcsGetId();
+//]]>>
+</script>
+<script type="text/javascript"> 
+//<![CDATA[
+// Add custom parameters here.
+//_tag.DCSext.param_name=param_value;
+_tag.dcsCollect();
+//]]>>
+</script>
+<noscript>
+<div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://statse.webtrendslive.com/dcsv1sj0h10000oiuafyp64zy_8l5q/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=8.6.2"/></div>
+</noscript>
+<!-- END OF SmartSource Data Collector TAG -->
+<script type="text/javascript"> 
+	var posizione=0;
+	function ddoclick(x){
+		posizione=x;
+	}
+	jQuery(document).ready(function($){
+		ddaccordion.expandone('silverheader', posizione);
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,524 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		
+		<meta http-equiv="Content-Style-Type" content="text/css">
+		<meta name="generator" content="MediaWiki 1.15.5-2squeeze4">
+		<meta name="keywords" content="Nemo/Installing,Mailing lists,Nemo/USBNetworking">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.merproject.org/opensearch_desc.php" title="Mer Wiki (en)">
+		<link rel="copyright" href="http://creativecommons.org/licenses/by/3.0/legalcode">
+		<link rel="alternate" type="application/rss+xml" title="Mer Wiki RSS feed" href="https://wiki.merproject.org/wiki/index.php?title=Special:RecentChanges&amp;feed=rss">
+		<link rel="alternate" type="application/atom+xml" title="Mer Wiki Atom feed" href="https://wiki.merproject.org/wiki/index.php?title=Special:RecentChanges&amp;feed=atom">
+		<title>Nemo/Installing - Mer Wiki</title>
+		
+		
+		
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		
+		
+		
+		
+		<!--[if lt IE 7]><script type="text/javascript" src="/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		
+
+		
+		<!-- Head Scripts -->
+		
+		
+	
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-Nemo_Installing skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+		<div id="siteNotice"><hr>
+<p><b>The Mer Wiki now uses your Mer user account and password (create account on <a href="https://bugs.merproject.org/" class="external free" title="https://bugs.merproject.org/" rel="nofollow">https://bugs.merproject.org/</a>)</b>
+</p>
+<hr>
+</div>		<h1 id="firstHeading" class="firstHeading">Nemo/Installing</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From Mer Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<table id="toc" class="toc" summary="Contents"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Generic_Notes"><span class="tocnumber">1</span> <span class="toctext">Generic Notes</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Images"><span class="tocnumber">1.1</span> <span class="toctext">Images</span></a></li>
+<li class="toclevel-2"><a href="#The_First_Boot"><span class="tocnumber">1.2</span> <span class="toctext">The First Boot</span></a></li>
+<li class="toclevel-2"><a href="#Root_Password"><span class="tocnumber">1.3</span> <span class="toctext">Root Password</span></a></li>
+<li class="toclevel-2"><a href="#Raw_Image_Write"><span class="tocnumber">1.4</span> <span class="toctext">Raw Image Write</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Linux_Host"><span class="tocnumber">1.4.1</span> <span class="toctext">Linux Host</span></a></li>
+<li class="toclevel-3"><a href="#Windows_Host"><span class="tocnumber">1.4.2</span> <span class="toctext">Windows Host</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Nokia_N900"><span class="tocnumber">2</span> <span class="toctext">Nokia N900</span></a></li>
+<li class="toclevel-1"><a href="#Nokia_N950"><span class="tocnumber">3</span> <span class="toctext">Nokia N950</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Single_boot.2Floading"><span class="tocnumber">3.1</span> <span class="toctext">Single boot/loading</span></a></li>
+<li class="toclevel-2"><a href="#Dual-boot_method"><span class="tocnumber">3.2</span> <span class="toctext">Dual-boot method</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Uninstalling_the_dual_boot"><span class="tocnumber">3.2.1</span> <span class="toctext">Uninstalling the dual boot</span></a>
+<ul>
+<li class="toclevel-4"><a href="#Removing_Nemo_rootfs_and_the_Alternative_OS_partition"><span class="tocnumber">3.2.1.1</span> <span class="toctext">Removing Nemo rootfs and the Alternative OS partition</span></a></li>
+<li class="toclevel-4"><a href="#Removing_the_modified_MOSLO"><span class="tocnumber">3.2.1.2</span> <span class="toctext">Removing the modified MOSLO</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Nokia_N9"><span class="tocnumber">4</span> <span class="toctext">Nokia N9</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Single_Boot_by_Loading_The_Kernel"><span class="tocnumber">4.1</span> <span class="toctext">Single Boot by Loading The Kernel</span></a></li>
+<li class="toclevel-2"><a href="#Persistent_Single_Boot_by_Flashing_the_Dual_Boot"><span class="tocnumber">4.2</span> <span class="toctext">Persistent Single Boot by Flashing the Dual Boot</span></a></li>
+<li class="toclevel-2"><a href="#Removing_Nemo_rootfs_and_the_Alternative_OS_partition_2"><span class="tocnumber">4.3</span> <span class="toctext">Removing Nemo rootfs and the Alternative OS partition</span></a></li>
+<li class="toclevel-2"><a href="#Recovering_your_N9_firmware"><span class="tocnumber">4.4</span> <span class="toctext">Recovering your N9 firmware</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Nokia_N950_.26_Nokia_N9_Rootfs_Installation"><span class="tocnumber">5</span> <span class="toctext">Nokia N950 &amp; Nokia N9 Rootfs Installation</span></a></li>
+<li class="toclevel-1"><a href="#PandaBoard"><span class="tocnumber">6</span> <span class="toctext">PandaBoard</span></a></li>
+<li class="toclevel-1"><a href="#i586_.28e.g..2C_Lenovo_Ideapad.2C_ExoPC.29"><span class="tocnumber">7</span> <span class="toctext">i586 (e.g., Lenovo Ideapad, ExoPC)</span></a></li>
+<li class="toclevel-1"><a href="#i586_Virtual_Machine"><span class="tocnumber">8</span> <span class="toctext">i586 Virtual Machine</span></a>
+<ul>
+<li class="toclevel-2"><a href="#VirtualBox"><span class="tocnumber">8.1</span> <span class="toctext">VirtualBox</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#FAQ"><span class="tocnumber">9</span> <span class="toctext">FAQ</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<a name="Generic_Notes" id="Generic_Notes"></a><h1> <span class="mw-headline"> Generic Notes </span></h1>
+<p>These instructions should guide you through installing Nemo Mobile on your desired device. 
+</p>
+<a name="Images" id="Images"></a><h2> <span class="mw-headline"> Images </span></h2>
+<p>The first thing you should do is visit our repository and download the <a href="http://repository.maemo.org/meego/Nemo/" class="external text" title="http://repository.maemo.org/meego/Nemo/" rel="nofollow">latest image</a> for your platform.
+</p>
+<a name="The_First_Boot" id="The_First_Boot"></a><h2> <span class="mw-headline"> The First Boot </span></h2>
+<p>The first boot of Nemo on your N900/N950 is likely to be quite slow, so be patient for it to load completely, once loaded, reboot the phone and Nemo should be far more responsive.
+</p>
+<a name="Root_Password" id="Root_Password"></a><h2> <span class="mw-headline"> Root Password </span></h2>
+<p>By default, the root password for Nemo is "nemo" (it used to be "meego" in the older images). Password can also be found in the .ks file, in the same directory you downloaded the image from.
+</p>
+<a name="Raw_Image_Write" id="Raw_Image_Write"></a><h2> <span class="mw-headline"> Raw Image Write </span></h2>
+<p>Some devices use raw images that are written to SD card and then device is booted by incerting the sd card to the device. Here is instructions how to write raw disk images to the sdcards on different host OS.
+</p>
+<a name="Linux_Host" id="Linux_Host"></a><h3> <span class="mw-headline"> Linux Host </span></h3>
+<p>The process of installing the Nemo image to your MicroSD card is quite straight forward. Firstly, downloaded an image and put it somewhere easy to remember. Insert the card into the card reader, your distribution will probably automatically mount it, so we must first find where it is mounted with: 
+</p>
+<pre>sudo mount
+</pre>
+<p><b>NOTE: Below /dev/sdX is used as an example and may vary, so use the mount point listed from the mount output, can be also /dev/mmcblkX when using some build-in card readers</b>
+</p><p>Then, unmount it with:
+</p>
+<pre>sudo umount /dev/sdX
+</pre>
+<p>Once you have confirmed which device it is, and unmounted it, it is time to copy the image to the MicroSD card using the command below. The command contains two parts first bzcat that uncompresses the image after which the output is redirected to dd which writes it to the card:
+</p>
+<pre>bzcat <b>directory/file_goes_here.bz2</b> | sudo dd bs=4096 of=/dev/sdX
+</pre>
+<p><b>NOTE: "of=" is the output file/location, since we are copying it to the MicroSD card, we put its location here, and since it contains a partition table, we don't specify which partition it is written to. e.g. /dev/sdX, not /dev/sdX1</b>
+</p><p>DD will not show any output until the image has been completely written, so please be patient.
+(You can, however, press Ctrl+t or pipe trough 'pv' <a href="http://www.ivarch.com/programs/pv.shtml" class="external autonumber" title="http://www.ivarch.com/programs/pv.shtml" rel="nofollow">[1]</a> to get information about the progress.)
+</p><p>Example: 
+</p>
+<pre>bzcat <b>directory/file_goes_here.bz2</b> | dd bs=4096 | pv -s 3816M | sudo dd bs=4096 of=/dev/sdX
+</pre>
+<a name="Windows_Host" id="Windows_Host"></a><h3> <span class="mw-headline"> Windows Host </span></h3>
+<p>The process of installing the Nemo image to your MicroSD card on windows is also quite straight forward.
+</p>
+<ul><li>First, extract the .bz2 image, if you don't have any software to do so, you can use <i>Bzip2 for Windows</i>.
+<ul><li>Download Bzip2 for Windows from <a href="http://gnuwin32.sourceforge.net/packages/bzip2.htm" class="external text" title="http://gnuwin32.sourceforge.net/packages/bzip2.htm" rel="nofollow">here</a>, choosing the first option, to download the setup without the sources.
+</li><li>Install Bzip2 for Windows
+</li><li>Open run by pressing 'Windows Key + R' and type cmd, press enter to open the command prompt.
+</li><li>Navigate to where bzip2.exe was installed and run the command 'bzip2.exe <b>directory/file_goes_here.bz2</b> '
+</li></ul>
+</li><li>The extracted image file will have the extension .raw, but the program we use to write the image doesn't associate with this extension, so right click the file and choose rename, and replace the .raw with .img
+</li><li>Download the image writer from <a href="https://launchpad.net/win32-image-writer/+download" class="external text" title="https://launchpad.net/win32-image-writer/+download" rel="nofollow">here</a>, choosing the latest release of the binary [the first download link].
+</li><li>Extract the contents of the .zip to a known directory.
+</li><li>Run the .exe labled 'W32DiskImager.exe'
+</li><li>Select the Nemo Image file
+</li><li>Select the drive letter/mount point for the MicroSD card [please verify this is the correct device]
+</li><li>Click 'Write' to begin writing the image to the MicroSD card.
+</li></ul>
+<a name="Nokia_N900" id="Nokia_N900"></a><h1> <span class="mw-headline"> Nokia N900 </span></h1>
+<p><b>IT IS RECOMMENDED YOU READ THIS THOROUGHLY BEFORE YOU FLASH YOUR DEVICE</b>
+</p><p>Installing Nemo Mobile on the N900 is relatively simple, in nearly all cases it is installed on the external MicroSD card, so that will be what this guide will be focusing on.
+</p>
+<ul><li>What you will need:
+<ul><li>A Nokia N900, updated to PR 1.3.
+</li><li>A MicroSD card with a capacity of at least 4GiB (more notes on this below)
+</li><li>U-Boot (installed on the phone[more on this below])
+</li><li>Either a Windows or Linux PC
+</li><li>And <b>the image</b>, for N900, the filename of the file you will want will look like:
+</li></ul>
+</li></ul>
+<pre> nemo-handset-armv7hl-n900-X.XXXXXXXX.X.NEMO.XXXX-XX-XX.X-mmcblk0p.raw.bz2
+</pre>
+<ul><li>Nemo generally runs well off the MicroSD card, probably better than from the internal eMMC, depending on some of the following factors: 
+<ul><li>Speed/Class of the MicroSD card; a class 10 card should provide adequate performance, though note that the classes aren't a guarantee of performance.
+</li><li>Quality/brand of the card; some cards have issues with the N900 and offer slow performance due to I/O errors.
+</li><li>If reading reviews/benchmarks of cards before buying, look at the ones with the highest random read/write, not sequential.
+</li></ul>
+</li></ul>
+<p><b>Update</b>
+with the current latest Nemo kernel (Jan 26 2012) there are issues with proper initialization of the SD card due to a potential kernel bug (race condition) together with the Pali version of u-boot. This has been confirmed on at least Samsung cards (8 GB class 6 and CLass 10 by Netweaver and Flocke000), also on others (unknown brand, by Pali and plipp). Bug report is entered. <a href="https://bugs.merproject.org/show_bug.cgi?id=150" class="external autonumber" title="https://bugs.merproject.org/show_bug.cgi?id=150" rel="nofollow">[2]</a>
+</p>
+<ul><li>U-boot is installed on the N900 through the Hildon Application Manager
+<ul><li><a href="https://wiki.maemo.org/Extras-devel#How_to_activate_Extras-devel" class="external text" title="https://wiki.maemo.org/Extras-devel#How_to_activate_Extras-devel" rel="nofollow">Enable the extras-devel repository</a>.
+</li><li>In the Hildon Application Manager, install the U-Boot package, found in "System" category. (The package is 'uboot-pr13' at the time of writing)
+</li><li>Verify the package has been installed correctly by rebooting your N900, at start-up there will be mention of U-Boot and possibly a penguin logo.
+</li><li>Once verified installed, disable the extras-devel repository to prevent applications being updated to development versions.
+</li></ul>
+</li></ul>
+<p>Next thing is to write a image to sd card. For this follow the <a href="#Raw_Image_Write" title="">Raw image write guide</a>.
+</p><p>Once it has been copied to the MicroSD card, you can remove it from your card reader and put it in your N900. Booting the N900 with the card present, the rear cover in place, the MicroSD card inserted and U-Boot correctly installed should result in Nemo Mobile booting.
+</p>
+<a name="Nokia_N950" id="Nokia_N950"></a><h1> <span class="mw-headline"> Nokia N950 </span></h1>
+<p><b>IT IS RECOMMENDED YOU READ THIS THOROUGHLY BEFORE YOU FLASH YOUR DEVICE</b>
+</p>
+<a name="Single_boot.2Floading" id="Single_boot.2Floading"></a><h2> <span class="mw-headline"> Single boot/loading </span></h2>
+<ul><li>You will need:
+<ul><li>Nokia Harmattan Flash Tool from <a href="http://tablets-dev.nokia.com/maemo-dev-env-downloads.php" class="external text" title="http://tablets-dev.nokia.com/maemo-dev-env-downloads.php" rel="nofollow">here</a>.
+</li><li>The MOSLO bootloader rootfs available <a href="http://tablets-dev.nokia.com/moslo.php" class="external text" title="http://tablets-dev.nokia.com/moslo.php" rel="nofollow">here</a>.
+</li><li>An N950 that can flash the MOSLO, 34 and 39 work.
+</li><li>Adequate knowledge/skills for what you are doing as <b>THESE INSTRUCTIONS ARE OFFERED WITHOUT WARRANTY</b>.
+</li><li>A Linux OS
+</li><li>The Nemo image for the N950, the filename of the file you will want will look like:
+</li></ul>
+</li></ul>
+<pre>nemo-handset-armv7hl-n950-X.XXXXXXXX.X.NEMO.XXXX-XX-XX.X.tar.bz2
+</pre>
+<p><b>If you want to keep your Harmattan installation, you should check the dual-booth method below.</b>
+</p><p><b>NOTE: Before you begin, assure that the device lock is disabled on the Harmattan installation (Settings&gt;Security&gt;Device Lock&gt;Autolock)</b>
+</p><p><b>NOTE: Additionally, before installing the bootloader, boot into Harmattan at least once and wait for it to fully load (2-4 mins).</b>
+</p>
+<ul><li>Make sure your device is fully charged before beginning.
+<ul><li>Power off your N950, disconnecting the USB/Charger cable.
+</li><li>Run the flasher, pointing it at your MOSLO image:
+</li></ul>
+</li></ul>
+<pre>sudo flasher -F moslo-rootfs-X.XXXX.XX-X_RM680-OEM1-XX_X.X.XX-XX.X.bin -f
+</pre>
+<p>The flasher will now be ready to program your device, waiting for it to be connected.
+</p>
+<ul><li>Connect your N950, it should begin flashing, wait for it to finish flashing. <b>DO NOT DISCONNECT WHILE FLASHING</b>
+</li><li><b>Do not disconnect. Read next steps.</b>
+</li><li>After flashing MOSLO, boot the device by disconnecting, then immediately re-connecting the USB cable. You will see a warning, then the MOSLO welcome screen (green text). Wait for the text "Rootfs now exported via USB"
+<ul><li>If your device doesn't proceed to the MOSLO screen after flashing MOSLO, let it proceed into Harmattan then power down the device, waiting a short time before reconnecting it to the USB.
+</li></ul>
+</li><li>Your OS may automount the drive, unmount it [<i>do not 'eject' it from the OS</i>] with cmd:
+</li></ul>
+<pre>sudo umount mount_point_here_eg_/dev/sdX
+</pre>
+<p>After this reformat the device (Here we say device because moslo export partition in such way that host os sees it as a full device node):
+</p>
+<pre>sudo mkfs.ext4 /dev/sdX
+</pre>
+<p>You will see a warning about it being the entire device, not just one partition, check you have the correct device, then proceed, this is expected.
+</p><p>Next thing is to move the rootfs to the device <a href="#Nokia_N950_.26_Nokia_N9_Rootfs_Installation" title="">Nokia N950 &amp; Nokia N9 Rootfs Installation</a>.
+</p><p>The device should automatically boot to Nemo after removing the USB cable, however, if it doesn't, hold the power button and turn it on. You will be shown a disclaimer, then briefly the MOSLO screen, after this, wait until the desktop appears.
+</p>
+<a name="Dual-boot_method" id="Dual-boot_method"></a><h2> <span class="mw-headline"> Dual-boot method </span></h2>
+<p>This method allows you to keep both Harmattan and alternative OS such as Nemo on the device, and select which OS to boot when powering the device up.
+</p><p>It's highly adviced to have the latest available Harmattan release for N950. OCF (one-click-flasher) installers can be found here: <a href="http://harmattan-dev.nokia.com/release/N950/firmware/" class="external free" title="http://harmattan-dev.nokia.com/release/N950/firmware/" rel="nofollow">http://harmattan-dev.nokia.com/release/N950/firmware/</a>.
+</p><p>Get modified MOSLO
+</p>
+<pre>wget -r -l1 -nd --no-parent -Amoslo-0.*.rpm <a href="http://repo.pub.meego.com/home:/marquiz:/n950/CE_Adaptation_N950_Mer_Core-next-armv7hl/armv7hl/" class="external free" title="http://repo.pub.meego.com/home:/marquiz:/n950/CE_Adaptation_N950_Mer_Core-next-armv7hl/armv7hl/" rel="nofollow">http://repo.pub.meego.com/home:/marquiz:/n950/CE_Adaptation_N950_Mer_Core-next-armv7hl/armv7hl/</a>
+</pre>
+<p>and extract the contents
+</p>
+<pre>rpm2cpio moslo-*.armv7hl.rpm | cpio -vidu
+</pre>
+<p>Flash modified MOSLO to NAND. (You need to grab the original MOSLO binary from <a href="http://tablets-dev.nokia.com/moslo.php" class="external free" title="http://tablets-dev.nokia.com/moslo.php" rel="nofollow">http://tablets-dev.nokia.com/moslo.php</a>, in order to be able to flash.)
+</p>
+<pre>sudo flasher -a moslo-rootfs-1.2011.34-2_RM680-OEM1-916_0.0.13-12.1.bin -L usr/share/moslo/moslo.img -f -R
+</pre>
+<p>The device is flashed and rebooted to the modified MOSLO. Next thing is to move the rootfs to the device <a href="#Nokia_N950_.26_Nokia_N9_Rootfs_Installation" title="">Nokia N950 &amp; Nokia N9 Rootfs Installation</a>.
+</p><p>After removing the USB cable, you will be shown a selection to boot Harmattan or the alternative OS (Nemo). <b>NOTE: if Harmattan fails to boot, plug in charger/USB cable right after selecting Harmattan in MOSLO screen and keep it connected.</b>
+</p>
+<a name="Uninstalling_the_dual_boot" id="Uninstalling_the_dual_boot"></a><h3> <span class="mw-headline"> Uninstalling the dual boot </span></h3>
+<a name="Removing_Nemo_rootfs_and_the_Alternative_OS_partition" id="Removing_Nemo_rootfs_and_the_Alternative_OS_partition"></a><h4> <span class="mw-headline"> Removing Nemo rootfs and the Alternative OS partition </span></h4>
+<p>Boot the device with USB cable connected so that it stays in the modified MOSLO screen. Then, telnet in the device in order to get to modified MOSLO console. Note you may have to setup the network interface on your host PC (e.g. ifconfig usb0 192.168.2.14 up).
+</p>
+<pre>$&nbsp;telnet 192.168.2.15
+</pre>
+<p>Run the following in the modified MOSLO console (which you get after successful telnet):
+</p>
+<pre>/ # autopartition.sh delete /dev/mmcblk0
+</pre>
+<p>On the last line of the printout (in modified MOSLO console), you should see "Removal of Alt_OS partition completed successfully!". Now, you can turn off your device. Do not turn it on, before the next steps (i.e. wiping out modified MOSLO) are done, because otherwise the modified MOSLO will re-partition your device, again, in the next boot.
+</p>
+<a name="Removing_the_modified_MOSLO" id="Removing_the_modified_MOSLO"></a><h4> <span class="mw-headline"> Removing the modified MOSLO </span></h4>
+<p>Now you're ready to remove the modified MOSLO. Create empty file (on your host PC)
+</p>
+<pre>$ touch empty.img
+</pre>
+<p>Flash the empty file
+</p>
+<pre>$ flasher -a moslo-rootfs-1.2011.34-2_RM680-OEM1-916_0.0.13-12.1.bin -L empty.img -f -R
+</pre>
+<p>If the flashing succeeds, MOSLO is removed and the device should boot to Harmattan.
+</p><p>(Source for this information: <a href="http://wiki.meego.com/User:Marquiz/N950" class="external free" title="http://wiki.meego.com/User:Marquiz/N950" rel="nofollow">http://wiki.meego.com/User:Marquiz/N950</a>)
+</p>
+<a name="Nokia_N9" id="Nokia_N9"></a><h1> <span class="mw-headline"> Nokia N9 </span></h1>
+<p><b> DISCLAIMER: These instructions are provided without any warranty what so ever and will break the warranty of your device. Following these instructions is done totally on your own risk. Because of the previously mentioned the instructions are only targetted for hackers/developers only.</b>
+</p><p><b> By following these instructions you are being aware of following facts: </b>
+</p>
+<ul><li> You may brick your device to state where it can't be returned to usage
+</li><li> You may not be able to reinstall Harmattan to your device
+</li><li> You may lose all the data from your device
+</li><li> You lose your device warranty
+</li></ul>
+<p><b> YOU HAVE BEEN WARNED! </b>
+</p>
+<a name="Single_Boot_by_Loading_The_Kernel" id="Single_Boot_by_Loading_The_Kernel"></a><h2> <span class="mw-headline"> Single Boot by Loading The Kernel </span></h2>
+<pre>wget -r -l1 -nd --no-parent -Amoslo-n9-0.*.rpm <a href="http://repo.pub.meego.com/home:/marquiz:/n950/CE_Adaptation_N950_Mer_Core-next-armv7hl/armv7hl/" class="external free" title="http://repo.pub.meego.com/home:/marquiz:/n950/CE_Adaptation_N950_Mer_Core-next-armv7hl/armv7hl/" rel="nofollow">http://repo.pub.meego.com/home:/marquiz:/n950/CE_Adaptation_N950_Mer_Core-next-armv7hl/armv7hl/</a>
+</pre>
+<pre>rpm2cpio moslo-n9-*.armv7hl.rpm | cpio -vidu
+</pre>
+<pre>sudo flasher -k usr/share/moslo-n9/zImage-moslo -n usr/share/moslo-n9/initrd-moslo -l -b
+</pre>
+<p>After this the N9 is booted with moslo and you see warning about warranty, after which green text comes up that says the N9 is being repartitioned for AlternateOS. This takes a moment after which the newly created fs is exported via USB.
+</p><p>Next thing is to move the rootfs to the device with <a href="#Nokia_N950_.26_Nokia_N9_Rootfs_Installation" title="">Nokia N950 &amp; Nokia N9 Rootfs Installation</a> guide.
+</p><p>After this is done disconnect the USB cable and press volumedown key when asked whether to boot to Alternate OS or to Harmattan. In subsequent boots, device will boot directly to Harmattan. To get Alternate OS booting you need to run the above flasher command again.
+</p>
+<a name="Persistent_Single_Boot_by_Flashing_the_Dual_Boot" id="Persistent_Single_Boot_by_Flashing_the_Dual_Boot"></a><h2> <span class="mw-headline"> Persistent Single Boot by Flashing the Dual Boot </span></h2>
+<p>NOTE: This guide is using the dual boot moslo, but doesn't still provide dualboot capability to Harmattan.
+</p><p>First get the packages and extract the needed files.
+</p>
+<pre> wget -r -l1 -nd --no-parent -Akernel-moslo-n9-2*.armv7hl.rpm <a href="http://repo.pub.meego.com/home:/marquiz:/n950/CE_Adaptation_N950_Mer_Core-next-armv7hl/armv7hl/" class="external free" title="http://repo.pub.meego.com/home:/marquiz:/n950/CE_Adaptation_N950_Mer_Core-next-armv7hl/armv7hl/" rel="nofollow">http://repo.pub.meego.com/home:/marquiz:/n950/CE_Adaptation_N950_Mer_Core-next-armv7hl/armv7hl/</a>
+</pre>
+<pre> rpm2cpio kernel-moslo-n9-*.armv7hl.rpm | cpio -vidu
+</pre>
+<p>After we have the kernel-moslo-n9 we need to get also a fiasco image from which the ape algorithm is retrieved. This fiasco image can be retrieved with <a href="#Recovering_your_N9_firmware" title="">N9 Firmware recovery guide</a>. After you have downloaded a fiasco image you can flash the kernel to the device with following command.
+</p>
+<pre> flasher -a &lt;FIASCO_IMG&gt; -k ./usr/share/kernel-moslo-n9/zImage-kernel-moslo-n9 -f
+</pre>
+<p>After the flashing is done reboot the device by detaching the usb cable and quickly attaching it back. You will see warning about warranty and after that green text that should say that device is repartitioning for the alternative os. When that is done the device exports the new partition via usb and you can follow the <a href="#Nokia_N950_.26_Nokia_N9_Rootfs_Installation" title="">Root filesystem installation guide</a>.
+</p>
+<a name="Removing_Nemo_rootfs_and_the_Alternative_OS_partition_2" id="Removing_Nemo_rootfs_and_the_Alternative_OS_partition_2"></a><h2> <span class="mw-headline"> Removing Nemo rootfs and the Alternative OS partition </span></h2>
+<p>You can remove the Alternative OS partition with the modified MOSLO. Thus, you get all the space reserved Nemo back to use for Harmattan.
+</p><p>Load the modified MOSLO for N9, as described above, and keep the USB cable connected:
+</p>
+<pre>$ sudo flasher -k usr/share/moslo-n9/zImage-moslo -n usr/share/moslo-n9/initrd-moslo -l -b
+</pre>
+<p>Wait until the modified MOSLO is loaded - until you see the green text saying "You can telnet into 192.168.2.15"). Then, telnet in the device in order to get to modified MOSLO console. Note you may have to setup the network interface on your host PC, see <a href="https://wiki.merproject.org/wiki/Nemo/USBNetworking" title="Nemo/USBNetworking">Nemo/USBNetworking</a>.
+</p>
+<pre>$ telnet 192.168.2.15
+</pre>
+<p>Run the following in the modified MOSLO console (which you get after successful telnet):
+</p>
+<pre>/ # autopartition.sh delete /dev/mmcblk0
+</pre>
+<p>On the last line of the printout (in modified MOSLO console), you should see "Removal of Alt_OS partition completed successfully!". Now, the partition is removed and you can turn off your device.
+</p>
+<a name="Recovering_your_N9_firmware" id="Recovering_your_N9_firmware"></a><h2> <span class="mw-headline"> Recovering your N9 firmware </span></h2>
+<p><b>This will completely erase your device</b>
+</p><p>If you have installed moslo and repartitioned the device see <a href="#Removing_Nemo_rootfs_and_the_Alternative_OS_partition" title="">Remove Aternative OS partition</a> guide.
+</p><p>There is script available that can be used to download the firmware image for your N9 at <a href="https://gist.github.com/1636192" class="external free" title="https://gist.github.com/1636192" rel="nofollow">https://gist.github.com/1636192</a>. For Windows you could use <a href="http://www.symbian-toys.com/navifirm.aspx" class="external free" title="http://www.symbian-toys.com/navifirm.aspx" rel="nofollow">http://www.symbian-toys.com/navifirm.aspx</a>.
+</p>
+<pre>git clone git://gist.github.com/1636192.git
+cd 1636192
+</pre>
+<p>You need to download couple of perl packages needs to be installed to get it working. For Fedora/openSUSE following command was needed:
+</p>
+<pre>yum install perl-LWP-Protocol-https perl-SOAP-Lite
+</pre>
+<p>For ubuntu installation for the same dependencies goes with command:
+</p>
+<pre>apt-get install libsoap-lite-perl 
+</pre>
+<p>After this execute the script 
+</p>
+<pre>perl naviperl.pl
+</pre>
+<p>And answer to the questions based on your need and device. The first question is "<b>Select Nokia N9 SW Release:</b>", where you probably want to pick the latest version which is the first one in the list e.g., <b>30.2012.7.1</b>. Second question is about the device, e.g., "<b>RM-696 NDT 16GB ROW CYAN</b>".
+</p><p>Last question is about which files you want to download, where you should pick at least file that looks similar to <b>DFL61_HARMATTAN_30.2012.07-1_PR_LEGACY_001-OEM1-958_ARM.bin</b> which is the actual image that is needed for flashing.
+</p><p>After the download is done it is time to flash the device. Remember to detach the USB cable from your device before starting the flasher.
+</p><p>After the file has been downloaded you can reflash your device.
+</p>
+<pre>sudo flasher -F DFL61_HARMATTAN_30.2012.07-1_PR_LEGACY_001-OEM1-958_ARM.bin -f --no-preserve 
+</pre>
+<p>When following text appears
+</p>
+<pre>Suitable USB interface (bootloader/phonet) not found, waiting...
+</pre>
+<p>Attach the USB cable between your N9 and host PC and the flashing begins.
+</p><p>When the flasher outputs <i>Success</i> you can detach the USB cable from your PC and your N9 should reboot to Harmattan.
+</p>
+<a name="Nokia_N950_.26_Nokia_N9_Rootfs_Installation" id="Nokia_N950_.26_Nokia_N9_Rootfs_Installation"></a><h1> <span class="mw-headline"> Nokia N950 &amp; Nokia N9 Rootfs Installation </span></h1>
+<p>You should see now /media/Alt_OS if your Linux Host OS has automatic mount enabled. If the device is not shown then you need to mount it manually with following commands:
+</p>
+<pre>sudo mkdir -p /media/Alt_OS/
+sudo mount /dev/sdX /media/Alt_OS/
+</pre>
+<p>Now when the device is mounted, the next thing is to extract the selected Nemo release to the device.
+</p>
+<pre>sudo tar --numeric-owner -xf nemo-handset-armv7hl-n950-*.tar.bz2 -C /media/Alt_OS/
+</pre>
+<p>When the extract is ready you should umount the device
+</p>
+<pre>sudo umount /media/Alt_OS
+</pre>
+<a name="PandaBoard" id="PandaBoard"></a><h1> <span class="mw-headline"> PandaBoard </span></h1>
+<p>The installation for PandaBoard is very simple.
+</p><p>Download the nemo image (see: <a href="#Images" title="">#Images</a>), it is named nemo-handset-armv7l-pandaboard and the disk image has extension .raw. 
+</p><p>After downloading the image follow the <a href="#Raw_Image_Write" title="">Raw image write guide</a> how to put the image to the sd card. After the image is written put the sdcard to PandaBoard and turn on the power.
+</p>
+<a name="i586_.28e.g..2C_Lenovo_Ideapad.2C_ExoPC.29" id="i586_.28e.g..2C_Lenovo_Ideapad.2C_ExoPC.29"></a><h1> <span class="mw-headline"> i586 (e.g., Lenovo Ideapad, ExoPC) </span></h1>
+<ul><li> Get the nemo-handset-i586-*.img from <a href="http://repository.maemo.org/meego/Nemo/" class="external free" title="http://repository.maemo.org/meego/Nemo/" rel="nofollow">http://repository.maemo.org/meego/Nemo/</a>.
+</li><li> Write to a USB stick, using your favourite tool(eg. mic-image-writer).
+</li><li> Insert USB stick, and boot the machine from there (you might need to configure your BIOS settings to do that.)
+</li><li> After booting the image start Terminal from the application menu (should be on the second page).
+</li><li> When in terminal change user to root with su cmd (password is <i>nemo</i> by default)
+</li></ul>
+<pre>su
+</pre>
+<p>Next it is time to start installer:
+</p>
+<pre>installer-shell
+</pre>
+<p>Next answer to the questions in a way that suits your needs best. When the installation is done type
+</p>
+<pre>halt -p
+</pre>
+<p>Now when the device powers off you can remove the usb stick and restart the device.
+</p>
+<a name="i586_Virtual_Machine" id="i586_Virtual_Machine"></a><h1> <span class="mw-headline"> i586 Virtual Machine </span></h1>
+<a name="VirtualBox" id="VirtualBox"></a><h2> <span class="mw-headline"> VirtualBox </span></h2>
+<p>First install the VirtualBox for your host OS, <a href="https://www.virtualbox.org/" class="external free" title="https://www.virtualbox.org/" rel="nofollow">https://www.virtualbox.org/</a>.
+</p><p>Then download the latest image from nemo repository that is named nemo-handset-i586-vm-*.img
+</p><p>After downloading change the extension of the image from .img to .iso and start VirtualBox.
+</p><p>In VirtualBox click <b>New</b> and set following values:
+</p>
+<pre>Name: Nemo Mobile
+Operating System: Linux
+Version: Linux 2.6
+Base Memory Size: 512MB
+</pre>
+<p>Next comes Startup disk, you can either leave it out, create e.g. 4G disk for the image or use existing disk.
+</p>
+<pre>Start-up Disk: Create new disk
+File type: VDI (VirtualBox Disk Image)
+Storage details: Dynamically allocated or Fixed size
+Location: Where you want it
+Size: 4G is recommended
+</pre>
+<p>After this the basic settings are there, but we need to edit some of them a bit more, so select the "Nemo Mobile" VM and click settings.
+</p>
+<pre>System-&gt;Processor-&gt;Extended Features: Check 'Enable PAE/NX'
+Storage-&gt;IDE Controller-&gt;Empty and then "Setup Virtual CD/DVD drive": Select the .iso file that was renamed earlier
+</pre>
+<p>Now you are ready to boot the image. This is done by selecting the "Nemo Mobile" VM and clicking <i>Start</i>
+</p><p>From this point forward the rest of the installation goes like the <a href="#i586_.28e.g..2C_Lenovo_Ideapad.2C_ExoPC.29" title="">#i586 (e.g., Lenovo Ideapad, ExoPC)</a> guide.
+</p>
+<a name="FAQ" id="FAQ"></a><h1> <span class="mw-headline">FAQ</span></h1>
+<p>If you have installation problems, you can post them here. More help on <a href="http://webchat.freenode.net/?channels=Mer" class="external text" title="http://webchat.freenode.net/?channels=Mer" rel="nofollow">IRC Chatroom</a> @ irc.freenode.net ~ #mer and #nemomobile and on our <a href="https://wiki.merproject.org/wiki/Mailing_lists" title="Mailing lists">Mailing lists</a>.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 26/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key wiki_merproject_db:pcache:idhash:64-0!1!0!!en!2!edit=0 and timestamp 20120702164254 -->
+<div class="printfooter">
+Retrieved from "<a href="http://wiki.merproject.org/wiki/Nemo/Installing">http://wiki.merproject.org/wiki/Nemo/Installing</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="https://wiki.merproject.org/wiki/Nemo/Installing" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk"><a href="https://wiki.merproject.org/wiki/Talk:Nemo/Installing" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="https://wiki.merproject.org/wiki/index.php?title=Nemo/Installing&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="https://wiki.merproject.org/wiki/index.php?title=Nemo/Installing&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="https://wiki.merproject.org/wiki/index.php?title=Special:UserLogin&amp;returnto=Nemo/Installing" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url('mer_logo.png');" href="https://wiki.merproject.org/wiki/Main_Page" title="Visit the main page [z]" accesskey="z"></a>
+	</div>
+	
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-mainpage-description"><a href="https://wiki.merproject.org/wiki/Main_Page">Main page</a></li>
+				<li id="n-portal"><a href="https://wiki.merproject.org/wiki/Mer_Wiki:Community_Portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="https://wiki.merproject.org/wiki/Mer_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="https://wiki.merproject.org/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="https://wiki.merproject.org/wiki/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="https://wiki.merproject.org/wiki/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="https://wiki.merproject.org/wiki/index.php" id="searchform"><div>
+				<input name="title" value="Special:Search" type="hidden">
+				<input id="searchInput" name="search" title="Search Mer Wiki [f]" accesskey="f" value="" type="text">
+				<input name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists" type="submit">&nbsp;
+				<input name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" type="submit">
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="https://wiki.merproject.org/wiki/Special:WhatLinksHere/Nemo/Installing" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="https://wiki.merproject.org/wiki/Special:RecentChangesLinked/Nemo/Installing" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="https://wiki.merproject.org/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="https://wiki.merproject.org/wiki/index.php?title=Nemo/Installing&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="https://wiki.merproject.org/wiki/index.php?title=Nemo/Installing&amp;oldid=1706" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki"></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 8 June 2012, at 11:09.</li>
+					<li id="viewcount">This page has been accessed 23,340 times.</li>
+					<li id="copyright">Content is available under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" class="external " title="http://creativecommons.org/licenses/by/3.0/legalcode">Creative Commons Attribution 3.0 License</a>.</li>
+					<li id="privacy"><a href="https://wiki.merproject.org/wiki/Mer_Wiki:Privacy_policy" title="Mer Wiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="https://wiki.merproject.org/wiki/Mer_Wiki:About" title="Mer Wiki:About">About Mer Wiki</a></li>
+					<li id="disclaimer"><a href="https://wiki.merproject.org/wiki/Mer_Wiki:General_disclaimer" title="Mer Wiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		
+<!-- Served in 0.230 secs. -->
+</body>
+</html>

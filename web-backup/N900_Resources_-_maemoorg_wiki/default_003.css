@@ -1,0 +1,116 @@
+/* ::::: http://static.maemo.org/style_maemo2009/css/reset.css ::::: */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0pt; padding: 0pt; border: 0pt none; outline: 0pt none; font-size: 100%; vertical-align: baseline; background: none repeat scroll 0% 0% transparent; }
+body { line-height: 1; }
+ol, ul { list-style: none outside none; }
+:focus { outline: 0pt none; }
+/* ::::: http://static.maemo.org/style_maemo2009/css/master.css ::::: */
+
+body { background: url('top_bg.jpg') repeat-x scroll left top rgb(234, 234, 234); color: rgb(64, 64, 64); font-size: 62.5%; font-family: "Arial",sans-serif; text-align: center; }
+a { text-decoration: none; color: rgb(250, 135, 0); }
+a:hover { text-decoration: underline; }
+a:visited { color: rgb(163, 87, 0); }
+h1, h2, h3 { margin: 0.5em 0pt; }
+img { border: medium none; }
+input { font-family: "Arial",sans-serif; }
+p { margin-bottom: 0.5em; }
+#main p { text-align: justify; }
+#main li { text-align: justify; }
+#container { min-width: 766px; width: 95%; max-width: 1200px; margin: 0pt auto; text-align: left; }
+#container #header { height: 67px; width: 100%; }
+#container #header #logo a { float: left; border: medium none; }
+#container #header #user-login { float: right; margin-top: 17px; margin-right: 0pt; width: 240px; font-size: 140%; }
+#container #header #user-login form { margin: 0pt; padding: 0pt; }
+#container #header input { border: 0pt none; color: rgb(165, 165, 166); font-size: 1em; font-weight: bold; padding: 8px 0pt 7px 10px; display: block; float: left; margin: 0pt; }
+#container #header #user-login #username { background: url('username-box-bg.gif') no-repeat scroll left top transparent; height: 20px; width: 82px; margin-right: 7px; }
+#container #header #user-login #password { background: url('password-box-bg.gif') no-repeat scroll left top transparent; width: 81px; height: 20px; }
+#container #header #user-login .submit { background: url('search-button.gif') no-repeat scroll left top transparent; width: 49px; height: 31px; text-indent: -1000px; font-size: 0pt; cursor: pointer; }
+#container #header #user-login .submit:hover { background: url('search-button-hover.gif') no-repeat scroll left top transparent; }
+#container #header #register { float: right; margin: 12px 15px 0pt 0pt; height: 31px; }
+#container #header #register a { background: url('register-button.gif') no-repeat scroll left top transparent; width: 104px; height: 31px; text-indent: -1000em; display: block; }
+#container #header #register a:hover { background: url('register-button-hover.gif') no-repeat scroll left top transparent; }
+#container #navigation { background: url('header_navigation_middle.gif') repeat-x scroll right bottom transparent; clear: both; height: 66px; }
+#container #navigation #navigation-left-wrapper { height: 66px; background: url('header_navigation_left.gif') no-repeat scroll left bottom transparent; }
+#container #navigation #navigation-right-wrapper { height: 66px; background: url('header_navigation_right.gif') no-repeat scroll right bottom transparent; }
+#container #navigation ul { list-style-type: none; margin: 0pt; padding: 0pt; float: left; }
+#container #navigation ul li { margin: 0pt; height: 66px; float: left; }
+#container #navigation ul li.selected { background: url('navigation-selected.gif') no-repeat scroll center bottom transparent; }
+#container #navigation ul li a { background: url('navigation-separator.gif') no-repeat scroll right top transparent; text-transform: uppercase; display: block; font-size: 1.3em; color: rgb(255, 255, 255); float: left; padding: 21px 10px 19px; font-weight: bold; }
+#container #navigation ul li.selected a, #container #navigation ul li a:hover, #container #navigation ul li.talk a:hover { background-color: rgb(104, 104, 104); text-decoration: none; }
+#container #navigation #search { float: right; margin-top: 11px; margin-right: 0pt; overflow: hidden; width: 250px; }
+#container #navigation #search input { border: 0pt none; float: left; margin: 0pt; display: block; }
+#container #navigation #search #query, #container #navigation #searchInput { background: url('search-box-bg.gif') no-repeat scroll left top transparent; width: 181px; height: 20px; color: rgb(165, 165, 166); font-size: 1.4em; font-weight: bold; padding: 8px 0pt 7px 10px; }
+#container #navigation #search .submit { background: url('search-button.gif') no-repeat scroll left top transparent; width: 49px; padding: 31px 0pt 0pt; text-indent: -1000px; font-size: 0pt; cursor: pointer; }
+#container #navigation #search .submit:hover { background: url('search-button-hover.gif') no-repeat scroll left top transparent; }
+#container #content:after, #container #content #main:after, #container #content #main-wrapper:after { content: "."; display: block; height: 0pt; clear: both; visibility: hidden; }
+#container #content, #container #content #main, #container #content #main-wrapper { display: inline-block; }
+#container #content, #container #content #main, #container #content #main-wrapper { display: block; }
+#container #content { min-width: 766px; line-height: 1.2; }
+#container #content a.more { background: url('icon-more.gif') no-repeat scroll right top transparent; width: 69px; height: 19px; text-indent: -1000em; float: right; clear: left; }
+#container #content a.more:hover { background: url('icon-more-hover.gif') no-repeat scroll right top transparent; }
+#container #content #main { margin-right: 255px; font-size: 1.4em; border: 1px solid rgb(234, 234, 234); }
+#container #content #main #main-wrapper { overflow: hidden; width: 99%; margin: 0px; float: left; border: 1px solid rgb(234, 234, 234); }
+#container #content #main h1 { font-size: 1.72em; padding-bottom: 0.375em; text-transform: capitalize; }
+#container #content #main h1 a { color: rgb(64, 64, 64); }
+#container #content #main h2 { font-size: 1.571em; }
+#container #content #main h3 { font-size: 1.2857em; }
+#container #content #main ul { list-style-type: disc; color: rgb(250, 135, 0); margin: 0.5em 0pt 0.5em 2em; }
+#container #content #main li { color: rgb(64, 64, 64); }
+#container #content #main #main-wrapper #fp-app-wrapper, #container #content #main #main-wrapper #application-blocks1 { background: url('main-divider.gif') no-repeat scroll center bottom transparent; float: left; width: 100%; padding-bottom: 10px; }
+.tl { background: url('box-tl.gif') no-repeat scroll 0pt 0pt transparent; }
+.tr { background: url('box-tr.gif') no-repeat scroll 100% 0pt transparent; }
+.tm { background: url('box-tm.gif') repeat-x scroll 0pt 0pt transparent; }
+.bl { background: url('box-bl.gif') no-repeat scroll 0pt 100% transparent; }
+.br { background: url('box-br.gif') no-repeat scroll 100% 100% transparent; padding: 1em; }
+.bm { background: url('box-bm.gif') repeat-x scroll 0pt 100% transparent; }
+.lm { background: url('box-lm.gif') repeat-y scroll 0pt 0pt transparent; }
+.rm { background: url('box-rm.gif') repeat-y scroll 100% 0pt transparent; }
+#container #content #sidebar { float: right; width: 239px; margin-top: 60px; }
+#container #content #sidebar h2 { font-size: 2.2em; }
+#container #content #sidebar p { font-size: 1.4em; margin: 0.5em 0pt; }
+#container #footer { clear: both; color: rgb(255, 255, 255); font-size: 1.2em; background: url('footer_middle.png') repeat-x scroll left top transparent; height: 46px; margin-top: 20px; min-width: 766px; max-width: 1200px; width: 100%; }
+#container #footer #footer-wrapper-left { height: 46px; background: url('footer_left.png') no-repeat scroll left bottom transparent; }
+#container #footer #footer-wrapper-right { height: 46px; background: url('footer_right.png') no-repeat scroll right bottom transparent; }
+#container #footer ul { padding: 14px 0pt 0pt 10px; position: relative; }
+#container #footer li { color: rgb(255, 255, 255); display: inline; padding: 0pt 5px; border-left: 1px solid rgb(255, 255, 255); }
+#container #footer li.first { border-left: 0pt none; padding-right: 7px; }
+#container #footer a { text-decoration: underline; }
+#container #breadcrumb, #container #content { margin: 0pt 6px; }
+#container #breadcrumb { font-size: 1.4em; margin-top: 15px; }
+/* ::::: http://static.maemo.org/style_maemo2009/css/products.css ::::: */
+
+body.default #container #content #main #current-os, body.default #container #content #main #introduction, body.default #container #content #main #application-blocks1, body.default #container #content #main #application-blocks2 { float: left; clear: left; width: 100%; }
+body.default #container #content #main #application-blocks1, body.default #container #content #main #application-blocks2 { margin-top: 10px; }
+body.default #container #content #main #application-blocks1 .rating { width: 120px; float: left; }
+body.default #container #content #main #application-blocks1 .more { float: right; clear: none; }
+body.default #container #content #main #current-os { height: 25px; padding-top: 10px; padding-bottom: 12px; }
+body.default #container #content #main #current-os h1 { margin-top: 2px; float: left; color: rgb(64, 64, 64); }
+body.default #container #content #main #latest, body.default #container #content #main #featured, body.default #container #content #main #downloads, body.default #container #content #main #updated { float: left; min-width: 247px; width: 49%; }
+body.default #container #content #main #downloads, body.default #container #content #main #updated { margin-left: 8px; }
+body.default #container #content #main #latest ul, body.default #container #content #main #downloads ul, body.default #container #content #main #updated ul { clear: left; padding: 5px 0pt 0pt; margin: 0pt; }
+body.default #container #content #main #downloads ul li, body.default #container #content #main #latest ul li, body.default #container #content #main #updated ul li { clear: left; list-style: none outside none; margin: 0pt; padding: 0pt 0pt 5px; font-size: 80%; }
+body.default #container #content #main #downloads div.screenshot-thumbnail, body.default #container #content #main #latest div.screenshot-thumbnail, body.default #container #content #main #updated div.screenshot-thumbnail { clear: left; float: left; width: 100px; height: 60px; overflow: hidden; background-color: rgb(240, 240, 240); padding: 2px; border: 1px solid rgb(204, 204, 204); text-align: center; margin-top: 1px; }
+body.default #container #content #main #downloads div.application-data, body.default #container #content #main #latest div.application-data, body.default #container #content #main #updated div.application-data { float: left; overflow: hidden; margin-left: 8px; width: 55%; }
+body.default #container #content #main #latest h2, body.default #container #content #main #featured h2, body.default #container #content #main #downloads h2, body.default #container #content #main #updated h2 { font-size: 12pt; margin: 0pt; border: 0pt none; }
+body.default #container #content #main #latest h2 a, body.default #container #content #main #featured h2 a, body.default #container #content #main #downloads h2 a, body.default #container #content #main #updated h2 a { color: rgb(64, 64, 64); }
+body.default #container #content #main #latest .screenshotfull, body.default #container #content #main #downloads .screenshotfull, body.default #container #content #main #updated .screenshotfull, .screenshotfull { padding: 12px; background-color: rgb(240, 240, 240); border: 1px solid rgb(204, 204, 204); float: left; display: none; margin-top: -180px; z-index: 100; position: absolute; }
+#container #content #sidebar #categories .application-categories { list-style-type: none; margin-left: 0pt; }
+#container #content #sidebar #categories .application-categories li.normal { background: url('nav-li-normal.gif') no-repeat scroll left top transparent; margin: 1px 0pt; }
+#container #content #sidebar #categories .application-categories li a { background: url('nav-divider.gif') no-repeat scroll left bottom transparent; color: rgb(79, 80, 80); font-size: 1.4em; font-weight: normal; display: block; padding: 8px 0pt 8px 30px; }
+#container #content #sidebar #categories .application-categories li.normal a:hover { text-decoration: none; background-color: rgb(251, 146, 0); color: rgb(255, 255, 255); }
+body #container #sidebar #ITOS-selector img { border: 0pt none; margin-right: 4px; }
+body #container #sidebar #ITOS-selector #OS2008-selected, body #container #sidebar #ITOS-selector #OS2007-selected, body #container #sidebar #ITOS-selector #OS2006-selected, body #container #sidebar #ITOS-selector #OS2008-deselected, body #container #sidebar #ITOS-selector #OS2007-deselected, body #container #sidebar #ITOS-selector #OS2006-deselected { float: left; }
+body #container #sidebar #ITOS-selector { margin-bottom: 10px; }
+#extras-counter { background-color: rgb(255, 255, 255); height: 100px; }
+#extras-counter .counter { font-size: 40px; width: 210px; text-align: center; }
+#extras-counter span { font-size: 8pt; }
+/* ::::: http://maemo.org/midcom-static/style_maemo2009/css/google_search.css ::::: */
+
+/* ::::: http://static.maemo.org/midcom.services.uimessages/simple.css ::::: */
+
+/* ::::: http://static.maemo.org/net.nemein.favourites/screen.css ::::: */
+
+/* ::::: http://static.maemo.org/midcom.helper.datamanager2/legacy.css ::::: */
+
+/* ::::: http://maemo.org/midcom-static/style_maemo2009/css/google_search.css ::::: */
+

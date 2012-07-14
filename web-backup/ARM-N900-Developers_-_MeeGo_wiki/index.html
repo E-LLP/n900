@@ -1,0 +1,329 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		
+		<meta name="generator" content="MediaWiki 1.16.2">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.meego.com/opensearch_desc.php" title="MeeGo wiki (en)">
+<link title="Creative Commons" type="application/rdf+xml" href="http://wiki.meego.com/index.php?title=ARM/N900/Developers&amp;action=creativecommons" rel="meta">
+<link rel="copyright" href="http://creativecommons.org/licenses/by/3.0/legalcode">
+<link rel="alternate" type="application/atom+xml" title="MeeGo wiki Atom feed" href="http://wiki.meego.com/index.php?title=Special:RecentChanges&amp;feed=atom">		<title>ARM/N900/Developers - MeeGo wiki</title>
+		
+
+
+
+
+
+		<!--[if lt IE 7]><meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		                
+		
+		<!-- Head Scripts -->
+
+
+		
+	
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-ARM_N900_Developers skin-meego">
+
+	<!-- heading -->
+	<div id="mw_header"><div id="firstHeading"><a href="http://wiki.meego.com/Main_Page"><strong>Meego Wiki</strong></a></div></div>
+
+	<div id="mw_main">
+	<div id="mw_contentwrapper">
+	<!-- navigation portlet -->
+	<div id="p-cactions">
+		<h5>Views</h5>
+		<div class="pBody">
+    	<h1 id="PageTitle">ARM/N900/Developers</h1>
+			<ul>
+      		
+	
+				 <li id="ca-nstab-main" class="selected"><a href="http://wiki.meego.com/ARM/N900/Developers" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="http://wiki.meego.com/index.php?title=Talk:ARM/N900/Developers&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="http://wiki.meego.com/index.php?title=ARM/N900/Developers&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="http://wiki.meego.com/index.php?title=ARM/N900/Developers&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+
+	<!-- content -->
+	<div id="mw_content">
+	<!-- contentholder does nothing by default, but it allows users to style the text inside
+	     the content area without affecting the meaning of 'em' in #mw_content, which is used
+	     for the margins -->
+	<div id="mw_contentholder">
+		<div class="mw-topboxes">
+			<div id="mw-js-message" style="display: none;"></div>
+			<div class="mw-topbox" id="siteSub">From MeeGo wiki</div>
+								</div>
+
+		<div id="contentSub"><span class="subpages">&lt; <a href="http://wiki.meego.com/ARM" title="ARM">ARM</a> | <a href="http://wiki.meego.com/ARM/N900" title="ARM/N900">N900</a></span></div>
+
+				<div id="jump-to-nav">Jump to: <a href="#mw_portlets">navigation</a>, <a href="#searchInput">search</a></div>
+		<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Developer.27s_corner"><span class="tocnumber">1</span> <span class="toctext">Developer's corner</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Tutorials_and_How-Tos"><span class="tocnumber">1.1</span> <span class="toctext">Tutorials and How-Tos</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="#Getting_started_with_DE_Application_development_using_SDK"><span class="tocnumber">1.1.1</span> <span class="toctext">Getting started with DE Application development using SDK</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-4"><a href="#Useful_tools_.2F_scripts_.2F_etc"><span class="tocnumber">1.2</span> <span class="toctext">Useful tools / scripts / etc</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Tips_and_Tricks"><span class="tocnumber">1.3</span> <span class="toctext">Tips and Tricks</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="#How_to_make_non-mtf_app_to_switch_from_fullscreen_mode_to_task_switcher.3F"><span class="tocnumber">1.3.1</span> <span class="toctext">How to make non-mtf app to switch from fullscreen mode to task switcher?</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="#As_user_how_do_I_get_to_task_switcher_view.3F"><span class="tocnumber">1.3.2</span> <span class="toctext">As user how do I get to task switcher view?</span></a></li>
+<li class="toclevel-3 tocsection-8"><a href="#Touching_OBS_for_the_first_time"><span class="tocnumber">1.3.3</span> <span class="toctext">Touching OBS for the first time</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Reducing_memory_use"><span class="tocnumber">1.3.4</span> <span class="toctext">Reducing memory use</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="#Screenshot"><span class="tocnumber">1.3.5</span> <span class="toctext">Screenshot</span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="#Kernel_Compiling"><span class="tocnumber">1.3.6</span> <span class="toctext">Kernel Compiling</span></a></li>
+<li class="toclevel-3 tocsection-12"><a href="#Starting_GPRS_from_console"><span class="tocnumber">1.3.7</span> <span class="toctext">Starting GPRS from console</span></a></li>
+<li class="toclevel-3 tocsection-13"><a href="#Links"><span class="tocnumber">1.3.8</span> <span class="toctext">Links</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></tbody></table>
+<h1> <span class="mw-headline" id="Developer.27s_corner"> Developer's corner </span></h1>
+<p>This page is targeted mainly for the people developing DE. Target is collect useful stuff needed in daily development work here. If you are interested in MeeGo development in general, then the official MeeGo developer site ( <a href="http://developer.meego.com/" class="external autonumber" rel="nofollow">[1]</a> ) is probably more useful for you.
+</p>
+<h2> <span class="mw-headline" id="Tutorials_and_How-Tos"> Tutorials and How-Tos </span></h2>
+<ul><li> <a href="http://wiki.meego.com/N900_kernel_compilation" title="N900 kernel compilation"> Compiling the kernel for N900</a>
+</li></ul>
+<h3> <span class="mw-headline" id="Getting_started_with_DE_Application_development_using_SDK"> Getting started with DE Application development using SDK </span></h3>
+<ul><li> Install DE release for your N900
+</li><li> You need supported version of host OS on your computer. For example 32-bit Ubuntu 10.04 is known to work. Othewise SDK may not install properly.
+</li><li> Download and install MeeGo 1.2 SDK from <a href="http://developer.meego.com/" class="external free" rel="nofollow">http://developer.meego.com/</a>
+</li><li> Setup USB networking for your host, for instructions see: <a href="http://wiki.meego.com/ARM/N900/Tips_and_Tricks/N900_USB_Networking" class="external free" rel="nofollow">http://wiki.meego.com/ARM/N900/Tips_and_Tricks/N900_USB_Networking</a>
+</li><li> Your device should be in SDK mode by default, if not change it using the control panel
+</li><li> Set up connection to N900 in QtCreator. start from "Setting up the connection" in <a href="http://developer.meego.com/guides/devices/setting-nokia-n900-meego-development" class="external free" rel="nofollow">http://developer.meego.com/guides/devices/setting-nokia-n900-meego-development</a>
+</li><li> Set up a new project in QtCreator. 
+</li><li> After setting up project select Projects from side bar and in targets select run target for MeeGo. Add the N900 target you created to Deployment.
+</li><li> Now you can deploy and run your project automatically on device
+</li></ul>
+<h2> <span class="mw-headline" id="Useful_tools_.2F_scripts_.2F_etc"> Useful tools / scripts / etc </span></h2>
+<ul><li> <a href="http://wiki.meego.com/Bonnie" title="Bonnie"> Bonnie++ disk IO benchmark utility</a>
+</li><li> <a href="http://maemo.gitorious.org/maemo-tools" class="external text" rel="nofollow">Maemo tools for debugging and performance testing (tracing, cpu load, memory consumption, etc.)</a>
+<ul><li> <a href="http://wiki.meego.com/ARM/N900/Developers/Sp_smaps_snapshot" title="ARM/N900/Developers/Sp smaps snapshot"> Maemo tools: sp_smaps_snapshot memory consumption measurement tool</a>
+</li></ul>
+</li></ul>
+<h2> <span class="mw-headline" id="Tips_and_Tricks"> Tips and Tricks </span></h2>
+<h3> <span class="mw-headline" id="How_to_make_non-mtf_app_to_switch_from_fullscreen_mode_to_task_switcher.3F"> How to make non-mtf app to switch from fullscreen mode to task switcher? </span></h3>
+<p>Window minimize should work
+</p>
+<h3> <span class="mw-headline" id="As_user_how_do_I_get_to_task_switcher_view.3F"> As user how do I get to task switcher view? </span></h3>
+<p>Some apps do not have close button or minimize button in the UI. You can use the keyshortcut to get back to task switcher. (Almost the same shortcut as in Maemo5:
+</p>
+<pre>1. Open HWKB
+2. press: Blue arrow (the key located between shift and ctrl) and backspace (these are the keys at least in finnish keymap)
+</pre>
+<h3> <span class="mw-headline" id="Touching_OBS_for_the_first_time"> Touching OBS for the first time </span></h3>
+<ul><li> msugano wanted to branch uxlanuch from the public OBS to his home in the community OBS.
+</li></ul>
+<p>On his local laptop:
+</p><p>$ osc -A <a href="https://api.pub.meego.com/" class="external free" rel="nofollow">https://api.pub.meego.com</a> branch -cm "would like to experiment e.g. xsetroot right after the start_X_server() to enhance the UX." MeeGo.com:MeeGo:1.2:oss uxlaunch
+</p>
+<ul><li> The new project was downloaded to his local environment. Now, it's possible to edit the source.
+</li><li> The new project was created in the community OBS under msugano's home (Build Service &gt; Projects &gt; home:msugano:branches:MeeGo.com:MeeGo:1.2:oss &gt; uxlaunch).
+</li><li> However, the above project page says <i>The project this package belongs to currently has no build targets defined.</i>
+</li><li> Hence, msugano clicked on the "build targets" to specify, but could not find any target build that looked relevant for the DE. (lbt fixed this =&gt; thanks)
+</li><li> Then msugano received the advice to use the command line instead. (The following is not needed any more, since webui now works, but anyway FYI).
+</li></ul>
+<p>$ osc meta prj Project:DE:Trunk:Testing (copy the below)
+</p>
+<pre> &lt;repository name="standard"&gt;
+   &lt;path repository="standard" project="Project:DE:MeeGo:1.2"/&gt;
+   &lt;arch&gt;armv8el&lt;/arch&gt;
+   &lt;arch&gt;i586&lt;/arch&gt;
+ &lt;/repository&gt;
+</pre>
+<p>$ osc meta prj -e home:msugano:branches:MeeGo.com:MeeGo:1.2:oss (vim starts &amp; paste the above).
+</p>
+<hr>
+<h3> <span class="mw-headline" id="Reducing_memory_use"> Reducing memory use </span></h3>
+<p>On N900 MeeGo is really tight on memory. That is why it feels sometimes so sluggish. There are few things that can be done about it.
+</p><p>1. Remove unused applifed processes.
+</p><p>As dialer UI has now been rewritten, it does not use meegotouch-applifed to manage its lifecycle. Therefore, no apps are using applifed in DE, and applifed package can be removed. You can remove it from your image with:
+</p>
+<pre>zypper remove meegotouch-applifed&nbsp;; killall applifed
+</pre>
+<p>2. Remove volume-control
+</p><p>Volume control process consumes memory. By removing this you will save memory, but you cannot change volume.
+This can be done temporarily by killing process meego-volume-control or permanently by removing meego-volume-control.desktop from /etc/xdg/autostart and rebooting.
+</p>
+<h3> <span class="mw-headline" id="Screenshot"> Screenshot </span></h3>
+<ul><li> How to take a screenshot?
+</li></ul>
+<pre>Start widgetsgallery
+Select -&gt;debug_tools-&gt;xx_wg_take_screenshot
+</pre>
+<pre>Command line alternative
+[meego@localhost ~]$ export DISPLAY=:0 &amp;&amp; gst-launch-0.10 ximagesrc num-buffers=1&nbsp;! ffmpegcolorspace&nbsp;! pngenc&nbsp;! filesink location=screenshot.png
+</pre>
+<h3> <span class="mw-headline" id="Kernel_Compiling"> Kernel Compiling </span></h3>
+<p>1. Download Meego kernel for N900
+</p>
+<pre># git clone <a href="http://git.gitorious.org/meego-device-adaptation/n900_kernel.git" class="external free" rel="nofollow">http://git.gitorious.org/meego-device-adaptation/n900_kernel.git</a> n900_kernel
+</pre>
+<p>or use <a href="http://meego.gitorious.org/meego-device-adaptation/n900_kernel/archive-tarball/master" class="external free" rel="nofollow">http://meego.gitorious.org/meego-device-adaptation/n900_kernel/archive-tarball/master</a> to download manually
+</p><p>2. Compiling Meego Kernel
+</p><p>Execute following commands in command prompt
+</p>
+<pre># export ARCH=arm
+# export CROSS_COMPILE=arm-none-linux-gnueabi-
+</pre>
+<p>Note: You should have arm tool chain in your host machine
+</p><p>Enabling CAIF Protocol support for ST Ericsson Modems (or do whatever changes you need for the kernel)
+</p>
+<pre># make omap2plus_defconfig
+# make menuconfig  ( Note: select caif protocol support in Networking and driver sections)
+</pre>
+<p>Do kernel modifications here!
+</p>
+<pre># make zImage
+# make modules
+# make modules_install INSTALL_MOD_PATH=$path to install modules
+</pre>
+<p><br>
+Finally kernel images available @   $Meego_kernel_source/arch/arm/boot/zImage	
+</p><p><br>
+3. Copy modules to N900 device ( Note: Already device should have meego os)
+</p>
+<ol><li> scp -r $meego_compiled_modules_installed_path  root@192.168.2.15:/ 
+</li></ol>
+<p>Note: connect device with host via usb cable before executing this command 
+</p><p><br>
+4. Loading Compiled  Meego kernel
+</p><p><br>			
+Download flasher from <a href="http://tablets-dev.nokia.com/maemo-dev-env-downloads.php?f=maemo_flasher-3.5_2.5.2.2.tar.gz" class="external free" rel="nofollow">http://tablets-dev.nokia.com/maemo-dev-env-downloads.php?f=maemo_flasher-3.5_2.5.2.2.tar.gz</a>
+</p><p>Load Kernel using 
+</p>
+<pre># sudo ./flasher-3.5  -l -k  $Meego_kernel_source/arch/arm/boot/zImage	 -b
+</pre>
+<p>Note: Before executing this command,please power off the device.
+</p><p>Now connect USB cable with  device. You will see Meego home screen after 2 or 3 minuteson this page.
+</p>
+<h3> <span class="mw-headline" id="Starting_GPRS_from_console"> Starting GPRS from console </span></h3>
+<p>From N900 DE console or over ssh write to add Access Point Name:
+</p>
+<pre>/usr/lib/ofono/test/create-internet-context internet
+</pre>
+<p>And take use GPRS connection:
+</p>
+<pre>/usr/lib/ofono/test/activate-context
+</pre>
+<p>And deactive GPRS connection:
+</p>
+<pre>/usr/lib/ofono/test/deactivate-context
+</pre>
+<p>If somehow modem is not running (online), you have to write:
+</p>
+<pre>/usr/lib/ofono/test/enable-modem
+/usr/lib/ofono/test/online-modem
+</pre>
+<h3> <span class="mw-headline" id="Links"> Links </span></h3>
+<ul><li> Information about systemd: <a href="http://0pointer.de/blog/projects/systemd.html" class="external free" rel="nofollow">http://0pointer.de/blog/projects/systemd.html</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 50/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key meego_wiki:pcache:idhash:4665-0!1!0!!en!2!edit=0 and timestamp 20120702202240 -->
+<div class="printfooter">
+Retrieved from "<a href="http://wiki.meego.com/ARM/N900/Developers">http://wiki.meego.com/ARM/N900/Developers</a>"</div>
+		<div class="mw_clear"></div>
+		<div id="catlinks" class="catlinks catlinks-allhidden"></div>			</div><!-- mw_contentholder -->
+	</div><!-- mw_content -->
+	</div><!-- mw_contentwrapper -->
+
+	<div id="mw_portlets">
+
+	<!-- portlets -->
+			<div class="generated-sidebar portlet" id="p-Wiki_Navigation">
+		<h5>Wiki Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-Return-to-MeeGo.com"><a href="http://meego.com/">Return to MeeGo.com</a></li>
+				<li id="n-mainpage-description"><a href="http://wiki.meego.com/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-recentchanges"><a href="http://wiki.meego.com/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="http://wiki.meego.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="http://wiki.meego.com/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- search -->
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wiki.meego.com/index.php" id="searchform"><div>
+				<input name="title" value="Special:Search" type="hidden">
+
+				<input id="searchInput" name="search" title="Search MeeGo wiki [f]" accesskey="f" value="" type="text">
+
+									<input name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" type="submit">&nbsp;
+								<input name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists" type="submit">
+			</div></form>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- toolbox -->
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://wiki.meego.com/Special:WhatLinksHere/ARM/N900/Developers" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://wiki.meego.com/Special:RecentChangesLinked/ARM/N900/Developers" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="http://wiki.meego.com/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://wiki.meego.com/index.php?title=ARM/N900/Developers&amp;q=ARM%2FN900%2FDevelopers&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="http://wiki.meego.com/index.php?title=ARM/N900/Developers&amp;oldid=40001" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- languages -->
+
+	</div><!-- mw_portlets -->
+
+
+	</div><!-- main -->
+
+	<div class="mw_clear"></div>
+
+	<!-- personal portlet -->
+	<div id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://meego.com/user?destination=wiki_home" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<!-- footer --> 
+	<div id="footer">
+  		<a href="http://linuxfoundation.org/"><div id="sponsor"><strong>Linux Foundation</strong></div></a>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified on 3 June 2011, at 10:20.</li>
+				<li id="viewcount">This page has been accessed 3,391 times.</li>
+			</ul>
+ 			<ul id="f-list">
+				<li id="copyright">Content is available under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" class="external ">Creative Commons Attribution 3.0 License</a>.</li>
+				<li id="privacy"><a href="http://wiki.meego.com/MeeGo_wiki:Privacy_policy" title="MeeGo wiki:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a href="http://wiki.meego.com/MeeGo_wiki:About" title="MeeGo wiki:About">About MeeGo wiki</a></li>
+			</ul>     
+		<div class="mw_poweredby">Powered by MediaWiki 1.16.2</div>	</div>
+
+	
+
+
+<!-- Served in 0.241 secs. -->
+</body>
+</html>

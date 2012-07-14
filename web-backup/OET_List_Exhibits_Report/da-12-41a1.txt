@@ -1,0 +1,443 @@
+Federal Communications Commission DA 12- 41
+Before the
+Federal Communications Commission
+Washington, D.C. 20554
+In the matter of
+Curtiss-Wright Controls Inc.
+Request for Waiver of Part 15 of the 
+Commission’s Rules Applicable to Ultra-
+Wideband Devices
+)
+)
+)
+)
+)
+)
+)
+)
+)
+ET Docket No. 10-167
+ORDER
+Adopted:  January 11, 2012 Released:  January 11, 2012
+By the Chief, Office of Engineering and Technology:
+I. INTRODUCTION
+1. By this Order, we grant a request by Curtiss-Wright Controls Inc. (“CWCI”), to waive 
+Sections 15.503(d) and 15.521(d) of our ultra-wideband (“UWB”) rules for its ground penetrating radar 
+(“GPR”) system, known as 3d-Radar.1 GPR devices are field disturbance sensors that detect buried 
+objects, changes in material, and cracks in ground or in other subsurface structures and are typically used 
+in the maintenance of highways and bridge infrastructures in the United States.  GPR devices achieve 
+these objectives by utilizing a very wide operational bandwidth that spans frequency bands used by a 
+broad array of radio services.
+2. Specifically, we are waiving the definitional requirement in Section 15.503(d), which 
+specifies the minimum operational bandwidth of an UWB transmitter, and the UWB measurement 
+procedure in Section 15.521(d).  This action will permit CWCI to manufacture and market the 3d-Radar 
+device upon receiving FCC equipment authorization.  We also will require CWCI to comply with all 
+other technical and operational requirements for unlicensed UWB GPR devices in Section 15.509.  We 
+find that granting this waiver request is in the public interest because it will make available a product that 
+will improve the safety of our nation’s transportation infrastructure without increasing the potential for 
+interference to authorized radio services. 
+II. BACKGROUND 
+3. On February 14, 2002, the Commission adopted regulations to permit the operation of 
+UWB transmitters.2 Categories of UWB devices that can be marketed and operated on an unlicensed 
+  
+1 See “Curtiss-Wright Controls Inc., Request for Waiver of Part 15 of the Commission’s Rules Applicable to Ultra-
+Wideband Devices” (CWCI Waiver Request), filed June 10, 2010, ET Docket No. 10-167; see also 47 C.F.R 
+§§15.503(d) and 15.521(d).
+2 See First Report and Order (“1st R&O”) in ET Docket No. 98-153, 17 FCC Rcd 7435 (2002); Erratum in ET 
+Docket No. 98-153, 17 FCC Rcd 10505 (2002); Memorandum Opinion and Order and Further Notice of Proposed 
+Rule Making in ET Docket No. 98-153, 18 FCC Rcd 3857 (2003); and Second Report and Order and Second 
+(continued....)
+Federal Communications Commission DA 12-41 
+2
+basis under the Part 15 regulations include imaging systems, vehicular radars, and indoor communications 
+systems. 3 These transmitters operate using spectrum that is allocated to various radio services, including 
+frequency bands that are allocated to both Federal and to non-Federal operations.4 They also operate in 
+several restricted frequency bands within which the operation of other types of Part 15 transmitters are 
+prohibited.5 No spectrum is allocated to UWB devices, which share these frequency bands with 
+authorized radio services on a sufferance basis and may not cause harmful interference to authorized radio 
+services. 6
+4. Unlicensed UWB GPR devices are governed by Part 15, Subpart F of the Commission’s 
+rules.  Section 15.503(d) specifies a minimal operational bandwidth in defining an UWB transmitter, i.e., 
+a fractional bandwidth equal to or greater than 0.20 or an UWB bandwidth equal to or greater than 500 
+megahertz, regardless of the fractional bandwidth.7 UWB devices typically employ pulse modulation 
+technologies whereby very short bursts of energy are modulated and emitted to convey information, 
+producing emission bandwidths often exceeding one gigahertz.8 When it adopted the UWB rules, the 
+Commission stated that UWB devices could use other modulation types if they meet the minimum 
+bandwidth requirements and that this requirement was intended to avoid having devices designed for the 
+restricted bands if they did not need to operate in those bands.9 The Commission further stated that “it 
+was unlikely” that swept frequency, stepped frequency, or frequency hopping systems would comply with
+the minimum bandwidth requirement because, unlike UWB systems, the emissions for these other 
+systems were typically measured with the sweep/step/hopping function stopped.10 Section 15.521(d) of 
+the Commission’s rules sets forth the measurement procedures for UWB devices to demonstrate 
+compliance with applicable emission limits.  For emissions above 960 MHz, this rule requires that, if 
+pulse gating is used and the transmitter is quiescent for longer intervals than the nominal pulse repetition 
+interval, measurements are made with the pulse train gated on; also, the Commission may consider 
+alternate measurement procedures. 11
+5. On June 10, 2010, Curtiss-Wright Controls, Inc. (“CWCI”) filed a request for a waiver of 
+the UWB minimum bandwidth requirement in Section 15.503(d) and the UWB measurement procedures 
+in Section 15.521(d) of the Commission’s rules to permit the marketing and operation of its stepped 
+frequency GPR system known as 3d-Radar.  CWCI states that its 3d-Radar system operates between 140 
+MHz and 3 GHz using stepped frequency modulation to achieve superior performance characteristics of 
+deep signal penetration, high resolution imaging, and fast survey speeds.  CWCI states that to achieve 
+  
+(...continued from previous page)
+Memorandum Opinion and Order (“2nd R&O”) in ET Docket No. 98-153, 19 FCC Rcd 24525 (2004).  See also 47 
+C.F.R. §§ 15.501-15.525.
+3 Imaging systems consist of GPRs, wall imaging systems, through-wall imaging systems, surveillance systems, and 
+medical imaging systems.
+4 The operation of Federal radio stations is regulated by the National Telecommunications and Information 
+Administration (“NTIA”), while operation of stations by commercial entities, state and local governments, and the 
+general public is regulated by the Commission. 
+5 47 C.F.R. § 15.205.
+6 47 C.F.R. § 15.5.
+7 47 C.F.R. § 15.503(d); fractional bandwidth is the bandwidth of a device divided by its center frequency.
+8 See 1st R&O, supra at p. 7439.  UWB devices can also use “impulse” transmitters, i.e., pulses don’t modulate a 
+carrier, but the antenna determines the center frequency of radiated emissions. Id.
+9 Id. at p. 7449.
+10 Id. at p. 7450.
+11 47 C.F.R. § 15.521(d).
+Federal Communications Commission DA 12-41 
+3
+deep signal penetration into the ground, a GPR device must operate at relatively low frequencies, 
+generally below 1 GHz, and to achieve increased image resolution the device must be able to operate over 
+a very large bandwidth, generally 2 GHz or more.  CWCI claims that its device accomplishes these two 
+objectives by placing an array of closely spaced antennas that transmit sequentially over a wide band of 
+spectrum and gather a variety of data from underground structures in a single pass.  The CWCI 3d-Radar 
+system features an electronically-scanned 31-element antenna array that transmits over 1,431 frequencies 
+in 2-megahertz steps between 140 MHz and 3 GHz with a scan/cycle rate of approximately 2.86 
+milliseconds.  The antenna array is towed (or pushed) approximately 30 cm above the ground by survey 
+vehicles traveling at normal highway speeds.  The 3d-Radar system’s stepped-frequency technique using 
+a wide bandwidth antenna array allows it to travel at high speeds and eliminate the need for multiple 
+passes.  This results in less RF energy being transmitted at any one location, thereby minimizing any risk 
+of potential interference to authorized services.  CWCI contends that the 3d-Radar system represents a 
+leap in GPR technology that will increase the efficiency of subsurface imaging, lower the costs of 
+infrastructure repair and improve safety conditions for both infrastructure workers and the general public.  
+CWCI also states that their 3d-Radar system has already been certified for use in the European Union.  
+CWCI seeks a waiver as its 3d-Radar system does not satisfy the definitional requirement of Section 
+15.503(d) that an UWB transmitter “at any point in time” has a fractional bandwidth equal to or greater 
+than 0.20 or has an UWB bandwidth equal to or greater than 500 megahertz.  It also seeks a waiver of the 
+Section 15.521(d) measurement procedure requirement that if pulse gating is used and the transmitter is 
+quiescent for longer intervals than the nominal pulse repetition interval, measurements are made with the 
+pulse train gated on.
+6. The Commission issued a public notice on August 19, 2010 soliciting comment on the 
+CWCI request for a waiver.12 Comments and reply comments were due by September 20, 2010 and 
+October 4, 2010, respectively.  A total of six parties, including CWCI, filed comments, and CWCI filed 
+reply comments in response to the public notice.  A.P. Annan (“Annan”)13 and the U.S. GPS Industry 
+Council (“USGPSIC”)14 oppose the waiver request while the Federal Railroad Administration (”FRA”), 
+AKELA Inc., and Robert Bosch GmbH (“Bosch”) support the request. 
+7. Recently, the National Telecommunications and Information Administration (“NTIA”), 
+under its own administrative process, has approved the CWCI 3d-Radar for use by the United States 
+Department of Transportation.15
+III. DISCUSSION
+8. We are authorized to grant a waiver under Section 1.3 of the Commission's rules if the 
+petitioner demonstrates good cause for such action.16 Good cause, in turn, may be found and a waiver 
+  
+12 See “Office of Engineering and Technology Declares the Curtiss-Wright Controls, Inc. Request for a Waiver of 
+Part 15 Ultra-Wideband Rules for a Stepped Frequency Ground Penetrating Radar System to be a “Permit-But-
+Disclose” Proceeding for Ex Parte Purposes and Requests Comments”, ET Docket No. 10-167, DA 10-1551, 
+August 19,2010.
+13 See “A.P. Annan Re: comments on ET Docket N0. 10-167” (Annan Comments), filed September 20, 2010, ET 
+Docket No. 10-167.
+14 See “Comments of the U.S. GPS Industry Council” (USGPSIC Comments), filed September 20, 2010, ET Docket 
+No. 10-167.
+15 See NTIA Certification of Spectrum Support, Control Number SPS-18004/1, (May 18, 2011; Filed in ET Docket 
+No. 10-167 on June 16, 2011).
+16 47 C.F.R. § 1.3. See also ICO Global Communications (Holdings) Limited v. FCC, 428 F.3d 264 (D.C. Cir. 
+2005); Northeast Cellular Telephone Co. v. FCC, 897 F.2d 1164 (D.C. Cir. 1990); WAIT Radio v. FCC, 418 F.2d
+1153 (D.C. Cir. 1969).
+Federal Communications Commission DA 12-41 
+4
+granted “where particular facts would make strict compliance inconsistent with the public interest.”17 To 
+make this public interest determination, the waiver cannot undermine the purpose of the rule, and there 
+must be a stronger public interest benefit in granting the waiver than in applying the rule.18  The UWB 
+technical and operational standards in Sections 15.503(d) and 15.521(d) were adopted to ensure that 
+UWB ground penetrating radar systems do not cause harmful interfere to authorized radio services, 
+including Federal services.  As discussed below, a waiver of the definitional and measurement 
+requirements in 15.503(d) and 15.521(d) for CWCI’s 3d-Radar system would not increase the potential 
+for harmful interference to authorized services, i.e., the 3d-Radar GPR poses no greater risk of harmful 
+interference than any currently operating UWB GPR.  Hence, granting this waiver will not undermine the 
+purpose of the rules.  Finally, we find that there is a stronger public interest benefit in granting this waiver 
+than in strictly applying the rules.  A waiver will allow the marketing of a new category of GPR devices 
+that would increase efficiency in subsurface imaging, thereby potentially lowering costs of infrastructure 
+repair and improving safety conditions for both infrastructure workers and the general public.  Moreover, 
+our decision to allow this device to be authorized under the Commission’s equipment authorization 
+processes, along with NTIA’s decision to allow the same device to be used by Federal agencies, will 
+ensure the availability of the 3d-Radar for use by both Federal and non-Federal users alike.19
+A. Waiver of definitional requirement in Section 15.503(d) of the Commission Rules
+9. CWCI seeks a waiver of Section 15.503(d) because its 3d-Radar system does not satisfy 
+the definitional requirements for ground penetrating radar systems in the UWB rules.  Section 15.503(d) 
+requires that an UWB transmitter “at any point in time” has a fractional bandwidth equal to or greater 
+than 0.20 or has an UWB bandwidth equal to or greater than 500 megahertz.  As indicated above, the 3d-
+Radar system transmits in discrete 2 megahertz steps over 1,431 frequencies between 140 MHz and 3 
+GHz with a scan/cycle rate of approximately 2.86 milliseconds.  Because each transmission is less than 
+500 megahertz in bandwidth “at any point in time,” CWCI’s 3d-Radar system would not meet the 
+definitional requirement for operation under the UWB rules, even though the total bandwidth needed for 
+optimal system performance exceeds 500 megahertz. 
+10. The Federal Railroad Administration (FRA), AKELA, and Bosch strongly support the 
+CWCI waiver request. The FRA states that stepped frequency GPR is of particular interest to it for 
+several reasons: (1) the technique enables a good combination of both resolution of captured data and 
+penetration depth of track substructure; (2) better utilization of transmitted power offers the potential for 
+better coverage and higher vehicle assessment speeds on the track, which reduces track closures while 
+increasing productivity during the data collection phase and is of particular relevance for construction of 
+high speed rail corridors throughout the country; and (3) because step frequency GPR sends less power 
+into the ground, there is less susceptibility of other energy sources interfering with the GPR signal and 
+  
+17 Northeast Cellular,  supra at 1166; see also ICO Global Communications, supra at 269 (quoting Northeast 
+Cellular); WAIT Radio, supra at 1157-59.
+18 See, e.g., WAIT Radio, supra at 1157 (stating that even though the overall objectives of a general rule have been 
+adjudged to be in the public interest, it is possible that application of the rule to a specific case may not serve the 
+public interest if an applicant's proposal does not undermine the public interest policy served by the rule); Northeast 
+Cellular, 897 F.2d at 1166 (stating that in granting a waiver, an agency must explain why deviation from the general 
+rule better serves the public interest than would strict adherence to the rule).
+19 NTIA’s spectrum certification process is similar to the Commission’s Equipment Authorization Program in that it 
+examines the technical characteristics of proposed equipment to determine compliance with applicable rules.  A 
+specific frequency assignment would also be required for Federal Agencies to use the 3d-Radar.
+Federal Communications Commission DA 12-41 
+5
+corrupting collected data.20 AKELA states that a grant of the waiver request would enable the 
+development of high performance devices and methods which can serve the public interest in other 
+important areas.21 Bosch states that strict construction of the current definition would only allow the use 
+of a continuous-wave signal of at least 500 MHz bandwidth and would preclude the use of essentially all 
+other modulation schemes such as pulsed, frequency-hopping, swept frequency (e.g., FMCW), and 
+stepped frequency emission systems.22  
+11. Annan and USGPSIC urge the Commission to deny the waiver request.  Annan argues 
+that granting a waiver of the UWB definition would open the door for any device that emits over a wide 
+frequency range but could selectively choose to emit in a narrow band indefinitely, which would 
+contravene the intent of the UWB rules.23 Annan asserts that if the device can select the transmit 
+frequencies, it could tailor its emissions to avoid certain bands and adjust its emissions in sensitive 
+spectral ranges, thus obviating the need for a waiver of the UWB rules.24 Annan states that such an 
+approach is not available for UWB devices such as its own impulse-generated UWB GPR, which must 
+emit across its entire bandwidth concurrently. 
+12. USGPSIC is concerned that waiving the definition of an UWB transmission to allow a 
+non-UWB device to operate across the restricted bands, including the GPS bands, would amount to a 
+permanent modification of the rule.  USGPSIC asserts that CWCI has not justified its request and 
+favorable Commission action would set a precedent for other similar requests that would be hard to deny.  
+USGPSIC is concerned that CWCI’s device would cause direct in-band interference to GPS, not just out-
+of-band interference25 and would be inconsistent with the cautious approach the Commission has taken 
+from the beginning with respect to implementing carefully-crafted emissions limits and other 
+requirements to avoid harmful interference from UWB devices.26
+13. In reply comments, CWCI contends that the risk of interference from the 3d-Radar device 
+will be no greater than that from other GPR devices and believes that its interference potential must be 
+evaluated based on its unique capabilities.  CWCI states that notching, as suggested by Annan, causes the 
+subsurface images to become blurred due to higher side lobes and increased "ringing" and tends to mask 
+  
+20 See U.S. Department of Transportation, Federal Railroad Administration comments for “Curtiss-Wright Controls 
+Inc., Request for Waiver of Part 15 of the Commission’s Rules Applicable to Ultra-Wideband Devices” (FRA 
+Comments), filed September 15, 2010, ET Docket No. 10-167.
+21 See “AKELA, Inc.” Comments at p. 2, filed September 20, 2010, ET Docket No. 10-167. 
+22 See “REVISED Ex Parte Comments of Robert Bosch, GmbH” (Bosch Comments), filed March 02, 2011, ET 
+Docket No. 10-167.
+23 See Annan Comments at p. 2; USGPSIC Comments at p. 2.
+24 CWCI states that, absent a waiver of the UWB rules, its device would be treated under the FCC rules as a 
+narrowband system and would have to comply with the general radiated emission limits in Section 15.209 and the 
+restricted band requirements in Section 15.205. CWCI claims that, because of its very wideband design, its device 
+would not comply with either rule, See CWCI Waiver Request at p. 4.
+25 When the Commission first adopted UWB rules, it limited GPR operations to below 960 MHz and between 3.1 to 
+10.6 GHz, to avoid co-frequency operation in the bands used by GPS systems. In 2003, the Commission removed 
+this restriction in acting on petitions for reconsideration. USGPSIC had opposed this modification, arguing that co-
+frequency GPR and GPS operations were not feasible and that GPR emission limits should not be relaxed. The 
+Commission found that the low emissions from GPR devices, coupled with the relatively small number of users and 
+the nature of their operations (e.g., transmissions pointed toward the ground), were unlikely to cause harmful 
+interference to GPS operations. See Memorandum Opinion and Order and Further Notice of Proposed Rule Making
+in ET Docket No. 98-153, 18 FCC Rcd. 3857 (2003), at pp. 3871-3872.
+26 See USGPSIC Comments at p. 6.
+Federal Communications Commission DA 12-41 
+6
+important features, making it difficult to interpret the data and accurately measure pavement thickness.  
+CWCI further states that, with extensive notching, weak features in subsurfaces may go undetected, 
+which can be problematic for both repair and safety concerns, thereby resulting in degrading the most 
+important attributes the system has to offer - increased image resolution performed efficiently and safely
+by survey vehicles traveling at normal highway speeds for the benefit of the public.27  CWCI challenges 
+Annan’s assertion that the Commission’s UWB rules were intended to apply only to impulse GPR 
+devices.  CWCI finds this assertion to be incorrect and notes that the Commission has repeatedly made 
+clear that the UWB rules apply to impulse and non-impulse emitters.  CWCI also notes that USGPSIC 
+provides no data, studies, or calculations to show that the 3d-Radar device would cause interference to 
+authorized radio services.28  
+14. We conclude that a waiver of the UWB transmitter definition is warranted in this case.  
+We find that the 3d-Radar device is functionally equivalent to UWB GPR devices and that the risk of 
+interference from the 3d-Radar device will be no greater than from UWB GPR devices; thus, a waiver 
+will not undermine the intent of our rule.  At the outset, we emphasize that the 3d-Radar device is a GPR 
+that will operate like UWB GPR devices—i.e., it operates when in contact with or within one meter of the 
+ground for the purpose of detecting or obtaining images of buried objects, and its energy is intentionally 
+directed down into the ground, which absorbs most of its energy.29 In addition to restricting emissions 
+and requiring coordination, the Commission’s UWB GPR rules also limit the operation of these devices 
+to certain eligible parties to ensure that proliferation of the devices remains low, thereby further curtailing 
+their interference potential.30 Because we are not waiving the requirements in Section 15.509 of our rules, 
+the 3d-Radar will operate under the same emission limits, marketing and eligibility requirements and will 
+provide the same types of services as UWB GPR devices. 
+15. The primary difference between the 3d-Radar device and UWB GPR devices is the 
+modulation scheme used to perform the detection function.  The UWB GPR rules were designed to 
+accommodate devices that emit impulsive or transient-like signals that are spread across a very wide 
+bandwidth to produce an image of buried objects while making a single pass above the ground.  Impulsive 
+GPR devices will make multiple passes above the ground to obtain more complete and accurate 
+information about buried objects.31 The 3d-Radar device uses stepped frequency modulation—i.e., an 
+array of closely spaced transmitting/receiving antennas that transmit sequentially over a large band of 
+spectrum—to gather all the needed data in a single pass.  As noted above, the 3d-Radar device transmits 
+over 1,431 frequencies in 2 megahertz steps between 140 MHz and 3 GHz with a scan/cycle rate of 
+approximately 2.86 milliseconds.  This scheme allows the 3d-Radar device to produce high quality three-
+dimensional images in a single pass and also to travel at higher survey speeds than an impulsive GPR. 
+16. We are not persuaded by Annan’s argument that we should not allow the 3d-Radar to be 
+certified under the UWB GPR rules because it could avoid transmitting in restricted bands whereas 
+impulse GPR devices cannot avoid these bands due to their impulsive operation.  While we do recognize 
+that it is technically possible for stepped frequency GPRs to avoid transmitting on certain frequencies, we 
+accept that the large bandwidth required in the 3d-Radar design is necessary for achieving satisfactory 
+  
+27 See CWCI Waiver Request at p. 21, ET Docket No. 10-167.
+28 See “Reply Comments of Curtiss-Wright Controls Inc.” (CWCI Reply Comments) at pp. 2, 7; filed October 04, 
+2010, ET Docket No. 10-167.
+29 We note that the 3d-Radar is intended to be installed and operated on a survey vehicle and is not designed to be 
+operated as a hand-held device.
+30 See 1st R&O supra. at pp. 7444, 7499.
+31 CWCI states that most impulsive GPR devices provide two-dimensional images and often have to make multiple 
+passes to provide better resolution (e.g., three-dimensional) images. See CWCI Waiver Request at p. 2.
+Federal Communications Commission DA 12-41 
+7
+image resolution as is the case for existing impulse GPR devices.  We therefore believe that as long as the 
+3d-Radar complies with the emission limits allowed for impulse GPRs, there is no greater risk of 
+interference potential from 3d-Radar devices than from existing impulse GPR devices, and we see no 
+need to require extensive frequency notching that might hinder its performance.  We note that the NTIA 
+has approved this device for Federal government use with minimal notching, which we will also require 
+of the CWCI 3d-Radar.32 We also disagree with Annan that a waiver of the bandwidth requirements of 
+Section 15.503(d) would open the door for any device that can emit over a wide frequency range but can 
+selectively choose to emit in a specific narrow band indefinitely.  Our decision here is narrowly drawn 
+and based on a finding that the 3d-Radar device is functionally equivalent to UWB GPR devices.  To 
+ensure that the 3d-Radar does not emit in a specific narrow band indefinitely, we are conditioning this 
+waiver to require that the system not use any single frequency longer than 2 microseconds in any 3
+millisecond period of time.33
+17. We also disagree with USGPSIC that a waiver of the UWB transmission definition would 
+effectively modify the UWB rules and would permit either direct in-band or out-of-band interference to 
+GPS.  We note that all other technical requirements applicable to UWB GPR devices would continue to 
+apply to the 3d-Radar and CWCI will have to demonstrate that the 3d-Radar meets all of these 
+requirements to be certified and marketed to non-Federal users.  The emission limits contained in Section 
+15.509 were specifically designed to protect GPS systems from interference from UWB GPR devices, and 
+there have been no instances of reported interference to GPS from UWB GPR devices during the more 
+than nine years these rules have been in place.  Further, we note that the 3d-Radar device has a uniquely 
+limited professional application and will be used by the same restricted class of users currently allowed to 
+use UWB devices under our rules.  This waiver will not create any new class of GPR users; instead it will 
+allow UWB users access to one additional tool that facilitates increased efficiencies and safety in 
+maintaining our transportation infrastructure.  Finally, we note that this waiver is based on the specific 
+technical and operational characteristics of the 3d-Radar and does not change our rules and existing 
+prohibition regarding the intentional transmissions in restricted bands in Section 15.205.  For these 
+reasons, we disagree with the USGPSIC that this waiver is inconsistent with our conservative approach to 
+UWB devices.
+18. We also find that there is a legitimate public interest justification for this waiver.  The 3d-
+Radar device is a new tool for evaluating and improving road and railroad infrastructure and will aid 
+public safety.  We disagree with Annan that a waiver is not appropriate because there are other UWB 
+GPR devices available that meet the UWB definition in Section 15.503(d).  The 3d-Radar design and 
+functionality makes it more suitable for some applications than other existing GPR devices.  Its unique 
+design allows it to gather required information on a wide swath of in-ground and subsurface structures in 
+a single pass while travelling at a relatively high speed—something which current impulse GPR devices,  
+commercially available in the United States and elsewhere, require multiple passes to accomplish. We 
+note that the Federal Railroad Administration, which is under the U.S. Department of Transportation, 
+supports this waiver so that the 3d-Radar device can be included in its evaluation of GPR technologies to 
+support its high speed rail initiatives.
+  
+32 NTIA only required notches consistent with Footnote US246 of the Table of Frequency Allocations, which 
+prohibits emissions from authorized stations in frequency bands allocated for passive services.  Because we are 
+authorizing the 3d-Radar as an unlicensed device under Part 15 of our Rules rather than as an allocated service, the 
+Table of Frequency Allocations is not applicable.  We will, however, apply the same restrictions used by NTIA in 
+order to be consistent and to have a single set of requirements for both Federal and non-Federal users.
+33 Based on a sweep of 1,431 channels in 3 msec, the dwell time on any one frequency would not exceed 
+approximately 2 microseconds. 
+Federal Communications Commission DA 12-41 
+8
+B.  Waiver of measurement procedure in Section 15.521(d) of the Commission Rules
+19. CWCI also seeks a waiver of Section 15.521(d) of the Commission’s rules, which sets 
+forth the measurement procedures for UWB devices to demonstrate compliance with applicable emissions 
+limits.  For emissions above 960 MHz, this rule requires that, if pulse gating is used and the transmitter is 
+quiescent for longer intervals than the nominal pulse repetition interval, measurements are made with the 
+pulse train gated on.  The Commission may also consider alternate measurement procedures.34 CWCI 
+asserts that this measurement procedure applies only to pulsed UWB devices but acknowledges that the 
+Commission’s staff has in the past applied it to other types of emitters, including stepped frequency 
+systems.  CWCI observes that, since this rule was adopted, the Commission has permitted other UWB 
+transmitters operating above 960 MHz that use stepped frequency modulation to be measured using an 
+average detector with the transmitter operating in its normal mode, i.e., with the stepping function 
+active.35 CWCI asserts that if emissions from its 3d-Radar device are measured with the stepping 
+function stopped under the rule, peak emissions would need to be reduced significantly to achieve 
+compliance, and this would force the system to operate at reduced performance levels.  CWCI requests 
+that the emissions from its device be measured with the stepping frequency active, either as a waiver of 
+the rule or as an alternate procedure.
+20. Bosch agrees with CWCI’s assertion that UWB test procedures should accommodate 
+non-impulse transmitters by permitting measurements to be made with any hopping, stepping, or gating 
+functions active.  Bosch asserts that the current measurement procedure in Section 15.521(d) was enacted 
+apparently because the measurement procedures for swept frequency devices were undetermined at the 
+time the Commission adopted the UWB rules.  Annan states that the measurement procedures, which are 
+premised on impulsive UWB emissions, may not be appropriate for narrow bandwidth devices.
+21. We conclude that there is good cause for waiving the rule in this case and that such action 
+would serve the public interest.  As CWCI correctly observes, on March 10, 2005, the Commission 
+granted a waiver of the measurement procedures to permit emissions from UWB transmitters operating in 
+the 3.1-5.03 GHz and 5.65-10.6 GHz bands that employ frequency hopping or stepped frequency 
+modulation techniques, or that gate the transmitted signal, to be measured with the transmitter operating 
+in its normal transmission mode.36 This allows the measurements to account for the time averaging 
+during which the UWB emitter is not transmitting.37 In reaching its decision, the Commission recognized 
+that the interference aspects of a transmitter employing frequency hopping, stepped frequency 
+modulation, or gating are quite similar, as viewed by a receiver, in that transmitters using these burst 
+formats appear to the receiver to emit for a short period of time followed by a quiet period.38 The 
+Commission concluded that any requirement to stop the frequency hopping, band sequencing, or system 
+gating serves only to add another unnecessary level of conservatism to already stringent UWB 
+standards.39  
+  
+34 47 C.F.R. § 15.521(d).
+35 See CWCI Waiver Request at 11-12 (citing “Petition for Waiver of the Part 15 UWB Regulations Filed by the 
+Multi-band OFDM Alliance Special Interest Group,” (“MBOA-SIG Waiver”), ET Docket No. 04-352, FCC 05-58, 
+released March 11, 2005, 20 FCC Rcd 5528).
+36 See “Petition for Waiver of the Part 15 UWB Regulations Filed by the Multi-band OFDM Alliance Special 
+Interest Group,” (“MBOA-SIG Waiver”), ET Docket No. 04-352, FCC 05-58, Released March 11, 2005, 20 FCC 
+Rcd 5528.
+37 Id.  
+38 Id. at p. 7443.
+39 Id. at p. 7441.  
+Federal Communications Commission DA 12-41 
+9
+22. Because the MBOA-SIG Waiver was for devices that, unlike the 3d-Radar device, met the 
+UWB bandwidth requirements of 15.503(d), we conclude that the 3d-Radar devices cannot rely on this 
+earlier decision and thus require a new waiver of this rule.  However, the Commission’s finding in the 
+MBOA-SIG Waiver that emission measurements could be made for a stepped frequency modulated 
+transmitter operating in its normal mode is equally valid for the 3d-Radar device.  The Commission, in 
+conjunction with the NTIA, determined that allowing stepped frequency devices to be measured with the 
+stepping function on will not increase the interference potential of the device above that of impulse UWB 
+devices if all other emission limits and technical requirements are met.  Similarly, we conclude here that a 
+waiver of the measurement procedure in Section 15.521(d) will not increase the potential for harmful 
+interference to authorized services.40 CWCI may demonstrate compliance with the UWB GPR emission
+limits with the stepping function active.  
+23. Annan further asserts that a waiver would allow for any device to use a ‘typical 
+operation’ duty cycle or PRF rather than the worst case as now required while measuring emissions.41  
+We disagree with Annan’s assertion that the Commission requires a worst-case scenario for measuring 
+emissions.  Impulsive GPRs are required to show compliance with the emission limits using the actual 
+PRF used by the device.  The 3d-Radar device will be required to show compliance with the actual sweep 
+rate it employs to receive certification.  For this reason, we do not find the measurement procedures to 
+prescribe a worst-case scenario; rather, they establish a quantification of the actual emissions from the 
+devices.
+IV. CONCLUSION
+24. In conclusion, we are waiving: (1) Section 15.503(d) which would require the 3d-Radar 
+transmitter to have a fractional bandwidth equal to or greater than 0.20 or UWB bandwidth equal to or 
+greater than 500 MHz; and (2) the requirement in Section 15.521(d) which directs that the emissions from 
+the 3d-Radar device to be measured with the transmitter operating with the stepping function stopped.  
+This waiver is subject to the following conditions:
+· The 3d-Radar device shall be certified by the Commission.  The device shall operate with 
+stepped frequency modulation in 2 megahertz steps between 140 MHz and 3 GHz with a 
+scan/cycle rate of approximately 3 milliseconds.  The system may not use any single 
+frequency longer than 2 microseconds in any 3 millisecond period of time.
+· Measurements of emissions from the 3d-Radar device shall be conducted with the stepping 
+function active.
+· The 3d-Radar device shall not be sold in any hand-held configurations.
+· The 3d-Radar device shall comply with all other technical and operational requirements 
+applicable to UWB GPR devices under Part 15, Subpart F of the Commission’s rules.
+· The 3d-Radar device shall implement frequency notching to avoid placing intentional 
+transmissions in the bands 608-614 MHz, 1400-1427 MHz, 1660.5-1668.4 MHz, and 2690-
+2700 MHz. 
+  
+40 We specifically note that our reliance on the MBOA-SIG Waiver decision in this instance is only relative to the 
+measurement procedure in Section 15.521(d).
+41 See Annan Comments at p. 2.
+Federal Communications Commission DA 12-41 
+10
+V. ORDERING CLAUSES
+25. Accordingly, pursuant to authority in Sections 0.31, 0.241, and 1.3 of the Commission's 
+rules, 47 C.F.R. §§ 0.21, 0.241, and 1.3, and Sections 4(i), 302, 303(e), and 303(r) of the 
+Communications Act of 1934, as amended, 47 U.S.C. §§ 154(i), 302, 303(e), and 303(r), IT IS 
+ORDERED that the Request for Waiver filed by Curtiss-Wright Controls Inc., IS GRANTED, 
+consistent with the terms of this Order.  This action is effective upon release of this Order.
+FEDERAL COMMUNICATIONS COMMISSION
+Julius P. Knapp
+Chief, Office of Engineering and Technology

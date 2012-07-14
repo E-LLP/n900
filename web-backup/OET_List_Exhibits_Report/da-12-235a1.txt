@@ -1,0 +1,44 @@
+PUBLIC NOTICE
+Federal Communications Commission
+445 12th St., S.W.
+Washington, D.C. 20554
+News Media Information 202 / 418-0500
+Internet: http://www.fcc.gov
+TTY: 1-888-835-5322
+DA 12-235
+February 16, 2012
+FCC Announces Commencement of 2012 Measuring Broadband America 
+Performance Study of Residential Broadband Service in the United States
+On August 2, 2011 the FCC released the first Measuring Broadband America Report, which 
+presented the results of the first nationwide study of broadband performance to the home.1 The Report was 
+the culmination of a year-long effort involving the cooperation of Internet Service Providers (ISPs) 
+representing 86% of all residential wireline broadband consumers in the United States to measure broadband 
+performance to the homes of a representative sampling of thousands of volunteers.  More than 100 million 
+individual tests were performed on each volunteer’s broadband service. The Report established for the first 
+time that the majority of residential wireline broadband consumers are receiving performance close to the 
+level advertised by their providers.  It also identified ISPs that fell short of advertised speeds. A few months 
+after the report was released, the FCC noticed a significant improvement by a major ISP and announced the 
+results in a blog post.  The project’s success was the result of a collaborative effort among the FCC, 
+SamKnows Ltd., some 9,000 panel volunteers, and 22 other stakeholders that included academic researchers 
+from MIT and Georgia Tech, technology vendors and consumer groups, and 13 ISPs, including AT&T, 
+Cablevision, CenturyLink, Charter, Comcast, Cox, Frontier, Mediacom, Insight, Qwest, TimeWarner, 
+Verizon, and Windstream.  
+The FCC is continuing its efforts to improve the availability of information describing broadband 
+performance in the U.S.  Performance information is only useful to consumers if it is accurate and up-to-
+date.  A key part of the FCC’s Consumer Empowerment Agenda will be expanding the Measuring 
+Broadband project this year, including publishing two reports in 2012, and expanding the study to include 
+more technologies, extending the study into new regions of the country, and planning to publish more kinds 
+of data. The first round of testing will begin in March.  The FCC will continue its commitment to test and 
+report broadband information transparently, and in collaboration with key stakeholders.
+Interested consumers are again encouraged to volunteer to be a part of this important effort to 
+provide detailed and accurate measurements of consumer broadband performance on a national level.  Once 
+again, the Measuring Broadband project will develop real data to evaluate ISP broadband performance 
+claims and provide consumers with the ability to compare ISPs in meaningful ways. Detailed instructions on 
+participation and a signup page are available at http://fcc.us/testisp.
+  
+1 The Report, technical appendix, and all data collected are publicly available at http://www.fcc.gov/measuring-broadband-america.
+2
+Questions regarding this Public Notice may be directed to Walter Johnston at (202) 418-0807 or 
+James Miller at (202) 418-7351.
+By the Chief, Office of Engineering and Technology.
+-FCC-

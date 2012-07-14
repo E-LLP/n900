@@ -1,0 +1,194 @@
+
+
+
+ 
+
+
+
+
+
+ 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <style type="text/css" >
+      @import url("css/fcc.css");  
+      @import url("css/mydisplaytag.css");
+      @import url("css/ui.datepicker.css");
+    </style>              
+        <title>EDOCS Page</title>
+
+    </head>
+    <body> 
+    
+    <!--====================== TOP BANNER TABLES ============================-->
+<TABLE class="fulltable" CELLPADDING="0" CELLSPACING="0">
+<TR>
+
+<!--===================== FCC LOGO AND NAME =============================-->
+<TD BGCOLOR="#000099" VALIGN="TOP" width="165">
+<A HREF="http://www.fcc.gov/"><IMG SRC="http://www.fcc.gov/images/fcclogowords.gif" WIDTH="165" HEIGHT="56" BORDER="0" ALT="FCC Logo - Return to the FCC Home Page"></A>
+</TD>
+<!--==== RIGHT CELL FOR EMBEDDED TABLE OF LINKS AND MONTAGE =========-->
+<TD width="10%" ALIGN="right" VALIGN="BOTTOM" BGCOLOR="#000099">&nbsp;</TD>
+<TD width="90%" ALIGN="right" VALIGN="BOTTOM" BGCOLOR="#000099">
+    
+</TD>
+</TR></TABLE>
+<!--====================== GOOGLE ANALYTICS SNIPPET============================-->
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(function() {_gat._anonymizeIp();});
+_gaq.push(['_setAccount', 'UA-16888309-1']);
+_gaq.push(['_setDomainName','.fcc.gov']);
+_gaq.push(['_trackPageview']);
+(function() {
+ var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--====================== GOOGLE ANALYTICS MAILTO, DOWNLOAD AND EXTERNAL LINK TRACKING SNIPPET ============================-->
+
+<script type="text/javascript">
+
+	//Conditionally load jQuery
+	if (typeof jQuery == 'undefined') {
+		var jQ = document.createElement('script');
+		jQ.type = 'text/javascript';
+		jQ.onload = eventTracking;
+                jQ.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'www.fcc.gov/js/jquery.js';
+		document.body.appendChild(jQ);
+	} else {
+		eventTracking();
+	}
+
+	function eventTracking() {
+
+		jQuery(document).ready(function($) {
+
+			//Mailto tracking code
+	        $('a[href^="mailto\:"]').click(function() {
+	        	_gaq.push(['_trackEvent','Email', 'Click', $(this).attr('href') ]);
+	        });
+
+			//Download Tracking Code
+	        $('a[href$="zip"],a[href$="pdf"],a[href$="doc"],a[href$="docx"],a[href$="xls"],a[href$="xlsx"],a[href$="ppt"],a[href$="pptx"],a[href$="txt"],a[href$="csv"]').click(function() {
+	        	var u = $(this).attr('href'); _gaq.push(['_trackEvent','Download', u.match(/[^.]+$/), u ]);
+	        });
+
+			//External link tracking code for old site
+	        $('a[href^="http"]').click(function(){
+	        	if (this.hostname != location.hostname && !this.hostname.match(/\fcc\.gov$/i) )
+	        	_gaq.push(['_trackEvent', 'External Link', 'Click', $(this).attr('href') ]);
+	        });
+
+		});
+	}
+</script>
+
+
+    
+    <table class="tableWithOutBorder">
+            <tr>
+                <td class="sideMenu"> 
+    <table class="formattable">
+        <tr>
+            <td>
+                        <a href="/edocs_public/edocsLink.do;jsessionid=PyBJngGnPZgZkScJsJpCyR6C71JvylHXGWQlVJScrfkDcvTjmdGP!1292998705!-1061995742?mode=basic&amp;type=n" title="EDOCS Basic Search">EDOCS Home</a>
+      
+            </td>
+        </tr>         
+        <tr>
+            <td>
+                
+                      
+                
+                        <a href="/edocs_public/edocsLink.do;jsessionid=PyBJngGnPZgZkScJsJpCyR6C71JvylHXGWQlVJScrfkDcvTjmdGP!1292998705!-1061995742?mode=advance&amp;type=n" title="EDOCS Advance search">EDOCS Advanced</a>     
+                 
+                  
+            </td>
+        </tr>                   
+        <tr>
+            <td>
+
+                
+                      
+                
+                        <a href="/edocs_public/edocsLink.do;jsessionid=PyBJngGnPZgZkScJsJpCyR6C71JvylHXGWQlVJScrfkDcvTjmdGP!1292998705!-1061995742?mode=definitions" title="EDOCS Search Fields Definitions">Definitions</a>
+                 
+                 
+            </td>
+        </tr>          
+        <tr>
+            <td>
+                
+                      
+                
+                        <a href="/edocs_public/edocsLink.do;jsessionid=PyBJngGnPZgZkScJsJpCyR6C71JvylHXGWQlVJScrfkDcvTjmdGP!1292998705!-1061995742?mode=instructions" title="EDOCS Search Instructions">Search Tips</a>  
+                              </td>
+        </tr>   
+        
+        <tr>
+            <td>
+                
+                      
+                
+                        <a href="/edocs_public/edocsLink.do;jsessionid=PyBJngGnPZgZkScJsJpCyR6C71JvylHXGWQlVJScrfkDcvTjmdGP!1292998705!-1061995742?mode=faqs" title="EDOCS Search FAQ">FAQ</a>
+                  
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="/edocs_public/edocsLink.do;jsessionid=PyBJngGnPZgZkScJsJpCyR6C71JvylHXGWQlVJScrfkDcvTjmdGP!1292998705!-1061995742?mode=digest" title="FCC Daily Digest">Daily Digest</a>
+
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <a href="/edocs_public/releasedToday.do;jsessionid=PyBJngGnPZgZkScJsJpCyR6C71JvylHXGWQlVJScrfkDcvTjmdGP!1292998705!-1061995742?" title="Documents Released today">Today's Releases</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <A  HREF="http://www.fcc.gov/Document_Indexes/" title="Document Indexes">Document Indexes</A>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <b><br>Contact Information</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                (202) 418-0265
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <A  HREF="mailto:EDOCSHelp@fcc.gov">EDOCSHelp@fcc.gov </A>
+            </td>
+        </tr>        
+
+    </table>
+</td>
+                <td class="mainData">    <table class="tableWithBorder">
+        <tr>
+            <td style="color:red;font-size: 14px;"><br><b><font color="red"> Requested resource is invalid. Please check the URL. If the problems persist, please e-mail <A HREF=mailto:EDOCSHelp@fcc.gov> EdocsHelp </A> for assistance.   </font></b></td>
+        </tr>
+
+    </table> 
+</td>
+            </tr>                
+    </table>
+        
+    </body>
+</html>
+

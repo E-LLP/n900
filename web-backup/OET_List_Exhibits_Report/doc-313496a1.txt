@@ -1,0 +1,109 @@
+PAGE  - 1 -
+PUBLIC NOTICE
+FEDERAL COMMUNICATIONS COMMISSION
+455 12TH STREET, S.W.
+WASHINGTON, D.C. 20554
+News media information 202/418-0500 Fax-On-Demand 202/418-2830     
+Released: April 11, 2012
+Report No. 442                EXPERIMENTAL ACTIONS  
+The Commission, by its Office of Engineering and Technology, Experimental Licensing Branch, granted 
+the following experimental applications during the period from 2/1/12 to 3/1/12:
+· WF2XTR     SOUTH CENTRAL LOUISIANA TECHNICAL COLLEGE, YOUNG MEMORIAL CAMPUS    
+0175-EX-PL-2011
+New experimental to operate in 1710-4000 kHz, 2000-27500 kHz and 156-158 MHz for testing of Global Maritime 
+Distress and Safety Systems.
+Fixed:  Morgan City (La Salle), LA
+· WG2XCK     NORTHWESTERN CORPORATION    0018-EX-PL-2012
+New experimental to operate in 174-216 MHz for testing smart grid application in white space spectrum.
+Fixed & Mobile:  Philipsburg (Granite), MT
+· WG2XCF     UNIVERSITY OF NOTRE DAME DU LAC    0012-EX-PL-2012
+New experimental to operate in 460 – 500 MHz, 902 – 928 MHz, 2.402 - 2.483 GHz, 5.725 - 5.875 GHz and 24.00 -
+24.25 GHz for waveform research testing.
+Fixed:  Notre Dame (St. Joseph), IN
+· WG2XBA     QUALCOMM INCORPORATED    0646-EX-PL-2011
+New experimental to operate in 536 – 548 MHz, 578 – 590 MHz and 656 – 668 MHz for testing 
+3G and next-generation mobile technologies.
+Mobile:  2 mile radius of 5775 Morehouse Drive, San Diego, CA 
+· WF2XWU     LOCKHEED MARTIN CORPORATION    0370-EX-PL-2011
+New experimental to operate on 1047.619048, 1063.492063 and 1111.111111 MHz to perform calibrated 
+measurements of the RADAR CROSS-SECTION (RCS).
+Fixed & Mobile:  Bithlo (Orange), FL
+· WF2XZF     LOCKHEED MARTIN CORPORATION    0539-EX-PL-2011
+New experimental to operate in 1625.50 - 1660.50 MHz for testing of BATTLE FORCE TRACKER 2 (BFT2) 
+transceivers using Inmarsat satellites.
+Mobile:  Syracuse (Onondaga), NY
+· WG2XBN     LOCKHEED MARTIN CORPORATION    0015-EX-PL-2012
+New experimental to operate on 1676 MHz, 1678 MHz, 1680 MHz and 1682 MHz to test and verify the proper 
+operation of the MKIIA Radiosonde.
+Mobile:  Marion, MA
+· WG2XAQ     EAGLE PROJECT CORP.    0561-EX-PL-2011
+New experimental to operate on 1792 MHz for testing technology for government contract.
+Fixed & Mobile:  McLean (Fairfax), VA
+PAGE  - 2 -
+· WG2XDC     THE MITRE CORPORATION    0040-EX-PL-2012
+New experimental to operate in 1915 – 1920 MHz to develop network routing algorithms working on peer-to-peer 
+prototype radios
+Fixed & Mobile   Bedford (Middlesex), MA; McLean (Fairfax), VA
+· WF2XXB     LOCKHEED MARTIN CORPORATION    0383-EX-PL-2011
+New experimental to operate on various frequencies between 2000 MHz and 25330.708661 MHz to perform testing 
+for the Radar Cross-Section (RCS)
+Fixed:  Bithlo (Orange), FL
+· WG2XAJ     PRAXIS ENGINEERING TECHNOLOGIES, INC.    0483-EX-PL-2011
+New experimental to operate in 2315-2320 MHz for equipment testing.
+Fixed:  Linthicum Heights (Anne Arundel), MD
+· WG2XCV     THE BOEING COMPANY    0071-EX-PL-2012
+New experimental to operate in 2400 – 2483 MHz to demonstrate the control of multi-UAV.
+Fixed & Mobile:  China Lake (Kern), CA
+· WG2XDH     NEWNET COMMUNICATION TECHNOLOGIES, LLC.    0063-EX-PL-2012
+New experimental to operate in 2500-2655 MHz to test and demonstrate prototype devices under development.
+Mobile:  Arlington Heights, IL
+· WG2XCG     CLEMSON UNIVERSITY    0029-EX-PL-2012
+New experimental to operate in 2502-2535 MHz for WiMax testing.
+Fixed:  Greenville (Greenville), SC; Clemson (Pickens), SC
+· WG2XBY     THALES USA INC    0035-EX-PL-2012
+New experimental to operate on 2575 MHz for demo testing
+Fixed:  Las Vegas (Clark), NV
+· WG2XBX     ECE DEPARTMENT, DREXEL UNIVERSITY    0036-EX-PL-2012
+New experimental to operate on 2590 MHz for testing WiMAX
+Fixed:  Philadelphia (Philadelphia), PA
+· WG2XCS     NORTHROP GRUMMAN SYSTEMS CORPORATION    0030-EX-PL-2012
+New experimental to operate in 3100-3500 MHz for tests and demonstrations of newly-designed equipment being 
+developed for sale to the U.S. military.
+Fixed:  Linthicum and Hanover (Anne Arundel), MD
+· WG2XAX     BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.    
+0630-EX-PL-2011
+New experimental to operate in 4400 - 4990 MHz, 14.50 - 14.602 GHz, 14.61 - 15.242 GHz and 15.25 - 15.35 GHz 
+for testing antennas.
+Mobile:  Temporary Fixed (Ground), Merrimack, NH
+· WG2XAP     RAYTHEON NETWORK CENTRIC SYSTEMS    0626-EX-PL-2011
+New experimental to operate in 4900 – 4990 MHz for testing a mobile surveillance system 
+Fixed & Mobile:  La Cruces (Dona Ana), NM
+· WG2XBP     CBF NETWORKS    0019-EX-PL-2012
+New experimental to operate in 5250 - 5350 MHz and 5725 - 5875 MHz for equipment testing.
+Fixed & Mobile: San Jose (Santa Clara), CA
+· WG2XDN     TELEPHONICS CORPORATION    0090-EX-PL-2012
+New experimental to operate on 8850 MHz for test, development, and demonstration of ground surveillance radar.
+Fixed & Mobile:  Farmingdale (Suffolk), NY; Tucson (Pima), AZ
+PAGE  - 3 -
+· WF2XWP     LOCKHEED MARTIN CORPORATION    0374-EX-PL-2011
+New experimental to operate on various frequencies between 9003.670588 MHz and 9196.551181 MHz to perform 
+testing for the Radar Cross-Section (RCS).
+Fixed & Mobile:  Bithlo (Orange), FL
+· WG2XAM     RAYTHEON NETWORK CENTRIC SYSTEMS    0603-EX-PL-2011
+New experimental to operate in 10250 – 10500 MHz for testing a mobile surveillance system 
+Mobile:  Las Cruces, NM
+· WG2XCL     THE BOEING COMPANY    0061-EX-PL-2012
+New experimental to operate in 12 – 18 GHz and 26.50 – 40 GHz for testing Ku and Ka band transmit/receive 
+antenna performance.
+Fixed:  Renton (King), WA
+· WG2XCM     THE BOEING COMPANY    0062-EX-PL-2012
+New experimental to operate in 12 – 18 GHz and 26.50 – 40 GHz for testing Ku and Ka band transmit/receive 
+antenna performance.
+Fixed:  Kent (King), WA
+· WG2XBR     GENERAL DYNAMICS C4 SYSTEMS    0613-EX-PL-2011
+New experimental to operate in 16.2 - 17.2 GHz to build and operate a prototype border protection system 
+demonstration site to support US Government contract pursuits.
+Fixed:  Mesa (Maricopa), AZ
+· WG2XBC     COBHAM DEFENSE ELECTRONIC SYSTEMS CORPORATION    0585-EX-PL-2011
+New experimental to operate on 24 GHz for testing for government contract.
+Mobile:  Within 1.61 km Radius of 1001 Pawtucket Boulevard, Lowell, MA 

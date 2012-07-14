@@ -1,0 +1,343 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		
+				<meta name="keywords" content="N900 Hardware Hacking,N900 Hardware Hacking/serial dump,N900 Hardware Schematic,N900 Hardware USB,N900 Software Kernel Modules,Nokia N900,Rambo,Jacekowski">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.maemo.org/opensearch_desc.php" title="maemo.org wiki (English)">
+<link rel="alternate" type="application/rss+xml" title="maemo.org wiki RSS Feed" href="http://wiki.maemo.org/index.php?title=Special:Recentchanges&amp;feed=rss">
+<link rel="alternate" type="application/atom+xml" title="maemo.org wiki Atom Feed" href="http://wiki.maemo.org/index.php?title=Special:Recentchanges&amp;feed=atom">
+		<title>N900 Hardware Hacking - maemo.org wiki</title>
+        
+        
+        <!--[if lte IE 6]>
+            <link rel="stylesheet" href="http://static.maemo.org/style_maemo2009/css/ie.css" type="text/css" media="screen">
+        <![endif]-->
+
+
+        
+        
+		
+		
+		<meta http-equiv="imagetoolbar" content="no"><!--[endif]---->
+		
+		
+                
+		
+		<!-- Head Scripts -->
+		
+		
+		
+	
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body class="mediawiki ns-0 ltr page-N900_Hardware_Hacking">
+        <div id="container">
+            <div id="header">
+                <div id="logo">
+                                        <a href="http://maemo.org/"><img src="logo.jpg" title="Maemo.org" alt="Maemo.org"></a>
+                </div><!-- logo -->
+
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://wiki.maemo.org/index.php?title=Special:Userlogin&amp;returnto=N900_Hardware_Hacking" title="You are encouraged to log in, it is not mandatory however. [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+            </div>
+        </div>
+            <div id="navigation">
+                <div id="navigation-left-wrapper">
+
+                    <div id="navigation-right-wrapper">
+
+                        <ul>
+                            <li><a href="http://maemo.org/intro/">Intro</a></li>
+                            <li><a href="http://maemo.org/downloads/">Downloads</a></li>
+                            <li class="selected"><a href="http://maemo.org/community/">Community</a></li>
+                            <li><a href="http://maemo.org/development/">Development</a></li>
+                            <li><a href="http://maemo.org/news/">News</a></li>
+                            <li><a href="http://talk.maemo.org/">TALK</a></li>
+                        </ul>
+
+
+		<div id="search">
+			<form action="http://wiki.maemo.org/Special:Search" id="searchform">
+				<input id="searchInput" name="search" title="Search maemo.org wiki [f]" accesskey="f" value="" type="text">
+				<input name="go" class="submit" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists" type="submit">&nbsp;
+<!--				<input type='submit' name="fulltext" class="submit" id="mw-searchButton" value="Go" title="Search the pages for this text" /> &nbsp; -->
+			</form>
+		</div>
+
+
+                    </div>
+                </div>
+            </div><!-- /navigation -->
+            <div id="breadcrumb"></div>
+            <div id="content">
+                        
+
+<!--	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content2"> 
+
+
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">N900 Hardware Hacking</h1>
+		<div id="bodyContent">
+-->
+
+      
+<!-- sidebar --> 
+                  <div id="sidebar">
+		<div id="nav-sub">
+
+		<div class="portlet" id="p-navigation">
+		<h3>Navigation</h3>
+			<ul>
+				<li id="n-mainpage"><a href="http://wiki.maemo.org/Main_Page" title="Visit the Main Page [z]" accesskey="z">Main Page</a></li>
+				<li id="n-recentchanges"><a href="http://wiki.maemo.org/Special:Recentchanges" title="The list of recent changes in the wiki. [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="http://wiki.maemo.org/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="http://wiki.maemo.org/Help:Contents" title="The place to find out.">Help</a></li>
+				<li id="n-advancedsearch"><a href="http://wiki.maemo.org/Special:Search">Advanced search</a></li>
+			</ul>
+	</div>
+	
+
+
+	<div id="p-cactions" class="portlet">
+		<h3>Views</h3>
+			<ul class="fi_protie_navigation">
+					 <li id="ca-nstab-main" class="selected"><a href="http://wiki.maemo.org/N900_Hardware_Hacking" title="View the content page [c]" accesskey="c">Page</a></li>
+					 <li id="ca-talk" class="new"><a href="http://wiki.maemo.org/index.php?title=Talk:N900_Hardware_Hacking&amp;action=edit" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+					 <li id="ca-edit"><a href="http://wiki.maemo.org/index.php?title=N900_Hardware_Hacking&amp;action=edit" title="You can edit this page. Please use the preview button before saving. [e]" accesskey="e">Edit</a></li>
+					 <li id="ca-history"><a href="http://wiki.maemo.org/index.php?title=N900_Hardware_Hacking&amp;action=history" title="Past versions of this page. [h]" accesskey="h">History</a></li>
+				</ul>
+	</div>
+
+
+    
+		</div>
+
+               </div>
+<!-- sidebar --> 
+<div id="main">
+<div id="main-wrapper">
+
+			            <h1 class="firstHeading">N900 Hardware Hacking</h1>
+			<!-- start content -->
+			<p>This page outlines what is known about the hardware of the <a href="http://wiki.maemo.org/Nokia_N900" title="Nokia N900">N900</a>, and possible modifications or additions to it.
+</p><p>Much of the information on this page may be incorrect, and may cause damage to your N900 if you attempt any of it.
+</p>
+<table id="toc" class="toc" summary="Contents"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#Hacks"><span class="tocnumber">1</span> <span class="toctext">Hacks</span></a></li>
+<li class="toclevel-1"><a href="#Additional_Hardware"><span class="tocnumber">2</span> <span class="toctext">Additional Hardware</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Compass"><span class="tocnumber">2.1</span> <span class="toctext">Compass</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Gyroscope"><span class="tocnumber">3</span> <span class="toctext">Gyroscope</span></a></li>
+<li class="toclevel-1"><a href="#UART_to_I2C_bridge"><span class="tocnumber">4</span> <span class="toctext">UART to I2C bridge</span></a></li>
+<li class="toclevel-1"><a href="#MMC_card"><span class="tocnumber">5</span> <span class="toctext">MMC card</span></a></li>
+<li class="toclevel-1"><a href="#Debug_ports"><span class="tocnumber">6</span> <span class="toctext">Debug ports</span></a></li>
+<li class="toclevel-1"><a href="#Modifications"><span class="tocnumber">7</span> <span class="toctext">Modifications</span></a>
+<ul>
+<li class="toclevel-2"><a href="#USB"><span class="tocnumber">7.1</span> <span class="toctext">USB</span></a></li>
+<li class="toclevel-2"><a href="#External_antennas"><span class="tocnumber">7.2</span> <span class="toctext">External antennas</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Resources"><span class="tocnumber">8</span> <span class="toctext">Resources</span></a></li>
+<li class="toclevel-1"><a href="#Vendors"><span class="tocnumber">9</span> <span class="toctext">Vendors</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<a name="Hacks"></a><h2><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=N900_Hardware_Hacking&amp;action=edit&amp;section=1" title="Edit section: Hacks">edit</a>]</span> <span class="mw-headline">Hacks</span></h2>
+<ul><li> Case
+</li><li> Camera
+</li><li> Wifi
+</li><li> Bluetooth
+</li><li> Battery
+</li><li> Audio
+</li><li> Video
+</li></ul>
+<a name="Additional_Hardware"></a><h2><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=N900_Hardware_Hacking&amp;action=edit&amp;section=2" title="Edit section: Additional Hardware">edit</a>]</span> <span class="mw-headline">Additional Hardware</span></h2>
+<a name="Compass"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=N900_Hardware_Hacking&amp;action=edit&amp;section=3" title="Edit section: Compass">edit</a>]</span> <span class="mw-headline">Compass</span></h3>
+<p>The <a href="http://search.digikey.com/scripts/DkSearch/dksus.dll?Cat=1967220&amp;k=HMC5843" class="external text" title="http://search.digikey.com/scripts/DkSearch/dksus.dll?Cat=1967220&amp;k=HMC5843" rel="nofollow">HMC5843</a> compass from honeywell seems as if it would be a simple addition, if it could be wired onto a I2C bus.
+</p><p>There is also miniSD <a href="http://www.aichi-mi.com/" class="external text" title="http://www.aichi-mi.com/" rel="nofollow">AMI603SD</a> 6 degree sensor available, if it is possible to wire that to microSD slot. The same manufacturer is also providing small magnetic sensors AMI304 to i2c bus with DIP8 so it would be easier to solder with capacitors but there is not much room inside N900.
+</p><p>I2C bus can have chained up to 112 slave devices. Only problem is to get those pins available maybe de-soldering some component first... also one free GPIO/interrupt line would be good thing to have. There seems to be some pads available for I2C when looking from <a href="http://wiki.maemo.org/N900_Hardware_Schematic" title="N900 Hardware Schematic">N900_Hardware_Schematic</a>, J6183 and J6184 in H7 Top layout near FM transmitter. Most probably too small to solder by hand.
+There seems to be also one interrupt line used by transmitter in J6181. 
+</p><p>If not needing the FM TX it could be possible remove whole component and replace it with compass.
+</p>
+<a name="Gyroscope"></a><h2><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=N900_Hardware_Hacking&amp;action=edit&amp;section=4" title="Edit section: Gyroscope">edit</a>]</span> <span class="mw-headline">Gyroscope</span></h2>
+<p>The forthcoming invensense <a href="http://invensense.com/mems/gyro/itg3200.html" class="external text" title="http://invensense.com/mems/gyro/itg3200.html" rel="nofollow">itg3200</a> is a gyroscope chip that could similarly be connected to a I2C bus.
+</p>
+<a name="UART_to_I2C_bridge"></a><h2><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=N900_Hardware_Hacking&amp;action=edit&amp;section=5" title="Edit section: UART to I2C bridge">edit</a>]</span> <span class="mw-headline">UART to I2C bridge</span></h2>
+<p>There is also available some bridge chips <a href="http://ics.nxp.com/products/bridges/uart.i2c.master.gpio/" class="external text" title="http://ics.nxp.com/products/bridges/uart.i2c.master.gpio/" rel="nofollow">UARTtoI2C</a> that can be used over UART. Most likely UART pins can be found in debug ports.
+</p>
+<a name="MMC_card"></a><h2><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=N900_Hardware_Hacking&amp;action=edit&amp;section=6" title="Edit section: MMC card">edit</a>]</span> <span class="mw-headline">MMC card</span></h2>
+<p>The MMC controller pins are convertable to GPIO pins. See page 3 top-left of <a href="http://wiki.maemo.org/N900_Hardware_Schematic" title="N900 Hardware Schematic">N900 Hardware Schematic</a>, and page 691 of spruf98.pdf.
+This means that there are 6 available easily contactable GPIO pins, static protected. (see same page of schematic) along with a 3.3V possibly variable power supply.
+</p>
+<a name="Debug_ports"></a><h2><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=N900_Hardware_Hacking&amp;action=edit&amp;section=7" title="Edit section: Debug ports">edit</a>]</span> <span class="mw-headline">Debug ports</span></h2>
+<p>Under the battery are several groups of test pad connectors. With the camera on the left, and the battery removed, these are numbered left-to-right then top-down for the purposes of this page, with pad 1 of a connector at its top left.
+</p><p>Probable connections are anything that will enable full tests and bootstrap of of the phone without a case.
+</p><p>Obvious candidates are <a href="http://en.wikipedia.org/wiki/JTAG" class="extiw" title="wikipedia:JTAG">JTAG</a> for flashing any bootloader, and USB for flashing the device. Serial ports, I2C, SPI are also possible.
+</p><p>The third serial port / UART is reportedly connected to these ports, so it is accessible.
+</p><p>There are 4 groups:
+</p>
+<ul><li> Group1 - 2 pad connector to the middle left above the battery connector (J5300/1).
+<ul><li>This is labeled J5300 and J5301 on the schematic.  J5300 is USB D+, J5301 is USB D-.
+</li></ul>
+</li><li> Group2 14 pad connector in two parts (J2000 (J2060+J2061)).
+<ul><li> (a) - 6 pad connector.
+</li><li> (b) - 8 pad connector 
+</li></ul>
+</li><li> Group3 - 7 pads (J5602).
+</li><li> Group4 - 7 pads.
+</li></ul>
+<p>Here are the pad names from the <a href="http://wiki.maemo.org/N900_Hardware_Schematic" title="N900 Hardware Schematic">schematic</a> linked in the resources section, using same logic for "+" vs "o"
+</p>
+<pre>+ J5301
++ J5300
+
+            J2000            J2060
+  J2062 +   o   o       o   o   o   o  
+          o   o   o       o   o   o   + J2061
+
+            J5602       J3109 J3111 J3113 J3115
+        o   o   o   o    +   +   +   +
+          o   o   o        +   +   +
+                        J3110 J3112 J3114
+</pre>
+<p>The plus-sign (supposedly) signifies invidual pad and group of lowercase "o" pads is a port (or similar).
+</p><p>According to <a href="http://wiki.maemo.org/index.php?title=User:Rambo&amp;action=edit" class="new" title="User:Rambo">my</a> measurements with DMM (<a href="http://www.tek.com/products/digital-multimeter/" class="external text" title="http://www.tek.com/products/digital-multimeter/" rel="nofollow">Digital Multimeter</a>) the following pads are <a href="http://en.wikipedia.org/wiki/Ground_%28electricity%29#Electronics" class="extiw" title="wikipedia:Ground_(electricity)">ground</a> (counting from top-left and always going left-to-right in case of group of pads): first of J2000, last of J2060, first of J5602 and J3115.
+</p><p><a href="http://wiki.maemo.org/N900_Hardware_Schematic" title="N900 Hardware Schematic">Schematic</a> did not reveal where these pads might actually be connected to.
+</p><p>According to <a href="http://wiki.maemo.org/index.php?title=User:Jacekowski&amp;action=edit" class="new" title="User:Jacekowski">jacekowskis</a> <a href="http://img36.imageshack.us/i/teki.png/" class="external text" title="http://img36.imageshack.us/i/teki.png/" rel="nofollow">measurements</a> J2000 is serial console, 
+</p>
+<table class="ambox ambox-delete" style="">
+<tbody><tr>
+<td class="ambox-image"><div style="width: 52px;">
+  <a href="http://wiki.maemo.org/Image:Ambox_speedy_deletion.png" class="image" title="Image:Ambox_speedy_deletion.png"><img alt="Image:Ambox_speedy_deletion.png" src="ambox_speedy_deletion.png" border="0" height="40" width="40"></a></div></td>
+<td class="ambox-text" style=""> The serial port is NO RS232, it's a low-voltage direct UART IO from OMAP SoC. It's specified for 2.8V and even 3.3V seem to destroy it. </td>
+</tr>
+</tbody></table>
+<pre>J2000
+pin 1&nbsp;:: GND
+pin 2&nbsp;:: RX, according to r00t
+pin 3&nbsp;:: USB VBUS 5V
+pin 4&nbsp;:: &lt;unknown&gt;
+pin 5&nbsp;:: TX (confirmed by jacekowski (<a href="http://wiki.maemo.org/N900_Hardware_Hacking/serial_dump" title="N900 Hardware Hacking/serial dump">115200 8-N-1</a> ~2.6 V, connected to 1st UART in omap - <code>/dev/ttyS0</code> in Linux), and r00t (see below))
+</pre>
+<p><br>
+</p>
+<pre>+ J5301
++ J5300
+
+            J2000            J2060
+  J2062 +   GND RX       1   o   o   4  
+          5V  o   TX       5   o   7   + J2061
+
+            J5602       J3109 J3111 J3113 J3115
+        1   o   o   4    +   +   +   +
+          5   o   7        +   +   +
+                        J3110 J3112 J3114
+</pre>
+<p>(confirmed by &gt;&gt;&lt;r00t|home&gt; anyway... here's the actual TxD now: <a href="img_9246.jpg" class="external free" title="http://www.constancy.org/~r00t/IMG_9246.JPG" rel="nofollow">http://www.constancy.org/~r00t/IMG_9246.JPG</a> &lt;&lt;
+<a href="http://wiki.maemo.org/Image:Testpoints_tx.jpg" class="image" title="Image:testpoints_tx.jpg"><img alt="Image:testpoints_tx.jpg" src="testpoints_tx.jpg" border="0" height="648" width="864"></a>
+</p><p><br>
+</p><p>&gt;&gt;&lt;r00t|home&gt; &lt;r00t|home&gt; this is serial loopback: <a href="img_9251.jpg" class="external free" title="http://www.constancy.org/~r00t/IMG_9251.JPG" rel="nofollow">http://www.constancy.org/~r00t/IMG_9251.JPG</a>&lt;&lt;)
+</p><p>According to <a href="http://cpkb.org/wiki/Nokia_N900_pinout" class="external text" title="http://cpkb.org/wiki/Nokia_N900_pinout" rel="nofollow">CPKB</a> J2060 is <a href="http://www.embedtronics.com/nokia/fbus.html" class="external text" title="http://www.embedtronics.com/nokia/fbus.html" rel="nofollow">F/MBus port</a>.
+</p>
+<a name="Modifications"></a><h2><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=N900_Hardware_Hacking&amp;action=edit&amp;section=8" title="Edit section: Modifications">edit</a>]</span> <span class="mw-headline">Modifications</span></h2>
+<a name="USB"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=N900_Hardware_Hacking&amp;action=edit&amp;section=9" title="Edit section: USB">edit</a>]</span> <span class="mw-headline">USB</span></h3>
+<p>Further details can be found in the <a href="http://wiki.maemo.org/N900_Hardware_USB" title="N900 Hardware USB">USB on the N900</a> page.
+</p>
+<a name="External_antennas"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=N900_Hardware_Hacking&amp;action=edit&amp;section=10" title="Edit section: External antennas">edit</a>]</span> <span class="mw-headline">External antennas</span></h3>
+<p>On the N900 there are three <a href="http://en.wikipedia.org/wiki/Hirose_U.FL" class="external text" title="http://en.wikipedia.org/wiki/Hirose_U.FL" rel="nofollow">Hirose U.FL</a> connectors. These Hirose U.FL connectors were noted as test connectors however with the right equipment attached these can be used to increase the range of the said chips that has such connectors attached, if not to increase range it can be used possibly in other ways.
+</p><p>The three chips that has Hirose U.FL connectors attached are: GSM, GPS and Bluetooth/Wireless LAN. Note that the Bluetooth/Wireless LAN share the same Hirose U.FL connector.
+</p><p>However there are some restrictions imposed on accessing these test connectors. The first restriction is that it seems GSM's Hirose U.FL connector is the most easily accessible as it is on the underside of the N900's PCB (where one can see those solder pads when the battery is taken out of N900). Access to Bluetooth and Wireless LAN's as well as GPS receiver's Hirose U.FL are on the obverse side of that N900 PCB. 
+</p><p>The next set of limitation is to find appropriate adapters/converters and possibly attached with a cable as allows the converted adapter's head to be placed in a location where one prefers to have the head placed. Hirose U.FL is noted best to not be used in a manner that one connects and disconnects the cable constantly (~50-200 cycles) so that would leave the most appropriate solution is to get an adapter/converter. 
+</p><p>Most common adapter/converter would be a Hirose U.FL connector -&gt; <a href="http://en.wikipedia.org/wiki/RP-SMA#Reverse_polarity_SMA" class="external text" title="http://en.wikipedia.org/wiki/RP-SMA#Reverse_polarity_SMA" rel="nofollow">RP-SMA</a> as these can be commonly found in various setup, furthermore SMA connector itself would have a longer wear than Hirose U.FL itself along with the fact that there are many antennas available in the form of RP-SMA connector form. With the cable attached and if one prefers the connector to be attached to the back of the device, this highlights the issue noted beforehand with the connectors on the obverse side of the device.
+</p><p>Also it is worthy to note that the size (in diameter or thickness), grade and length of the cable would also impede on the quality of communication. Too thin of a cable would make the transmitted/received signal be more susceptible to other interference, the same goes with too long for a cable would also make it more susceptible. Too thick of a cable especially if used on the obverse side of the device makes the cable unable to be able to loop around to the other side of the PCB should the owner want the actual head of the connector to be on the same side as the GSM connector for instance.
+</p><p>The last set of limitation would be finding the right antennas that would be compatible with the said radio frequency bands. Both Bluetooth and Wireless LAN on N900 operate on the unlicensed ISM 2.4GHz band and antennas for them are abundant. GPS receiver operates on <a href="http://en.wikipedia.org/wiki/Global_Positioning_System#Satellite_frequencies" class="external text" title="http://en.wikipedia.org/wiki/Global_Positioning_System#Satellite_frequencies" rel="nofollow">1.2GHz-1.5GHz band</a> and antennas for them maybe more rare than antennas for Bluetooth/Wireless LAN. On similar level for availability the GSM antennas are equally less abundant than antennas for Bluetooth and Wireless LAN.
+</p><p>It is also noteworthy that the FM transmitter module relies on its own antenna, though it may also be possible with some soldering one maybe able to attach external antenna to the device.
+</p><p>For the locations of these Hirose U.FL connectors one will need the <a href="nokia_n900_rx-51_schematics.pdf" class="external text" title="http://mohammadag.xceleo.org/public/.private/Nokia_N900_RX-51_Schematics.pdf" rel="nofollow">Hardware Schematics</a>:
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width: 538px;"><a href="http://wiki.maemo.org/Image:Nokia_N900_front_internal-Hirose_u.fl_bluetooth_wireless_LAN_and_GPS_test_connectors.png" class="image" title="Front view"><img alt="Front view" src="nokia_n900_front_internal-hirose_u.fl_bluetooth_wireless_lan_and_gps_test_connectors.png" class="thumbimage" border="0" height="285" width="536"></a>  <div class="thumbcaption">Front view</div></div></div></div>
+<ul><li> Bluetooth and Wireless LAN: Page 16, ID: X6301, Sector: N11
+</li><li> GPS: Page 16, ID: X6200, Sector: H8
+</li></ul>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width: 531px;"><a href="http://wiki.maemo.org/Image:Nokia_N900_rear-internal-Hirose_u.fl_GSM_and_non_Hirose_u.fl_FM_transmitter_antenna_and_test_pads.png" class="image" title="Rear view"><img alt="Rear view" src="nokia_n900_rear-internal-hirose_u.fl_gsm_and_non_hirose_u.fl_fm_transmitter_antenna_and_test_pads.png" class="thumbimage" border="0" height="281" width="529"></a>  <div class="thumbcaption">Rear view</div></div></div></div>
+<ul><li> GSM: Page 17, ID: X7500, Sector: X10
+</li><li> FMTX (not a Hirose U.FL connector): Page 17: ID: X6189, Sector H1 (Test pads??: J6192, J6193)
+</li></ul>
+<a name="Resources"></a><h2><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=N900_Hardware_Hacking&amp;action=edit&amp;section=11" title="Edit section: Resources">edit</a>]</span> <span class="mw-headline">Resources</span></h2>
+<ul><li> N900 Service Manual - Level 1&amp;2: <a href="http://www.mediafire.com/?ndmjylkj4wk" class="external text" title="http://www.mediafire.com/?ndmjylkj4wk" rel="nofollow">MediaFire</a> or <a href="http://maemoworld.org/wp-content/uploads/2009/12/Nokia_N900_RX-51_Service_Manual_Service_Level_1_2" class="external text" title="http://maemoworld.org/wp-content/uploads/2009/12/Nokia_N900_RX-51_Service_Manual_Service_Level_1_2" rel="nofollow">Maemoworld</a>
+</li><li> N900 Service Manual - Level 3&amp;4: <a href="http://torrentpump.com/download/n900-rx-51-sm-l3-4-pdf-5228583" class="external text" title="http://torrentpump.com/download/n900-rx-51-sm-l3-4-pdf-5228583" rel="nofollow">Torrent</a>, <a href="http://rghost.net/679258" class="external text" title="http://rghost.net/679258" rel="nofollow">rghost</a> or <a href="n900_rx-51_sm_l3_4.pdf" class="external text" title="http://rs768.rapidshare.com/files/314490131/N900_RX-51_SM_L3_4.pdf" rel="nofollow">RapidShare</a>  
+</li><li> <a href="http://wiki.maemo.org/N900_Hardware_Schematic" title="N900 Hardware Schematic">N900 Hardware Schematic</a>
+</li><li> A teardown with <a href="http://techblog.gr/mobile/nokia-n900-teardown-08635/" class="external text" title="http://techblog.gr/mobile/nokia-n900-teardown-08635/" rel="nofollow">some pics</a> from Greece, and a video of reassembly.
+</li><li> Disassembly <a href="http://www.engadget.com/2009/12/04/nokia-n900-teardown-reveals-smartphone-semantics/" class="external text" title="http://www.engadget.com/2009/12/04/nokia-n900-teardown-reveals-smartphone-semantics/" rel="nofollow">video</a> from tehkseven.
+</li><li> N900 disassembled, super-highres scans by <a href="http://talk.maemo.org/member.php?u=35572" class="external text" title="http://talk.maemo.org/member.php?u=35572" rel="nofollow">Joerg_rw</a>: <a href="http://maemo.cloud-7.de/Gallery-N900-exploded/" class="external autonumber" title="http://maemo.cloud-7.de/Gallery-N900-exploded/" rel="nofollow">[1]</a>
+</li><li> <a href="https://fjallfoss.fcc.gov/oetcf/eas/reports/ViewExhibitReport.cfm?mode=Exhibits&amp;RequestTimeout=500&amp;calledFromFrame=N&amp;application_id=726569&amp;fcc_id=%27LJPRX-51X%27" class="external text" title="https://fjallfoss.fcc.gov/oetcf/eas/reports/ViewExhibitReport.cfm?mode=Exhibits&amp;RequestTimeout=500&amp;calledFromFrame=N&amp;application_id=726569&amp;fcc_id=%27LJPRX-51X%27" rel="nofollow">Internal photos</a> of N900 from FCC OET website (U.S. Govt. - May not be accessible for some people. Site does not allow hot linking, click on internal photos from the table)
+</li><li> <a href="http://wiki.maemo.org/N900_Software_Kernel_Modules" title="N900 Software Kernel Modules">N900 Software Kernel Modules</a>
+</li></ul>
+<a name="Vendors"></a><h2><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=N900_Hardware_Hacking&amp;action=edit&amp;section=12" title="Edit section: Vendors">edit</a>]</span> <span class="mw-headline">Vendors</span></h2>
+<ul><li> <a href="http://www.tessco.com/products/bmd/listItemsForSelectedCategory.do?bmdTypeId=007_26&amp;mfgName=007_26_NOKIA&amp;modelId=785585&amp;groupSubgroupId=SHOW_ALL" class="external text" title="http://www.tessco.com/products/bmd/listItemsForSelectedCategory.do?bmdTypeId=007_26&amp;mfgName=007_26_NOKIA&amp;modelId=785585&amp;groupSubgroupId=SHOW_ALL" rel="nofollow">Tessco</a> had a variety of n900 parts. Note that they sold Tessco Nokia parts <a href="http://www.tessco.com/yts/faq/faq/faq_28.html" class="external text" title="http://www.tessco.com/yts/faq/faq/faq_28.html" rel="nofollow">only to Authorized Service Centers</a>. (they currently do not and have stopped listing parts for Nokia phones.)
+</li><li> As always - <a href="http://shop.ebay.co.uk/pid-handy-fit/m.html?_nkw=n900" class="external text" title="http://shop.ebay.co.uk/pid-handy-fit/m.html?_nkw=n900" rel="nofollow">ebay</a> - this vendor has at the moment a stock of screens and various other original parts.
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 61/1000000
+Post-expand include size: 556/2097152 bytes
+Template argument size: 147/2097152 bytes
+#ifexist count: 0/100
+-->
+
+<!-- Saved in parser cache with key mediawiki-mw_:pcache:idhash:3274-0!1!0!!en!2 and timestamp 20120702190320 -->
+<div class="printfooter">
+Retrieved from "<a href="http://wiki.maemo.org/N900_Hardware_Hacking">http://wiki.maemo.org/N900_Hardware_Hacking</a>"</div>
+			<div id="catlinks"><p class="catlinks"><a href="http://wiki.maemo.org/Special:Categories" title="Special:Categories">Categories</a>: <span dir="ltr"><a href="http://wiki.maemo.org/Category:N900" title="Category:N900">N900</a></span> | <span dir="ltr"><a href="http://wiki.maemo.org/Category:N900_Hardware" title="Category:N900 Hardware">N900 Hardware</a></span></p></div>
+			<!-- end content -->
+
+
+
+                    </div><!-- /main-wrapper -->
+                </div><!-- /main --><!-- content end -->
+
+			<div class="visualClear"></div>
+
+        <ul style="clear: left; float: left; display: inline; list-style-type: none;">
+<li id="lastmod"> This page was last modified 18:02, 3 May 2012.</li><li id="viewcount">This page has been accessed 22,591 times.</li>      </ul>
+			<div class="visualClear"></div>
+
+
+			<div id="footer">
+                <div id="footer-wrapper-left">
+                    <div id="footer-wrapper-right">
+
+			<ul>
+                                <li class="first"><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">All Content CC</a></li>
+                <li><a href="http://maemo.org/legal/">Legal</a></li>
+                				<li class="privacy"><a href="http://wiki.maemo.org/maemo.org_wiki:Privacy_policy" title="maemo.org wiki:Privacy policy">Privacy policy</a></li>
+				<li class="about"><a href="http://wiki.maemo.org/maemo.org_wiki:About" title="maemo.org wiki:About">About maemo.org wiki</a></li>
+                <li>Powered by <a href="http://www.mediawiki.org/">MediaWiki</a></li>
+			</ul>
+                    </div>
+                </div>
+		</div>
+		
+	
+		
+</div>
+<!-- Served in 0.267 secs. -->
+
+        </div><!-- container -->
+
+    
+
+</body>
+</html>

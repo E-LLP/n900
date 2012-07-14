@@ -1,0 +1,17 @@
+/* ::::: http://www.fcc.gov/css/fcc.css ::::: */
+
+BODY { font-family: Verdana,Arial,Helvetica,sans-serif; background-color: rgb(255, 255, 255); font-size: 10pt; }
+P, LI { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 10pt; }
+INPUT { font-family: "Courier New",Arial,Helvetica,sans-serif; font-size: 12px; }
+.fcctopnavlinks { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 9pt; color: rgb(255, 255, 255); background-color: rgb(0, 0, 153); }
+.navlinks { font-family: Arial,Helvetica,sans-serif; font-size: 10pt; }
+.subjectbar { font-family: Arial,Helvetica,sans-serif; font-size: 12pt; font-weight: bold; color: rgb(0, 0, 153); }
+.breadcrumb { font-family: Arial,Helvetica,sans-serif; font-size: 10pt; }
+.pagetitle { font-family: Arial,Helvetica,sans-serif; font-size: 15pt; font-weight: bold; }
+.sectionbanner { font-family: Arial,Helvetica,sans-serif; font-size: 12pt; font-weight: bold; }
+.subsection { font-family: Arial,Helvetica,sans-serif; font-size: 11pt; font-weight: bold; }
+.pagedate { font-family: Arial,Helvetica,sans-serif; font-size: 10pt; font-style: italic; }
+.fccbottomnavlinks { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 10pt; }
+.tabletext { font-family: Arial,Helvetica,sans-serif; font-size: 10pt; }
+.tabletext_compact { font-family: Arial,Helvetica,sans-serif; font-size: 9pt; }
+.searchlinks { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; }

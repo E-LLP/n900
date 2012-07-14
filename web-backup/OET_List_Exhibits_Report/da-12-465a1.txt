@@ -1,0 +1,125 @@
+Federal Communications Commission
+Washington, D.C. 20554
+March 26, 2012
+DA 12-465
+Mr. John Malyar
+Chief Architect
+Interconnection Solutions
+Telcordia Technologies, Inc.
+1 Telcordia Drive/RRC 4F604
+Piscataway, NJ 08854
+Dear Mr. Malyar,
+Approval is hereby granted for Telcordia Technologies, Inc. (Telcordia) to operate its “TV bands database 
+system” to provide service to the public.  This database system will provide support of unlicensed radio 
+devices that transmit on unused channels in the spectrum bands used by broadcast television (TV bands 
+devices).  As discussed below, we are not providing authorization for commencement of operation by this 
+database system to provide service to TV bands devices until the Commission completes the development 
+and activation of its system for approving registrations in the TV bands database systems of venues where 
+large numbers of unlicensed wireless microphones are used (unlicensed wireless microphone registration 
+system) and affected venues have had an opportunity to apply for such registrations.  We may, however, 
+authorize operations to serve one or more localized areas prior to the activation of this unlicensed wireless 
+microphone venues registration system where Telcordia coordinates with local officials and other 
+stakeholders to ensure that appropriate protection is provided for any such venues.
+The Commission’s Part 15 rules (47 C.F.R. § 15.701 et seq.) require that unlicensed radio devices that 
+operate in the broadcast television bands (TV bands devices) contact an authorized database system to 
+obtain a list of channels that are available for their operation (i.e., channels not occupied by authorized 
+radio services) at their individual locations and operate only on those channels.  Such devices are required 
+to provide their geographic location, by means of a secure Internet connection, to a TV bands database 
+system authorized by the Commission.  The database will then return a list of the channels available for 
+operation by the device for its reported location.  
+Telcordia, along with a number of other entities, was conditionally designated as a TV bands database 
+administrator under the Part 15 rules in an Order issued by the Commission on January 26, 2011, 26 FCC 
+Rcd 12827 (2011).  Final approval for each designated database administrator’s operation of a TV bands 
+database system was subject to compliance with requirements that it: 1) supplement its previous filings 
+with sufficient information to demonstrate how it will comply with the rule changes adopted in the 
+Second Memorandum Opinion and Order (ET Docket No. 04-186, 25 FCC Rcd 18661 (2010)); 2) agree 
+that it will not use its capacity as a database manager to engage in any discriminatory or anti-competitive 
+practices or any practices that may compromise the privacy of users; 3) coordinate closely with the 
+agency to ensure competency, consistency, and compliance with the rules; 4) participate in a series of 
+mandatory workshops conducted by the Commission’s Office of Engineering and Technology (OET) to 
+address implementation issues and to ensure consistency and compliance with the rules; and 5) subject its 
+database to real-world testing for a period of not less than 45 days.  This public trial is intended to allow 
+interested parties an opportunity to check that the database provides accurate results before being made 
+available for actual use by TV bands devices.
+Telcordia has provided the required submissions and has participated in the workshops in compliance 
+with conditions 1 through 4.  In addition, it conducted a public trial of its database system as required by 
+2
+condition 5 from December 7, 2011 to January 20, 2012.  In this trial, Telcordia made its channel 
+availability calculator, as well as its procedures for registering protected facilities, including low power 
+auxiliary services (principally wireless microphones), MVPD and low power TV receive sites, and 
+temporary broadcast auxiliary links that are not in the FCC databases available for testing by the public.  
+Telcordia’s final report on its 45-day public trial was placed in the record of the TV white spaces 
+proceeding, ET Docket No. 04-186, and comments were requested in a Public Notice (Public Notice) 
+released February 1, 2012, DA 12-118. 
+Comments on Telcordia’s public trial and its final report on the trial were submitted by Mr. Patrick Ward.  
+Mr. Ward submits that while he finds the Telcordia database system to be lacking in some respects, he 
+also finds it to be quite useful in many respects.  He expresses concern that the Telcordia database system 
+does not properly protect the radio astronomy observations at sites in New Mexico where radio telescopes 
+are operated.  Mr. Ward argues that radio telescopes need certain frequencies set aside and protected 
+beyond the simple protected radio silence established by the Commission, the International 
+Telecommunications Union, the International Astronomers Union and the National Radio Astronomy 
+Organization.  In its reply comments, Telcordia submits that its database system provides protection from 
+TV white space device use on all channels in a contour around the VLA as prescribed by the 
+Commission.  It submits that any request to change the rules now, in comments to the Telcordia Summary 
+Report on the 45-day public trial is procedurally deficient and amounts to an untimely request for 
+reconsideration.  We find that Mr. Ward’s comments raise issues that are beyond the scope of the Public 
+Notice, and indeed the trial of Telcordia’s database system and, as Telcordia states, procedurally amount 
+to an untimely request for reconsideration of the TV white space rules.  We therefore will not address 
+those issues herein.  Issues concerning protection of radio astronomy facilities were addressed and 
+decided previously by the Commission in its Second Report and Order and Memorandum Opinion in the 
+TV white spaces proceeding, ET Docket No. 04-186, 23 FCC Rcd 16807, 16862 (2008).  
+No comments were received concerning the Telcordia database systems channel availability calculator or 
+other aspects of the trial.  Given the large number of parties that examined the Telcordia database system 
+during its public trial, we find the absence of comments on the data base content, channel availability 
+calculator and registration features to be indicative that the system is satisfactory in those areas.
+Based on our own examination and testing of the Telcordia database system, the results of the public trial, 
+including comments submitted to Telcordia during the trial and Telcordia’s responses to those comments, 
+and the comments submitted in response to the Public Notice, we find that Telcordia has demonstrated 
+that its channel availability calculator is able to properly determine the unused channels at a location that 
+may be used by the different types of unlicensed TV bands devices.  We also find that its registration 
+procedures properly record, store and retrieve protected facilities that are not in the FCC databases.  In 
+addition, Telcordia successfully demonstrated at the February 14, 2012 meeting of TV white spaces 
+database administrators and FCC staff that its database is able to synchronize registration records with the 
+Spectrum Bridge, Inc. TV database system using the White Space Database Administrator Group’s 
+Database-to-Database Synchronization Interoperability Specification, Version 1.01 September 12, 2011.  
+We therefore find that Telcordia’s TV bands database system is compliant with the Commission’s rules 
+for TV white space database systems and ready for operation.  We will, however, verify that the 
+synchronization of registration records function of the Telcordia database system is performing properly 
+when the database system begins operation to provide service to TV bands devices.  Also, we have not yet 
+tested this database system with an actual TV bands device.  When an application for a TV bands device 
+that accesses Telcordia’s database system is processed, we will verify that the database’s provisions for 
+securing communications between a device and the database are functioning in accordance with the rules 
+in conjunction with our testing of the device itself.
+3
+As indicated above, the Commission’s unlicensed wireless microphone registration system is not yet 
+operational.  This system is still under development, and we anticipate that it will be operational in the 
+near future.  Until this system is operational and affected parties have an opportunity to register their 
+venues to obtain protection, we cannot provide a general authorization to Telcordia or any other TV bands 
+database administrator to provide service from its database system to TV white space devices.  However, 
+we will consider favorably a request from Telcordia to provide immediate service from its database 
+system in a limited geographic area.  For such an area, OET would accept and process any requests for 
+registration of venues where large numbers of unlicensed microphones might be used and then direct 
+Telcordia to create a registration record for the venue.  We will notify Telcordia when our unlicensed 
+wireless microphone registration system is completed and inform it of the date on which it may begin 
+providing service to TV bands devices.
+In addition, as the initial implementation of the Commission’s plan for operation of TV bands devices 
+proceeds, we anticipate that there may be additional changes, generally minor, in various aspects of the 
+plan.  There may also be elements of Telcordia’s database system that will need to be adjusted as 
+experience is gained with TV white spaces operations by the Commission, the database administrators, 
+device manufacturers, and device users.  We will provide instructions to Telcordia and the other database 
+administrators to incorporate and test refinements at such time as they may be developed.  We do not 
+generally expect that implementation of the database synchronization facility, the registration system for 
+venues where large numbers of unlicensed wireless microphone are used, or other changes will 
+necessitate additional testing through a public trial.  We anticipate that operation of these features will be 
+verified by the OET staff.  Nonetheless, we are reserving the option to request that Telcordia undertake 
+additional public trial testing if we determine that such testing is necessary to ensure that the database 
+systems properly determine available channels and protect authorized services.
+Accordingly, we are granting approval for Telcordia to operate its database system to provide service to 
+certified unlicensed devices that operate in the broadcast television bands subject to the conditions above.  
+The Commission will notify Telcordia when the conditions are removed.  Authority for this action is 
+provided in Section 0.241(h) and Sections 15.701-.715 of the Commission’s rules, 47 C.F.R. § 0.241(h) 
+and §§ 15.701-.715 and Sections 4, 5, 303, 304, 307, 336, and 554a of the Communications Act of 1934 
+as amended, 47 U.S.C. Secs. 154, 155, 302a, 303, 304, 307, 336, and 624a.
+Sincerely,
+Julius P. Knapp
+Chief, Office of Engineering and Technology

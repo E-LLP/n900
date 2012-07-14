@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		
+		<meta name="generator" content="MediaWiki 1.16.2">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.meego.com/opensearch_desc.php" title="MeeGo wiki (en)">
+<link title="Creative Commons" type="application/rdf+xml" href="http://wiki.meego.com/index.php?title=ARM/N900/Recover_From_Drained_Battery&amp;action=creativecommons" rel="meta">
+<link rel="copyright" href="http://creativecommons.org/licenses/by/3.0/legalcode">
+<link rel="alternate" type="application/atom+xml" title="MeeGo wiki Atom feed" href="http://wiki.meego.com/index.php?title=Special:RecentChanges&amp;feed=atom">		<title>ARM/N900/Recover From Drained Battery - MeeGo wiki</title>
+		
+
+
+
+
+
+		<!--[if lt IE 7]><meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		                
+		
+		<!-- Head Scripts -->
+
+
+		
+	
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-ARM_N900_Recover_From_Drained_Battery skin-meego">
+
+	<!-- heading -->
+	<div id="mw_header"><div id="firstHeading"><a href="http://wiki.meego.com/Main_Page"><strong>Meego Wiki</strong></a></div></div>
+
+	<div id="mw_main">
+	<div id="mw_contentwrapper">
+	<!-- navigation portlet -->
+	<div id="p-cactions">
+		<h5>Views</h5>
+		<div class="pBody">
+    	<h1 id="PageTitle">ARM/N900/Recover From Drained Battery</h1>
+			<ul>
+      		
+	
+				 <li id="ca-nstab-main" class="selected"><a href="http://wiki.meego.com/ARM/N900/Recover_From_Drained_Battery" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="http://wiki.meego.com/index.php?title=Talk:ARM/N900/Recover_From_Drained_Battery&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="http://wiki.meego.com/index.php?title=ARM/N900/Recover_From_Drained_Battery&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="http://wiki.meego.com/index.php?title=ARM/N900/Recover_From_Drained_Battery&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+
+	<!-- content -->
+	<div id="mw_content">
+	<!-- contentholder does nothing by default, but it allows users to style the text inside
+	     the content area without affecting the meaning of 'em' in #mw_content, which is used
+	     for the margins -->
+	<div id="mw_contentholder">
+		<div class="mw-topboxes">
+			<div id="mw-js-message" style="display: none;"></div>
+			<div class="mw-topbox" id="siteSub">From MeeGo wiki</div>
+								</div>
+
+		<div id="contentSub"><span class="subpages">&lt; <a href="http://wiki.meego.com/ARM" title="ARM">ARM</a> | <a href="http://wiki.meego.com/ARM/N900" title="ARM/N900">N900</a></span></div>
+
+				<div id="jump-to-nav">Jump to: <a href="#mw_portlets">navigation</a>, <a href="#searchInput">search</a></div>
+		<p><strong>Warning: This page is still under review</strong>
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#You_suspect_you_have_drained_your_battery"><span class="tocnumber">1</span> <span class="toctext">You suspect you have drained your battery</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#In_case_you_have_a_working_dualboot_configuration_between_Maemo_5_PR1.3_and_MeeGo"><span class="tocnumber">1.1</span> <span class="toctext">In case you have a working dualboot configuration between Maemo 5 PR1.3 and MeeGo</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#In_case_you_have_flashed_the_MeeGo_kernel_into_N900.2C_but_have_a_working_Maemo_rootfs"><span class="tocnumber">1.2</span> <span class="toctext">In case you have flashed the MeeGo kernel into N900, but have a working Maemo rootfs</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#In_case_you_are_unable_to_flash_Maemo_kernel_or_do_not_have_a_working_Maemo_rootfs_to_boot_into"><span class="tocnumber">1.3</span> <span class="toctext">In case you are unable to flash Maemo kernel or do not have a working Maemo rootfs to boot into</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></tbody></table>
+<h2> <span class="mw-headline" id="You_suspect_you_have_drained_your_battery"> You suspect you have drained your battery </span></h2>
+<p>You see one or more of the following symptoms:
+</p>
+<ul><li> Device may be completely unresponsive with no signs of life
+</li><li> MeeGo or Maemo fail to boot up. The point of failure is random or attempts keep getting shorter
+</li><li> Battery voltage may be 3.0-3.3V (you may know how to measure this)
+</li></ul>
+<p>Your best choice for recovering the battery is to boot Maemo 5 and let it handle recharging.
+How to do that depends on how MeeGo was installed into your device:
+</p>
+<h3> <span class="mw-headline" id="In_case_you_have_a_working_dualboot_configuration_between_Maemo_5_PR1.3_and_MeeGo"> In case you have a working dualboot configuration between Maemo 5 PR1.3 and MeeGo </span></h3>
+<ol><li> Power down
+</li><li> Remove MeeGo SD card
+</li><li> Connect Nokia wall charger
+</li><li> Wait for 30min to give device time to recharge
+</li><li> The device will show amber status led until it boots to Maemo which will handle the rest of the charging.
+</li></ol>
+<h3> <span class="mw-headline" id="In_case_you_have_flashed_the_MeeGo_kernel_into_N900.2C_but_have_a_working_Maemo_rootfs"> In case you have flashed the MeeGo kernel into N900, but have a working Maemo rootfs </span></h3>
+<p>You have to flash Maemo 5 kernel back to the device in order to boot Maemo and recharge.
+</p><p>See the maemo.org wiki article on <a href="http://wiki.maemo.org/Updating_the_tablet_firmware#Flashing_only_the_kernel_from_a_FIASCO_image" class="external text" rel="nofollow">Flashing only the kernel from a FIASCO image</a>.
+</p>
+<ul><li> <u>If flashing of Maemo kernel is successful</u>
+<ol><li> Power down
+</li><li> Remove MeeGo SD card
+</li><li> Connect Nokia wall charger
+</li><li> Wait for 30min to give device time to recharge
+</li><li> The device will show amber status led until it boots to Maemo which will handle the rest of the charging.
+</li></ol>
+</li><li> <u>If flashing of Maemo kernel fails</u>, or above doesn't help, keep reading.
+</li></ul>
+<h3> <span class="mw-headline" id="In_case_you_are_unable_to_flash_Maemo_kernel_or_do_not_have_a_working_Maemo_rootfs_to_boot_into"> In case you are unable to flash Maemo kernel or do not have a working Maemo rootfs to boot into </span></h3>
+<ul><li> You can always recharge the battery in another N900. Go to a phone store/friend/enemy near you and ask nicely if they can charge your battery for a while.
+</li><li> Recharge the battery using a phone compatible with the battery (refer to instruction manual). As always - you are doing this on your own risk.
+</li><li> Other creative ways to charge battery exists, ask help from MeeGo community.
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 15/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key meego_wiki:pcache:idhash:2574-0!1!0!!en!2!edit=0 and timestamp 20120702124759 -->
+<div class="printfooter">
+Retrieved from "<a href="http://wiki.meego.com/ARM/N900/Recover_From_Drained_Battery">http://wiki.meego.com/ARM/N900/Recover_From_Drained_Battery</a>"</div>
+		<div class="mw_clear"></div>
+		<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a href="http://wiki.meego.com/Special:Categories" title="Special:Categories">Category</a>: <span dir="ltr"><a href="http://wiki.meego.com/Category:N900" title="Category:N900">N900</a></span></div></div>			</div><!-- mw_contentholder -->
+	</div><!-- mw_content -->
+	</div><!-- mw_contentwrapper -->
+
+	<div id="mw_portlets">
+
+	<!-- portlets -->
+			<div class="generated-sidebar portlet" id="p-Wiki_Navigation">
+		<h5>Wiki Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-Return-to-MeeGo.com"><a href="http://meego.com/">Return to MeeGo.com</a></li>
+				<li id="n-mainpage-description"><a href="http://wiki.meego.com/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-recentchanges"><a href="http://wiki.meego.com/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="http://wiki.meego.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="http://wiki.meego.com/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- search -->
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wiki.meego.com/index.php" id="searchform"><div>
+				<input name="title" value="Special:Search" type="hidden">
+
+				<input id="searchInput" name="search" title="Search MeeGo wiki [f]" accesskey="f" value="" type="text">
+
+									<input name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" type="submit">&nbsp;
+								<input name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists" type="submit">
+			</div></form>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- toolbox -->
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://wiki.meego.com/Special:WhatLinksHere/ARM/N900/Recover_From_Drained_Battery" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://wiki.meego.com/Special:RecentChangesLinked/ARM/N900/Recover_From_Drained_Battery" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="http://wiki.meego.com/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://wiki.meego.com/index.php?title=ARM/N900/Recover_From_Drained_Battery&amp;q=ARM%2FN900%2FRecover_From_Drained_Battery&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="http://wiki.meego.com/index.php?title=ARM/N900/Recover_From_Drained_Battery&amp;oldid=33708" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- languages -->
+
+	</div><!-- mw_portlets -->
+
+
+	</div><!-- main -->
+
+	<div class="mw_clear"></div>
+
+	<!-- personal portlet -->
+	<div id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://meego.com/user?destination=wiki_home" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<!-- footer --> 
+	<div id="footer">
+  		<a href="http://linuxfoundation.org/"><div id="sponsor"><strong>Linux Foundation</strong></div></a>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified on 17 March 2011, at 13:38.</li>
+				<li id="viewcount">This page has been accessed 6,745 times.</li>
+			</ul>
+ 			<ul id="f-list">
+				<li id="copyright">Content is available under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" class="external ">Creative Commons Attribution 3.0 License</a>.</li>
+				<li id="privacy"><a href="http://wiki.meego.com/MeeGo_wiki:Privacy_policy" title="MeeGo wiki:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a href="http://wiki.meego.com/MeeGo_wiki:About" title="MeeGo wiki:About">About MeeGo wiki</a></li>
+			</ul>     
+		<div class="mw_poweredby">Powered by MediaWiki 1.16.2</div>	</div>
+
+	
+
+
+<!-- Served in 0.103 secs. -->
+</body>
+</html>

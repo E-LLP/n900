@@ -1,0 +1,101 @@
+/* ::::: http://static.maemo.org/style_maemo2009/css/reset.css ::::: */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0pt; padding: 0pt; border: 0pt none; outline: 0pt none; font-size: 100%; vertical-align: baseline; background: none repeat scroll 0% 0% transparent; }
+body { line-height: 1; }
+ol, ul { list-style: none outside none; }
+:focus { outline: 0pt none; }
+table { border-collapse: collapse; border-spacing: 0pt; }
+/* ::::: http://static.maemo.org/style_maemo2009/css/master.css ::::: */
+
+body { background: url('top_bg.jpg') repeat-x scroll left top rgb(234, 234, 234); color: rgb(64, 64, 64); font-size: 62.5%; font-family: "Arial",sans-serif; text-align: center; }
+a { text-decoration: none; color: rgb(250, 135, 0); }
+a:hover { text-decoration: underline; }
+a:visited { color: rgb(163, 87, 0); }
+h1, h2, h3 { margin: 0.5em 0pt; }
+img { border: medium none; }
+input { font-family: "Arial",sans-serif; }
+p { margin-bottom: 0.5em; }
+#main p { text-align: justify; }
+#main li { text-align: justify; }
+#container { min-width: 766px; width: 95%; max-width: 1200px; margin: 0pt auto; text-align: left; }
+#container #header { height: 67px; width: 100%; }
+#container #header #logo a { float: left; border: medium none; }
+#container #navigation { background: url('header_navigation_middle.gif') repeat-x scroll right bottom transparent; clear: both; height: 66px; }
+#container #navigation #navigation-left-wrapper { height: 66px; background: url('header_navigation_left.gif') no-repeat scroll left bottom transparent; }
+#container #navigation #navigation-right-wrapper { height: 66px; background: url('header_navigation_right.gif') no-repeat scroll right bottom transparent; }
+#container #navigation ul { list-style-type: none; margin: 0pt; padding: 0pt; float: left; }
+#container #navigation ul li { margin: 0pt; height: 66px; float: left; }
+#container #navigation ul li.selected { background: url('navigation-selected.gif') no-repeat scroll center bottom transparent; }
+#container #navigation ul li a { background: url('navigation-separator.gif') no-repeat scroll right top transparent; text-transform: uppercase; display: block; font-size: 1.3em; color: rgb(255, 255, 255); float: left; padding: 21px 10px 19px; font-weight: bold; }
+#container #navigation ul li.selected a, #container #navigation ul li a:hover, #container #navigation ul li.talk a:hover { background-color: rgb(104, 104, 104); text-decoration: none; }
+#container #navigation #search { float: right; margin-top: 11px; margin-right: 0pt; overflow: hidden; width: 250px; }
+#container #navigation #search input { border: 0pt none; float: left; margin: 0pt; display: block; }
+#container #navigation #search #query, #container #navigation #searchInput { background: url('search-box-bg.gif') no-repeat scroll left top transparent; width: 181px; height: 20px; color: rgb(165, 165, 166); font-size: 1.4em; font-weight: bold; padding: 8px 0pt 7px 10px; }
+#container #navigation #search .submit { background: url('search-button.gif') no-repeat scroll left top transparent; width: 49px; padding: 31px 0pt 0pt; text-indent: -1000px; font-size: 0pt; cursor: pointer; }
+#container #navigation #search .submit:hover { background: url('search-button-hover.gif') no-repeat scroll left top transparent; }
+#container #content:after, #container #content #main:after, #container #content #main-wrapper:after { content: "."; display: block; height: 0pt; clear: both; visibility: hidden; }
+#container #content, #container #content #main, #container #content #main-wrapper { display: inline-block; }
+#container #content, #container #content #main, #container #content #main-wrapper { display: block; }
+#container #content { min-width: 766px; line-height: 1.2; }
+#container #content #main { margin-right: 255px; font-size: 1.4em; border: 1px solid rgb(234, 234, 234); }
+#container #content #main #main-wrapper { overflow: hidden; width: 99%; margin: 0px; float: left; border: 1px solid rgb(234, 234, 234); }
+#container #content #main h1 { font-size: 1.72em; padding-bottom: 0.375em; text-transform: capitalize; }
+#container #content #main h2 { font-size: 1.571em; }
+#container #content #main ul { list-style-type: disc; color: rgb(250, 135, 0); margin: 0.5em 0pt 0.5em 2em; }
+#container #content #main li { color: rgb(64, 64, 64); }
+#container #content #sidebar { float: right; width: 239px; margin-top: 60px; }
+#container #content #sidebar #get-involved, #container #content #sidebar #get-help, #container #content #sidebar #announcements, #container #content #sidebar #events, #container #content #sidebar #banners, #container #content #sidebar #nav-sub { margin-bottom: 20px; }
+#container #content #sidebar h3 { font-size: 1.4em; }
+#container #content #sidebar #nav-sub {  }
+#container #content #sidebar #nav-sub ul { list-style-type: none; }
+#container #content #sidebar #nav-sub li { background: url('nav-li-normal.gif') no-repeat scroll left top transparent; margin: 1px 0pt; text-transform: capitalize; }
+#container #content #sidebar #nav-sub li a { background: url('nav-divider.gif') no-repeat scroll left bottom transparent; color: rgb(79, 80, 80); font-size: 1.4em; font-weight: normal; display: block; padding: 8px 0pt 8px 30px; }
+#container #content #sidebar #nav-sub li a:hover { text-decoration: none; background-color: rgb(251, 146, 0); color: rgb(255, 255, 255); }
+#container #footer { clear: both; color: rgb(255, 255, 255); font-size: 1.2em; background: url('footer_middle.png') repeat-x scroll left top transparent; height: 46px; margin-top: 20px; min-width: 766px; max-width: 1200px; width: 100%; }
+#container #footer #footer-wrapper-left { height: 46px; background: url('footer_left.png') no-repeat scroll left bottom transparent; }
+#container #footer #footer-wrapper-right { height: 46px; background: url('footer_right.png') no-repeat scroll right bottom transparent; }
+#container #footer ul { padding: 14px 0pt 0pt 10px; position: relative; }
+#container #footer li { color: rgb(255, 255, 255); display: inline; padding: 0pt 5px; border-left: 1px solid rgb(255, 255, 255); }
+#container #footer li.first { border-left: 0pt none; padding-right: 7px; }
+#container #footer a { text-decoration: underline; }
+#container #breadcrumb, #container #content { margin: 0pt 6px; }
+#container #breadcrumb { font-size: 1.4em; margin-top: 15px; }
+#content pre { color: rgb(0, 0, 0); background: none repeat scroll 0% 0% rgb(255, 251, 242); border: 2px solid rgb(153, 153, 153); margin: 12px; padding: 12px; text-align: left; white-space: pre-wrap; word-wrap: break-word; display: block; overflow: auto; }
+/* ::::: http://wiki.maemo.org/skins/monobookmaemo2009/bz_main.css ::::: */
+
+/* ::::: http://wiki.maemo.org/skins/common/shared.css?116 ::::: */
+
+.editsection { float: right; margin-left: 5px; }
+/* ::::: http://wiki.maemo.org/skins/monobookmaemo2009/main.css?116 ::::: */
+
+body.mediawiki ol, body.mediawiki ul { line-height: 1.5em; }
+body.mediawiki ol li, body.mediawiki ul li { margin-bottom: 0.1em; }
+table { background: none repeat scroll 0pt 0pt rgb(249, 249, 249); border: 1px solid rgb(170, 170, 170); border-collapse: collapse; margin: 1em 1em 1em 0pt; }
+td { border: 1px solid rgb(170, 170, 170); padding: 0.2em; }
+#container #content #sidebar { clear: right; margin-top: 0pt; }
+#container #content #main #main-wrapper { overflow: visible; }
+#container #header #p-personal { float: right; }
+#container #header #p-personal .pBody ul li { float: left; padding-right: 10px; font-size: 120%; }
+ol { margin: 0.3em 0pt 0pt 3.2em; padding: 0pt; list-style-type: decimal; }
+#toc, .toc, .mw-warning { border: 1px solid rgb(170, 170, 170); background-color: rgb(249, 249, 249); padding: 5px; font-size: 95%; }
+#toc h2, .toc h2 { display: inline; border: medium none; padding: 0pt; font-size: 100%; font-weight: bold; }
+#toc #toctitle, .toc #toctitle, #toc .toctitle, .toc .toctitle { text-align: center; }
+#toc ul, .toc ul { list-style-type: none; list-style-image: none; margin-left: 0pt; padding-left: 0pt; text-align: left; }
+.printfooter { display: none; }
+#catlinks { border: 1px solid rgb(170, 170, 170); background-color: rgb(249, 249, 249); padding: 5px 5px 2px; margin-top: 1em; clear: both; }
+.visualClear { clear: both; }
+.editsection { font-size: 12pt; }
+#container #content #sidebar #nav-sub #p-cactions #ca-talk.new a, #p-cactions .new a { color: rgb(204, 34, 0); }
+#content a.external, #content a[href^="gopher://"] { -moz-background-inline-policy: continuous; background: url('external.png') no-repeat scroll right center transparent; padding: 0pt 13px 0pt 0pt; }
+#content a.external[href$=".pdf"], #content a.external[href$=".PDF"], #content a.external[href*=".pdf#"], #content a.external[href*=".PDF#"], #content a.external[href*=".pdf?"], #content a.external[href*=".PDF?"], .link-document { background: url('document.png') no-repeat scroll right center transparent; }
+#container #navigation #search { width: 240px; }
+/* ::::: http://wiki.maemo.org/index.php?title=MediaWiki:Common.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000 ::::: */
+
+@media print {
+  .ambox { display: none; }
+}
+h1, h2 { border-bottom: 1px solid rgb(170, 170, 170); }
+/* ::::: http://wiki.maemo.org/index.php?title=MediaWiki:Monobookmaemo2009.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000 ::::: */
+
+/* ::::: http://wiki.maemo.org/index.php?title=-&action=raw&gen=css&maxage=18000&useskin=monobookmaemo2009 ::::: */
+

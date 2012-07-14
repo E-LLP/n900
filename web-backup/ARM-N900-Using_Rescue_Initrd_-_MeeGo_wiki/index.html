@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		
+		<meta name="generator" content="MediaWiki 1.16.2">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.meego.com/opensearch_desc.php" title="MeeGo wiki (en)">
+<link title="Creative Commons" type="application/rdf+xml" href="http://wiki.meego.com/index.php?title=ARM/N900/Using_Rescue_Initrd&amp;action=creativecommons" rel="meta">
+<link rel="copyright" href="http://creativecommons.org/licenses/by/3.0/legalcode">
+<link rel="alternate" type="application/atom+xml" title="MeeGo wiki Atom feed" href="http://wiki.meego.com/index.php?title=Special:RecentChanges&amp;feed=atom">		<title>ARM/N900/Using Rescue Initrd - MeeGo wiki</title>
+		
+
+
+
+
+
+		<!--[if lt IE 7]><meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		                
+		
+		<!-- Head Scripts -->
+
+
+		
+	
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-ARM_N900_Using_Rescue_Initrd skin-meego">
+
+	<!-- heading -->
+	<div id="mw_header"><div id="firstHeading"><a href="http://wiki.meego.com/Main_Page"><strong>Meego Wiki</strong></a></div></div>
+
+	<div id="mw_main">
+	<div id="mw_contentwrapper">
+	<!-- navigation portlet -->
+	<div id="p-cactions">
+		<h5>Views</h5>
+		<div class="pBody">
+    	<h1 id="PageTitle">ARM/N900/Using Rescue Initrd</h1>
+			<ul>
+      		
+	
+				 <li id="ca-nstab-main" class="selected"><a href="http://wiki.meego.com/ARM/N900/Using_Rescue_Initrd" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="http://wiki.meego.com/index.php?title=Talk:ARM/N900/Using_Rescue_Initrd&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="http://wiki.meego.com/index.php?title=ARM/N900/Using_Rescue_Initrd&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="http://wiki.meego.com/index.php?title=ARM/N900/Using_Rescue_Initrd&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+
+	<!-- content -->
+	<div id="mw_content">
+	<!-- contentholder does nothing by default, but it allows users to style the text inside
+	     the content area without affecting the meaning of 'em' in #mw_content, which is used
+	     for the margins -->
+	<div id="mw_contentholder">
+		<div class="mw-topboxes">
+			<div id="mw-js-message" style="display: none;"></div>
+			<div class="mw-topbox" id="siteSub">From MeeGo wiki</div>
+								</div>
+
+		<div id="contentSub"><span class="subpages">&lt; <a href="http://wiki.meego.com/ARM" title="ARM">ARM</a> | <a href="http://wiki.meego.com/ARM/N900" title="ARM/N900">N900</a></span></div>
+
+				<div id="jump-to-nav">Jump to: <a href="#mw_portlets">navigation</a>, <a href="#searchInput">search</a></div>
+		<p><b>WARNING: Improper use or installation of the image may harm your device. We do not take any responsibility of the damage that may be caused to your device.</b>
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Using_Rescue_Initrd_on_N900"><span class="tocnumber">1</span> <span class="toctext">Using Rescue Initrd on N900</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Download_required_packages"><span class="tocnumber">1.1</span> <span class="toctext">Download required packages</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Starting_the_rescue_initrd"><span class="tocnumber">1.2</span> <span class="toctext">Starting the rescue initrd</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Rescue_Menu_Functionalities"><span class="tocnumber">1.3</span> <span class="toctext">Rescue Menu Functionalities</span></a>
+<ul>
+<li class="toclevel-3 tocsection-5"><a href="#USB_storage_mode_.28U.29"><span class="tocnumber">1.3.1</span> <span class="toctext">USB storage mode (U)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</td></tr></tbody></table>
+<h1> <span class="mw-headline" id="Using_Rescue_Initrd_on_N900"> Using Rescue Initrd on N900 </span></h1>
+<p>This page contains instructions how to use the rescue initrd with the Nokia N900 device. This initrd contains some tools/functions that can be used e.g., to modify content of the external/internal memory cards.
+</p>
+<h2> <span class="mw-headline" id="Download_required_packages"> Download required packages </span></h2>
+<p>You need flasher, for the very beginning - something like <a href="http://tablets-dev.nokia.com/maemo-dev-env-downloads.php?f=maemo_flasher-3.5_2.5.2.2_i386.deb" class="external text" rel="nofollow">this</a> - read <a href="http://wiki.maemo.org/Updating_the_tablet_firmware" class="external text" rel="nofollow">this</a> first.
+</p><p>Get the initrd and kernel images for the rescue process
+</p>
+<pre>mkdir n900-rescue-initrd
+cd n900-rescue-initrd
+wget <a href="http://repo.meego.com/MeeGo/releases/1.1/core/repos/armv7l/packages/armv7l/nokia-n900-rescue-initrd-0.1-2.157.armv7l.rpm" class="external free" rel="nofollow">http://repo.meego.com/MeeGo/releases/1.1/core/repos/armv7l/packages/armv7l/nokia-n900-rescue-initrd-0.1-2.157.armv7l.rpm</a>
+wget <a href="http://repo.meego.com/MeeGo/releases/1.1/core/repos/armv7l/packages/armv7l/kernel-n900-2.6.35.3-10.3.armv7l.rpm" class="external free" rel="nofollow">http://repo.meego.com/MeeGo/releases/1.1/core/repos/armv7l/packages/armv7l/kernel-n900-2.6.35.3-10.3.armv7l.rpm</a>
+</pre>
+<p>After this you need to extract the kernel and initrd files from the rpm packages
+</p>
+<pre>rpm2cpio nokia-n900-*.rpm | cpio -vid ./boot/initrd*
+rpm2cpio kernel-*n900-*.rpm  | cpio -vid ./boot/vmlinuz*
+</pre>
+<p>Now you have a <b>./boot/</b> directory in the current dir where the initrd and vmlinuz files are located.
+</p>
+<h2> <span class="mw-headline" id="Starting_the_rescue_initrd"> Starting the rescue initrd </span></h2>
+<p><b>NOTE:</b> Here we do not flash the kernel or initrd to the device, but only <u>load</u> them to the device memory during the boot. <u>Original images are restored when the device is restarted</u>.
+</p><p><b>NOTE:</b> Charge your battery before using initrd. Currently initrd is not able to charge the battery.
+</p>
+<ul><li> Remove the back cover
+</li><li> Turn off your device by removing battery
+</li><li> Insert the battery back to the device
+</li><li> Put back cover to the device (This is not needed if you don't need to have access to the microsd card, or if you use magnet instead).
+</li><li> Start <a href="http://wiki.meego.com/ARM/N900/tools/flasher" title="ARM/N900/tools/flasher">flasher</a> with the following command (<b>NOTE:</b> change <i>&lt;vmlinuz-n900&gt;</i> and <i>&lt;initrd.img&gt;</i> to real filenames):
+</li></ul>
+<pre>sudo flasher-3.5 -k boot/<b>&lt;vmlinuz-n900&gt;</b> -n boot/<b>&lt;initrd.img&gt;</b> -l -b"rootdelay=1 root=/dev/ram0"
+</pre>
+<ul><li> Connect N900 to your PC with the USB cable (directly&nbsp;! some HUBS may cause strange problems)
+</li></ul>
+<p>Now the device boots and you can see a rescue menu.
+</p>
+<h2> <span class="mw-headline" id="Rescue_Menu_Functionalities"> Rescue Menu Functionalities </span></h2>
+<p>With rescue menu you can:
+</p>
+<ul><li> Toggle USB networking on/off (N)
+</li><li> Reboot the device (R)
+</li><li> Shutdown the device (S)
+</li><li> Start recovery terminal (T)
+<ul><li> Contains busybox functionality
+</li></ul>
+</li><li> Toggle USB storage mode on/off (U)
+</li></ul>
+<h3> <span class="mw-headline" id="USB_storage_mode_.28U.29"> USB storage mode (U) </span></h3>
+<p>When using USB storage mode the initrd mounts eMMC and the microSD card, if microSD card is available and backcover is attached (or magnet in place). Below is example what devices could be seen with 
+</p>
+<pre>sudo fdisk -l 
+</pre>
+<p>command after USB storage mode is enabled.
+</p>
+<pre>Disk /dev/sdX: 32.0 GB, 32015122432 bytes
+4 heads, 16 sectors/track, 977024 cylinders
+Units = cylinders of 64 * 512 = 32768 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x0004cbd3
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdX1               2      884865    28315648    c  W95 FAT32 (LBA)
+/dev/sdX2          884866      950401     2097152   83  Linux
+/dev/sdX3          950402      974977      786432   82  Linux swap / Solaris 
+
+Disk /dev/sdY: 7969 MB, 7969177600 bytes
+4 heads, 32 sectors/track, 121600 cylinders
+Units = cylinders of 128 * 512 = 65536 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disk identifier: 0x000b012c
+
+   Device Boot      Start         End      Blocks   Id  System
+/dev/sdY1               1       24415     1562500   83  Linux
+/dev/sdY2           24417       28320      249856   83  Linux  
+</pre>
+<p>Here <i>/dev/sdX/</i> is the <b>32.0 GB eMMC</b> that contains the user home in Maemo 5 and the <i>/dev/sdY</i> is the <b>8 GB microSD</b> cards used during this example. <u>Be careful not to destroy your data in the eMMC of the device.</u>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 19/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key meego_wiki:pcache:idhash:233-0!1!0!!en!2!edit=0 and timestamp 20120702133332 -->
+<div class="printfooter">
+Retrieved from "<a href="http://wiki.meego.com/ARM/N900/Using_Rescue_Initrd">http://wiki.meego.com/ARM/N900/Using_Rescue_Initrd</a>"</div>
+		<div class="mw_clear"></div>
+		<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a href="http://wiki.meego.com/Special:Categories" title="Special:Categories">Category</a>: <span dir="ltr"><a href="http://wiki.meego.com/Category:N900" title="Category:N900">N900</a></span></div></div>			</div><!-- mw_contentholder -->
+	</div><!-- mw_content -->
+	</div><!-- mw_contentwrapper -->
+
+	<div id="mw_portlets">
+
+	<!-- portlets -->
+			<div class="generated-sidebar portlet" id="p-Wiki_Navigation">
+		<h5>Wiki Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-Return-to-MeeGo.com"><a href="http://meego.com/">Return to MeeGo.com</a></li>
+				<li id="n-mainpage-description"><a href="http://wiki.meego.com/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-recentchanges"><a href="http://wiki.meego.com/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="http://wiki.meego.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="http://wiki.meego.com/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- search -->
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wiki.meego.com/index.php" id="searchform"><div>
+				<input name="title" value="Special:Search" type="hidden">
+
+				<input id="searchInput" name="search" title="Search MeeGo wiki [f]" accesskey="f" value="" type="text">
+
+									<input name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" type="submit">&nbsp;
+								<input name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists" type="submit">
+			</div></form>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- toolbox -->
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://wiki.meego.com/Special:WhatLinksHere/ARM/N900/Using_Rescue_Initrd" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://wiki.meego.com/Special:RecentChangesLinked/ARM/N900/Using_Rescue_Initrd" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="http://wiki.meego.com/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://wiki.meego.com/index.php?title=ARM/N900/Using_Rescue_Initrd&amp;q=ARM%2FN900%2FUsing_Rescue_Initrd&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="http://wiki.meego.com/index.php?title=ARM/N900/Using_Rescue_Initrd&amp;oldid=43005" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- languages -->
+
+	</div><!-- mw_portlets -->
+
+
+	</div><!-- main -->
+
+	<div class="mw_clear"></div>
+
+	<!-- personal portlet -->
+	<div id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://meego.com/user?destination=wiki_home" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<!-- footer --> 
+	<div id="footer">
+  		<a href="http://linuxfoundation.org/"><div id="sponsor"><strong>Linux Foundation</strong></div></a>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified on 2 July 2011, at 10:24.</li>
+				<li id="viewcount">This page has been accessed 9,650 times.</li>
+			</ul>
+ 			<ul id="f-list">
+				<li id="copyright">Content is available under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" class="external ">Creative Commons Attribution 3.0 License</a>.</li>
+				<li id="privacy"><a href="http://wiki.meego.com/MeeGo_wiki:Privacy_policy" title="MeeGo wiki:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a href="http://wiki.meego.com/MeeGo_wiki:About" title="MeeGo wiki:About">About MeeGo wiki</a></li>
+			</ul>     
+		<div class="mw_poweredby">Powered by MediaWiki 1.16.2</div>	</div>
+
+	
+
+
+<!-- Served in 0.550 secs. -->
+</body>
+</html>

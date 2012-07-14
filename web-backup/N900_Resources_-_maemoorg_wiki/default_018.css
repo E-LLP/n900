@@ -1,0 +1,17 @@
+/* ::::: http://mxr.maemo.org/fremantle/style/style.css ::::: */
+
+/* ::::: http://mxr.maemo.org/style/site.css ::::: */
+
+* { font-family: sans-serif; }
+body { margin: 0px; background-color: rgb(232, 232, 232); color: rgb(0, 0, 0); }
+a { color: rgb(250, 135, 0); }
+a:visited { color: rgb(104, 104, 104); }
+a:hover { color: rgb(255, 187, 0); }
+.banner { background-color: rgb(64, 64, 64); width: 100%; border: 0px none; }
+.banner td { padding: 0px; margin: 0px; }
+img.icon { max-width: 128px; margin: 2px; }
+img.icon:hover { float: right; max-width: inherit; border: 1px solid black; margin: 1px; }
+h1, h2, h3, p, table { font-family: sans-serif; }
+:link { color: rgb(136, 68, 0); }
+a:visited { color: rgb(204, 119, 0); }
+:link:hover { color: rgb(255, 187, 0); }

@@ -1,0 +1,89 @@
+PUBLIC NOTICE
+Federal Communications Commission
+445 12th St., S.W.
+Washington, D.C. 20554
+News Media Information 202 / 418-0500
+Internet: http://www.fcc.gov
+TTY: 1-888-835-5322
+DA 12-118
+February 1, 2012
+Office of Engineering and Technology Requests Comment on the Public Testing 
+of Telcordia Technologies Inc.’s TV Bands Database System
+ET Docket No. 04-186
+Comments due:  February 16, 2012
+Reply comments due:  February 23, 2012
+The Commission’s Office of Engineering and Technology (OET) is requesting comment on the 
+45-day public trial of Telcordia Technologies Inc.’s (Telcordia’s) TV bands database system that was 
+completed on January 20, 2012.  This database system is designed and intended to support the operation 
+of unlicensed transmitting devices on unoccupied spectrum within the broadcast television bands.  Such 
+unoccupied spectrum is commonly known as the TV “White Spaces.”
+In a Public Notice released December 2, 2011, DA 11-1956, OET announced that, beginning 
+December 7, 2011, it was conducting a 45-day public trial of Telcordia’s TV bands database system.  This 
+trial allowed the public to access and participate in the testing of the Telcordia database system to ensure 
+that it correctly identifies channels that are available for unlicensed TV bands devices, properly registers 
+facilities entitled to protection, and provides protection to authorized services and registered facilities as 
+specified in the rules.  Participants were encouraged to report any inaccuracies or other issues with any 
+aspect of the database system to Telcordia.
+Telcordia has provided a summary report on the trial of its TV bands database system to OET.  
+This summary report identifies: 1) problems reported and their disposition and 2) descriptions of changes 
+made by Telcordia to the channel availability calculator or registration systems during the trial period.  
+We are requesting that interested parties submit comments on the trial and this report. A copy of 
+Telcordia’s summary report and its three attachments is available on the Commission’s Electronic 
+Comment Filing System (ECFS) at 
+Summary Report: http://fjallfoss.fcc.gov/ecfs/document/view?id=7021857325
+The successful performance of the database system through this trial is only one element in the 
+Commission’s evaluation of a system for approval to operate.   Other requirements for TV bands database 
+systems are set forth in 47 C.F.R. 15.701 et seq. and OET’s January 26, 2011, Order on TV bands 
+database administrators (see Order in ET Docket No. 04-186, DA 11-131).  OET will grant final approval 
+for Telcordia to operate its database system with certified TV bands devices once it determines that the 
+2
+system complies with all of the applicable rules and requirements.  The public will be informed of such 
+decision through a Public Notice.
+The TV bands database systems are the subject of a docketed proceeding, ET Docket No. 04-
+186, and comments and reply comments addressing the trial of Telcordia’s database system must be filed 
+in that proceeding using the FCC’s ECFS as described below.  A simplified interface for ECFS has been 
+implemented to facilitate consumer comment.  Documents filed on ECFS may be accessed and reviewed 
+on that system, which contains copies of written submissions and summaries of oral submissions 
+regarding the white spaces proceeding.
+Pursuant to sections 1.415 and 1.419 of the Commission’s rules, 47 CFR §§ 1.415, 1.419, 
+interested parties may file comments and reply comments addressing the trial of Telcordia’s database 
+system and its report on the trial by February 16, 2012 and February 23, 2012, respectively.  As 
+indicated above, comments and reply comments must be filed using the Commission’s Electronic 
+Comment Filing System. See Electronic Filing of Documents in Rulemaking Proceedings, 63 FR 24121 
+(1998).
+§ Electronic Filers:  Comments may be filed electronically using the Internet by accessing the 
+ECFS:  http://fjallfoss.fcc.gov/ecfs2/.  
+§ Paper Filers:  Parties that choose to file by paper must file an original and one copy of each filing.  
+If more than one docket or rulemaking number appears in the caption of this proceeding, filers 
+must submit two additional copies for each additional docket or rulemaking number.
+Filings can be sent by hand or messenger delivery, by commercial overnight courier, or by first-
+class or overnight U.S. Postal Service mail.  All filings must be addressed to the Commission’s 
+Secretary, Office of the Secretary, Federal Communications Commission.
+§ All hand-delivered or messenger-delivered paper filings for the Commission’s Secretary 
+must be delivered to FCC Headquarters at 445 12th St., SW, Room TW-A325, 
+Washington, DC 20554.  The filing hours are 8:00 a.m. to 7:00 p.m.   All hand deliveries 
+must be held together with rubber bands or fasteners.  Any envelopes and boxes must be 
+disposed of before entering the building.  
+§ Commercial overnight mail (other than U.S. Postal Service Express Mail and Priority 
+Mail) must be sent to 9300 East Hampton Drive, Capitol Heights, MD 20743.
+§ U.S. Postal Service first-class, Express, and Priority mail must be addressed to 445 12th
+Street, SW, Washington DC 20554.
+People with Disabilities:  To request materials in accessible formats for people with disabilities 
+(Braille, large print, electronic files, audio format), send an e-mail to fcc504@fcc.gov or call the 
+Consumer & Governmental Affairs Bureau at 202-418-0530 (voice), 202-418-0432 (tty).
+All filings must be addressed to the Commission’s Secretary, Marlene H. Dortch, Office of the 
+Secretary, Federal Communications Commission, 445 12th Street, SW, Washington, DC 20554.  Parties 
+should also send a copy of their filings to Hugh L. Van Tuyl, Office of Engineering and Technology, 
+Federal Communications Commission, Room 7-A162, 445 12th Street, SW, Washington, DC 20554, or 
+by e-mail to Hugh.VanTuyl@fcc.gov.  Parties must also serve one copy with the Commission’s copy 
+contractor, Best Copy and Printing, Inc. (BCPI), Portals II, 445 12th Street, SW, Room CY-B402, 
+Washington, DC 20554, (202) 488-5300, or via e-mail to fcc@bcpiweb.com.
+3
+Documents in ET Docket No. 04-186 are available for public inspection and copying during 
+business hours at the FCC Reference Information Center, Portals II, 445 12th Street, SW, Room 
+CY-A257, Washington, DC 20554.  The documents may also be purchased from BCPI, telephone (202) 
+488-5300, facsimile (202) 488-5563, TTY (202) 488-5562, e-mail fcc@bcpiweb.com.  
+Questions regarding this Public Notice may be directed to Alan Stillwell at (202) 418-2470 or 
+Hugh L. Van Tuyl at (202) 418-7506.
+By the Chief, Office of Engineering and Technology.
+-FCC-

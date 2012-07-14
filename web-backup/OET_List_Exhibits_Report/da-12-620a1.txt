@@ -1,0 +1,75 @@
+PUBLIC NOTICE
+Federal Communications Commission
+445 12th St., S.W.
+Washington, D.C. 20554
+News Media Information 202 / 418-0500
+Internet: http://www.fcc.gov
+TTY: 1-888-835-5322
+DA 12-620
+Released: April 19, 2012 
+Office of Engineering and Technology Permits Telcordia Technologies, Inc. to Provide TV 
+Bands Database Service in Nottoway County, Virginia
+ET Docket No. 04-186
+The Commission’s Office of Engineering and Technology (OET) announces that it is permitting 
+Telcordia Technologies, Inc. to begin providing TV bands database service to the public in Nottoway 
+County, Virginia.1 This database system will support unlicensed radio devices that transmit on unused 
+channels in the spectrum bands used by broadcast television (TV white spaces, or TVWS).  The Nottoway 
+County project will use a recently certificated Adaptrum TV bands radio system together with the 
+Telcordia database to provide high-speed broadband service at 20 sites that serve rural schools and 
+households.  The Adaptrum “ACRS” device was granted certification on April 19, 2012 with FCC ID 
+“A2UACRS10.”
+OET approved Telcordia’s database system for operation by letter dated March 26, 2012, DA 12-
+465.  In approving this system, OET stated that Telcordia could not provide service to the public until the 
+FCC’s system for registering venues where large numbers of unlicensed wireless microphone’s are used 
+is operational and affected parties have an opportunity to register their venues to obtain protection.  That 
+system is expected to be available in the near future.  However, OET also stated that Telcordia could 
+request approval to commence database operations in limited geographic areas prior to the availability of 
+the FCC’s unlicensed wireless microphone registration system.  For such areas, OET indicated that it 
+would accept and process any requests for registration of venues where large numbers of unlicensed 
+microphones are be used and then direct Telcordia to create a registration record for the venue.
+OET finds that Telcordia’s request to operate its service within the limited area of Nottoway 
+County, Virginia is consistent with the plan and requirements set forth in OET’s approval of the Telcordia 
+database system.  It therefore is permitting Telcordia to operate its TV bands database system to provide 
+service to TV bands devices within the geographic boundaries of that county, subject to the following 
+procedures for registering unlicensed wireless microphones.  
+Until the FCC registration system is operational, parties seeking to obtain protection for venues 
+where large numbers of unlicensed wireless microphones are used must submit registration requests 
+directly to OET at TVWSinfo@fcc.gov.  The “subject” line in the messages for such requests must begin 
+with the phrase: “[Wireless Microphone Registration],” followed by the entity’s full name.  For example: 
+[Wireless Microphone Registration] Widget Corporation.  If OET approves the registration, it will inform 
+  
+1 See Letter to Mr. John Malyar of Telcordia Technologies, Inc. dated April 19, 2012. This letter is available in the 
+Commission’s EDOCS records system under ET Docket No. 04-186, DA 12-621.
+2
+Telcordia to create a registration record for the venue and provide the registrant with a registration 
+number.  
+OET will process registration requests for venues where large numbers of unlicensed wireless 
+microphones are used in accordance with Section 15.713(h)(9) of the Commission’s rules, 47 C.F.R.
+§ 15.713(h)(9).  In particular, entities responsible for venues of events and productions/shows that use 
+large numbers of wireless microphones at well defined times that cannot be accommodated in the two 
+channels specifically reserved for wireless microphones and other channels that are not available for use 
+by TV bands devices (TVBDs) at that location may request protection of such venues through 
+registration.  Entities seeking to register eligible event venues are required to certify that they are using 
+the two reserved channels and other channels that are not available for use by TVBDs on which wireless 
+microphones can practicably be used, including channels 7-51 (except channel 37) at the location of the 
+venue.  As a benchmark, at least 6 – 8 wireless microphones should be operating in each channel used at 
+such venues (both licensed and unlicensed wireless microphones used at the event may be counted to 
+comply with this benchmark).  Registration requests that do not meet these criteria will not be granted.  
+The Commission will make requests for registration that meet the threshold showing for acceptability 
+available for public comment.  Registrations that are granted will be valid for one year, after which they 
+may be renewed.  Registrations must include the following information.
+- name of the individual or business that owns the unlicensed wireless microphones
+- a postal address for the contact person
+- an e-mail address for the contact person 
+- a phone number for the contact person
+- coordinates where the wireless microphones are used (latitude and longitude in NAD 83, 
+accurate to +/- 50 m)
+- channels used by the wireless microphones operated at the site and the number of wireless  
+microphones used in each channel.
+The registrant of an approved venue will then need to use the registration number provided by 
+OET to access the Telcordia unlicensed wireless microphones registration facility at: 
+http://www.telcordia.com/whitespaces to enter scheduling and channel information for the venue.
+Questions regarding this Public Notice may be directed to Alan Stillwell at (202) 418-2470 or 
+Hugh L. Van Tuyl at (202) 418-7506.
+By the Chief, Office of Engineering and Technology.
+-FCC-

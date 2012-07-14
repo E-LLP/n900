@@ -1,0 +1,553 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>N900 - eLinux.org</title>
+
+<meta name="generator" content="MediaWiki 1.16.4">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://elinux.org/opensearch_desc.php" title="eLinux.org (en)">
+<link title="Creative Commons" type="application/rdf+xml" href="http://elinux.org/index.php?title=N900&amp;action=creativecommons" rel="meta">
+<link rel="copyright" href="http://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="alternate" type="application/atom+xml" title="eLinux.org Atom feed" href="http://elinux.org/index.php?title=Special:RecentChanges&amp;feed=atom">
+
+
+
+<!--[if lt IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE50Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 5.5000]><link rel="stylesheet" href="/skins/monobook/IE55Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" href="/skins/monobook/IE60Fixes.css?270" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/monobook/IE70Fixes.css?270" media="screen" /><![endif]-->
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-N900 skin-monobook">
+<div id="globalWrapper">
+<div id="column-content"><div id="content">
+	<a id="top"></a>
+	<div id="siteNotice"></div>
+	<h1 id="firstHeading" class="firstHeading">N900</h1>
+	<div id="bodyContent">
+		<h3 id="siteSub">From eLinux.org</h3>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>
+		<!-- start content -->
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Status"><span class="tocnumber">1</span> <span class="toctext">Status</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Camera"><span class="tocnumber">2</span> <span class="toctext">Camera</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#U-Boot"><span class="tocnumber">3</span> <span class="toctext">U-Boot</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="#Charging"><span class="tocnumber">4</span> <span class="toctext">Charging</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="#Modem"><span class="tocnumber">5</span> <span class="toctext">Modem</span></a></li>
+</ul>
+</td></tr></tbody></table>
+<h2> <span class="mw-headline" id="Status"> Status </span></h2>
+<table>
+<tbody><tr>
+<th> chip </th><th> purpose
+</th><th> docs </th><th> impl </th><th> merge
+</th><th> board impl </th><th> board merge
+</th></tr>
+<tr>
+<td> OMAP3430 </td><td> System-on-chip
+</td><td bgcolor="yellow"> code
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td></tr>
+<tr>
+<td> * Cortex A8 </td><td> CPU
+</td><td bgcolor="lime"> <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0344k/index.html" class="external text" rel="nofollow">ARM infocenter</a>
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td colspan="2" bgcolor="cyan"> N/A
+</td></tr>
+<tr>
+<td> * * ARMv7 </td><td> Instruction set
+</td><td bgcolor="lime"> <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.set.architecture/index.html" class="external text" rel="nofollow">ARM infocenter</a>
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td colspan="2" bgcolor="cyan"> N/A
+</td></tr>
+<tr>
+<td> * * NEON </td><td> Media Extensions
+</td><td bgcolor="lime"> <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0489c/Bcfjicfj.html" class="external text" rel="nofollow">ARM infocenter</a>
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td colspan="2" bgcolor="cyan"> N/A
+</td></tr>
+<tr>
+<td> * * Thumb </td><td> Code compression
+</td><td bgcolor="lime"> <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.set.architecture/index.html" class="external text" rel="nofollow">ARM infocenter</a>
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> by 2.6.12&nbsp;?
+</td><td colspan="2" bgcolor="cyan"> N/A
+</td></tr>
+<tr>
+<td> * * Thumb2 </td><td> Code compression
+</td><td bgcolor="lime"> <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.set.architecture/index.html" class="external text" rel="nofollow">ARM infocenter</a>
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td colspan="2" bgcolor="cyan"> N/A
+</td></tr>
+<tr>
+<td> * * ThumbEE </td><td> Instruction Set for JIT compilers
+</td><td bgcolor="lime"> <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0204j/CIHBCDGA.html" class="external text" rel="nofollow">ARM infocenter</a>
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td colspan="2" bgcolor="cyan"> N/A (Userspace: Java VM?)
+</td></tr>
+<tr>
+<td> * * VFP </td><td> Floating-point coprocessor
+</td><td bgcolor="lime"> <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0489c/Chdjdaaj.html" class="external text" rel="nofollow">ARM infocenter</a>
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> by 2.6.12&nbsp;?
+</td><td colspan="2" bgcolor="cyan"> N/A
+</td></tr>
+<tr>
+<td> * M-Shield </td><td> AES acceleration
+</td><td bgcolor="yellow"> code
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2.6.37-rc1
+</td><td colspan="2" bgcolor="cyan"> N/A
+</td></tr>
+<tr>
+<td> * IVA 2+ accelerator </td><td> Video encoder/decoder
+</td><td>&nbsp;?
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td colspan="2" bgcolor="cyan"> N/A (Userspace:&nbsp;?)
+</td></tr>
+<tr>
+<td> * OMAP 3 Camera </td><td> OMAP3 Camera Chip Connection Bus
+</td><td bgcolor="yellow"> code
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2.6.39-rc1
+</td><td colspan="2" bgcolor="cyan"> N/A
+</td></tr>
+<tr>
+<td> * OMAP DSS </td><td> KMS video driver
+</td><td bgcolor="cyan"> N/A
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> <a href="http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=tree;f=drivers/staging/omapdrm" class="external text" rel="nofollow">3.3-rc1</a>
+</td><td colspan="2" bgcolor="cyan"> N/A
+</td></tr>
+<tr>
+<td> * TMS320 C64x </td><td> DSP
+</td><td bgcolor="lime"> <a href="spru395b.pdf" class="external text" rel="nofollow">datasheet</a>
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td colspan="2" bgcolor="cyan"> N/A (Userspace: gst-dsp)
+</td></tr>
+<tr>
+<td> * PowerVR SGX530 </td><td> OpenGL ES and OpenVG acceleration
+</td><td bgcolor="red"> No
+</td><td bgcolor="red"> No
+</td><td bgcolor="red"> No
+</td><td bgcolor="red"> No
+</td><td bgcolor="red"> No
+</td></tr>
+<tr>
+<td> * OMAP Boot Tags? </td><td> Provides boot information from bootloader (NOLO)
+</td><td>&nbsp;?
+</td><td>&nbsp;?
+</td><td>&nbsp;?
+</td><td>&nbsp;?
+</td></tr>
+<tr>
+<td>&nbsp;??? </td><td> eMMC &amp; SD/MMC card
+</td><td bgcolor="yellow"> code
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td></tr>
+<tr>
+<td> TI TWL4030
+</td><td> multifunction (I2C)
+</td><td bgcolor="lime"> <a href="http://www.ti.com/litv/pdf/swcu050g" class="external text" rel="nofollow">TPS65950 TRM</a>
+</td><td colspan="4" bgcolor="cyan"> N/A
+</td></tr>
+<tr>
+<td> * </td><td> Audio
+</td><td bgcolor="lime"> part of TI TWL4030
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td></tr>
+<tr>
+<td> * </td><td> Vibrator
+</td><td bgcolor="lime"> part of TI TWL4030
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2.6.39-rc1
+</td></tr>
+<tr>
+<td> * </td><td> Real-Time Clock
+</td><td bgcolor="lime"> part of TI TWL4030
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td colspan="2" bgcolor="cyan"> N/A
+</td></tr>
+<tr>
+<td> GPIO </td><td> Camera button
+</td><td bgcolor="cyan"> N/A
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td></tr>
+<tr>
+<td> Taos TSL2563 </td><td> Ambient light sensor
+</td><td bgcolor="lime"> <a href="http://www.taosinc.com/getfile.aspx?type=press&amp;file=tsl2562-e40.pdf" class="external text" rel="nofollow">datasheet</a>
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2.6.33
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td></tr>
+<tr>
+<td> LP5523 </td><td> LED
+</td><td bgcolor="lime"> <a href="http://www.ti.com/product/LP5523" class="external text" rel="nofollow">documentation</a>
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2.6.37-rc2
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 3.1-rc1
+</td></tr>
+<tr>
+<td> Sony ACX565AKM </td><td> LCD panel
+</td><td bgcolor="yellow"> code
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2.6.35
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2.6.36
+</td></tr>
+<tr>
+<td> TI TSC2005 </td><td> Touchscreen controller
+</td><td bgcolor="lime"> <a href="http://www.ti.com/lit/gpn/tsc2005" class="external text" rel="nofollow">datasheet</a>
+</td><td bgcolor="lime"> 2.6.39-rc1
+</td><td bgcolor="lime"> 2.6.39-rc1
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> <a href="http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=commitdiff;h=3dad5356aa47097cf67027cf0a07298b4f5baef6" class="external text" rel="nofollow">3.3-rc1</a>
+</td></tr>
+<tr>
+<td> WL1251 </td><td> 802.11b/g WiFi
+</td><td bgcolor="yellow"> code
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2.6.31
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2009-11-22
+</td></tr>
+<tr>
+<td> Si4713 </td><td> FM transmitter
+</td><td bgcolor="lime"> <a href="an332.pdf" class="external text" rel="nofollow">datasheet</a>
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2.6.32
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td></tr>
+<tr>
+<td> TPA6130a2 </td><td> Headphone amplifier
+</td><td bgcolor="lime"> <a href="http://www.ti.com/lit/gpn/tpa6130a2" class="external text" rel="nofollow">datasheet</a>
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2.6.33
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td></tr>
+<tr>
+<td> TLV320AIC3X </td><td> Digital audio data serial
+</td><td bgcolor="yellow"> code
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2.6.25
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td></tr>
+<tr>
+<td> GPIO </td><td> Proximity sensor
+</td><td bgcolor="cyan"> N/A
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td></tr>
+<tr>
+<td> GPIO </td><td> Keyboard
+</td><td bgcolor="cyan"> N/A (layout: code)
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2.6.33
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td></tr>
+<tr>
+<td> Phonet </td><td> Modem protocol
+</td><td bgcolor="yellow"> code
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2.6.28
+</td><td colspan="2" bgcolor="cyan"> N/A
+</td></tr>
+<tr>
+<td> HSI </td><td> Modem Bus Framework
+</td><td bgcolor="yellow"> code
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> <a href="http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=commit;h=b1a808ff436343956a6ae63178ea1810c5e5a3a1" class="external text" rel="nofollow">3.4-rc2</a>
+</td><td colspan="2" bgcolor="cyan"> N/A
+</td></tr>
+<tr>
+<td> * TI NaviLink NL5350 </td><td> GPS (via Phonet modem protocol)
+</td><td bgcolor="yellow"> <a href="http://wiki.maemo.org/N900_Hardware_GPS" class="external text" rel="nofollow">reveng</a>
+</td><td colspan="4" bgcolor="cyan"> Userspace <a href="http://luke.dashjr.org/tmp/code/gps2.c" class="external text" rel="nofollow">gps2.c</a>
+</td></tr>
+<tr>
+<td> *  </td><td> A-GPS
+</td><td bgcolor="red"> No
+</td><td colspan="4" bgcolor="cyan"> Client/server SUPL application: <a href="http://www.tajuma.com/supl/index.html" class="external free" rel="nofollow">http://www.tajuma.com/supl/index.html</a>
+</td></tr>
+<tr>
+<td> isp1704 </td><td> USB charger detector
+</td><td bgcolor="yellow"> code
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2.6.37-rc1
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2011-04-20
+</td></tr>
+<tr>
+<td> bq27200 </td><td> Battery monitor chip
+</td><td bgcolor="lime"> <a href="http://www.ti.com/product/bq27200" class="external text" rel="nofollow">documentation</a>
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2.6.28
+</td><td bgcolor="lime"> <a href="https://lkml.org/lkml/2011/11/25/190" class="external text" rel="nofollow">patch</a>
+</td><td bgcolor="lime"> <a href="https://lkml.org/lkml/2011/11/25/190" class="external text" rel="nofollow">3.3-rc1</a>
+</td></tr>
+<tr>
+<td> OneNAND </td><td> Flash memory
+</td><td bgcolor="yellow"> code
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2.6.15
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> Yes
+</td></tr>
+<tr>
+<td> LIS302DL </td><td> Accelerometers
+</td><td bgcolor="lime"> <a href="12726.pdf" class="external text" rel="nofollow">datasheet</a>
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 2.6.32
+</td><td bgcolor="lime"> <a href="https://build.pub.meego.com/package/view_file?file=linux-2.6-omap-rx51-Platform-support-for-lis3lv02d-acceleromet.patch&amp;package=kernel-adaptation-n900&amp;project=CE%3AAdaptation%3AN900" class="external text" rel="nofollow">patch</a>
+</td><td bgcolor="lime"> <a href="http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=commit;h=3b5112011508c3d92938438db506c6794e8a61a5" class="external text" rel="nofollow">3.5-rc1</a>
+</td></tr>
+<tr>
+<td> ADP 1653 </td><td> Flash Torch
+</td><td bgcolor="yellow"> code
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="lime"> 3.1-rc1
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="red"> No
+</td></tr>
+<tr>
+<td> bq24150 </td><td> Battery charger
+</td><td bgcolor="lime"> <a href="http://www.ti.com/product/bq24150" class="external text" rel="nofollow">documentation</a>
+</td><td bgcolor="yellow"> <a href="https://lkml.org/lkml/2011/12/7/626" class="external text" rel="nofollow">WIP</a>
+</td><td bgcolor="red"> No
+</td><td bgcolor="yellow"> WIP
+</td><td bgcolor="red"> No
+</td></tr>
+<tr>
+<td> STM VS6555 </td><td> Webcam
+</td><td bgcolor="lime"> <a href="vs6555.pdf" class="external text" rel="nofollow">datasheet</a>
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="red"> No
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="red"> No
+</td></tr>
+<tr>
+<td> ET8EK8 </td><td> Main Camera
+</td><td bgcolor="lime"> <a href="smia95_af_camera@20module_apl_090511.doc" class="external text" rel="nofollow">datasheet</a>
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="red"> No
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="red"> No
+</td></tr>
+<tr>
+<td> AD5820 </td><td> Autofocus
+</td><td bgcolor="yellow"> code
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="red"> No
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="red"> No
+</td></tr>
+<tr>
+<td> BCM2048 </td><td> Bluetooth
+</td><td bgcolor="yellow"> old code
+</td><td bgcolor="lime"> <a href="http://mxr.maemo.org/fremantle/source/kernel/drivers/bluetooth/hci_h4p/" class="external text" rel="nofollow">Yes</a>
+</td><td bgcolor="red"> No
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="red"> No
+</td></tr>
+<tr>
+<td> * </td><td> FM/RDS receiver
+</td><td bgcolor="yellow"> old code
+</td><td bgcolor="lime"> <a href="http://www.mail-archive.com/linux-media@vger.kernel.org/msg05142.html" class="external text" rel="nofollow">Yes</a>
+</td><td bgcolor="red"> No
+</td><td bgcolor="lime"> Yes
+</td><td bgcolor="red"> No
+</td></tr>
+<tr>
+<td> IR Diode on GPIO </td><td> Infrared/CIR transmitter
+</td><td bgcolor="yellow"> <a href="http://mxr.maemo.org/fremantle/source/kernel/drivers/input/lirc/lirc_rx51.c" class="external text" rel="nofollow">old code</a>
+</td><td bgcolor="lime"> <a href="http://mxr.maemo.org/fremantle/source/kernel/drivers/input/lirc/lirc_rx51.c" class="external text" rel="nofollow">Yes</a>
+</td><td bgcolor="red"> No
+</td><td bgcolor="lime"> <a href="http://mxr.maemo.org/fremantle/source/kernel/arch/arm/mach-omap2/board-rx51-peripherals.c" class="external text" rel="nofollow">Yes</a>
+</td><td bgcolor="red"> No
+</td></tr>
+<tr>
+<td> AV/Jack/GPIO </td><td> Nokia AV accessory detection, Tvout and Headset button support
+</td><td bgcolor="yellow"> <a href="http://mxr.maemo.org/fremantle/source/kernel/drivers/misc/nokia-av.c" class="external text" rel="nofollow">old code</a>
+</td><td bgcolor="lime"> <a href="http://mxr.maemo.org/fremantle/source/kernel/drivers/misc/nokia-av.c" class="external text" rel="nofollow">Yes</a>
+</td><td bgcolor="red"> No
+</td><td bgcolor="lime"> <a href="http://mxr.maemo.org/fremantle/source/kernel/arch/arm/mach-omap2/board-rx51-audio.c" class="external text" rel="nofollow">Yes</a>
+</td><td bgcolor="red"> No
+</td></tr></tbody></table>
+<p>Some patches are in meego obs repository: <a href="https://build.pub.meego.com/package/files?package=kernel-adaptation-n900&amp;project=CE%3AAdaptation%3AN900" class="external free" rel="nofollow">https://build.pub.meego.com/package/files?package=kernel-adaptation-n900&amp;project=CE%3AAdaptation%3AN900</a>
+</p>
+<h2> <span class="mw-headline" id="Camera"> Camera </span></h2>
+<p>Camera (front &amp; back) drivers are available from this git: <a href="https://gitorious.org/%7Esailus" class="external autonumber" rel="nofollow">[1]</a>. The code is not in the mainline kernel, because it uses a camera firmware, which can be avoided by changing the driver.
+</p>
+<h2> <span class="mw-headline" id="U-Boot"> U-Boot </span></h2>
+<p>Instead of booting the kernel directly from NOLO (which restricts you to using ONE kernel), U-Boot can be used as second bootloader.
+The Boot Process will end up like this: NOLO -&gt; U-Boot -&gt; Kernel. The Maemo kernel is appended to U-Boot, since U-Boot will be at
+the location where the Maemo kernel is located normally.
+</p><p>The U-Boot patches to support the N900 are not yet mainline, but have been proposed for inclusion recently: <a href="http://article.gmane.org/gmane.comp.boot-loaders.u-boot/130370/" class="external text" rel="nofollow">PATCH v2: Nokia RX-51 support</a>.
+</p><p>Git repository with N900 patches based on U-Boot master is here: <a href="https://gitorious.org/u-boot-shr/u-boot" class="external free" rel="nofollow">https://gitorious.org/u-boot-shr/u-boot</a> (branch pali)
+</p><p>Thread on talk.maemo.org where is last new version: <a href="http://talk.maemo.org/showthread.php?t=81613" class="external free" rel="nofollow">http://talk.maemo.org/showthread.php?t=81613</a>
+</p>
+<h2> <span class="mw-headline" id="Charging"> Charging </span></h2>
+<p>Charging is currently done with a shell script, which and "i2c-dev" kernel module.
+There are plans to move this into the kernel, so that charging happens automatically
+once you plug your N900 into a USB port. You can find discussions and some code 
+<a href="https://lkml.org/lkml/2011/12/7/626" class="external text" rel="nofollow">here</a>. Recently (3.3-rc1) the kernel got a 
+new Charge Manager Framework <a href="https://lkml.org/lkml/2012/1/10/514" class="external text" rel="nofollow">(Announcement)</a>,
+which will help with this task. You can find its documentation under:
+Documentation/power/charger-manager.txt
+</p>
+<h2> <span class="mw-headline" id="Modem"> Modem </span></h2>
+<p>The modem is connected via a bus called SSI, which is an old version of HSI.
+In linux multiple things are involved to get it working:
+</p>
+<ul><li> SSI driver (not yet mainline, WIP)
+<ul><li> Status 2012-01-09: <a href="http://marc.info/?l=linux-omap&amp;m=132611324318625&amp;w=2" class="external free" rel="nofollow">http://marc.info/?l=linux-omap&amp;m=132611324318625&amp;w=2</a>
+</li></ul>
+</li><li> HSI framework needed by the SSI driver (mainline since 3.4-rc2)
+</li><li> PhoNet for userspace communication (mainline since 2.6.28)
+</li></ul>
+<p>Patches missing mainline to get modem support:
+</p>
+<ul><li> <a href="http://article.gmane.org/gmane.linux.kernel/1153543" class="external text" rel="nofollow">HSI: omap_ssi: OMAP SSI driver</a>
+</li><li> <a href="http://article.gmane.org/gmane.linux.ports.arm.omap/58798" class="external text" rel="nofollow">HSI: omap_ssi: OMAP SSI kernel configuration</a>
+</li><li> board data for rx51, get e.g. from <a href="http://meego.gitorious.org/meego-device-adaptation/n900_kernel/blobs/master/arch/arm/mach-omap2/board-rx51-peripherals.c" class="external text" rel="nofollow">meego's board code</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 18/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key elinux:pcache:idhash:13730-0!1!0!!en!2!edit=0 and timestamp 20120701215626 -->
+<div class="printfooter">
+Retrieved from "<a href="http://elinux.org/N900">http://elinux.org/N900</a>"</div>
+		<div id="catlinks" class="catlinks catlinks-allhidden"></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				 <li id="ca-nstab-main" class="selected"><a href="http://elinux.org/N900" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="http://elinux.org/index.php?title=Talk:N900&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="http://elinux.org/index.php?title=N900&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="http://elinux.org/index.php?title=N900&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://elinux.org/index.php?title=Special:UserLogin&amp;returnto=N900" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url('final_penguin_only_color.jpg');" href="http://elinux.org/Main_Page" title="Visit the main page"></a>
+	</div>
+	
+	<div class="generated-sidebar portlet" id="p-Navigation">
+		<h5>Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-mainpage"><a href="http://elinux.org/Main_Page" title="Visit the main page [z]" accesskey="z">Main Page</a></li>
+				<li id="n-portal"><a href="http://elinux.org/eLinux.org:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="http://elinux.org/eLinux.org:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="http://elinux.org/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-help"><a href="http://elinux.org/Help:Contents" title="The place to find out">Help</a></li>
+				<li id="n-Volunteering"><a href="http://elinux.org/Sitesupport-url">Volunteering</a></li>
+				<li id="n-Popular-Pages"><a href="http://elinux.org/Special:PopularPages">Popular Pages</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://elinux.org/index.php" id="searchform">
+				<input name="title" value="Special:Search" type="hidden">
+				<input id="searchInput" title="Search eLinux.org" accesskey="f" name="search" type="search">
+				<input name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists" type="submit">&nbsp;
+				<input name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" type="submit">
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://elinux.org/Special:WhatLinksHere/N900" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://elinux.org/Special:RecentChangesLinked/N900" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="http://elinux.org/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://elinux.org/index.php?title=N900&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="http://elinux.org/index.php?title=N900&amp;oldid=139034" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" height="31" width="88"></a></div>
+	<div id="f-copyrightico"><a href="http://creativecommons.org/licenses/by-sa/3.0/"><img title="[creativecommons.org] a Creative Commons Attribution-ShareAlike 3.0 Unported License" style="border: 1px solid rgb(255, 204, 204); background-repeat: no-repeat; background-position: center center; background-image: url('undefined');" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="a Creative Commons Attribution-ShareAlike 3.0 Unported License" height="31" width="88"></a></div>
+	<ul id="f-list">
+		<li id="lastmod"> This page was last modified on 11 June 2012, at 01:04.</li>
+		<li id="viewcount">This page has been accessed 4,358 times.</li>
+		<li id="copyright">Content is available under <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="external ">a Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
+		<li id="privacy"><a href="http://elinux.org/eLinux.org:Privacy_policy" title="eLinux.org:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="http://elinux.org/eLinux.org:About" title="eLinux.org:About">About eLinux.org</a></li>
+		<li id="disclaimer"><a href="http://elinux.org/eLinux.org:General_disclaimer" title="eLinux.org:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+
+
+
+<!-- Served in 0.086 secs. -->
+</body>
+</html>

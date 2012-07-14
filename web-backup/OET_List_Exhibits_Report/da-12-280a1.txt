@@ -1,0 +1,54 @@
+PUBLIC NOTICE
+Federal Communications Commission
+445 12th St., S.W.
+Washington, D.C. 20554
+News Media Information 202 / 418-0500
+Internet: http://www.fcc.gov
+TTY: 1-888-835-5322
+DA 12-280
+Released:  February 24, 2012
+Office of Engineering and Technology, Wireless Telecommunications Bureau, and Office of 
+Strategic Planning Announce Workshop on “Spectrum Efficiency and Receiver Performance” 
+As part of the Commission’s efforts to enhance the use of spectrum for mobile broadband, the 
+FCC Office of Engineering and Technology, in conjunction with the Wireless Telecommunications 
+Bureau and the Office of Strategic Planning will host a workshop on spectrum efficiency and receivers.  
+The workshop will be held on Monday, March 12, 2012 and Tuesday, March 13, 2012, in the 
+Commission Meeting Room at FCC Headquarters in Washington, DC. 
+The role of receivers in enabling access to spectrum for new services implicates federal 
+stakeholders, as well as the private sector.  Receiver performance issues have often arisen as a conflict 
+between legacy stakeholders and new entrants where deployment of new technologies and services 
+threatens to adversely impact an incumbent or place restrictions on the new entrant.  Past examples 
+include interference issues between new cellular radio systems and public safety radio systems,1 satellite 
+digital radio systems and proposed terrestrial data services,2 unlicensed WiFi systems and FAA weather 
+radar systems,3 and ancillary terrestrial service on mobile satellite spectrum and GPS4.  The resolution of 
+such matters has historically required a public process involving regulators, stakeholders and other 
+parties. Because such discussions sometime begin upon the introduction of a new service or technology, 
+full deployment of such new services could be hindered. New approaches to spectrum management 
+focusing on spectrum efficiency and receiver performance may enable more assured deployment of new 
+services and reduce the necessity for the involvement of regulators.
+This two-day workshop will discuss the characteristics of receivers and how their performance 
+can affect the efficient use of spectrum and opportunities for the creation of new services.  Key topics will 
+include current practices for receiver design, case studies involving interference due to receiver 
+characteristics, and approaches for promoting interference avoidance and efficient use of spectrum, given 
+the current receiver base and potential future deployments.  The workshop will include perspectives from 
+licensees, equipment manufacturers, component providers, and other interested parties.
+  
+1 See Improving Public Safety Communications in the 800 MHz Band, WT Docket 02-55, Report and Order, Fifth 
+Report and Order, Fourth Memorandum Opinion and Order, and Order, 19 FCC Rcd 14969 (2004) as amended by 
+Erratum, DA 04-3208, 19 FCC Rcd 19651 (2004) and Erratum, DA 04-3459, rel. Oct. 29, 2004 (800 MHz R&O).
+2 See Establishment of Rules and Policies for the Digital Audio Radio Satellite Service in the 2310-2360 MHz 
+Frequency Band, WT Docket No. 07-293, Report and Order, Second Report and Order` rel. May 20th, 2010
+3 See FCC Memorandum Elimination of interference to Terminal Doppler Weather Radar (TDWR), from Julius 
+Knapp, Chief, FCC Office of Engineering and Technology, P. Michele Ellison, Chief, FCC Enforcement Bureau, 
+rel. July 27th, 2010
+4 See FCC Public Notice International Bureau Invites Comment On NTIA Letter  Regarding Lightsquared 
+Conditional Waiver, DA 12-214, IB Docket No. 11-109, rel. February 15, 2012
+2
+Accessibility Information. To request information in accessible formats (computer diskettes, large 
+print, audio recording, and Braille), send an email to fcc504@fcc.gov or call the FCC’s Consumer and 
+Governmental Affairs Bureau at (202) 418-0530 (voice), (202) 418-0432 (TTY). This document can also 
+be downloaded in Word and Portable Document Format (PDF) at: http://www.fcc.gov.
+For further information, contact Michael Ha, Office of Engineering and Technology at (202) 418-
+2099 or by email: michael.ha@fcc.gov.
+For more news and information about the Federal Communications Commission
+Please visit: www.fcc.gov

@@ -1,0 +1,17 @@
+/* ::::: https://fjallfoss.fcc.gov/oetcf/styles/oet.css ::::: */
+
+BODY { font-family: Verdana,Arial,Helvetica,sans-serif; }
+P { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 12px; line-height: normal; }
+TD { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 12px; }
+.fcctopnavlinks { font-size: 9pt; color: rgb(255, 255, 255); font-family: Verdana,Arial,Helvetica,sans-serif; background-color: rgb(0, 0, 153); }
+.navlinks { font-size: 8pt; font-family: Arial,Helvetica,sans-serif; line-height: 11px; }
+.breadcrumbs { color: rgb(0, 0, 0); font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 10px; font-weight: normal; }
+.warning-msg { font-size: 16px; color: rgb(255, 0, 0); font-family: Verdana,Arial,Helvetica,sans-serif; text-align: center; font-weight: bold; }
+.header-title { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 14px; font-weight: bold; color: rgb(0, 0, 153); margin-left: 5px; }
+.releaseDescription { font-size: 12px; line-height: 16px; }
+.issueboxtitleshifted { margin-top: 3px; font-weight: bold; font-size: 10pt; margin-left: 3px; color: rgb(0, 0, 153); font-family: Arial,Helvetica,sans-serif; }
+.content { font-size: 12px; font-family: Verdana,Arial,Helvetica,sans-serif; }
+INPUT { font-family: "Courier New",Courier,mono; font-size: 12px; }
+.button-content { font-size: 10px; font-family: Verdana,Arial,Helvetica,sans-serif; font-weight: bold; }
+.tablehdrfontblue { font-size: 10px; font-family: Verdana,Arial,Helvetica,sans-serif; color: rgb(0, 0, 153); font-weight: bold; text-decoration: underline; }
+.pagedate { font-family: Arial,Helvetica,sans-serif; font-size: 10pt; font-style: italic; }

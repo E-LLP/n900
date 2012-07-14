@@ -1,0 +1,178 @@
+/* ::::: http://gitorious.org/stylesheets/gts-common.css?1339069040 ::::: */
+
+#container #content { width: 920px; float: left; padding: 20px; }
+#container #content.with_sidebar { float: left; width: 640px; padding: 23px 20px; }
+.content-container { float: left; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 1px solid rgb(238, 238, 238); }
+.w-750 { width: 640px; }
+#project-description { margin: 0pt 0pt 15px; padding: 0pt 0pt 10px; }
+#project-description h1 { font-size: 24px; }
+#project-description p, #project-description ol, #project-description ul { font-size: 13px; color: rgb(90, 98, 105); line-height: 18px; }
+#project-description p:first-child { margin-bottom: 3px; }
+.repository_meta { width: 640px; float: left; border-radius: 6px 6px 6px 6px; margin: 0px 10px 20px 0pt; background: none repeat scroll 0% 0% rgb(231, 231, 231); border: 1px solid rgb(213, 213, 213); }
+.repository-info { width: 610px; float: left; padding: 15px; font-size: 12px; }
+.repository_meta h3 { font-size: 20px; line-height: 24px; margin-bottom: 8px; font-weight: normal; text-shadow: 0px 1px rgb(255, 255, 255); }
+.repository_meta .infobox { width: 602px; border-radius: 6px 6px 6px 6px; border: 1px solid rgb(197, 197, 197); font-size: 11px; float: left; padding: 0px 0px 0px 8px; background: url('clone-bg.png') repeat-x scroll 0% 0% transparent; }
+.repository_meta .infobox ul li form strong { border-right: 1px solid rgb(204, 204, 204); text-shadow: 0px 1px rgb(238, 238, 238); padding: 6px 9px 1px 19px; float: left; height: 21px; font-size: 11px; background: url('link.png') no-repeat scroll 0px 7px transparent; }
+.repository_meta .infobox ul li form p { float: left; text-shadow: 0px 1px rgb(238, 238, 238); margin: 0pt; height: 28px; }
+.repository_meta .infobox ul li form p input[type="radio"] { position: relative; left: -4px; top: 1px; }
+.repository_meta .infobox ul li form p.clone_radio { border-right: 1px solid rgb(204, 204, 204); background: url('clone-url-bg.png') repeat-x scroll 0% 0% transparent; padding: 6px 9px 1px 7px; height: 21px; }
+.repository_meta .infobox input[type="text"] { line-height: 20px; border: 0pt none; background: none repeat scroll 0% 0% rgb(255, 255, 255); padding: 7px 4px 1px 6px; height: 20px; }
+.repository_meta .infobox a.clone-help-toggler { margin-left: 5px; color: rgb(0, 136, 0); }
+.repository_meta .infobox .clone-help-text { clear: both; padding: 10px 10px 0pt; }
+.repository_meta .infobox p.clone-copy { float: left; overflow: hidden; }
+.repository_meta .infobox p.clone-copy.git_http { width: 355px; }
+.repository_meta .infobox p.clone-copy.git_http input[type="text"] { width: 330px; }
+.repository_meta .infobox p.clone-copy { width: 470px; }
+.repository_meta .infobox p.clone-copy input[type="text"] { width: 445px; }
+.repository_meta .infobox ul li form p label { cursor: pointer; float: left; font-size: 11px; line-height: 18px; height: 20px; padding-left: 5px; }
+.repository_meta .repository-links { width: 624px; padding: 8px; height: 29px; float: left; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; background: url('repos-link-bg.png') repeat-x scroll 0% 0% transparent; }
+ul.events { float: left; }
+ul.events li { float: left; }
+.events .date { background: none repeat scroll 0% 0% rgb(228, 228, 228); padding: 7px 10px 4px; border-top-left-radius: 6px; border-top-right-radius: 6px; color: rgb(115, 115, 115); font-weight: bold; text-shadow: 0px 1px rgb(255, 255, 255); margin: 0pt 0pt 9px; font-size: 12px; }
+.events.w-750 .date { width: 620px; }
+.events .event_instances, .events .event_instance { margin: 0px 0px 0px 5px; background: none no-repeat scroll 0pt 50% transparent; float: left; padding-bottom: 0px; clear: both; }
+.events ul.event_instances { margin: 5px 0px 10px; }
+.event_instance p { margin: 0pt 0pt 8px; }
+.events .event_instances strong, .events .event_instance strong { color: rgb(85, 85, 85); }
+.events .event_instance .event_date { float: left; text-align: left; font-weight: bold; font-size: 11px; color: rgb(137, 137, 137); }
+.events.w-750 .event_instance .event_date { width: 50px; }
+.events .event_instance img { float: left; }
+.events .event_instance .event_meta .event_action { font-size: 12px; }
+.events .event_instance .event_meta { margin: 0pt 0pt 0px 5px; float: left; }
+.events.w-750 .event_instance .event_meta { width: 450px; }
+.events .event_instance .event_category { float: left; min-width: 110px; text-align: center; font-size: 11px; text-transform: uppercase; height: 16px; color: rgb(255, 255, 255); text-indent: -9999px; background: url('events.png') no-repeat scroll 0% 0% rgb(255, 255, 255); }
+.events .event_instance .event_category.push { background-position: 0px 0px; }
+.events .event_instance .event_category.project { background-position: 0px -16px; }
+.events .event_instance .event_category.merge_request { background-position: 0px -48px; }
+.events .event_instance .event_category.commit { background-position: 0px -80px; }
+.events .event_instance .event_category.repository { background-position: 0px -96px; }
+.events a.event-author { color: rgb(102, 102, 102); }
+#container #sidebar { border-top: 1px solid rgb(231, 231, 231); width: 240px; min-height: 100%; float: right; padding: 23px 20px; color: rgb(85, 85, 85); }
+#container #sidebar:after { clear: left; display: block; visibility: hidden; height: 0pt; content: ""; }
+.navigation { float: left; border-bottom: 1px solid rgb(194, 194, 194); border-top: 1px solid rgb(194, 194, 194); width: 240px; margin-left: -20px; background: none repeat-x scroll 0% 0% rgb(204, 204, 204); padding: 18px 20px; margin-bottom: 15px; }
+#sidebar ul.links li { margin-bottom: 0pt; }
+#sidebar ul.links li { width: 240px; float: left; height: 34px; box-shadow: 0px 1px 0px rgb(238, 238, 238) inset; border-left: 1px solid rgb(181, 181, 181); border-right: 1px solid rgb(181, 181, 181); border-top: 1px solid rgb(181, 181, 181); background: none no-repeat scroll 6px 5px rgb(222, 222, 222); }
+#sidebar ul.links li a { font-weight: bold; color: rgb(85, 85, 85); font-size: 12px; text-shadow: 0px 1px rgb(255, 255, 255); width: 195px; float: left; display: block; line-height: 20px; height: 22px; background-repeat: no-repeat; background-position: 10px 9px; padding: 8px 10px 4px 35px; background-image: url('bullet_go.png'); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#sidebar ul.links li a:hover { color: rgb(83, 83, 83); text-shadow: 0px 1px rgb(238, 238, 238); text-decoration: none; background: url('bullet_go.png') no-repeat scroll 10px 9px rgb(206, 206, 206); }
+#sidebar ul.links li a:active { background-color: rgb(197, 197, 197); line-height: 23px; background-position: 10px 10px; }
+#sidebar > * { float: left; }
+#sidebar ul.committers, #sidebar ul.repository_list { width: 240px; }
+#project-meta, .sidebar-meta { float: left; width: 240px; padding: 15px 0px; }
+#project-meta li, .sidebar-meta li { margin-bottom: 3px; text-align: right; padding-bottom: 3px; font-size: 12px; border-bottom: 1px solid rgb(217, 217, 217); }
+#project-meta li strong, .sidebar-meta li strong { float: left; }
+#clone-list-container { width: 240px; }
+form p.hint { font-size: 11px; }
+#content form p, #content form span, #content form li div p, #content form li div span { line-height: 18px; }
+form { margin-bottom: 1.5em; }
+form input[type="text"], input[type="password"] { padding: 6px; width: 320px; background: none repeat scroll 0% 0% rgb(248, 248, 248); border: 1px solid rgb(204, 204, 204); }
+input[type="text"], input[type="password"], textarea, select { margin: 0px 0pt; }
+.repository-link a, .pull-box-links a, .button a { border-radius: 5px 5px 5px 5px; font-weight: bold; color: rgb(85, 85, 85); font-size: 11px; text-shadow: 0px 1px rgb(255, 255, 255); padding: 4px 8px 1px 28px; display: block; float: left; line-height: 20px; height: 21px; margin-right: 5px; margin-bottom: 1px; background: none no-repeat scroll 7px 5px rgb(232, 232, 232); box-shadow: 0px 1px 0px rgb(255, 255, 255) inset; border: 1px solid rgb(181, 181, 181); }
+.repository-link a:hover, .pull-box-links a:hover, .button a:hover { color: rgb(83, 83, 83); text-shadow: 0px 1px rgb(234, 234, 234); text-decoration: none; box-shadow: 0px 1px 0px rgb(234, 234, 234) inset; background-color: rgb(205, 205, 205); }
+.repository-link a:active, .pull-box-links a:active, .button a:active { background-color: rgb(195, 195, 195); }
+form input[type="submit"] { border-radius: 5px 5px 5px 5px; font-weight: bold; color: rgb(146, 72, 0); font-size: 13px; text-shadow: 0px 1px rgb(255, 197, 155); padding: 6px 10px 7px; display: block; float: left; line-height: 20px; height: 33px; margin-right: 5px; margin-bottom: 1px; box-shadow: 0px 1px 0px rgb(255, 197, 155) inset; background-color: rgb(255, 176, 99); border: 1px solid rgb(206, 114, 25); cursor: pointer; }
+form input[type="submit"]:hover { background: none repeat scroll 0% 0% rgb(244, 156, 70); }
+@font-face {
+  font-family: "Raleway";  src: url('raleway_thin.otf');}
+html { height: 100%; }
+body { background: none repeat scroll 0% 0% rgb(207, 207, 207); }
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td { margin: 0pt; padding: 0pt; }
+fieldset, img { border: 0pt none; }
+address, caption, cite, code, dfn, em, strong, th, var { font-style: normal; font-weight: normal; }
+li { list-style: none outside none; }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal; }
+input, textarea, select { font-family: inherit; font-size: inherit; font-weight: inherit; }
+body { font-size: 12px; line-height: 1.461em; background: none repeat scroll 0% 0% rgb(45, 45, 45); color: rgb(78, 78, 78); font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; margin: 0pt; padding: 0px 0px 20px; }
+h1, h2, h3, h4, h5, h6 { color: rgb(85, 85, 85); font-weight: normal; }
+h1 { margin: 0pt 0pt 0.904em; font-size: 1.615em; line-height: 0.904em; }
+h2 { margin: 0pt 0pt 12px; font-size: 20px; line-height: 20px; }
+h3 { margin: 0pt 0pt 12px; font-size: 18px; line-height: 20px; }
+#content h2 { font-size: 24px; }
+#sidebar h1, #sidebar h2, #sidebar h3, #sidebar h4, #sidebar h5, #sidebar h6 { margin-bottom: 10px; color: rgb(58, 58, 58); font-weight: bold; text-shadow: 0px 1px rgb(255, 255, 255); }
+#sidebar h2, #sidebar h3, #sidebar h4, #sidebar h5, #sidebar h6 { color: rgb(85, 85, 85); }
+#sidebar h3 { font-size: 14px; margin-bottom: 12px; }
+#sidebar h1 a, #sidebar h2 a, #sidebar h3 a, #sidebar h4 a, #sidebar h5 a, #sidebar h6 a { color: rgb(85, 85, 85); }
+p, ul, blockquote, pre, td, th, label { margin: 0pt 0pt 15px; color: rgb(105, 105, 105); font-size: 12px; line-height: 18px; }
+code, pre, tt { font-size: 95%; line-height: 105%; }
+pre { white-space: pre-wrap; word-wrap: break-word; }
+a { color: rgb(237, 107, 43); text-decoration: none; }
+a:hover { color: rgb(149, 49, 0); text-decoration: none; }
+strong, b { font-weight: bold; }
+pre { margin-left: 2em; margin-right: 2em; }
+.clear { clear: both; height: 0pt; }
+#wrapper { width: 960px; margin: 45px auto; }
+#user-nav { float: right; margin: -22px 15px 4px 0px; }
+#user-nav li { display: inline; padding-left: 0px; margin-left: 25px; float: left; }
+#user-nav li a { font-family: 'Lucida Grande',Helvetica,Arial; font-size: 11px; color: rgb(156, 156, 156); text-shadow: 0px -1px 0px rgb(0, 0, 0); }
+#user-nav li a:hover { color: rgb(230, 230, 230); text-decoration: none; }
+#header { border-top-left-radius: 12px; border-top-right-radius: 12px; height: 110px; width: 960px; background-image: url('header-bg.png'); background-repeat: no-repeat; overflow: hidden; }
+#header #logo { padding: 10px 0pt 0pt 20px; line-height: 25px; margin: 25px 0px 0px 25px; float: left; border: 0pt none; }
+#header #logo a { color: rgb(102, 102, 102); }
+#menu { float: right; padding-top: 73px; padding-left: 70px; padding-right: 25px; text-align: center; height: 40px; }
+#menu li { display: inline; margin-left: 25px; }
+#menu li a { font-size: 17px; color: rgb(207, 207, 207); outline: medium none; }
+#menu li a:hover { text-decoration: none; }
+#menu li a:active { margin-top: 1px; }
+#menu li { float: left; height: 20px; }
+#menu li a { height: 20px; float: left; }
+#container { min-height: 300px; float: left; background: none repeat scroll 0% 0% rgb(255, 255, 255); width: 960px; }
+#footer { float: left; width: 920px; padding: 20px; font-size: 11px; color: rgb(102, 102, 102); margin-bottom: 200px; clear: both; background: none repeat scroll 0% 0% rgb(24, 24, 24); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; box-shadow: 0px -1px 0px rgb(70, 70, 70); }
+#footer a { color: rgb(146, 185, 45); }
+#footer h3 { color: rgb(92, 91, 91); font-size: 13px; font-weight: bold; text-shadow: 0px -1px rgb(10, 10, 10); }
+#footer ul { float: left; width: 130px; margin: -3px 20px 0px 0px; overflow: auto; border-top: 1px solid rgb(37, 37, 37); padding: 8px 0pt 20px; }
+#footer ul li a { font-size: 11px; font-weight: bold; color: rgb(152, 152, 152); text-shadow: 0px -1px rgb(10, 10, 10); }
+#footer ul li a:hover { color: rgb(238, 238, 238); text-decoration: none; }
+#footer .powered-by { float: right; width: 100px; margin: 40px 0pt 10px 10px; text-align: center; }
+#footer .powered-by img { margin-top: 7px; }
+#footer .footer-blurb { border-top: 1px solid rgb(51, 51, 51); clear: both; margin: 0pt; padding: 10px 0pt 0pt; text-align: right; }
+#footer .footer-blurb a:link, #footer .footer-blurb a:visited, #footer .footer-blurb a { color: rgb(110, 110, 110); font-weight: bold; }
+.round-5 { border-radius: 5px 5px 5px 5px; }
+#top-bar { width: 955px; float: left; margin: 0pt; padding-left: 5px; height: 30px; overflow: hidden; background-image: url('breadcrumb-bg.png') ! important; border-bottom: 1px solid rgb(173, 173, 173); }
+#top-bar #searchbox { padding: 3px 0px 0px; list-style: none outside none; clear: right; float: right; width: 185px; margin: 0pt; }
+#top-bar #searchbox .search-field, #top-bar #searchbox .search-submit { background: none repeat scroll 0% 0% rgb(255, 255, 255); border-radius: 5px 5px 5px 5px; box-shadow: 0px -1px 0px rgb(158, 158, 158), 0px 1px 0px rgb(205, 205, 205); color: rgb(117, 117, 117); }
+#top-bar #searchbox .search-submit { color: rgb(170, 170, 170); display: none; }
+#top-bar #searchbox input { margin: 0pt; padding: 4px; }
+#top-bar #searchbox .search-field { background: url('search.png') no-repeat scroll 3px 2px rgb(255, 255, 255); padding-left: 20px; width: 185px; font-size: 11px; margin: -1px 4px 0px 2px; float: right; }
+#top-bar #searchbox .search-hint { display: none; }
+#breadcrumbs { float: left; }
+#breadcrumbs li { float: left; background-repeat: no-repeat; background-position: right 0px; display: list-item; font-family: 'Lucida Grande',Helvetica,Arial; font-size: 11px; font-weight: bold; color: rgb(42, 43, 43); padding: 7px 22px 7px 10px; text-shadow: 0px 1px 0px rgb(238, 238, 238); background-image: url('breadcrumb-divider.png'); }
+#breadcrumbs li a { padding-left: 20px; display: block; background-repeat: no-repeat; background-position: left center; color: rgb(85, 85, 85); }
+#breadcrumbs li a:hover { text-decoration: none; color: rgb(149, 49, 0); }
+li.project > a { background-image: url('report.png') ! important; }
+li.tree > a { background-image: url('chart_organisation.png') ! important; }
+li.merge_requests > a { background-image: url('arrow_in.png') ! important; }
+li.clone_repository > a { background-image: url('database_clone.png') ! important; }
+li.commit > a { background-image: url('brick.png') ! important; }
+li.project_members > a { background-image: url('group.png') ! important; }
+ul .user { padding-left: 2px; }
+ul.repository_list li { padding-left: 18px; margin-bottom: 10px; }
+ul.repository_list li.clone { background: url('database.png') no-repeat scroll 0pt 0pt transparent; }
+ul.repository_list .user img, ul.repository_list .group img, ul.committers .user img, ul.committers .group img { float: left; margin-top: 1px; }
+ul.repository_list .user a, ul.repository_list .group a, ul.committers .user a, ul.committers .group a { color: rgb(85, 85, 85); margin: 0pt 0pt 0pt 5px; padding: 0pt; font-size: 11.8px; }
+.commit_message, .commit_message p { margin-top: 10px; margin-left: 10px; font: 95%/105% "Bitstream Vera Sans Mono",Monaco,monospace; }
+.event_instance .commit_message, .event_instance .commit_message p { margin: 5px 0pt 10px 10px; line-height: 130%; }
+.commit_message a { color: rgb(0, 0, 0); }
+.pagination { padding: 30px 3px 3px; margin: 3px 3px 10px; text-align: center; width: 600px; height: 30px; border-top: 1px solid rgb(238, 238, 238); float: left; }
+.pagination > * { margin-left: -3px; background: none no-repeat scroll 7px 5px rgb(232, 232, 232); box-shadow: 0px 1px 0px rgb(255, 255, 255) inset; border-left: 1px solid rgb(181, 181, 181); border-top: 1px solid rgb(181, 181, 181); border-bottom: 1px solid rgb(181, 181, 181); padding: 6px 10px; line-height: 26px; height: 23px; font-weight: bold; color: rgb(85, 85, 85); font-size: 11px; text-shadow: 0px 1px rgb(255, 255, 255); cursor: pointer; }
+.pagination a:hover { color: rgb(68, 68, 68); text-shadow: 0px 1px rgb(234, 234, 234); text-decoration: none; box-shadow: 0px 1px 0px rgb(234, 234, 234) inset; background-color: rgb(205, 205, 205); }
+.pagination a:active { background-color: rgb(195, 195, 195); }
+.pagination span.current { color: rgb(67, 67, 67); text-shadow: 0px 1px rgb(255, 197, 155); box-shadow: 0px 1px 0px rgb(255, 197, 155) inset; background-color: rgb(255, 176, 99) ! important; }
+.pagination span.disabled { color: rgb(190, 190, 190); }
+.pagination .prev_page.disabled { background: url('arrow-left-disabled.png') no-repeat scroll 6px 8px rgb(232, 232, 232); }
+.pagination .prev_page { border-top-left-radius: 5px; border-bottom-left-radius: 5px; background: url('arrow-left.png') no-repeat scroll 6px 8px rgb(232, 232, 232); padding-left: 18px; }
+.pagination .next_page { border-right: 1px solid rgb(181, 181, 181); border-top-right-radius: 5px; border-bottom-right-radius: 5px; background: url('arrow-right.png') no-repeat scroll 38px 8px rgb(232, 232, 232); padding-right: 18px; }
+.page { margin-bottom: 0px; padding-bottom: 0px; }
+.search_bar input { padding: 3px; margin: 0pt; }
+.search_bar p { margin-bottom: 2px; }
+.search_bar { margin-bottom: 20px; }
+.repository_meta .repository-description.page { margin: 0pt; padding: 0pt; }
+.repository_meta .infobox ul { margin-bottom: 0pt; }
+.feed_icon { margin: 0px 4px -1px; }
+.page { margin-bottom: 20px; padding-bottom: 10px; }
+#repo_search { width: 260px; }
+#repo_search form { position: relative; width: 260px; height: 30px; margin: 0pt; }
+#repo_search input.search { border: 1px solid rgb(187, 187, 187); border-radius: 10px 10px 10px 10px; background: url('zoom.png') no-repeat scroll 4px 50% rgb(255, 255, 255); padding-left: 20px; position: absolute; left: 0pt; top: 0pt; width: 200px; z-index: 9; margin: 0pt; }
+#repo_search .reset { font-size: 70%; color: rgb(51, 153, 0); cursor: pointer; position: absolute; top: 3px; right: 40px; z-index: 10; }
+/* ::::: http://fonts.googleapis.com/css?family=Nobile&v1 ::::: */
+
+@font-face {
+  font-family: "Nobile";  font-style: normal;  font-weight: 400;  src: local("Nobile"), local("Nobile-Regular"), url('ljdsuyk02e6wtyvk5bnaea.woff') format("woff");}

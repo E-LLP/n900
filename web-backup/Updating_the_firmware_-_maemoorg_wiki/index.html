@@ -1,0 +1,571 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		
+				<meta name="keywords" content="Updating the firmware,Booting from a flash card,Cannot install firmware update,Documentation/Maemo 5 Developer Guide/Development Environment/Maemo Flasher-3.5,Flashing N9,Maemo UK variant firmware,Nokia 770,Nokia N800,Nokia N810,Nokia N900,Seamless Software Update">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.maemo.org/opensearch_desc.php" title="maemo.org wiki (English)">
+<link rel="alternate" type="application/rss+xml" title="maemo.org wiki RSS Feed" href="http://wiki.maemo.org/index.php?title=Special:Recentchanges&amp;feed=rss">
+<link rel="alternate" type="application/atom+xml" title="maemo.org wiki Atom Feed" href="http://wiki.maemo.org/index.php?title=Special:Recentchanges&amp;feed=atom">
+		<title>Updating the firmware - maemo.org wiki</title>
+        
+        
+        <!--[if lte IE 6]>
+            <link rel="stylesheet" href="http://static.maemo.org/style_maemo2009/css/ie.css" type="text/css" media="screen">
+        <![endif]-->
+
+
+        
+        
+		
+		
+		<meta http-equiv="imagetoolbar" content="no"><!--[endif]---->
+		
+		
+                
+		
+		<!-- Head Scripts -->
+		
+		
+		
+	
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body class="mediawiki ns-0 ltr page-Updating_the_firmware">
+        <div id="container">
+            <div id="header">
+                <div id="logo">
+                                        <a href="http://maemo.org/"><img src="logo.jpg" title="Maemo.org" alt="Maemo.org"></a>
+                </div><!-- logo -->
+
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://wiki.maemo.org/index.php?title=Special:Userlogin&amp;returnto=Updating_the_firmware" title="You are encouraged to log in, it is not mandatory however. [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+            </div>
+        </div>
+            <div id="navigation">
+                <div id="navigation-left-wrapper">
+
+                    <div id="navigation-right-wrapper">
+
+                        <ul>
+                            <li><a href="http://maemo.org/intro/">Intro</a></li>
+                            <li><a href="http://maemo.org/downloads/">Downloads</a></li>
+                            <li class="selected"><a href="http://maemo.org/community/">Community</a></li>
+                            <li><a href="http://maemo.org/development/">Development</a></li>
+                            <li><a href="http://maemo.org/news/">News</a></li>
+                            <li><a href="http://talk.maemo.org/">TALK</a></li>
+                        </ul>
+
+
+		<div id="search">
+			<form action="http://wiki.maemo.org/Special:Search" id="searchform">
+				<input id="searchInput" name="search" title="Search maemo.org wiki [f]" accesskey="f" value="" type="text">
+				<input name="go" class="submit" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists" type="submit">&nbsp;
+<!--				<input type='submit' name="fulltext" class="submit" id="mw-searchButton" value="Go" title="Search the pages for this text" /> &nbsp; -->
+			</form>
+		</div>
+
+
+                    </div>
+                </div>
+            </div><!-- /navigation -->
+            <div id="breadcrumb"></div>
+            <div id="content">
+                        
+
+<!--	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content2"> 
+
+
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">Updating the firmware</h1>
+		<div id="bodyContent">
+-->
+
+      
+<!-- sidebar --> 
+                  <div id="sidebar">
+		<div id="nav-sub">
+
+		<div class="portlet" id="p-navigation">
+		<h3>Navigation</h3>
+			<ul>
+				<li id="n-mainpage"><a href="http://wiki.maemo.org/Main_Page" title="Visit the Main Page [z]" accesskey="z">Main Page</a></li>
+				<li id="n-recentchanges"><a href="http://wiki.maemo.org/Special:Recentchanges" title="The list of recent changes in the wiki. [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="http://wiki.maemo.org/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="http://wiki.maemo.org/Help:Contents" title="The place to find out.">Help</a></li>
+				<li id="n-advancedsearch"><a href="http://wiki.maemo.org/Special:Search">Advanced search</a></li>
+			</ul>
+	</div>
+	
+
+
+	<div id="p-cactions" class="portlet">
+		<h3>Views</h3>
+			<ul class="fi_protie_navigation">
+					 <li id="ca-nstab-main" class="selected"><a href="http://wiki.maemo.org/Updating_the_firmware" title="View the content page [c]" accesskey="c">Page</a></li>
+					 <li id="ca-talk"><a href="http://wiki.maemo.org/Talk:Updating_the_firmware" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+					 <li id="ca-edit"><a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit" title="You can edit this page. Please use the preview button before saving. [e]" accesskey="e">Edit</a></li>
+					 <li id="ca-history"><a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=history" title="Past versions of this page. [h]" accesskey="h">History</a></li>
+				</ul>
+	</div>
+
+
+    
+		</div>
+
+               </div>
+<!-- sidebar --> 
+<div id="main">
+<div id="main-wrapper">
+
+			            <h1 class="firstHeading">Updating the firmware</h1>
+			<!-- start content -->
+			<p>This page has seen massive edits to get it in line with N900 details of flashing. N8x0 owners might want to have a look to older versions, like <a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;oldid=17120" class="external free" title="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;oldid=17120" rel="nofollow">http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;oldid=17120</a>
+</p><p><b>Video Tutorials:</b>
+</p><p><a href="http://www.youtube.com/watch?v=E1zvRjL-2cM" class="external free" title="http://www.youtube.com/watch?v=E1zvRjL-2cM" rel="nofollow">http://www.youtube.com/watch?v=E1zvRjL-2cM</a>
+</p><p><a href="http://www.youtube.com/watch?v=O54KdLvTA2U" class="external free" title="http://www.youtube.com/watch?v=O54KdLvTA2U" rel="nofollow">http://www.youtube.com/watch?v=O54KdLvTA2U</a>
+</p>
+<table id="toc" class="toc" summary="Contents"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#What_does_it_do.3F"><span class="tocnumber">1</span> <span class="toctext">What does it do?</span></a>
+<ul>
+<li class="toclevel-2"><a href="#N9"><span class="tocnumber">1.1</span> <span class="toctext">N9</span></a></li>
+<li class="toclevel-2"><a href="#N900"><span class="tocnumber">1.2</span> <span class="toctext">N900</span></a></li>
+<li class="toclevel-2"><a href="#N800.2FN810"><span class="tocnumber">1.3</span> <span class="toctext">N800/N810</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Updating_.26_Flashing_your_device"><span class="tocnumber">2</span> <span class="toctext">Updating &amp; Flashing your device</span></a>
+<ul>
+<li class="toclevel-2"><a href="#All_Systems"><span class="tocnumber">2.1</span> <span class="toctext">All Systems</span></a></li>
+<li class="toclevel-2"><a href="#Linux"><span class="tocnumber">2.2</span> <span class="toctext">Linux</span></a></li>
+<li class="toclevel-2"><a href="#Mac_OS_X"><span class="tocnumber">2.3</span> <span class="toctext">Mac OS X</span></a>
+<ul>
+<li class="toclevel-3"><a href="#GUI_with_770Flasher"><span class="tocnumber">2.3.1</span> <span class="toctext">GUI with 770Flasher</span></a></li>
+<li class="toclevel-3"><a href="#Console_with_Flasher-3.5"><span class="tocnumber">2.3.2</span> <span class="toctext">Console with Flasher-3.5</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Windows"><span class="tocnumber">2.4</span> <span class="toctext">Windows</span></a>
+<ul>
+<li class="toclevel-3"><a href="#N900_2"><span class="tocnumber">2.4.1</span> <span class="toctext">N900</span></a>
+<ul>
+<li class="toclevel-4"><a href="#Updating_the_firmware_using_the_Nokia_Software_Updater"><span class="tocnumber">2.4.1.1</span> <span class="toctext">Updating the firmware using the Nokia Software Updater</span></a></li>
+<li class="toclevel-4"><a href="#Updating_or_re-flashing_the_firmware_using_the_Flasher"><span class="tocnumber">2.4.1.2</span> <span class="toctext">Updating or re-flashing the firmware using the Flasher</span></a></li>
+<li class="toclevel-4"><a href="#Issues_with_64-bit_Windows_and_Workarounds"><span class="tocnumber">2.4.1.3</span> <span class="toctext">Issues with 64-bit Windows and Workarounds</span></a></li>
+<li class="toclevel-4"><a href="#Workaround_for_.22no_suitable_device_found.22_problem_on_Windows_7_x64"><span class="tocnumber">2.4.1.4</span> <span class="toctext">Workaround for "no suitable device found" problem on Windows 7 x64</span></a>
+<ul>
+<li class="toclevel-5"><a href="#Option_1"><span class="tocnumber">2.4.1.4.1</span> <span class="toctext">Option 1</span></a></li>
+<li class="toclevel-5"><a href="#Option_2"><span class="tocnumber">2.4.1.4.2</span> <span class="toctext">Option 2</span></a></li>
+<li class="toclevel-5"><a href="#Option_3"><span class="tocnumber">2.4.1.4.3</span> <span class="toctext">Option 3</span></a></li>
+<li class="toclevel-5"><a href="#Option_4"><span class="tocnumber">2.4.1.4.4</span> <span class="toctext">Option 4</span></a></li>
+<li class="toclevel-5"><a href="#Option_5"><span class="tocnumber">2.4.1.4.5</span> <span class="toctext">Option 5</span></a></li>
+<li class="toclevel-5"><a href="#Option_6"><span class="tocnumber">2.4.1.4.6</span> <span class="toctext">Option 6</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-3"><a href="#770.2FN800.2FN810.2FN810_WiMAX"><span class="tocnumber">2.4.2</span> <span class="toctext">770/N800/N810/N810 WiMAX</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Flashing_only_the_kernel_from_a_FIASCO_image_.28expert_topic.21.29"><span class="tocnumber">2.5</span> <span class="toctext">Flashing only the kernel from a FIASCO image (expert topic!)</span></a></li>
+<li class="toclevel-2"><a href="#Flashing_the_eMMC_in_the_N900"><span class="tocnumber">2.6</span> <span class="toctext">Flashing the eMMC in the N900</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Seamless_Software_Update"><span class="tocnumber">3</span> <span class="toctext">Seamless Software Update</span></a></li>
+<li class="toclevel-1"><a href="#Troubleshooting"><span class="tocnumber">4</span> <span class="toctext">Troubleshooting</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Flashed_but_still_getting_only_.225_white_dots_going_back_and_forth.22"><span class="tocnumber">4.1</span> <span class="toctext">Flashed but still getting only "5 white dots going back and forth"</span></a></li>
+<li class="toclevel-2"><a href="#USB"><span class="tocnumber">4.2</span> <span class="toctext">USB</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></tbody></table>
+<a name="What_does_it_do.3F"></a><h2><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=1" title="Edit section: What does it do?">edit</a>]</span> <span class="mw-headline"> What does it do? </span></h2>
+<a name="N9"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=2" title="Edit section: N9">edit</a>]</span> <span class="mw-headline">N9</span></h3>
+<p>Please see the main article <a href="http://wiki.maemo.org/Flashing_N9" title="Flashing N9">Flashing N9</a>.
+</p>
+<a name="N900"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=3" title="Edit section: N900">edit</a>]</span> <span class="mw-headline">N900</span></h3>
+<p><i>These descriptions assume that you are using the latest official images. This page is not exactly a step-by-step instruction, so better <b>read the whole page</b> prior to starting the flashing process.</i>
+</p><p>While talking about flashing, there are exactly two distinct processes and related files (also called images) frequently mentioned:
+</p>
+<ul><li> (flashing the) <b>FIASCO</b> aka <b>*COMBINED*</b>, also referred to as "<b>rootfs</b>" though this file and flashing process also consists of / affects NOLO bootloader (the several stages), the kernel, and usually the GSM modem firmware, in addition to the root filesystem which is basically the content of your 240 MB NAND flash storage and implements the Linux operating system.
+</li><li> (flashing the) <b>eMMC</b> aka <b>*VANILLA*</b>, which will replace the complete content of <a href="http://wiki.maemo.org/Nokia_N900" title="Nokia N900">N900's</a> internal 32 GB eMMC storage (<b>e</b>mbedded <b>MMC</b>), which is: the <code>/home</code> partition which has your stored browser passwords and game highscores and calendar and contacts etc. <code>/home</code> is also containing <code>/opt</code>. Plus eMMC stores all the content of the MyDocs 28 GB VFAT partition, where all the media and docs and other user content lives.
+</li></ul>
+<p>Often people use the term "firmware" for either or both of those images. It's misleading.
+</p><p>Flashing the <b>rootfs</b> on your N900 will reset the device's linux system back to factory settings, meaning all additional applications will vanish, and some configuration details (e.g. LED patterns) are reset to the original configuration, with the exception of the lock code; if you have already set a custom lock code, it will remain intact, instead of reverting to the default "12345." Also, all information contained in <code>/home</code> (except <code>/home/opt</code>) will remain intact. This means the information stored in <code>/home/user/MyDocs</code> which is the area visible in the default file manager (or when connecting to a computer), will remain intact. Your external memory (microSD), will also be unaffected.
+</p><p>Flashing the <b>eMMC and rootfs</b> on your N900 will completely reset the device to factory settings, reverting <i>everything</i> to factory settings, including /home with all (app-)preferences, bookmarks, contacts, communications, but again, excluding the external memory on micro-SD card and the lockcode. (you MUST flash rootfs as well, when flashing eMMC (because of <code>/opt</code> deletion)
+</p><p>It is strongly advised you regularly use the Backup application to create backups of your settings and data to a safe storage. You will want to configure the Backup application in such a way it stores the backups to your microSD card - alternatively when creating manual backup of MyDocs as suggested below, backups stored to default location "N900" will be included and thus safe.
+</p><p>The Backup application will save:
+</p>
+<ul><li><b>Communication and Calendar</b>: Stored conversations, accounts, contacts, and calendar entries. Only applies to content used with stock applications. (i.e. not Pidgin, or other third-party applications)
+</li><li><b>Bookmarks</b>: Bookmarks stored via MicroB. (Default browser only)
+</li><li><b>Settings</b>: Your current settings in the Settings "application." (Settings in <code>/home/user</code>, GConf, <code>/etc</code>.) Third party settings applets will also be backed up and restored once installed. Manually created shell scripts or other files (except those in eMMC/MyDocs) must be manually backed up prior to a rootfs flash.
+</li><li><b>Application List</b>: A list of repositories and installed applications to be re-activated and installed after flashing. (Only applies to applications and repositories installed via the included Application Manager)
+</li></ul>
+<p>When using Backup application to <i>restore from</i> some backup, you can select which of the above listed groups of data shall be restored. For Application List you even can select on a per-application granularity, i.e. exclude an arbitrary number of applications from restore.
+(NOTE: it is a good idea to do a new backup of the system immediately <i>prior</i> to any restore - of course you don't overwrite an existing backup file for that, instead give the new backup a new descriptive name, like "system_broken-foobar__prior_to_restore")
+</p><p>When flashing the eMMC, all user-created content on MyDocs ("N900") must also be backed up manually to an external location in order to be preserved (i.e. computer or microSD). You can use Mass-Storage-mode via USB for this, or copy the whole content of MyDocs with Filemanager or similar tools. The eMMC image will contain and restore the MyDocs factory setting files and folders (.documents, .images, icons, etc.).
+</p>
+<a name="N800.2FN810"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=4" title="Edit section: N800/N810">edit</a>]</span> <span class="mw-headline">N800/N810</span></h3>
+<p>Upgrading wipes out your <code>/home</code> directory. All of it. Make sure you backup all your data before upgrading.
+</p>
+<a name="Updating_.26_Flashing_your_device"></a><h2><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=5" title="Edit section: Updating &amp; Flashing your device">edit</a>]</span> <span class="mw-headline"> Updating &amp; Flashing your device </span></h2>
+ <table class="ambox ambox-notice" style="">
+<tbody><tr>
+<td class="ambox-image"><div style="width: 52px;">
+  <a href="http://wiki.maemo.org/Image:Ambox_notice.png" class="image" title="Image:Ambox_notice.png"><img alt="Image:Ambox_notice.png" src="ambox_notice.png" border="0" height="40" width="40"></a></div></td>
+<td class="ambox-text" style=""> If you are flashing the N900 with the eMMC image, follow the <a href="#Flashing_the_eMMC_in_the_N900" title="">instructions below</a>. Also see <a href="#Troubleshooting" title="">troubleshooting section, bullet 6:"If you cannot establish..."</a> </td>
+</tr>
+</tbody></table>
+ <table class="ambox ambox-notice" style="">
+<tbody><tr>
+<td class="ambox-image"><div style="width: 52px;">
+  <a href="http://wiki.maemo.org/Image:Ambox_notice.png" class="image" title="Image:Ambox_notice.png"><img alt="Image:Ambox_notice.png" src="ambox_notice.png" border="0" height="40" width="40"></a></div></td>
+<td class="ambox-text" style=""> MAKE SURE YOU KNOW YOUR LOCK CODE (default: 12345)
+There has been at least one report where a device <b>started</b> to ask for lock code after reflashing! </td>
+
+</tr>
+</tbody></table>
+<a name="All_Systems"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=6" title="Edit section: All Systems">edit</a>]</span> <span class="mw-headline"> All Systems </span></h3>
+<p>For Windows, Mac or Linux you can use flasher-3.5 which can be download from the <a href="http://tablets-dev.nokia.com/maemo-dev-env-downloads.php" class="external text" title="http://tablets-dev.nokia.com/maemo-dev-env-downloads.php" rel="nofollow">tablets-dev</a> page. This page contains all installation packages include documentation for using the flasher.
+</p>
+<ol><li> Download the <a href="http://wiki.maemo.org/Documentation/Maemo_5_Developer_Guide/Development_Environment/Maemo_Flasher-3.5" title="Documentation/Maemo 5 Developer Guide/Development Environment/Maemo Flasher-3.5">Flasher</a> for your device model: <a href="http://tablets-dev.nokia.com/maemo-dev-env-downloads.php" class="external text" title="http://tablets-dev.nokia.com/maemo-dev-env-downloads.php" rel="nofollow">N900, N810, N800</a> or <a href="http://tablets-dev.nokia.com/d3.php" class="external text" title="http://tablets-dev.nokia.com/d3.php" rel="nofollow">770</a>
+</li><li> Download the latest firmware image for your device model:
+<ul><li> for <a href="http://tablets-dev.nokia.com/nokia_N900.php" class="external text" title="http://tablets-dev.nokia.com/nokia_N900.php" rel="nofollow">N900</a>
+<ul><li> for <a href="http://wiki.maemo.org/Maemo_UK_variant_firmware" title="Maemo UK variant firmware">UK devices</a>
+</li></ul>
+</li><li> for <a href="http://tablets-dev.nokia.com/nokia_N810wimax.php" class="external text" title="http://tablets-dev.nokia.com/nokia_N810wimax.php" rel="nofollow">N810 WiMAX Edition</a>
+</li><li> for <a href="http://tablets-dev.nokia.com/nokia_N810.php" class="external text" title="http://tablets-dev.nokia.com/nokia_N810.php" rel="nofollow">N810</a>
+</li><li> for <a href="http://tablets-dev.nokia.com/nokia_N800.php" class="external text" title="http://tablets-dev.nokia.com/nokia_N800.php" rel="nofollow">N800</a>
+</li><li> for <a href="http://tablets-dev.nokia.com/nokia_770.php" class="external text" title="http://tablets-dev.nokia.com/nokia_770.php" rel="nofollow">770</a> (or, for the Hacker Editions, <a href="http://tablets-dev.nokia.com/os2007_hacker_edition.php" class="external text" title="http://tablets-dev.nokia.com/os2007_hacker_edition.php" rel="nofollow">OS2007HE</a> and <a href="http://tablets-dev.nokia.com/os2008_hacker_edition.php" class="external text" title="http://tablets-dev.nokia.com/os2008_hacker_edition.php" rel="nofollow">OS2008HE</a>)
+</li></ul>
+</li><li> <b>Ensure the battery is fully charged</b>. Connect to charger until green light when screen locked! Don't say "I already did it this morning"! <i>(this point obviously only applies when your device is not "bricked" or bootlooping.)</i>
+</li><li> Unplug the charger and switch off the device. 
+</li></ol>
+<a name="Linux"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=7" title="Edit section: Linux">edit</a>]</span> <span class="mw-headline"> Linux </span></h3>
+<ol><li> Download the <a href="http://wiki.maemo.org/Documentation/Maemo_5_Developer_Guide/Development_Environment/Maemo_Flasher-3.5" title="Documentation/Maemo 5 Developer Guide/Development Environment/Maemo Flasher-3.5">Flasher</a> for your device model: <a href="http://tablets-dev.nokia.com/maemo-dev-env-downloads.php" class="external text" title="http://tablets-dev.nokia.com/maemo-dev-env-downloads.php" rel="nofollow">N900, N810, N800</a> or <a href="http://tablets-dev.nokia.com/d3.php" class="external text" title="http://tablets-dev.nokia.com/d3.php" rel="nofollow">770</a>
+</li><li> Download the latest firmware image for your device model: <a href="http://tablets-dev.nokia.com/nokia_N900.php" class="external text" title="http://tablets-dev.nokia.com/nokia_N900.php" rel="nofollow">N900</a>(For UK N900 Devices: <a href="http://wiki.maemo.org/Maemo_UK_variant_firmware" title="Maemo UK variant firmware">Maemo 5 UK Firmware</a>), <a href="http://tablets-dev.nokia.com/nokia_N810wimax.php" class="external text" title="http://tablets-dev.nokia.com/nokia_N810wimax.php" rel="nofollow">N810 WiMAX Edition</a>, <a href="http://tablets-dev.nokia.com/nokia_N810.php" class="external text" title="http://tablets-dev.nokia.com/nokia_N810.php" rel="nofollow">N810</a>, <a href="http://tablets-dev.nokia.com/nokia_N800.php" class="external text" title="http://tablets-dev.nokia.com/nokia_N800.php" rel="nofollow">N800</a>, or <a href="http://tablets-dev.nokia.com/nokia_770.php" class="external text" title="http://tablets-dev.nokia.com/nokia_770.php" rel="nofollow">770</a> (Hacker Editions: <a href="http://tablets-dev.nokia.com/os2007_hacker_edition.php" class="external text" title="http://tablets-dev.nokia.com/os2007_hacker_edition.php" rel="nofollow">OS2007HE</a>, <a href="http://tablets-dev.nokia.com/os2008_hacker_edition.php" class="external text" title="http://tablets-dev.nokia.com/os2008_hacker_edition.php" rel="nofollow">OS2008HE</a>)
+</li><li> Ensure the battery is fully charged.
+</li><li> Unplug the USB cable if present, and switch off the device. 
+</li><li> If you downloaded the <b>.deb</b> version of the Flasher, install it with: <br><pre>sudo dpkg -i &lt;flasher-package-name&gt;</pre>If you are using <b>64-bit</b> Linux, you'll need to force installation as follows:<pre>sudo dpkg -i --force-architecture &lt;flasher-package-name&gt;</pre>
+</li><li> If you downloaded the <b>.tar.gz</b> version instead, you should untar it manually. The instructions below assume you have untarred it to the current directory.
+</li><li> If you installed the <b>.deb</b> version, run:<pre>sudo flasher-3.5 -F &lt;firmware-image&gt; -f -R</pre>If you are using the <b>.tar.gz package</b>, use:<pre>sudo ./flasher-3.5 -F &lt;firmware-image&gt; -f -R</pre>
+</li><li> It will say:<br><pre>Suitable USB device not found, waiting</pre>
+<ul><li> <b>N900</b>: While holding the <b>u</b> key, connect the N900 to your computer via USB. Wait until you see a dim screen on your N900 with a Nokia logo in the middle of your screen with an USB icon in the top right corner. Note: You may not need to hold the U key - it seems to automatically flash if the flasher is ready at boot time.
+<ol><li> If the USB logo does not appear, and the device turns off - ensure the battery is charged by connecting to the wall charger for an hour and try again. Bear in mind that neither the wall charger nor the USB cable will charge the N900 battery if the N900 cannot boot the OS.
+</li></ol>
+</li><li> <b>N810 WiMAX, N810, N800 and 770</b>: Connect your device to your computer via USB.  While holding the Home/Swap button (It's a house on the <a href="http://wiki.maemo.org/Nokia_770" title="Nokia 770">770</a> and <a href="http://wiki.maemo.org/Nokia_N800" title="Nokia N800">N800</a>, and two overlapping rectangles on the <a href="http://wiki.maemo.org/Nokia_N810" title="Nokia N810">N810</a>), power on the device by holding the power button. You should see a Nokia logo in the middle of the screen, and a USB icon in the top right corner.
+</li></ul>
+</li><li> You don't need to continue to hold any buttons once flashing starts.
+</li><li> It should start flashing and then reboot. You can remove the USB cable when the flasher program exits back to the shell prompt.
+</li></ol>
+<p><b>Some notes</b>:
+</p>
+<ol><li> If you get this error while trying to run flasher-3.5 <br><pre>./flasher-3.5: error while loading shared libraries: libusb-0.1.so.4: cannot open shared object file: No such file or directory</pre> you are probably on 64 bit and you need to install a libusb compatibility package.  For example, on openSUSE 11.4 you just run <br><pre>zypper in libusb-0_1-4-32bit</pre><br>On a debian based system you can download and install the 32-bit version in a separate location (don't install it on your system itself) <br>First download the libusb-0.1-4_0.1.12-13_i386.deb library (google is your friend) and then:<br><pre>dpkg-deb -c libusb-0.1-4_0.1.12-13_i386.deb</pre><pre>sudo dpkg -x libusb-0.1-4_0.1.12-13_i386.deb libusb-0.1-4_0.1.12-13_i386</pre><pre>sudo mv libusb-0.1-4_0.1.12-13_i386/lib/* /lib32</pre><pre>cd /usr/lib32</pre><pre>sudo ln -s /lib32/libusb-0.1.so.4</pre><br>Now Set the library path (as su):<pre>sudo su</pre><pre>export LD_LIBRARY_PATH=/usr/lib32/:$PATH</pre>Now you can run the flasher application (as su)<br>
+</li><li> If flasher runs but exits when you plug in the phone saying <br>
+</li></ol>
+<pre>Unable to enumerate USB buses!</pre> 
+the problem usually is the kernel module cdc_phonet that is automatically loaded.  The solution is to temporarily blacklist it, until you are done flashing.  On openSUSE this can be done by creating a file like this:<br><pre>echo "blacklist cdc_phonet" &gt;/etc/modprobe.d/00-blacklist-cdcphonet.conf</pre>When you finish flashing, remove the file.<br><br>
+<p>There are other, probably timing, reasons causing occasional "unable to enumerate USB". Immediately issue the flasher command again, up-arrow usually helps fetching last command to re-issue it.
+</p>
+<a name="Mac_OS_X"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=8" title="Edit section: Mac OS X">edit</a>]</span> <span class="mw-headline"> Mac OS X </span></h3>
+<p>There are two methods for flashing the device on OS X, using the GUI, with the 770Flasher application or using the console, much like the Linux flashing method. <i>Both methods work fine for both the 770 and the N800/N810.</i>
+</p>
+<a name="GUI_with_770Flasher"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=9" title="Edit section: GUI with 770Flasher">edit</a>]</span> <span class="mw-headline"> GUI with 770Flasher </span></h4>
+<p>This is the easier of the two methods, and should be used by most people.
+</p>
+<ol><li> Download the <a href="http://maemo.org/downloads/product/PC/770flasher/" class="external text" title="http://maemo.org/downloads/product/PC/770flasher/" rel="nofollow">770Flasher</a> (yes, it will work fine for flashing an N800 or N810). Latest flashers (Linux/Mac), which work also for N900,  are also available on <a href="http://tablets-dev.nokia.com/maemo-dev-env-downloads.php" class="external text" title="http://tablets-dev.nokia.com/maemo-dev-env-downloads.php" rel="nofollow">Latest Official Maemo Development Environment Page</a>
+</li><li> Follow the <a href="#Flashing_your_Nokia_tablet" title="">steps above</a> to get the appropriate firmware image.
+</li><li> Drag the firmware image (will end in .bin) onto 770Flasher.  Or open 770Flasher and select the image.
+</li><li>The image may have a ,attachments ending.  Remove this to get to .bin
+</li><li> Follow the on-screen prompts.
+</li><li> You should now see <i>Suitable USB device not found, waiting</i>, plug in the usb cable.  Switch on your device while holding the Home-button. Note for N810 users: switch on your device while holding the Swap button. Note for N900 users: Unplug USB cable. Switch of your device. Press and hold "U" key then plug in the USB cable. If the USB symbol in the top right corner shows up or the flashing starts let go the "U" key.
+</li><li> Watch the messages as the image loads to the device after which it reboots automatically.
+</li></ol>
+<a name="Console_with_Flasher-3.5"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=10" title="Edit section: Console with Flasher-3.5">edit</a>]</span> <span class="mw-headline"> Console with Flasher-3.5 </span></h4>
+<p>These steps cover flashing the device with OS X using the Terminal. This is the more difficult than using <a href="#GUI_with_770Flasher" title="">770Flasher</a>, but gives you access to the advanced options flasher-3.5 provides (like setting R&amp;D flags, flashing only parts of the image, unpacking the image, etc).
+</p>
+<ol><li> Follow the <a href="#Updating_.26_Flashing_your_device" title="">steps above</a> to get the appropriate firmware image and flasher.
+</li><li> Turn off your device (<i>make sure you unplug the charger or else the device wont power down completely</i>) and plug in the USB cable to a port on the computer and the port on your device. N900 users cannot plug in the usb cable yet, as it would start recharging the battery.
+</li><li> Open up the Terminal (located in /Applications/Utilities/) and run:<pre>sudo /usr/bin/flasher-3.5 -F &lt;firmware-image&gt; -f -R</pre><i>You will be asked for an administrator password, enter it.</i>
+</li><li> It will say:<pre>Suitable USB device not found, waiting</pre>
+</li><li> Unplug the power cord from the device, as this will prevent it from updating. Then take your device, and hold down the Home/Swap button (looks like a little house on the N800 and 770, and two overlapping rectangles on the N810 users do not need to hold down anything), and while holding down the Home/Swap button press the power button to turn it on. N900 users press ‘u’ button and plug the USB cable. Release button when flashing process begins.<br><i>If the device does not boot and start flashing, make sure the USB cable is plugged in.</i>
+</li><li> It should start flashing and then reboot. You can remove the USB cable after it has booted to a normal desktop (just make sure to eject any cards that may have mounted on your Mac).
+</li></ol>
+<a name="Windows"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=11" title="Edit section: Windows">edit</a>]</span> <span class="mw-headline"> Windows </span></h3>
+<a name="N900_2"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=12" title="Edit section: N900">edit</a>]</span> <span class="mw-headline">N900</span></h4>
+<a name="Updating_the_firmware_using_the_Nokia_Software_Updater"></a><h5><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=13" title="Edit section: Updating the firmware using the Nokia Software Updater">edit</a>]</span> <span class="mw-headline">Updating the firmware using the Nokia Software Updater</span></h5>
+<p>Microsoft Windows users who wish to <b>update</b> their N900 can use the <a href="http://europe.nokia.com/support/download-software/device-software-update" class="external text" title="http://europe.nokia.com/support/download-software/device-software-update" rel="nofollow">Nokia Software Updater (aka NSU)</a>, or use the Flasher (see section below).
+</p><p>The Nokia Software Updater is compatible with Windows XP Service Pack 3, Windows Vista Service Pack 2, and Windows 7. (Some users may encounter problems due to varying causes.)
+</p><p>The Nokia Software Updater can now be used when updating from a previous firmware to a new one or re-flashing.
+</p>
+<a name="Updating_or_re-flashing_the_firmware_using_the_Flasher"></a><h5><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=14" title="Edit section: Updating or re-flashing the firmware using the Flasher">edit</a>]</span> <span class="mw-headline">Updating or re-flashing the firmware using the Flasher</span></h5>
+<p><i>Note: This method is fully compatible with 32-bit versions of Windows; 64-bit users may encounter problems. There is a workaround that is reported working though at <a href="http://talk.maemo.org/showpost.php?p=849980&amp;postcount=20" class="external text" title="http://talk.maemo.org/showpost.php?p=849980&amp;postcount=20" rel="nofollow">talk.maemo.org</a> Also note you need administrator rights to run flasher (somebody with a clue about windows may want to check the procedure regarding this aspect - shift-run?)</i>
+</p><p>To flash from the Windows (XP, Vista, or 7) command line,
+</p>
+<ol><li> <a href="http://tablets-dev.nokia.com/maemo-dev-env-downloads.php" class="external text" title="http://tablets-dev.nokia.com/maemo-dev-env-downloads.php" rel="nofollow">Download</a> and install the latest version of the Flasher. 
+</li><li> <a href="http://tablets-dev.nokia.com/nokia_N900.php" class="external text" title="http://tablets-dev.nokia.com/nokia_N900.php" rel="nofollow">Download</a> the latest firmware (.bin) file for your region and save it to <code>&nbsp;%ProgramFiles%\maemo\flasher-3.5\</code> (the default path), or wherever you installed the Flasher.
+</li><li> Ensure the battery is full.
+</li><li> Unplug USB cable if present, and switch off the device.
+</li><li> Run the Flasher from the Start menu
+</li><li> <b>This is an alternate to step 5, if you have already opened the Flasher, ignore this step.</b> Open the Command Prompt (Start then Run or Windows Logo key + R) and type <b>cmd</b> then press Enter. Change the directory to where you installed the Flasher (TIP: Use the TAB key to auto-complete commands and file-names)<pre>cd "%ProgramFiles%\maemo\flasher-3.5"</pre>
+</li><li> Hold the <b>u</b> key on the <b>device</b> keyboard and connect the USB cable at the same time. See the <a href="http://wiki.maemo.org/Documentation/Maemo_5_Developer_Guide/Development_Environment/Maemo_Flasher-3.5#Setting_Maemo_device_to_flashing_mode" title="Documentation/Maemo 5 Developer Guide/Development Environment/Maemo Flasher-3.5">Flasher documentation</a> for more information. (TIP: Hold the u key until Windows has successfully installed the driver.)
+</li><li> Run the following command (TIP: Do not include '-R' if you are flashing EMMC as well, see below):<pre>flasher-3.5.exe -F RX-51_2009SE_2.2009.51-1_PR_COMBINED_MR0_ARM.bin -f -R</pre>
+</li></ol>
+<p><b>Replace <i>RX-51_2009SE_2.2009.51-1_PR_COMBINED_MR0_ARM.bin</i> with the firmware you wish to update.</b> (Make sure you have downloaded the actual corresponding file.) The latest PR1.3 official (rootfs) images are listed below:
+</p><p><b>USA</b>
+</p>
+<pre>RX-51_2009SE_20.2010.36-2.002_PR_COMBINED_002_ARM.bin</pre>
+<p><b>Middle East and North Africa</b>
+</p>
+<pre>RX-51_2009SE_20.2010.36-2.003_PR_COMBINED_003_ARM.bin</pre>
+<p><b>India</b>
+</p>
+<pre>RX-51_2009SE_20.2010.36-2.004_PR_COMBINED_004_ARM.bin</pre>
+<p><b>UK</b> (not the vodafone firmware, but fully compatible with vodafone devices).
+</p>
+<pre>RX-51_2009SE_20.2010.36-2.203.1_PR_COMBINED_203_ARM.bin</pre>
+<p><b>Global</b>
+</p>
+<pre>RX-51_2009SE_20.2010.36-2_PR_COMBINED_MR0_ARM.bin</pre>
+<p>The flash will take approximately 2-5 minutes after which the N900 will reboot and display the Welcome Screen with Regional settings. After booting, you may use the backup utility to restore your settings.
+</p>
+<a name="Issues_with_64-bit_Windows_and_Workarounds"></a><h5><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=15" title="Edit section: Issues with 64-bit Windows and Workarounds">edit</a>]</span> <span class="mw-headline"> Issues with 64-bit Windows and Workarounds </span></h5>
+<p>According to <a href="http://talk.maemo.org/showpost.php?p=411019&amp;postcount=67" class="external text" title="http://talk.maemo.org/showpost.php?p=411019&amp;postcount=67" rel="nofollow">this</a> post, Windows driver signing can cause problems. You either need to turn on the loading of unsigned drivers or boot your computer to whole another OS. There are a few workarounds:
+</p>
+<a name="Workaround_for_.22no_suitable_device_found.22_problem_on_Windows_7_x64"></a><h5><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=16" title="Edit section: Workaround for &quot;no suitable device found&quot; problem on Windows 7 x64">edit</a>]</span> <span class="mw-headline"> Workaround for "no suitable device found" problem on Windows 7 x64 </span></h5>
+<p>Once this message appears, run <code>inf-wizard.exe</code> from libusb-win32 package and create an inf file for "N900 (PC Suite Mode)" and install this inf driver. Then go to Device Manager and update the driver for N900 Phone Parent and the flasher should spring to life...
+</p>
+<a name="Option_1"></a><h6><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=17" title="Edit section: Option 1">edit</a>]</span> <span class="mw-headline"> Option 1 </span></h6>
+<p>Disabling signed driver detection is done by choosing the option "Boot without checking for signed drivers" (or something similar) in the Windows boot-menu. To display the boot-menu press the "F8" key as soon as the Windows boot process starts (i.e. after the BIOS has loaded, and after GRUB or other <i>non-Windows bootloaders</i> have passed). 
+</p>
+<a name="Option_2"></a><h6><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=18" title="Edit section: Option 2">edit</a>]</span> <span class="mw-headline"> Option 2 </span></h6>
+<p>Alternatively you can permanently disable driver checking via command line in Windows 7. <a href="http://www.killertechtips.com/2009/05/05/disable-driver-signing-windows-7/" class="external text" title="http://www.killertechtips.com/2009/05/05/disable-driver-signing-windows-7/" rel="nofollow">Instructions.</a> (Non-maemo.org site).
+</p>
+<a name="Option_3"></a><h6><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=19" title="Edit section: Option 3">edit</a>]</span> <span class="mw-headline"> Option 3 </span></h6>
+<p>You can use  <a href="http://www.microsoft.com/windows/virtual-pc/download.aspx" class="external text" title="http://www.microsoft.com/windows/virtual-pc/download.aspx" rel="nofollow">Microsoft Virtual PC</a> - Also known as XP Mode. Professional, Enterprise, and Ultimate editions of Windows 7 come with Windows XP mode, but must be downloaded and installed before use.
+</p>
+<ol><li> Connect your N900 in flasher mode; Hold <b>u</b> on the <b>device</b> keyboard, then connect the USB cable.
+</li><li> Wait for Windows to install the appropriate drivers.
+</li><li> Start Microsoft Virtual PC / Windows XP mode/
+</li><li> Allow the Virtual PC to have access to your N900: (On the top bar): USB &gt; Nokia N900 (Update mode) (Attach). <i>(If it doesn't say (update mode), you didn't enter update mode correctly by pressing "u". Remove the cable and try again.)</i>
+</li><li> Wait for Windows to install the appropriate drivers.
+</li><li> When it is finished, proceed with the normal flashing steps above.
+</li></ol>
+<p>There have been numerous reports on the forums of people trying to flash the rootfs/FIASCO and eMMC with Windows 7 64 bit XP Mode/Virtual PC, where the rootfs/FIASCO image flashed just fine, but the eMMC image stays at "no suitable device found. Waiting". Again allow the Virtual PC to have access to your N900: (On the top bar): USB &gt; Nokia N900 but *NOTICE* now it will be Nokia N900 (PC-Suite mode) (Attach). Now the flashing will start normally.
+</p>
+<a name="Option_4"></a><h6><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=20" title="Edit section: Option 4">edit</a>]</span> <span class="mw-headline"> Option 4 </span></h6>
+<p>An alternative approach is to use an <a href="http://www.ubuntu.com/getubuntu/download" class="external text" title="http://www.ubuntu.com/getubuntu/download" rel="nofollow">Ubuntu LiveCD</a> or a <a href="https://wiki.ubuntu.com/LiveUsbPendrivePersistent" class="external text" title="https://wiki.ubuntu.com/LiveUsbPendrivePersistent" rel="nofollow">Persistent USB installation</a>. This way, you are essentially using Ubuntu without installing it directly on your hard drive. Have ready <a href="http://tablets-dev.nokia.com/maemo-dev-env-downloads.php" class="external text" title="http://tablets-dev.nokia.com/maemo-dev-env-downloads.php" rel="nofollow">maemo_flasher-3.5_2.5.2.2_i386.deb</a>, which is the Debian Linux equivalent of a setup/installation file, the firmware files you need, and optionally, this page, if you don't have access to an internet connection on the LiveCD/USB.
+</p><p>After booting into your LiveCD/USB, follow the instructions from the Linux section of this page.
+</p>
+<a name="Option_5"></a><h6><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=21" title="Edit section: Option 5">edit</a>]</span> <span class="mw-headline"> Option 5 </span></h6>
+<p>Install other version of update drivers. Step by step instructions can be found at <a href="http://talk.maemo.org/showpost.php?p=849980&amp;postcount=20" class="external text" title="http://talk.maemo.org/showpost.php?p=849980&amp;postcount=20" rel="nofollow">talk.maemo.org</a>. Video tutorial for setting up/installing the necessary drivers to enable flashing on Windows 7 64-bit OS can be found here: <a href="http://www.youtube.com/watch?v=OkhjA9rztz0&amp;hd=1" class="external autonumber" title="http://www.youtube.com/watch?v=OkhjA9rztz0&amp;hd=1" rel="nofollow">[1]</a>
+</p>
+<a name="Option_6"></a><h6><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=22" title="Edit section: Option 6">edit</a>]</span> <span class="mw-headline"> Option 6 </span></h6>
+<p>The Flasher (version 3.5) uses the libUSB drivers it finds in it's installed folder. Download the libusb library, and simply copy the right libusb.dll version to the folder you've installed Flasher to. So, rename libusb0_x86.dll to libusb0.dll for x86-systems (32-bit) or copy libusb0.dll from the amd64-folder for 64-bit systems.
+</p>
+<a name="770.2FN800.2FN810.2FN810_WiMAX"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=23" title="Edit section: 770/N800/N810/N810 WiMAX">edit</a>]</span> <span class="mw-headline"> 770/N800/N810/N810 WiMAX </span></h4>
+<p>Internet Tablet users can go to the appropriate support page for their device (<a href="https://www.nokiausa.com/A41271130" class="external text" title="https://www.nokiausa.com/A41271130" rel="nofollow">N810 WiMAX Edition</a>, <a href="https://www.nokiausa.com/A4686323" class="external text" title="https://www.nokiausa.com/A4686323" rel="nofollow">N810</a>, <a href="https://www.nokiausa.com/A4410958" class="external text" title="https://www.nokiausa.com/A4410958" rel="nofollow">N800</a>, or <a href="http://europe.nokia.com/A4144790" class="external text" title="http://europe.nokia.com/A4144790" rel="nofollow">770</a>), download and install the Software Update Wizard, run it and follow the on-screen prompts. This will work both for updating and re-flashing the same firmware image.
+</p>
+<a name="Flashing_only_the_kernel_from_a_FIASCO_image_.28expert_topic.21.29"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=24" title="Edit section: Flashing only the kernel from a FIASCO image (expert topic!)">edit</a>]</span> <span class="mw-headline">Flashing only the kernel from a FIASCO image (expert topic!)</span></h3>
+<p>If you only want to flash a kernel from a FIASCO image without overwriting your rootfs (e.g. because you tried out a different kernel and that didn't work) you can use the following flasher command instead of the one above:
+</p>
+<pre>sudo ./flasher-3.5 -F <i>&lt;firmware-image&gt;</i> --flash-only=kernel -f -R
+</pre>
+<p>This will flash the kernel from the FIASCO image and then reboot your device. The rootfs will not be touched by this. NB a kernel usually needs matching modules in rootfs, so odds are your kernel from FIASCO image won't work either, if you messed up the modules in rootfs - you need to flash whole COMBINED/FIASCO image then to recover.
+</p>
+<a name="Flashing_the_eMMC_in_the_N900"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=25" title="Edit section: Flashing the eMMC in the N900">edit</a>]</span> <span class="mw-headline"> Flashing the eMMC in the N900 </span></h3>
+<table class="ambox ambox-notice" style="">
+<tbody><tr>
+<td class="ambox-image"><div style="width: 52px;">
+  <a href="http://wiki.maemo.org/Image:Ambox_notice.png" class="image" title="Image:Ambox_notice.png"><img alt="Image:Ambox_notice.png" src="ambox_notice.png" border="0" height="40" width="40"></a></div></td>
+<td class="ambox-text" style=""> When flashing the eMMC content, the safe way is flash the eMMC/VANILLA image first, then remove battery for a moment, and then flash the FIASCO/Rootfs image. Do <b>not</b> boot up the device between the two i.e do NOT use the -R parameter at the end! 
+<p>Also see <a href="#Troubleshooting" title="">troubleshooting section, bullet 6:"If you cannot establish..."</a>
+</p><p>Rationale: on accidental booting in between the 2 flash processes, the sequence formerly suggested (rootfs first) will result in a broken system. The sequence "eMMC first, then rootfs" is checked back with Nokia affiliates and is proven to work as long as your rootfs still is somewhat functional. Note however that eMMC flashing will fail when your rootfs is completely messed up, the recommended flash sequence then is rootfs, eMMC, rootfs *again*.
+</p>
+<i>For users <b>familiar with flashing</b> and interested in a smooth fast process: you can flash combined first, and then *immediately* after that - without one 10th of a second of booting - directly continue with flashing the vanilla. The other way round doesn't work due to a bug in NOLO - so after flashing vanilla you need to remove battery to recover</i> </td>
+
+</tr>
+</tbody></table>
+<p>Flashing the eMMC resets the MyDocs folder contents to factory settings. N900 users don't need to reflash the eMMC of their device when updating firmware but can do so to clear all data from the device. You may need to do so if you have a pre-production device e.g. in the Maemo Summit. If you have a sales unit and you have problems with your eMMC you should contact Nokia Care.
+</p><p>Also note that <b>any backups created in your MyDocs area will need to be copied off the device to be safe across an eMMC flash</b> as the MyDocs area and other partitions on <code>/dev/mmcblk0</code> will be erased.
+</p><p><b>Note that flashing eMMC will delete the <code>/opt</code> directory, so you *always* need to reflash your rootfs (the COMBINED image) after - or same time as - flashing eMMC (VANILLA img)</b>
+</p><p>Note that the eMMC images available do not contain pre-loaded maps. If you reflash your eMMC you will lose them (the Maps application will work as usual but you will need to download the maps needed).
+</p><p>In order to flash the eMMC, follow these steps:
+</p>
+<ol>
+<li>
+Fully charge the battery (IMPORTANT!!)
+</li>
+<li>
+Install <a href="http://wiki.maemo.org/Documentation/Maemo_5_Developer_Guide/Development_Environment/Maemo_Flasher-3.5" title="Documentation/Maemo 5 Developer Guide/Development Environment/Maemo Flasher-3.5">Flasher</a> for your OS (Linux, Mac OS X or MS Windows)
+</li>
+<li>
+Grab the recent Vanilla eMMC image (.bin file) from <a href="http://tablets-dev.nokia.com/nokia_N900.php" class="external text" title="http://tablets-dev.nokia.com/nokia_N900.php" rel="nofollow">the Nokia repository</a>. There isn't always a new eMMC image for a new COMBINED image, as usually the content of eMMC doesn't change with new versions of the system.
+</li>
+<li>Navigate to the directory where the image file was saved (Windows users: if you don't know the full path to the image, copy it to the flasher directory)
+</li>
+<li>
+Execute the following command (in Linux you have to be root! On windows you have to be admin!):
+
+<i>Replace RX-51_2009SE_10.2010.13-2.VANILLA_PR_EMMC_MR0_ARM.bin with the name of the most recent VANILLA file you downloaded</i>
+<ol>
+<li>
+Windows:<pre>flasher-3.5.exe -F RX-51_2009SE_10.2010.13-2.VANILLA_PR_EMMC_MR0_ARM.bin -f</pre>
+</li>
+<li>
+Linux (Replace /path/to/ with the correct full pathname to the binary. Using tab-completion helps&nbsp;;-) ):<pre>/path/to/flasher-3.5 -F RX-51_2009SE_10.2010.13-2.VANILLA_PR_EMMC_MR0_ARM.bin -f</pre>
+</li>
+<li>
+Debian based Linux (e.g Ubuntu):<pre>flasher-3.5 -F RX-51_2009SE_10.2010.13-2.VANILLA_PR_EMMC_MR0_ARM.bin -f</pre>
+</li>
+</ol>
+</li>
+<li>
+Text similar to the following will be displayed on the computer:
+<pre>flasher v2.5.2 (Oct 21 2009)
+
+Image 'mmc', size 255947 kB
+	Version RX-51_2009SE_10.2010.13-2.VANILLA
+Suitable USB device not found, waiting.
+</pre>
+</li>
+<li>
+Plug in the <b>powered down</b> N900 while holding 'u' key
+</li>
+<li>
+The dim Nokia screen will be displayed for a few seconds followed by progression dots. Text similar to the following will be displayed on the computer:
+<pre>USB device found found at bus 002, device address 014.
+Raw data transfer EP found at EP2.
+Image(s) flashed successfully in 4.711 s (9199 kB/s)!
+</pre>
+</li>
+<li>
+The flash will take a minute or so.
+</li>
+<li>
+When flashing of eMMC completed without errors: Switch off device by shortly removing battery.
+</li>
+<li><b>Now flash the <i>FIASCO/rootfs</i> image using</b> the <a href="#Updating_.26_Flashing_your_device" title="">above commands</a> with -R parameter.
+</li>
+<li>
+If you used the -R parameter, then N900 will reboot automatically, otherwise you need to reboot manually. The bright Nokia screen will come up, followed by progression dots with yellow LED blinking for a few seconds, first boot will be slow as the device would be optifying files.
+</li>
+</ol>
+<p>Experienced users still may want to follow the rootfs-then-eMMC scheme, which doesn't need the battery removal, but is way less "fool-proof" wrt accidental boots. A boot in this context is defined as any activity of the device (flashing LED, some display on screen) that doesn't result in and stop at the NOKIA boot screen with USB icon. Especially "charging" actually also implies a boot of the system, and there's no lower limit for duration of such an accidental boot, 5s are more than enough to ruin your freshly flashed system.
+</p>
+<a name="Seamless_Software_Update"></a><h2><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=26" title="Edit section: Seamless Software Update">edit</a>]</span> <span class="mw-headline"> Seamless Software Update </span></h2>
+<div style="font-style: italic; padding-left: 20px;">
+<p>Main article: <a href="http://wiki.maemo.org/Seamless_Software_Update" title="Seamless Software Update">Seamless Software Update</a>
+</p>
+</div>
+<p><a href="http://en.wikipedia.org/wiki/Maemo_%28operating_system%29#SSU" class="extiw" title="wikipedia:Maemo_(operating_system)">SSU</a> is Nokia's new method for upgrading the devices over-the-air without requiring a reflash. When Nokia pushes an update over SSU, you will see an update notification and be given the option to install the update—just like with your computer.
+</p><p>Generally speaking, SSU updates should be relatively pain-free, but there are a few issues to watch out for:
+</p>
+<ul><li> If you have an aftermarket kernel or initfs installed (like the rotation support kernel or <a href="http://wiki.maemo.org/Booting_from_a_flash_card#Install_bootmenu" title="Booting from a flash card">fanoush's bootmenu</a>) and a kernel or initfs upgrade is pushed, they will be overwritten and you'll need to wait for your kernel or the bootmenu to be updated to reinstall them.
+</li><li> If you have extensively modified the home directory for user "user", such as moved all the documents to a memory card or removing or leaving empty some of the subdirectories
+</li></ul>
+<p>If the update doesn't show up for you at all, you may have accidentally (or intentionally) uninstalled osso-software-version-rx*4, which is required to update. You can get it back by simply running an <code>apt-get install osso-software-version-rx34</code>, for the N800, and an <code>apt-get install osso-software-version-rx44</code>, for the N810. Then updating your repository list in Application manager.
+</p><p>If the packages that caused osso-software-version-rx*4 to be removed are still installed, they will need to be removed completely (in the case of conflicting packages). Alternatively, for packages which are simply newer than those specified by osso-software-version-rx*4, you can install osso-software-version-rx*4-unlocked, which does not have strict dependencies.
+</p><p>On N900 (probably also previous devices), it is possible that the application manager ends up with a message stating that it is required to upgrade using the Nokia PC application. In this case please read the article on <a href="http://wiki.maemo.org/Cannot_install_firmware_update" title="Cannot install firmware update">known problems and possible solutions</a>.
+</p><p>You can show the list of packages that are not going to be ugraded with <code>apt-get update &amp;&amp; apt-get upgrade</code>. In that case, you can try using <code>apt-get dist-upgrade</code> command (as root, the app manager has to be shut down) to override. <b>This is not supported because you can break future updates. Several users had to reflash after apt-get dist-upgrade!</b>.
+</p>
+<a name="Troubleshooting"></a><h2><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=27" title="Edit section: Troubleshooting">edit</a>]</span> <span class="mw-headline"> Troubleshooting </span></h2>
+<ul><li> <b>Make sure your battery is (completely) charged!</b> Flashing will fail when battery is too low, and battery will not charge if your system does not boot up correctly. You can find yourself trapped in a deadlock, when flashing fails due to battery depleting during flashing! <b>If your device does not enter and stay in flashing mode (NOKIA + USB-icon on screen) despite you holding the "U" key while plugging it in to charger/PC, then battery is too low</b>. If your device does not boot to a proper system, then you usually have to find a way to <a href="http://europe.nokia.com/find-products/accessories/all-accessories/power/batteries/nokia-battery-bl-5j/compatibility" class="external text" title="http://europe.nokia.com/find-products/accessories/all-accessories/power/batteries/nokia-battery-bl-5j/compatibility" rel="nofollow">charge battery externally</a> - a bootlooping or stalled boot will <b>not charge</b> battery! So better completely charge your battery prior to any attempt to flash the device.
+</li><li> If you get a "Permission denied" error and have access to a linux box, then <pre>chmod +x flasher-2.0</pre> or <pre>chmod +x flasher-3.0</pre> or actually <pre>chmod +x flasher-3.5 </pre> nowadays to make the flasher tool executable. You may also need root permissions, run command with sudo or su to root. (Tip: If your flash only gets to 19% then produces "Permission denied,"  try the "global" version of the image file instead. The US version has produced this problem.)
+</li><li> If you need to flash your Nokia 770 with an image from 2005 then use the <a href="http://tablets-dev.nokia.com/d3.php" class="external text" title="http://tablets-dev.nokia.com/d3.php" rel="nofollow">older flasher</a> called "flasher" with no number in the name
+</li><li> If you get "Error claiming USB interface: Device or resource busy" error, make sure you run the flasher with sudo. If this does not fix the problem, as root, run <pre>modprobe -r cdc_phonet</pre>
+</li></ul>
+<ul><li> If flashing stops with "Write failed after 1048576 bytes usb_bulk_write: Resource temporarily unavailable", do not disconnect your N900 from usb and try again the flasher command.
+</li><li> If you cannot establish a connection with N900, or got any other problems during starting or completing the flashing process, do the following steps which describe <b>the complete foolproof flashing procedure</b> again in terse form: <i>(use a Linux machine to flash! Windows isn't really backed up with much support from community, for obvious reasons.)</i>
+<ol><li> blacklist cdc_phonet (see above)! Run modprobe -r cdc_phonet 
+</li><li>(try to) Turn off the device - if nothing else helps, holding power key for &gt;8s is the ultimate means (except next point 2.) to do this.
+</li><li>Remove the battery - even if you were not able to shut device down in 1.
+</li><li>Start flasher with above mentioned command to flash (without -R, it's a useless convenience thing). It says "Suitable device not found... waiting" 
+</li><li>Plug the device to computer with a good USB cable.
+</li><li>Insert battery while holding "u" key. You can release the key as soon as screen turns on and shows the USB logo. Flashing shall start automatically. <i>(If flasher answers "unable to enumerate USB buses!" as soon as N900 gets battery, just re-issue same flasher cmd immediately - cursor-up helps&nbsp;;-D). If flasher doesn't detect the device, a Ctrl+C abort and re-issuing of the flasher command may help</i>
+</li><li>Check for correct diagnostic output of flasher, as quoted above. After flashing has finished, remove battery -&gt;(2.) 3.)
+</li><li>Repeat same procedure (2. - 7.) for each image to flash (sequence: eMMC first, then rootfs - some mess on rootfs may break eMMC flashing and require sequence rootfs eMMC rootfs again). <i>So far this procedure always worked, given your PC side has no problems. Many known problems on PC side - esp "waits forever" / "doesn't find N900" - get fixed with a reboot *immediately prior* to doing the flashing.</i>
+</li><li>After flashing unplug your device from PC prior to first boot. First boot can take several minutes, and screen may turn dark during that. You may try lock-slider switch, but <b>do not power down</b> device during first boot, until it finally finished - I.E. do not touch power button after flashing, unless you're *sure* device hasn't already started to boot. Usually device will power down when unplugged from PC in flashing mode, you can tell this from white LED fading out, not even any dim backlight, and device not reacting to lockslider and kbd-open. Power it up from battery then, using the power button. <i>Only then</i> plugging in the wallcharger is a good idea. Make sure device charges and recharge battery while you're at it. After battery got fully charged again, it's probably safe to switch off your N900, as first boot setup should have finished.
+</li></ol>
+</li></ul>
+<a name="Flashed_but_still_getting_only_.225_white_dots_going_back_and_forth.22"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=28" title="Edit section: Flashed but still getting only &quot;5 white dots going back and forth&quot;">edit</a>]</span> <span class="mw-headline">Flashed but still getting only "5 white dots going back and forth"</span></h3>
+<p>This can be caused by various problems. Known problems are:
+</p>
+<ul><li> If boot finds a corrupted FAT32, it may decide to run fsck against it, which may take like hours to complete.
+</li><li> System is trying to run corrupted ~/.profile file with wrong commands which interrupt complete boot.
+</li></ul>
+<p>Solution can be to use rescueOS: <a href="http://talk.maemo.org/showthread.php?t=75369" class="external free" title="http://talk.maemo.org/showthread.php?t=75369" rel="nofollow">http://talk.maemo.org/showthread.php?t=75369</a> , which can help you to mount rootfs, home (mount /dev/mmcblk0p2 /mnt/free1) and edit files or "do other useful rescue stuff".
+</p>
+<a name="USB"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Updating_the_firmware&amp;action=edit&amp;section=29" title="Edit section: USB">edit</a>]</span> <span class="mw-headline">USB</span></h3>
+<p>It may help to connect directly to the computer USB ports, avoiding the use of a hub - which includes the USB ports on laptop docking stations.  The USB ports in the back of a laptop may also be better than using those in the front.
+</p><p>Some distributions do not present the USB device in the way that it expects it.  First, see if it is necessary to "mount" USB:
+</p>
+<pre>mount -t usbfs usbfs /proc/bus/usb
+</pre>
+<p>If that does not work, try patching the <i>flasher</i> code.  This replaces the use of <code>/proc/bus/usb</code> with the newer <code>/dev/bus/usb</code> filesystem:
+</p>
+<pre>perl -pi -e 's-/proc/bus/usb-/dev/bus/usb\000-;' -i.backup $FLASHER
+</pre>
+<p>Replace <code>$FLASHER</code> with the path to your flasher-2.0 or flasher-3.0 Linux binary.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 387/1000000
+Post-expand include size: 2746/2097152 bytes
+Template argument size: 1575/2097152 bytes
+#ifexist count: 0/100
+-->
+
+<!-- Saved in parser cache with key mediawiki-mw_:pcache:idhash:77-0!1!0!!en!2 and timestamp 20120702003420 -->
+<div class="printfooter">
+Retrieved from "<a href="http://wiki.maemo.org/Updating_the_firmware">http://wiki.maemo.org/Updating_the_firmware</a>"</div>
+			<div id="catlinks"><p class="catlinks"><a href="http://wiki.maemo.org/Special:Categories" title="Special:Categories">Categories</a>: <span dir="ltr"><a href="http://wiki.maemo.org/Category:Users" title="Category:Users">Users</a></span> | <span dir="ltr"><a href="http://wiki.maemo.org/Category:HowTo" title="Category:HowTo">HowTo</a></span> | <span dir="ltr"><a href="http://wiki.maemo.org/Category:USB" title="Category:USB">USB</a></span> | <span dir="ltr"><a href="http://wiki.maemo.org/Category:Power_users" title="Category:Power users">Power users</a></span> | <span dir="ltr"><a href="http://wiki.maemo.org/Category:N900" title="Category:N900">N900</a></span></p></div>
+			<!-- end content -->
+
+
+
+                    </div><!-- /main-wrapper -->
+                </div><!-- /main --><!-- content end -->
+
+			<div class="visualClear"></div>
+
+        <ul style="clear: left; float: left; display: inline; list-style-type: none;">
+<li id="lastmod"> This page was last modified 14:09, 13 May 2012.</li><li id="viewcount">This page has been accessed 1,054,199 times.</li>      </ul>
+			<div class="visualClear"></div>
+
+
+			<div id="footer">
+                <div id="footer-wrapper-left">
+                    <div id="footer-wrapper-right">
+
+			<ul>
+                                <li class="first"><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">All Content CC</a></li>
+                <li><a href="http://maemo.org/legal/">Legal</a></li>
+                				<li class="privacy"><a href="http://wiki.maemo.org/maemo.org_wiki:Privacy_policy" title="maemo.org wiki:Privacy policy">Privacy policy</a></li>
+				<li class="about"><a href="http://wiki.maemo.org/maemo.org_wiki:About" title="maemo.org wiki:About">About maemo.org wiki</a></li>
+                <li>Powered by <a href="http://www.mediawiki.org/">MediaWiki</a></li>
+			</ul>
+                    </div>
+                </div>
+		</div>
+		
+	
+		
+</div>
+<!-- Served in 0.297 secs. -->
+
+        </div><!-- container -->
+
+    
+
+</body>
+</html>

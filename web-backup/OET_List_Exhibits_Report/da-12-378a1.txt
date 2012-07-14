@@ -1,0 +1,130 @@
+PUBLIC NOTICE
+Federal Communications Commission
+445 12th St., S.W.
+Washington, D.C. 20554
+News Media Information 202 / 418-0500
+Internet: http://www.fcc.gov
+TTY: 1-888-835-5322
+DA 12-378
+Released:  March 9, 2012
+Office of Engineering and Technology, Wireless Telecommunications Bureau, and Office of 
+Strategic Planning Announce Workshop on “Spectrum Efficiency and Receiver Performance” 
+As part of the Commission’s efforts to enhance the use of spectrum for mobile broadband, the 
+FCC Office of Engineering and Technology, in conjunction with the Wireless Telecommunications 
+Bureau and the Office of Strategic Planning will host a workshop on spectrum efficiency and receivers.  
+The workshop will be held on Monday, March 12, 2012 and Tuesday, March 13, 2012, in the 
+Commission Meeting Room at FCC Headquarters in Washington, DC. 
+The role of receivers in enabling access to spectrum for new services implicates federal 
+stakeholders, as well as the private sector.  Receiver performance issues have often arisen as a conflict 
+between legacy stakeholders and new entrants where deployment of new technologies and services 
+threatens to adversely impact an incumbent or place restrictions on the new entrant.  Past examples 
+include interference issues between new cellular radio systems and public safety radio systems,1 satellite 
+digital radio systems and proposed terrestrial data services,2 and ancillary terrestrial service on mobile 
+satellite spectrum and GPS3.  The resolution of such matters has historically required a public process 
+involving regulators, stakeholders and other parties. Because such discussions sometimes arise only upon 
+the introduction of a new service or technology, full deployment of new services could be hindered. New 
+approaches to spectrum management focusing on spectrum efficiency and receiver performance may 
+enable more assured deployment of new services and reduce the necessity for the involvement of 
+regulators.
+This two-day workshop will discuss the characteristics of receivers and how their performance 
+can affect the efficient use of spectrum and opportunities for the creation of new services.  Key topics will 
+include current practices for receiver design, case studies involving interference due to receiver 
+characteristics, and approaches for promoting interference avoidance and efficient use of spectrum, given 
+the current receiver base and potential future deployments.  The workshop will include perspectives from 
+licensees, equipment manufacturers, component providers, and other interested parties.
+  
+1 See Improving Public Safety Communications in the 800 MHz Band, WT Docket 02-55, Report and Order, Fifth 
+Report and Order, Fourth Memorandum Opinion and Order, and Order, 19 FCC Rcd 14969 (2004) as amended by 
+Erratum, DA 04-3208, 19 FCC Rcd 19651 (2004) and Erratum, DA 04-3459, rel. Oct. 29, 2004 (800 MHz R&O).
+2 See Establishment of Rules and Policies for the Digital Audio Radio Satellite Service in the 2310-2360 MHz 
+Frequency Band, WT Docket No. 07-293, Report and Order, Second Report and Order` rel. May 20th, 2010
+3 See FCC Public Notice International Bureau Invites Comment On NTIA Letter  Regarding Lightsquared 
+Conditional Waiver, DA 12-214, IB Docket No. 11-109, rel. February 15, 2012
+2
+Spectrum Efficiency and Receiver Performance Workshop Agenda
+Day 1 (March 12, 2012)
+9:30 am Session 1: Introduction – Role of Receivers in Spectrum Efficiency
+Julius Knapp, Chief, FCC Office of Engineering and Technology
+Karl Nebbia, Associate Administrator, NTIA Office of Spectrum Management
+10:00 am Session 2: Receiver and Interference Basics
+Dennis Roberson, Vice Provost, Executive Director and Research Professor, Illinois 
+Institute of Technology, Member, FCC Technological Advisory Council (TAC)
+10:30 am - Session 3: Receiver Ecosystem
+12:00 pm Kathy Barnes, Senior Director of Network and Device Quality Assurance, T-Mobile
+Terry Smith, Corporate Vice President and Chief Engineering Officer, Sirius XM
+John Foley, Director of Aviation GNSS Technology, Garmin
+Steve Wilkus, Distinguished Member of Technical Staff, Alcatel-Lucent
+Steven Loh, Senior Staff Engineer, Samsung
+David Gurney, Distinguished Member of Technical Staff, Motorola
+Gene Fong, Senior Staff Engineer, Qualcomm CDMA Technologies
+Moderators: Michael Ha, EMC Division, FCC Office of Engineering and Technology; 
+Robert Weller, Branch Chief, EMC Division, FCC Office of Engineering and Technology
+12:00 pm - Lunch Break
+1:00 pm (Attendees are encouraged to bring lunch or to purchase lunch in the FCC courtyard 
+restaurant)
+1:00 pm - Session 4: Experiences and Lessons Learned
+3:00 pm David Gurney, Distinguished Member of Staff Engineer, Motorola
+Larry Krevor, Vice President of Legal and Government Affairs, Sprint-Nextel
+Dan Wilson, Principal Engineer, T-Mobile
+Victor Tawil, Senior Vice President, National Association of Broadcasters (NAB)
+Terry Smith, Corporate Vice President and Chief Engineering Officer, Sirius XM
+Kurt Schaubach, Vice President and Chief Technology Officer, NRTC
+Brian Markwalter, Senior Vice President of Research and Standards, Consumer 
+Electronics Association (CEA)
+Doug Smith, Chief Network Officer, Lightsquared
+Paul Galyean, Director of Advanced Engineering, NavCom Technology
+Moderator: Dennis Roberson, Vice Provost Illinois Institute of Technology
+3:00 pm - Break
+3:15 pm
+3:15 pm - Session 5: Receiver Performance and Industry Standards
+4:45 pm Ali Khayrallah, Director of Research, Ericsson
+Dennis Martinez, Chief Technology Officer, Harris
+Ed Drocella, Chief, Spectrum Engineering and Analysis Division, NTIA
+Bruce DeCleene, Manager, Avionics Systems Branch, FAA
+3
+John Henderson, Chair of ATSC TG1/S10, the Specialist Group on Receivers
+Moderators: Tom Peters, Chief Engineer, FCC Wireless Telecommunications Bureau, 
+Charles Mathias, Associate Bureau Chief, FCC Wireless Telecommunications Bureau
+4:45 – 5 pm Adjourn
+Day 2 (March 13, 2012)
+9:30 am - Session 6: Policy Alternatives
+10:30 am Pierre de Vries, Senior Adjunct Fellow, Silicon Flatiron Center at the University of 
+Colorado at Boulder
+Dennis Roberson, Vice Provost, University of Illinois Institute
+Dale Hatfield, Adjunct Professor, University of Colorado at Boulder
+Evan Kwerel, Senior Economic Advisor, FCC Office of Strategic Planning and Policy 
+Analysis
+Moderator: John Leibovitz, Deputy Chief, FCC Wireless Telecommunications Bureau
+10:30 am - Session 7: Panel Discussion
+12:30 pm Pierre de Vries, Senior Adjunct Fellow, Silicon Flatiron Center at the University of 
+Colorado at Boulder
+Dennis Roberson, Vice Provost, University of Illinois Institute
+Evan Kwerel, Senior Economic Advisor, FCC Office of Strategic Planning and Policy 
+Analysis
+Steve Sharkey, Chief, Engineering and Technology Policy, Federal Regulatory, T-Mobile
+Larry Krevor, Vice President of Legal and Government Affairs, Sprint-Nextel
+Steve Wilkus, Distinguished Member of Technical Staff, Alcatel-Lucent
+Dean Brenner, Vice President, Government Affairs, Qualcomm
+Henning Schulzrinne, Chief Technology Officer, FCC
+Doug Sicker, Chief Technology Officer and Senior Advisor for Spectrum, NTIA
+Moderator: Dale Hatfield, Adjunct Professor, University of Colorado at Boulder 
+12:30 pm Wrap Up
+Julius Knapp, Chief, FCC Office of Engineering and Technology
+Attendance. This workshop is open to the public.  Due to high number of anticipated attendees 
+and security check-in procedures, all attendees are advised to arrive 30-60 minutes prior to the session of 
+interest.  Attendees are not required to pre-register, but may submit their name and company affiliation 
+ahead of time by sending an email to Cecilia Sulhoff (cecilia.sulhoff@fcc.gov) in order to expedite the 
+check-in process.. 
+Webcast. The FCC will webcast the workshop on the FCC webpage.  To view the webcast, go to 
+the FCC web page at www.fcc.gov/live.  Viewers will be able to submit questions during the workshop 
+by e-mail to livequestions@fcc.gov. 
+Accessibility Information. Reasonable accommodations for people with disabilities are available 
+upon request.  Include a description of the accommodation you will need and tell us how to contact you if 
+we need more information.  Make your request as early as possible.  Last minute requests will be 
+4
+accepted, but may be impossible to fill.  Send an e-mail to fcc504@fcc.gov or call the Consumer & 
+Governmental Affairs Bureau at 202-418-0530 (voice), 202-418-0432 (tty).
+For further information on the workshop, contact Michael Ha, Office of Engineering and 
+Technology at (202) 418-2099 or by email: michael.ha@fcc.gov.
+For more news and information about the Federal Communications Commission
+Please visit: www.fcc.gov

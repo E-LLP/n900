@@ -1,0 +1,122 @@
+/* ::::: http://static.maemo.org/style_maemo2009/css/reset.css ::::: */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0pt; padding: 0pt; border: 0pt none; outline: 0pt none; font-size: 100%; vertical-align: baseline; background: none repeat scroll 0% 0% transparent; }
+body { line-height: 1; }
+ol, ul { list-style: none outside none; }
+:focus { outline: 0pt none; }
+/* ::::: http://static.maemo.org/style_maemo2009/css/master.css ::::: */
+
+body { background: url('top_bg.jpg') repeat-x scroll left top rgb(234, 234, 234); color: rgb(64, 64, 64); font-size: 62.5%; font-family: "Arial",sans-serif; text-align: center; }
+a { text-decoration: none; color: rgb(250, 135, 0); }
+a:hover { text-decoration: underline; }
+a:visited { color: rgb(163, 87, 0); }
+h1, h2, h3 { margin: 0.5em 0pt; }
+img { border: medium none; }
+input { font-family: "Arial",sans-serif; }
+p { margin-bottom: 0.5em; }
+#main li { text-align: justify; }
+span.normal { font-weight: normal; }
+#container { min-width: 766px; width: 95%; max-width: 1200px; margin: 0pt auto; text-align: left; }
+#container #header { height: 67px; width: 100%; }
+#container #header #logo a { float: left; border: medium none; }
+#container #header #user-login { float: right; margin-top: 17px; margin-right: 0pt; width: 240px; font-size: 140%; }
+#container #header #user-login form { margin: 0pt; padding: 0pt; }
+#container #header input { border: 0pt none; color: rgb(165, 165, 166); font-size: 1em; font-weight: bold; padding: 8px 0pt 7px 10px; display: block; float: left; margin: 0pt; }
+#container #header #user-login #username { background: url('username-box-bg.gif') no-repeat scroll left top transparent; height: 20px; width: 82px; margin-right: 7px; }
+#container #header #user-login #password { background: url('password-box-bg.gif') no-repeat scroll left top transparent; width: 81px; height: 20px; }
+#container #header #user-login .submit { background: url('search-button.gif') no-repeat scroll left top transparent; width: 49px; height: 31px; text-indent: -1000px; font-size: 0pt; cursor: pointer; }
+#container #header #user-login .submit:hover { background: url('search-button-hover.gif') no-repeat scroll left top transparent; }
+#container #header #register { float: right; margin: 12px 15px 0pt 0pt; height: 31px; }
+#container #header #register a { background: url('register-button.gif') no-repeat scroll left top transparent; width: 104px; height: 31px; text-indent: -1000em; display: block; }
+#container #header #register a:hover { background: url('register-button-hover.gif') no-repeat scroll left top transparent; }
+#container #navigation { background: url('header_navigation_middle.gif') repeat-x scroll right bottom transparent; clear: both; height: 66px; }
+#container #navigation #navigation-left-wrapper { height: 66px; background: url('header_navigation_left.gif') no-repeat scroll left bottom transparent; }
+#container #navigation #navigation-right-wrapper { height: 66px; background: url('header_navigation_right.gif') no-repeat scroll right bottom transparent; }
+#container #navigation ul { list-style-type: none; margin: 0pt; padding: 0pt; float: left; }
+#container #navigation ul li { margin: 0pt; height: 66px; float: left; }
+#container #navigation ul li.selected { background: url('navigation-selected.gif') no-repeat scroll center bottom transparent; }
+#container #navigation ul li a { background: url('navigation-separator.gif') no-repeat scroll right top transparent; text-transform: uppercase; display: block; font-size: 1.3em; color: rgb(255, 255, 255); float: left; padding: 21px 10px 19px; font-weight: bold; }
+#container #navigation ul li.selected a, #container #navigation ul li a:hover, #container #navigation ul li.talk a:hover { background-color: rgb(104, 104, 104); text-decoration: none; }
+#container #navigation #search { float: right; margin-top: 11px; margin-right: 0pt; overflow: hidden; width: 250px; }
+#container #content:after, #container #content #main:after, #container #content #main-wrapper:after { content: "."; display: block; height: 0pt; clear: both; visibility: hidden; }
+#container #content, #container #content #main, #container #content #main-wrapper { display: inline-block; }
+#container #content, #container #content #main, #container #content #main-wrapper { display: block; }
+#container #content { min-width: 766px; line-height: 1.2; }
+#container #content a.more { background: url('icon-more.gif') no-repeat scroll right top transparent; width: 69px; height: 19px; text-indent: -1000em; float: right; clear: left; }
+#container #content a.more:hover { background: url('icon-more-hover.gif') no-repeat scroll right top transparent; }
+#container #content #main { margin-right: 255px; font-size: 1.4em; border: 1px solid rgb(234, 234, 234); }
+#container #content #main #main-wrapper { overflow: hidden; width: 99%; margin: 0px; float: left; border: 1px solid rgb(234, 234, 234); }
+#container #content #main h2 { font-size: 1.571em; }
+#container #content #main h3 { font-size: 1.2857em; }
+#container #content #main ul { list-style-type: disc; color: rgb(250, 135, 0); margin: 0.5em 0pt 0.5em 2em; }
+#container #content #main li { color: rgb(64, 64, 64); }
+#container #content #main .sections { width: 100%; float: left; clear: left; margin-top: 20px; }
+#container #content #main .sections a { color: rgb(64, 64, 64); }
+#container #content #main .sections li { background: url('column-item-divider.gif') no-repeat scroll left bottom transparent; margin-top: 1px; }
+#container #content #main .sections .column { margin-right: 5px; width: 46%; min-width: 220px; float: left; }
+#container #content #main .sections ul { list-style-type: none; margin: 0.5em 0pt; }
+#container #content #main .sections ul.document li a { background: url('icon-document.gif') no-repeat scroll left top transparent; padding: 2px 0pt 7px 25px; display: block; }
+#container #content #main .sections ul.help li a { background: url('icon-help.gif') no-repeat scroll left top transparent; padding: 2px 0pt 7px 30px; display: block; }
+#container #content #main .sections ul.started li a, #container #content #main .sections ul.experience li a, #container #content #main .sections ul.difference li a { padding: 4px 0pt 10px 35px; display: block; }
+#container #content #main .sections ul.started li.download a { background: url('icon-started-download.gif') no-repeat scroll left top transparent; }
+#container #content #main .sections ul.started li.help a { background: url('icon-started-help.gif') no-repeat scroll left top transparent; }
+#container #content #main .sections ul.started li.tools a { background: url('icon-started-tools.gif') no-repeat scroll left top transparent; }
+#container #content #main .sections ul.started li.code a { background: url('icon-started-code.gif') no-repeat scroll left top transparent; }
+#container #content #main .user_content_support_whitebox { float: left; margin-right: 5px; min-width: 220px; width: 46%; }
+#container #content #main #news .br, #container #content #main .user_content_support_whitebox .br { background: url('box-br.gif') no-repeat scroll 100% 100% transparent; padding: 10px 1px ! important; }
+.tl { background: url('box-tl.gif') no-repeat scroll 0pt 0pt transparent; }
+.tr { background: url('box-tr.gif') no-repeat scroll 100% 0pt transparent; }
+.tm { background: url('box-tm.gif') repeat-x scroll 0pt 0pt transparent; }
+.bl { background: url('box-bl.gif') no-repeat scroll 0pt 100% transparent; }
+.br { background: url('box-br.gif') no-repeat scroll 100% 100% transparent; padding: 1em; }
+.bm { background: url('box-bm.gif') repeat-x scroll 0pt 100% transparent; }
+.lm { background: url('box-lm.gif') repeat-y scroll 0pt 0pt transparent; }
+.rm { background: url('box-rm.gif') repeat-y scroll 100% 0pt transparent; }
+#container #content #main #news ul.recent, #container #content #main .user_content_support_whitebox ul.recent { padding: 0pt 1px; background-color: rgb(255, 255, 255); margin: 0pt; list-style-type: none ! important; }
+#container #content #main .user_content_support_whitebox ul.recent li { padding: 5px 12px; }
+#container #content #main #news ul.recent li, #container #content #main .user_content_support_whitebox ul.recent li { border-top: 1px solid rgb(217, 217, 217); font-size: 1.1em; }
+#container #content #main .user_content_support_whitebox ul.recent li h3 { margin: 0pt 0pt 0.25em; font-size: 1.1em; }
+ul.recent li h3 a { color: rgb(64, 64, 64); }
+ul.recent li h3 a:hover { color: rgb(250, 135, 0); }
+#container #content #main .user_content_support_whitebox ul.recent li.first { padding-top: 0pt; }
+#container #content #main #news ul.recent li.first, #container #content #main .user_content_support_whitebox ul.recent li.first { border: medium none; }
+#container #content #main #news ul.recent li.last, #container #content #main .user_content_support_whitebox ul.recent li.last { padding-bottom: 0pt; }
+#container #content #sidebar { float: right; width: 239px; margin-top: 60px; }
+#container #content #sidebar #get-involved, #container #content #sidebar #get-help, #container #content #sidebar #announcements, #container #content #sidebar #events, #container #content #sidebar #banners, #container #content #sidebar #nav-sub { margin-bottom: 20px; }
+#container #content #sidebar h2 { font-size: 2.2em; }
+#container #content #sidebar h2 a, #container #content #sidebar h3 a { color: rgb(64, 64, 64); }
+#container #content #sidebar h3 { font-size: 1.4em; }
+#container #content #sidebar p { font-size: 1.4em; margin: 0.5em 0pt; }
+#container #content #sidebar #nav-sub {  }
+#container #content #sidebar #nav-sub ul { list-style-type: none; }
+#container #content #sidebar #nav-sub li { background: url('nav-li-normal.gif') no-repeat scroll left top transparent; margin: 1px 0pt; text-transform: capitalize; }
+#container #content #sidebar #nav-sub li a { background: url('nav-divider.gif') no-repeat scroll left bottom transparent; color: rgb(79, 80, 80); font-size: 1.4em; font-weight: normal; display: block; padding: 8px 0pt 8px 30px; }
+#container #content #sidebar #nav-sub li a:hover { text-decoration: none; background-color: rgb(251, 146, 0); color: rgb(255, 255, 255); }
+#container #content #sidebar .wrapper_top_recent { background: url('bg-side-recent-top.gif') no-repeat scroll left top transparent; padding-top: 11px; }
+#container #content #sidebar .wrapper_bottom_recent { background: url('bg-side-recent-bottom.jpg') no-repeat scroll left bottom transparent; padding-bottom: 11px; }
+#container #content #sidebar ul.recent { padding: 0pt 3px; background: url('bg-side-recent-middle.gif') repeat-y scroll left top rgb(255, 255, 255); }
+#container #content #sidebar ul.recent li { padding: 5px 12px; border-top: 1px solid rgb(217, 217, 217); font-size: 1.1em; }
+#container #content #sidebar ul.recent li h3 { margin: 0pt 0pt 0.25em; font-size: 1.2727em; }
+#container #content #sidebar ul.recent li.first { border: medium none; padding-top: 0pt; }
+#container #content #sidebar .people li { float: left; width: 75px; height: 50px; text-align: center; margin-bottom: 5px; }
+#container #content #sidebar .people li a { float: left; width: 47px; height: 47px; padding: 2px; overflow: hidden; margin: 0pt 9px 8px 0pt; }
+#container #content #sidebar .people a.more { margin-right: 15px; }
+#container #footer { clear: both; color: rgb(255, 255, 255); font-size: 1.2em; background: url('footer_middle.png') repeat-x scroll left top transparent; height: 46px; margin-top: 20px; min-width: 766px; max-width: 1200px; width: 100%; }
+#container #footer #footer-wrapper-left { height: 46px; background: url('footer_left.png') no-repeat scroll left bottom transparent; }
+#container #footer #footer-wrapper-right { height: 46px; background: url('footer_right.png') no-repeat scroll right bottom transparent; }
+#container #footer ul { padding: 14px 0pt 0pt 10px; position: relative; }
+#container #footer li { color: rgb(255, 255, 255); display: inline; padding: 0pt 5px; border-left: 1px solid rgb(255, 255, 255); }
+#container #footer li.first { border-left: 0pt none; padding-right: 7px; }
+#container #footer a { text-decoration: underline; }
+#container #breadcrumb, #container #content { margin: 0pt 6px; }
+#container #breadcrumb { font-size: 1.4em; margin-top: 15px; }
+/* ::::: http://maemo.org/midcom-static/style_maemo2009/css/google_search.css ::::: */
+
+/* ::::: http://static.maemo.org/midcom.services.uimessages/simple.css ::::: */
+
+/* ::::: http://static.maemo.org/net.nemein.favourites/screen.css ::::: */
+
+/* ::::: http://static.maemo.org/midcom.helper.datamanager2/legacy.css ::::: */
+
+/* ::::: http://maemo.org/midcom-static/style_maemo2009/css/google_search.css ::::: */
+

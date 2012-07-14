@@ -1,0 +1,241 @@
+Federal Communications Commission DA 12-839
+Before the
+Federal Communications Commission
+Washington, D.C. 20554
+In the Matter of
+Starkey Laboratories, Inc. Petition for Rulemaking 
+and Request for Waiver of Section 15.247(a)(2) of 
+the Commission’s Rules
+)
+)
+)
+)
+)
+ET Docket No. 09-38 
+RM-11523
+ORDER
+Adopted:  May 29, 2012 Released:  May 31, 2012
+By the Chief, Office of Engineering and Technology:
+I. INTRODUCTION
+1. By this action, we dismiss a petition for rulemaking and deny a request for waiver filed 
+by Starkey Laboratories, Inc. (Starkey).  In its petition for rulemaking, Starkey requests that the 
+Commission amend Section 15.247(a)(2) of its regulations for unlicensed devices using spread spectrum 
+and other digital modulation techniques in the 902-928 MHz (915 MHz), 2400-2483.5 MHz (2.4 GHz), 
+and 5725-5850 MHz (5.8 GHz) radio frequency (RF) bands to reduce the minimum required signal 
+bandwidth from 500 kilohertz to 100 kilohertz.1 In its waiver request, Starkey asks that we waive the 
+minimum 500-kilohertz bandwidth requirement in Section 15.247(a)(2) to allow its unlicensed assistive 
+listening devices (ALDs) and hearing aid programming devices to be approved to operate in the 915 MHz 
+band with a minimum bandwidth of 100 kilohertz until the Commission rules on its petition for
+rulemaking.2 For the reasons discussed below, we conclude that Starkey’s petition for rulemaking plainly 
+does not warrant consideration and that Starkey’s proposed waiver of our Part 15 spread spectrum 
+communications rules would undermine the underlying purpose of those rules.
+II. BACKGROUND       
+2. Part 15 of the Commission’s rules provides for the operation of low power radio 
+frequency (RF) devices without an individual license from the Commission.  Before marketing them to 
+the public, parties responsible for all Part 15 unlicensed devices must demonstrate compliance with the 
+  
+1 See Starkey Laboratories, Inc. Petition for Rulemaking of Section 15.247(a)(2) of the Commission’s Rules, filed 
+April 11, 2008 (Starkey Rulemaking Petition).
+2 See Starkey Laboratories, Inc., Request for Waiver of Section 15.247 (a)(2) of the Commission’s Rules, filed 
+April 11, 2008 (Starkey Request for Waiver); Starkey Laboratories, Inc. Amended Request for Waiver of 
+Section 15.247(a)(2) of the Commission’s Rules, filed November 12, 2008 (Starkey November 12, 2008 Amended 
+Request for Waiver); Starkey Laboratories, Inc. Amended Request for Waiver of Section 15.247(a)(2) of the 
+Commission’s Rules, filed July 22, 2011 (Starkey July 22, 2011 Amended Request for Waiver).  Starkey requests a 
+waiver of Section 15.247(a)(2) for a device that is already authorized under Section 15.247 – its SurfLink Media 
+Controls – and for three devices that are already authorized under Section 15.249 – its SURFLink Programmer,
+SURFLink Remote Control, and WiSeries RIC (Receiver-in-Canal) – which does not impose a minimum 6 dB 
+bandwidth requirement.  Starkey submits that it would like to increase the range and link margin of the devices 
+authorized under Section 15.249, but cannot do so under the reduced power limit in Section 15.249.  Id. at 3-4.  See
+FCC Equipment Authorization database at https://apps.fcc.gov/oetcf/eas/reports/GenericSearch.cfm.  
+Federal Communications Commission DA 12-839
+2
+Commission’s rules and obtain an FCC equipment authorization.3 As a general condition of operation, 
+Part 15 devices may not cause harmful interference to any authorized services and must accept any 
+interference that may be received from them or other Part 15 devices.4  
+3. The Commission adopted its Part 15 spread spectrum rules to allow the operation of 
+wide-bandwidth devices in the 915 MHz, 2.4 GHz, and 5.8 GHz bands.5 Spread spectrum systems use 
+special modulation techniques that spread their transmitted energy across a wide bandwidth, which 
+reduces the power density of the signal in any one portion of the occupied frequency band, thereby 
+reducing the potential to cause interference to other signals in the same frequency band.  At the receiving 
+end, the spreading technique used in the transmitter is reversed to enable detection and decoding of the 
+signal.  This reversal of the signal spreading process enables the suppression of strong undesired signals, 
+making systems using spread spectrum modulation techniques relatively immune to interference from 
+outside sources.  Systems employing spread spectrum techniques are inherently more secure, and they 
+have less potential to cause interference to and are less susceptible to receive interference from other 
+devices operating in the same band than conventional communications systems.  Digital modulation 
+techniques other than spread spectrum have spectrum characteristics similar to direct sequence spread 
+spectrum techniques and spread the transmitted energy across a wide bandwidth.  Thus, these digital 
+modulation techniques have no more potential to cause interference to other devices in the same band 
+than direct sequence spread spectrum techniques. If designed appropriately, digital non-spread spectrum 
+systems will also have immunity to interference so they can operate effectively for their intended purpose 
+in the presence of other signals in the same band.  Because of these similarities, the Commission has 
+allowed low power Part 15 devices that use digital modulation techniques to operate under the same 
+Part 15 rules it applied to devices that use spread spectrum techniques.6 The Commission’s Part 15 
+spread spectrum and other digital modulation rules have promoted widespread business and consumer use 
+of unlicensed devices in the 915 MHz, 2.4 GHz, and 5.8 GHz bands that employ wide bandwidths in a 
+very spectrally efficient manner.  
+4. Under Section 15.247(a)(2), digitally modulated systems operating in the 915 MHz, 
+2.4 GHz, and 5.8 GHz bands must employ a minimum 6 dB (i.e., “spreading”) bandwidth of 
+500 kilohertz.7 The Commission specifically chose the minimum 500-kilohertz 6 dB bandwidth to ensure 
+that wideband digital devices (direct sequence spread spectrum and other digital modulation techniques) 
+operating with higher power than normally allowed under the Part 15 general emission limits would 
+operate compatibly with other authorized radio systems in the 915 MHz, 2.4 GHz, and 5.8 GHz bands.8  
+Such systems also must not exceed a peak conducted output power of 1 Watt and a peak conducted power 
+spectral density (PSD) of 8 dBm per 3 kilohertz (8 dBm/3 kHz).9 Although devices that operate under 
+  
+3 See 47 C.F.R. §§ 15.1(c), 15.201(b).
+4 47 C.F.R. § 15.5.
+5 See Authorization of spread spectrum and other wideband emissions not presently provided for in the FCC Rules 
+and Regulations, Gen Docket No. 81-413, First Report and Order, 101 FCC 2d 419 (1985) (Spread Spectrum 
+R&O).
+6 See Amendment of Part 15 of the Commission’s Rules Regarding Spread Spectrum Devices, ET Docket 
+No. 99-231, Second Report and Order, 17 FCC Rcd 10755, 10760 para. 11 (2002) (Spread Spectrum 2nd R&O). 
+7 47 C.F.R. § 15.247(a)(2).  At the 6-dB bandwidth, the signal power is 6 dB below (i.e., one-quarter of) the 
+maximum signal power.  
+8 See Spread Spectrum R&O, 101 FCC 2d at 427 para. 26; Spread Spectrum 2nd R&O, 17 FCC Rcd at 10760-61 
+paras. 11-13.
+9 47 C.F.R. §§ 15.247(b)(3); 15.247(e). Conducted output power and PSD is the amount of power delivered to the 
+base of a device’s transmitting antenna.  The 8 dBm/3 kHz conducted PSD limit approximately equates to uniformly 
+(continued….)
+Federal Communications Commission DA 12-839
+3
+Section 15.247 may use a maximum conducted output power of 1 Watt, many devices authorized under 
+the Section 15.247 rules use less than 1 Watt conducted output power for various design reasons, such as 
+conserving battery life.  There is no maximum bandwidth limit in Section 15.247 other than the 
+requirement to stay within the designated bands of operation.  At the same output power, a signal with a 
+wider bandwidth would have a lower PSD than with a narrower bandwidth – as the energy would be more 
+widely dispersed over the available spectrum – which would further reduce the signal’s potential to cause 
+interference.  Signals using a wider 6 dB bandwidth than required could also provide a higher data rate 
+(i.e., information transfer rate) than narrower bandwidth signals.
+5. Starkey states that a reduction of the required minimum 6 dB bandwidth from 500 to 
+100 kilohertz is needed so its ALDs and hearing aid programming devices can operate with less power 
+and bandwidth to communicate with hearing aids, which typically have modest RF signal processing 
+capability due to their physical size and limited power radio subsystem.10 Starkey argues that by using 
+only 100-kilohertz wide signals and maintaining the 8 dBm/3 kHz conducted PSD limit, its devices’ 
+overall RF power and interference potential would be lower than those of devices using 500-kilohertz 
+wide signals and a conducted PSD of 8 dBm/3 kHz.11 Starkey further states that a reduction of the 
+minimum bandwidth is needed so its Section 15.247 compliant devices may transmit a single RF carrier 
+that is narrower than 500 kilohertz and would be time multiplexed in the right and left channels, instead 
+of each device using two transmitters to transmit two overlapping frequency shift keying (FSK)12
+modulated RF carriers to comply with the 500-kilohertz bandwidth requirement – which increase the 
+devices’ cost, complexity, and power consumption.13  
+6. The Commission issued Public Notices soliciting comments on Starkey’s petition for 
+rulemaking and request for waiver on March 26, 2009.14 Itron, Inc., Medical Device Manufacturers 
+(Continued from previous page)    
+spreading the maximum 1 Watt conducted output power over the minimum 500-kilohertz 6 dB bandwidth.  In 1990, 
+the Commission added the 8 dBm/3 kHz conducted PSD limit to the Part 15 spread spectrum rules to ensure that the 
+transmitted energy is uniformly spread over the minimum signal bandwidth of 500 kilohertz to limit the potential for 
+interference to authorized services in the same frequency band.  See Amendment of Parts 2 and 15 of the Rules with 
+regard to the operation of spread spectrum systems, GEN. Docket No. 89-354, Report and Order, 5 FCC Rcd 4123, 
+4124 para. 12 (1990).  In 1997, the Commission corrected the reference in the Part 15 spread spectrum rules to the 
+maximum PSD limit from an average limit to a peak limit.  See Amendment of Parts 2 and 15 of the Commission’s 
+Rules Regarding Spread Spectrum Transmitters, ET Docket No. 96-8, RM-8435, RM-8608, RM-8609, Report and 
+Order, 12 FCC Rcd 7488, 7506 para. 34 (1997).
+10 See Starkey Amended Request for Waiver at 3-6.  Starkey claims that frequency hopping spread spectrum (FHSS) 
+and direct sequence spectrum (DSSS) are not viable options for communicating with hearing aids due to their 
+increased signal processing and power requirements.  See Starkey Labs, Inc. Ex Parte filing, dated October 8, 2008, 
+at 3. 
+11 See Starkey Amended Request for Waiver at 8.  To avoid interfering with other devices, Starkey submits that its 
+devices would employ a “Listen Before Talk” mechanism along with an adaptive frequency selection algorithm.  
+See Starkey Laboratories, Inc. Amended Request for Waiver, ET Docket No. 09-38, filed July 22, 2011, at 3, 5.  
+12 FSK is a frequency modulation technique in which digital information is transmitted through discrete frequency 
+changes of an RF carrier wave.
+13 See Starkey Laboratories, Inc. Ex Parte, filing, dated August 26, 2011, at 2.
+14 See Public Notice, DA 09-674, Office of Engineering and Technology Seeks Comment on Petition for 
+Rulemaking by Starkey Laboratories, Inc. To Amend the Minimum Bandwidth Requirement In Section 15.247(a)(2) 
+for the 902-928 MHz Band, RM-11523, 24 FCC Rcd 3635 (rel. March 26, 2009); Public Notice, DA 09-676, Office 
+of Engineering and Technology Declares the Starkey Laboratories, Inc. Request for a Waiver of Part 15 for the 
+902-928 MHz Band To Be a “Permit-But-Disclose” Proceeding for Ex Parte Purposes and Requests Comments, 
+ET Docket No. 09-38, 24 FCC Rcd 3641 (rel. March 26, 2009). 
+Federal Communications Commission DA 12-839
+4
+Association, Telesaurus Holdings GB LLC and Skybridge Spectrum Foundation, and USA Mobility, Inc. 
+filed comments opposing Starkey’s Request for Waiver and/or Petition for Rulemaking.  Hearing 
+Industries Association and the European Hearing Industries Manufacturers Association, Hearing Loss 
+Association of America, Institute of Electrical and Electronics Engineers 802.18 Radio Regulatory 
+Technical Advisory Group, ON Semiconductor, Progeny LMS, LLC, Pulse Nederland B.V., Williams 
+Sound Corporation, and Zarlink Semiconductor filed comments supporting Starkey’s Request for Waiver 
+and/or Petition for Rulemaking. 
+III. DISCUSSION
+7. We find that Starkey’s requested modification of our Part 15 spread spectrum 
+communications rules plainly does not warrant consideration.15 First, Starkey has not provided any 
+analysis to demonstrate that its proposal will not increase the potential for interference to licensed users 
+who share the 915 MHz, 2.4 GHz, and 5.8 GHz bands.  Second, the current Section 15.247 rules have 
+permitted a wide array of unlicensed spread spectrum and digital devices to proliferate, including WiFi 
+devices, meter readers used in Smart Grid systems, and many other unlicensed devices used ubiquitously 
+in homes and businesses across the country that co-exist with licensed operations.  Starkey has not 
+demonstrated in its proposal that this current ecosystem could be maintained if we reduced the minimum 
+500-kilohertz bandwidth requirement in Section 15.247(a)(2).  As noted above, the 500-kilohertz 
+bandwidth requirement is a minimum limit and many of these unlicensed devices use an even wider 
+bandwidth to increase their data transfer rates and therefore have conducted power spectral density levels 
+of less than 8 dBm/3 kHz.  Also, although digitally modulated devices that operate under Section 15.247 
+may use a maximum conducted output power of 1 Watt, because of battery life concerns and RF 
+emissions exposure limits, many devices authorized under Section 15.247 use less than the 1 Watt 
+maximum allowed conducted output power, which also results in a power spectral density of less than the 
+maximum allowed 8 dBm/3 kHz.16 The operation in the same frequency band of a relatively great 
+number of narrowband 100-kilohertz wide signals at the maximum allowed conducted power spectral 
+density of 8 dBm/3 kHz together could make the band unusable for devices currently operating under 
+Section 15.247.  
+8. We are authorized to grant a waiver under Section 1.3 of the Commission’s rules if the 
+petitioner demonstrates good cause for such action.17 Good cause, in turn, may be found and a waiver 
+granted “where particular facts would make strict compliance inconsistent with the public interest.”18 To 
+make this public interest determination, the waiver cannot undermine the purposes of the rule, and there 
+must be a stronger public interest benefit in granting the waiver than in applying the rule.19 Starkey’s 
+  
+15 The Office of Engineering and Technology may dismiss or deny a petition for rulemaking that it finds is 
+repetitious, moot, or plainly does not warrant consideration by the Commission.  See 47 C.F.R. § 0.241(e).
+16 For example, a search of the Commission’s equipment authorization database reveals that many devices operate at 
+power levels in the range of 70-500 milliwatts (mW), depending on the intended use.  Power spectral density levels 
+are typically in the range of -10 dBm/3 kHz to 5 dBm/3 kHz.
+17 See 47 C.F.R. § 1.3.  See also ICO Global Communications (Holdings) Limited v. FCC, 428 F.3d 264 (D.C. Cir. 
+2005); Northeast Cellular Telephone Co. v. FCC, 897 F.2d 1164 (D.C. Cir. 1990); and WAIT Radio v. FCC, 418 
+F.2d 1153 (D.C. Cir. 1969).
+18 See Northeast Cellular, 897 F.2d at 1166; see also ICO Global Communications, 428 F.3d at 269 (quoting 
+Northeast Cellular); and WAIT Radio, 418 F.2d at 1157-59.
+19 See, e.g., WAIT Radio, 418 F.2d at 1157 (stating that even thought the overall objectives of a general rule have 
+been adjudged to be in the public interest, it is possible that application of the rule to a specific case may not even 
+serve the public interest if an applicant’s proposal does not undermine the public interest policy served by the rule); 
+(continued….)
+Federal Communications Commission DA 12-839
+5
+waiver request does not meet the above criteria in that it would undermine the fundamental purpose of 
+Section 15.247(a)(2).  As noted above, the Commission specifically chose the 500-kilohertz minimum 
+6 dB bandwidth in Section 15.247(a)(2) to exclude narrowband systems from using the higher power 
+limits of Section 15.247.20 We find that Starkey’s request to use a reduced bandwidth would undermine 
+the underlying purpose of Section 15.247(a)(2) to allow only wideband digital devices to operate with 
+higher power than is normally allowed under Part 15 general emission limits.  We note that several 
+commenters supported Starkey’s waiver request, arguing that the public interest would be served by 
+helping people with hearing loss have better access to communications equipment and function in more 
+settings, and we do not disagree with that objective.  However, we must balance the public interest benefit 
+in granting the waiver, including the need to waive the rule to achieve this objective, against the public 
+interest benefit in applying the rule to avoid negative effects on other users of the spectrum, as discussed 
+above.  Starkey has not provided persuasive evidence on either point, and we note that it already is 
+marketing equipment that complies with the rules it has asked us to waive.21  We thus conclude that the 
+potential public interest benefit in this case is not stronger than applying the rules.
+9. For the reasons noted above, we conclude that modifying Section 15.247(a)(2) to reduce 
+the minimum required 6 dB bandwidth of 500 kilohertz for unlicensed devices that operate in the 
+915 MHz, 2.4 GHz, and 5.8 GHz RF bands plainly does not warrant consideration by the Commission.  
+We also conclude that Starkey’s request for waiver of the minimum 500-kilohertz bandwidth requirement 
+would undermine the underlying purpose of Section 15.247(a)(2) and would not be in the public interest.  
+Thus, we dismiss Starkey’s petition for rulemaking to modify Section 15.247(a)(2) and deny Starkey’s 
+request for waiver of Section 15.247(a)(2).     
+IV. ORDERING CLAUSES
+10. Accordingly, IT IS ORDERED that, pursuant to the authority granted in Sections 4(i), 
+302, and 303(r) of the Communications Act of 1934, as amended, 47 U.S.C. §§ 4(i), 302(a), 303(r), and 
+Sections 0.31 and 0.241 of the Commission’s rules, 47 C.F.R. §§ 0.31, 0.241, the Petition for Rulemaking 
+of Starkey Labs, Inc. IS DISMISSED and the Request for Waiver of Starkey Labs, Inc. IS DENIED.
+FEDERAL COMMUNICATIONS COMMISSION
+Julius P. Knapp
+Chief, Office of Engineering and Technology
+(Continued from previous page)    
+and Northeast Cellular, 897 F.2d at 1166 (stating that in granting a waiver, an agency must explain why deviation 
+from the general rule better serves the public interest than would strict adherence to the rule).
+20 See para. 4, supra.
+21 An examination of our equipment authorization database and Starkey’s Internet site reveals that Starkey is 
+currently marketing a device authorized under Section 15.247 – known as the SURFLink Media Device – that 
+interconnects with and transmits digitally modulated audio signals to hearing aids from several media sources, 
+including televisions, radios, and MP3 players.  Starkey is also marketing three devices that are authorized under 
+Section 15.249 – known as the WiSeries RIC (Receiver-in-Canal), for wireless communications between hearing 
+aids, the SurfLink Programmer, for wireless hearing aid programming, and the SurfLink Remote Control, for 
+wireless control of hearing aid settings (i.e., on/off; volume).  See Starkey July 22, 2022 Amended Request for 
+Waiver at 7; Starkey Laboratories, Inc. Ex Parte filing, submitted August 26, 2011, at 2.  

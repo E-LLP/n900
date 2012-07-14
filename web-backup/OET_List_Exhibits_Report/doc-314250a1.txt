@@ -1,0 +1,62 @@
+PAGE  - 1 -
+PUBLIC NOTICE
+FEDERAL COMMUNICATIONS COMMISSION
+455 12TH STREET, S.W.
+WASHINGTON, D.C. 20554
+News media information 202/418-0500 Fax-On-Demand 202/418-2830     
+Released: May, 2012
+Report No. 443                EXPERIMENTAL ACTIONS      
+The Commission, by its Office of Engineering and Technology, Experimental Licensing Branch, granted 
+the following experimental applications during the period from 3/1/12 to 4/1/12:
+· WG2XCT     HUGH P. BUNN, PE    0064-EX-PL-2012
+New experimental to operate in 495 – 510 kHz for research to develop class E transmitting equipment and 
+propagation studies.
+Fixed:  Spartanburg (Spartanburg), SC
+· WF2XYX     LOCKHEED MARTIN CORPORATION    0515-EX-PL-2011
+New experimental to operate on select frequencies between 109.375 MHz and 1400 MHz to operate a commercial 
+test equipment antenna range under US Government contract
+Fixed:  Syracuse (Onondaga), NY
+· WG2XDK     SENSUS SPECTRUM LLC    0094-EX-PL-2012
+New experimental to operate in 450 – 470 MHz for testing base and endpoint products
+Fixed & Mobile:  Durham, North Carolina; Covington, LA; Uniontown, PA; Goleta, CA; California, PA; Stafford, 
+TX; Plano, TX
+· WG2XDT     ODIN TECHNOLOGIES    0067-EX-PL-2012
+New experimental to operate in 860 – 870 MHz for RFID tag performance evaluation using frequencies that are used 
+for this purpose in Europe and Japan.
+Mobile:  Ashburn (Loudoun), VA
+· WG2XBU     DATA SCIENCES INTERNATIONAL    0034-EX-PL-2012
+New experimental to operate in 863 – 870 MHz and 902 – 928 MHz for equipment testing
+Fixed:  New Brighton (Ramsey), MN
+· WG2XDV     SOUTH COAST AIR QUALITY MANAGEMENT DISTRICT    0123-EX-PL-2012
+New experimental to operate wind profiler radar on 915 MHz for meteorological studies.
+Fixed:  Irvine and Pacoima, CA
+· WG2XDG     THE BOEING COMPANY    0091-EX-PL-2012
+New experimental to operate in 2400 – 2483 MHz for demonstration control of multi-UAV.
+Fixed & Mobile:  Flight level of 11,000 MSL feet, Boardman (Morrow), OR
+· WG2XCZ     BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.    
+0058-EX-PL-2012
+New experimental to operate in 4400 - 4990 MHz and 14.50 - 15.35 GHz for testing antennas.
+Mobile:  Temporary Fixed (Ground), Litchfield, NH
+PAGE  - 2 -
+· WG2XAF     LOCKHEED MARTIN CORPORAITON    0606-EX-PL-2011
+New experimental to operate on select frequencies between 4410 MHz and 4930 MHz for testing of the sniper 
+targeting POD
+Mobile:  Fort Worth (Tarrant), TX; Possum Kingdom Lake (Pala Pinto), TX; Fort Sill, Lawton (Comanche), OK
+· WG2XDA     GENERAL DYNAMICS C4 SYSTEMS    0070-EX-PL-2012
+New experimental to operate in 9400 - 9600 MHz to build and operate a prototype border protection system 
+demonstration site to support US Government contract pursuits.
+Fixed:  Wittman (Maricopa), AZ
+· WG2XAW     ELTA NORTH AMERICA    0644-EX-PL-2011
+New experimental to operate on 10.2 GHz for testing radar equipment 
+Fixed:  Fulton (Howard), MD
+· WG2XCN     GENERAL DYNAMICS C4 SYSTEMS    0004-EX-PL-2012
+New experimental to operate in 16.2 - 17.2 GHz to build and operate a prototype border protection system 
+demonstration site to support US Government contract pursuits.
+Fixed:  Wittman (Maricopa), AZ
+· WG2XBJ     SRC, INC.    0011-EX-PL-2012
+New experimental to operate in 16.21 - 16.50 GHz for testing of the SR HAWK radars.
+Mobile:  Wittman (Maricopa), AZ
+· WG2XDJ     TELEDYNE BROWN ENGINEERING INC    0077-EX-PL-2012
+New experimental to operate in 34.20 - 36.20 GHz for Radar testing
+Mobile:  Huntsville, AL - Campus of Teledyne Brown Engineering; Courtland, AL - Courtland Airport  FAA 
+Identifier 9A4

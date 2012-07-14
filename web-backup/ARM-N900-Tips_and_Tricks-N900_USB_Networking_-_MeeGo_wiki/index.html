@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		
+		<meta name="generator" content="MediaWiki 1.16.2">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.meego.com/opensearch_desc.php" title="MeeGo wiki (en)">
+<link title="Creative Commons" type="application/rdf+xml" href="http://wiki.meego.com/index.php?title=ARM/N900/Tips_and_Tricks/N900_USB_Networking&amp;action=creativecommons" rel="meta">
+<link rel="copyright" href="http://creativecommons.org/licenses/by/3.0/legalcode">
+<link rel="alternate" type="application/atom+xml" title="MeeGo wiki Atom feed" href="http://wiki.meego.com/index.php?title=Special:RecentChanges&amp;feed=atom">		<title>ARM/N900/Tips and Tricks/N900 USB Networking - MeeGo wiki</title>
+		
+
+
+
+
+
+		<!--[if lt IE 7]><meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+		
+		                
+		
+		<!-- Head Scripts -->
+
+
+		
+	
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body class="mediawiki ltr ns-0 ns-subject page-ARM_N900_Tips_and_Tricks_N900_USB_Networking skin-meego">
+
+	<!-- heading -->
+	<div id="mw_header"><div id="firstHeading"><a href="http://wiki.meego.com/Main_Page"><strong>Meego Wiki</strong></a></div></div>
+
+	<div id="mw_main">
+	<div id="mw_contentwrapper">
+	<!-- navigation portlet -->
+	<div id="p-cactions">
+		<h5>Views</h5>
+		<div class="pBody">
+    	<h1 id="PageTitle">ARM/N900/Tips and Tricks/N900 USB Networking</h1>
+			<ul>
+      		
+	
+				 <li id="ca-nstab-main" class="selected"><a href="http://wiki.meego.com/ARM/N900/Tips_and_Tricks/N900_USB_Networking" title="View the content page [c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk" class="new"><a href="http://wiki.meego.com/index.php?title=Talk:ARM/N900/Tips_and_Tricks/N900_USB_Networking&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+				 <li id="ca-viewsource"><a href="http://wiki.meego.com/index.php?title=ARM/N900/Tips_and_Tricks/N900_USB_Networking&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e">View source</a></li>
+				 <li id="ca-history"><a href="http://wiki.meego.com/index.php?title=ARM/N900/Tips_and_Tricks/N900_USB_Networking&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>			</ul>
+		</div>
+	</div>
+
+	<!-- content -->
+	<div id="mw_content">
+	<!-- contentholder does nothing by default, but it allows users to style the text inside
+	     the content area without affecting the meaning of 'em' in #mw_content, which is used
+	     for the margins -->
+	<div id="mw_contentholder">
+		<div class="mw-topboxes">
+			<div id="mw-js-message" style="display: none;"></div>
+			<div class="mw-topbox" id="siteSub">From MeeGo wiki</div>
+								</div>
+
+		<div id="contentSub"><span class="subpages">&lt; <a href="http://wiki.meego.com/ARM" title="ARM">ARM</a> | <a href="http://wiki.meego.com/ARM/N900" title="ARM/N900">N900</a></span></div>
+
+				<div id="jump-to-nav">Jump to: <a href="#mw_portlets">navigation</a>, <a href="#searchInput">search</a></div>
+		<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Using_USB_networking"><span class="tocnumber">1</span> <span class="toctext">Using USB networking</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Setting_up_default_route_and_DNS_settings"><span class="tocnumber">1.1</span> <span class="toctext">Setting up default route and DNS settings</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Host_USB_Network_Configuration"><span class="tocnumber">1.2</span> <span class="toctext">Host USB Network Configuration</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Host_configuration_on_Debian_Lenny"><span class="tocnumber">1.3</span> <span class="toctext">Host configuration on Debian Lenny</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Automatic_configuration_with_Ubuntu_9.10_and_10.04"><span class="tocnumber">1.4</span> <span class="toctext">Automatic configuration with Ubuntu 9.10 and 10.04</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Automatic_configuration_with_Fedora_13"><span class="tocnumber">1.5</span> <span class="toctext">Automatic configuration with Fedora 13</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></tbody></table>
+<h1> <span class="mw-headline" id="Using_USB_networking"> Using USB networking </span></h1>
+<p>(This is based largely on the <a href="http://wiki.maemo.org/N900_USB_networking" class="external text" rel="nofollow">N900 USB Networking</a> page of wiki.maemo.org)
+</p><p>This page describes how to enable Networking on the N900 via USB. The first part describes how to configure the Nokia N900 as a USB pluggable network device. The second part describes how to configure various platforms to use the Nokia N900 as a network device.
+</p><p>The default configuration on MeeGo for N900 has the USB network interface set up. The N900 USB interface will have the IP address 192.168.2.15, and the remote end will have the IP address 192.168.2.14. You will need to set up your host for USB networking as well.
+</p><p>After this is set up, you can ssh into your MeeGo installation:
+</p>
+<pre> ssh root@192.168.2.15 
+</pre>
+<p>Password is 'meego'. The 'scp' and 'ssh' tools should be available from within the device and you can transfer files in and out with them. You should also be able to run 'yum install' now, to install packages.
+</p>
+<h3> <span class="mw-headline" id="Setting_up_default_route_and_DNS_settings"> Setting up default route and DNS settings </span></h3>
+<p>You will need to set up a default route to your host IP:
+</p>
+<pre>route add default gw 192.168.2.14
+</pre>
+<p>If after having fixed the routing table you still are not able to ping
+the outside world try to add a nameserver to /etc/resolv.conf:
+</p>
+<pre># added Google DNS
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+</pre>
+<p>Or put in your own ISP nameservers.
+</p>
+<h2> <span class="mw-headline" id="Host_USB_Network_Configuration"> Host USB Network Configuration </span></h2>
+<p>The Host configuration is detailed in the Maemo 4.x <a href="http://wiki.maemo.org/USB_networking#Host_USB_Network_Configuration" class="external text" rel="nofollow">USB Networking wiki</a>. Please refer to it for details. <b>Notice! Ethernet module has changed from cdc_ether to cdc_eem.</b>
+</p>
+<h2> <span class="mw-headline" id="Host_configuration_on_Debian_Lenny"> Host configuration on Debian Lenny </span></h2>
+<p><b>Notice! Ethernet module has changed from cdc_ether to cdc_eem.</b>
+</p><p>Create the file in /etc/udev/rules.d/99-nokia-n900.rules and put in the following lines: 
+</p>
+<pre>SUBSYSTEM=="net", ACTION=="add", ATTRS{idVendor}=="0421", ATTRS{idProduct}=="01c8", ATTRS{manufacturer}=="Nokia", ATTRS{product}=="N900 (PC-Suite Mode)", NAME="n900"
+#SUBSYSTEM=="net", ACTION=="add", ATTRS{idVendor}=="0421", ATTRS{idProduct}=="01c8", ATTRS{manufacturer}=="Nokia", ATTRS{product}=="N900 (PC-Suite Mode)", NAME="n900p"
+</pre>
+<p>Note that the udev configuration above may not work in Debian squeeze. This rule renames either the usb network interface (usb0) or the usb phone net interface (usbpn0) to interface called n900. Since the two rules above are identical, the choice is made seemingly at random. Making the rules more accurate by adding a DEVPATH key helps:
+</p>
+<pre>SUBSYSTEM=="net", ACTION=="add", DEVPATH=="/devices/pci0000:00/0000:00:1a.7/usb1/1-2/1-2:1.8/net/usb0", ATTRS{idVendor}=="0421", ATTRS{idProduct}=="01c8", ATTRS{manufacturer}=="Nokia", ATTRS{product}=="N900 (PC-Suite Mode)", NAME="n900"
+SUBSYSTEM=="net", ACTION=="add", DEVPATH=="/devices/pci0000:00/0000:00:1a.7/usb1/1-2/1-2:1.0/net/usbpn0", ATTRS{idVendor}=="0421", ATTRS{idProduct}=="01c8", ATTRS{manufacturer}=="Nokia", ATTRS{product}=="N900 (PC-Suite Mode)", NAME="n900p"
+</pre>
+<p>Your DEVPATH may be different though, depending on which USB port is used on the host computer etc. You can use 
+</p>
+<pre>udevadm monitor --kernel
+</pre>
+<p>while plugging in the N900 to see what is the correct path.
+</p><p>After adding the udev rules, you have to reload them with:
+</p>
+<pre>udevadm control --reload-rules
+</pre>
+<p>Then edit /etc/network/interfaces and add:
+</p>
+<pre>allow-hotplug n900
+auto n900
+iface n900 inet static
+	address 192.168.2.14
+	netmask 255.255.255.0
+	up iptables -A POSTROUTING -t nat -s 192.168.2.15/32 -j MASQUERADE
+	up echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+        down iptables -D POSTROUTING -t nat -s 192.168.2.15/32 -j MASQUERADE
+	down echo 0 &gt; /proc/sys/net/ipv4/ip_forward
+</pre>
+<p>Now put your usb cable in the pc and in the n900 and on the host.
+To check that everything is set up properly you can run:
+</p>
+<pre>ifconfig n900
+</pre>
+<h2> <span class="mw-headline" id="Automatic_configuration_with_Ubuntu_9.10_and_10.04"> Automatic configuration with Ubuntu 9.10 and 10.04 </span></h2>
+<p>Note: these instructions should be fixed/improved:
+</p>
+<ul><li> Create the file in /etc/udev/rules.d/99-nokia-n900.rules and put in the following lines:
+</li></ul>
+<p><b>Notice! Ethernet module has changed from cdc_ether to cdc_eem.</b>
+</p>
+<pre>SUBSYSTEM=="net", ACTION=="add", ENV{ID_USB_DRIVER}=="cdc_ether", ENV{ID_MODEL}="N900__PC-Suite_Mode", ENV{ID_VENDOR}=="Nokia", NAME="n900"
+SUBSYSTEM=="net", ACTION=="add", ENV{ID_USB_DRIVER}=="cdc_phonet", ENV{ID_MODEL}="N900__PC-Suite_Mode", ENV{ID_VENDOR}=="Nokia", NAME="n900pn"
+</pre>
+<ul><li> Edit /etc/network/interfaces and add:
+</li></ul>
+<pre>auto n900
+iface n900 inet static
+	address 192.168.2.14
+	netmask 255.255.255.0
+	up iptables -A POSTROUTING -t nat -s 192.168.2.15/32 -j MASQUERADE
+	up echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+        down iptables -D POSTROUTING -t nat -s 192.168.2.15/32 -j MASQUERADE
+	down echo 0 &gt; /proc/sys/net/ipv4/ip_forward
+</pre>
+<ul><li> Fix /etc/init/network-interface.conf (this is not required for Ubuntu 10.04), change the line:
+</li></ul>
+<pre>stop on net-device-removed INTERFACE=$INTERFACE
+</pre>
+<p>with:
+</p>
+<pre>stop on net-device-remove INTERFACE=$INTERFACE
+</pre>
+<p>(Note the difference: net-device-remove<b>d</b>)
+</p>
+<ul><li> Reload udev rules with:
+</li></ul>
+<pre>udevadm control --reload-rules
+</pre>
+<ul><li> Restart NetworkManager so it re-reads the interfaces file (otherwise it'll clobber your network device):
+</li></ul>
+<pre>sudo /etc/init.d/network-manager restart</pre>
+<p>or
+</p>
+<pre>sudo service network-manager restart</pre>
+<ul><li> Now put your usb cable in the pc and in the n900.
+</li></ul>
+<p>If you are unable to autoconnect through the networking applet, you may need to manually bring up the interface:
+</p>
+<pre>ifup n900
+</pre>
+<p>If all went fine:
+</p>
+<ul><li> You should see with ifconfig -a two new network interfaces, n900 and n900pn, the first one configured with the proper ip address 192.168.2.15, and should be able to ping the n900.
+</li></ul>
+<ul><li> The N900 should be able to use the pc internet connection immediately.
+</li></ul>
+<p><br>
+</p>
+<h2> <span class="mw-headline" id="Automatic_configuration_with_Fedora_13"> Automatic configuration with Fedora 13 </span></h2>
+<ul><li> Create the file /etc/init/n900-up.conf and put in the following lines:
+</li></ul>
+<pre>start on n900-up
+script
+ iptables -A POSTROUTING -t nat -s 192.168.2.15/32 -j MASQUERADE
+ echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+end script
+</pre>
+<ul><li> Create the file /etc/init/n900-down.conf and put in the following lines:
+</li></ul>
+<pre>start on n900-down
+script 
+ iptables -D POSTROUTING -t nat -s 192.168.2.15/32 -j MASQUERADE
+ echo 0 &gt; /proc/sys/net/ipv4/ip_forward
+end script
+</pre>
+<ul><li> Create the file /etc/udev/rules.d/99-nokia-n900.rules and put in the following lines:
+</li></ul>
+<pre>SUBSYSTEM=="net", ACTION=="add", ENV{ID_USB_DRIVER}=="cdc_eem", ENV{ID_MODEL}="N900__PC-Suite_Mode", ENV{ID_VENDOR}=="Nokia", NAME="n900"
+SUBSYSTEM=="net", ACTION=="add", ENV{ID_USB_DRIVER}=="cdc_eem", ENV{ID_MODEL}="N900__PC-Suite_Mode", ENV{ID_VENDOR}=="Nokia", PROGRAM="/sbin/initctl emit n900-up"
+SUBSYSTEM=="net", ACTION=="remove", ENV{ID_USB_DRIVER}=="cdc_eem", ENV{ID_MODEL}="N900__PC-Suite_Mode", ENV{ID_VENDOR}=="Nokia", PROGRAM="/sbin/initctl emit n900-down"
+SUBSYSTEM=="net", ACTION=="add", ENV{ID_USB_DRIVER}=="cdc_phonet", ENV{ID_MODEL}="N900__PC-Suite_Mode", ENV{ID_VENDOR}=="Nokia", NAME="n900pn"
+</pre>
+<ul><li> Create the file /etc/sysconfig/network-sripts/ifcfg-n900 and put in the folliwing lines:
+</li></ul>
+<pre>NAME="n900" 
+TYPE=Ethernet 
+HOTPLUG=yes 
+BOOTPROTO=none 
+IPADDR=192.168.2.14 
+PREFIX=24 
+ONBOOT=yes
+</pre>
+<ul><li> Now you may connect your PC and N900. 
+</li><li> Update your firewall configuration. Go to System-&gt;Administration-&gt;Firewall, then choose "Trusted Interfaces" on the left and check "n900" on the right
+</li><li> Now you may connect to the Internet from n900!
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 58/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key meego_wiki:pcache:idhash:175-0!1!0!!en!2!edit=0 and timestamp 20120702040427 -->
+<div class="printfooter">
+Retrieved from "<a href="http://wiki.meego.com/ARM/N900/Tips_and_Tricks/N900_USB_Networking">http://wiki.meego.com/ARM/N900/Tips_and_Tricks/N900_USB_Networking</a>"</div>
+		<div class="mw_clear"></div>
+		<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a href="http://wiki.meego.com/Special:Categories" title="Special:Categories">Category</a>: <span dir="ltr"><a href="http://wiki.meego.com/Category:N900" title="Category:N900">N900</a></span></div></div>			</div><!-- mw_contentholder -->
+	</div><!-- mw_content -->
+	</div><!-- mw_contentwrapper -->
+
+	<div id="mw_portlets">
+
+	<!-- portlets -->
+			<div class="generated-sidebar portlet" id="p-Wiki_Navigation">
+		<h5>Wiki Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-Return-to-MeeGo.com"><a href="http://meego.com/">Return to MeeGo.com</a></li>
+				<li id="n-mainpage-description"><a href="http://wiki.meego.com/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li>
+				<li id="n-recentchanges"><a href="http://wiki.meego.com/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="http://wiki.meego.com/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="http://wiki.meego.com/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- search -->
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://wiki.meego.com/index.php" id="searchform"><div>
+				<input name="title" value="Special:Search" type="hidden">
+
+				<input id="searchInput" name="search" title="Search MeeGo wiki [f]" accesskey="f" value="" type="text">
+
+									<input name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" type="submit">&nbsp;
+								<input name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists" type="submit">
+			</div></form>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- toolbox -->
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://wiki.meego.com/Special:WhatLinksHere/ARM/N900/Tips_and_Tricks/N900_USB_Networking" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://wiki.meego.com/Special:RecentChangesLinked/ARM/N900/Tips_and_Tricks/N900_USB_Networking" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="http://wiki.meego.com/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://wiki.meego.com/index.php?title=ARM/N900/Tips_and_Tricks/N900_USB_Networking&amp;q=ARM%2FN900%2FTips_and_Tricks%2FN900_USB_Networking&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="http://wiki.meego.com/index.php?title=ARM/N900/Tips_and_Tricks/N900_USB_Networking&amp;oldid=33715" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div><!-- pBody -->
+	</div><!-- portlet -->
+	<!-- languages -->
+
+	</div><!-- mw_portlets -->
+
+
+	</div><!-- main -->
+
+	<div class="mw_clear"></div>
+
+	<!-- personal portlet -->
+	<div id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://meego.com/user?destination=wiki_home" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<!-- footer --> 
+	<div id="footer">
+  		<a href="http://linuxfoundation.org/"><div id="sponsor"><strong>Linux Foundation</strong></div></a>
+			<ul id="f-list">
+				<li id="lastmod"> This page was last modified on 17 March 2011, at 13:52.</li>
+				<li id="viewcount">This page has been accessed 17,278 times.</li>
+			</ul>
+ 			<ul id="f-list">
+				<li id="copyright">Content is available under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" class="external ">Creative Commons Attribution 3.0 License</a>.</li>
+				<li id="privacy"><a href="http://wiki.meego.com/MeeGo_wiki:Privacy_policy" title="MeeGo wiki:Privacy policy">Privacy policy</a></li>
+				<li id="about"><a href="http://wiki.meego.com/MeeGo_wiki:About" title="MeeGo wiki:About">About MeeGo wiki</a></li>
+			</ul>     
+		<div class="mw_poweredby">Powered by MediaWiki 1.16.2</div>	</div>
+
+	
+
+
+<!-- Served in 0.204 secs. -->
+</body>
+</html>

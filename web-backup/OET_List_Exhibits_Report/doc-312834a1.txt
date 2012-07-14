@@ -1,0 +1,245 @@
+PAGE  - 1 -
+PUBLIC NOTICE
+FEDERAL COMMUNICATIONS COMMISSION
+455 12TH STREET, S.W.
+WASHINGTON, D.C. 20554
+News media information 202/418-0500 Fax-On-Demand 202/418-2830     
+Released: March 8, 2012
+Report No. 441                EXPERIMENTAL ACTIONS  
+The Commission, by its Office of Engineering and Technology, Experimental Licensing Branch, granted 
+the following experimental applications during the period from 11/1/11 to 2/1/12:
+· WG2XCC     GARMIN INTERNATIONAL    0632-EX-PL-2011
+New experimental to operate in various frequency bands between 505 kHz and 18000 MHz for HIRF testing.
+Fixed:  Garmin flight test facility at the New Century airport, New Century (Garmin), KS
+· WF2XWS     L-3 COMMUNICATIONS DATRON ADVANCED TECHNOLOGIES DIVISION   
+0334-EX-PL-2011
+New experimental to operate in 29.10 - 29.30 MHz to retrofit and new installation of Iridium feeder link terminals.
+Fixed:  Simi Valley (Ventura), CA
+· WF2XON     THE BOEING COMPANY    0446-EX-PL-2010
+New experimental to operate in 30 – 73 MHz, 75.40 – 108 MHz, 450 – 608 MHz, 614 – 960 MHz, 1427 - 1525.42 
+MHz, 1625 - 1660.50 MHz, 1668.40 – 2500 MHz, 2390 – 2550 MHz. 4400 – 4900 MHz, 5250 – 5900 MHz, 14400 –
+14830 MHz and 15150 – 15350 MHz for testing communication systems on Unmanned Vehicle.
+Fixed & Mobile:  ST Louis, ST Charles and Smartt Field, MO; Vandalia, IL
+· WF2XVA     THE BOEING COMPANY    0227-EX-PL-2011
+New experimental to operate in 30 - 74.60 MHz, High Intensity Radiated Field (HIRF) Testing.
+Fixed:  Glasgow (Valley), MT
+· WF2XZZ UNIVERSITY OF UTAH, DEPT. OF PHYSICS AND ASTRONOMY    
+0564-EX-PL-2011
+New experimental to operate on 54.1 MHz to study high-energy cosmic rays.
+Fixed:  Delta (Millard), UT
+· WF2XZY     CENTER FOR REMOTE SENSING OF ICE SHEETS    0540-EX-PL-2011
+New experimental to operate on 72 MHz for research project using Unmanned Air Vehicles for sensing of ice sheets
+Mobile:  Lawrence (Douglas), KS; Ft Riley (Geary), KS; Dugway (Tooele), UT
+· WG2XBW     NATIONAL PUBLIC RADIO, INC.    0634-EX-PL-2011
+New experimental to operate 87.7 MHz for testing FM modulators 
+Mobile:  New Haven, CT
+· WG2XCI     CURTISS-WRIGHT CONTROLS, INC.    0032-EX-PL-2012
+New experimental to operate in 140 – 3000 MHz to conduct demonstrations of ground penetrating radar.
+Mobile:  Continental United States, AK and HI; Selected locations in the US as determined by the prospective 
+customer.
+· WG2XAB     CITY OF MURFREESBORO WATER & SEWER DEPT.    0589-EX-PL-2011
+PAGE  - 2 -
+New experimental to operate in 174 – 216 MHz for data collection of remote water and sewer infrastructure.
+Fixed:  Murfreesboro (Rutherford), TN
+· WG2XBQ     THE BOEING COMPANY    0249-EX-PL-2011
+New experimental to operate on frequencies between 231.30 MHz and 374.70 MHz to support Thales Radio 
+Integration with the UAE C-17 aircraft production and testing.
+Fixed & Mobile:  Long Beach (Los Angeles), CA
+· WF2XYL     AVIONICS ENGINEERING CENTER, OHIO UNIVERSITY, MCFARLAND AVIONICS 
+BLDG.    0426-EX-PL-2011
+New experimental to operate on 240 MHz and 280 MHz for testing air navigation equipment.
+Fixed:  Albany (Athens), OH
+· WF2XVQ     BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.    
+0298-EX-PL-2011
+New experimental to operate on 287 MHz and 425 MHz for testing robust systems.
+Mobile:  Temporary Fixed Locations - BAE Systems Campus - Wayne, NJ
+· WF2XWZ     THE BOEING COMPANY    0270-EX-PL-2011
+New experimental to operate in 340 - 399.90 MHz for testing FreeWave MM2 series of radios.
+Fixed & Mobile:  San Diego (San Diego), CA
+· WF2XYT     LOCKHEED MARTIN CORPORATION    0445-EX-PL-2011
+New experimental to operate on select frequencies between 392.67 MHz and 2275.00 MHz for testing antennas for 
+commercial sale.
+Mobile:  Owego, NY
+· WG2XAY     LOCKHEED MARTIN CORPORATION    0625-EX-PL-2011
+New experimental to operate on 400 MHz for LMS6 radiosonde factory acceptance testing.
+Mobile:  Marion, MA
+· WG2XAZ     LUTRON ELECTRONICS CO., INC.    0628-EX-PL-2011
+New experimental to operate on 400 MHz for low power RF transmitter testing 
+Mobile:  Coopersburg, PA
+· WF2XZA     THE BOEING COMPANY    0427-EX-PL-2011
+New experimental to operate in 400.01 - 400.05 MHz for testing communication links.
+Fixed:  Huntington Beach (Orange), CA
+· WF2XVH     LOCKHEED MARTIN CORPORATION    0296-EX-PL-2011
+New experimental to operate on 401.20, 403.50, 1360, 1378.00 and 1378.00 MHz to evaluate various new AMF 
+JTRS small airborne radio. EXD 130930, for freq. 1385 and 1378 MHz"
+Mobile:  Gaithersburg, MD
+· WF2XZJ     SENSUS SPECTRUM LLC    0531-EX-PL-2011
+New experimental to operate in 410 – 430 MHz for testing endpoint products for export markets
+Fixed:  Frederick (Frederick), MD
+· WF2XUQ     THE BOEING COMPANY    0265-EX-PL-2011
+New experimental to operate in frequency bands between 420 MHz and 2690 MHz for testing GSM pico cell 
+operation system.
+Fixed & Mobile:  Victorville, CA; San Antonio, TX; Charleston, SC; West Coastal Water, US; Gulf Coastal Water, 
+US; East Coastal Water, US
+· WF2XYD     L3 NOVA ENGINEERING    0450-EX-PL-2011
+New experimental to operate in 420 – 440 MHz To test and evaluate seismic sensors.
+Mobile:  Mason (Warren), OH
+· WF2XZP     L-3 COMMUNICATIONS / RANDTRON ANTENNA SYSTEMS    0555-EX-PL-2011
+PAGE  - 3 -
+New experimental to operate in 430 – 450 MHz to test various antennas.
+Fixed:  Half moon Bay (San Mateo), CA
+· WG2XBD     DRS TACTICAL SYSTEMS, INC.    0622-EX-PL-2011
+New experimental to operate in 450 – 470 MHz for equipment testing
+Mobile:  Melbourne, Florida
+· WG2XBM     CBS COMMUNICATIONS SERVICES INC.    0003-EX-PL-2012
+New experimental to operate 450 MHz for testing the application of mobile radios.
+Fixed & Mobile:  Golden (Jefferson), CO; Denver (Denver), CO
+· WG2XBS     SEPURA PLC    0010-EX-PL-2012
+New experimental to operate on 453 – 463 MHz Equipment testing
+Mobile:  Las Vegas Convention Centre, Las Vegas, NV
+· WG2XAC     LOCKHEED MARTIN CORPORATION    0592-EX-PL-2011
+New experimental to operate in 758 – 763 MHz and 788 – 793 MHz to demonstration new cellular technology and its 
+integrated components.
+Fixed & Mobile:  Kaneohe and Keolu Hills, HI
+· WG2XBE     SOUTH COAST AIR QUALITY MANAGEMENT DISTRICT    0608-EX-PL-2011
+New experimental to operate wind profiler radar on 915 MHz for meteorological studies.
+Fixed:  Irvine (Orange), CA
+· WG2XCB     SPRINT COMMUNICATIONS COMPANY, L.P.    0645-EX-PL-2011
+New experimental to operate in 2305 – 2310 MHz and 2350 – 2355 MHz for equipment testing
+Fixed:  Overland Park (Johnson), KS
+· WG2XBK     RAYTHEON NETWORK CENTRIC SYSTEMS    0014-EX-PL-2012
+New experimental to operate in 4900 – 4990 MHz for developing and testing mobile surveillance systems
+Mobile:  McKinney (Collin), TX
+· WG2XAI     THE BOEING COMPANY    0571-EX-PL-2011
+New experimental to operate in 5091 – 5150 MHz for testing telemetry transmitters.
+Mobile:  Palmdale, CA; Berkeley, MO
+· WG2XAH     LAS VEGAS METROPOLITAN POLICE DEPARTMENT    0623-EX-PL-2011
+New experimental to operate in 763 – 768 MHz and 793 – 798 MHz for public safety testing.
+Fixed & Mobile:  Las Vegas (Clark), NV
+· WF2XZS     MIAMI-DADE COUNTY    0520-EX-PL-2011
+New experimental to operate in 763 – 798 MHz for LTE testing.
+Fixed & Mobile:  Miami (Dade), FL
+· WF2XVO     LOCKHEED MARTIN CORPORATION    0278-EX-PL-2011
+New experimental to operate in 902 – 928 MHz and 1350 – 1390 MHz for testing of an unmanned ground vehicle.
+Mobile:  Grand Prairie (Dallas), TX; Littleton (Arapahoe), CO
+· WG2XAA     LOCKHEED MARTIN CORPORATION    0560-EX-PL-2011
+New experimental to operate in 902 – 928 MHz for testing of ground radio systems for training purposes.
+Mobile:  San Diego, CA
+· WF2XWI     LOCKHEED MARTIN CORPORATION    0348-EX-PL-2011
+New experimental to operate on 1030 MHz to test AN/UPX-37 transmitters.
+Fixed & Mobile:  Syracuse (Onondaga), NY
+· WF2XVW     DRS ICAS, LLC    0293-EX-PL-2011
+New experimental to operate on 1030 MHz and 1090 MHz for testing avionics systems
+Mobile:   DRS Campus, Cheektowaga (Erie), New York: (DRS Campus)
+PAGE  - 4 -
+· WF2XYR     ORBITAL SCIENCES CORPORATION    0499-EX-PL-2011
+New experimental to operate on 1200 MHz and 1500 MHz to test GPS reradiators.
+Fixed:  Wallops Island (Accomack), VA
+· WF2XYP     THE BOEING COMPANY    0505-EX-PL-2011
+New experimental to operate on 1227.60 MHz and 1575.42 MHz for testing radionavigation satellite service (RNSS) 
+equipment and systems 
+Fixed:  Seattle (King), WA
+· WF2XYJ     LOCKHEED MARTIN CORPORATION    0468-EX-PL-2011
+New experimental to operate on 1260 and 1280 MHz for testing of PSTAR-ER antenna receiver.
+Mobile:  South Syracuse (Onondaga), NY
+· WF2XTY     NORTHEAST ILLINOIS REGIONAL COMMUTER RAILROAD CORPORATION    
+0201-EX-PL-2011
+New experimental to operate on 1575 MHz for testing GPS equipment.
+Fixed:  Chicago (Cook), IL
+· WF2XUN     RANGE NETWORKS, INC.    0240-EX-PL-2011
+New experimental to operate in 1810 – 1840 MHz for GSM Network Testing
+Fixed & Mobile:  Black Rock Desert, Gerlach, NV Black Rock Desert
+· WG2XBZ     WESTERN DATACOM    0047-EX-PL-2012
+New experimental to operate in 1970 – 1975 MHz for telecommunications testing
+Mobile:  Fort Dix, NJ
+· WF2XZL     ORBITAL SCIENCES CORPORATION    0524-EX-PL-2011
+New experimental to operate 2000 MHz and 5000 MHz to do testing for NASA under contract.
+Mobile:  Taurus II Launch Vehicle, ground testing and space to earth launch
+· WG2XAS     AIRSCAN, INC.    0491-EX-PL-2011
+New experimental to operate on 2458.5 MHz and 2475.5 MHz to providing equipment training.
+Mobile:  Designated flight area over swamp land in Titusville, FL
+· WF2XXA     LOCKHEED MARTIN CORPORATION    0398-EX-PL-2011
+New experimental to operate on various frequencies between 2730.15873 MHz and 2897.637795 MHz to perform a 
+calibrated measurement of the RCS.
+Fixed:  Bithlo (Orange), FL
+· WF2XZB     THE BOEING COMPANY    0484-EX-PL-2011
+New experimental to operate in 2780 – 2820 MHz to conduct satellite component and panel tests.
+Fixed:  El Segundo (Los Angeles), CA
+· WG2XAO     RAYTHEON NETWORK CENTRIC SYSTEMS    0619-EX-PL-2011
+New experimental to operate in 3100 – 3500 MHz to develop and test the SR1500 short range CIP radar.
+Mobile:  Newark (Essex), NJ; Flushing (Queens), NY; Jamaica (Queens), NY; Teterboro (Bergen), NJ
+· WF2XZQ     BAE SYSTEMS INFORMATION AND ELECTRONIC SYSTEMS INTEGRATION INC.    
+0525-EX-PL-2011
+New experimental to operate in 4400 - 4990 MHz and 14500 - 15350 MHz for testing antennas.
+Mobile:  Temporary Fixed (Ground) Locations, Merrimack, NH
+· WF2XWT     LOCKHEED MARTIN CORPORATION    0376-EX-PL-2011
+New experimental to operate on various frequencies between 5003.921569 MHz and 5239.215686 MHz to perform a 
+calibrated measurement of the Radar Cross-Section (RCS).
+Fixed & Mobile:  Bithlo (Orange), FL
+· WF2XZC     THE BOEING COMPANY    0502-EX-PL-2011
+PAGE  - 5 -
+New experimental to operate in 5725 - 5850 MHz for testing Wireless Radios via an Ethernet bridge.
+Mobile:  Continental United States
+· WF2XYV     THE BOEING COMPANY    0507-EX-PL-2011
+New experimental to operate in 8750.55 - 8950.55 MHz to perform integrated functional testing (IFT) of the 
+Advanced Radar Surveillance System (ARSS) radar.
+Mobile:  Huntsville, AL
+· WF2XZH     TELEPHONICS CORPORATION    0514-EX-PL-2011
+New experimental to operate on 8850 MHz for test, development, and demonstration of ground surveillance radar.
+Mobile:  Huntington, NY
+· WF2XVT   RAYTHEON NETWORK CENTRIC SYSTEMS    0322-EX-PL-2011
+New experimental to operate in 9300 – 10000 MHz for testing antennas with software adapted electronic beam 
+scanning
+Fixed:  Sudbury (Middlesex), MA
+· WF2XZI     SALVATORE POLI    0521-EX-PL-2011
+New experimental to operate on 9350 and 9400 MHz and in 9.20 - 9.50 GHz for testing on the RDR-1700B x-band 
+maritime surveillance and imaging radar.
+Mobile:  Farmingdale, NY
+· WF2XZT     GENERAL DYNAMICS C4 SYSTEMS    0526-EX-PL-2011
+New experimental to operate in 9400 - 9600 MHz to build and operate a prototype border protection system 
+demonstration site to support US Government contract pursuits.
+Fixed:  Scottsdale (Maricopa), AZ
+· WF2XZU     GENERAL DYNAMICS C4 SYSTEMS    0534-EX-PL-2011
+New experimental in 9400 - 9600 MHz to build and operate a prototype border protection system demonstration site 
+to support US Government contract pursuits.
+Fixed:  Mesa (Maricopa), AZ
+· WF2XYU     THE BOEING COMPANY    0512-EX-PL-2011
+New experimental to operate in 10250 – 10500 MHz for testing of ground master radar.
+Mobile:  Huntsville, AL
+· WF2XZW     RAYTHEON NETWORK CENTRIC SYSTEMS    0567-EX-PL-2011
+New experimental to operate in 10250 - 10500 MHz to develop and test a mobile surveillance system based on 
+commercial off-the-shelf radar (Elta Systems EL/M-2112 Ground Radar Sensor) and electro-optical/infrared cameras 
+that can be used to monitor a border, perimeter or homeland security system.
+Mobile:  McKinney, Texas
+· WF2XXC     LOCKHEED MARTIN CORPORATION    0405-EX-PL-2011
+New experimental to operate in 12000 – 15350 MHz and 15356.862745 - 15388.235294 MHz to perform calibrated 
+measurement for the RADAR CROSS-SECTION (RCS).
+Fixed:  Bithlo (Orange), FL
+· WF2XZO     TACHYON NETWORKS INCORPORATED    0504-EX-PL-2011
+New experimental to operate in 14000 – 14500 MHz for testing aircraft communications
+Mobile:  Middletown, DE
+· WF2XZX     RAYTHEON NETWORK CENTRIC SYSTEMS    0565-EX-PL-2011
+New experimental to operate in 15700 -17200 MHz for developing and testing mobile surveillance systems.
+Mobile:  Las Cruces, NM
+· WF2XYN     LAUREL TECHNOLOGIES PARTNERSHIP    0444-EX-PL-2011
+New experimental to operate in 16000 -17000 MHz to test target detection capabilities of the MSTAR radar.
+Mobile:  Largo, FL
+PAGE  - 6 -
+· WF2XXY     RAYTHEON COMPANY    0463-EX-PL-2011
+New experimental to operate in 16200 - 17710 MHz for testing of the multi-function radio frequency system 
+(MFRFS) compact high gain active phase array radar.
+Mobile:  McKinney (Collin), TX
+· WF2XYQ     THE BOEING COMPANY    0506-EX-PL-2011
+New experimental to operate in 16210 - 16500 MHz for testing SRHawk Man Portable Ground Surveillance Radar.
+Mobile:  Huntsville, AL
+· WG2XAL     RAYTHEON NETWORK CENTRIC SYSTEMS    0594-EX-PL-2011
+New experimental to operate in 16210 - 16500 MHz for testing the mobile surveillance system based on commercial-
+off-the-shelf radar (SR Hawk radar SRC-2362).
+Mobile:  Las Cruces, NM
+· WG2XAK     RAYTHEON NETWORK CENTRIC SYSTEMS    0635-EX-PL-2011
+New experimental to operate in 16210 - 16500 MHz for testing on the SR Hawk radar.
+Mobile:  McKinney, Texas
+· WG2XAN     RAYTHEON NETWORK CENTRIC SYSTEMS    0602-EX-PL-2011
+New experimental to operate in 16250 - 17200 MHz for testing the mobile surveillance system based on commercial-
+off-the-shelf radar
+Mobile:  McKinney (Collin), TX

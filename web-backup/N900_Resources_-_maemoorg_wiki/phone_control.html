@@ -1,0 +1,1189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		
+				<meta name="keywords" content="Phone control,DbusScripts,Desktop Command Execution Widget scripts,Documentation/Maemo 5 Developer Guide/Architecture/RTCOM,Fcron,Maemo 5/PR1.2,Queen BeeCon Widget,Calls when you are 'out of reach' (no network, shut off, ...),Calls when 'not available' (busy, no answer, out of reach),Unanswered calls,Unanswered calls, when 'no answer' after 25 sec">
+		<link rel="shortcut icon" href="favicon.ico">
+		<link rel="search" type="application/opensearchdescription+xml" href="http://wiki.maemo.org/opensearch_desc.php" title="maemo.org wiki (English)">
+<link rel="alternate" type="application/rss+xml" title="maemo.org wiki RSS Feed" href="http://wiki.maemo.org/index.php?title=Special:Recentchanges&amp;feed=rss">
+<link rel="alternate" type="application/atom+xml" title="maemo.org wiki Atom Feed" href="http://wiki.maemo.org/index.php?title=Special:Recentchanges&amp;feed=atom">
+		<title>Phone control - maemo.org wiki</title>
+        
+        
+        <!--[if lte IE 6]>
+            <link rel="stylesheet" href="http://static.maemo.org/style_maemo2009/css/ie.css" type="text/css" media="screen">
+        <![endif]-->
+
+
+        
+        
+		
+		
+		<meta http-equiv="imagetoolbar" content="no"><!--[endif]---->
+		
+		
+                
+		
+		<!-- Head Scripts -->
+		
+
+		
+		
+	
+<link rel="stylesheet" type="text/css" href="phone_control.css" media="all">
+</head>
+<body class="mediawiki ns-0 ltr page-Phone_control">
+        <div id="container">
+            <div id="header">
+                <div id="logo">
+                                        <a href="http://maemo.org/"><img src="logo.jpg" title="Maemo.org" alt="Maemo.org"></a>
+                </div><!-- logo -->
+
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://wiki.maemo.org/index.php?title=Special:Userlogin&amp;returnto=Phone_control" title="You are encouraged to log in, it is not mandatory however. [o]" accesskey="o">Log in / create account</a></li>
+			</ul>
+		</div>
+            </div>
+        </div>
+            <div id="navigation">
+                <div id="navigation-left-wrapper">
+
+                    <div id="navigation-right-wrapper">
+
+                        <ul>
+                            <li><a href="http://maemo.org/intro/">Intro</a></li>
+                            <li><a href="http://maemo.org/downloads/">Downloads</a></li>
+                            <li class="selected"><a href="http://maemo.org/community/">Community</a></li>
+                            <li><a href="http://maemo.org/development/">Development</a></li>
+                            <li><a href="http://maemo.org/news/">News</a></li>
+                            <li><a href="http://talk.maemo.org/">TALK</a></li>
+                        </ul>
+
+
+		<div id="search">
+			<form action="http://wiki.maemo.org/Special:Search" id="searchform">
+				<input id="searchInput" name="search" title="Search maemo.org wiki [f]" accesskey="f" value="" type="text">
+				<input name="go" class="submit" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists" type="submit">&nbsp;
+<!--				<input type='submit' name="fulltext" class="submit" id="mw-searchButton" value="Go" title="Search the pages for this text" /> &nbsp; -->
+			</form>
+		</div>
+
+
+                    </div>
+                </div>
+            </div><!-- /navigation -->
+            <div id="breadcrumb"></div>
+            <div id="content">
+                        
+
+<!--	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content2"> 
+
+
+		<a name="top" id="top"></a>
+				<h1 class="firstHeading">Phone control</h1>
+		<div id="bodyContent">
+-->
+
+      
+<!-- sidebar --> 
+                  <div id="sidebar">
+		<div id="nav-sub">
+
+		<div class="portlet" id="p-navigation">
+		<h3>Navigation</h3>
+			<ul>
+				<li id="n-mainpage"><a href="http://wiki.maemo.org/Main_Page" title="Visit the Main Page [z]" accesskey="z">Main Page</a></li>
+				<li id="n-recentchanges"><a href="http://wiki.maemo.org/Special:Recentchanges" title="The list of recent changes in the wiki. [r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="http://wiki.maemo.org/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="http://wiki.maemo.org/Help:Contents" title="The place to find out.">Help</a></li>
+				<li id="n-advancedsearch"><a href="http://wiki.maemo.org/Special:Search">Advanced search</a></li>
+			</ul>
+	</div>
+	
+
+
+	<div id="p-cactions" class="portlet">
+		<h3>Views</h3>
+			<ul class="fi_protie_navigation">
+					 <li id="ca-nstab-main" class="selected"><a href="http://wiki.maemo.org/Phone_control" title="View the content page [c]" accesskey="c">Page</a></li>
+					 <li id="ca-talk"><a href="http://wiki.maemo.org/Talk:Phone_control" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+					 <li id="ca-edit"><a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit" title="You can edit this page. Please use the preview button before saving. [e]" accesskey="e">Edit</a></li>
+					 <li id="ca-history"><a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=history" title="Past versions of this page. [h]" accesskey="h">History</a></li>
+				</ul>
+	</div>
+
+
+    
+		</div>
+
+               </div>
+<!-- sidebar --> 
+<div id="main">
+<div id="main-wrapper">
+
+			            <h1 class="firstHeading">Phone control</h1>
+			<!-- start content -->
+			<table class="ambox ambox-notice" style="">
+<tbody><tr>
+<td class="ambox-image"><div style="width: 52px;">
+  <a href="http://wiki.maemo.org/Image:Ambox_notice.png" class="image" title="Image:Ambox_notice.png"><img alt="Image:Ambox_notice.png" src="ambox_notice.png" border="0" height="40" width="40"></a></div></td>
+<td class="ambox-text" style=""> <b>This page is about controlling your Nokia device.  For historical reasons this page is called </b>phone<b> control even though it really covers more than just the phone functions.</b> </td>
+</tr>
+</tbody></table>
+<p><br>
+</p>
+<table class="ambox ambox-notice" style="">
+<tbody><tr>
+<td class="ambox-image"><div style="width: 52px;">
+  <a href="http://wiki.maemo.org/Image:Ambox_notice.png" class="image" title="Image:Ambox_notice.png"><img alt="Image:Ambox_notice.png" src="ambox_notice.png" border="0" height="40" width="40"></a></div></td>
+<td class="ambox-text" style=""> <b>Please be aware that the recommended way to use the phone functionality is Telepathy:</b><br><small>
+</small><ul><small><li> <a href="http://telepathy.freedesktop.org/wiki/" class="external text" title="http://telepathy.freedesktop.org/wiki/" rel="nofollow">Telepathy wiki</a>
+</li><li> <a href="http://maemo.org/api_refs/5.0/5.0-final/telepathy-glib/" class="external text" title="http://maemo.org/api_refs/5.0/5.0-final/telepathy-glib/" rel="nofollow">Telepathy-glib API</a>
+</li></small><li><small> <a href="http://wiki.maemo.org/Documentation/Maemo_5_Developer_Guide/Architecture/RTCOM" title="Documentation/Maemo 5 Developer Guide/Architecture/RTCOM">RTCOM architecture</a></small> </li></ul></td>
+
+</tr>
+</tbody></table>
+<p><br>
+</p>
+<table id="toc" class="toc" summary="Contents"><tbody><tr><td><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="#D-Bus"><span class="tocnumber">1</span> <span class="toctext">D-Bus</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Phone"><span class="tocnumber">1.1</span> <span class="toctext">Phone</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Open_Phone_application"><span class="tocnumber">1.1.1</span> <span class="toctext">Open Phone application</span></a></li>
+<li class="toclevel-3"><a href="#Make_a_phone_call"><span class="tocnumber">1.1.2</span> <span class="toctext">Make a phone call</span></a></li>
+<li class="toclevel-3"><a href="#End_current_phone_call"><span class="tocnumber">1.1.3</span> <span class="toctext">End current phone call</span></a></li>
+<li class="toclevel-3"><a href="#Answer_current_phone_call"><span class="tocnumber">1.1.4</span> <span class="toctext">Answer current phone call</span></a></li>
+<li class="toclevel-3"><a href="#Activate_call_forwarding"><span class="tocnumber">1.1.5</span> <span class="toctext">Activate call forwarding</span></a></li>
+<li class="toclevel-3"><a href="#Cancel_call_forwarding"><span class="tocnumber">1.1.6</span> <span class="toctext">Cancel call forwarding</span></a></li>
+<li class="toclevel-3"><a href="#Get_IMEI"><span class="tocnumber">1.1.7</span> <span class="toctext">Get IMEI</span></a></li>
+<li class="toclevel-3"><a href="#Get_IMSI"><span class="tocnumber">1.1.8</span> <span class="toctext">Get IMSI</span></a></li>
+<li class="toclevel-3"><a href="#Get_ICCID"><span class="tocnumber">1.1.9</span> <span class="toctext">Get ICCID</span></a></li>
+<li class="toclevel-3"><a href="#Get_SIM_status"><span class="tocnumber">1.1.10</span> <span class="toctext">Get SIM status</span></a></li>
+<li class="toclevel-3"><a href="#Get_cellular_signal_strength"><span class="tocnumber">1.1.11</span> <span class="toctext">Get cellular signal strength</span></a></li>
+<li class="toclevel-3"><a href="#Get_cellular_registration_status"><span class="tocnumber">1.1.12</span> <span class="toctext">Get cellular registration status</span></a></li>
+<li class="toclevel-3"><a href="#Turn_loudspeaker_on"><span class="tocnumber">1.1.13</span> <span class="toctext">Turn loudspeaker on</span></a></li>
+<li class="toclevel-3"><a href="#Turn_loudspeaker_off"><span class="tocnumber">1.1.14</span> <span class="toctext">Turn loudspeaker off</span></a></li>
+<li class="toclevel-3"><a href="#Turn_loudspeaker_on_.28N900.29"><span class="tocnumber">1.1.15</span> <span class="toctext">Turn loudspeaker on (N900)</span></a></li>
+<li class="toclevel-3"><a href="#Turn_loudspeaker_off_.28N900.29"><span class="tocnumber">1.1.16</span> <span class="toctext">Turn loudspeaker off (N900)</span></a></li>
+<li class="toclevel-3"><a href="#Turn_mute_on_.28N900.29"><span class="tocnumber">1.1.17</span> <span class="toctext">Turn mute on (N900)</span></a></li>
+<li class="toclevel-3"><a href="#Turn_mute_off_.28N900.29"><span class="tocnumber">1.1.18</span> <span class="toctext">Turn mute off (N900)</span></a></li>
+<li class="toclevel-3"><a href="#Turn_bluetooth_override_on_.28N900.29"><span class="tocnumber">1.1.19</span> <span class="toctext">Turn bluetooth override on (N900)</span></a></li>
+<li class="toclevel-3"><a href="#Turn_bluetooth_override_off_.28N900.29"><span class="tocnumber">1.1.20</span> <span class="toctext">Turn bluetooth override off (N900)</span></a></li>
+<li class="toclevel-3"><a href="#Start_vibrating"><span class="tocnumber">1.1.21</span> <span class="toctext">Start vibrating</span></a></li>
+<li class="toclevel-3"><a href="#Stop_vibrating"><span class="tocnumber">1.1.22</span> <span class="toctext">Stop vibrating</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Profiles"><span class="tocnumber">1.2</span> <span class="toctext">Profiles</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Set_General"><span class="tocnumber">1.2.1</span> <span class="toctext">Set General</span></a></li>
+<li class="toclevel-3"><a href="#Set_Silent"><span class="tocnumber">1.2.2</span> <span class="toctext">Set Silent</span></a></li>
+<li class="toclevel-3"><a href="#Query_current_profile"><span class="tocnumber">1.2.3</span> <span class="toctext">Query current profile</span></a></li>
+<li class="toclevel-3"><a href="#List_all_profiles"><span class="tocnumber">1.2.4</span> <span class="toctext">List all profiles</span></a></li>
+<li class="toclevel-3"><a href="#Get_all_profile_Values"><span class="tocnumber">1.2.5</span> <span class="toctext">Get all profile Values</span></a></li>
+<li class="toclevel-3"><a href="#Set_a_profile_value"><span class="tocnumber">1.2.6</span> <span class="toctext">Set a profile value</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#LED"><span class="tocnumber">1.3</span> <span class="toctext">LED</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Activate_LEDs"><span class="tocnumber">1.3.1</span> <span class="toctext">Activate LEDs</span></a></li>
+<li class="toclevel-3"><a href="#Deactivate_LEDs"><span class="tocnumber">1.3.2</span> <span class="toctext">Deactivate LEDs</span></a></li>
+<li class="toclevel-3"><a href="#Set_brightness_of_backlight_LEDs"><span class="tocnumber">1.3.3</span> <span class="toctext">Set brightness of backlight LEDs</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Messaging"><span class="tocnumber">1.4</span> <span class="toctext">Messaging</span></a>
+<ul>
+<li class="toclevel-3"><a href="#New_e-mail"><span class="tocnumber">1.4.1</span> <span class="toctext">New e-mail</span></a></li>
+<li class="toclevel-3"><a href="#Send_and_receive_e-mail"><span class="tocnumber">1.4.2</span> <span class="toctext">Send and receive e-mail</span></a></li>
+<li class="toclevel-3"><a href="#Set_presence"><span class="tocnumber">1.4.3</span> <span class="toctext">Set presence</span></a></li>
+<li class="toclevel-3"><a href="#Change_peak_schedule_settings"><span class="tocnumber">1.4.4</span> <span class="toctext">Change peak_schedule settings</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Media_player"><span class="tocnumber">1.5</span> <span class="toctext">Media player</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Open_file_in_media_player"><span class="tocnumber">1.5.1</span> <span class="toctext">Open file in media player</span></a></li>
+<li class="toclevel-3"><a href="#Pause_what.27s_currently_playing"><span class="tocnumber">1.5.2</span> <span class="toctext">Pause what's currently playing</span></a></li>
+<li class="toclevel-3"><a href="#Stop_what.27s_currently_playing"><span class="tocnumber">1.5.3</span> <span class="toctext">Stop what's currently playing</span></a></li>
+<li class="toclevel-3"><a href="#Play_what.27s_currently_selected"><span class="tocnumber">1.5.4</span> <span class="toctext">Play what's currently selected</span></a></li>
+<li class="toclevel-3"><a href="#Unpause_what.27s_currently_selected"><span class="tocnumber">1.5.5</span> <span class="toctext">Unpause what's currently selected</span></a></li>
+<li class="toclevel-3"><a href="#Play_next_mediafile"><span class="tocnumber">1.5.6</span> <span class="toctext">Play next mediafile</span></a></li>
+<li class="toclevel-3"><a href="#Play_previous_mediafile"><span class="tocnumber">1.5.7</span> <span class="toctext">Play previous mediafile</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Notifications"><span class="tocnumber">1.6</span> <span class="toctext">Notifications</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Send_notification_.28orange_one_line_popup.29"><span class="tocnumber">1.6.1</span> <span class="toctext">Send notification (orange one line popup)</span></a></li>
+<li class="toclevel-3"><a href="#Send_notification_.28orange_multiple_line_popup.29"><span class="tocnumber">1.6.2</span> <span class="toctext">Send notification (orange multiple line popup)</span></a></li>
+<li class="toclevel-3"><a href="#Send_dialog_notification_.28orange_multi_line_popup.2C_requiring_user_interaction.29"><span class="tocnumber">1.6.3</span> <span class="toctext">Send dialog notification (orange multi line popup, requiring user interaction)</span></a></li>
+<li class="toclevel-3"><a href="#Send_dialog_notification_.28black.2Fwhite_with_floating_bar_and_confirmation_button.2C_requiring_user_action.29"><span class="tocnumber">1.6.4</span> <span class="toctext">Send dialog notification (black/white with floating bar and confirmation button, requiring user action)</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Securing"><span class="tocnumber">1.7</span> <span class="toctext">Securing</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Security_Device_Lock_.28with_lockcode.29"><span class="tocnumber">1.7.1</span> <span class="toctext">Security Device Lock (with lockcode)</span></a></li>
+<li class="toclevel-3"><a href="#Unlock_.28pop_up_lockcode_requester.3F.29"><span class="tocnumber">1.7.2</span> <span class="toctext">Unlock (pop up lockcode requester?)</span></a></li>
+<li class="toclevel-3"><a href="#Query_Devlock_State"><span class="tocnumber">1.7.3</span> <span class="toctext">Query Devlock State</span></a></li>
+<li class="toclevel-3"><a href="#Lock_screen_and_keys_.28slider_lockswitch.29"><span class="tocnumber">1.7.4</span> <span class="toctext">Lock screen and keys (slider lockswitch)</span></a></li>
+<li class="toclevel-3"><a href="#Unlock_screen_and_keys"><span class="tocnumber">1.7.5</span> <span class="toctext">Unlock screen and keys</span></a></li>
+<li class="toclevel-3"><a href="#Query_lock_state_of_screen_and_keys"><span class="tocnumber">1.7.6</span> <span class="toctext">Query lock state of screen and keys</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Networking"><span class="tocnumber">1.8</span> <span class="toctext">Networking</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Enable_ICD_log"><span class="tocnumber">1.8.1</span> <span class="toctext">Enable ICD log</span></a></li>
+<li class="toclevel-3"><a href="#Connect_to_specific_saved_connection"><span class="tocnumber">1.8.2</span> <span class="toctext">Connect to specific saved connection</span></a></li>
+<li class="toclevel-3"><a href="#Connect_to_any_saved_connection"><span class="tocnumber">1.8.3</span> <span class="toctext">Connect to any saved connection</span></a></li>
+<li class="toclevel-3"><a href="#Disconnect_internet"><span class="tocnumber">1.8.4</span> <span class="toctext">Disconnect internet</span></a>
+<ul>
+<li class="toclevel-4"><a href="#ICD2"><span class="tocnumber">1.8.4.1</span> <span class="toctext">ICD2</span></a></li>
+<li class="toclevel-4"><a href="#ICD"><span class="tocnumber">1.8.4.2</span> <span class="toctext">ICD</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3"><a href="#Connect_.28show_change_connection_UI.29"><span class="tocnumber">1.8.5</span> <span class="toctext">Connect (show change connection UI)</span></a></li>
+<li class="toclevel-3"><a href="#Enable_cellular_radio"><span class="tocnumber">1.8.6</span> <span class="toctext">Enable cellular radio</span></a></li>
+<li class="toclevel-3"><a href="#Disable_cellular_radio"><span class="tocnumber">1.8.7</span> <span class="toctext">Disable cellular radio</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Radio_mode"><span class="tocnumber">1.9</span> <span class="toctext">Radio mode</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Current_Mode"><span class="tocnumber">1.9.1</span> <span class="toctext">Current Mode</span></a></li>
+<li class="toclevel-3"><a href="#2G"><span class="tocnumber">1.9.2</span> <span class="toctext">2G</span></a></li>
+<li class="toclevel-3"><a href="#3G"><span class="tocnumber">1.9.3</span> <span class="toctext">3G</span></a></li>
+<li class="toclevel-3"><a href="#Dual"><span class="tocnumber">1.9.4</span> <span class="toctext">Dual</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Bluetooth"><span class="tocnumber">1.10</span> <span class="toctext">Bluetooth</span></a>
+<ul>
+<li class="toclevel-3"><a href="#Identify_adapter_path"><span class="tocnumber">1.10.1</span> <span class="toctext">Identify adapter path</span></a></li>
+<li class="toclevel-3"><a href="#Identify_Properties"><span class="tocnumber">1.10.2</span> <span class="toctext">Identify Properties</span></a></li>
+<li class="toclevel-3"><a href="#Enable"><span class="tocnumber">1.10.3</span> <span class="toctext">Enable</span></a></li>
+<li class="toclevel-3"><a href="#Disable"><span class="tocnumber">1.10.4</span> <span class="toctext">Disable</span></a></li>
+<li class="toclevel-3"><a href="#Connect_to_specific_device"><span class="tocnumber">1.10.5</span> <span class="toctext">Connect to specific device</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2"><a href="#Check_for_updates"><span class="tocnumber">1.11</span> <span class="toctext">Check for updates</span></a></li>
+<li class="toclevel-2"><a href="#Open_link_in_browser"><span class="tocnumber">1.12</span> <span class="toctext">Open link in browser</span></a></li>
+<li class="toclevel-2"><a href="#Open_a_pdf_file_with_the_default_pdf_reader_application"><span class="tocnumber">1.13</span> <span class="toctext">Open a pdf file with the default pdf reader application</span></a></li>
+<li class="toclevel-2"><a href="#Open_a_file_with_the_default_notes_application"><span class="tocnumber">1.14</span> <span class="toctext">Open a file with the default notes application</span></a></li>
+<li class="toclevel-2"><a href="#Open_the_default_notes_application"><span class="tocnumber">1.15</span> <span class="toctext">Open the default notes application</span></a></li>
+<li class="toclevel-2"><a href="#Open_folder"><span class="tocnumber">1.16</span> <span class="toctext">Open folder</span></a></li>
+<li class="toclevel-2"><a href="#Set_volume"><span class="tocnumber">1.17</span> <span class="toctext">Set volume</span></a></li>
+<li class="toclevel-2"><a href="#Get_volume"><span class="tocnumber">1.18</span> <span class="toctext">Get volume</span></a></li>
+<li class="toclevel-2"><a href="#Reboot"><span class="tocnumber">1.19</span> <span class="toctext">Reboot</span></a></li>
+<li class="toclevel-2"><a href="#Shutdown"><span class="tocnumber">1.20</span> <span class="toctext">Shutdown</span></a></li>
+<li class="toclevel-2"><a href="#Show_dashboard"><span class="tocnumber">1.21</span> <span class="toctext">Show dashboard</span></a></li>
+<li class="toclevel-2"><a href="#Other"><span class="tocnumber">1.22</span> <span class="toctext">Other</span></a>
+<ul>
+<li class="toclevel-3"><a href="#D-Bus_Scripts"><span class="tocnumber">1.22.1</span> <span class="toctext">D-Bus Scripts</span></a></li>
+<li class="toclevel-3"><a href="#Panucci_.28pause.29"><span class="tocnumber">1.22.2</span> <span class="toctext">Panucci (pause)</span></a></li>
+<li class="toclevel-3"><a href="#Device_Orientation"><span class="tocnumber">1.22.3</span> <span class="toctext">Device Orientation</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#GConf"><span class="tocnumber">2</span> <span class="toctext">GConf</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Reset_GPRS_data_counter"><span class="tocnumber">2.1</span> <span class="toctext">Reset GPRS data counter</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Command_line"><span class="tocnumber">3</span> <span class="toctext">Command line</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Enable_FM_Transmitter"><span class="tocnumber">3.1</span> <span class="toctext">Enable FM Transmitter</span></a></li>
+<li class="toclevel-2"><a href="#Disable_FM_Transmitter"><span class="tocnumber">3.2</span> <span class="toctext">Disable FM Transmitter</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#GStreamer"><span class="tocnumber">4</span> <span class="toctext">GStreamer</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Take_a_picture_with_front_camera"><span class="tocnumber">4.1</span> <span class="toctext">Take a picture with front camera</span></a></li>
+<li class="toclevel-2"><a href="#Shoot_photo_after_10_seconds"><span class="tocnumber">4.2</span> <span class="toctext">Shoot photo after 10 seconds</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Python"><span class="tocnumber">5</span> <span class="toctext">Python</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Make_a_phone_call_via_the_cellular_network"><span class="tocnumber">5.1</span> <span class="toctext">Make a phone call via the cellular network</span></a></li>
+<li class="toclevel-2"><a href="#Make_a_phone_call_via_SIP"><span class="tocnumber">5.2</span> <span class="toctext">Make a phone call via SIP</span></a></li>
+<li class="toclevel-2"><a href="#Send_SMS"><span class="tocnumber">5.3</span> <span class="toctext">Send SMS</span></a></li>
+<li class="toclevel-2"><a href="#Send_dialog_notification_.28orange_multi_line_popup_requiring_user_interaction.29"><span class="tocnumber">5.4</span> <span class="toctext">Send dialog notification (orange multi line popup requiring user interaction)</span></a></li>
+<li class="toclevel-2"><a href="#Take_a_screenshot"><span class="tocnumber">5.5</span> <span class="toctext">Take a screenshot</span></a></li>
+<li class="toclevel-2"><a href="#Make_an_.22Email_Style.22_notification_dialog"><span class="tocnumber">5.6</span> <span class="toctext">Make an "Email Style" notification dialog</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></tbody></table>
+<a name="D-Bus"></a><h2><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=1" title="Edit section: D-Bus">edit</a>]</span> <span class="mw-headline">D-Bus</span></h2>
+<p>These D-Bus commands can be run from terminal or as shell scripts. Useful for scheduling events with <a href="http://wiki.maemo.org/Fcron" title="Fcron">fcron</a>, executing from <a href="http://wiki.maemo.org/Desktop_Command_Execution_Widget_scripts" title="Desktop Command Execution Widget scripts">Desktop Command Execution Widget</a> or <a href="http://wiki.maemo.org/Queen_BeeCon_Widget" title="Queen BeeCon Widget">Queen BeeCon Widget</a>, startup events, install scripts, etc. They should be run as:
+</p>
+<pre>run-standalone.sh SCRIPT.sh
+run-standalone.sh dbus-send COMMAND
+</pre>
+<p>This is important to set up the environment correctly otherwise they may barf. If run as user "user" this is not needed.
+</p><p>Also note that most commands don't need "--print-reply" option. Those that don't need it should be <b>tested without it</b> and this page should be edited.
+</p>
+<a name="Phone"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=2" title="Edit section: Phone">edit</a>]</span> <span class="mw-headline">Phone</span></h3>
+<a name="Open_Phone_application"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=3" title="Edit section: Open Phone application">edit</a>]</span> <span class="mw-headline">Open Phone application</span></h4>
+<pre>dbus-send --type=method_call --dest=com.nokia.HildonDesktop.AppMgr /com/nokia/HildonDesktop/AppMgr com.nokia.HildonDesktop.AppMgr.LaunchApplication string:"rtcom-call-ui"
+</pre>
+<a name="Make_a_phone_call"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=4" title="Edit section: Make a phone call">edit</a>]</span> <span class="mw-headline">Make a phone call</span></h4>
+<pre>dbus-send --system --type=method_call --print-reply --dest=com.nokia.csd.Call /com/nokia/csd/call com.nokia.csd.Call.CreateWith string:"$NUMBER" uint32:0
+</pre>
+<p>Change $NUMBER to phone number you want to call.
+</p>
+<a name="End_current_phone_call"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=5" title="Edit section: End current phone call">edit</a>]</span> <span class="mw-headline">End current phone call</span></h4>
+<pre>dbus-send --system --print-reply --dest=com.nokia.csd.Call /com/nokia/csd/call com.nokia.csd.Call.Release
+</pre>
+<p>This will release/end/hangup/reject the current call (or possibly all calls if more then one call is active) or do nothing if no calls are active.
+</p>
+<a name="Answer_current_phone_call"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=6" title="Edit section: Answer current phone call">edit</a>]</span> <span class="mw-headline">Answer current phone call</span></h4>
+<pre>dbus-send --system --print-reply --dest=com.nokia.csd.Call /com/nokia/csd/call/1 com.nokia.csd.Call.Instance.Answer
+</pre>
+<p>This will answer/pickup the current (first) call. 
+</p><p>If you answer the call immediately as you receive the Call Coming D-Bus message the phone seems to be in a specific call state where answering yields a <code>com.nokia.csd.Call.Error.NotAllowed</code> exception.
+</p><p>You need to answer the call after a delay of e.g. 1 s.
+</p><p>Another (probably better) approach is to register to the CallStatus D-Bus message (<code>com.nokia.csd.Call</code>, <code>/com/nokia/csd/call/1</code>, <code>com.nokia.csd.Call.Instance.CallStatus</code>) and wait for a call status &gt;= 2 (=<code>CSD_CALL_STATUS_COMING</code>) after the "Coming" message.
+</p><p><br>
+</p>
+<a name="Activate_call_forwarding"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=7" title="Edit section: Activate call forwarding">edit</a>]</span> <span class="mw-headline">Activate call forwarding</span></h4>
+<p>Forward <a href="http://wiki.maemo.org/index.php?title=All_%28%27unconditional%27%29_calls&amp;action=edit" class="new" title="All ('unconditional') calls">all ('unconditional') calls</a> to e.g. +12223456789
+</p>
+<pre>dbus-send --system --type=method_call --print-reply --dest=com.nokia.csd.SS /com/nokia/csd/ss com.nokia.csd.SS.DivertActivate uint32:<b>0</b> string:"+12223456789" uint32:
+</pre>
+<p>or
+</p>
+<pre>dbus-send --system --type=method_call --print-reply --dest=com.nokia.csd.SS /com/nokia/csd/ss com.nokia.csd.SS.DivertActivate uint32:<b>1</b> string:"+12223456789" uint32:
+</pre>
+<hr>
+<p>Forward <a href="http://wiki.maemo.org/index.php?title=Calls_when_%27busy%27&amp;action=edit" class="new" title="Calls when 'busy'">calls when 'busy'</a> to e.g. +12223456789
+</p>
+<pre>dbus-send --system --type=method_call --print-reply --dest=com.nokia.csd.SS /com/nokia/csd/ss com.nokia.csd.SS.DivertActivate uint32:<b>2</b> string:"+12223456789" uint32:
+</pre>
+<hr>
+<p>Forward <a href="http://wiki.maemo.org/index.php?title=Unanswered_calls&amp;action=edit" class="new" title="Unanswered calls">unanswered calls</a> to e.g. +12223456789 (leaving the last uint32: empty will use the last stored waiting time)
+</p>
+<pre>dbus-send --system --type=method_call --print-reply --dest=com.nokia.csd.SS /com/nokia/csd/ss com.nokia.csd.SS.DivertActivate uint32:<b>3</b> string:"+12223456789" uint32:
+</pre>
+<p>Forward <a href="http://wiki.maemo.org/index.php?title=Unanswered_calls%2C_when_%27no_answer%27_after_25_sec&amp;action=edit" class="new" title="Unanswered calls, when 'no answer' after 25 sec">unanswered calls, when 'no answer' after 25 sec</a> to e.g. +12223456789 (if you want to set this value explicitly; valid values: 5, 10, 15, 20, 25, 30)
+</p>
+<pre>dbus-send --system --type=method_call --print-reply --dest=com.nokia.csd.SS /com/nokia/csd/ss com.nokia.csd.SS.DivertActivate uint32:<b>3</b> string:"+12223456789" uint32:<b>25</b>
+</pre>
+<hr>
+<p>Forward <a href="http://wiki.maemo.org/index.php?title=Calls_when_you_are_%27out_of_reach%27_%28no_network%2C_shut_off%2C_...%29&amp;action=edit" class="new" title="Calls when you are 'out of reach' (no network, shut off, ...)">calls when you are 'out of reach' (no network, shut off, ...)</a> to e.g. +12223456789
+</p>
+<pre>dbus-send --system --type=method_call --print-reply --dest=com.nokia.csd.SS /com/nokia/csd/ss com.nokia.csd.SS.DivertActivate uint32:<b>4</b> string:"+12223456789" uint32:
+</pre>
+<hr>
+<p>Forward <a href="http://wiki.maemo.org/index.php?title=Calls_when_%27not_available%27_%28busy%2C_no_answer%2C_out_of_reach%29&amp;action=edit" class="new" title="Calls when 'not available' (busy, no answer, out of reach)">calls when 'not available' (busy, no answer, out of reach)</a> to e.g. +12223456789
+</p>
+<pre>dbus-send --system --type=method_call --print-reply --dest=com.nokia.csd.SS /com/nokia/csd/ss com.nokia.csd.SS.DivertActivate uint32:<b>5</b> string:"+12223456789" uint32:
+</pre>
+<p>--<a href="http://wiki.maemo.org/index.php?title=User:Peterleinchen&amp;action=edit" class="new" title="User:Peterleinchen">peterleinchen</a> 23:00, 15 December 2011 (UTC)
+</p><p>many thanks to the pre-contributor (I have searched for a long time to have the possibility to switch forwarding script based)
+</p>
+<a name="Cancel_call_forwarding"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=8" title="Edit section: Cancel call forwarding">edit</a>]</span> <span class="mw-headline">Cancel call forwarding</span></h4>
+<pre>dbus-send --system --type=method_call --print-reply --dest=com.nokia.csd.SS
+/com/nokia/csd/ss com.nokia.csd.SS.DivertCancel uint32:<b>x</b> string: uint32:
+</pre>
+<p>Valid values for "x", pls see also above.
+0 unconditional
+</p><p>1 unconditional
+</p><p>2 busy
+</p><p>3 no answer (after xx sec)
+</p><p>4 out of reach
+</p><p>5 not available (busy, no answer, out of reach)
+</p><p>--<a href="http://wiki.maemo.org/index.php?title=User:Peterleinchen&amp;action=edit" class="new" title="User:Peterleinchen">peterleinchen</a> 23:00, 15 December 2011 (UTC)
+</p><p><br>
+</p>
+<a name="Get_IMEI"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=9" title="Edit section: Get IMEI">edit</a>]</span> <span class="mw-headline">Get <a href="http://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity" class="extiw" title="wikipedia:International_Mobile_Equipment_Identity">IMEI</a></span></h4>
+<pre>dbus-send --system --type=method_call --print-reply --dest=com.nokia.phone.SIM /com/nokia/phone/SIM/security Phone.Sim.Security.get_imei|awk -F "\"" '/g/ {print $2}'
+</pre>
+<a name="Get_IMSI"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=10" title="Edit section: Get IMSI">edit</a>]</span> <span class="mw-headline">Get <a href="http://en.wikipedia.org/wiki/International_Mobile_Subscriber_Identity" class="extiw" title="wikipedia:International_Mobile_Subscriber_Identity">IMSI</a></span></h4>
+<pre>dbus-send --system --type=method_call --print-reply --dest=com.nokia.phone.SIM /com/nokia/phone/SIM Phone.Sim.get_imsi|awk -F "\"" '/g/ {print $2}'
+</pre>
+<a name="Get_ICCID"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=11" title="Edit section: Get ICCID">edit</a>]</span> <span class="mw-headline">Get <a href="http://en.wikipedia.org/wiki/Subscriber_identity_module#ICCID" class="extiw" title="wikipedia:Subscriber_identity_module">ICCID</a></span></h4>
+<pre>dbus-send --system --type=method_call --print-reply --dest=com.nokia.phone.SSC /com/nokia/phone/SSC com.nokia.phone.SSC.get_iccid|awk -F "\"" '/g/ {print $2}'
+</pre>
+<a name="Get_SIM_status"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=12" title="Edit section: Get SIM status">edit</a>]</span> <span class="mw-headline">Get SIM status</span></h4>
+<pre>dbus-send --system --print-reply --dest=com.nokia.phone.SIM /com/nokia/phone/SIM Phone.Sim.get_sim_status
+</pre>
+<a name="Get_cellular_signal_strength"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=13" title="Edit section: Get cellular signal strength">edit</a>]</span> <span class="mw-headline">Get cellular signal strength</span></h4>
+<pre>dbus-send --system --print-reply --dest=com.nokia.phone.net /com/nokia/phone/net Phone.Net.get_signal_strength
+</pre>
+<p>First line is percentage, second is dBm, third unknown.
+</p>
+<a name="Get_cellular_registration_status"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=14" title="Edit section: Get cellular registration status">edit</a>]</span> <span class="mw-headline">Get cellular registration status</span></h4>
+<pre>dbus-send --system --print-reply --dest=com.nokia.phone.net /com/nokia/phone/net Phone.Net.get_registration_status
+</pre>
+<a name="Turn_loudspeaker_on"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=15" title="Edit section: Turn loudspeaker on">edit</a>]</span> <span class="mw-headline">Turn loudspeaker on</span></h4>
+<pre>dbus-send --type=method_call --dest=com.nokia.osso_hp_ls_controller /com/nokia/osso_hp_ls_controller com.nokia.osso_hp_ls_controller.loudspeaker.force_loudspeaker_on
+</pre>
+<p>(These loudspeaker ones don't work on my N900. If I add --print-reply I get "Error org.freedesktop.DBus.Error.ServiceUnknown: The name com.nokia.osso_hp_ls_controller was not provided by any .service files".)
+</p>
+<a name="Turn_loudspeaker_off"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=16" title="Edit section: Turn loudspeaker off">edit</a>]</span> <span class="mw-headline">Turn loudspeaker off</span></h4>
+<pre>dbus-send --type=method_call --dest=com.nokia.osso_hp_ls_controller /com/nokia/osso_hp_ls_controller com.nokia.osso_hp_ls_controller.loudspeaker.force_loudspeaker_off
+</pre>
+<a name="Turn_loudspeaker_on_.28N900.29"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=17" title="Edit section: Turn loudspeaker on (N900)">edit</a>]</span> <span class="mw-headline">Turn loudspeaker on (N900)</span></h4>
+<pre>dbus-send --type=method_call --dest=org.maemo.Playback.Manager /org/maemo/Playback/Manager org.maemo.Playback.Manager.RequestPrivacyOverride boolean:true
+</pre>
+<a name="Turn_loudspeaker_off_.28N900.29"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=18" title="Edit section: Turn loudspeaker off (N900)">edit</a>]</span> <span class="mw-headline">Turn loudspeaker off (N900)</span></h4>
+<pre>dbus-send --type=method_call --dest=org.maemo.Playback.Manager /org/maemo/Playback/Manager org.maemo.Playback.Manager.RequestPrivacyOverride boolean:false
+</pre>
+<a name="Turn_mute_on_.28N900.29"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=19" title="Edit section: Turn mute on (N900)">edit</a>]</span> <span class="mw-headline">Turn mute on (N900)</span></h4>
+<pre>dbus-send --type=method_call --dest=org.maemo.Playback.Manager /org/maemo/Playback/Manager org.maemo.Playback.Manager.RequestMute boolean:true
+</pre>
+<a name="Turn_mute_off_.28N900.29"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=20" title="Edit section: Turn mute off (N900)">edit</a>]</span> <span class="mw-headline">Turn mute off (N900)</span></h4>
+<pre>dbus-send --type=method_call --dest=org.maemo.Playback.Manager /org/maemo/Playback/Manager org.maemo.Playback.Manager.RequestMute boolean:false
+</pre>
+<a name="Turn_bluetooth_override_on_.28N900.29"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=21" title="Edit section: Turn bluetooth override on (N900)">edit</a>]</span> <span class="mw-headline">Turn bluetooth override on (N900)</span></h4>
+<pre>dbus-send --type=method_call --dest=org.maemo.Playback.Manager /org/maemo/Playback/Manager org.maemo.Playback.Manager.RequestBluetoothOverride boolean:true
+</pre>
+<a name="Turn_bluetooth_override_off_.28N900.29"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=22" title="Edit section: Turn bluetooth override off (N900)">edit</a>]</span> <span class="mw-headline">Turn bluetooth override off (N900)</span></h4>
+<pre>dbus-send --type=method_call --dest=org.maemo.Playback.Manager /org/maemo/Playback/Manager org.maemo.Playback.Manager.RequestBluetoothOverride boolean:false
+</pre>
+<a name="Start_vibrating"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=23" title="Edit section: Start vibrating">edit</a>]</span> <span class="mw-headline">Start vibrating</span></h4>
+<pre>dbus-send --system --print-reply --dest=com.nokia.mce /com/nokia/mce/request com.nokia.mce.request.req_vibrator_pattern_activate string:PatternIncomingCall
+</pre>
+<a name="Stop_vibrating"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=24" title="Edit section: Stop vibrating">edit</a>]</span> <span class="mw-headline">Stop vibrating</span></h4>
+<pre>dbus-send --system --print-reply --dest=com.nokia.mce /com/nokia/mce/request com.nokia.mce.request.req_vibrator_pattern_deactivate string:PatternIncomingCall
+</pre>
+<a name="Profiles"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=25" title="Edit section: Profiles">edit</a>]</span> <span class="mw-headline">Profiles</span></h3>
+<a name="Set_General"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=26" title="Edit section: Set General">edit</a>]</span> <span class="mw-headline">Set General</span></h4>
+<pre>dbus-send --type=method_call --dest=com.nokia.profiled /com/nokia/profiled com.nokia.profiled.set_profile string:"general"
+</pre>
+<a name="Set_Silent"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=27" title="Edit section: Set Silent">edit</a>]</span> <span class="mw-headline">Set Silent</span></h4>
+<pre>dbus-send --type=method_call --dest=com.nokia.profiled /com/nokia/profiled com.nokia.profiled.set_profile string:"silent"
+</pre>
+<p><br>
+</p>
+<a name="Query_current_profile"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=28" title="Edit section: Query current profile">edit</a>]</span> <span class="mw-headline">Query current profile</span></h4>
+<pre>dbus-send --type=method_call --print-reply --dest=com.nokia.profiled /com/nokia/profiled com.nokia.profiled.get_profile
+</pre>
+<a name="List_all_profiles"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=29" title="Edit section: List all profiles">edit</a>]</span> <span class="mw-headline">List all profiles</span></h4>
+<pre>dbus-send --type=method_call --print-reply --dest=com.nokia.profiled /com/nokia/profiled com.nokia.profiled.get_profiles|awk -F "\"" '/g/ {print $2}'
+</pre>
+<a name="Get_all_profile_Values"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=30" title="Edit section: Get all profile Values">edit</a>]</span> <span class="mw-headline">Get all profile Values</span></h4>
+<p>You can modify any profile value, eg. clock alarm enabled, im alert volume, keypad sound level, touchscreen sound level, ... To find out which keys exist, to what value they are set and what values can be given you can use the following command. (For the profile "silent" just put "silent" at the end instead of "general".)
+</p>
+<pre>dbus-send --type=method_call --print-reply --dest=com.nokia.profiled /com/nokia/profiled com.nokia.profiled.get_values string:"general"
+</pre>
+<p>The returned value is an array of struct. Each struct has 3 strings: key, value, type. Type can be eg. "INTEGER 0-2" saying that the values 0, 1 and 2 are correct values for this key.
+</p>
+<a name="Set_a_profile_value"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=31" title="Edit section: Set a profile value">edit</a>]</span> <span class="mw-headline">Set a profile value</span></h4>
+<p>To modify the above mentioned profile values you need this method. The method takes three parameters, all strings: profile, key and value. Profile can be "general" or "silent", key is one of the keys from the above (get all profile values), value can be set to anything allowed by "type" from the above method.
+</p><p>To enable vibrating alert for the profile "general" your script would look like this:
+</p>
+<pre>dbus-send --type=method_call --dest=com.nokia.profiled /com/nokia/profiled com.nokia.profiled.set_value string:"general" string:"vibrating.alert.enabled" string:"On"
+</pre>
+<a name="LED"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=32" title="Edit section: LED">edit</a>]</span> <span class="mw-headline">LED</span></h3>
+<a name="Activate_LEDs"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=33" title="Edit section: Activate LEDs">edit</a>]</span> <span class="mw-headline">Activate LEDs</span></h4>
+<pre>dbus-send --system --type=method_call --dest=com.nokia.mce /com/nokia/mce/request com.nokia.mce.request.req_led_pattern_activate string:"PatternCommunicationIM"
+</pre>
+<a name="Deactivate_LEDs"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=34" title="Edit section: Deactivate LEDs">edit</a>]</span> <span class="mw-headline">Deactivate LEDs</span></h4>
+<pre>dbus-send --system --type=method_call --dest=com.nokia.mce /com/nokia/mce/request com.nokia.mce.request.req_led_pattern_deactivate string:"PatternCommunicationIM"
+</pre>
+<a name="Set_brightness_of_backlight_LEDs"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=35" title="Edit section: Set brightness of backlight LEDs">edit</a>]</span> <span class="mw-headline">Set brightness of backlight LEDs</span></h4>
+<pre>dbus-send --print-reply --system --dest=org.freedesktop.Hal /org/freedesktop/Hal/devices/computer_backlight org.freedesktop.Hal.Device.LaptopPanel.SetBrightness int32:$brightness
+</pre>
+<p>(where $brightness is 0...255)
+</p>
+<a name="Messaging"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=36" title="Edit section: Messaging">edit</a>]</span> <span class="mw-headline">Messaging</span></h3>
+<a name="New_e-mail"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=37" title="Edit section: New e-mail">edit</a>]</span> <span class="mw-headline">New e-mail</span></h4>
+<pre>dbus-send --type=method_call --dest=com.nokia.modest /com/nokia/modest com.nokia.modest.MailTo string:"mailto:"
+</pre>
+<a name="Send_and_receive_e-mail"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=38" title="Edit section: Send and receive e-mail">edit</a>]</span> <span class="mw-headline">Send and receive e-mail</span></h4>
+<p>It works, but it takes up to 2 minutes for modest to start refreshing and after that it depends on the speed of the connection how fast it is going to be completed, usually up to 5 seconds, 2G can be a bit slower.
+</p>
+<pre>dbus-send --type=method_call --dest=com.nokia.modest /com/nokia/modest com.nokia.modest.SendReceive
+</pre>
+<a name="Set_presence"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=39" title="Edit section: Set presence">edit</a>]</span> <span class="mw-headline">Set presence</span></h4>
+<pre>dbus-send --type=method_call --print-reply --dest=org.freedesktop.Telepathy.MissionControl /org/freedesktop/Telepathy/MissionControl org.freedesktop.Telepathy.MissionControl.SetPresence uint32:2 string:"I'm here"
+</pre>
+<p>Note: This method does not work in Maemo 5. Workaround: <a href="http://talk.maemo.org/showthread.php?t=55686" class="external free" title="http://talk.maemo.org/showthread.php?t=55686" rel="nofollow">http://talk.maemo.org/showthread.php?t=55686</a>
+</p>
+<a name="Change_peak_schedule_settings"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=40" title="Edit section: Change peak_schedule settings">edit</a>]</span> <span class="mw-headline">Change peak_schedule settings</span></h4>
+<p>Check:
+</p>
+<pre>run-standalone.sh gconftool-2 -R /apps/activesync
+</pre>
+<p>Set (check if yours is named ActiveSyncAccount1):
+</p>
+<pre>run-standalone.sh gconftool-2 --set /apps/activesync/ActiveSyncAccount1/schedule/peak_schedule --type=int 15
+</pre>
+<p>Where the last number is one of the following (as standard in GUI):
+</p>
+<ul><li> <b>0</b> = Always on
+</li><li> <b>-1</b> = Manual
+</li><li> <b>15</b> = Every 15 minutes
+</li><li> <b>30</b> = Every 30 minutes
+</li><li> <b>60</b> = Every hour
+</li><li> <b>240</b> = Every 4 hours
+</li><li> <b>720</b> = Every 12 hours
+</li></ul>
+<a name="Media_player"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=41" title="Edit section: Media player">edit</a>]</span> <span class="mw-headline">Media player</span></h3>
+<a name="Open_file_in_media_player"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=42" title="Edit section: Open file in media player">edit</a>]</span> <span class="mw-headline">Open file in media player</span></h4>
+<pre>dbus-send --print-reply --dest=com.nokia.mediaplayer /com/nokia/mediaplayer com.nokia.mediaplayer.mime_open string:"file:///$1"
+</pre>
+<a name="Pause_what.27s_currently_playing"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=43" title="Edit section: Pause what's currently playing">edit</a>]</span> <span class="mw-headline">Pause what's currently playing</span></h4>
+<pre>dbus-send --dest=com.nokia.mafw.renderer.Mafw-Gst-Renderer-Plugin.gstrenderer /com/nokia/mafw/renderer/gstrenderer com.nokia.mafw.renderer.pause
+</pre>
+<a name="Stop_what.27s_currently_playing"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=44" title="Edit section: Stop what's currently playing">edit</a>]</span> <span class="mw-headline">Stop what's currently playing</span></h4>
+<pre>dbus-send --dest=com.nokia.mafw.renderer.Mafw-Gst-Renderer-Plugin.gstrenderer /com/nokia/mafw/renderer/gstrenderer com.nokia.mafw.renderer.stop
+</pre>
+<a name="Play_what.27s_currently_selected"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=45" title="Edit section: Play what's currently selected">edit</a>]</span> <span class="mw-headline">Play what's currently selected</span></h4>
+<pre>dbus-send --dest=com.nokia.mafw.renderer.Mafw-Gst-Renderer-Plugin.gstrenderer /com/nokia/mafw/renderer/gstrenderer com.nokia.mafw.renderer.play
+</pre>
+<a name="Unpause_what.27s_currently_selected"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=46" title="Edit section: Unpause what's currently selected">edit</a>]</span> <span class="mw-headline">Unpause what's currently selected</span></h4>
+<pre>dbus-send --dest=com.nokia.mafw.renderer.Mafw-Gst-Renderer-Plugin.gstrenderer /com/nokia/mafw/renderer/gstrenderer com.nokia.mafw.renderer.resume
+</pre>
+<a name="Play_next_mediafile"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=47" title="Edit section: Play next mediafile">edit</a>]</span> <span class="mw-headline">Play next mediafile</span></h4>
+<pre>dbus-send --dest=com.nokia.mafw.renderer.Mafw-Gst-Renderer-Plugin.gstrenderer /com/nokia/mafw/renderer/gstrenderer com.nokia.mafw.renderer.next
+</pre>
+<a name="Play_previous_mediafile"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=48" title="Edit section: Play previous mediafile">edit</a>]</span> <span class="mw-headline">Play previous mediafile</span></h4>
+<pre>dbus-send --dest=com.nokia.mafw.renderer.Mafw-Gst-Renderer-Plugin.gstrenderer /com/nokia/mafw/renderer/gstrenderer com.nokia.mafw.renderer.previous
+</pre>
+<a name="Notifications"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=49" title="Edit section: Notifications">edit</a>]</span> <span class="mw-headline">Notifications</span></h3>
+<a name="Send_notification_.28orange_one_line_popup.29"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=50" title="Edit section: Send notification (orange one line popup)">edit</a>]</span> <span class="mw-headline">Send notification (orange one line popup)</span></h4>
+<pre>dbus-send --type=method_call --dest=org.freedesktop.Notifications /org/freedesktop/Notifications org.freedesktop.Notifications.SystemNoteInfoprint string:"NOTIFICATION"
+</pre>
+<a name="Send_notification_.28orange_multiple_line_popup.29"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=51" title="Edit section: Send notification (orange multiple line popup)">edit</a>]</span> <span class="mw-headline">Send notification (orange multiple line popup)</span></h4>
+<pre>dbus-send --type=method_call --dest=org.freedesktop.Notifications /org/freedesktop/Notifications org.freedesktop.Notifications.SystemNoteInfoprint string:"NOTE line 1
+line 2
+. . .
+line n"
+</pre>
+<p>--<a href="http://wiki.maemo.org/index.php?title=User:Peterleinchen&amp;action=edit" class="new" title="User:Peterleinchen">peterleinchen</a> 00:22, 4 January 2012 (UTC)
+</p>
+<a name="Send_dialog_notification_.28orange_multi_line_popup.2C_requiring_user_interaction.29"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=52" title="Edit section: Send dialog notification (orange multi line popup, requiring user interaction)">edit</a>]</span> <span class="mw-headline">Send dialog notification (orange multi line popup, requiring user interaction)</span></h4>
+<pre>dbus-send --type=method_call --dest=org.freedesktop.Notifications /org/freedesktop/Notifications org.freedesktop.Notifications.SystemNoteDialog string:"QUESTION?" uint32:0 string:"OK"
+</pre>
+<p>Not sure what string "OK" does, but it is needed and can be anything.
+</p><p>It does nothing here and is not explicitly needed, pls. see below command and also section.
+</p>
+<pre>dbus-send --type=method_call --dest=org.freedesktop.Notifications /org/freedesktop/Notifications org.freedesktop.Notifications.SystemNoteDialog string:"QUESTION?" uint32: string:
+</pre>
+<a name="Send_dialog_notification_.28black.2Fwhite_with_floating_bar_and_confirmation_button.2C_requiring_user_action.29"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=53" title="Edit section: Send dialog notification (black/white with floating bar and confirmation button, requiring user action)">edit</a>]</span> <span class="mw-headline">Send dialog notification (black/white with floating bar and confirmation button, requiring user action)</span></h4>
+<pre>dbus-send --type=method_call --dest=org.freedesktop.Notifications /org/freedesktop/Notifications org.freedesktop.Notifications.SystemNoteDialog string:"QUESTION?" uint32:<b>4</b> string:"OK"
+</pre>
+<p>String "OK" is the text for the button.
+--<a href="http://wiki.maemo.org/index.php?title=User:Peterleinchen&amp;action=edit" class="new" title="User:Peterleinchen">peterleinchen</a> 21:29, 3 January 2012 (UTC)
+</p>
+<a name="Securing"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=54" title="Edit section: Securing">edit</a>]</span> <span class="mw-headline">Securing</span></h3>
+<a name="Security_Device_Lock_.28with_lockcode.29"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=55" title="Edit section: Security Device Lock (with lockcode)">edit</a>]</span> <span class="mw-headline">Security Device Lock (with lockcode)</span></h4>
+<pre>dbus-send --system --type=method_call --dest=com.nokia.system_ui /com/nokia/system_ui/request com.nokia.system_ui.request.devlock_open string:"com.nokia.mce" string:"/com/nokia/mce/request" string:"com.nokia.mce.request" string:"devlock_callback" uint32:'3'
+</pre>
+<a name="Unlock_.28pop_up_lockcode_requester.3F.29"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=56" title="Edit section: Unlock (pop up lockcode requester?)">edit</a>]</span> <span class="mw-headline">Unlock (pop up lockcode requester?)</span></h4>
+<pre>dbus-send --system --type=method_call --dest=com.nokia.system_ui /com/nokia/system_ui/request com.nokia.system_ui.request.devlock_close string:"com.nokia.mce" string:"/com/nokia/mce/request" string:"com.nokia.mce.request" string:"devlock_callback" uint32:'0'
+</pre>
+<a name="Query_Devlock_State"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=57" title="Edit section: Query Devlock State">edit</a>]</span> <span class="mw-headline">Query Devlock State</span></h4>
+<pre> dbus-send --system --type=method_call --dest="com.nokia.mce" --print-reply "/com/nokia/mce/request" com.nokia.mce.request.get_devicelock_mode |awk -F "\"" '/g/ {print $2}'
+</pre>
+<p><br>
+</p>
+<a name="Lock_screen_and_keys_.28slider_lockswitch.29"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=58" title="Edit section: Lock screen and keys (slider lockswitch)">edit</a>]</span> <span class="mw-headline">Lock screen and keys (slider lockswitch)</span></h4>
+<pre>dbus-send --system --type=method_call --dest=com.nokia.mce /com/nokia/mce/request com.nokia.mce.request.req_tklock_mode_change string:"locked"
+</pre>
+<a name="Unlock_screen_and_keys"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=59" title="Edit section: Unlock screen and keys">edit</a>]</span> <span class="mw-headline">Unlock screen and keys</span></h4>
+<p>This command will unlock and illuminate the screen (useful when accessing the phone externally through <a href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/download.html" class="external text" title="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" rel="nofollow">PuTTY</a>)
+</p>
+<pre>dbus-send --system --type=method_call --dest=com.nokia.mce /com/nokia/mce/request com.nokia.mce.request.req_tklock_mode_change string:"unlocked"
+</pre>
+<a name="Query_lock_state_of_screen_and_keys"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=60" title="Edit section: Query lock state of screen and keys">edit</a>]</span> <span class="mw-headline">Query lock state of screen and keys</span></h4>
+<p>Will return <i>locked</i> or <i>unlocked</i> depending on lock state
+</p>
+<pre>dbus-send --system --type=method_call --dest="com.nokia.mce" --print-reply "/com/nokia/mce/request" com.nokia.mce.request.get_tklock_mode|awk -F "\"" '/g/ {print $2}'
+</pre>
+<a name="Networking"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=61" title="Edit section: Networking">edit</a>]</span> <span class="mw-headline">Networking</span></h3>
+<a name="Enable_ICD_log"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=62" title="Edit section: Enable ICD log">edit</a>]</span> <span class="mw-headline">Enable ICD log</span></h4>
+<p>There are two methods to enable ICD logs
+</p><p>1. Print to the syslog:
+</p>
+<pre>  (1)Use the following cmd 
+  (2)$ syslogd
+  (3)$ icd2 –l0
+  (4)The log will print to the /var/log/syslog
+</pre>
+<p>2. Print to the standard output  
+</p>
+<pre>  (1)Get the source code of icd2
+  (2)Add the begging of source code of “support/osso-log.h” "#define OSSOLOG_STDOUT"
+  (3)$ icd2 –l0
+  (4)The log will print to the standard output
+</pre>
+<a name="Connect_to_specific_saved_connection"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=63" title="Edit section: Connect to specific saved connection">edit</a>]</span> <span class="mw-headline">Connect to specific saved connection</span></h4>
+<pre>dbus-send --system --type=method_call --dest=com.nokia.icd /com/nokia/icd com.nokia.icd.connect string:"IAP_ID" uint32:0
+</pre>
+<p>IAP_ID is internet access point identifier and can be obtained with the following command:
+</p>
+<pre>gconftool -R /system/osso/connectivity/IAP
+</pre>
+<p>Find lines which matches /system/osso/connectivity/IAP/&lt;IAP_ID&gt;
+</p><p>For GPRS connections replace "@32@" with a space in IAP_ID string.
+</p><p>Keep in mind that phone has to be disconnected in order to connect via this call.
+If not, an error message will occur if you add --print-reply to the dbus-send command.
+</p>
+<a name="Connect_to_any_saved_connection"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=64" title="Edit section: Connect to any saved connection">edit</a>]</span> <span class="mw-headline">Connect to any saved connection</span></h4>
+<pre>dbus-send --system --type=method_call --dest=com.nokia.icd /com/nokia/icd com.nokia.icd.connect string:"[ANY]" uint32:0
+</pre>
+<a name="Disconnect_internet"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=65" title="Edit section: Disconnect internet">edit</a>]</span> <span class="mw-headline">Disconnect internet</span></h4>
+<a name="ICD2"></a><h5><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=66" title="Edit section: ICD2">edit</a>]</span> <span class="mw-headline">ICD2</span></h5>
+<pre>dbus-send --print-reply --system --dest=com.nokia.icd2 /com/nokia/icd2 com.nokia.icd2.disconnect_req uint32:0x8000
+</pre>
+<a name="ICD"></a><h5><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=67" title="Edit section: ICD">edit</a>]</span> <span class="mw-headline">ICD</span></h5>
+<pre>dbus-send --system --dest=com.nokia.icd /com/nokia/icd_ui com.nokia.icd_ui.disconnect boolean:true
+</pre>
+<p>On <a href="http://wiki.maemo.org/Maemo_5/PR1.2" title="Maemo 5/PR1.2">PR1.2</a>&nbsp;:
+Error org.freedesktop.DBus.Error.UnknownMethod: Method "disconnect" with signature "b" on interface "com.nokia.icd_ui" doesn't exist
+</p>
+<a name="Connect_.28show_change_connection_UI.29"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=68" title="Edit section: Connect (show change connection UI)">edit</a>]</span> <span class="mw-headline">Connect (show change connection UI)</span></h4>
+<pre>dbus-send --system --type=method_call --dest=com.nokia.icd_ui /com/nokia/icd_ui com.nokia.icd_ui.show_conn_dlg boolean:false
+</pre>
+<p>If "boolean:true" at the end, one-line notification saying "No saved connections available" appears. Maybe affects more than that? Most likely, boolean:true leads to using saved connections if there are any, and boolean:false forces to display the connection dialog.
+</p>
+<a name="Enable_cellular_radio"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=69" title="Edit section: Enable cellular radio">edit</a>]</span> <span class="mw-headline">Enable cellular radio</span></h4>
+<pre>dbus-send --system --type=method_call --dest=com.nokia.phone.SSC /com/nokia/phone/SSC com.nokia.phone.SSC.set_radio boolean:true
+</pre>
+<a name="Disable_cellular_radio"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=70" title="Edit section: Disable cellular radio">edit</a>]</span> <span class="mw-headline">Disable cellular radio</span></h4>
+<pre>dbus-send --system --type=method_call --dest=com.nokia.phone.SSC /com/nokia/phone/SSC com.nokia.phone.SSC.set_radio boolean:false
+</pre>
+<a name="Radio_mode"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=71" title="Edit section: Radio mode">edit</a>]</span> <span class="mw-headline">Radio mode</span></h3>
+<a name="Current_Mode"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=72" title="Edit section: Current Mode">edit</a>]</span> <span class="mw-headline">Current Mode</span></h4>
+<pre>dbus-send --system --print-reply --dest=com.nokia.phone.net /com/nokia/phone/net Phone.Net.get_radio_access_technology
+</pre>
+<a name="2G"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=73" title="Edit section: 2G">edit</a>]</span> <span class="mw-headline">2G</span></h4>
+<pre>dbus-send --system --type=method_call --dest=com.nokia.phone.net /com/nokia/phone/net Phone.Net.set_selected_radio_access_technology byte:1
+</pre>
+<a name="3G"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=74" title="Edit section: 3G">edit</a>]</span> <span class="mw-headline">3G</span></h4>
+<pre>dbus-send --system --type=method_call --dest=com.nokia.phone.net /com/nokia/phone/net Phone.Net.set_selected_radio_access_technology byte:2
+</pre>
+<a name="Dual"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=75" title="Edit section: Dual">edit</a>]</span> <span class="mw-headline">Dual</span></h4>
+<pre>dbus-send --system --type=method_call --dest=com.nokia.phone.net /com/nokia/phone/net Phone.Net.set_selected_radio_access_technology byte:0
+</pre>
+<a name="Bluetooth"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=76" title="Edit section: Bluetooth">edit</a>]</span> <span class="mw-headline">Bluetooth</span></h3>
+<a name="Identify_adapter_path"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=77" title="Edit section: Identify adapter path">edit</a>]</span> <span class="mw-headline">Identify adapter path</span></h4>
+<p>You need to know adapter path in order to send D-Bus call to the right place. You can get it with entering this command into the terminal:
+</p>
+<pre>dbus-send --system --print-reply --dest=org.bluez / org.bluez.Manager.ListAdapters | awk -F'"' '/at/ {print $2}'
+</pre>
+<p>or
+</p>
+<pre>dbus-send --system --print-reply --dest=org.bluez / org.bluez.Manager.DefaultAdapter | awk -F'"' '/at/ {print $2}'
+</pre>
+<a name="Identify_Properties"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=78" title="Edit section: Identify Properties">edit</a>]</span> <span class="mw-headline">Identify Properties</span></h4>
+<pre>dbus-send --system --print-reply --type=method_call --dest=org.bluez $(dbus-send --system --print-reply --dest=org.bluez / org.bluez.Manager.DefaultAdapter | awk -F'"' '/at/ {print $2}') org.bluez.Adapter.GetProperties
+</pre>
+<a name="Enable"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=79" title="Edit section: Enable">edit</a>]</span> <span class="mw-headline">Enable</span></h4>
+<p>Using the adapter path value returned with first command, for example <i>/org/bluez/906/hci0</i>.
+</p>
+<pre>dbus-send --system --type=method_call --dest=org.bluez /org/bluez/906/hci0 org.bluez.Adapter.SetProperty string:Powered variant:boolean:true
+</pre>
+<p>This one automatically inserts adapter path:
+</p>
+<pre>dbus-send --system --type=method_call --dest=org.bluez $(dbus-send --system --print-reply --dest=org.bluez / org.bluez.Manager.DefaultAdapter | awk -F'"' '/at/ {print $2}') org.bluez.Adapter.SetProperty string:Powered variant:boolean:true
+</pre>
+<a name="Disable"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=80" title="Edit section: Disable">edit</a>]</span> <span class="mw-headline">Disable</span></h4>
+<pre>dbus-send --system --type=method_call --dest=org.bluez /org/bluez/906/hci0 org.bluez.Adapter.SetProperty string:Powered variant:boolean:false
+</pre>
+<p>With auto-discovery of adapter path:
+</p>
+<pre>dbus-send --system --type=method_call --dest=org.bluez $(dbus-send --system --print-reply --dest=org.bluez / org.bluez.Manager.DefaultAdapter | awk -F'"' '/at/ {print $2}') org.bluez.Adapter.SetProperty string:Powered variant:boolean:false
+</pre>
+<a name="Connect_to_specific_device"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=81" title="Edit section: Connect to specific device">edit</a>]</span> <span class="mw-headline">Connect to specific device</span></h4>
+<pre>devmac=00:11:22:33:44:55
+service=AudioSink
+
+adapter=$(dbus-send --system --print-reply --dest=org.bluez / org.bluez.Manager.DefaultAdapter | awk -F'"' '/at/ {print $2}')
+device=$(dbus-send --system --print-reply --dest=org.bluez ${adapter} org.bluez.Adapter.FindDevice string:${devmac} | awk -F'"' '/at/ {print $2}')
+dbus-send --system --type=method_call --print-reply --dest=org.bluez ${device} org.bluez.${service}.Connect
+</pre>
+<p>Change the AudioSink to any service and the devmac to the MAC of bluetooth device.
+</p>
+<a name="Check_for_updates"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=82" title="Edit section: Check for updates">edit</a>]</span> <span class="mw-headline">Check for updates</span></h3>
+<pre>dbus-send --type=method_call --dest=com.nokia.hildon_application_manager /com/nokia/hildon_application_manager com.nokia.hildon_application_manager.check_for_updates
+</pre>
+<a name="Open_link_in_browser"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=83" title="Edit section: Open link in browser">edit</a>]</span> <span class="mw-headline">Open link in browser</span></h3>
+<pre>dbus-send --system --type=method_call --dest=com.nokia.osso_browser /com/nokia/osso_browser/request com.nokia.osso_browser.load_url string:"google.com"
+</pre>
+<a name="Open_a_pdf_file_with_the_default_pdf_reader_application"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=84" title="Edit section: Open a pdf file with the default pdf reader application">edit</a>]</span> <span class="mw-headline">Open a pdf file with the default pdf reader application</span></h3>
+<pre>dbus-send --print-reply --dest=com.nokia.osso_pdfviewer /com/nokia/osso_pdfviewer com.nokia.osso_pdfviewer.mime_open string:/home/user/MyDocs/.documents/file_name.pdf
+</pre>
+<a name="Open_a_file_with_the_default_notes_application"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=85" title="Edit section: Open a file with the default notes application">edit</a>]</span> <span class="mw-headline">Open a file with the default notes application</span></h3>
+<pre>dbus-send --print-reply --dest=com.nokia.osso_notes /com/nokia/osso_notes com.nokia.osso_notes.mime_open string:/home/user/MyDocs/.documents/file_name
+</pre>
+<a name="Open_the_default_notes_application"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=86" title="Edit section: Open the default notes application">edit</a>]</span> <span class="mw-headline">Open the default notes application</span></h3>
+<pre>dbus-send --print-reply --dest=com.nokia.osso_notes /com/nokia/osso_notes com.nokia.osso_notes.top_application
+</pre>
+<a name="Open_folder"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=87" title="Edit section: Open folder">edit</a>]</span> <span class="mw-headline"> Open folder </span></h3>
+<pre>dbus-send --print-reply --dest=com.nokia.osso_filemanager /com/nokia/osso_filemanager com.nokia.osso_filemanager.open_folder string:/home/user/MyDocs/
+</pre>
+<a name="Set_volume"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=88" title="Edit section: Set volume">edit</a>]</span> <span class="mw-headline">Set volume</span></h3>
+<pre>dbus-send --type=method_call --dest=com.nokia.mafw.renderer.Mafw-Gst-Renderer-Plugin.gstrenderer /com/nokia/mafw/renderer/gstrenderer com.nokia.mafw.extension.set_extension_property string:volume variant:uint32:50
+</pre>
+<p>The value can be between 0 and 100.
+</p>
+<a name="Get_volume"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=89" title="Edit section: Get volume">edit</a>]</span> <span class="mw-headline">Get volume</span></h3>
+<pre>dbus-send --print-reply --type=method_call --dest=com.nokia.mafw.renderer.Mafw-Gst-Renderer-Plugin.gstrenderer /com/nokia/mafw/renderer/gstrenderer com.nokia.mafw.extension.get_extension_property string:volume|awk '/nt/ {print $3}'
+</pre>
+<a name="Reboot"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=90" title="Edit section: Reboot">edit</a>]</span> <span class="mw-headline">Reboot</span></h3>
+<pre>dbus-send --system --type=method_call --print-reply --dest=com.nokia.mce "/com/nokia/mce/request" com.nokia.mce.request.req_reboot
+</pre>
+<p>This is same as rebooting from power key menu (needs uncommenting in certain XML file to appear) and has been identified as insecure way to reboot the device (no filesystem synchronization, etc.). Better command is to simply enter "reboot" in root terminal.
+</p>
+<a name="Shutdown"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=91" title="Edit section: Shutdown">edit</a>]</span> <span class="mw-headline">Shutdown</span></h3>
+<pre>dbus-send --system --type=method_call --print-reply --dest=com.nokia.mce "/com/nokia/mce/request" com.nokia.mce.request.req_shutdown
+</pre>
+<p>See warning at reboot D-Bus call (needs testing).
+</p>
+<a name="Show_dashboard"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=92" title="Edit section: Show dashboard">edit</a>]</span> <span class="mw-headline">Show dashboard</span></h3>
+<pre>dbus-send /com/nokia/hildon_desktop com.nokia.hildon_desktop.exit_app_view
+</pre>
+<a name="Other"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=93" title="Edit section: Other">edit</a>]</span> <span class="mw-headline">Other</span></h3>
+<a name="D-Bus_Scripts"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=94" title="Edit section: D-Bus Scripts">edit</a>]</span> <span class="mw-headline">D-Bus Scripts</span></h4>
+<p>You can also use <a href="http://wiki.maemo.org/DbusScripts" title="DbusScripts">dbus-scripts</a> to execute any command when various actions are triggered on D-Bus.
+</p>
+<a name="Panucci_.28pause.29"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=95" title="Edit section: Panucci (pause)">edit</a>]</span> <span class="mw-headline">Panucci (pause)</span></h4>
+<pre>dbus-send --type=method_call --dest=org.panucci.panucciInterface /panucciInterface org.panucci.panucciInterface.playPause
+</pre>
+<a name="Device_Orientation"></a><h4><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=96" title="Edit section: Device Orientation">edit</a>]</span> <span class="mw-headline">Device Orientation</span></h4>
+<pre>dbus-send --system --print-reply --dest=com.nokia.mce /com/nokia/mce/request com.nokia.mce.request.get_device_orientation
+</pre>
+<a name="GConf"></a><h2><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=97" title="Edit section: GConf">edit</a>]</span> <span class="mw-headline">GConf</span></h2>
+<a name="Reset_GPRS_data_counter"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=98" title="Edit section: Reset GPRS data counter">edit</a>]</span> <span class="mw-headline">Reset GPRS data counter</span></h3>
+<p>The commands are PR1.2 compliant and do not work on previous versions.
+</p>
+<pre>gconftool-2 -u /system/osso/connectivity/network_type/GPRS/gprs_home_rx_bytes
+gconftool-2 -u /system/osso/connectivity/network_type/GPRS/gprs_home_tx_bytes
+gconftool-2 -s /system/osso/connectivity/network_type/GPRS/gprs_home_reset_time --type=string $(date +%s)
+</pre>
+<a name="Command_line"></a><h2><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=99" title="Edit section: Command line">edit</a>]</span> <span class="mw-headline">Command line</span></h2>
+<a name="Enable_FM_Transmitter"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=100" title="Edit section: Enable FM Transmitter">edit</a>]</span> <span class="mw-headline">Enable FM Transmitter</span></h3>
+<pre>/usr/bin/fmtx_client -p 1
+</pre>
+<a name="Disable_FM_Transmitter"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=101" title="Edit section: Disable FM Transmitter">edit</a>]</span> <span class="mw-headline">Disable FM Transmitter</span></h3>
+<pre>/usr/bin/fmtx_client -p 0
+</pre>
+<a name="GStreamer"></a><h2><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=102" title="Edit section: GStreamer">edit</a>]</span> <span class="mw-headline">GStreamer</span></h2>
+<a name="Take_a_picture_with_front_camera"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=103" title="Edit section: Take a picture with front camera">edit</a>]</span> <span class="mw-headline">Take a picture with front camera</span></h3>
+<pre>gst-launch v4l2src device=/dev/video1 num-buffers=1&nbsp;! ffmpegcolorspace&nbsp;! jpegenc&nbsp;! filesink location=frontcam.jpg
+</pre>
+<a name="Shoot_photo_after_10_seconds"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=104" title="Edit section: Shoot photo after 10 seconds">edit</a>]</span> <span class="mw-headline">Shoot photo after 10 seconds</span></h3>
+<p>The camera application must be off for it to work. And of course the camera shutter must be open...gst-launch comes with gstreamer-tools (or gst-launch-0.10 and gstreamer0.10-tools)
+</p>
+<pre>/bin/sleep 10&nbsp;; /usr/bin/gst-launch v4l2camsrc device=/dev/video0 num-buffers=1 \! video/x-raw-yuv,width=2592,height=1968  \! ffmpegcolorspace \! jpegenc \! filesink location=/home/user/MyDocs/DCIM/photo.jpg
+</pre>
+<p>To shoot from the front camera, change <b>/dev/video0</b> to <b>/dev/video1</b> and the proper resolution:
+</p>
+<pre>/bin/sleep 10&nbsp;; /usr/bin/gst-launch v4l2camsrc device=/dev/video1 num-buffers=1 \! video/x-raw-yuv,width=640,height=480  \! ffmpegcolorspace \! jpegenc \! filesink location=/home/user/MyDocs/DCIM/photo.jpg
+</pre>
+<p>Other way:
+</p>
+<pre>/bin/sleep 10; /usr/bin/gst-launch v4l2camsrc&nbsp;! ffmpegcolorspace&nbsp;! jpegenc&nbsp;! identity error-after=1&nbsp;! filesink location=/home/user/MyDocs/DCIM/photo.jpg
+</pre>
+<a name="Python"></a><h2><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=105" title="Edit section: Python">edit</a>]</span> <span class="mw-headline">Python</span></h2>
+<a name="Make_a_phone_call_via_the_cellular_network"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=106" title="Edit section: Make a phone call via the cellular network">edit</a>]</span> <span class="mw-headline">Make a phone call via the cellular network</span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="kw1">import</span> dbus
+<span class="kw1">def</span> place_call<span class="br0">(</span>number<span class="br0">)</span>:
+  bus = dbus.<span class="me1">SystemBus</span><span class="br0">(</span><span class="br0">)</span>
+  csd_call = dbus.<span class="me1">Interface</span><span class="br0">(</span>bus.<span class="me1">get_object</span><span class="br0">(</span><span class="st0">'com.nokia.csd'</span>,
+                                           <span class="st0">'/com/nokia/csd/call'</span><span class="br0">)</span>,
+                                           <span class="st0">'com.nokia.csd.Call'</span><span class="br0">)</span>
+  csd_call.<span class="me1">CreateWith</span><span class="br0">(</span><span class="kw2">str</span><span class="br0">(</span>number<span class="br0">)</span>, dbus.<span class="me1">UInt32</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="br0">)</span></pre></div></div>
+<a name="Make_a_phone_call_via_SIP"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=107" title="Edit section: Make a phone call via SIP">edit</a>]</span> <span class="mw-headline"> Make a phone call via SIP </span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="co1">#!/usr/bin/python</span>
+&nbsp;
+<span class="kw1">import</span> dbus
+<span class="kw1">import</span> <span class="kw3">sys</span>
+&nbsp;
+<span class="co1"># Get the target phone number (or SIP address) from the command line</span>
+TARGET = <span class="kw3">sys</span>.<span class="me1">argv</span><span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="sy0">;</span>
+&nbsp;
+<span class="co1"># Configure the telepathy path to the SofiaSIP account that we wish to use.</span>
+<span class="co1"># Use "mc-tool list" (from the libmissioncontrol-utils package) to see your accounts.</span>
+SIP_ACCOUNT = <span class="st0">'sofiasip/sip/_31234567_40sipgate_2eco_2euk0'</span>
+&nbsp;
+<span class="co1"># This gets us a connnection to the session bus</span>
+bus = dbus.<span class="me1">SessionBus</span><span class="br0">(</span><span class="br0">)</span>
+&nbsp;
+<span class="co1"># This sets up a path to the SIP account within telepathy.</span>
+PATH = <span class="st0">'/org/freedesktop/Telepathy/Account/'</span>
+PATH += SIP_ACCOUNT
+&nbsp;
+<span class="co1"># This sets up a proxy object as a "handle" to the AccountManager of our target account</span>
+account = bus.<span class="me1">get_object</span><span class="br0">(</span><span class="st0">'org.freedesktop.Telepathy.AccountManager'</span>, PATH<span class="br0">)</span>
+&nbsp;
+<span class="co1"># This launches the actual SIP call with a method call to EnsureChannel on that object</span>
+account.<span class="me1">EnsureChannel</span><span class="br0">(</span> \
+        dbus.<span class="me1">Dictionary</span><span class="br0">(</span><span class="br0">{</span>
+                dbus.<span class="me1">String</span><span class="br0">(</span>u<span class="st0">'org.freedesktop.Telepathy.Channel.TargetHandleType'</span><span class="br0">)</span>: dbus.<span class="me1">UInt32</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span>,
+                dbus.<span class="me1">String</span><span class="br0">(</span>u<span class="st0">'org.freedesktop.Telepathy.Channel.ChannelType'</span><span class="br0">)</span>: dbus.<span class="me1">String</span><span class="br0">(</span>u<span class="st0">'org.freedesktop.Telepathy.Channel.Type.StreamedMedia'</span><span class="br0">)</span>,
+                dbus.<span class="me1">String</span><span class="br0">(</span>u<span class="st0">'org.freedesktop.Telepathy.Channel.TargetID'</span><span class="br0">)</span>: dbus.<span class="me1">String</span><span class="br0">(</span>TARGET<span class="br0">)</span>,
+        <span class="br0">}</span>, signature=<span class="st0">'sv'</span><span class="br0">)</span>,
+        dbus.<span class="me1">UInt64</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span>,
+        dbus.<span class="me1">String</span><span class="br0">(</span><span class="st0">''</span><span class="br0">)</span>,
+        dbus_interface=<span class="st0">'com.nokia.Account.Interface.ChannelRequests'</span><span class="br0">)</span>
+&nbsp;
+<span class="kw3">sys</span>.<span class="me1">exit</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span></pre></div></div>
+<a name="Send_SMS"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=108" title="Edit section: Send SMS">edit</a>]</span> <span class="mw-headline">Send SMS</span></h3>
+<p>ssms.py using new QtMobility bindings by ossipena:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="co1">#!/usr/bin/env python</span>
+<span class="co1"># -*- coding: utf-8 -*-</span>
+&nbsp;
+<span class="co1">#ssms Ossipena/TimoP</span>
+<span class="co1">#send smses from command line</span>
+<span class="co1">#licence&nbsp;: Do whatever you want</span>
+<span class="co1">#deps:</span>
+<span class="co1">#pyside-qt4</span>
+<span class="co1">#pyside-mobility</span>
+&nbsp;
+<span class="st0">''</span><span class="st0">'imports'</span><span class="st0">''</span>
+<span class="kw1">from</span> QtMobility.<span class="me1">Messaging</span> <span class="kw1">import</span> <span class="sy0">*</span>
+<span class="kw1">from</span> PySide.<span class="me1">QtCore</span> <span class="kw1">import</span> <span class="sy0">*</span>
+<span class="kw1">import</span> <span class="kw3">sys</span>
+<span class="kw1">from</span> PyQt4 <span class="kw1">import</span> QtCore
+&nbsp;
+&nbsp;
+app = QCoreApplication<span class="br0">(</span><span class="kw3">sys</span>.<span class="me1">argv</span><span class="br0">)</span>
+&nbsp;
+<span class="st0">''</span><span class="st0">'get number and name'</span><span class="st0">''</span>
+stringit = <span class="kw3">sys</span>.<span class="me1">argv</span>
+numpertemp = <span class="kw2">str</span><span class="br0">(</span>stringit<span class="br0">[</span><span class="nu0">1</span>:<span class="nu0">2</span><span class="br0">]</span><span class="br0">)</span>
+mesits = <span class="kw2">str</span><span class="br0">(</span>stringit<span class="br0">[</span><span class="nu0">2</span>:<span class="br0">]</span><span class="br0">)</span><span class="br0">[</span><span class="nu0">2</span>:-<span class="nu0">2</span><span class="br0">]</span>
+&nbsp;
+num = <span class="kw2">str</span><span class="br0">(</span>numpertemp<span class="br0">[</span><span class="nu0">2</span>:-<span class="nu0">2</span><span class="br0">]</span><span class="br0">)</span>
+&nbsp;
+<span class="kw1">if</span> <span class="br0">(</span>mesits == <span class="st0">""</span><span class="br0">)</span>:
+  <span class="kw1">print</span> <span class="st0">"Usage:"</span>
+  <span class="kw1">print</span> <span class="st0">"python ssms.py 01234567 'message text here'"</span>
+  <span class="kw3">sys</span>.<span class="me1">exit</span><span class="br0">(</span><span class="nu0">69</span><span class="br0">)</span>
+<span class="kw1">else</span>:
+  <span class="kw1">print</span> <span class="st0">"number is "</span> + <span class="kw2">str</span><span class="br0">(</span>num<span class="br0">)</span>
+  <span class="kw1">print</span> <span class="st0">"message is "</span> + <span class="kw2">str</span><span class="br0">(</span>mesits<span class="br0">)</span>
+&nbsp;
+<span class="st0">''</span><span class="st0">'define message to be sent'</span><span class="st0">''</span>
+numperi = QtCore.<span class="me1">QString</span><span class="br0">(</span>num<span class="br0">)</span>
+&nbsp;
+numper = QMessageAddress<span class="br0">(</span>QMessageAddress.<span class="me1">Phone</span>, numperi<span class="br0">)</span>
+mesitsi = QMessage<span class="br0">(</span><span class="br0">)</span>
+mesitsi.<span class="me1">setType</span><span class="br0">(</span>QMessage.<span class="me1">Sms</span><span class="br0">)</span>
+mesitsi.<span class="me1">setTo</span><span class="br0">(</span>numper<span class="br0">)</span>
+mesitsi.<span class="me1">setBody</span><span class="br0">(</span>mesits<span class="br0">)</span>
+&nbsp;
+<span class="st0">''</span><span class="st0">'send message'</span><span class="st0">''</span>
+sender = QMessageService<span class="br0">(</span><span class="br0">)</span>
+<span class="kw1">if</span> <span class="br0">(</span>sender.<span class="me1">send</span><span class="br0">(</span>mesitsi<span class="br0">)</span><span class="br0">)</span>:
+  <span class="kw1">print</span> <span class="st0">"success"</span>
+<span class="kw1">else</span>:
+  <span class="kw1">print</span> <span class="st0">"fail"</span></pre></div></div>
+<p>From:
+<a href="http://talk.maemo.org/showpost.php?p=548948&amp;postcount=52" class="external free" title="http://talk.maemo.org/showpost.php?p=548948&amp;postcount=52" rel="nofollow">http://talk.maemo.org/showpost.php?p=548948&amp;postcount=52</a>
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="co1">#!/usr/bin/env python2.5</span>
+&nbsp;
+<span class="kw1">import</span> pexpect
+<span class="kw1">import</span> <span class="kw3">time</span>
+<span class="kw1">from</span> <span class="kw3">subprocess</span> <span class="kw1">import</span> <span class="sy0">*</span>
+&nbsp;
+child = pexpect.<span class="me1">spawn</span><span class="br0">(</span><span class="st0">'pnatd'</span><span class="br0">)</span><span class="sy0">;</span>
+child.<span class="me1">send</span><span class="br0">(</span><span class="st0">'at<span class="es0">\r</span>'</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu0">0.25</span><span class="br0">)</span><span class="sy0">;</span>
+child.<span class="me1">send</span><span class="br0">(</span><span class="st0">'at+cmgf=1<span class="es0">\r</span>'</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu0">0.25</span><span class="br0">)</span><span class="sy0">;</span>
+child.<span class="me1">send</span><span class="br0">(</span><span class="st0">'at+cmgs="+XXXXXXX"<span class="es0">\r</span>'</span><span class="br0">)</span><span class="sy0">;</span>
+child.<span class="me1">send</span><span class="br0">(</span><span class="st0">'SMSTEXTSMSTEXTSMSTEXT'</span><span class="br0">)</span><span class="sy0">;</span>
+child.<span class="me1">send</span><span class="br0">(</span><span class="kw2">chr</span><span class="br0">(</span><span class="nu0">26</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span>
+child.<span class="me1">send</span><span class="br0">(</span><span class="kw2">chr</span><span class="br0">(</span><span class="nu0">26</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span>
+child.<span class="me1">sendeof</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span></pre></div></div>
+<p>There's also a python script that uses D-Bus instead from <a href="http://talk.maemo.org/showpost.php?p=558430&amp;postcount=57" class="external free" title="http://talk.maemo.org/showpost.php?p=558430&amp;postcount=57" rel="nofollow">http://talk.maemo.org/showpost.php?p=558430&amp;postcount=57</a>:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="co1">#!/usr/bin/env python2.5          </span>
+<span class="kw1">import</span> <span class="kw3">sched</span>, <span class="kw3">time</span>                
+<span class="kw1">import</span> dbus                       
+<span class="kw1">import</span> gobject                    
+<span class="kw1">from</span> dbus.<span class="me1">mainloop</span>.<span class="me1">glib</span> <span class="kw1">import</span> DBusGMainLoop
+&nbsp;
+<span class="kw1">def</span> octify<span class="br0">(</span><span class="kw2">str</span><span class="br0">)</span>:
+        <span class="st0">''</span><span class="st0">'     
+        Returns a list of octet bytes representing
+        each char of the input str.               
+        '</span><span class="st0">''</span>                                       
+&nbsp;
+        <span class="kw3">bytes</span> = <span class="kw2">map</span><span class="br0">(</span><span class="kw2">ord</span>, <span class="kw2">str</span><span class="br0">)</span>
+        bitsconsumed = <span class="nu0">0</span>     
+        referencebit = <span class="nu0">7</span>     
+        octets = <span class="br0">[</span><span class="br0">]</span>          
+&nbsp;
+        <span class="kw1">while</span> <span class="kw2">len</span><span class="br0">(</span><span class="kw3">bytes</span><span class="br0">)</span>:
+                byte = <span class="kw3">bytes</span>.<span class="me1">pop</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span>
+                byte = byte <span class="sy0">&gt;&gt;</span> bitsconsumed
+&nbsp;
+                <span class="kw1">try</span>:                       
+                        nextbyte = <span class="kw3">bytes</span><span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span>
+                        bitstocopy = <span class="br0">(</span>nextbyte <span class="sy0">&amp;</span> <span class="br0">(</span>0xff <span class="sy0">&gt;&gt;</span> referencebit<span class="br0">)</span><span class="br0">)</span> <span class="sy0">&lt;&lt;</span> referencebit
+                        octet = <span class="br0">(</span>byte | bitstocopy<span class="br0">)</span>                                     
+&nbsp;
+                <span class="kw1">except</span>:
+                        octet = <span class="br0">(</span>byte | 0x00<span class="br0">)</span>
+&nbsp;
+                <span class="kw1">if</span> bitsconsumed <span class="sy0">!</span>= <span class="nu0">7</span>:
+                        octets.<span class="me1">append</span><span class="br0">(</span>byte | bitstocopy<span class="br0">)</span>
+                        bitsconsumed += <span class="nu0">1</span>               
+                        referencebit -= <span class="nu0">1</span>               
+                <span class="kw1">else</span>:                                   
+                        bitsconsumed = <span class="nu0">0</span>                
+                        referencebit = <span class="nu0">7</span>                
+&nbsp;
+        <span class="kw1">return</span> octets
+&nbsp;
+<span class="kw1">def</span> semi_octify<span class="br0">(</span><span class="kw2">str</span><span class="br0">)</span>:
+        <span class="st0">''</span><span class="st0">'          
+        Expects a string containing two digits.
+        Returns an octet -                     
+        first nibble in the octect is the first
+        digit and the second nibble represents 
+        the second digit.                      
+        '</span><span class="st0">''</span>                                    
+        <span class="kw1">try</span>:                                   
+                digit_1 = <span class="kw2">int</span><span class="br0">(</span><span class="kw2">str</span><span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span>          
+                digit_2 = <span class="kw2">int</span><span class="br0">(</span><span class="kw2">str</span><span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="br0">)</span>          
+                octet = <span class="br0">(</span>digit_2 <span class="sy0">&lt;&lt;</span> <span class="nu0">4</span><span class="br0">)</span> | digit_1
+        <span class="kw1">except</span>:                                 
+                octet = <span class="br0">(</span><span class="nu0">1</span> <span class="sy0">&lt;&lt;</span> <span class="nu0">4</span><span class="br0">)</span> | digit_1      
+&nbsp;
+        <span class="kw1">return</span> octet
+&nbsp;
+&nbsp;
+<span class="kw1">def</span> deoctify<span class="br0">(</span>arr<span class="br0">)</span>:
+&nbsp;
+        referencebit = <span class="nu0">1</span>
+        doctect = <span class="br0">[</span><span class="br0">]</span>    
+        bnext = 0x00    
+&nbsp;
+        <span class="kw1">for</span> i <span class="kw1">in</span> arr:
+&nbsp;
+                bcurr = <span class="br0">(</span><span class="br0">(</span>i <span class="sy0">&amp;</span> <span class="br0">(</span>0xff <span class="sy0">&gt;&gt;</span> referencebit<span class="br0">)</span><span class="br0">)</span> <span class="sy0">&lt;&lt;</span> referencebit<span class="br0">)</span> <span class="sy0">&gt;&gt;</span> <span class="nu0">1</span>
+                bcurr = bcurr | bnext                                      
+&nbsp;
+                <span class="kw1">if</span> referencebit <span class="sy0">!</span>= <span class="nu0">7</span>:
+                        doctect.<span class="me1">append</span><span class="br0">(</span> bcurr <span class="br0">)</span>
+                        bnext = <span class="br0">(</span>i <span class="sy0">&amp;</span> <span class="br0">(</span>0xff <span class="sy0">&lt;&lt;</span> <span class="br0">(</span><span class="nu0">8</span> - referencebit<span class="br0">)</span><span class="br0">)</span> <span class="br0">)</span> <span class="sy0">&gt;&gt;</span> <span class="nu0">8</span> - referencebit
+                        referencebit += <span class="nu0">1</span>                                              
+                <span class="kw1">else</span>:                                                                  
+                        doctect.<span class="me1">append</span><span class="br0">(</span> bcurr <span class="br0">)</span>                                        
+                        bnext = <span class="br0">(</span>i <span class="sy0">&amp;</span> <span class="br0">(</span>0xff <span class="sy0">&lt;&lt;</span> <span class="br0">(</span><span class="nu0">8</span> - referencebit<span class="br0">)</span><span class="br0">)</span> <span class="br0">)</span> <span class="sy0">&gt;&gt;</span> <span class="nu0">8</span> - referencebit
+                        doctect.<span class="me1">append</span><span class="br0">(</span> bnext <span class="br0">)</span>                                        
+                        bnext = 0x00                                                   
+                        referencebit = <span class="nu0">1</span>                                               
+&nbsp;
+        <span class="kw1">return</span> <span class="st0">''</span>.<span class="me1">join</span><span class="br0">(</span><span class="br0">[</span><span class="kw2">chr</span><span class="br0">(</span>i<span class="br0">)</span> <span class="kw1">for</span> i <span class="kw1">in</span> doctect<span class="br0">]</span><span class="br0">)</span>
+&nbsp;
+&nbsp;
+<span class="kw1">def</span> createPDUmessage<span class="br0">(</span>number, msg<span class="br0">)</span>:
+        <span class="st0">''</span><span class="st0">'                       
+        Returns a list of bytes to represent a valid PDU message
+        '</span><span class="st0">''</span>                                                     
+        numlength = <span class="kw2">len</span><span class="br0">(</span>number<span class="br0">)</span>                                 
+        <span class="kw1">if</span> <span class="br0">(</span>numlength <span class="sy0">%</span> <span class="nu0">2</span><span class="br0">)</span> == <span class="nu0">0</span>:                                
+                rangelength = numlength                         
+        <span class="kw1">else</span>:                                                   
+                number = number + <span class="st0">'F'</span>                           
+                rangelength = <span class="kw2">len</span><span class="br0">(</span>number<span class="br0">)</span>                       
+&nbsp;
+        octifiednumber = <span class="br0">[</span> semi_octify<span class="br0">(</span>number<span class="br0">[</span>i:i+<span class="nu0">2</span><span class="br0">]</span><span class="br0">)</span> <span class="kw1">for</span> i <span class="kw1">in</span> <span class="kw2">range</span><span class="br0">(</span><span class="nu0">0</span>,rangelength,<span class="nu0">2</span><span class="br0">)</span> <span class="br0">]</span>
+        octifiedmsg = octify<span class="br0">(</span>msg<span class="br0">)</span>                                                      
+        HEADER = <span class="nu0">1</span>                                                                     
+        FIRSTOCTETOFSMSDELIVERMSG = <span class="nu0">10</span>                                                 
+        ADDR_TYPE = <span class="nu0">129</span> <span class="co1">#unknown format                                                </span>
+        number_length = <span class="kw2">len</span><span class="br0">(</span>number<span class="br0">)</span>                                                    
+        msg_length = <span class="kw2">len</span><span class="br0">(</span>msg<span class="br0">)</span>                                                          
+        pdu_message = <span class="br0">[</span>HEADER, FIRSTOCTETOFSMSDELIVERMSG, number_length, ADDR_TYPE<span class="br0">]</span>    
+        pdu_message.<span class="me1">extend</span><span class="br0">(</span>octifiednumber<span class="br0">)</span>                                             
+        pdu_message.<span class="me1">append</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span>                                                          
+        pdu_message.<span class="me1">append</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span>                                                          
+        pdu_message.<span class="me1">append</span><span class="br0">(</span>msg_length<span class="br0">)</span>                                                 
+        pdu_message.<span class="me1">extend</span><span class="br0">(</span>octifiedmsg<span class="br0">)</span>                                                
+        <span class="kw1">return</span> pdu_message                                                             
+&nbsp;
+&nbsp;
+<span class="kw1">def</span> sendmessage<span class="br0">(</span>number, message<span class="br0">)</span>:
+&nbsp;
+        bus = dbus.<span class="me1">SystemBus</span><span class="br0">(</span><span class="br0">)</span>
+        smsobject = bus.<span class="me1">get_object</span><span class="br0">(</span><span class="st0">'com.nokia.phone.SMS'</span>, <span class="st0">'/com/nokia/phone/SMS/ba212ae1'</span><span class="br0">)</span>
+        smsiface = dbus.<span class="me1">Interface</span><span class="br0">(</span>smsobject, <span class="st0">'com.nokia.csd.SMS.Outgoing'</span><span class="br0">)</span>
+        arr = dbus.<span class="me1">Array</span><span class="br0">(</span>createPDUmessage<span class="br0">(</span>number.<span class="me1">replace</span><span class="br0">(</span><span class="st0">'+'</span>, <span class="st0">'00'</span><span class="br0">)</span>, message<span class="br0">)</span><span class="br0">)</span>
+&nbsp;
+        msg = dbus.<span class="me1">Array</span><span class="br0">(</span><span class="br0">[</span>arr<span class="br0">]</span><span class="br0">)</span>
+        smsiface.<span class="me1">Send</span><span class="br0">(</span>msg,<span class="st0">''</span><span class="br0">)</span>
+&nbsp;
+&nbsp;
+<span class="kw1">def</span> callback<span class="br0">(</span>pdumsg, msgcenter, somestring, sendernumber<span class="br0">)</span>:
+&nbsp;
+        msglength = <span class="kw2">int</span><span class="br0">(</span>pdumsg<span class="br0">[</span><span class="nu0">18</span><span class="br0">]</span><span class="br0">)</span>
+        msgarray = pdumsg<span class="br0">[</span><span class="nu0">19</span>:<span class="kw2">len</span><span class="br0">(</span>pdumsg<span class="br0">)</span><span class="br0">]</span>
+&nbsp;
+        msg = deoctify<span class="br0">(</span>msgarray<span class="br0">)</span>
+&nbsp;
+        <span class="kw1">if</span> msg <span class="sy0">&gt;</span> <span class="nu0">0</span>:
+               <span class="kw1">print</span> <span class="st0">'New message received from&nbsp;%s'</span> <span class="sy0">%</span> sendernumber
+               <span class="kw1">print</span> <span class="st0">'Message length&nbsp;%d'</span> <span class="sy0">%</span> msglength
+               <span class="kw1">print</span> <span class="st0">'Message:&nbsp;%s'</span> <span class="sy0">%</span> msg
+&nbsp;
+               <span class="kw1">if</span> msg == <span class="st0">"ping"</span>:
+                       <span class="kw1">print</span> <span class="st0">"Sending reply: pong"</span>
+                       sendmessage<span class="br0">(</span>sendernumber.<span class="me1">replace</span><span class="br0">(</span><span class="st0">"+"</span>,<span class="st0">"00"</span><span class="br0">)</span>, <span class="st0">"pong"</span><span class="br0">)</span>
+               <span class="kw1">else</span>:
+                       <span class="kw1">print</span> <span class="st0">"Unknown command"</span>
+&nbsp;
+&nbsp;
+<span class="kw1">def</span> listen<span class="br0">(</span><span class="br0">)</span>:
+        DBusGMainLoop<span class="br0">(</span>set_as_default=<span class="kw2">True</span><span class="br0">)</span>
+        bus = dbus.<span class="me1">SystemBus</span><span class="br0">(</span><span class="br0">)</span> <span class="co1">#should connect to system bus instead of session because the former is where the incoming signals come from</span>
+        bus.<span class="me1">add_signal_receiver</span><span class="br0">(</span>callback, path=<span class="st0">'/com/nokia/phone/SMS'</span>, dbus_interface=<span class="st0">'Phone.SMS'</span>, signal_name=<span class="st0">'IncomingSegment'</span><span class="br0">)</span>
+        gobject.<span class="me1">MainLoop</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">run</span><span class="br0">(</span><span class="br0">)</span>
+&nbsp;
+&nbsp;
+<span class="kw1">if</span> __name__ == <span class="st0">'__main__'</span>:
+  <span class="kw1">import</span> <span class="kw3">time</span>
+&nbsp;
+  <span class="kw1">def</span> schedule_task<span class="br0">(</span>schedule, fn, <span class="sy0">*</span>args<span class="br0">)</span>:
+      <span class="kw1">import</span> <span class="kw3">sched</span>
+      s = <span class="kw3">sched</span>.<span class="me1">scheduler</span><span class="br0">(</span><span class="kw3">time</span>.<span class="kw3">time</span>, <span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">)</span>
+      startTime = <span class="kw3">time</span>.<span class="me1">mktime</span><span class="br0">(</span><span class="kw3">time</span>.<span class="me1">strptime</span><span class="br0">(</span>schedule, <span class="st0">'%b&nbsp;%d&nbsp;%H:%M&nbsp;%Y'</span><span class="br0">)</span><span class="br0">)</span>
+      s.<span class="me1">enterabs</span><span class="br0">(</span>startTime, <span class="nu0">0</span>, fn, args<span class="br0">)</span>
+      s.<span class="me1">run</span><span class="br0">(</span><span class="br0">)</span>
+&nbsp;
+  <span class="kw1">import</span> <span class="kw3">getopt</span>, <span class="kw3">sys</span>
+  <span class="kw1">try</span>:  
+    opts, args = <span class="kw3">getopt</span>.<span class="kw3">getopt</span><span class="br0">(</span><span class="kw3">sys</span>.<span class="me1">argv</span><span class="br0">[</span><span class="nu0">1</span>:<span class="br0">]</span>,<span class="st0">"hlt:"</span>, <span class="br0">[</span><span class="st0">"help"</span>,<span class="st0">"listen"</span>,<span class="st0">"time="</span><span class="br0">]</span><span class="br0">)</span>
+&nbsp;
+  <span class="kw1">except</span> <span class="kw3">getopt</span>.<span class="me1">GetoptError</span>, err:
+    <span class="co1"># print help information and exit:</span>
+    <span class="kw1">print</span> <span class="kw2">str</span><span class="br0">(</span>err<span class="br0">)</span> <span class="co1"># will print something like "option -a not recognized"</span>
+    usage<span class="br0">(</span><span class="br0">)</span>
+    <span class="kw3">sys</span>.<span class="me1">exit</span><span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span>  
+  listening = <span class="kw2">False</span> 
+  timeofday = <span class="st0">''</span>
+  <span class="kw1">for</span> opt, arg <span class="kw1">in</span> opts:
+    <span class="kw1">if</span> opt <span class="kw1">in</span> <span class="br0">(</span><span class="st0">"-h"</span>, <span class="st0">"--help"</span><span class="br0">)</span>:
+      usage<span class="br0">(</span><span class="br0">)</span>                     
+      <span class="kw3">sys</span>.<span class="me1">exit</span><span class="br0">(</span><span class="br0">)</span>                  
+    <span class="kw1">elif</span> opt <span class="kw1">in</span> <span class="br0">(</span><span class="st0">"-l"</span>, <span class="st0">"--listen"</span><span class="br0">)</span>:
+      listening = <span class="kw2">True</span>                 
+    <span class="kw1">elif</span> opt <span class="kw1">in</span> <span class="br0">(</span><span class="st0">"-t"</span>, <span class="st0">"--time"</span><span class="br0">)</span>:
+      timeofday = arg                           
+    <span class="kw1">else</span>:
+      <span class="kw1">assert</span> <span class="kw2">False</span>, <span class="st0">"unhandled option"</span>
+&nbsp;
+  number = args<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span>           
+  msg = args<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span>
+  <span class="kw1">if</span> msg <span class="sy0">!</span>= <span class="st0">''</span>:
+    <span class="kw1">if</span> timeofday == <span class="st0">''</span>:
+        sendmessage<span class="br0">(</span>number, msg<span class="br0">)</span>
+    <span class="kw1">else</span>:
+        today = <span class="kw3">time</span>.<span class="me1">strftime</span><span class="br0">(</span><span class="st0">'%b&nbsp;%d x&nbsp;%Y'</span>, <span class="kw3">time</span>.<span class="me1">localtime</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+        schedule = today.<span class="me1">replace</span><span class="br0">(</span><span class="st0">'x'</span>, timeofday<span class="br0">)</span>
+        schedule_task<span class="br0">(</span>schedule, sendmessage, number, msg<span class="br0">)</span>
+  <span class="kw1">if</span> listening:
+    listen<span class="br0">(</span><span class="br0">)</span></pre></div></div>
+<a name="Send_dialog_notification_.28orange_multi_line_popup_requiring_user_interaction.29"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=109" title="Edit section: Send dialog notification (orange multi line popup requiring user interaction)">edit</a>]</span> <span class="mw-headline">Send dialog notification (orange multi line popup requiring user interaction)</span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="kw1">import</span> dbus
+<span class="kw1">def</span> show_notification_dialog<span class="br0">(</span>message, mode=<span class="st0">"single"</span><span class="br0">)</span>:
+  bus = dbus.<span class="me1">SystemBus</span><span class="br0">(</span><span class="br0">)</span>
+  iface = dbus.<span class="me1">Interface</span><span class="br0">(</span>bus.<span class="me1">get_object</span><span class="br0">(</span><span class="st0">'org.freedesktop.Notifications'</span>,
+                                        <span class="st0">'/org/freedesktop/Notifications'</span><span class="br0">)</span>,
+                                        <span class="st0">'org.freedesktop.Notifications'</span><span class="br0">)</span>
+  <span class="kw1">if</span> mode == <span class="st0">"single"</span>:
+      iface.<span class="me1">SystemNoteInfoprint</span><span class="br0">(</span>message<span class="br0">)</span>
+  <span class="kw1">elif</span> mode == <span class="st0">"multiline"</span>:
+      iface.<span class="me1">SystemNoteDialog</span><span class="br0">(</span><span class="kw2">str</span><span class="br0">(</span>message<span class="br0">)</span>, dbus.<span class="me1">UInt32</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span>, <span class="st0">'Ok'</span><span class="br0">)</span></pre></div></div>
+<p>This function allows you to show notification either with multiline (on Maemo pre-5 it will show a dialog with an "Ok" button) or single line (tiny notifications hiding automatically).
+</p>
+<a name="Take_a_screenshot"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=110" title="Edit section: Take a screenshot">edit</a>]</span> <span class="mw-headline">Take a screenshot</span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="kw1">import</span> gtk.<span class="me1">gdk</span>
+&nbsp;
+w = gtk.<span class="me1">gdk</span>.<span class="me1">get_default_root_window</span><span class="br0">(</span><span class="br0">)</span>
+sz = w.<span class="me1">get_size</span><span class="br0">(</span><span class="br0">)</span>
+<span class="kw1">print</span> <span class="st0">"The size of the window is&nbsp;%d x&nbsp;%d"</span> <span class="sy0">%</span> sz
+pb = gtk.<span class="me1">gdk</span>.<span class="me1">Pixbuf</span><span class="br0">(</span>gtk.<span class="me1">gdk</span>.<span class="me1">COLORSPACE_RGB</span>,<span class="kw2">False</span>,<span class="nu0">8</span>,sz<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span>,sz<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="br0">)</span>
+pb = pb.<span class="me1">get_from_drawable</span><span class="br0">(</span>w,w.<span class="me1">get_colormap</span><span class="br0">(</span><span class="br0">)</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,sz<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span>,sz<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="br0">)</span>
+<span class="kw1">if</span> <span class="br0">(</span>pb <span class="sy0">!</span>= <span class="kw2">None</span><span class="br0">)</span>:
+  pb.<span class="me1">save</span><span class="br0">(</span><span class="st0">"screenshot.png"</span>,<span class="st0">"png"</span><span class="br0">)</span>
+  <span class="kw1">print</span> <span class="st0">"Screenshot saved to screenshot.png."</span>
+<span class="kw1">else</span>:
+  <span class="kw1">print</span> <span class="st0">"Unable to get the screenshot."</span></pre></div></div>
+<p>Credits: took code from <a href="http://stackoverflow.com/questions/69645/take-a-screenshot-via-a-python-script-linux" class="external text" title="http://stackoverflow.com/questions/69645/take-a-screenshot-via-a-python-script-linux" rel="nofollow">here</a>.
+</p><p><br>
+There is also a way using PyQt:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="kw1">import</span> <span class="kw3">sys</span>
+<span class="kw1">import</span> <span class="kw3">time</span>
+<span class="kw1">from</span> PyQt4.<span class="me1">QtGui</span> <span class="kw1">import</span> QPixmap, QApplication
+app = QApplication<span class="br0">(</span><span class="kw3">sys</span>.<span class="me1">argv</span><span class="br0">)</span>
+<span class="kw2">file</span> = <span class="st0">"/home/user/MyDocs/.images/Screenshots/Screenshot-"</span>+<span class="kw3">time</span>.<span class="me1">strftime</span><span class="br0">(</span><span class="st0">"%Y%m%d"</span><span class="br0">)</span>+<span class="st0">"-"</span>+<span class="kw3">time</span>.<span class="me1">strftime</span><span class="br0">(</span><span class="st0">"%H%M%S"</span><span class="br0">)</span>+<span class="st0">".png"</span>
+QPixmap.<span class="me1">grabWindow</span><span class="br0">(</span>QApplication.<span class="me1">desktop</span><span class="br0">(</span><span class="br0">)</span>.<span class="me1">winId</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>.<span class="me1">save</span><span class="br0">(</span><span class="kw2">file</span>, <span class="st0">'png'</span><span class="br0">)</span></pre></div></div>
+<a name="Make_an_.22Email_Style.22_notification_dialog"></a><h3><span class="editsection">[<a href="http://wiki.maemo.org/index.php?title=Phone_control&amp;action=edit&amp;section=111" title="Edit section: Make an &quot;Email Style&quot; notification dialog">edit</a>]</span> <span class="mw-headline">Make an "Email Style" notification dialog</span></h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="python source-python"><pre class="de1"><span class="kw1">import</span> dbus
+&nbsp;
+bus = dbus.<span class="me1">SessionBus</span><span class="br0">(</span><span class="br0">)</span>
+proxy = bus.<span class="me1">get_object</span><span class="br0">(</span><span class="st0">'org.freedesktop.Notifications'</span>, <span class="st0">'/org/freedesktop/Notifications'</span><span class="br0">)</span>
+interface = dbus.<span class="me1">Interface</span><span class="br0">(</span>proxy,dbus_interface=<span class="st0">'org.freedesktop.Notifications'</span><span class="br0">)</span>
+interface.<span class="me1">Notify</span><span class="br0">(</span><span class="st0">'Notification'</span>, <span class="nu0">0</span>, <span class="st0">'control_bluetooth_paired'</span>, <span class="st0">'Testing 123'</span>, <span class="st0">'Hello World'</span>, <span class="br0">[</span><span class="br0">]</span>, <span class="br0">{</span><span class="br0">}</span>, <span class="nu0">0</span><span class="br0">)</span></pre></div></div>
+<p>Credits: MohammadAG (on irc).
+</p>
+<!-- 
+NewPP limit report
+Preprocessor node count: 284/1000000
+Post-expand include size: 1796/2097152 bytes
+Template argument size: 539/2097152 bytes
+#ifexist count: 0/100
+-->
+
+<!-- Saved in parser cache with key mediawiki-mw_:pcache:idhash:3197-0!1!0!!en!2 and timestamp 20120705165338 -->
+<div class="printfooter">
+Retrieved from "<a href="http://wiki.maemo.org/Phone_control">http://wiki.maemo.org/Phone_control</a>"</div>
+			<div id="catlinks"><p class="catlinks"><a href="http://wiki.maemo.org/Special:Categories" title="Special:Categories">Categories</a>: <span dir="ltr"><a href="http://wiki.maemo.org/Category:Power_users" title="Category:Power users">Power users</a></span> | <span dir="ltr"><a href="http://wiki.maemo.org/Category:Development" title="Category:Development">Development</a></span></p></div>
+			<!-- end content -->
+
+
+
+                    </div><!-- /main-wrapper -->
+                </div><!-- /main --><!-- content end -->
+
+			<div class="visualClear"></div>
+
+        <ul style="clear: left; float: left; display: inline; list-style-type: none;">
+<li id="lastmod"> This page was last modified 12:49, 24 June 2012.</li><li id="viewcount">This page has been accessed 70,524 times.</li>      </ul>
+			<div class="visualClear"></div>
+
+
+			<div id="footer">
+                <div id="footer-wrapper-left">
+                    <div id="footer-wrapper-right">
+
+			<ul>
+                                <li class="first"><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">All Content CC</a></li>
+                <li><a href="http://maemo.org/legal/">Legal</a></li>
+                				<li class="privacy"><a href="http://wiki.maemo.org/maemo.org_wiki:Privacy_policy" title="maemo.org wiki:Privacy policy">Privacy policy</a></li>
+				<li class="about"><a href="http://wiki.maemo.org/maemo.org_wiki:About" title="maemo.org wiki:About">About maemo.org wiki</a></li>
+                <li>Powered by <a href="http://www.mediawiki.org/">MediaWiki</a></li>
+			</ul>
+                    </div>
+                </div>
+		</div>
+		
+	
+		
+</div>
+<!-- Served in 0.165 secs. -->
+
+        </div><!-- container -->
+
+    
+
+</body>
+</html>

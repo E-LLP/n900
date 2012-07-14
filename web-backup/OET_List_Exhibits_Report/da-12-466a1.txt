@@ -1,0 +1,68 @@
+PUBLIC NOTICE
+Federal Communications Commission
+445 12th St., S.W.
+Washington, D.C. 20554
+News Media Information 202 / 418-0500
+Internet: http://www.fcc.gov
+TTY: 1-888-835-5322
+DA 12-466
+Released:  March 26, 2012
+Office of Engineering and Technology Announces the Approval of 
+Telcordia Technologies, Inc.’s TV Bands Database System for Operation
+ET Docket No. 04-186
+The Commission’s Office of Engineering and Technology (OET) announces that it has granted 
+approval for Telcordia Technologies, Inc. to operate its “TV bands database system” to provide service to 
+the public.1 This database system will support unlicensed radio devices that transmit on unused channels 
+in the spectrum bands used by broadcast television (TV white spaces, or TVWS).  As discussed below, 
+however, OET is not providing authorization for Telcordia to begin providing service to TV bands 
+devices until the Commission completes and activates its system for approving registrations to protect 
+wireless microphone use at large event/performance venues.  OET may, however, authorize operations by 
+the Telcordia database to serve one or more localized areas prior to the activation of this unlicensed 
+wireless microphone venues registration system where Telcordia coordinates with local officials and other 
+stakeholders to ensure that appropriate protection is provided for any such venues.
+The Commission’s Part 15 rules (47 C.F.R. § 15.701 et seq.) require that unlicensed TV band 
+devices (TVBDs) contact an authorized database system to obtain a list of channels that are available for 
+their operation (i.e. channels not occupied by authorized radio services) at their individual locations and 
+operate only on those channels.  These devices are required to provide their geographic locations by 
+means of a secure Internet connection to a TV bands database system authorized by the Commission.  The 
+database will then return a list of channels available for operation by the device for its reported location.  
+The FCC rules require that TV bands database systems protect the following radio services: (1) 
+broadcast television stations (including full power, TV translator, low power TV, and Class A stations); 
+(2) fixed broadcast auxiliary service (BAS) links (regular licensed and temporary); (3) receive sites (and 
+received channels) of TV translator, low power TV, and Class A TV stations and multichannel video 
+programming distributors (MVPDs); (4) private land mobile and commercial mobile radio service 
+operations; (5) offshore radio telephone service operations; (6) radio astronomy operations at specific 
+sites; and (7) low power auxiliary service operations (principally licensed and certain approved 
+unlicensed wireless microphone venue sites). Except for MVPD receive sites, sites where licensed 
+wireless microphones are used, and approved unlicensed wireless microphone venues, the necessary 
+protection data will either be extracted by Telcordia from the Commission’s databases or are specified in
+the rules.  Operators of facilities for which information is contained in the Commission’s records or 
+provided in the rules do not need to take any action to obtain protection from TV bands devices.
+  
+1 See Letter to Mr. John Malyar of Telcordia dated March 26, 2012.  This letter is available in the Commission’s 
+EDOCS records system under ET Docket No. 04-186, DA 12-465.
+Operators of MVPD receive sites, wireless microphones users, and operators of temporary BAS links 
+must specifically register their sites to receive protection from TV bands devices.  As required under the 
+rules, Telcordia is providing facilities for registering for these operations through its TVWS database 
+system website at: http://www.telcordia.com/whitespaces.  The rules also provide that responsible parties 
+may request that the Commission approve registrations for protection of venues where unlicensed 
+wireless microphones are used.  These requests will be made available for public comment, and the 
+Commission will subsequently review them for approval.  All registrations entered with a given TV bands 
+database will be communicated to the other TV bands database(s) so that registrations will not need to be 
+entered in multiple databases.  Currently, the Commission has also approved the Spectrum Bridge, Inc. 
+TV bands database system for operation (see Public Notice released December 22, 2011, DA 11-2044).
+The Commission’s registration system for venues where large numbers of unlicensed wireless 
+microphones are used is still under development and is expected to be operational in the near future.  
+Until this system is operational and affected parties have an opportunity to register their venues to obtain 
+protection, OET cannot provide a general authorization to Telcordia or any other TV bands database 
+administrator to provide service from its database system to TV white space devices.  However, OET 
+states that it will consider favorably a request from Telcordia to provide immediate service from its 
+database system in a limited geographic area.  For such an area, OET would accept and process any 
+requests for registration of venues where large numbers of unlicensed microphones might be used and 
+then direct Telcordia to create a registration record for the venue.  OET will notify Telcordia when the 
+Commission’s unlicensed wireless microphone registration system is completed and inform it of the date 
+on which it may begin providing service to TV bands devices.  
+Questions regarding this Public Notice may be directed to Alan Stillwell at (202) 418-2470 or 
+Hugh L. Van Tuyl at (202) 418-7506.
+By the Chief, Office of Engineering and Technology.
+-FCC-

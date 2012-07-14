@@ -1,0 +1,60 @@
+NEWS
+Federal Communications Commission
+445 12th Street, S.W.
+Washington, D. C.  20554
+This is an unofficial announcement of Commission action.  Release of the full text of a Commission order constitutes official action.
+See MCI v. FCC. 515 F 2d 385 (D.C. Circ 1974).
+News Media Information 202 / 418-0500
+Internet: http://www.fcc.gov
+TTY: 1-888-835-5322
+FOR IMMEDIATE RELEASE: NEWS MEDIA CONTACTS:
+May 24, 2012 Neil Grace, 202-418-0506
+FCC DEDICATES SPECTRUM ENABLING MEDICAL BODY AREA NETWORKS TO 
+TRANSFORM PATIENT CARE, LOWER HEALTH CARE COSTS, AND SPUR WIRELESS 
+MEDICAL INNOVATION
+New Rules Make U.S. First in the World to Allocate Spectrum for Medical Area Body Networks (MBANs) 
+Washington, D.C.—The Federal Communications Commission today advanced its wireless health care 
+agenda by adopting rules that will enable Medical Body Area Networks (MBANs), low-power wideband 
+networks consisting of multiple body-worn sensors that transmit a variety of patient data to a control 
+device. MBAN devices free patients from cumbersome cables that tether them to their hospital bed. 
+MBANs provide a cost effective way to monitor every patient in a healthcare institution, so clinicians can 
+provide real-time and accurate data, allowing them to intervene and save lives.  
+Wireless devices that operate on MBAN spectrum can be used to actively monitor a patient’s health, 
+including blood glucose and pressure monitoring, delivery of electrocardiogram readings, and even 
+neonatal monitoring systems. MBAN devices will be designed to be deployed widely within a hospital 
+setting and will make use of inexpensive disposable body-worn sensors. MBAN technology will also 
+make it easier to move patients to different parts of the health care facility for treatment and can 
+dramatically improve the quality of patient care by giving health care providers the chance to identify life-
+threatening problems or events before they reach critical levels.  
+In the First Report and Order, the Commission allocates 40 MHz of spectrum at 2360-2400 MHz for 
+MBAN use on a secondary basis.  It will accommodate MBAN use through an expansion of the existing 
+Medical Device Radiocommunication (MedRadio) Service in Part 95 of our rules.  This structure, which 
+will permit MBAN devices to operate on a ‘license-by-rule’ basis in which users will not have to apply 
+for and receive individual station licenses, will lead to the rapid and widespread development of 
+innovative new MBAN applications.
+Each year, millions of Americans deal with the discomfort and risk of infection that result from the 
+attachment to medical equipment cables, and the limitations of these physical cables keep nearly half of 
+all patients from being actively monitored.  MBANs allow for ubiquitous and reliable monitoring, and 
+give health care providers the chance to identify life-threatening problems or events before they occur. 
+The 2010 National Broadband Plan recognized that the use of spectrum-agile radios and other techniques 
+can significantly increase the efficient use of radio spectrum to meet growing demand for this valuable 
+resource.  The development of the MBAN concept illustrates how advanced technology can enable the 
+more efficient use of spectrum to deliver innovative new services.  Because MBAN devices will share the 
+spectrum with existing primary users, the rules contain registration and coordination provisions to protect 
+vital flight testing operations conducted by aeronautical mobile telemetry (AMT) licensees.
+2All MBAN use of the 2360-2390 MHz band will be subject to registration with an MBAN coordinator 
+and additional coordination if warranted by location. Use of this 30 megahertz band will be restricted to 
+indoor operation at health care facilities.  MBAN devices that operate in the 2390-2400 MHz band will 
+not require registration and coordination, and may be used in any location – including in-home residential 
+settings.  A Further Notice of Proposed Rulemaking asks questions about the selection of an MBAN 
+coordinator or coordinators.
+Action by the Commission on May 24, 2012 by First Report and Order and Further Notice of Proposed 
+Rulemaking. Chairman Genachowski, Commissioners McDowell, Clyburn, Rosenworcel and Pai.  
+Separate statements issued by Chairman Genachowski, Commissioners McDowell, Clyburn, 
+Rosenworcel and Pai.
+ET Docket No. 08-59.
+For further information contact Brian Butler (202) 418-2702, or Brian.Butler@fcc.gov; or Jamison Prime 
+(202) 418-7474; Jamison.Prime@fcc.gov.
+-FCC-
+News and information about the Federal Communications Commission is available at 
+www.fcc.gov. 

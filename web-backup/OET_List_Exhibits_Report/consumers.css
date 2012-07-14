@@ -1,0 +1,194 @@
+/* ::::: http://reboot.fcc.gov/html/portal/css.jsp?browserId=firefox&themeId=Reboot_WAR_reboottheme&colorSchemeId=01&minifierType=css&t=1268937752000 ::::: */
+
+.lfr-grid { width: 100%; }
+/* ::::: http://reboot.fcc.gov/breadcrumb-portlet/css/test.css?browserId=firefox&minifierType=css&t=1308135453000 ::::: */
+
+/* ::::: http://reboot.fcc.gov/html/portlet/journal_content/css.jsp?browserId=firefox&themeId=Reboot_WAR_reboottheme&colorSchemeId=01&minifierType=css&t=1268937752000 ::::: */
+
+/* ::::: http://reboot.fcc.gov/customblogportlets/css/test.css?browserId=firefox&minifierType=css&t=1308135453000 ::::: */
+
+/* ::::: http://reboot.fcc.gov/reboot-theme/css/main.css?browserId=firefox&minifierType=css&t=1308135453000 ::::: */
+
+/* ::::: http://reboot.fcc.gov/reboot-theme/css/base.css ::::: */
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td { margin: 0pt; padding: 0pt; }
+fieldset, img { border: 0pt none; }
+address, caption, cite, code, dfn, em, strong, th, var { font-style: normal; font-weight: normal; }
+ol, ul { list-style: none outside none; }
+html { overflow-y: scroll; }
+body { background-color: rgb(255, 255, 255); font: 62.5%/1.6em Arial,Helvetica,Verdana,sans-serif; }
+li { margin-bottom: 7px; }
+ul li, ol ul li { list-style: disc outside none; }
+ul ul li { list-style-type: circle; }
+p { margin-bottom: 1em; }
+a { color: rgb(51, 102, 153); text-decoration: underline; }
+a:hover { color: rgb(0, 102, 204); text-decoration: none; }
+a:visited {  }
+b, strong { font-weight: bold; }
+#wrapper {  }
+#content-wrapper {  }
+hr, .separator { border-top: 1px dotted rgb(191, 191, 191); }
+/* ::::: http://reboot.fcc.gov/reboot-theme/css/application.css ::::: */
+
+/* ::::: http://reboot.fcc.gov/reboot-theme/css/layout.css ::::: */
+
+.lfr-grid { border-collapse: collapse; width: 100%; }
+/* ::::: http://reboot.fcc.gov/reboot-theme/css/navigation.css ::::: */
+
+#navigation {  }
+#navigation ul { margin: 0pt 0pt 0pt 25px; }
+#navigation ul:after { clear: both; content: "."; display: block; height: 0pt; visibility: hidden; }
+#navigation li { float: left; list-style-type: none; position: relative; margin: 0px; }
+#navigation .child-menu { display: none; }
+/* ::::: http://reboot.fcc.gov/reboot-theme/css/dropdown.css ::::: */
+
+#navigation, #navigation * { z-index: 9999; }
+#navigation { background: url('topnav.png') repeat-x scroll 0pt 0pt rgb(255, 255, 255); margin: 0pt auto 20px; min-height: 2.2em; width: 100%; clear: both; height: 38px; }
+.topNavInner { height: 38px; margin: auto; text-align: left; width: 1000px; }
+#navigation ul, #add-page { float: left; }
+#navigation a { color: rgb(0, 33, 87); display: block; font: bold 12px Georgia,"Times New Roman",Times,serif; padding: 10px; text-decoration: none; text-transform: uppercase; }
+#navigation li { position: relative; }
+#navigation ul ul { visibility: hidden; position: absolute; }
+#navigation a:hover { background: none repeat scroll 0% 0% transparent; color: rgb(0, 0, 0); }
+#navigation .drop1 a:hover, #navigation ul ul a:hover { color: rgb(255, 255, 255); background: none repeat scroll 0% 0% rgb(0, 51, 102); }
+#navigation ul li:hover ul, #navigation ul a:hover ul { visibility: visible; }
+#navigation li a span { padding: 0px 3px 0px 5px; margin: 0px 3px; line-height: 18px; min-width: 0px; width: 0px; }
+#nav, #nav ul { margin: 0pt; padding: 0pt; list-style-type: none; list-style-position: outside; line-height: 1.5em; }
+#nav ul { position: relative; width: 12em; height: 3em; top: 3.1em; display: none; left: 1.5em; }
+#nav li ul a { float: left; width: 16em; }
+#nav li:hover ul, #nav li li:hover ul, #nav li li li:hover ul, #nav li li li li:hover ul { display: block; }
+#navigation ul ul a { color: rgb(0, 33, 87); display: block; font-size: 11px; padding: 6px; text-decoration: none; font-weight: bold; text-transform: uppercase; background-color: rgb(235, 236, 238); border-bottom: 1px solid rgb(221, 221, 221); }
+.nav-border { height: 5px; background-color: rgb(0, 51, 102); width: 15.8em; }
+/* ::::: http://reboot.fcc.gov/reboot-theme/css/portlet.css ::::: */
+
+.portlet { text-align: left; }
+.portlet-topper { position: relative; }
+.portlet-icons { margin: 20px 0pt 0pt; position: absolute; right: 5px; text-align: right; padding: 6px 0pt 0pt; }
+/* ::::: http://reboot.fcc.gov/reboot-theme/css/forms.css ::::: */
+
+input { background: none repeat scroll 0% 0% rgb(255, 255, 255); }
+input[type="text"], input[type="password"], input[type="file"], input[type="submit"], input[type="button"], input[type="reset"], select, textarea, .textarea { background-image: url('input_shadow.png'); background-repeat: no-repeat; border-width: 1px; border-style: solid; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; border-color: rgb(191, 191, 191) rgb(222, 222, 222) rgb(222, 222, 222) rgb(191, 191, 191); font: 1em Arial,Helvetica,Verdana,sans-serif; padding: 5px 1px; }
+input[type="image"] { background: none repeat scroll 0% 0% transparent; border: medium none; padding: 0pt; }
+/* ::::: http://reboot.fcc.gov/reboot-theme/css/custom.css ::::: */
+
+* { padding: 0px; margin: 0px; border-width: 0px; }
+body { color: rgb(72, 72, 72); font-size: 12px; font-family: Helvetica,Arial,sans-serif; display: block; border-collapse: collapse; overflow: auto; }
+#wrapper { margin: 20px auto; min-height: 450px; text-align: left; width: 1000px; }
+#content-wrapper { width: 1000px; margin: auto; }
+.header { width: 100%; height: 108px; background: url('header.png') repeat-x scroll 0% 0% transparent; text-align: center; }
+.topBar { height: 30px; background-color: rgb(3, 33, 69); width: 960px; margin: auto; text-align: right; }
+.rebootHeader { width: 1000px; height: 78px; overflow: hidden; margin: auto; }
+.topBanner { width: 700px; text-align: left; float: left; margin-top: 30px; }
+.topSearch { width: 280px; margin: 30px auto auto; text-align: right; vertical-align: text-bottom; float: right; }
+.topSearch label { color: rgb(255, 255, 255); font-family: Georgia; text-transform: uppercase; font-size: 10px; font-weight: bold; display: block; text-align: left; }
+.search input.textInputs { color: rgb(102, 102, 102); font-size: 12px; border: 0pt none; margin: 2px; padding: 3px; }
+.search input { vertical-align: text-bottom; }
+.searchSubmitButton { margin-left: 5px; }
+.portlet { margin: 15px 0pt 10px 10px; }
+.footer { background: url('footer.png') repeat-x scroll left top rgb(0, 1, 4); color: rgb(65, 144, 205); width: 100%; clear: both; float: left; padding: 30px 0pt 5px; margin-top: 30px; }
+.footerInner { width: 1000px; margin: auto; text-align: left; }
+.footer h2 { color: rgb(255, 255, 255); margin-bottom: 13px; }
+.footerLinkTop { color: rgb(255, 255, 255); font-size: 15px; text-decoration: none; display: block; margin-bottom: 10px; }
+.footerLink { color: rgb(0, 153, 204); }
+.footerLinkLists { padding-bottom: 20px; overflow: auto; }
+.footerLinkLists li { width: 135px; float: left; }
+.sideBar, .pageContent { float: left; }
+.inner30right { padding-right: 20px; }
+.pageContentInner { padding: 0pt 22px 30px 38px; }
+.col720, .pageContent { width: 720px; }
+.col440 { width: 440px; }
+.col220 { width: 220px; }
+.FL { float: left; }
+.col280, .sideBar { width: 280px; }
+.col1000 { margin: 20px auto; text-align: left; width: 960px; clear: left; }
+.linkTitle { font-size: 18px; padding: 5px 0pt 10px; }
+.latestBlogs { margin-bottom: 25px; }
+.latestBlogs li { margin-bottom: 10px; }
+h1, h2, h3, h4 { color: rgb(39, 54, 73); font-size: 100%; }
+a { color: rgb(65, 144, 205); text-decoration: none; }
+h2 { font-size: 18px; font-weight: bold; line-height: 18px; margin: 15px 0pt; }
+h3 { font-size: 14px; margin-bottom: 5px; }
+.lnkLearnMore { color: rgb(153, 51, 0); display: block; font-size: 13px; font-weight: bold; margin: 10px 0pt; text-decoration: none; }
+div.divider { background-position: 50% 50%; background-repeat: no-repeat; height: 10px; margin: 25px 0pt; }
+.hr300 { background-image: url('hr300.png'); }
+li { list-style-type: none; }
+div.divider hr { display: none; }
+ol, ul, li { list-style: none outside none; }
+ul li, ol ul li { list-style: none outside none; }
+.col220 { width: 220px; }
+.col440 { width: 440px; }
+.hide { left: -10000px; position: absolute; }
+.fccConnect h2 { font-family: Helvetica,Arial,sans-serif; font-size: 13px; font-weight: bold; }
+.fccConnect { overflow: hidden; width: 250px; }
+.lstFCCConnect li { float: left; list-style: none outside none; margin-right: 15px; line-height: 28px; }
+.lstFCCConnect li a { display: block; float: left; width: 70px; height: 25px; padding-left: 30px; }
+.lstFCCConnect li.twitter a { background: url('fcc-connect.gif') no-repeat scroll 0pt -50px transparent; }
+.lstFCCConnect li.twitter a:hover { background: url('fcc-connect.gif') no-repeat scroll 0pt -75px transparent; }
+.lstFCCConnect li.ideascale a { background: url('fcc-connect.gif') no-repeat scroll 0pt -250px transparent; }
+.lstFCCConnect li.ideascale a:hover { background: url('fcc-connect.gif') no-repeat scroll 0pt -275px transparent; }
+.lstFCCConnect li.facebook a { background: url('fcc-connect.gif') no-repeat scroll 0pt 0pt transparent; }
+.lstFCCConnect li.facebook a:hover { background: url('fcc-connect.gif') no-repeat scroll 0pt -26px transparent; }
+.lstFCCConnect li.youtube a { background: url('fcc-connect.gif') no-repeat scroll 0pt -200px transparent; }
+.lstFCCConnect li.youtube a:hover { background: url('fcc-connect.gif') no-repeat scroll 0pt -225px transparent; }
+.lstFCCConnect li.blogband a { background: url('fcc-connect.gif') no-repeat scroll 0pt -300px transparent; }
+.lstFCCConnect li.blogband a:hover { background: url('fcc-connect.gif') no-repeat scroll 0pt -325px transparent; }
+.lstFCCConnect li.myspace a { background: url('fcc-connect.gif') no-repeat scroll 0pt -150px transparent; }
+.lstFCCConnect li.myspace a:hover { background: url('fcc-connect.gif') no-repeat scroll 0pt -175px transparent; }
+.lstFCCConnect li.flickr a { background: url('fcc-connect.gif') no-repeat scroll 0pt -100px transparent; }
+.lstFCCConnect li.flickr a:hover { background: url('fcc-connect.gif') no-repeat scroll 0pt -125px transparent; }
+.lstFCCConnect li.rss a { background: url('fcc-connect.gif') no-repeat scroll 0pt -350px transparent; }
+.lstFCCConnect li.rss a:hover { background: url('fcc-connect.gif') no-repeat scroll 0pt -375px transparent; }
+.lstFCCConnect li.oi a { background: url('fcc-connect.gif') no-repeat scroll 0pt -400px transparent; }
+.lstFCCConnect li.oi a:hover { background: url('fcc-connect.gif') no-repeat scroll 0pt -425px transparent; }
+.fcc-breadcrumbs { margin-bottom: 20px; }
+.portlet-icons { top: -50px; }
+ul ul li { list-style-type: none; }
+.inner30left { padding-left: 48px; }
+.hr250 { background-image: url('hr250.png'); }
+.CB { clear: both; }
+.FR { float: right; }
+.portlet { margin: 0pt; }
+.lstFCCConnect li { margin-right: 5px; }
+.lstFCCConnect { margin: 0px; }
+ul.footerLinkLists { overflow: visible; }
+.topSearch { margin: 18px auto auto; text-align: left; vertical-align: text-bottom; width: 280px; }
+ul.footerLinkLists { overflow: visible; }
+.globalFooter a { margin: 0pt 4px; }
+.margin-right img { margin-right: 50px; }
+.inner22 { padding: 0pt 0pt 0pt 22px; }
+ul.latestBlogs { margin-bottom: 1em; }
+#fccBreadCrumbTrailDiv { margin: 10px 20px 10px 0px; }
+ul.latestBlogs { margin-bottom: 1em; }
+#fccBreadCrumbTrailDiv { margin-left: 0px; }
+.header {  }
+#search { width: 160px; padding: 4px; }
+.header, .footer { float: left; }
+body { min-width: 1000px; }
+.sideBar h2 { font-family: Helvetica,Arial,sans-serif; font-size: 13px; font-weight: bold; }
+/* ::::: http://reboot.fcc.gov/reboot-theme/css/slider.css ::::: */
+
+#fccBreadCrumbTrailDiv { margin-left: 40px; }
+img.consumers-banner { margin: 0pt 0pt 10px 40px; }
+div.consumers-feature { float: left; background: url('image_gallery_005.dat') repeat-x scroll 0% 0% transparent; width: 940px; height: 255px; margin-left: 40px; }
+div.consumers-feature-txt { width: 540px; margin: 10px 50px 0pt 30px; float: left; }
+div.consumers-feature-video { float: left; box-shadow: 5px 5px 10px rgb(173, 221, 244); margin-top: 20px; }
+div.consumers-feature h2 { font-size: 24px; font-family: Georgia,"Times New Roman",Times,serif; font-weight: normal; line-height: 24px; }
+div.consumers-feature-txt p { font-size: 14px; color: rgb(2, 33, 67); }
+h3 { text-transform: uppercase; }
+ul.topissues li { padding-left: 80px; margin-bottom: 0pt; min-height: 80px; margin-right: 5px; }
+ul.topissues li a { font-size: 18px; }
+li.prnt { background: url('image_gallery_006.dat') no-repeat scroll 0% 0% transparent; }
+li.pvcy { background: url('image_gallery_007.dat') no-repeat scroll 0% 0% transparent; }
+li.bs { background: url('image_gallery_008.dat') no-repeat scroll 0pt -5px transparent; }
+li.bbst { background: url('image_gallery_009.dat') no-repeat scroll 0pt -5px transparent; }
+li.etf { background: url('image_gallery_010.dat') no-repeat scroll 0pt -7px transparent; }
+li.stt { background: url('image_gallery_011.dat') no-repeat scroll 0pt -12px transparent; }
+li.fsl { background: url('image_gallery_012.dat') no-repeat scroll 0pt -12px transparent; }
+.hr300 { background: url('image_gallery_013.dat') no-repeat scroll 0% 0% transparent; }
+li.alrt { background: url('image_gallery_014.dat') no-repeat scroll 0pt 0pt transparent; margin-bottom: 30px ! important; }
+div.col440 { width: 640px; }
+#layout-column_column-4 div:first-child { float: left; width: 300px; margin-right: 20px; }
+a.linkTitle { font-size: 15px ! important; }
+div.consumers-sidebar { width: 280px; margin-left: -20px; }
+div.consumers-complaints { margin-bottom: 15px; background: url('image_gallery_015.dat') no-repeat scroll 0% 0% transparent; padding: 12px 15px 20px; }
+div.consumers-helpfcc { background: url('image_gallery_016.dat') no-repeat scroll 0% 0% transparent; padding: 12px 15px; height: 260px; }

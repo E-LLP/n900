@@ -1,0 +1,39 @@
+Federal Communications Commission
+Washington, D.C. 20554
+April 19, 2012
+ DA 12-621
+Mr. John Malyar
+Telcordia Technologies, Inc.
+1 Telcordia Drive/RRC 4F604
+Piscataway, NJ 08854
+Dear Mr. Malyar,
+Approval is hereby granted for Telcordia Technologies, Inc. (Telcordia) to operate its “TV bands database 
+system” to provide commercial service to the public within Nottoway County, Virginia.  This database 
+system will provide support for unlicensed radio devices that transmit on unused channels in the spectrum 
+bands used by broadcast television (TV bands devices).  The Nottoway County project will use an 
+Adaptrum radio system together with the Telcordia database to provide high-speed broadband service at 
+20 sites that serve rural schools and households.
+The Office of Engineering and Technology (OET) approved Telcordia’s database system for operation by 
+letter dated March 26, 2012, DA 12-465.  In approving this system, OET stated that Telcordia could not 
+provide service to the public until the FCC’s system for registering venues where large numbers of 
+unlicensed wireless microphone’s are used is operational and affected parties have an opportunity to 
+register their venues to obtain protection.  However, OET also stated that Telcordia could request 
+approval to commence database operations in limited geographic areas prior to the availability of the 
+FCC’s unlicensed wireless microphone registration system.  OET indicated that, for such areas, it would 
+accept and process any requests for registration of venues where large numbers of unlicensed 
+microphones are to be used and then direct Telcordia to create a registration record for the venue.
+We find that Telcordia’s request to operate its service within the limited area of Nottoway County, 
+Virginia is consistent with the plan and requirements set forth in OET’s approval of the Telcordia 
+database system.  We therefore will permit Telcordia to operate its TV bands database system to provide 
+service to TV bands devices within the geographic boundaries of that county.  In the event that a party 
+seeks to register a venue before the FCC’s wireless microphone registration system is operational, it may 
+submit a registration request directly to OET at TVWSinfo@fcc.gov.  If OET approves such a 
+registration, it will direct Telcordia to create a registration record for the venue.  The registrant will then 
+need to access its registration record on the Telcordia database system to enter scheduling and channel 
+information for the venue.  We will issue a public notice to inform potential registrants of the procedure 
+for applying to register such venues.  As specified by the rules and our March 26, 2012 approval letter, all 
+TV bands devices used with the Telcordia database system must be certified by the Commission. 
+Sincerely,
+Julius P. Knapp
+Chief, Office of Engineering and Technology
+cc: Haiyun Tang, Adaptrum 

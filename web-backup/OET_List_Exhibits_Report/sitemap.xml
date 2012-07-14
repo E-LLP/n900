@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="../../sitemap.xsl" type="text/xsl" media="all"?>
+<site>
+<page file="index.html" text="OET List Exhibits Report" title="OET List Exhibits Report">
+<page file="default.html" text="" title="Federal Communications Commission (FCC) Home Page"/>
+<page file="searchtools.html" text="Search" title="FCC Search Tools"/>
+<page file="default_001.html" text="RSS" title="RSS Feeds of the FCC | FCC.gov"/>
+<page file="updates.html" text="Updates" title="FCC Updates and Releases"/>
+<page file="default_002.html" text="E-Filing" title="Online Filing | FCC.gov"/>
+<page file="initiatives.html" text="Initiatives" title="FCC Major Initiatives"/>
+<page file="consumers.html" text="Consumers" title="Consumer Help Center - Reboot.FCC.gov"/>
+<page file="default_003.html" text="FCC" title="Home | FCC.gov"/>
+<page file="e-file.html" text="FCC E-filing" title="Online Filing | FCC.gov"/>
+<page file="eas.html" text="EAS" title="OET Laboratory Equipment Authorization Electronic Filing Site"/>
+<page file="fccsitemap.html" text="FCC Site Map" title="Site Map of Transition.FCC.gov | FCC.gov"/>
+<page file="oet.html" text="OET Home Page" title="OET -- Welcome to the Office of Engineering and Technology"/>
+<page file="granteeregistration.html" text="Grantee Registration" title="FCC Grantee Registration"/>
+<page file="easreturnto731.html" text="Complete Unfinished Form 731" title="FCC Grantee Registration Confirmation"/>
+<page file="submitcorrespondenceinitial.html" text="Submit Correspondence" title="OET Reply to EAS Form 731 or Test Firm"/>
+<page file="legacytestfirmnameentry.html" text="Register New Test Firm" title="FCC - OET 2.948 Test Firm Registration Report"/>
+<page file="testfirmrenewalentry.html" text="Renew Test Firm/Add Exhibits" title="OET Renew Test Firm/Add Attachments Page"/>
+<page file="returnto159welcome.html" text="Return to 159 Form" title="FCC Template Page"/>
+<page file="modify731grantdate.html" text="Add/Modify Grant Deferral Date" title="Modify Form 731 Grant Deferral Date"/>
+<page file="applicationstatussearch.html" text="Pending Application Status" title="OET Pending Application Status Report"/>
+<page file="genericsearch.html" text="Authorization Search" title="FCC OET Authorization Search"/>
+<page file="granteesearch.html" text="Grantee Search" title="FCC OET Grantee Search"/>
+<page file="pendinggranteesearch.html" text="Pending Grantee Search" title="FCC OET Pending Grantee Search"/>
+<page file="tcbsearch.html" text="TCB Search" title="OET Telecommunications Certification Bodies (TCB) Search"/>
+<page file="testfirmsearch.html" text="Test Firms" title="OET Test Firm Search"/>
+<page file="accreditingbodyreport.html" text="Test Firm Accrediting Bodies" title="Test Firm Accrediting Bodies Report"/>
+<page file="equipmentruleslist.html" text="Equipment Class/Rule Part List" title="FCC OET Equipment Authorization System Equipment Rules List"/>
+<page file="labhelp.html" text="Knowledge Database" title="OET Knowledge Database (KDB)"/>
+<page file="default_004.html" text="Hearing Aid Compatibility Status Reporting" title="FCC: Wireless Telecommunications Bureau: Hearing Aid Compatibility Status Reporting"/>
+<page file="contacts.html" text="More FCC Contact Information..." title="Contact Us | FCC.gov"/>
+<page file="fccprivacypolicy.html" text="Privacy Policy" title="FCC Privacy Policy"/>
+<page file="webpolicies.html" text="Web Policies &amp; Notices" title="Website Policies, Important Notices and Links"/>
+<page file="css.html" text="Customer Service Standards" title="Customer Service Standards of the FCC | FCC.gov"/>
+<page file="default_005.html" text="Freedom of Information Act" title="FOIA | FCC.gov"/>
+</page>
+</site>

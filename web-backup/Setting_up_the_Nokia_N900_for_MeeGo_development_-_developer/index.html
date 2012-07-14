@@ -1,0 +1,411 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+    
+
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+
+
+    <title>Setting up the Nokia N900 for MeeGo development | developer.meego.com</title>
+  
+<link rel="stylesheet" type="text/css" href="index.css" media="all">
+</head>
+<body class="not-front not-logged-in page-node node-type-guide no-sidebars tao">
+  <div class="body-wrapper">
+    <div id="page-wrapper" class="container_24 container-24">
+      <a href="http://developer.meego.com/#content" id="skipnav">Skip navigation</a>
+      <div id="header"><div class="limiter clear-block grid_24 alpha omega">
+                  <div id="logo"><a href="http://developer.meego.com/" title="Home" rel="home"><img src="logo.png" alt="Home" id="logo-image"></a></div>
+                  
+
+<div id="block-nice_menus-2" class="block block-nice_menus">
+  
+  
+      <div class="block-content clear-block ">
+      <ul class="nice-menu nice-menu-right" id="nice-menu-2"><li class="menu-8624 menuparent menu-path-fakelink first  odd  last "><a href="http://fake.link/" title="">MeeGo Developer</a><ul><li class="menu-8622 menu-path-meegocom first  odd "><a href="http://meego.com/" title="">MeeGo</a></li>
+<li class="menu-8623 menu-path-forummeegocom even "><a href="http://forum.meego.com/" title="">MeeGo Forum</a></li>
+<li class="menu-14550 menu-path-wikimeegocom odd "><a href="http://wiki.meego.com/" title="">MeeGo Wiki</a></li>
+<li class="menu-14551 menu-path-bugsmeegocom even "><a href="http://bugs.meego.com/" title="">MeeGo Bugs</a></li>
+<li class="menu-14552 menu-path-conferencemeegocom odd  last "><a href="http://conference.meego.com/" title="">MeeGo Conference</a></li>
+</ul>
+</li>
+</ul>
+    </div>
+  
+  </div>
+
+
+  
+
+<div id="block-search-0" class="block block-search">
+      <div class="block-title">
+            Search    </div>
+  
+  
+      <div class="block-content clear-block ">
+      <form action="http://developer.meego.com/guides/setting-nokia-n900-meego-development" accept-charset="UTF-8" method="post" id="search-block-form">
+<div><div class="container-inline grid_6 push_18 omega">
+  <div class="form-item form-item-labeled" id="edit-search-block-form-1-wrapper">
+      <label for="edit-search-block-form-1">Search this site: </label>
+    <input maxlength="128" name="search_block_form" id="edit-search-block-form-1" size="15" value="" title="Enter the terms you wish to search for." class="form-text" type="text">  </div>
+<div class="form-button edit-submit"><span><input name="op" id="edit-submit" value="Search" class="form-submit" type="submit"></span></div>
+<input name="form_build_id" id="form-e046ec70b26eb0c6ed7120fab690fb1b" value="form-e046ec70b26eb0c6ed7120fab690fb1b" type="hidden">
+<input name="form_id" id="edit-search-block-form" value="search_block_form" type="hidden">
+</div>
+
+</div></form>
+    </div>
+  
+  </div>
+
+
+                <div id="primary-links"><div class="clear-block">
+          <div class="primary-links-wrapper grid_24 alpha omega">
+              <ul class="links primary-links"><li class="menu-1458 first"><a href="http://developer.meego.com/" title="">Home</a></li>
+<li class="menu-40530"><a href="http://developer.meego.com/meego-sdk">SDK and Tools</a></li>
+<li class="menu-40529 active-trail"><a href="http://developer.meego.com/guides">Guides</a></li>
+<li class="menu-1614"><a href="http://developer.meego.com/api/1.2" title="References for MeeGo APIs">API References</a></li>
+<li class="menu-40531 last"><a href="http://developer.meego.com/community">Community</a></li>
+</ul>          </div>
+        </div></div>
+                <div id="site-login-or-register">
+          <ul class="menu">
+                          <li class="first"><a href="http://developer.meego.com/user">Login</a></li>
+              <li class="last"><a href="http://meego.com/user/register">Register</a></li>
+                      </ul>
+        </div>
+      </div></div>
+
+      <div id="branding"><div class="limiter clear-block">
+        <h1 class="site-name"><a href="http://developer.meego.com/"></a></h1>              </div></div>
+            <div id="navigation"><div class="limiter clear-block">
+                </div></div>
+      
+      <div id="page"><div class="limiter clear-block">
+
+        
+        
+        <div id="main" class="">
+                          <h1 class="page-title">Setting up the Nokia N900 for MeeGo development</h1>
+                                                    <div id="content" class="clear-block"><div class="panel-display meego-landing-stacked-1-2 clearfix">
+
+  
+      <div class="center-wrapper mid clearfix">
+              <div class="panel-panel panel-col-first">
+          <div class="inside"><div class="panel-pane pane-block pane-views-exp-guides-panel-pane-1">
+  
+      <h2 class="pane-title">Filter Guides</h2>
+  
+  
+  <div class="pane-content">
+    <form action="http://developer.meego.com/guides" accept-charset="UTF-8" method="get" id="views-exposed-form-guides-panel-pane-1">
+<div><div class="views-exposed-form">
+  <div class="views-exposed-widgets clear-block">
+          <div class="views-exposed-widget">
+                  <label for="edit-keys">
+            Filter by keyword          </label>
+                        <div class="views-widget">
+          <div class="form-item" id="edit-keys-wrapper">
+    <input maxlength="128" name="keys" id="edit-keys" size="15" value="" title="Enter the terms you wish to search for." class="form-text" type="text">  </div>
+        </div>
+      </div>
+          <div class="views-exposed-widget">
+                  <label for="edit-a">
+            by architecture          </label>
+                        <div class="views-widget">
+          <div class="form-item" id="edit-a-wrapper">
+    <select name="a" class="form-select" id="edit-a"><option value="All" selected="selected">&lt;Any&gt;</option><option value="66">ARM</option><option value="67">x86</option></select>  </div>
+        </div>
+      </div>
+          <div class="views-exposed-widget">
+                  <label for="edit-v">
+            by version          </label>
+                        <div class="views-widget">
+          <div class="form-item" id="edit-v-wrapper">
+    <select name="v" class="form-select" id="edit-v"><option value="All" selected="selected">&lt;Any&gt;</option><option value="22">MeeGo 1.0</option><option value="23">MeeGo 1.1</option><option value="24">MeeGo 1.2</option><option value="25">MeeGo all</option></select>  </div>
+        </div>
+      </div>
+          <div class="views-exposed-widget">
+                  <label for="edit-c">
+            by category          </label>
+                        <div class="views-widget">
+          <div class="form-item" id="edit-c-wrapper">
+    <select name="c" class="form-select" id="edit-c"><option value="All" selected="selected">&lt;Any&gt;</option><option value="14">Devices</option><option value="31">Distribution</option><option value="10">Getting started</option><option value="13">Guidelines</option><option value="11">Samples</option><option value="15">Tools</option><option value="12">Tutorials</option></select>  </div>
+        </div>
+      </div>
+        <div class="views-exposed-widget">
+      <div class="form-button edit-submit-guides"><span><input id="edit-submit-guides" value="Apply" class="form-submit" type="submit"></span></div>
+<a href="http://developer.meego.com/guides/setting-nokia-n900-meego-development" class="reset-link active">Reset</a>    </div>
+  </div>
+</div>
+</div></form>
+  </div>
+
+  
+  </div>
+</div>
+        </div>
+      
+              <div class="panel-panel panel-col-last">
+          <div class="inside"><div class="panel-pane pane-node">
+  
+  
+  
+  <div class="pane-content">
+    
+
+<div id="node-239" class="node node-guide">
+  
+  
+      <div class="node-content clear-block prose">
+      <!-- Let's ignore these for now.
+      <div class="attributes grid_9 alpha">
+              </div>
+              <div class="guide-video guide-part grid_18 alpha omega clear-block">
+                  </div>
+       
+      -->
+          <div id="body-content">
+            <div class="plus1-widget"><div class="plus1-score">1</div><div class="plus1-msg"><a href="http://developer.meego.com/user?destination=node%2F239">Log in to vote</a></div></div>
+<!--content-field.tpl-->
+<div class="field-type-datestamp field-date-published">
+      <span>Released:&nbsp;</span>
+  
+        
+      <span class="date-display-single">Wed, 2011-02-16</span>
+    
+</div>
+<!--/content-field.tpl-->
+
+<!--content-field.tpl-->
+
+<!--content-field.tpl-->
+<h2>Prerequisites </h2> 
+<ul><li> You have <a href="http://developer.meego.com/guides/getting-started/getting-started-meego-v1.2-sdk-linux" title="Getting started with the MeeGo v1.2 SDK for Linux">set up MeeGo SDK environment on Linux</a> 
+</li></ul> 
+<h2> Installing the MeeGo image on your Nokia N900 device </h2> 
+<p>These instructions cover installing the MeeGo image on the Nokia N900 using an external SD card without destroying the data from the internal memory of the Nokia N900. For more information on this way of installing MeeGo, see <http: developer.meego.com="" guides="" devices="" installing-meego-nokia-n900-external-mmc-card"="" class="external free" title="Installing MeeGo on N900 using MMC" rel="nofollow">http://developer.meego.com/guides/devices/installing-meego-nokia-n900-external-mmc-card. For information on other ways of installing MeeGo, see <a href="http://wiki.meego.com/ARM/N900" class="external free" title="http://wiki.meego.com/ARM/N900" rel="nofollow">http://wiki.meego.com/ARM/N900</a>.
+</http:></p>
+<p>On Ubuntu and openSUSE:
+</p> 
+<ol><li> Insert the SD card into your computer.
+</li><li> Find out what device the SD card is: 
+<dl><dd> <pre>sudo fdisk -l</pre> 
+</dd><dd> See the disk size information to recognize the SD card from other drives. (Optionally, you can identify the SD card based on differences in the  <code>sudo -l fdisk</code> output before and after inserting the SD card.)
+</dd></dl> 
+</li><li> Unmount the SD card:
+<dl><dd> <pre>sudo umount &lt;sd card&gt;</pre> 
+</dd></dl> 
+</li><li> Download MeeGo image from <a href="http://repo.meego.com/MeeGo/builds/" class="external free" title="http://repo.meego.com/MeeGo/builds/" rel="nofollow">http://repo.meego.com/MeeGo/builds/</a> &gt; folder <code>1.0.99</code> &gt; folder with the latest update* &gt; <code>handset/</code> &gt; <code>images/</code> &gt; <code>meego-handset-armv7l-n900/</code> &gt; <code>meego-handset-armv7l-n900-&lt;meego image version number&gt;-mmcblk0p.raw.bz2</code>.
+<dl><dd> <strong>Note:</strong> For information on how much functionality is known to work on the Nokia N900, see the most recent N900 sanity test results at <a href="http://wiki.meego.com/Quality/HandsetTestReport" class="external free" title="Quality/HandsetTestReport">Quality/HandsetTestReport</a>.
+</dd></dl> 
+</li><li> Download kernel image from the same URL (<a href="http://repo.meego.com/MeeGo/builds/" class="external free" title="http://repo.meego.com/MeeGo/builds/" rel="nofollow">http://repo.meego.com/MeeGo/builds/</a>). The kernel image file name is of the format <code>meego-handset-armv7l-n900-&lt;meego image version number&gt;-vmlinuz-&lt;kernel version number&gt;-n900</code>.
+</li><li> Decompress the MeeGo image (.bz2) file.
+</li><li> Copy the MeeGo image to the SD card:
+<dl><dd> <pre>$ sudo dd bs=4096 if=&lt;raw_image&gt; of=/dev/&lt;SD card&gt;</pre> 
+</dd><dd> <strong>Note:</strong> Copying takes some time. For instructions on how to see the status of the process, see <a href="http://wiki.meego.com/ARM/N900/Install/MMC" class="external free" title="http://wiki.meego.com/ARM/N900/Install/MMC" rel="nofollow">http://wiki.meego.com/ARM/N900/Install/MMC</a>.
+</dd></dl> 
+</li><li> Flash the Nokia N900:
+<ol><li> Insert the SD card into the Nokia N900, attach the battery, and close the back cover. Do not start the N900.
+</li><li> Navigate to <a href="http://tablets-dev.nokia.com/maemo-dev-env-downloads.php" class="external free" title="http://tablets-dev.nokia.com/maemo-dev-env-downloads.php" rel="nofollow">http://tablets-dev.nokia.com/maemo-dev-env-downloads.php</a> and accept the license agreement. 
+</li><li> Download and run flasher:
+<ul><li> On Ubuntu: 
+<ol><li> Download <code>maemo_flasher-3.5_2.5.2.2_i386.deb</code>.
+</li><li> In a 32-bit architecture, install flasher with:
+<dl><dd> <pre>$ sudo dpkg -i maemo_flasher-&lt;version number&gt;i386.deb</pre> 
+</dd></dl> 
+</li><li> Accept license agreements.
+</li><li> Run flasher:
+<dl><dd> <pre>$ sudo flasher-3.5 -l -k &lt;kernel image&gt; -b</pre>		
+</dd></dl> 
+</li></ol> 
+</li><li> On openSUSE:
+<ol><li> Download <code>maemo_flasher-3.5_2.5.2.2.tar.gz</code> and decompress it with the command:
+<dl><dd> <pre>tar xzvf &lt;name of tar file&gt;</pre> 
+</dd><dd> The file is decompressed into the directory <code>maemo_flasher-3.5_2.5.2.2</code>.
+</dd></dl> 
+</li><li> Run flasher:
+<dl><dd> <pre>$ sudo &lt;path to flasher&gt;flasher-3.5 -l -k &lt;kernel image&gt; -b</pre> 
+</dd></dl> 
+</li></ol> 
+</li></ul> 
+</li><li> The command prompt displays text "Suitable USB device not found, waiting." Attach USB cable.
+<dl><dd> The device is booted and MeeGo image runs on your device. If the device does not boot, press the power button.
+</dd></dl> 
+</li></ol> 
+</li></ol> 
+<p>Next time you boot the device, the original kernel is used and your MeeGo OS should boot normally.
+</p> 
+<h2>Setting up the connection</h2> 
+<p>You can use USB or WLAN to connect your Nokia N900 device and your computer. 
+</p>
+<h3>To use USB connection</h3>
+<ol><li> Connect the device to your computer with the USB cable. 
+</li><li> Open a terminal and to set your computer USB IP address, use the following command:
+<dl><dd> <pre> ifconfig usb0 192.168.2.14 up </pre> 
+</dd></dl> 
+</li><li> <a href="#Configuring_device_access_in_Qt_Creator">Configure the device access in Qt Creator</a>. 
+</li></ol> 
+<h3>To use WLAN connection</h3>
+<ol><li> Connect the device to your computer with the USB cable. 
+</li><li> To log into the device, use the following command: 
+<dl><dd> <pre> ssh root@192.168.2.15 </pre> 
+</dd><dd> (password: meego) 
+</dd></dl> 
+</li><li> To view the WLAN IP address of the device, use the following command: 
+<dl><dd> <pre>ifconfig</pre> 
+</dd></dl> 
+</li><li> Unplug the USB cable. 
+</li><li> <a href="#Configuring_device_access_in_Qt_Creator">Configure the device access in Qt Creator (below).
+</a></li></ol><a href="#Configuring_device_access_in_Qt_Creator"> 
+</a><h2><a href="#Configuring_device_access_in_Qt_Creator"></a><a name="Configuring_device_access_in_Qt_Creator">Configuring device access in Qt Creator</a></h2> 
+<img src="qtcreatorconfiguringn900deviceaccessusb.png" alt="" title="" height="606" width="806">
+<p><strong>To configure device access</strong> 
+</p> 
+<ol><li> Open <strong>Tools</strong> &gt; <strong>Options</strong> &gt; <strong>Projects</strong> &gt; <strong>MeeGo Device Configurations</strong>.
+</li><li> In the opened dialog, create a new Device Configuration by clicking on <strong>Add</strong>.
+</li><li> Give the new Device Configuration a name in the Configuration Name text field, and add the following settings in the other test fields:
+<ul><li> Device type: Remote device
+</li><li> Authentication type: Password
+</li><li> Host Name: &lt;device IP address&gt; (USB port IP address 192.168.2.15 by default)
+</li><li> SSH Port: 22
+</li><li> Gdb server: 10000
+</li></ul> 
+<dl><dd> <strong>Note:</strong> If this port is not free, you can select another one.
+</dd></dl> 
+<ul><li> Connection Timeout: 30
+</li><li> User Name: root
+</li><li> Password: meego
+</li></ul> 
+</li><li> Click <strong>Apply</strong>. 
+</li><li> To test the settings, click <strong>Test</strong>.
+<dl><dd> The message "Device configuration successful." is displayed in Device Configuration Test window. 
+</dd></dl> 
+</li><li> Click <strong>Close</strong> and <strong>OK</strong>.
+</li></ol> 
+<p>If the message "Could not connect to host" is displayed, check your setting selections and make sure that the network is connected.
+</p>          </div>
+        </div><!-- #content-wrapper -->
+      </div>
+    </div>
+  
+  </div>
+
+
+  </div>
+
+  
+  </div>
+</div>
+        </div>
+          </div>  
+  
+  
+</div> <!-- /.meego-landing-stacked -->
+</div>
+          
+        </div>
+
+        
+      </div></div>
+     <!-- /page-wrapper -->
+    <div id="footer-wrapper" class="container_24 container-24 clear-block">
+      <div id="footer" class="grid-22 push_1">
+        <div class="limiter clear-block">
+          <div id="footer-inner" class="grid-22 alpha omega">
+                          
+
+<div id="block-menu-primary-links" class="block block-menu">
+  
+  
+      <div class="block-content clear-block ">
+      <!--menu-->  <ul>
+    <li><a href="http://developer.meego.com/" title="">Home</a></li>
+    <li><a href="http://developer.meego.com/meego-sdk">SDK and Tools</a></li>
+    <li><a href="http://developer.meego.com/guides">Guides</a></li>
+    <li><a href="http://developer.meego.com/api/1.2" title="References for MeeGo APIs">API References</a><!--menu-->  <ul>
+    <li><a href="http://developer.meego.com/api/1.2" title="">1.2 API Reference</a></li>
+    <li><a href="http://developer.meego.com/api/1.1" title="">1.1 API Reference</a></li>
+
+  </ul>
+</li>
+    <li><a href="http://developer.meego.com/community">Community</a></li>
+
+  </ul>
+    </div>
+  
+  </div>
+
+
+  
+
+<div id="block-menu_block-1" class="block block-menu_block">
+  
+  
+      <div class="block-content clear-block ">
+      <div class="menu-block-1 menu-name-primary-links parent-mlid-1475 menu-level-1">
+  <!--menu-->  <ul>
+    <li><a href="http://developer.meego.com/" title="">Home</a></li>
+    <li><a href="http://developer.meego.com/meego-sdk">SDK and Tools</a></li>
+    <li><a href="http://developer.meego.com/guides" class="active-trail">Guides</a></li>
+    <li><a href="http://developer.meego.com/api/1.2" title="References for MeeGo APIs">API References</a></li>
+    <li><a href="http://developer.meego.com/community">Community</a></li>
+
+  </ul>
+</div>
+    </div>
+  
+  </div>
+
+
+  
+
+<div id="block-menu-menu-footer-links" class="block block-menu">
+  
+  
+      <div class="block-content clear-block ">
+      <!--menu-->  <ul>
+    <li><a href="http://forum.meego.com/" title="">Support</a></li>
+    <li><a href="http://meego.com/about/privacy-policy" title="">Privacy Policy</a></li>
+    <li><a href="http://meego.com/about/terms-service" title="">Terms of Service</a></li>
+    <li><a href="http://meego.com/about/trademark" title="">Trademark</a></li>
+    <li><a href="http://developer.meego.com/glossary" title="A list of MeeGo defined terms.">Glossary</a></li>
+
+  </ul>
+    </div>
+  
+  </div>
+
+
+  
+
+<div id="block-block-3" class="block block-block">
+  
+  
+      <div class="block-content clear-block prose">
+      <div class="footer-logo"><a href="http://www.linuxfoundation.org/"><span>The linux foundation</span></a></div>
+<div class="footer-text">Linux is a trademark of Linus Torvalds. MeeGo is a registered trademark of The Linux Foundation. </div>
+<div class="footer-note">* Other names and brands may be claimed as the property of others.</div>
+    </div>
+  
+  </div>
+
+
+                      </div>
+        </div>
+      </div>
+    </div> <!-- /footer-wrapper -->
+
+  
+
+  
+
+   <!-- /.body-wrapper -->
+  
+
+</body>
+</html>

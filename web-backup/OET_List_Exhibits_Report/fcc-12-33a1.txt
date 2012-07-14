@@ -1,0 +1,664 @@
+Federal Communications Commission FCC 12-33
+Before the
+Federal Communications Commission
+Washington, D.C. 20554
+In the Matter of
+Amendment of Part 15 of the Commission’s Rules 
+Regarding Unlicensed Personal Communications 
+Service Devices in the 1920-1930 MHz Band
+)
+)
+)
+)
+)
+ET Docket No. 10-97
+REPORT AND ORDER 
+Adopted:  March 22, 2012 Released:  March 23, 2012
+By the Commission:
+I. INTRODUCTION
+1. By this action, we modify Part 15 of the rules governing the operation of Unlicensed 
+Personal Communications Service (UPCS) devices in the 1920-1930 MHz frequency band (UPCS band) 
+to promote more efficient use of the UPCS band and to facilitate the introduction of a new generation of 
+unlicensed devices capable of supporting broadband connectivity using Digital Enhanced Cordless 
+Telecommunications (DECT) technology.1 Specifically, we eliminate the least-interfered channel 
+monitoring threshold for UPCS devices and reduce the number of duplex system access channels that a 
+UPCS device must define and monitor from 40 to 20 channels in order to use the least-interfered channel 
+access method.  These changes will provide UPCS devices, particularly those designed to transmit with 
+wider bandwidths, access to more usable channels (i.e., combined time and spectrum windows) than are 
+permitted under the existing rules and unleash innovative cordless broadband technologies in the UPCS 
+band, while limiting the potential for causing interference to other devices.  We also modify the rules to 
+remove outdated provisions and to make other minor updates.  
+II. BACKGROUND
+2. The 1920-1930 MHz band is allocated to Fixed and Mobile services on a primary basis 
+and is designated for use by UPCS devices on an unlicensed basis.2 Currently, the major use of the 
+1920-1930 MHz band is for unlicensed cordless telephones that operate under Part 15 of the 
+Commission’s rules.3 The Part 15 rules provide that the 1920-1930 MHz band may be used for both 
+asynchronous (generally data) and isochronous (generally voice) UPCS devices, with maximum and 
+minimum emission bandwidths of 2.5 megahertz and 50 kilohertz, respectively.4 UPCS devices operating 
+  
+1 DECT-based radio technology facilitates voice, data, and networking applications with range requirements up to a 
+few hundred meters.
+2 See 47 C.F.R. §§ 2.106, 15.301.
+3 See DECT Solutions at http://www.dect.org.  See also Plantronics, Inc. (Plantronics) Comments at 1.
+4 See 47 C.F.R. §§ 15.303(a) and (d), 15.323(a).  UPCS systems may sub-divide the 2.5 megahertz emission 
+bandwidth as long as the sub-divided emission bandwidth is greater than or equal to 50 kilohertz.  Under the Part 15 
+rules, a UPCS channel is defined as the combined time and spectrum windows that a transmission is intended to 
+occupy.  47 C.F.R. § 15.323(c).  Spectrum window is defined as the amount of spectrum equal to the intended 
+emission bandwidth in which operation is desired.  47 C.F.R. § 15.303(h).
+Federal Communications Commission FCC 12-33
+2
+in the 1920-1930 MHz band are subject to the general conditions of operation for Part 15 devices in that 
+they may not cause harmful interference to authorized radio services and must accept any interference 
+received.5
+3. To facilitate the sharing of spectrum in the UPCS band, the current rules require use of a 
+“spectrum etiquette” that specifies a process for monitoring the time and spectrum windows that a 
+transmission is intended to occupy for signals above a defined threshold (a “listen-before-transmit” 
+protocol).  To protect UPCS devices already using particular time and spectrum windows from 
+transmissions from another device, each UPCS device must monitor the combined time and spectrum 
+windows that it intends to use before beginning transmissions and defer use or find other spectrum 
+windows if the monitored signal level is above the threshold.6 Transmissions may commence with the 
+same emission bandwidth in a monitored time and spectrum window without further monitoring if no 
+signal greater than 30 decibels (dB) above thermal noise is detected in the chosen window.7  
+Alternatively, if the UPCS system defines and the UPCS device can monitor at least 40 duplex system 
+access channels, the UPCS device may access the time and spectrum windows with the lowest signal 
+level below a threshold of 50 dB above thermal noise (henceforth referred to as the “least-interfered 
+channel access method”).8 If the initially selected combined time and spectrum windows are unavailable, 
+the UPCS device may either monitor and select different windows or seek to use the same windows after 
+waiting a randomly chosen amount of time between 10 and 150 milliseconds.9  
+4. On May 6, 2010, the Commission adopted a Notice of Proposed Rulemaking (UPCS 
+Band NPRM) in this proceeding that proposed changes designed to allow UPCS devices to access 
+additional usable channels.10 The Commission took this action in response to a petition for rulemaking 
+filed by the DECT Forum, an industry association that promotes digital cordless radio technology for 
+short-distance voice and data applications.11 In the UPCS Band NPRM, the Commission proposed to 
+increase the least-interfered channel monitoring threshold from 50 to 65 dB above thermal noise and
+sought comment on whether some alternative value or elimination of the threshold would be more 
+  
+5 See 47 C.F.R. § 15.5(b).  
+6 See 47 C.F.R. § 15.323(c)(1)-(12).  See also n.4, supra.  To prevent the monopolization of UPCS-band channels by 
+one or more devices, the Commission’s rules also include UPCS transmission time limits.  See 47 C.F.R. 
+§ 15.323(c)(3).  The access threshold, transmitter power limits, and transmission time limits are designed such that 
+frequency and time reuse both within a system and between systems are possible for indoor operations.
+7 See 47 C.F.R. § 15.323(c)(1)-(3).  UPCS devices that have a power output lower than the permitted maximum may 
+increase their monitoring threshold by 1 dB for each 1 dB that the transmitter power is below the permitted 
+maximum.  See 47 C.F.R. § 15.323(c)(9).  Thermal noise power, typically referred to as thermal noise, is produced 
+by the random thermal agitation of electrons in an electronic circuit.  The thermal noise power (in dBm) for a given 
+emission (i.e., channel) bandwidth is defined by the formula 10 log (1000 x kTB), where k is Boltzmann’s Constant 
+(1.38 x 10-23 W/Hz/K); T is the ambient temperature in degrees Kelvin (e.g., 298º K at room temperature (77º F)); 
+and B is the emission bandwidth of the device in Hertz.  See 47 C.F.R. § 15.303(j).  The thermal noise in a 
+50 kilohertz channel at room temperature is -127 dBm.
+8 See 47 C.F.R. § 15.323(c)(5).  
+9 See 47 C.F.R. § 15.323(c)(6).
+10 See Amendment of Part 15 of the Commission’s Rules Regarding Unlicensed Personal Communications Service 
+Devices in the 1920-1930 MHz Band, ET Docket No. 10-97, RM-11485, Notice of Proposed Rulemaking, 
+25 FCC Rcd 5118 (2010) (UPCS Band NPRM).
+11 See “Petition for Rulemaking to coordinate the service rules of the UPCS Band with those ultimately adopted for 
+the AWS H Block,” Petition for Rulemaking, filed Aug. 15, 2008, by DECT Forum, placed on Public Notice for 
+comment on Sept. 4, 2008 (Report No. 2873; RM-11485) (DECT Forum Petition).
+Federal Communications Commission FCC 12-33
+3
+appropriate.12 The Commission also proposed to reduce the number of channels that must be defined and 
+monitored under the least-interfered channel access method from 40 to 20 channels.13 It additionally 
+sought comment on removing Sections 15.303(b) and (e), 15.307, and 15.311 regarding coordination with 
+UTAM, Inc., since the relocation of incumbent fixed services from the band is now complete.14 The 
+Commission further sought comment on a number of proposed updates to the Part 15 UPCS rules 
+regarding measurement procedures and definitions.15 Eight parties filed comments in response to the 
+UPCS Band NPRM; these parties all strongly support the Commission’s proposals.16 No parties filed 
+reply comments.    
+III. DISCUSSION 
+5. Based on our analysis of the record, we decide to eliminate the 50 dB above thermal 
+noise monitoring threshold for UPCS devices.  Without this threshold, after monitoring the required 
+minimum number of channels, UPCS devices may use the combined time and spectrum windows with the 
+lowest signal level, rather than using only those windows with the lowest signal level below 50 dB above 
+thermal noise.  Coupled with a reduction in the number of channels that must be monitored, elimination 
+of this threshold will permit greater utilization of the UPCS band.17 For example, manufacturers could 
+optimize cordless telephones for higher-density applications, such as office environments.  These changes 
+are also expected to encourage manufacturers to introduce innovative products and services using Internet 
+  
+12 See UPCS Band NPRM, 25 FCC Rcd at 5124 ¶ 14.  The UPCS Band NPRM acknowledged that the DECT Forum 
+and others asserted that an increase in the least-interfered channel monitoring threshold is needed so the out-of-band 
+emissions from future devices transmitting in the 1915-1920 MHz Advanced Wireless Service (AWS) band –
+commonly known as the “H Block” – will not restrict UPCS devices’ access to a major part of the 1920-1930 MHz 
+band.  The UPCS Band NPRM noted that the issue of out-of-band emissions for the “H Block” was being addressed 
+in a separate proceeding and thus did not solicit comments on nor make any decision with respect to this issue.  See 
+UPCS Band NPRM, 25 FCC Rcd at 5122 ¶ 9, 5125-26 ¶ 17.  Nonetheless, several commenters on the UPCS Band 
+NPRM express support for increasing the monitoring threshold for this reason.  See DECT Forum Comments at 1, 4; 
+DSPG Comments at 1-3; Gigaset Comments at 1; Panasonic Comments at 2-3; Plantronics Comments at 2-3; 
+TIA Comments at 5; and VTech Comments at 2-3.
+13 See UPCS Band NPRM 25 FCC Rcd at 5123-25 ¶¶ 12-16.
+14 See UPCS Band NPRM 25 FCC Rcd at 5126-27 ¶ 18.  UTAM, Inc., which the Commission designated to 
+coordinate and manage the transition of the 1910-1930 MHz band from incumbent fixed microwave operations to 
+UPCS use, is a non-profit corporation composed of representatives from a broad range of UPCS equipment 
+manufacturers that the Unlicensed PCS Ad Hoc Committee for 2 GHz Microwave Transition and Management 
+(UTAM) incorporated in July 1993.  47 C.F.R. § 15.307(a).  See also Amendment of the Commission’s Rules to 
+Establish New Personal Communications Services, GEN Docket No. 90-314, Second Report and Order, 
+8 FCC Rcd 7700, 7736 n.74, 7783 ¶ 202 (1993) (Broadband PCS Second R&O); UTAM Reply Comments, 
+GEN Docket No. 90-314, ET Docket No. 92-100, filed July 20, 1993, at 10 and Appendix A, Certificate of 
+Incorporation of UTAM, Inc.
+15 See UPCS Band NPRM at 5127 ¶ 19.  
+16 See generally DECT Forum Comments; DSP Group, Inc. (DSPG) Comments; Gigaset Communications GmbH 
+(Gigaset) Comments; Panasonic Corporation of North America (Panasonic) Comments; Plantronics, Inc. 
+(Plantronics) Comments; Telecommunications Industry Association (TIA) Comments; Uniden America Corporation 
+(Uniden) Comments; and VTech Communications, Inc. (VTech) Comments.  Comments in this proceeding, 
+ET Docket No. 10-97, RM-11485, may be viewed in the Commission’s Electronic Comment Filing System, which 
+can be found on the Commission’s web site at http://fjallfoss.fcc.gov/ecfs/comment_search/input?z=u67ee and 
+accessed under Doing Business Public Comment (ECFS) on the Commission’s main web page at 
+http://www.fcc.gov.
+17 See DECT Forum’s Petition, Annex I, at 7; Panasonic Comments at 3-4; Plantronics Comments at 2; TIA 
+Comments at 5-7; Uniden Comments at 2; and VTech Comments at 3-4.  
+Federal Communications Commission FCC 12-33
+4
+protocol connectivity to combine access to broadband and telephony applications in a new generation of 
+cordless devices.18
+6. First, we conclude that the 50 dB above thermal noise least-interfered channel monitoring 
+threshold for UPCS devices operating in the 1920-1930 MHz band should be eliminated.  Eliminating the 
+least-interfered channel monitoring threshold will allow UPCS devices to use additional time and 
+spectrum windows with higher signal levels and will allow access to more usable time and spectrum 
+windows than under the current rule, thereby increasing the flexibility for innovation, utilization, and 
+efficiency of the UPCS band.19 Further, this change will not inhibit the ability of UPCS devices to access 
+available time and spectrum windows.  Moreover, eliminating, instead of just increasing, the monitoring 
+threshold, will provide manufacturers with the flexibility to produce UPCS systems that can operate with 
+the maximum possible traffic capacity and thereby maximize the utilization of the UPCS band.  We agree 
+with commenters that a higher monitoring threshold would not result in an increase in interference due to 
+the path-loss and propagation characteristics of existing UPCS deployments and because UPCS devices 
+are designed to use minimal power at all times.20 Finally, we note that although the DECT standard, 
+which is used in over 100 countries, including all European countries, defines an upper signal limit at 
+which a channel is considered busy and should not be used, it has no upper power threshold on 
+least-interfered channels, and it appears that devices are operating under rules similar to those that we are 
+adopting here without experiencing interference problems.21
+7. Without a predetermined maximum threshold, manufacturers will also have the flexibility 
+to select an appropriate threshold to prevent harmful interference to other UPCS devices.  We expect that 
+UPCS devices will continue to operate using the DECT standard, which includes a listen-before-transmit 
+protocol, and that UPCS devices will continue to monitor the desired channels to avoid causing harmful 
+interference to other UPCS devices.  Thus, they will not interfere with each other once a device is 
+transmitting on a channel.  Because UPCS devices operate at relatively low power levels, two devices 
+would need to be within less than 1 foot of each other to impact one another.22 Thus, the probability of 
+interference occurring among UPCS devices operating with a higher monitoring threshold or between 
+such devices and those operating under the existing monitoring threshold will remain low.  Although 
+eliminating the maximum monitoring threshold could, in some cases, result in an increased number of 
+UPCS devices operating simultaneously in a given location, they would be operating with relatively low 
+peak transmitter power and out-of-band emissions limits.  Thus, relatively higher-power Advanced 
+Wireless Service (AWS) and Personal Communications Service (PCS) devices (either fixed or mobile) 
+  
+18 See, e.g., Panasonic Comments at 4.  The UPCS band is used primarily by cordless phones that employ DECT 
+technology – a flexible digital radio access standard for cordless communications in residential, corporate, and 
+public environments.  In addition to providing for voice and multimedia traffic, the DECT standard includes many 
+forward-looking technical features that can allow DECT-based cordless systems to be used to offer new 
+communications services such as Internet access and interworking with other fixed and wireless services such as 
+Integrated Services Digital Network (ISDN) and Global System for Mobile Communications (GSM).  See DECT 
+Forum website at http://www.dect.org/.  See also Panasonic Comments in GN Dkt. 09-157, GN Dkt. 09-51 at 7 
+(filed Sept. 30, 2009).
+19 See, e.g., TIA Comments at 5; DECT Forum Petition, Annex I, at 7, 17-19.
+20 See, e.g., DSP Group Comments at 3; Gigaset Comments at 1; Panasonic Comments at 3; Plantronics Comments 
+at 2-3; TIA Comments at 5.
+21 See European Standard (Telecommunications series) Digital Enhanced Cordless Telecommunications (DECT); 
+Common Interface (CI); Part 3; Medium Access Control (MAC) layer, ETSI EN 300 175-3 V1.9.1 (2005-9) 
+at 194-199.  See also DECT Forum Petition, Annex I, at 7, 9.
+22 See DECT Forum Petition, Annex I, at 30.
+Federal Communications Commission FCC 12-33
+5
+receiving in the adjacent 1915-1920 MHz and 1930-1990 MHz bands, respectively, will not experience 
+harmful interference in such cases.        
+8. Second, we conclude that the minimum number of channels that must be defined and 
+monitored under the least-interfered channel access method can be reduced from 40 to 20 channels 
+without posing an additional risk of interference to adjacent band or in-band operations, nor inhibiting the 
+ability of UPCS devices to access available channels.23 Reducing the required number of channels that 
+must be defined and monitored to 20 channels will enable UPCS devices that define fewer than 
+40 channels (i.e., use wider emission bandwidths) to use the least-interfered channel access method and 
+access additional usable channels, and thereby encourage manufacturers to produce cordless products that 
+can provide access to broadband technologies.24 This action will serve the public interest by promoting 
+increased use of the UPCS band for advanced services and allowing state-of-the-art UPCS devices that 
+can provide higher throughputs (i.e., data rates) to operate under the least-interfered channel access 
+method, thereby further improving the efficiency of the UPCS band, while maintaining equal access to 
+the available spectrum on a shared basis for all users.
+9. We find that modifying these rules will provide significant benefits to manufacturers and 
+consumers.  Because the new rules will include no maximum monitoring threshold and fewer channels to 
+define and monitor, UPCS-band products that have already been authorized will continue to be in 
+compliance with our technical rules, and UPCS device manufacturers will have the option to introduce 
+new technologies and services that will increase the utilization and efficiency of the UPCS band and 
+benefit consumers.  Manufacturers may choose to produce UPCS devices that provide higher data rates 
+and enable access to broadband technologies, which will increase the efficiency of the UPCS band, 
+enhance user experience, and facilitate users’ cordless access to broadband applications.  Manufacturers 
+would only incur costs if they choose to take advantage of the flexibility afforded by the new rules, and 
+even then we expect such costs would be negligible and consistent with routine design modifications that 
+often occur over the life of a product.    
+10. In addition, we are taking several actions to update the rules in other ways.  We are 
+modifying the Part 15 UPCS rules to reflect that UPCS devices no longer need to protect fixed microwave
+incumbents in the 1920-1930 MHz band and are no longer coordinated by UTAM, Inc.  Because the rules 
+to transition the 1920-1930 MHz band from incumbent fixed microwave operations to UPCS use sunset 
+  
+23 See generally DECT Forum Comments; DSPG Comments; Gigaset Comments; Panasonic Comments; Plantronics 
+Comments; TIA Comments; Uniden Comments; and VTech Comments.  DSPG, TIA, and VTech further argue that 
+reducing the required number of monitored channels from 40 to 20 channels is justified by the Commission’s prior 
+decision to increase the maximum UPCS emission bandwidth from 1.25 to 2.5 megahertz.  See DSPG Comments at 
+2-3; TIA Comments at 5; and VTech Comments at 3. See Amendment of Part 2 of the Commission’s Rules to 
+Allocate Spectrum Below 3 GHz for Mobile and Fixed Services to Support the Introduction of New Advanced 
+Wireless Services, including Third Generation Wireless Systems, ET Docket No. 00-258, Petition for Rule Making 
+of the Wireless Information Networks Forum Concerning the Unlicensed Personal Communications Service, 
+RM-9498, Petition for Rule Making of UT Starcom, Inc., Concerning the Unlicensed Personal Communications 
+Service, RM-10024, Amendment of Section 2.106 of the Commission’s Rules to Allocate Spectrum at 2 GHz for 
+use by the Mobile-Satellite Service, ET Docket No. 95-18, Sixth Report and Order, Third Memorandum Opinion 
+and Order, and Fifth Memorandum Opinion and Order, 19 FCC Rcd 20720, 20755 ¶ 79-80 (2004) (AWS Sixth 
+R&O).
+24 See DSPG Comments at 2-3; Plantronics Comments at 2; TIA Comments at 6; and VTech Comments at 3.  See 
+the Office of Engineering and Technology’s (OET’s) Knowledge Database Publication No. (KDB) 377704 for an 
+explanation of how the former least-interfered channel access rules in Section 15.232(c)(5) applied to a DECT 
+CAT-iq system that defines five frequency bands divided into 12 time slots for each band, for a total of 60 duplex 
+time/frequency windows.  KDB 377704 can be accessed at https://fjallfoss.fcc.gov/oetcf/kdb/index.cfm.  Note that 
+the interpretation contained in KDB 377704 was specific to a system that defined at least 40 channels and may not 
+be applicable to systems that define fewer than 40 channels. 
+Federal Communications Commission FCC 12-33
+6
+in 2005, there is no longer a need for Sections 15.307(a) and (c)-(h), which set forth the expired 
+coordination requirements.25 Furthermore, because UPCS devices are no longer coordinated by 
+UTAM, Inc., the definitions in Section 15.303(b) and (e) that were applicable when UPCS devices were 
+either coordinatable or non-coordinatable and the UTAM, Inc.-related labeling requirement in 
+Section 15.311 are no longer necessary.26 Thus, we are eliminating Sections 15.303(b) and (e), 15.307(a) 
+and (c)-(h), and 15.311 of the rules.
+11. We maintain, however, the UTAM, Inc. membership requirement for UPCS-band device 
+manufacturers in Section 15.307(b).27 Under the relocation funding plan approved by the Commission, 
+UTAM, Inc., acting on behalf of future unlicensed PCS manufacturers in the 1910-1930 MHz band, paid 
+to relocate or agreed to share the costs to relocate incumbent services in the band, and future band 
+entrants would reimburse it for their share of those incurred costs.  UTAM, Inc. has informed the 
+Commission that it has outstanding contractual liabilities from clearing the 1910-1930 MHz band of 
+incumbent microwave stations.28 Although UTAM, Inc. expects that the cost-sharing reimbursement(s) 
+that it will eventually receive from the AWS licensee(s) of the 1915-1920 MHz band will enable it to pay 
+these outstanding liabilities, it must remain in existence until these liabilities are paid.29 UTAM, Inc. 
+submits that for it to remain in existence, the Commission cannot eliminate the membership requirement 
+because membership fees are its sole source of operating revenue.  UTAM, Inc. argues that if the 
+  
+25 See “Broadband PCS Entities and Fixed Microwave Services Licensees Reminded of April 4, 2005 Sunset of 
+Relocation Cost Compensation and Microwave Cost Sharing Rules,” Public Notice, DA 05-612, 
+(rel. March 8, 2005).  See also 47 C.F.R. §§ 24.253, 101.79.  
+26 See “Unlicensed PCS Devices Will No Longer Be Subject To Coordination Requirements After April 4, 2005,” 
+Public Notice, DA 05-1005, (rel. April 4, 2005).
+27 Under Section 15.307(b), each applicant for FCC equipment authorization of a UPCS-band device must be a 
+participating member of UTAM, Inc.  See 47 C.F.R. § 15.307(b).  
+28 See UTAM, Inc. Ex Parte comments, filed April 27, 2011, at 2; UTAM, Inc. Ex Parte presentation, filed 
+June 6, 2011, at 5.  In 1995, the Commission affirmed its designation of UTAM, Inc. to manage the transition of the 
+1910-1930 MHz band from the Private Operational Fixed Microwave Service (POFS) to unlicensed PCS operations.  
+See Amendment of the Commission’s Rules to Establish New Personal Communications Services, GEN Docket 
+No. 90-314, Fourth Memorandum Opinion and Order, 10 FCC Rcd 7955, 7967 ¶ 38 (1995) (Broadband PCS 
+Fourth MO&O).  Some of these POFS operations were paired with links in other spectrum assigned for licensed 
+PCS operations.  In some cases, the PCS licensees assumed responsibility for relocating the paired POFS links, and 
+UTAM, Inc. agreed to reimburse the PCS licensees a pro rata share for the spectrum cleared in the 1910-1930 MHz 
+band.  See UTAM, Inc. Ex Parte comments, filed April 27, 2011, at 2; UTAM, Inc. Ex Parte presentation, filed 
+June 6, 2011, at 5.  In 2004, the Commission reallocated the 1910-1920 MHz band from the UPCS for AWS and 
+Broadband PCS operations.  As part of this reallocation, the Commission determined that UTAM, Inc. was entitled 
+to a reimbursement of 25 percent – on a pro rata basis – of the total costs it had incurred in clearing the 
+1910-1930 MHz band of incumbent microwave stations, including any future payment obligations, from future 
+AWS licensees in the 1915-1920 MHz AWS-2 band.  See AWS Sixth R&O, 19 FCC Rcd at 20740 ¶ 41, 20745 ¶ 53; 
+Improving Public Safety Communications in the 800 MHz Band, Consolidating the 800 and 900 MHz 
+Industrial/Land Transportation and Business Pool Channels, WT Docket 02-55, Amendment of Part 2 of the 
+Commission’s Rules to Allocate Spectrum Below 3 GHz for Mobile and Fixed Services to Support the Introduction 
+of New Advanced Wireless Services, including Third Generation Wireless Systems, ET Docket No. 00-258, Petition 
+for Rule Making of the Wireless Information Networks Forum Concerning the Unlicensed Personal 
+Communications Service, RM-9498, Petition for Rule Making of UT Starcom, Inc., Concerning the Unlicensed 
+Personal Communications Service, RM-10024, Amendment of Section 2.106 of the Commission’s Rules to Allocate 
+Spectrum at 2 GHz for use by the Mobile Satellite Service, ET Docket No. 95-18, Report and Order, Fourth Report 
+and Order, Fourth Memorandum Opinion and Order, and Order, 19 FCC Rcd 14969, 15088 ¶ 227 (2004) (800 
+MHz R&O).  When UTAM, Inc. receives the pro rata share owed by future AWS licensees, it will in turn reimburse 
+the PCS licensees for their costs in relocating the POFS operations.
+29 See UTAM, Inc. Ex Parte comments, filed April 27, 2011, at 2.
+Federal Communications Commission FCC 12-33
+7
+membership requirement were eliminated, it would inequitably place the costs of maintaining 
+UTAM, Inc. on existing members, thereby undermining the original purpose of Section 15.307(b) to 
+equitably distribute the costs of clearing the 1910-1930 MHz band across the manufacturers producing 
+devices that operate in the band.30 As noted above, the Commission determined that cost sharing was 
+integral to clearing the UPCS band of incumbent services so new unlicensed devices could be introduced 
+in the band.  UTAM, Inc. has made a persuasive case that it has incurred obligations, as a result of the 
+UPCS band clearing, that have not been satisfied.  We conclude that, if we were to eliminate the 
+membership requirement, there would be no mechanism to ensure that outstanding cost sharing 
+obligations are satisfied.  The UPCS Band NPRM proposed no alternative that would equitability 
+distribute these obligations among all manufacturers of equipment in the band, including those who 
+would introduce new products in the band in the future.  For these reasons, we decide to maintain the 
+UTAM, Inc. membership requirement for UPCS-band device manufacturers contained in 
+Section 15.307(b).
+12. Also, we are correcting the Part 15 UPCS rules to make them consistent with previous 
+Commission decisions affecting these rules.  Specifically, we are removing the definition in Section 
+15.303(i) that was applicable when asynchronous and isochronous operations were in separate sub-bands; 
+amending Section 15.319 to specifically state that both asynchronous and isochronous operations are 
+permitted in the 1920-1930 MHz band, consistent with the decision in the AWS Sixth R&O;31 revising 
+Section 15.323 to correct a typographical error in the second sentence of paragraph (a); and correcting 
+paragraphs (d) and (e) to reference “bands” instead of “sub-bands.”  In addition, we are amending 
+Sections 15.31(a)(2) and 15.38(b)(12) of the rules to reference the latest version of the 
+ANSI C63.17-2006 standard by which UPCS devices must be measured for compliance with the 
+requirements in Part 15 Subpart D of the rules.
+13. To help ensure that the UPCS device rules continue to reflect the most appropriate 
+industry standards, we delegate to the Chief, Office of Engineering and Technology (OET), the authority 
+to approve for use new versions of the ANSI C63.17 standard for methods of measurement of the 
+electromagnetic and operational compatibility of UPCS devices to the extent that the changes do not raise 
+major compliance issues.  At the same time, we recognize the necessity to provide opportunity for notice 
+and comment on any changes or modifications that could affect compliance with our regulations.  
+Therefore, in cases where major changes have been made in this standard that could affect compliance, 
+the Commission will initiate an appropriate rulemaking proceeding to consider adoption of updated 
+versions of the ANSI C63.17 standard.
+IV. PROCEDURAL MATTERS
+A. Final Regulatory Flexibility Analysis
+14. As required by the Regulatory Flexibility Act (RFA),32 an Initial Regulatory Flexibility 
+Analysis (IRFA) for ET Docket No. 10-97 was incorporated into the UPCS Band NPRM.33 The 
+Commission sought written public comment on the possible significant economic impact of the proposed 
+policies and rules on small entities in the UPCS Band NPRM, including comments on the IRFA.  No 
+  
+30 Id. at 2-3.
+31 See AWS Sixth R&O, 19 FCC Rcd at 20755 ¶ 79.
+32 See 5 U.S.C. § 603. 
+33 See UPCS Band NPRM, 25 FCC Rcd at 5132 (Appendix B).   
+Federal Communications Commission FCC 12-33
+8
+parties commented specifically on the IRFA.  Pursuant to the RFA,34 a Final Regulatory Flexibility 
+Analysis is contained in Appendix B.
+B. Paperwork Reduction Analysis
+15. This Report and Order contains no new and modified information collections subject to 
+the Paperwork Reduction Act of 1995 (PRA), Public Law 104-13.
+C. Congressional Review Act
+16. The Commission will send a copy of this Report and Order in a report to be sent to 
+Congress and the Government Accountability Office pursuant to the Congressional Review Act, 
+see 5 U.S.C. § 801(a)(1)(A).
+V. ORDERING CLAUSES 
+17. Accordingly, IT IS ORDERED, pursuant to Sections 4(i), 302, 303(e), 303(f), and 307 of 
+the Communications Act of 1934, as amended, 47 U.S.C. §§ 154(i), 302a, 303(e), 303(f), and 307, that 
+this Report and Order in ET Docket No. 10-97 is hereby ADOPTED.
+18. IT IS FURTHER ORDERED that Part 15 of the Commission’s rules IS AMENDED as 
+set forth in Appendix A.  These rule revisions will take effect 30 days after a summary of the Report and 
+Order is published in the Federal Register.
+19. IT IS FURTHER ORDERED that the Chief, Office of Engineering and Technology 
+(OET), is DELEGATED AUTHORITY to approve for use new versions of the ANSI C63.17 standard for 
+methods of measurement of UPCS devices to the extent that the changes do not raise major compliance 
+issues.
+20. IT IS FURTHER ORDERED that the Consumer and Governmental Affairs Bureau, 
+Reference Information Center, SHALL SEND a copy of this Order, including the Final Regulatory 
+Flexibility Analysis, to the Chief Counsel for Advocacy of the Small Business Administration.
+21. IT IS FURTHERED ORDERED that the Commission SHALL SEND a copy of this 
+Report and Order in a report to be sent to Congress and the Government Accountability Office pursuant 
+to the Congressional Review Act, see 5 U.S.C. § 801(a)(1)(A). 
+FEDERAL COMMUNICATIONS COMMISSION
+ 
+Marlene H. Dortch
+Secretary
+  
+34 See 5 U.S.C. § 604.  
+Federal Communications Commission FCC 12-33
+9
+APPENDIX A
+Final Rules
+For the reasons discussed above, the Federal Communications Commission amends Title 47 of the Code 
+of Federal Regulations, Part 15, to read as follows:
+Part 15 – RADIO FREQUENCY DEVICES
+1. The authority citation for Part 15 continues to read as follows:
+AUTHORITY: 47 U.S.C. 154, 302a, 303, 304, 307, 336, and 544a.
+2. Section 15.31 is amended by revising paragraph (a)(2) to read as follows:
+§ 15.31  Measurement standards.
+(a) * * *
+(1) * * *
+(2) Unlicensed Personal Communications Service (UPCS) devices are to be measured for compliance 
+using ANSI C63.17-2006: ‘‘Methods of Measurement of the Electromagnetic and Operational 
+Compatibility of Unlicensed Personal Communications Services (UPCS) Devices’’ (incorporated by 
+reference, see § 15.38).  This incorporation by reference was approved by the Director of the Federal 
+Register in accordance with 5 U.S.C. 552(a) and 1 CFR part 51.
+* * * * *
+3. Section 15.38 is amended by revising paragraph (b)(12) to read as follows:
+§ 15.38 Incorporation by reference.
+* * * * *
+(b) * * *
+(12)  ANSI C63.17-2006: “Methods of Measurement of the Electromagnetic and Operational 
+Compatibility of Unlicensed Personal Communications Services (UPCS) Devices,” 2006, IBR approved 
+for § 15.31.
+* * * * *  
+4. Section 15.303 is amended by removing paragraphs (b), (e), and (i), and redesignating the remaining 
+paragraphs in alphabetical order.
+5. Section 15.307 is amended by removing paragraphs (a) and (c) through (h), and redesignating 
+paragraph (b) as the introductory paragraph.
+6. Part 15, Subpart D is amended by removing Section 15.311.
+Federal Communications Commission FCC 12-33
+10
+7. Section 15.319 is amended by revising paragraph (b) to read as follows:
+§ 15.319 General technical requirements.
+* * * * *
+(b) All transmissions must use only digital modulation techniques.  Both asynchronous and isochronous 
+operations are permitted within the 1920-1930 MHz band.
+* * * * *
+8. Section 15.323 is amended by revising the caption, the second sentence of paragraph (a), the first 
+sentence of paragraph (c)(5), the first two sentences of paragraph (d), and the first sentence of paragraph 
+(e) to read as follows:
+§ 15.323 Specific requirements for devices operating in the 1920-1930 MHz band.
+(a) * * * The emission bandwidth shall be less than 2.5 MHz. * * * 
+* * * * *
+(c) * * *
+(5) If access to spectrum is not available as determined by the above, and a minimum of 20 duplex 
+system access channels are defined for the system, the time and spectrum windows with the lowest power 
+level may be accessed. * * * 
+* * * * *
+(d) Emissions outside the band shall be attenuated below a reference power of 112 milliwatts as follows: 
+30 dB between the band and 1.25 MHz above or below the band; 50 dB between 1.25 and 2.5 MHz above 
+or below the band; and 60 dB at 2.5 MHz or greater above or below the band.  Emissions inside the band 
+must comply with the following emission mask: In the bands between 1B and 2B measured from the 
+center of the emission bandwidth the total power emitted by the device shall be at least 30 dB below the 
+transmit power permitted for that device; in the bands between 2B and 3B measured from the center of 
+the emission bandwidth the total power emitted by an intentional radiator shall be at least 50 dB below the 
+transmit power permitted for that radiator; in the bands between 3B and the band edge the total power 
+emitted by an intentional radiator in the measurement bandwidth shall be at least 60 dB below the 
+transmit power permitted for that radiator.* * * 
+(e) The frame period (a set of consecutive time slots in which the position of each time slot can be 
+identified by reference to a synchronizing source) of an intentional radiator operating in this band shall be 
+20 milliseconds or 10 milliseconds/X where X is a positive whole number. * * * 
+* * * * *
+Federal Communications Commission FCC 12-33
+11
+APPENDIX B
+Final Regulatory Flexibility Analysis
+Report and Order in ET Docket No. 10-97   
+As required by the Regulatory Flexibility Act of 1980, as amended (RFA),1 an Initial Regulatory 
+Flexibility Analysis (IRFA) was incorporated in the Notice of Proposed Rulemaking (Unlicensed 
+Personal Communications Service (UPCS) Band NPRM) in ET Docket No. 10-97.2 The Commission 
+sought written public comment on the proposals in the UPCS Band NPRM, including comment on the 
+IRFA.  This present Final Regulatory Flexibility Analysis (FRFA) conforms to the RFA.3
+A.  Need for, and Objectives of, the Report and Order
+In this Report and Order, the Commission takes steps to improve the operation of unlicensed 
+Personal Communications Service (UPCS) devices operating in the 1920-1930 MHz band (known as the 
+UPCS band), while limiting the potential for in-band and adjacent-band interference and maintaining 
+equal access to the available spectrum on a shared basis for all users.  
+In this Report and Order, the objectives of the Commission are to improve the utilization of the 
+UPCS band by allowing access to additional usable time and spectrum windows whose use is restricted 
+under the current rules, to reduce infrastructure costs through allowing a greater density of UPCS devices 
+to be used with fewer base stations, and to allow UPCS devices that use wider bandwidth channels, but 
+define fewer than 40 channels, to use the UPCS least-interfered channel access method and access 
+additional usable time and spectrum windows.  Specifically, the Commission eliminates the 50 dB above 
+thermal noise signal threshold that UPCS devices must monitor when using the least-interfered channel 
+access method.  Under this method, UPCS devices would survey the required minimum number of 
+channels and use the combined time and spectrum windows with the lowest signal level, instead of using 
+only the windows with the lowest signal level below 50 dB above thermal noise.  The Commission also 
+reduces from 40 to 20 channels the number of channels a UPCS device must define and monitor in order 
+to use the least-interfered channel access method.  In addition, this Report and Order updates the Part 15 
+UPCS rules to reflect that UPCS devices no longer need to protect incumbent fixed microwave radio 
+stations in the 1920-1930 MHz band and are no longer coordinated by UTAM, Inc., and to make them 
+consistent with previous changes to the rules.
+B.  Summary of Significant Issues Raised by Public Comments in Response to the IRFA
+No public comments were received in response to the IRFA in the UPCS Band NPRM.
+  
+1 See 5 U.S.C. § 603.  The RFA, see 5 U.S.C. § 601 – 612, has been amended by the Small Business Regulatory 
+Enforcement Fairness Act of 1996 (SBREFA), Pub. L. No. 104-121, Title II, 110 Stat. 857 (1996), and the Small 
+Business Jobs Act of 2010, Public Law No. 111-240, 124 Stat. 2504 (2010).
+2 See Amendment of Part 15 of the Commission’s Rules Regarding Unlicensed Personal Communications Service 
+Devices in the 1920-1930 MHz Band, ET Docket No. 10-97, RM-11485, Notice of Proposed Rulemaking, 
+25 FCC Rcd 5118, 5132-36 (2010) (UPCS Band NPRM).
+3 See 5 U.S.C. § 604.
+Federal Communications Commission FCC 12-33
+12
+C. Response to Comments by the Chief Counsel for Advocacy of the Small Business 
+Administration
+Pursuant to the Small Business Jobs Act of 2010, the Commission is required to respond to any 
+comments filed by the Chief Counsel for Advocacy of the Small Business Administration (SBA), and to 
+provide a detailed statement of any change made to the proposed rules as a result of those comments.  The 
+Chief Counsel did not file any comments in response to the proposed rules in this proceeding.
+D.  Description and Estimate of the Number of Small Entities to Which the Proposed 
+Rule Will Apply.
+The RFA directs agencies to provide a description of and, where feasible, an estimate of the 
+number of small entities that may be affected by the proposed rules, if adopted.4 The RFA generally 
+defines the term "small entity" as having the same meaning as the terms "small business," "small 
+organization," and "small governmental jurisdiction." In addition, the term "small business" has the same 
+meaning as the term "small business concern" under the Small Business Act.5 A small business concern 
+is one which:  (1) is independently owned and operated; (2) is not dominant in its field of operation; and 
+(3) satisfies any additional criteria established by the SBA.6
+Nationwide, there are a total of approximately 27.5 million small businesses, according to the 
+SBA.7  A “small organization” is generally “any not-for-profit enterprise which is independently owned 
+and operated and is not dominant in its field.”8 Nationwide, as of 2002, there were approximately 
+1.6 million small organizations.9 The term “small governmental jurisdiction” is defined generally as 
+“governments of cities, towns, townships, villages, school districts, or special districts, with a population 
+of less than fifty thousand.”10 Census Bureau data for 2002 indicate that there were 87,525 local 
+governmental jurisdictions in the United States.11 We estimate that, of this total, 84,377 entities were 
+“small governmental jurisdictions.”12 Thus, we estimate that most governmental jurisdictions are small.
+The changes adopted in this Report and Order affect fixed service (FS) stations licensed under 
+Part 101 of our rules, UPCS stations, and wireless equipment manufacturers and frequency coordinators.
+  
+4 Id. at § 603(b)(3).
+5 5 U.S.C. § 601(3) (incorporating by reference the definition of “small business concern” in 15 U.S.C. § 632). 
+Pursuant to the RFA, the statutory definition of a small business applies “unless an agency, after consultation with the 
+Office of Advocacy of the Small Business Administration and after opportunity for public comment, establishes one or 
+more definitions of such term which are appropriate to the activities of the agency and publishes such definition(s) in 
+the Federal Register.”  5 U.S.C. § 601(3).
+6 Small Business Act, 15 U.S.C. § 632 (1996).
+7 See SBA, Office of Advocacy, “Frequently Asked Questions,” http://www.sba.gov/advo/stats/sbfaq.pdf (accessed 
+Dec. 2010).
+8 5 U.S.C. § 601(4).
+9 Independent Sector, The New Nonprofit Almanac & Desk Reference (2002). 
+10 5 U.S.C. § 601(5). 
+11 U.S. Census Bureau, Statistical Abstract of the United States: 2006, Section 8, page 272, Table 415.
+12 We assume that the villages, school districts, and special districts are small and total 48,558.  See U.S. Census 
+Bureau, Statistical Abstract of the United States: 2006, section 8, page 273, Table 417.  For 2002, Census Bureau 
+data indicate that the total number of county, municipal, and township governments nationwide was 38,967, of 
+which 35,819 were small.  Id.
+Federal Communications Commission FCC 12-33
+13
+Fixed Microwave Services. Fixed microwave services include common carrier,13 private 
+operational-fixed,14 and broadcast auxiliary radio services.15 At present, there are approximately 
+22,015 common carrier fixed licensees and 61,670 private operational-fixed licensees and broadcast 
+auxiliary radio licensees in the microwave services.  The Commission has not created a size standard for a 
+small business specifically with respect to fixed microwave services.  For purposes of this analysis, the 
+Commission uses the SBA small business size standard for the category Wireless Telecommunications 
+Carriers (except Satellite), which is 1,500 or fewer employees.16 The Commission does not have data 
+specifying the number of these licensees that have no more than 1,500 employees, and thus we are unable 
+at this time to estimate with greater precision the number of fixed microwave service licensees that would 
+qualify as small business concerns under the SBA’s small business size standard.  Consequently, the 
+Commission estimates that there are 22,015 or fewer common carrier fixed licensees and 61,670 or fewer 
+private operational-fixed licensees and broadcast auxiliary radio licensees in the microwave services that 
+may be small and may be affected by the rules and policies proposed herein.  We note, however, that the 
+common carrier microwave fixed licensee category includes some large entities.
+Unlicensed Personal Communications Service. As its name indicates, the UPCS is not a 
+licensed service.  UPCS consists of intentional radiators operating in the frequency band 1920-1930 MHz 
+that provide a wide array of mobile and ancillary fixed communications services to individuals and 
+businesses.  The Report and Order affects UPCS operations in the 1920-1930 MHz band; operations in 
+those frequencies are given flexibility to deploy both voice and data-based services.  There is no accurate 
+source for the number of operators in the UPCS.  Since 2007, the Census Bureau has placed wireless 
+firms within the new, broad, economic census category Wireless Telecommunications Carriers (except 
+Satellite).17 Prior to that time, such firms were within the now-superseded category of “Paging” and 
+“Cellular and Other Wireless Telecommunications.”18 Under the present and prior categories, the SBA 
+has deemed a wireless business to be small if it has 1,500 or fewer employees.19 Census data for 2007, 
+which supersede data contained in the 2002 Census, show that there were 1,383 firms that operated that 
+year.20 Of those 1,383, 1,368 had fewer than 100 employees, and 15 firms had more than 100 employees.  
+  
+13 See 47 C.F.R. §§ 101 et seq. for common carrier fixed microwave services (except Multipoint Distribution 
+Service).
+14 Persons eligible under Parts 80 and 90 of the Commission’s Rules can use Private Operational-Fixed Microwave 
+services.  See 47 C.F.R. Parts 80 and 90.  Stations in this service are called operational-fixed to distinguish them 
+from common carrier and public fixed stations.  Only the licensee may use the operational-fixed station and only for 
+communications related to the licensee’s commercial, industrial, or safety operations.
+15 Auxiliary Microwave Service is governed by Part 74 of Title 47 of the Commission’s Rules.  See 47 C.F.R. 
+Part 74.  This service is available to licensees of broadcast stations and to broadcast and cable network entities.  
+Broadcast auxiliary microwave stations are used for relaying broadcast television signals from the studio to the 
+transmitter, or between two points such as a main studio and an auxiliary studio.  The service also includes mobile 
+television pickups, which relay signals from a remote location back to the studio.
+16 13 C.F.R. § 121.201, NAICS code 517210.
+17 U.S. Census Bureau, 2007 NAICS Definitions, “517210 Wireless Telecommunications Categories (Except 
+Satellite)”; http://www.census.gov/naics/2007/def/ND517210.HTM#N517210.
+18 U.S. Census Bureau, 2002 NAICS Definitions, “517211 Paging”; 
+http://www.census.gov/epcd/naics02/def/NDEF517.HTM.; U.S. Census Bureau, 2002 NAICS Definitions, “517212 
+Cellular and Other Wireless Telecommunications”; http://www.census.gov/epcd/naics02/def/NDEF517.HTM.
+19 13 C.F.R. § 121.201, NAICS code 517210 (2007 NAICS).  The now-superseded, pre-2007 C.F.R. citations were 
+13 C.F.R. § 121.201, NAICS codes 517211 and 517212 (referring to the 2002 NAICS).
+20 U.S. Census Bureau, 2007 Economic Census, Sector 51, 2007 NAICS cod 517210 (rel. Oct. 20, 2009), 
+<http://factfinder.census.gov/servlet/IBQTable?_bm=y&-geo_id=&-fds_name=EC0700A1&-_skip=700&-
+ds_name=EC0751SSSZ5&-_lang=en>.
+Federal Communications Commission FCC 12-33
+14
+Thus, under this category and the associated small business size standard, the majority of firms can be 
+considered small. 
+Wireless Equipment Manufacturers.  This industry is comprised of businesses primarily 
+engaged in manufacturing radio, television broadcast, and wireless communications equipment.  
+Examples of products made by these establishments are: transmitting and receiving antennas, cable 
+television equipment, global positioning system (GPS) equipment, pagers, cellular phones, mobile 
+communications equipment, and radio and television studio and broadcasting equipment.21 In this 
+category, the SBA has deemed a business manufacturing radio and television broadcasting equipment, 
+wireless telecommunications equipment, or both, to be small if it has fewer than 750 employees.22 For 
+this category of manufacturing, Census data for 2007 show that there were 919 firms that operated that 
+year.  Of those establishments, 531 had between 1 and 19 employees; 240 had between 20 and 99 
+employees; and 148 had more than 100 employees.23 Since 771 establishments had fewer than 100 
+employees, and since only 148 had more than 100 employees, the vast majority of manufacturers in this 
+category would be considered small under applicable standards.  
+Frequency Coordinators. Neither the Commission nor the SBA has developed a small business 
+size standard specifically applicable to spectrum frequency coordinators.  Since 2007, the Census Bureau 
+has placed wireless firms within the new, broad, economic census category Wireless Telecommunications 
+Carriers (except Satellite).24 Prior to that time, such firms were within the now-superseded category of 
+“Paging” and “Cellular and Other Wireless Telecommunications.”25 Under the present and prior 
+categories, the SBA has deemed a wireless business to be small if it has 1,500 or fewer employees.26  
+Census data for 2007, which supersede data contained in the 2002 Census, show that there were 1,383 
+firms that operated that year.  Of those 1,383, 1,368 had fewer than 100 employees, and 15 firms had 
+more than 100 employees.27 Thus, under this category and the associated small business standard, the 
+majority of firms can be considered small.
+E. Description of Projected Reporting, Recordkeeping, and Other Compliance 
+Requirements for Small Entities.
+This Report and Order allows additional flexibility for UPCS devices operating in the 
+1920-1930 MHz band by eliminating the signal threshold that a UPCS device must monitor when using 
+the least-interfered channel access method.  In addition, the Report and Order reduces from 40 to 
+20 channels the number of channels that a UPCS device must define and monitor to use the 
+  
+21 http://www.census.gov/econ/industry/def/d334220.htm.
+22 See 13 C.F.R. § 121.201, NAICS code 334220.
+23 http://factfinder.census.gov/servlet/IBQTable?_bm=y&-geo_id=&-_skip=300&-ds_name+EC0731I1&-_lang=en.
+24 U.S. Census Bureau, 2007 NAICS Definitions, “517210 Wireless Telecommunications Categories (Except 
+Satellite)”; http://www.census.gov/naics/2007/def/ND517210.HTM#N517210.
+25 U.S. Census Bureau, 2002 NAICS Definitions, “517211 Paging”; 
+http://www.census.gov/epcd/naics02/def/NDEF517.HTM.; U.S. Census Bureau, 2002 NAICS Definitions, “517212 
+Cellular and Other Wireless Telecommunications”; http://www.census.gov/epcd/naics02/def/NDEF517.HTM.
+26 13 C.F.R. § 121.201, NAICS code 517210 (2007 NAICS).  The now-superseded, pre-2007 C.F.R. citations were 
+13 C.F.R. § 121.201, NAICS codes 517211 and 517212 (referring to the 2002 NAICS).
+27 U.S. Census Bureau, 2007 Economic Census, Sector 51, 2007 NAICS cod 517210 (rel. Oct. 20, 2009), 
+http://factfinder.census.gov/servlet/IBQTable?_bm=y&-geo_id=&-fds_name=EC0700A1&-_skip=700&-
+ds_name=EC0751SSSZ5&-_lang=en.
+Federal Communications Commission FCC 12-33
+15
+least-interfered channel access method.  This item does not contain any new reporting or recordkeeping 
+requirements.
+F. Steps Taken to Minimize Significant Economic Impact on Small Entities, and 
+Significant Alternatives Considered.
+The RFA requires an agency to describe any significant alternatives that it has considered in 
+reaching its proposed approach, which may include the following four alternatives (among others): 1) the 
+establishment of differing compliance or reporting requirements or timetables that take into account the 
+resources available to small entities; 2) the clarification, consolidation, or simplification of compliance or 
+reporting requirements under the rule for small entities; 3) the use of performance, rather than design, 
+standards; and 4) an exemption from coverage of the rule, or any part thereof, for small entities.28
+The Commission’s principal objective in this proceeding is to increase the utilization and 
+efficiency of the UPCS band.  By eliminating the signal threshold that a UPCS device must monitor under 
+the least-interfered channel access method, we allow UPCS devices to access additional usable combined 
+time and spectrum windows in the 1920-1930 MHz band that are restricted from use under the current 
+rules.  Our decision to reduce from 40 to 20 channels the number of channels a UPCS device must define 
+and monitor to use the least-interfered channel access method will enable UPCS devices that can provide 
+advanced cordless technologies and higher data rates to use the least-interfered channel access method 
+and access additional usable time and spectrum windows, if available.  Together, these changes will 
+increase the utilization and efficiency of the UPCS band and promote the introduction of innovative 
+products and services using Internet protocol connectivity to combine access to broadband and telephony 
+applications in a new generation of cordless devices.  Elimination of the least-interfered channel 
+monitoring threshold will also allow manufacturers to design their devices based on density of devices, 
+rather than range, depending on the needs of users, thereby allowing more UPCS devices to operate 
+within close proximity to one another, which will reduce the infrastructure costs for a UPCS system.  
+Finally, our decision to eliminate rather than just increase the least-interfered channel monitoring 
+threshold will provide manufacturers with the flexibility to produce UPCS systems that can operate with 
+the maximum possible traffic capacity, which will maximize the utilization of the UPCS band.
+Report to Congress: The Commission will send a copy of the Report and Order, including this FRFA, in 
+a report to Congress pursuant to the Congressional Review Act.29  In addition, the Commission will send 
+a copy of the Report and Order, including this FRFA, to the Chief Counsel for Advocacy of the SBA.  A 
+copy of the Report and Order and FRFA (or summaries thereof) will also be published in the Federal 
+Register.
+  
+28 5 U.S.C. § 603(c).
+29 See 5 U.S.C. § 801(a)(1)(A).

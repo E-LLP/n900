@@ -1,0 +1,101 @@
+Federal Communications Commission DA 12-840 
+Before the
+Federal Communications Commission
+Washington, D.C. 20554
+In the Matter of
+Request for Renewal of Waiver of 
+Section 15.511(a) and (b) of the Commission’s 
+Rules for Ultra-Wideband Devices Granted to 
+UltraVision Security Systems, Inc.
+Association for Maximum Service Television, Inc. 
+Petition for Reconsideration of Waiver Granted to 
+UltraVision Security Systems, Inc.
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+ET Docket No. 06-195
+ORDER
+Adopted:  May 29, 2012 Released:  May 31, 2012
+By the Chief, Office of Engineering and Technology:
+1. By this Order, we deny a request to renew the waiver of Sections 15.511(a) and (b) of the 
+rules granted to UltraVision Security Systems, Inc. (UltraVision) to permit the certification and limited 
+marketing of its UltraSensor ultra-wideband (UWB) surveillance systems.1 We also dismiss the 
+Association for Maximum Service Television, Inc.’s (MSTV) petition for reconsideration in this matter as 
+moot.2  
+2. On November 19, 2008, the Commission adopted an Order granting UltraVision’s 
+request to waive the provisions of Sections 15.511(a) and (b) of the rules, which specify permitted 
+operating frequency range and permitted users for UWB surveillance systems.3 The Commission waived 
+these rules to permit the UltraSensor surveillance system to operate in the 80-600 MHz band and to allow 
+UltraVision to market up to 350 installations of its UltraSensor system over a two-year period to any 
+entity eligible for licensing under Part 90 of the rules.4 In addition, the Commission imposed specific 
+operational and technical conditions on the UltraSensor systems to ensure that authorized spectrum users 
+were protected from harmful interference.  These conditions included the requirement that operators of 
+these surveillance systems comply with the Commission’s coordination requirement for ultra-wideband 
+  
+1 See UltraVision Security Systems, Inc. Request for Interpretation and Waiver of Section 15.511(a) & (b) of the 
+Commission’s Rules for Ultra-Wideband Devices, Order (UltraVision Waiver Order), ET Docket 06-195, 23 FCC 
+Rcd 17632 (2008).  See also UltraVision Request for Renewal of Waiver (Request), ET Docket 06-195 (filed 
+November 2, 2010).
+2 The Association for Maximum Service Television, Inc. petition for reconsideration (Petition) in ET Docket No. 
+06-195 filed December 18, 2008.  On June 1, 2011, MSTV merged with the National Association of Broadcasters 
+(NAB).
+3 See UltraVision Waiver Order. Section 15.511(a), 47 C.F.R. § 15.511(a), requires the bandwidth of a UWB 
+surveillance system to be contained between 1990 and 10,600 MHz.  Section 15.511(b), 47 C.F.R. § 15.511(b), 
+limits the sale and operation of UWB surveillance systems to law enforcement, fire or emergency rescue 
+organizations or manufacturing, petroleum or power licensees as defined in Section 90.7 of the Commission’s rules., 
+47 C.F.R. § 90.7.  
+4 47 C.F.R. §15.511(b)(1).
+Federal Communications Commission DA 12-840 
+2
+devices in Section 15.511(b)(2).5 The waiver also stipulated that UltraVision could request that the 
+waiver be extended after the end of the original two-year waiver period after the Commission had gained 
+experience with the UltraSensor system.6  
+3. On December 18, 2008, MSTV filed a petition for reconsideration of the UltraVision 
+waiver.  MSTV claims that the Commission made various technical and procedural errors in granting a 
+waiver to UltraVision for the UltraSensor system.  
+4. On November 2, 2010, UltraVision filed a request for renewal of the waiver.7  
+UltraVision states that the development of the UltraSensor technology was interrupted before completion 
+because shortly after the release of the waiver Order, the company that provided funding to UltraVision 
+underwent a change of management and the incoming group stopped funding for UltraVision.  The 
+renewal request further states that UltraVision still exists but is not currently active and that the original 
+principals hope to someday resume development of UltraSensor although they do not have a fixed 
+timetable.8 UltraVision seeks to extend the waiver for its certified UltraSensor system for an additional 
+two-year period to keep open the option of continued development and eventual production.
+5. We are denying UltraVision’s waiver renewal request and dismissing the MSTV petition 
+for reconsideration of the waiver.  We find that it is not in the public interest to renew a waiver extension 
+to a company that is no longer active for a product for which it admits it has no development and 
+deployment plans.  We find the public interest would be better served if UltraVision requests a new 
+waiver if its circumstances change and it decides to continue developing the UltraSensor technology.  
+Because the UltraVision waiver is no longer valid, the petition for reconsideration of the original waiver 
+does not warrant further examination.  Thus, we are dismissing the MSTV petition for reconsideration as 
+moot. 
+6. Accordingly, IT IS ORDERED that, pursuant to the authority granted in Sections 4(i), 
+302, and 303(r) of the Communications act of 1934, as amended, 47 U.S.C §§ 4(i), 302, and 303(r), and 
+Sections 0.31 and 0.241 of the Commission’s rules, 47 C.F.R §§ 0.31, 0.241, the Request for Renewal of 
+Waiver of UltraVision Security Systems, Inc. IS DENIED.
+7. IT IS FURTHER ORDERED that, pursuant to the authority granted in Sections 4(i) and 
+405 of the Communications Act of 1934, as amended, 47 U.S.C §§ 154(i) and 405, and Section 1.106 of 
+the Commission’s rules, 47 C.F.R § 1.106, that the petition for reconsideration filed by MSTV IS 
+DISMISSED AS MOOT as set forth above.
+8. IT IS FURTHER ORDERED that this proceeding, ET Docket No. 06-195 IS HEREBY 
+TERMINATED.
+  
+5 47 C.F.R. §15.511(b)(2).  See also 47 C.F.R. §15.525.
+6 UltraVision obtained an equipment authorization for the UltraSensor system, FCC ID USJCMD2A-F2, however, 
+to date no systems have been deployed. 
+7 See UltraVision’s Request. 
+8 Id at 2.
+Federal Communications Commission DA 12-840 
+3
+9. For further information regarding this Order, contact Aole Wilkins, Office of Engineering 
+and Technology, (202) 418-2406, aole.wilkins@fcc.gov.
+FEDERAL COMMUNICATIONS COMMISSION
+Julius P. Knapp
+Chief, Office of Engineering and Technology

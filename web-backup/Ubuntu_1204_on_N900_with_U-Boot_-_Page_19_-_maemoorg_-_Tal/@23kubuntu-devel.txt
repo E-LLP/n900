@@ -1,0 +1,596 @@
+[00:00] <apachelogger> I wonder why it is called wip ^^
+[00:02] <JontheEchidna> apachelogger: because upstream cannot commit to a versioning scheme :P
+[00:03] <apachelogger> Error! Bad return status for module build on kernel: 2.6.35-1-n900 (armel)
+[00:03] <apachelogger> you got to be kidding me
+[00:03]  * apachelogger wanted to be in bed 3 hours ago
+[00:03] <apachelogger> /var/lib/dkms/powervr-omap3/4.00.00.01/build/services4/3rdparty/dc_omap3430_linux/omaplfb_displayclass.c:238:2: error: implicit declaration of function ‘console_lock’
+[00:03] <apachelogger> /var/lib/dkms/powervr-omap3/4.00.00.01/build/services4/3rdparty/dc_omap3430_linux/omaplfb_displayclass.c:240:2: error: implicit declaration of function ‘console_unlock’
+[00:03] <apachelogger> what is that even supposed to mean
+[00:04] <apachelogger> holy kent beck!!!
+=== debfx_ is now known as debfx
+[00:11] <apachelogger> aha
+[00:11] <apachelogger> great
+[00:11] <apachelogger> .38 has console_lock, .35 does not
+[00:11] <apachelogger> hooray
+[00:11] <apachelogger> to hell with this crap
+[00:21] <apachelogger> rbelem: it is all broken, all kaputt, all smashed to pieces
+[00:23] <JontheEchidna> hmm, shouldn't the kdeaccessibility binary package's new dependency against kaccessible sent it into the component mismatch queue?
+[00:24]  * rbelem hugs apachelogger 
+[00:24] <rbelem> :-D
+[00:24]  * apachelogger installs pvr from maverick
+[00:25] <debfx> JontheEchidna: it is:  o kaccessible                                              {kdeaccessibility}
+[00:25] <apachelogger> someone tell mpoirier that we need to be on par with whatever kernel ubuntu ships or our pvr will get broken
+[00:25] <JontheEchidna> debfx: where do I see that?
+[00:25] <debfx> JontheEchidna: http://people.canonical.com/~ubuntu-archive/component-mismatches.txt
+[00:26] <JontheEchidna> oh, cool
+[00:26] <JontheEchidna> I'll seed it then
+[00:27] <debfx> well it still needs to be promoted
+[00:28] <apachelogger> o-f-o-n-o
+[00:28] <JontheEchidna> ah, right
+[00:28] <apachelogger> debfx: is it mir'd?
+[00:28] <apachelogger> oh
+[00:28] <apachelogger> ah
+[00:28] <debfx> the source is already in main
+[00:29] <apachelogger> JontheEchidna: just seed, then someone will notice and promote it IIRC
+[00:29]  * apachelogger installs unity-2d
+[00:29] <debfx> I think you still have to poke someone who can promote it
+[00:29] <JontheEchidna> heh, I don't think that the solid nm backend is building anymore
+[00:29] <JontheEchidna> fun times
+[00:30] <JontheEchidna> the files are no longer being built by cmake so the dh_install is failing
+[00:30] <apachelogger> debfx: well, since it is in the mismatches, someone will see :P
+[00:30] <debfx> apachelogger: seeing != acting on it
+[00:30] <apachelogger> or you look for someone who actually can do promotions
+[00:30] <debfx> they could have waited at least until after alpha1 before uploading nm 0.9
+[00:30] <JontheEchidna> we'll still be able to build, at least
+[00:31] <apachelogger> didn't we say that we'd want to do testing first?
+[00:31] <apachelogger> did that happen?
+[00:31] <JontheEchidna> no choice now, lol
+[00:31] <apachelogger> no, but if people don't stick to the plan they deserve a beatin'
+[00:32] <apachelogger> it is not like we discuss stuff for the lolz of it
+[00:32]  * apachelogger got better things to do
+[00:32] <apachelogger> like drinking beer
+[00:32]  * apachelogger actually hasn't had any beer since UDS, zomg
+[00:33] <JontheEchidna> once I fix up the .install files things should be rockin'
+[00:33]  * apachelogger now has unity-2d on the mobile
+[00:33] <apachelogger> I don't have a launcher though
+[00:33] <apachelogger> weird
+[00:34] <debfx> JontheEchidna: the remaining changes are missing in kdeutils's changelog. is it ready apart from that?
+[00:35] <JontheEchidna> yeah
+[00:35] <apachelogger> who wants a phone call from me?
+[00:35] <JontheEchidna> looks like dh_install worked this time
+[00:36] <JontheEchidna> debfx: I'll commit the remaining changes
+[00:37] <JontheEchidna> debfx: ok, I also switched from unreleased to oneiric
+[00:40] <JontheEchidna> debfx: I've also pushed kdebase-workspace to bzr. If any package needed a second pair of eyes, kdebase-workspace does
+[00:41] <debfx> i'll have look though merges are very difficult to review
+[00:42] <apachelogger> rbelem: ofono does not work
+[00:42] <apachelogger> omg
+[00:46] <debfx> JontheEchidna: I think we shouldn't include the changes from ubuntu5.2 as I'm pretty sure it won't make it into -updates
+[00:48] <debfx> hm the gdm upstart job changes are included in oneiric
+[00:50] <JontheEchidna> let's just see how it goes, I guess
+[00:51] <JontheEchidna> oops, I did forget to remove the old unreleased changelog entries
+[00:51] <JontheEchidna> that's better
+[00:52] <apachelogger> ah
+[00:52] <apachelogger> rbelem: it is called n9000 for one reason or another ^^
+[00:54] <apachelogger> weehe, apparently it only detects it as modem or something :/
+[00:56] <debfx> JontheEchidna: yeah I've fixed that
+[00:56] <JontheEchidna> debfx: I pushed a commit removing those old ones to bzr
+[00:56] <JontheEchidna> a few minutes ago
+[00:56] <JontheEchidna> a bzr pull before committing further changes should prevent conflicts
+[00:57] <JontheEchidna> oh, nvm, my push didn't go through since you already fixed it :)
+[00:57] <debfx> me too ^^
+[00:57] <JontheEchidna> ^^
+[00:59] <debfx> JontheEchidna: why do we need: Add python-kde4, python-sip, python-qt4 to build-dependencies
+[01:00] <JontheEchidna> dunno, I was just following kubuntu-debian-differences
+[01:00] <JontheEchidna> mindlessly, for that item :)
+[01:05] <apachelogger> ah
+[01:05] <apachelogger> rbelem: nvm, I had to power it using property setting
+[01:05] <apachelogger> eww :D
+[01:07] <debfx> JontheEchidna: ok, we can sort that out later
+[01:07] <debfx> looks good to me, so please upload when you are ready
+[01:08] <JontheEchidna> actually, do you think you could? I cannot upload tarballs that big on my connection
+[01:09] <debfx> me neither, but I can upload it from my server
+[01:10] <JontheEchidna> cool, thanks.
+[01:10] <debfx> Committed revision 500.  :)
+[01:10] <ubottu> http://websvn.kde.org/trunk/?rev=500&view=rev | svn://anonsvn.kde.org/home/kde/trunk -r 500 | rwilliam: knu up to 0.1.1
+[01:11] <debfx> ubottu: you are not helpful
+[01:11] <ubottu> debfx: I am only a bot, please don't think I'm intelligent :)
+[01:11] <debfx> exactly
+[01:12] <JontheEchidna> heh
+[01:12] <JontheEchidna> after this we should get an installable KDE environment, albeit with no networking support
+[01:15] <debfx> JontheEchidna: have you uploaded kdeutils?
+[01:16] <JontheEchidna> nope, will do so
+[01:17] <debfx> ark still depends on libkonq5a
+[01:18] <JontheEchidna> http://i.imgur.com/DN9ik.png
+[01:18] <JontheEchidna> Mint
+[01:18] <JontheEchidna> http://i.imgur.com/0hp9g.png
+[01:19] <apachelogger> ofonod[1752]: drivers/isimodem/sim.c:check_response_status() Request failed: SIM_SERV_NOTREADY
+[01:19] <apachelogger> I suppose that happens
+[01:21] <JontheEchidna> !find /usr/lib/qt4/plugins/designer/kdewidgets.so natty
+[01:21] <ubottu> File /usr/lib/qt4/plugins/designer/kdewidgets.so found in kdelibs5-dbg, kdelibs5-dev
+[01:21] <JontheEchidna> !find /usr/lib/qt4/plugins/designer/kdewidgets.so oneiric
+[01:22] <JontheEchidna> !find /usr/lib/qt4/plugins/designer/kdewidgets.so oneiric
+[01:22] <ubottu> File /usr/lib/qt4/plugins/designer/kdewidgets.so found in kdelibs5-dbg, kdelibs5-dev
+[01:22] <JontheEchidna> hmm, obviously it doesn't see the latest upload, where it is in kdelibs5-plugins :P
+[01:25] <apachelogger> QEgl::display(): Cannot initialize EGL display: "Bad alloc (0x3003)" 
+[01:25] <apachelogger> this is all so very moot
+[01:25]  * apachelogger prepares for the bedz
+[01:32] <debfx> oh
+[01:33] <debfx> JontheEchidna: I guess this is not the way it's supposed to be: Breaks: ... plasma-desktop (<= 4:4.6.3-1ubuntu1)
+[01:33] <JontheEchidna> ah, should have been <<
+[01:34]  * debfx uploads again
+[02:16] <JontheEchidna> shit, I forgot to make the .install file changes outside of the pbuilder
+[02:26] <JontheEchidna> debfx: oops, I pushed an ubuntu2 to bzr before you pushed yours
+[02:45] <TheMuso> Anybody around involved with packaging QT for Debian?
+[02:49] <TheMuso> No matter, will email the qt-kde debian list.
+=== txwikinger2 is now known as txwikinger
+[03:51] <JontheEchidna> sweet: http://www.sharpley.org.uk/node/14
+[03:52] <LaserJock> hmm
+[03:53] <LaserJock> so I was trying to build kdemultimedia
+[03:53] <LaserJock> it fails on an unmet dep on libasound2-dev
+[03:53] <LaserJock> but libasound2-dev was never pulled in
+[03:57] <JontheEchidna> weird, it's one of the build-depends
+[03:58] <LaserJock> has to be, but I don't understand, since it didn't pull it in
+[03:58] <LaserJock> it wasn't like it failed to install
+[03:58] <LaserJock> it just didn't think it needed it
+[03:59] <LaserJock> untill dpkg-checkbuilddeps
+[04:01] <JontheEchidna> yay, kdebase-workspace built in the archive. Third time's the charm
+[04:43] <JontheEchidna> ScottK: when you get a chance, kdebase-workspace is in binary new
+[05:01]  * ScottK looks
+[05:12] <JontheEchidna> bleh, we aren't going to be able to sync konq-plugins until after the next LTS
+[05:18] <ScottK> Accepted, BTW.
+[05:20] <JontheEchidna> cool, once it publishes we can throw everything above it on the dependency list at the archive
+[05:20] <JontheEchidna> though I think the chart is wrong in saying that kdebase is higher up that -workspace
+[05:21] <JontheEchidna> the graph will completely change for 4.7, so correcting it now would just be an exercise in futility
+[05:21] <ScottK> It was true at one point.  Dunno if it's true now.
+[05:22] <ScottK> I agree leaving it is a reasonable economy of effort.
+[05:38] <ScottK> JontheEchidna: Once kdebase-workspace hits it looks like kdeutils needs a retry on all archs.
+[05:39] <JontheEchidna> yeah, I uploaded it figuring an hour after LP said it published -workspace would be sufficient
+[05:39] <JontheEchidna> what I didn't realize was that it had only published the source
+[05:39] <JontheEchidna> then I realized that I had changed the names of about 4 binary packages in the merge
+[06:05] <JontheEchidna> looks like amd64 and i386 are published
+[06:06] <ScottK> It still takes until the publisher run finished
+[06:06] <ScottK> finishes
+[06:06] <ScottK> Which is usually ~:45 or a little before.
+[06:06]  * ScottK needs to go pass out.
+[06:07] <JontheEchidna> g'nite. I'll keep on chugging until I have to do the same
+[06:55] <yofel> morning
+[07:24] <JontheEchidna> kdeartwork in bzr can be uploaded, but I don't have the proper pipes.
+[07:24]  * JontheEchidna heads to bed
+[07:25] <yofel> gn JontheEchidna
+[08:34] <apachelogger> ScottK: I canont reach the arm farm :(
+[09:10] <padams> moin moin
+[10:38] <apachelogger> !find Xrender.h
+[10:38] <ubottu> File Xrender.h found in libghc6-x11-xft-dev, libghc6-x11-xft-doc, libjna-java-doc, libxrender-dev, lsb-build-desktop3
+[10:50]  * debfx needs a shell alias for sudo aptitude -o DPkg::Options::=--force-overwrite full-upgrade
+[10:56] <padams> alias upgrade-all-my-stuff-i-am-not-kidding="sudo aptitude -o DPkg::Options::=--force-overwrite full-upgrade" ?
+[11:15] <debfx> something like that
+[11:20] <padams> i have alias make-me-pretty-again="sudo xcalib -d :0 -s 0 ~/.display/display.icc" because my screen colours get screwed every time i plugin an external monitor to my laptop
+[11:20] <padams> i am a big fan of literate aliases
+[11:24] <debfx> heh
+[12:13] <jussi> apachelogger: did you see this? http://www.sharpley.org.uk/taxonomy/term/1/0
+[12:29] <apachelogger> yas
+=== rdieter is now known as rdieter_work
+[13:43] <didrocks> debfx: hum, it seems that latest Qt is hurting unity-2d pretty badly
+[14:00] <debfx> didrocks: how so?
+[14:01] <didrocks> debfx: the spread and dash are broken (segfault)
+[14:01] <didrocks> debfx: let me show you a stack
+[14:01] <didrocks> debfx: https://bugs.launchpad.net/ubuntu/+source/unity-2d/+bug/791213
+[14:01] <ubottu> Ubuntu bug 791213 in unity-2d (Ubuntu) "unity-2d-places crashed with SIGSEGV in QMetaObject::metacall()" [Undecided,New]
+[14:01] <didrocks> (was partially why I wanted to work on the debian merge/update after alpha1 as discussed with ScottK :))
+[14:05] <yofel> hm, what does one convert "DEB_DH_MAKESHLIBS_ARGS_liblancelot0 := -V -u-c0" into for dhmk? I found
+[14:05] <yofel> override_dh_makeshlibs:
+[14:05] <yofel>         $(overridden_command) -V -- -c0
+[14:05] <yofel> but I don't get how to add liblancelot0 into that
+[14:06] <debfx> didrocks: sorry, I wasn't aware of that discussion
+[14:06] <didrocks> debfx: no worry, it's alpha1 anyway :-)
+[14:06] <yofel> or wait, would -pliblancelot0 work?
+[14:06] <didrocks> debfx: and thanks for doing the merge, I'll check with upstream for the crash (apart if you have some defined workflow with them?)
+[14:07] <debfx> yofel: yes, and after that a $(overridden_command) --remaining-packages call
+[14:07] <yofel> k
+[14:09] <debfx> didrocks: no, we don't
+[14:09] <didrocks> debfx: ok, will report directly then, thanks!
+[14:10] <debfx> 4.7.3 doesn't contain much changes except the ssl certificate fix
+[14:10] <debfx> so it's probably caused by a patch that debian cherry-picked
+[14:11] <didrocks> debfx: ok, will try first by removing the new patches then
+[14:15] <debfx> alternatively we can just blame it on gcc 4.6 ;)
+[14:25] <didrocks> debfx: heh, that would be the easy way :-)
+[14:26] <didrocks> ok, bringing pain for more than 5 hours to my laptop then, removing all cherry-picky patches
+[14:29] <ScottK> apachelogger: I can't either (and I'm not at home this week - I'll try and see if I can get my wife to reset things).
+[14:29] <ScottK> It'll be much later today before we can attempt it though.
+[14:31] <ScottK> didrocks: Sorry.  I forgot to communicate to people about our conversation on Qt.
+[14:31] <didrocks> ScottK: well, no worry, it's still an alpha1, at least, it launches :-)
+[14:32] <didrocks> let's see if I can get the guilty patch
+[14:41] <ScottK> Anyone have any urgent uploads pending?
+[14:44] <debfx> ScottK: I've added two missing replaces in kdebase-workspace
+[14:45] <yofel> I added one to kdeaccessibility
+[14:45] <ScottK> I've asked about getting our images for Alpha 1 spun, so it might be good to hold off for a bit until I know when that'll happen.
+[14:50] <apachelogger> ScottK: well, I'll be building Qt on the n900 then :D
+[14:50] <ScottK> apachelogger: "Fun"
+[14:51] <apachelogger> indeed
+[14:51] <ScottK> Well, I should be able to have a crack at it with remote hands in ~12 hours.
+[14:58] <ScottK> Images are being spun now.
+[14:58] <ScottK> Is there anyone around that can test?
+[15:01] <ScottK> claydoh: Can you do release notes?
+[15:01] <ScottK> Short version "OMG, be careful"
+[15:06] <ScottK> debfx: Do we still need to be building qtwebkit in the qt4-x11 build?  I see it made ld fall over and die on armel.
+[15:07] <debfx> ScottK, claydoh: re release notes: network manager widget doesn't work
+[15:07] <debfx> ScottK: the alternative is the build-dep loop
+[15:07] <ScottK> debfx: Ah.  Right.  OK.
+[15:07] <ScottK> I agree this is better.
+[15:08] <ScottK> Probably ought to have a "No, this doesn't have 4.7 beta 1 since upstream is crazy.
+[15:08] <ScottK> "
+[15:09] <yofel> yeah, I put a note on my planet post that neon has 4.7, maybe we'll get some more users thanks to that :P
+[15:11] <ScottK> yofel: You ought to get valorie to post about that so it hits planet KDE as well.
+[15:11] <ScottK> Better yet, figure out how to get on planet KDE yourself.
+[15:11]  * yofel goes googling
+[15:13] <ScottK> yofel: I suspect the process is something like ask jr nicely.
+[15:17] <yofel> the process seem to be: file a bug or get someone with svn access, put on todo list..
+[15:21] <ScottK> yofel: That confirms my guess as to the process.
+[15:21] <yofel> yeah ^^
+[15:32] <ScottK> Kubuntu alternates are up if anyone can test.
+[15:32] <ScottK> DarkwingDuck: ^^^ can you?
+[15:33] <charlie-tca> ScottK: syncing now
+[15:33] <ScottK> charlie-tca: Thanks.
+[15:33] <charlie-tca> no problem
+[15:34] <charlie-tca> willing to try them if I can
+[15:34] <ScottK> ISO testing is one of the places we'll really miss Riddell.  He's done most of this in previous cycles.
+=== ScottK changed the topic of #kubuntu-devel to: Soft freeze for Alpha 1 - Please hold off on Main uploads | Merging KDE 4.6.3 from Debian | Merges: https://merges.ubuntu.com/main.html | TODO: https://wiki.kubuntu.org/Kubuntu/Todo | Congratulations to our re-elected overlords apachelogger and JontheEchidna and new overlord DarkwingDuck
+[15:37] <ScottK> debfx, JontheEchidna, and apachelogger: I think it's best to hold off on Main uploads until we find out if the current images ~work.
+[15:42] <JontheEchidna> ScottK: I know that any images generated ~now won't work
+[15:42] <JontheEchidna> in fact I'd be surprised if they generated
+[15:42] <ScottK> JontheEchidna: Why?
+[15:42] <JontheEchidna> plasma-widget-folderview isn't built against libkonq5abi, but libkonq5a
+[15:42] <ScottK> Oh.
+[15:42] <JontheEchidna> which aren't co-installable
+[15:43] <ScottK> http://people.canonical.com/~ubuntu-archive/testing/natty_probs.html seems to suggest things will install.
+[15:43] <JontheEchidna> huh
+[15:43] <ScottK> I guess we'll find out soon.
+[15:43] <JontheEchidna> yeah
+[15:43] <JontheEchidna> shouldn't that be http://people.canonical.com/~ubuntu-archive/testing/oneiric_probs.html ?
+[15:43] <JontheEchidna> I see lots of KDE problems there
+[15:44] <ScottK> Crap.
+[15:44] <ScottK> It should.
+[15:44] <ScottK> Thanks.
+[15:45] <Quintasan> JontheEchidna: That's what you get for editing wiki on phone
+[15:45] <ScottK> kubuntu-desktop is allegedly installable.
+[15:45] <ScottK> We'll see.
+[15:45] <JontheEchidna> Oh, nevermind, I was looking at the current version of folderview instead of the candidate
+[15:46] <JontheEchidna> heh, libkonq5abi1 and folderview are from the same source package anyway
+[15:47] <ScottK> kdesdk-dolphin-plugins has this problem though.
+[15:48] <ScottK> apt-cache rdepends libkonq5a suggests the CD should be OK.
+[15:50] <JontheEchidna> The new libkonq-common package that 5abi depends on should have a Breaks: on libkonq5a
+[15:50] <JontheEchidna> libkonq-common : Breaks: libkonq5a but 4:4.6.2-0ubuntu1 is to be installed
+[15:51] <JontheEchidna> oh, but kdesdk-dolphin-plugins is just on the dvde
+[15:51] <ScottK> Yeah.
+[15:51]  * JontheEchidna needs more wake-up juice
+[15:52] <ScottK> kdeplasma-addons uninstallable I haven't figured out.
+[15:52] <ScottK> Any ideas on that one?
+[15:52] <JontheEchidna> there are various libraries in -workspace that also had their names changed
+[15:52] <JontheEchidna> 4 or 5, actually
+[15:53] <ScottK> OK.
+[15:53] <JontheEchidna> libplasmaclock, libtaskmanager
+[15:53]  * yofel has kdeplasma-addons 95% done
+[15:53] <ScottK> Ah.
+[15:53] <ScottK> Well if these images fail, we'll probably want that then.
+[16:00] <ScottK> They built
+[16:01] <JontheEchidna> cool
+[16:01] <ScottK> http://cdimage.ubuntu.com/kubuntu/daily-live/20110601/
+[16:01] <ScottK> Please test.
+[16:01] <ScottK> charlie-tca: ^^^
+[16:01] <JontheEchidna> fancy page
+[16:01] <debfx> only 28MB oversized :D
+[16:01] <ScottK> Hotel wifi says it'll take me three hours to download ...
+[16:01] <JontheEchidna> yeah, I can't burn those
+[16:01] <JontheEchidna> will have to mount it I guess
+[16:02] <JontheEchidna> or use a DVD
+[16:02] <ScottK> Test using usb.
+[16:02] <JontheEchidna> I don't have a stick big enough
+[16:02] <JontheEchidna> unless I could borrow one from a camera...
+[16:02] <ScottK> There you go.  Think outside the box ...
+[16:02] <JontheEchidna> Heh, i386 is 42 over
+[16:04] <debfx> afaik grub2 can boot iso images
+[16:05] <yofel> I know how to boot desktop isos, there's a wiki page for that, but didn't find something for alternate images
+[16:06] <JontheEchidna> https://help.ubuntu.com/community/Installation/FromUSBStick#Alternative methods
+[16:06] <JontheEchidna> that?
+[16:07] <yofel> hm, that might work too, I used https://wiki.ubuntu.com/Kernel/Dev/MultipleISOBootUSBKey
+[16:17] <yofel> brrr, can't build kdeplasma-addons without kdeedu
+[16:17] <yofel>   kde-sc-dev-latest: Breaks: libmarble-dev (< 4:4.6.3) but 4:4.6.2-0ubuntu2 is to be installed.
+[16:18] <JontheEchidna> shadeslayer is down as having that but I haven't seen him in over a day
+[16:20]  * yofel builds against natty PPA in the meanwhile
+[16:21] <charlie-tca> ScottK: got it
+[16:25] <_Groo_> hi/2 all
+[16:25] <yofel> hey _Groo_
+[16:25] <_Groo_> anyone working on the calligra packages?
+[16:25] <_Groo_> hey yofel :)
+[16:26] <_Groo_> so no one? :D
+[16:26] <yofel> we have more pressing issues :P
+[16:27] <ScottK> _Groo_: Adrien <adrien.grellier@laposte.net> is working on them for Debian.  I'd recommend mailing Adrien and working on them jointly.
+[16:35] <ScottK> Wahoo.  ISO download time has gone from 3 hours to 5.
+[16:39] <JontheEchidna> mine'll be done in 35 minutes
+[16:40] <_Groo_> ScottK: tks ScottK ill try to reach him
+[16:40] <ScottK> _Groo_: Great.
+[16:40] <JontheEchidna> Hmm, kdetoys and kdewebdev will be good benchmarks on how fast we can get KDE syncs done without jr, assuming he stops doing his archive duties on Tuesdays
+[16:43] <_Groo_> ScottK: :)
+[16:43] <_Groo_> im very happy that flow was ressurected
+[16:43] <_Groo_> DIA is such a piece of (*&@#*(&@*(#&@(#
+[16:47] <ScottK> JontheEchidna: He has stopped.
+[16:47] <ScottK> _Groo_: We always merge at least once per cycle.
+[16:48] <ScottK> DarkwingDuck: Would you please talk to JamesPage in #ubuntu-server about getting some Kubuntu testing added to http://jenkins.qa.ubuntu-uk.org/
+[16:49] <_Groo_> ScottK: lol, no , not the merge flow, FLOW is the diagram name for the calligra suite proggie
+[16:49] <ScottK> _Groo_: Oh.  OK.
+[16:49]  * yofel needed a mintue to get that too ^^
+[16:49] <JontheEchidna> We're also losing ~100 KiB on the CD to old libs from kdebase-workspace that still have rdepends :P
+[16:49] <yofel> rename that :P
+[17:47] <charlie-tca> ScottK: you will settle for "it installed" today, right?
+[17:47] <ScottK> charlie-tca: Yes, but it would be nice to know if it booted or not.
+[17:47] <charlie-tca> okay, alternate 64 worked
+[17:47] <ScottK> Cool.
+[17:48] <ScottK> Does 'worked' include 'it booted'?
+[17:48] <apachelogger> rbelem: upnp - find devices - have file sharing activity with large icons for found devices with sharing enabled - throw files at those icons - file gets transfered to some sane place on the deivce
+[17:48] <apachelogger> what do you think?
+[17:48] <yofel> add 'did X start' to that?
+[17:48] <apachelogger> moving stuff to a tablet seems overly complex TBH
+[17:49] <ScottK> apachelogger: Yes, but we also need to be sensitive to the security implications of automatically connecting to random stuff.
+[17:49] <JontheEchidna> alpha 1 candidates boot, and the live environment works
+[17:49] <Quintasan> apachelogger: Are you in Randa?
+[17:49] <charlie-tca> yes
+[17:49] <ScottK> Particularly on a tablet which very much get used in random environments.
+[17:49] <Quintasan> JontheEchidna: http://endlessvideo.com/watch?v=HMnrl0tmd3k
+[17:49] <ScottK> charlie-tca: Cool
+[17:49] <charlie-tca> ScottK: yes, it booted, updated, and I am now rebooting
+[17:50] <ScottK> JontheEchidna: Great news.
+[17:51] <apachelogger> Quintasan: no
+[17:51] <apachelogger> leaving at 21h or so
+=== JontheEchidna changed the topic of #kubuntu-devel to: Soft freeze for Alpha 1 - Please hold off on Main uploads | Merging KDE 4.6.3 from Debian | Merges: https://merges.ubuntu.com/main.html | Test alpha 1 Candidates! http://iso.qa.ubuntu.com/qatracker/build/kubuntu/all | TODO: https://wiki.kubuntu.org/Kubuntu/Todo
+[17:52] <apachelogger> ScottK: it would be just great, like if you are home for 5 minutes and want to drop a file quickly on your tablet for reading on train or whatever, assuming the tablet autoconnects to wifi, by the time you are at your pc you just need to drop the file on the device icon and be done with it
+[17:52] <JontheEchidna> Quintasan: classy
+[17:52] <apachelogger> ScottK: or to share some document quickly @office
+[17:52] <Quintasan> JontheEchidna: I played it over 9000 times
+[17:53] <Quintasan> actually, learning progresses more smoothly with that in background
+[17:53] <Quintasan> :O
+[17:53] <JontheEchidna> where's that rain website again?
+[17:53] <apachelogger> learning?
+[17:53] <apachelogger> wtf is that now?
+[17:54] <ScottK> apachelogger: Agreed.  Just need to be careful not to slit our own throats in the process.
+[17:54] <apachelogger> ScottK: how would that happen?
+[17:55] <ScottK> I worry about autoconnection anything for mobile devices.  Just need to make sure we don't receive stuff automatically.
+[17:56] <ScottK> It would be unfortunate if the guy across the coffee shop uploaded you some malware in the hope's you'd click on it.
+[17:57] <Quintasan> JontheEchidna: rainymood.com
+[17:57] <apachelogger> ScottK: we'd want to have pairing obviously
+[17:57] <JontheEchidna> Quintasan: magnificent!
+[17:57] <ScottK> OK
+[17:58] <apachelogger> ScottK: like on that plasma activity you could have a pane on the left edge with all detected devices, and you need to auth a device to even be able to interact with it
+[17:58] <apachelogger> i.e. sorta like mounting it once to get it automounted ^^
+[17:58] <ScottK> Sounds generally reasonable.
+[17:58] <apachelogger> except automagic and wireless
+[18:01] <Quintasan> Is there any guide if I want to change my GPG keys
+[18:01] <Quintasan> ?
+[18:02] <yofel> define change. afaik you can revoke a key
+[18:02] <JontheEchidna> transitioning to a new key?
+[18:02] <Quintasan> yeah
+[18:02] <JontheEchidna> http://jontheechidna.wordpress.com/2009/05/10/another-person-with-a-new-gpg-key/
+[18:04] <JontheEchidna> create a transition letter like that one, sign it with your old key and your new key, and then blog about it
+[18:04] <apachelogger> unless the old is compromised, in which case you should revoke it :P
+[18:04] <Quintasan> apachelogger: it is not compromised but it is 1024 only
+[18:05] <apachelogger> "only" ^^
+[18:05] <apachelogger> are you giong debian?
+[18:08] <JontheEchidna> keys of 1024 bits are no longer recommended
+[18:09] <Quintasan> apachelogger: PROTIP: If someone really wanted to, 1024 keys can be cracked
+[18:09] <ryanakca> Quintasan: You could patch gnupg and generate yourself a 10240 bit (or however big) RSA key if you wanted ;)
+[18:10] <apachelogger> PROTIP: if someone really wanted to they could drug you to get your pwds and thus access to your private key
+[18:10] <Quintasan> lol
+[18:10] <apachelogger> security is but an illusion
+[18:10] <JontheEchidna> http://xkcd.com/538/
+[18:10] <JontheEchidna> (obligatory xkcd)
+[18:10] <ryanakca> Beat me to it ;)
+[18:10] <apachelogger> yeah, beatin is also an option of course
+[18:10] <apachelogger> -> shower
+[18:12] <Quintasan> lol
+[18:16]  * Quintasan goes back to book
+[18:16] <Quintasan> books
+[18:17] <JontheEchidna> So I installed the Ubuntu Monospace beta font: http://i.imgur.com/82iqn.png
+[18:17] <JontheEchidna> so far I've not been repulsed/switched immediately back
+[18:17] <JontheEchidna> will have to see how it goes
+[18:21] <yofel> kdeplasma-addons in bzr
+[18:44] <bambee> evening
+[18:48] <ScottK> apachelogger: The only defense is to be the kind of person that enjoys the beatings.
+[18:48] <ScottK> apachelogger: So viewed properly, minion abuse is just helping them have better security.
+[19:12] <apachelogger> very well put
+[19:15] <ScottK> JontheEchidna: Yes, but you liked the Ubuntu font to start with, so it's not much of a test.
+[19:16] <mfraz74> I've installed the new Ubuntu mono font, but can't see it as an option under monospace fonts.
+[19:18] <JontheEchidna> yeah, that's a bug with the font. I was only able to enable it for Kate
+[19:20] <mfraz74> JontheEchidna: has a bug been reported?
+[19:20] <yofel> where's the font?
+[19:21] <JontheEchidna> mfraz74: I've not checked
+[19:21] <apachelogger> this reminds me of the movie happy font
+[19:22] <JontheEchidna> yofel: the beta testing ppa, like the old font beta
+[19:22] <apachelogger> with a penguin that looked like a character
+[19:22] <ScottK> What I mostly want in a font is for it to quit changing.
+[19:22] <ScottK> Eventually I can get used to whatever as long as it's not different all the time.
+[19:26] <charlie-tca> ScottK: crashed installing 386 desktop on hardware - bug 791487
+[19:26] <ubottu> Launchpad bug 791487 in ubiquity (Ubuntu) "Kubuntu crashed during installation from Live Desktop" [Undecided,New] https://launchpad.net/bugs/791487
+=== steveire_ is now known as steveire
+[19:27] <ScottK> Lovely.
+[19:27] <ScottK> maco: Can you look at ^^^
+[19:28] <ScottK> charlie-tca: Does it happen every time?
+[19:28] <charlie-tca> only tried once; will run it again with a different partiti
+[19:28] <ScottK> Thanks.
+[19:28] <charlie-tca> partitioning scheme
+[19:29] <ScottK> "Crash every time
+[19:29] <ScottK>  ... " is a problem.
+[19:29] <ScottK> If it's some fraction of installs, not such a big deal.
+[19:30] <charlie-tca> okay, will try different partitioning, also can try in a VBox install
+[19:31] <ScottK> Thanks.
+[19:32] <maco> ScottK: if it doesnt happen every time, thatd be weird, because it's a case of using non-existent api
+[19:32] <ScottK> maco: OK.
+[19:32] <JontheEchidna> looks like it's trying to use GTK api on a Qt widget
+[19:32] <ScottK> It may not hit the code path every time.
+[19:32] <maco> yep
+[19:32] <maco> what JontheEchidna said
+[19:32] <ScottK> maco: Can you fix?
+[19:32] <maco> ev made the change in april
+[19:33] <maco> hmm guess i could do like if type(self.prepare_download_updates) is QCheckBox... do X, else if GTK thingy... do Y
+[19:34]  * ScottK will take a working hack.  Implementation details up to you.
+[19:36] <ScottK> charlie-tca: If we can get you a fix, can you test it (with both Kubuntu and Ubuntu) to make sure it's fixed and doesn't break Ubuntu.
+[19:37] <charlie-tca> yup
+[19:38] <charlie-tca> but I got to take a break shortly to cut the grass
+[19:38] <charlie-tca> Then I will be back at testing
+[19:38] <ScottK> OK.
+[19:38] <ScottK> That'll give maco a chance to make a patch.
+[19:40] <charlie-tca> selecting install instead of try results in an immediate crassh
+[19:40] <charlie-tca> No chance to try anything else
+[19:41] <charlie-tca> same bug
+[19:41] <ScottK> OK.
+[19:41] <ScottK> maco's on it, so we'll see what she figures.  At least it's easy to reproduce.
+[19:42] <charlie-tca> yup
+[19:42] <charlie-tca> Thank you
+[19:44] <maco> from from the gtk docs explanation of what set_sensitive means looks like we want .setEnabled(state) in qt
+[19:46] <charlie-tca> It is both 32 and 64bit
+[19:47] <ScottK> It would be.
+[19:49] <maco> ScottK: i have no oneiric here to try this with, and no way to build ubiquity
+[19:49] <ScottK> maco: Since it's a .py, charlie-tca can apply the patch by hand in his live session and test.
+[19:50] <maco> right
+[19:50] <maco> charlie-tca: http://paste.ubuntu.com/616040/
+[19:50] <maco> if there's an ubi-prepare.pyc file, remove that first
+[19:50] <charlie-tca> and the how to do that?
+[19:50] <ScottK> Or maybe JontheEchidna since I think charlie-tca went to mow the lawn.
+[19:50] <ScottK> Ah.
+[19:51] <ScottK> charlie-tca: Start a live session. apply the patch to ubi-prepare.py and then try to install.  I'll get you the file location in a moment
+[19:51] <charlie-tca> okay
+[19:51] <maco> its /usr/lib/ubiquity/plugins/ubi-prepare.py
+[19:51] <charlie-tca> starting live session now
+[19:52] <ScottK> Yes.  That's it.
+[19:52] <charlie-tca> grass is not growing shorter, huh?
+[19:52] <maco> i dont use type() enough to remember whether it just gives the basename like that (QCheckBox) or if it gives like PyQt4.QCheckBox, so lets find out
+[19:53] <ScottK> charlie-tca: The longer you wait to do the grass the long it'll be until you need to mow it the next time.
+[19:53] <charlie-tca> Oh, that's right! Thanks 
+[19:54] <charlie-tca> slow system here
+[19:54] <ScottK> FYI, this theory works on hair cuts too.
+[19:54] <maco> hmm i think it'll fail on the next line in the script too
+[19:54] <maco> its using .set_active() which is also gtk, but qt way is .setChecked()
+[19:55] <ScottK> It's OK.  It's taking me approximately forever just to download ubiquity so that I can upload a fix once we have a tested patch.
+[19:57] <maco> http://paste.ubuntu.com/616043/ i think that'll cover both cases of speaking-gtk-to-qt
+[20:01]  * ScottK taps taps his fingers ...
+[20:01] <ScottK> JontheEchidna: Can you test?
+[20:01] <JontheEchidna> sure, lemme fire up virtualbox
+[20:06] <charlie-tca> trying it
+[20:07] <charlie-tca> I am a slow typist these days
+[20:07] <ScottK> Cool.
+=== apachelogger is now known as transitlogger
+[20:10] <JontheEchidna> hmm, getting the patch in to the vbox session will be a challenge
+[20:10]  * JontheEchidna applies by hand
+[20:10] <maco> at least its short!
+[20:15] <charlie-tca> I got an error exit code 141
+[20:15] <JontheEchidna> looks good for me so far
+[20:15] <charlie-tca> ubi-console-setup crashed
+[20:16] <maco> charlie-tca: does it give a line number?
+[20:16] <charlie-tca> right after date/time
+[20:16] <charlie-tca> let me look again
+[20:16] <charlie-tca> no, I have to look in syslog
+[20:17] <JontheEchidna> I'm getting the same error now, but it's probably separate from the issue we're testing here
+[20:17] <JontheEchidna> http://i.imgur.com/KhwDd.png
+[20:17] <maco> yep, as ScottK said: onion layers
+[20:18] <charlie-tca> I don't think it is the same
+[20:18] <ScottK> Well there's no point in upload a fix to the first problem and force Ubuntu to retest everything if it just means we still can't install for a different reason.
+[20:19] <charlie-tca> let me try to pastebin this
+[20:19] <charlie-tca> I hate things I ain't used to
+[20:21] <charlie-tca> maco: http://paste.ubuntu.com/616059
+[20:21] <charlie-tca> tail of syslog
+[20:21] <charlie-tca> the 141 error shows up on line 5
+[20:22]  * charlie-tca too slow
+[20:23] <JontheEchidna> here's my syslog: http://i.imgur.com/zOwU6.png
+[20:23] <JontheEchidna> I wonder if it affects Ubuntu too
+[20:24] <charlie-tca> Ubuntu has been working, but you got the newer ubiquity version, right?
+[20:25] <maco> jibel got it too
+[20:25] <maco> reading his stacktrace from syslog
+[20:25] <maco> line 276 
+[20:25] <maco> http://paste.ubuntu.com/616060/ (see the 840s)
+[20:28] <charlie-tca> no wonder this stuff is so hard to troubleshoot. Those look completely different without really examining them
+[20:28] <maco> i suspect if you looked a bit above where your "141" shows up, you'll find the same stack trace
+[20:30] <charlie-tca> nope, no stack trace here
+[20:30] <JontheEchidna> nor here
+[20:31] <maco> huh. jibel got lucky then
+=== yofel_ is now known as yofel
+[20:33] <maco> charlie-tca, JontheEchidna: did you both hit it around the same time as keyboard selection?
+[20:34] <JontheEchidna> when I hit next on the timezone page
+[20:34] <JontheEchidna> it spun for a minute and crashed
+[20:34] <charlie-tca> full syslog = http://paste.ubuntu.com/616071
+[20:34] <JontheEchidna> so right before keyboard
+[20:34] <charlie-tca> hit it right after timezone
+[20:35] <maco> so maybe while it was trying to load teh kbd page?
+[20:36] <maco> were you guys by chance using debug/developer mode?
+[20:36] <charlie-tca> could be
+[20:36] <maco> cuz maybe that determines presence of actual useful stacktrace
+[20:36] <charlie-tca> no, just ran the livecd installer on the desktop after adding the patch
+[20:36] <JontheEchidna> me too
+[20:36] <ScottK> I think jibel's was in debug mode
+[20:36] <charlie-tca> That would make a difference
+=== valorie_ is now known as valorie
+[20:41] <charlie-tca> Okay, I am really going cut grass now
+[20:41] <charlie-tca> ScottK: will run the rest of the alternate cd when I get back. 64bit is working, 32bit should
+[20:42] <ScottK> charlie-tca: Thanks.
+[20:42] <charlie-tca> sure
+[20:51] <JontheEchidna> I close KMail for 2 hours and come back to 120 emails in trash from rosetta
+[20:51] <JontheEchidna> I would have gotten 1 email a minute for those two hours if I had not closed kmail
+[20:52] <ScottK> On average.
+[20:53] <yofel> if you stop rosettas spamming you'll take it's reason for existance away
+[20:53] <yofel> *existence
+[20:53] <ScottK> valorie: Are you in .ch yet?
+[20:54]  * ScottK is imagining svuorela and transitlogger in the same room.  Could be fun to watch the culture clash.
+[20:57] <JontheEchidna> ScottK: it's not an exaggeration: http://i.imgur.com/bFzQw.png
+[20:59] <ScottK> JontheEchidna: I don't imagine it is.  It's just that one per minute is an average.  IME Rosetta spam tends to be clumpy, so there's a good chance it's 30 in one minute and then none for half an hour or some such.
+[20:59] <maco> haha
+[20:59] <JontheEchidna> hmm, I did just get two of them at once
+[21:00]  * JontheEchidna closes KMail again
+[21:00] <yofel> why do you care if they go into trash anyway? :P
+[21:00] <JontheEchidna> I get the notification still
+[21:01] <JontheEchidna> makes me think I am getting real mail once a minute
+[21:01] <yofel> ah, thankfully thunderbird is quiet
+[21:01]  * yofel got a few too
+[21:01] <JontheEchidna> I like the notifications, normally. I blame rosetta fully in this
+[21:02] <JontheEchidna> Hmm, tornado watch
+[21:02] <yofel> what, even in your corner you get tornados? :O
+[21:05] <JontheEchidna> not that often or severe, but it can happen
+[21:05] <JontheEchidna> we had a single tornado two years back and it was big news
+[21:05] <JontheEchidna> not dozens of damaging tornados like down south
+[21:06] <yofel> ah
+[21:07] <JontheEchidna> http://en.wikipedia.org/wiki/File:Tornado_Alley.gif
+[21:07] <JontheEchidna> I'm in the second northeast-most state
+[21:07] <JontheEchidna> right in one of the white spots :)
+[21:07] <yofel> :)
+[21:18] <ScottK> JontheEchidna: I think you can make Kmail not notify on the trach
+[21:18] <ScottK> ...trash
+[21:19] <ScottK> I'm in Kansas City this week (for work and visiting my Dad).
+[21:20] <ScottK> His take on the tornadoes is like this, "I've live in tornado alley my entire life.  I've only ever seen one tornado the whole time.  That was in Italy."
+[21:20] <ScottK> The news does somewhat give one the feeling the risks are a lot higher than they are.
+=== valorie_ is now known as valorie
+[21:21] <micahg> ScottK: I hear similar things about hurricanes from people in Florida
+[21:21] <ScottK> Well.
+[21:21] <ScottK> I've lived in Florida.
+[21:21] <ScottK> As long as you're far enough inland to avoid the storm surge, sure.
+[21:22] <ScottK> Storm surge scares me.
+[21:22] <ScottK> Get caught up in that and you and all you own can just be gone.
+[21:22] <ScottK> At least that's reasonably predictable.
+[21:23] <akshat> How can I use Phonon in QML?
+[21:24] <ScottK> akshat: Probably a question for #phonon.
+[21:24] <akshat> ScottK: ok
+[21:25] <JontheEchidna> akshat: I don't think there's a released version that supports QML yet, but I believe that apachalogger is working on that very thing for his summer of code project
+[21:25] <JontheEchidna> bleh
+=== rdieter_work is now known as rdieter
+[22:21] <ScottK> Direct use of GL and we have GLES on armel or Qreal !=Double porting error: https://launchpadlibrarian.net/72772550/buildlog_ubuntu-oneiric-armel.kdegames_4%3A4.6.3-1ubuntu1_FAILEDTOBUILD.txt.gz
+[22:23] <charlie-tca> back from the grass cutting. Want me to go break, no , test more now?
+[22:26] <maco> charlie-tca: jibel's on it
+[22:26] <charlie-tca> Oh, good
+[22:44] <debfx> how is our alpha images status?
+[22:48] <ScottK> debfx: Alternate's look good.  Live images do live session fine, but won't do installs.  maco has her hands deep in ubiquity's guts to try to fix.
+[23:02] <JontheEchidna> ScottK: bugs 792150
+[23:02] <ubottu> Error: Launchpad bug 792150 could not be found
+[23:02] <JontheEchidna> er
+[23:02] <JontheEchidna> bug 791250
+[23:02] <ubottu> Launchpad bug 791250 in kdegames (Ubuntu) "kdegames version 4:4.6.3-1ubuntu1 failed to build on armel" [High,Triaged] https://launchpad.net/bugs/791250
+[23:04] <ScottK> OK.  Thanks.
+[23:05] <JontheEchidna> ARM's looking pretty good, though
+[23:06] <debfx> ScottK: ok, in that case I won't upload kdenetwork
+[23:06] <ScottK> debfx: Thanks.
+[23:07] <ScottK> JontheEchidna: Yep.  ld segfault in Qt is the biggest problem.
+[23:09] <debfx> cool, with the new bug subscription feature we can subscribe kubuntu-bugs to ubiquity bugs with the kubuntu tag

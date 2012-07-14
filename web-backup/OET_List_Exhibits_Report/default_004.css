@@ -1,0 +1,171 @@
+/* ::::: http://wireless.fcc.gov/css/dynamic_wireless.css ::::: */
+
+html, body { padding: 0px; border: 0px none; }
+body { font-family: Verdana,Arial,Helvetica,sans-serif; color: rgb(0, 0, 0); background-color: white; margin: 0px; white-space: normal; font-size: 100%; padding: 0px; border: 0px none; }
+div { font-family: none; }
+p, ol, ul, li, select, input { font-size: 0.9em; clear: both; }
+h1 { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 1.2em; font-weight: bold; margin: 0px; color: rgb(0, 0, 153); }
+h2 { font-size: 1.1em; font-weight: bold; margin: 0px; color: rgb(0, 0, 153); padding: 0px; }
+h3, h3.sectionHeadText, .sectionHeadText { font-size: 0.95em; font-weight: bold; margin: 10px 0px; padding: 0px; color: rgb(0, 0, 153); }
+h5, h5.title, .title { font-size: 0.9em; font-weight: bold; margin: 0px; }
+ul {  }
+li {  }
+.text, p.text, .description { font-size: 0.9em; margin: 0px; padding: 5px 5px 5px 0px; }
+.title {  }
+.label, strong { font-weight: bold; }
+.addressLine { clear: both; }
+.caption, .note, .bacronym, .help { font-size: 0.8em; color: rgb(102, 102, 102); padding-top: 2px; }
+.date { display: block; clear: both; color: rgb(102, 102, 102); font-weight: normal; font-family: Arial,Verdana,sans-serif; font-size: 0.9em; line-height: 0.8em; }
+.inlineDate { display: inline; color: rgb(102, 102, 102); font-weight: normal; font-size: 0.9em; }
+.relatedLInksBox .evenRow .date, .relatedLInksBox .oddRow .date, .relatedLInksBox .highlightRow .date { font-size: 0.8em; }
+.links, .link { margin: 3px 0px; }
+table { width: 100%; }
+table tbody tr {  }
+table tr {  }
+table tr td {  }
+.headerRow, .tableHeaderRow { position: relative; border-bottom: 1px solid white; width: 100%; clear: both; padding: 0px 5px; background: none repeat scroll 0% 0% rgb(163, 169, 228); }
+.evenRow, .row { border: 0px none; display: block; clear: both; width: 100%; margin: 0px; padding-left: 5px; padding-right: 5px; }
+.oddRow { border: 0px none; display: block; clear: both; width: 100%; padding-left: 5px; padding-right: 5px; background-color: rgb(247, 245, 255); }
+.col33percent { display: block; float: left; width: 33%; padding: 5px; }
+.col70percent { display: block; float: left; width: 70%; padding: 5px; }
+.colLast { display: block; float: left; width: auto; padding: 5px; border-right: medium none; border-bottom: medium none; }
+.pageTitleBar { top: 56px; left: 0pt; padding: 0px; margin: 0px; display: block; clear: both; background-image: url('page-titlebar-gold2_003.gif'); background-repeat: repeat-x; position: static; border-width: 0px; height: 32px; width: 100%; }
+.pageTitleBar h1.pageTitleText { margin: 0px 0px 0px 8px; padding: 4px 0px 0px; font-size: 1.1em; font-weight: bold; font-family: Verdana,Arial,Helvetica,sans-serif; line-height: 22px; }
+.sectionHeadBox { position: static; display: block; clear: both; margin: 0px 0px 8px; padding: 0px; }
+.sectionHeadBox .sectionHeadText { border-bottom: 3px double rgb(213, 174, 96); width: 100%; display: inline; float: left; margin: 6px 0px 0px; padding: 0px; }
+.headerBox { display: block; height: auto; padding: 3px; }
+* > .headerBox { position: relative; }
+.headerBox .text, .headerBox .label, .headerBox .label label, .headerBox label { color: rgb(0, 0, 153); padding-left: 5px; }
+.contentBox {  }
+.contentBox .evenRow {  }
+.contentBox .oddRow {  }
+.contentBox .evenRow a, .panelBox .conentBox .evenRow a {  }
+.relatedLinksBox { display: block; width: 100%; border: 1px none white; background: none repeat scroll 0% 0% rgb(255, 255, 255); padding: 0px; margin: 0px; }
+.rightColumn .relatedLinksBox { margin-bottom: 10px; }
+.relatedLinksBox .headerBox { width: 100%; padding: 0px; margin: 0px; background: url('w250g-right-blank.gif') repeat scroll right top transparent; }
+.relatedLinksBox .headerBox .text { font-size: 0.8em; font-weight: bold; }
+.relatedLinksBox .contentBox { padding: 0px; margin: 0px; border: 1px solid rgb(221, 221, 221); }
+.rightColumn .relatedLinksBox .headerBox .text { background: url('w250g-left-blank.gif') no-repeat scroll left top transparent; }
+.rightColumn .relatedLinksBox .contentBox { border: 2px solid rgb(221, 221, 221); }
+.relatedLinksBox .contentBox .evenRow { display: block; width: 100%; overflow: hidden; border-top: 1px solid rgb(221, 221, 221); margin: 0px; padding: 2px; }
+.rightColumn .relatedLinksBox .contentBox .evenRow .date { line-height: 1.2em; }
+.relatedLinksBox .contentBox .evenRow a { font-size: 0.8em; display: block; padding-bottom: 2px; }
+.rightColumn .relatedLinksBox .contentBox .evenRow a { display: inline; }
+.altNavBox { display: block; margin-bottom: 10px; padding: 0pt; border: 0px none; background: none repeat scroll 0% 0% transparent; width: auto; }
+.altNavBox .headerBox { width: 100%; background-image: url('w250-right-blank.gif'); background-position: right top; background-repeat: no-repeat; }
+.altNavBox .headerBox .text { display: block; font-size: 0.8em; color: rgb(0, 0, 153); font-weight: bold; background-image: url('w250-left-blank.gif'); background-position: left top; background-repeat: no-repeat; position: relative; top: -3px; left: -3px; padding-top: 8px; padding-left: 6px; }
+.altNavBox .contentBox { border: 2px solid rgb(255, 204, 102); background-color: rgb(255, 243, 220); width: auto; }
+.altNavBox .contentBox .evenRow, .altNavBox .contentBox .oddRow, .altNavBox .contentBox .highlightRow { border-bottom: 1px solid rgb(255, 204, 102); padding: 3px; overflow: hidden; font-size: 0.75em; line-height: 1.3em; width: auto; }
+.altNavBox .contentBox .evenRow a { font-size: 1em; font-weight: bold; }
+.altNavBox .contentBox .evenRow, .altNavBox .contentBox .oddRow, .altNavBox .contentBox .highlightRow { border-bottom: 1px solid rgb(255, 204, 102); padding: 3px; overflow: hidden; font-size: 0.75em; line-height: 1.3em; width: auto; }
+.searchBox { border: 1px none rgb(255, 204, 102); margin: 0px; padding: 19px 3px 16px 4px; background: url('newgoldlines.gif') repeat-y scroll right top transparent; }
+.searchBox form { margin: 0px; padding: 0px; }
+.searchBox .headerBox { margin: 0px; padding: 0px; }
+.searchBox .headerBox .label { padding: 0px; margin: 0px; color: rgb(0, 0, 0); font-size: 0.9em; }
+.searchBox .headerBox .label label { color: rgb(0, 0, 0); padding: 0px; margin: 0px; font-size: 0.9em; }
+.searchBox .contentBox {  }
+.searchBox .contentBox .help { margin-right: 2px; font-size: 0.7em; }
+.searchBox .contentBox input { margin-top: 3px; height: 20px; margin-right: 2px; }
+.applicationsDashBoard .headerRow { background: url('w482-blankblue-front_001.gif') no-repeat scroll left top transparent; color: white; padding: 0px; border: medium none; }
+.applicationsDashBoard .headerRow .text { font-weight: bold; font-size: 0.8em; margin-left: 11px; background: url('w250dkbl-right-blank.gif') no-repeat scroll right top transparent; }
+.applicationsDashBoard .contentBox { margin-top: 0px; }
+.applicationsDashBoard .contentBox .evenRow { display: block; padding: 0px; margin: 0px; border-top: 0px none; border-right: 2px solid rgb(214, 217, 243); background: url('ulshomesep.gif') repeat scroll left top transparent; font-size: 0.1em; height: 5px; }
+.applicationsDashBoard .contentBox .oddRow { padding: 0px; border: 1px solid rgb(163, 169, 228); float: left; }
+.applicationsDashBoard .contentBox .oddRow .text { font-family: Verdana,Helvetica,sans-serif; font-size: 0.7em; margin: 0px 2px; color: rgb(0, 0, 153); }
+.primaryNav { padding: 5px 0px 15px 5px; margin: 0px; background: url('newgoldlines.gif') repeat-y scroll right top transparent; }
+.primaryNav .contentBox { padding: 0px; margin: 0px; }
+.primaryNav .contentBox .headerRow { background: none repeat scroll 0% 0% transparent; border-width: 0px; margin: 0px; font-size: 0.75em; padding: 4px 3px 2px 0px; font-weight: bold; }
+.primaryNav .contentBox .evenRow { padding: 2px 3px 1px 5px; font-size: 0.75em; border: 0px none; margin: 0px; font-family: Arial,Verdana,Helvetica,sans-serif; }
+.primaryNav .contentBox .evenRow {  }
+.primaryNav .contentBox .evenRow a {  }
+.primaryNav .footerRow { position: relative; top: 15px; height: 9px; background: url('bottomrightcornermask_003.gif') no-repeat scroll right bottom transparent; }
+.masthead { top: 0pt; left: 0pt; display: block; background-color: rgb(0, 0, 153); height: 56px; padding: 0px; margin: 0px; clear: both; position: static; border: medium none; width: 100%; }
+.masthead .logoBox { top: 0pt; left: 0pt; margin: 0px; padding: 0px; height: 56px; width: 20%; position: static; float: left; }
+.masthead .mastheadRight { margin: 0px; padding: 0px; height: 56px; width: 79%; position: absolute; top: 3px; right: -1px; background: url('montage-right-cap_002.gif') no-repeat scroll right bottom transparent; }
+.masthead .mastheadRight .mastheadLinkBox { display: block; text-align: right; font-size: 0.8em; float: right; height: 56px; padding: 5px 15px 0px 0px; background: url('collage-auctions.jpg') no-repeat scroll 0% 0% transparent; }
+.mastheadLinkBox a, .mastheadLinkBox a.blueFCCNav, .mastheadLinkBox a.siteLinks, .mastheadLinkBox a.siteLinksLast { font-size: 0.9em; line-height: 0.9em; color: rgb(255, 255, 255); padding: 0px 3px; border-right: 1px solid white; float: none; }
+.mastheadLinkBox a.siteLinksLast { border-right: 0px none; }
+.leftColumn { border: 1px none white; padding: 0px; margin: 0px; float: left; background: none repeat scroll 0% 0% rgb(255, 204, 102); font-family: Arial,Verdana,sans-serif; display: block; position: relative; left: 0px; top: 0px; width: 15%; }
+.compoundColumn { border: 1px none white; padding: 10px 0px 20px 10px; margin: 0px; position: relative; top: 0px; left: 0px; display: block; width: 85%; overflow: visible; float: left; clear: right; }
+.centerColumn { float: left; padding-right: 10px; padding-top: 10px; display: block; clear: right; width: 70%; margin: 0px; }
+.centerColumn .text { font-size: 0.8em; line-height: 1.1em; }
+.rightColumn { display: block; margin: 0px; padding: 0px; width: 30%; float: left; clear: right; }
+.breadcrumbBox { height: 20px; margin: 0px; padding: 0px; display: block; width: 100%; position: relative; left: -3px; top: 0pt; text-align: left; background: url('newcrumbmain.gif') repeat scroll left top transparent; }
+.breadcrumbs { padding: 3px 0px 3px 10px; font-size: 0.6em; }
+.breadcrumbs a {  }
+.sitemaplink { position: absolute; left: 80%; top: 0px; z-index: 10; margin-right: 3px; text-align: right; right: 0px; width: 19%; }
+.sitemaplink a { font-size: 0.7em; }
+ul.subnav { display: block; list-style-image: url('arrow.gif'); vertical-align: middle; }
+ul.arrow { display: block; list-style-image: url('arrow.gif'); }
+.subnav li a { font-size: 1em; }
+.release, .presentation { display: block; margin: 0px 0px 12px; padding: 5px 0px 0px; }
+.release .date, .presentation .date { display: block; clear: both; color: rgb(102, 102, 102); font-size: 0.8em; font-weight: normal; font-family: Arial,Verdana,sans-serif; }
+.release .docNumber, .release .docType, .presentation .docNumber, .presentation .docType { font-size: 0.75em; font-family: Arial,Verdana,sans-serif; text-transform: uppercase; padding: 0px; margin: 0px; color: rgb(102, 102, 102); }
+.release h5.title, .presentation h5.title { padding: 0px; font-size: 0.8em; color: rgb(0, 0, 0); }
+.release .links, .presentation .links { font-family: Arial,Verdana,Helvetica,sans-serif; font-size: 0.75em; }
+.contentBox .evenRow .release .links, .contentBox .evenRow .presentation .links { font-size: 0.9em; }
+.release .links a, .presentation .links a {  }
+.backToTop { display: block; clear: both; border-top: 1px solid white; margin-left: 15%; width: auto; }
+.singleColumn .backToTop, .centerColumn .backToTop { margin-left: 0px; margin-top: 10px; margin-bottom: 10px; }
+.backToTop .text { padding-top: 16px; font-family: Arial,Verdana,Sans Serif; color: rgb(0, 0, 0); font-size: 0.75em; font-style: italic; }
+.backToTop .date, backToTop .inlineDate, .backToTop .text .inlineDate { color: rgb(0, 0, 0); }
+.backToTop a { font-weight: bold; color: rgb(0, 0, 153); font-size: 0.7em; }
+.pageFooter { position: relative; top: 0px; left: 0px; display: block; clear: both; font-family: Arial,Helvetica,Verdana,sans-serif; padding: 8px; border-width: 1px 0px 0px; border-style: solid; border-color: gray; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; width: 100%; font-size: 0.8em; }
+.pageFooter .linkBox { width: 12%; float: left; text-align: center; border-right: 1px solid black; border-style: solid; border-color: black; -moz-border-top-colors: none; -moz-border-right-colors: none; -moz-border-bottom-colors: none; -moz-border-left-colors: none; -moz-border-image: none; border-left: 0px solid black; border-width: 0px 1px 0px 0px; }
+.pageFooter .lastLinkBox { width: 14%; float: left; text-align: center; }
+.pageFooter .linkBox a, .pageFooter .lastLinkBox a {  }
+.pageFooter .col33percent, .pageFooter .col40percent { display: block; width: 32%; }
+.pageFooter .contentBox { border: 1px solid rgb(221, 221, 221); width: 100%; }
+.pageFooter .contentBox .headerRow { background-color: rgb(238, 238, 238); padding: 0px; }
+.pageFooter .contentBox .headerRow .colLast { float: left; }
+.pageFooter .evenRow .colLast, .pageFooter .contentBox .evenRow .colLast { float: right; }
+.pageFooter .colLast .addressLine, .pageFooter .contentBox .evenRow .colLast .addressLine { display: block; width: 100%; text-align: right; white-space: nowrap; }
+.readerLabel, .readerSkipNav, .readerTitle, a.readerSkpNav { display: none; }
+body > .leftColumn { font-size: 100%; }
+body > .masthead > * { font-size: 100%; font-family: Arial,Helvetica,Sans Serif; }
+body > .singleColumn, body > .compoundColumn { font-size: 100%; font-family: Verdana,Arial,Sans Serif; }
+.searchBox > *, .searchBox > * > *, .searchBox > * > * > * { font-family: Arial,Helvetica,Sans Serif; }
+.primaryNav > .headerBox, .primaryNav > .contentBox > *, .primaryNav > .contentBox > * > * { font-family: Arial,Helvetica,Sans Serif; }
+.breadcrumbBox > *, .breadcrumbbox > * > * { font-family: Arial,Helvetica,Sans Serif; }
+.centerColumn > *, .centerColumn > * > *, .centerColumn > * > * > *, .centerColumn > * > * > * > *, * > .author { font-family: Verdana,Arial,Sans Serif; }
+.relatedLinksBox > *, .relatedLinksBox > * > * { font-family: Verdana,Arial,Sans Serif; }
+.altNavBox > * > *, .altNavBox > * > * > * { font-family: Verdana,Arial,Sans Serif; }
+body > .singleColumn > *, body > .singleColumn > * > *, body > .singleColumn > * > * > *, body > .singleColumn > * > * > * > *, body > .compoundColumn > *, body > .compoundColumn > * > *, body > .compoundColumn > * > * > * > * { font-family: Verdana,Arial,Sans Serif; }
+.release > *, .release > * > *, .release > * > * > * { font-family: Verdana,Arial,Sans Serif; }
+.evenRow > *, .evenRow > * > *, .evenRow > .colLast, .evenRow > .colLast > *, .headerRow > *, .headerRow > * > *, .headerRow > * > * > * { font-family: Verdana,Arial,Sans Serif; }
+body > .backToTop > *, .backToTop > * > *, .backToTop > * > * > * { font-family: Verdana,Arial,Sans Serif; }
+body > .pageFooter > *, body > .pageFooter > * > *, body > .pageFooter > * > * > * { font-family: Verdana,Arial,Sans Serif; }
+body > .masthead { padding: 0px; }
+.masthead > .logoBox { width: 70%; }
+.masthead > .mastheadRight { position: absolute; top: 0pt; right: 0pt; }
+.masthead > .mastheadRight > .mastheadLinkBox { font-family: Arial,Helvetica,Sans Serif; font-size: 0.8em; height: 49px; width: 80%; margin-right: 20px; text-align: right; background-position: right bottom; }
+.mastheadLinkBox > a, .mastheadLinkBox > a.siteLinksLast { text-align: right; }
+body > .pageTitleBar {  }
+.pageTitleBar > .pageTitleText { font-family: Verdana,Helvetica,Sans Serif; font-size: 1.2em; }
+body > .leftColumn {  }
+body > .breadcrumbBox { display: block; width: 85%; position: relative; left: 15%; }
+.breadcrumbBox > .breadcrumbs { font-size: 0.6em; padding-top: 3px; font-family: Verdana,sans-serif; position: relative; left: -17%; }
+.breadcrumbs > a { font-family: Verdana,sans-serif; padding-left: 0px; margin-left: 0px; text-align: left; }
+.breadcrumbBox > .sitemaplink { padding-top: 3px; }
+body > .compoundColumn { width: 82%; display: block; float: left; }
+.compoundColumn > .centerColumn { width: 70%; }
+.sectionHeadBox > .sectionHeadText { margin-top: 0px; font-family: Verdana,Arial,Sans Serif; }
+.compoundColumn > .rightColumn { float: left; width: 28%; }
+.altNavBox > .headerBox > .text {  }
+.altNavBox > .contentBox, .infoBox > .contentBox { width: 100%; overflow: hidden; }
+.relatedLinksBox > .contentBox { overflow: hidden; }
+body > .pageFooter { width: 98%; }
+.pageFooter > .contentBox { background: none repeat scroll 0% 0% rgb(238, 238, 238); display: block; float: left; }
+.pageFooter > .contentBox > .headerRow { position: relative; margin: 0px; border: medium none; font-weight: bold; }
+.pageFooter > .contentBox > .evenRow, .pageFooter > .evenRow { float: left; background: none repeat scroll 0% 0% rgb(255, 255, 255); width: 98.5%; max-width: 99%; }
+.pageFooter > .contentBox > .evenRow > div {  }
+.pageFooter > .linkBox, .pageFooter > .lastLinkBox { font-size: 1.1em; margin-bottom: 5px; }
+@media aural {
+  body {  }
+  .masthead, .pageTitleBar, .leftColumn, .rightColumn, .text {  }
+  .centerColumn, .singleColumn {  }
+  .text {  }
+  .readerSkipNav {  }
+  .readerTitle {  }
+  .readerLabel {  }
+}

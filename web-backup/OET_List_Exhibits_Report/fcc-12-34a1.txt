@@ -1,0 +1,1089 @@
+Federal Communications Commission FCC 12-34 
+Before the
+Federal Communications Commission
+Washington, D.C. 20554
+In the Matter of
+Amendment of Part 15 of the Commission’s 
+Rules To Establish Regulations for Tank Level 
+Probing Radars in the Frequency Band 
+77-81 GHz
+and
+Amendment of Part 15 of the Commission’s 
+Rules To Establish Regulations for Level Probing 
+Radars and Tank Level Probing Radars in the 
+Frequency Bands 5.925-7.250 GHz, 
+24.05-29.00 GHz and 75-85 GHz
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+)
+ET Docket No. 10-23
+FURTHER NOTICE OF PROPOSED RULE MAKING 
+Adopted:  March 26, 2012 Released:  March 27, 2012
+Comment date: [Insert date 30 days after date of publication in the Federal Register]
+Reply Comment date: [Insert date 60 days after date of publication in the Federal Register]
+By the Commission:
+I. INTRODUCTION
+1. In this Further Notice of Proposed Rule Making (FNPRM), we are expanding the scope of 
+the above-referenced proceeding to propose a set of technical rules for the operation of unlicensed 
+level probing radars (LPR) in several frequency bands.  LPR devices are low-power radars that 
+measure the level (relative height) of various substances in man-made or natural containments.  In 
+open-air environments, LPR devices may be used to measure levels of materials such as coal piles or 
+water basin levels.  An LPR device also may be installed inside an enclosure, e.g., a tank made of 
+materials such as steel or fiberglass and commonly referred to as a tank level probing radar (TLPR) 
+that could be filled with liquids or granulates.  In the Notice of Proposed Rule Making and Order 
+(Notice and Order) in this proceeding,1 we proposed rules applicable only to TLPR devices for 
+operation in the 77-81 GHz band inside steel and concrete tanks, as that was the use requested by the 
+initial proponents.2 During the pendency of the rulemaking proceeding, but outside this proceeding, 
+  
+1 See Amendment of Part 15 of the Commission’s Rules To Establish Regulations for Tank Level Probing Radars in 
+the Frequency Band 77-81 GHz, Notice of Proposed Rulemaking and Order (Notice and Order),
+ET Docket Nos. 10-23, 06-216 and 07-96, 25 FCC Rcd 601 (2010).  
+2 In the Notice and Order, we also requested comment on whether to allow TLPR operation in the broader 
+75-85 GHz band.  Notice and Order, 25 FCC Rcd. 601, 606-607 (2010) at para. 14.
+Federal Communications Commission FCC 12-34 
+2
+we received waiver requests3 and other inquiries regarding outdoor use on additional frequencies 
+under existing Part 15 rules for unlicensed devices.4 To address the apparent need for a 
+comprehensive and consistent approach to LPR devices, we are proposing in this FNPRM rules that 
+would apply to the operation of LPR devices installed in both open-air environments and inside 
+storage tanks in the following frequency bands:  5.925-7.250 GHz, 24.05-29.00 GHz, and 75-85 GHz.  
+2. LPR devices can provide accurate and reliable target resolution to identify water levels in 
+rivers and dams or critical levels of materials such as fuel, sewer-treated waste, and high risk 
+substances, reducing overflow and spillage and minimizing exposure of maintenance personnel in the 
+case of high risk materials.5  We are proposing a set of rules that would be applicable to LPR devices 
+(including TLPR devices) that would allow the expanded development of a variety of radar 
+level-measuring products that will benefit the public and industry and improve the accuracy and 
+reliability of these measuring tools beyond that which is permitted under our current Part 15 rules.  To 
+the extent practicable, these proposals would also harmonize our technical rules for LPR devices with 
+similar European standards in an effort to improve the competitiveness of U.S. manufacturers in the 
+global economy.  We believe that, with appropriate rules, LPR devices can operate on an unlicensed 
+basis in the proposed frequency bands without causing harmful interference to authorized services.  
+II. BACKGROUND
+3. LPR devices are downward-looking low-power transmitters that are used to measure the level 
+(relative height) of various materials.  They can operate either inside a tank (or similar enclosure) or in an 
+open-air environment, e.g., mounted under a bridge to measure water levels in a basin/river or under a 
+roof structure to measure mounds of granulates such as coal.  An LPR device is typically mounted at the 
+top of an enclosure or on a support rail and emits radio frequency signals from an antenna aimed 
+downwards at the surface of the substance below.  The device measures or calculates the time delay 
+between the transmitted signal and the return echo reflected off the surface of the material being measured 
+to determine the material’s level.  Current technology typically uses either traditional pulsed modulation 
+techniques or frequency-modulated continuous waves (FMCW) producing bandwidths greater than or 
+equal to 50 megahertz.  With a pulsed-modulated LPR, short duration pulses are transmitted toward the 
+target, and the target distance is calculated using the pulse transit time.  With an FMCW-modulated LPR, 
+a continuous frequency-modulated signal is transmitted, and the frequency difference caused by the time 
+delay between transmission and reception indicates the target distance.  To conserve power, LPR devices 
+operate with a low duty cycle:  20 percent or below for FMCW and much lower for pulsed LPR 
+emissions.  LPR devices do not establish communications networks, and there is minimal likelihood that 
+two or more devices will emit simultaneously within close proximity of one another.
+4. Most LPR devices on the U.S. market6 currently operate on an unlicensed basis at 6 GHz, 
+  
+3 See e.g., Ohmart/VEGA Corporation Request for Waiver of Section 15.252 to Permit the Marketing of Level 
+Probing Radars in the 26 GHz Band, ET Docket No. 10-27.
+4 47 C.F.R. § 15.209.  This section allows any type of unlicensed intentional radiator to operate in any frequency 
+band, other than “restricted” bands identified in 47 C.F.R. § 15.205(a) of the rules, as long as it complies with the 
+general radiated emission limit.  
+5 Over-filling of plant equipment can damage machinery, threaten workers’ safety, and cause environmental 
+damage.  Under-filling of equipment such as rock crushers can result in machinery running empty, leading to severe 
+product damage and collateral worker injury.  
+6 Siemens, Krohne, SAAB Rosemount Tank Radar AB, etc., are FMCW radars manufacturers.  Ohmart/VEGA, 
+Endress+Hauser, Inc., Enraf B.V., etc., are pulsed radars manufacturers.  See, e.g., Ohmart/VEGA model 
+VEGAPULS 68 operating at 26 GHz, at http://www.ohmartvega.com/bulksolids/31425-US-050617.pdf, model 
+VEGAPULS 66 operating at 6.3 GHz at http://www.ohmartvega.com/downloads/PI/EN/31486-EN.pdf; Milltronics 
+Federal Communications Commission FCC 12-34 
+3
+24 GHz, or 26 GHz under the general emission limits in Section 15.209 of the Commission’s rules.7 LPR 
+users select an LPR based on its frequency bands of operation according to the type of substance being 
+measured and the installation.  For example, LPR devices operating in the 6 GHz frequency range are 
+often used for applications where the substance to be measured has high contamination or severe foaming 
+characteristics; because the dust or foam is made up of relatively large particles, these substances tend to 
+scatter a higher frequency signal, and therefore a relatively low frequency is necessary to penetrate to the 
+surface below.  LPR devices operating in the 24-26 GHz frequency range can accommodate a wide 
+variety of applications but are less effective on foam, condensation, contamination, or turbulent materials.
+5. LPR devices operating at even higher frequencies, i.e., above 30 GHz in the “millimeter 
+wave” spectrum, could be very effective in applications where access is limited because they can employ 
+smaller antennas.8 Smaller antennas can accommodate existing small connection flanges more easily, 
+enabling the radar to be installed in tighter spaces and smaller enclosures than is possible with existing 
+technology.  In addition, antennas that operate at higher frequencies would likely employ narrower 
+beamwidths.9 Narrower beams would enable avoidance of extraneous objects located in proximity to the 
+desired target, such as agitators, filling pipes, or adjacent loading machinery, thereby resulting in 
+improved resolution and more precise measurements.10  
+6. On January 14, 2010, the Commission adopted the Notice and Order in this proceeding in 
+response to: (1) a Petition for Rulemaking from Siemens Milltronics Process Instruments Inc. (Siemens)11
+requesting that the Commission amend its rules to allow TLPR devices to operate in the “restricted” 
+77-81 GHz frequency band inside steel or concrete tank enclosures;12 (2) a concurrent request for waiver, 
+also by Siemens, of Section 15.205(a) to allow TLPR operation in the 78-79 GHz frequency band, subject 
+to certain conditions;13 and (3) a similar request for waiver by Ohmart/VEGA Corporation 
+(Ohmart/VEGA)14 to allow TLPR operation in the 77-81 GHz band.15 The Notice and Order proposed to 
+     
+model IQ300 operating at 6.3 GHz at http://www.lesman.com/unleashd/catalog/sensors/sensors_iqradar300.html; 
+Siemens model Sitrans LR400 operating at 24 GHz at https://pia.khe.siemens.com/index4936.htm; Endress+Hauser 
+Micropilot FMR240 operating at 26 GHz at http://www.pci-instruments.com/html/micropilot.html.
+7 See fn. 4, supra.
+8 The term “millimeter wave” arises from the fact that the wavelength of radio signals operating on frequencies 
+between 30 GHz and 300 GHz ranges from 10 millimeters to 1 millimeter, respectively.  
+9 “Beamwidth” refers to the angle between the half-power points (i.e., the  -3 dB points) of the main lobe of an 
+antenna, when referenced to the peak effective radiated power of the main lobe.  Beamwidth is usually expressed in 
+degrees.
+10 A radar operating at 5 GHz with a 4-inch antenna would illuminate an area with a diameter of 14.4 feet 
+(6.1 meters) in a storage tank 20 feet high, whereas the same radar operating at 24 GHz would illuminate an area 
+with a diameter of only 3.6 feet (1.2 meters).  A larger beamwidth would more likely illuminate and pick up echoes 
+from objects other than the desired target, causing errors and introducing inaccurate readings, thus manufacturers 
+argue that it is necessary to operate with as small a beamwidth as possible.
+11 Siemens Petition for Rulemaking (Siemens Petition), ET Docket 06-216 (filed Nov. 3, 2006).
+12 “Restricted” bands are frequency bands where unlicensed devices are not allowed to intentionally radiate energy 
+and may only emit spurious emissions.  These bands are usually used by licensed services for safety-of-life 
+communications or for radio operations that use very low received levels, e.g., satellite downlinks or by critical and 
+sensitive federal services.  The restricted bands are listed in 47 C.F.R. § 15.205(a). 
+13 Siemens Request for Waiver and Petition for Rulemaking, ET Docket 06-216 (filed Nov. 3, 2006).  See also 
+Public Notice, DA 06-2475 (rel. Dec. 6, 2006).  
+14 Ohmart/VEGA Waiver Request, ET Docket 07-96 (filed April 30, 2007).  See also Public Notice, DA 07-2518 
+(rel. Jun. 12, 2007).  
+Federal Communications Commission FCC 12-34 
+4
+modify Part 15 of the rules to allow the 77-81 GHz frequency band to be used on an unlicensed basis for 
+the operation of LPR equipment installed inside closed storage tanks made of metal, concrete, or other 
+material with similar attenuating characteristics and also sought comment on whether to allow TLPR 
+operation on an unlicensed basis in the 75-85 GHz band.16 The Notice and Order also sought comment 
+on whether the Commission should allow installation of TLPR devices in tanks made of materials with a 
+lower attenuation coefficient than steel/concrete, including open-air installations, and requested input on 
+additional measures to ensure that TLPR devices installed in such enclosures comply with the radiated 
+emissions limit outside the tank.17 No comments were received in opposition to the specific proposals set 
+forth in the Notice and Order, but no comments were received regarding open-air installations or other 
+containers.  The Order granted waivers of the restriction on spurious emissions in the 77-81 GHz band set 
+forth in Section 15.205(a) to Siemens, Ohmart/VEGA, and any other responsible party that meets the 
+specified waiver conditions, to permit TLPR devices to be installed inside tanks with high attenuation 
+characteristics, e.g., steel or concrete, pending the conclusion of the concurrently initiated rulemaking.
+7. To date, the Commission has authorized LPR devices primarily for use in tanks upon 
+demonstration of compliance with Section 15.209 of the rules, which specifies an average EIRP limit of 
+-41.3 dBm for operations above 960 MHz.18 In addition, Section 15.35(b) of the rules sets a peak limit at 
+20 dB above the average limit, e.g., a peak EIRP limit of -21.3 dBm.19 For pulsed signals, it may be 
+necessary to take into account the limitations of the measurement instrumentation to determine the total 
+peak power level, through the use of a pulse desensitization correction factor (PDCF), which is an 
+adjustment factor that must be added to the indicated value of a pulsed emission on a spectrum analyzer
+when the emission bandwidth of the pulse exceeds the resolution bandwidth of the analyzer.20 Therefore, 
+pulsed LPR devices often must reduce their peak power output to comply with the peak emission limit in 
+Section 15.209 and thus may sacrifice the necessary precision and accuracy required in many 
+applications.  LPR devices using other modulation techniques, e.g., FMCW, also need wider bandwidth in 
+certain frequency ranges to achieve the necessary measurement precision.  
+     
+15 Authorized operations in the 77-81 GHz band currently include radio astronomy (Federal and non-Federal at 
+76-85 GHz), radiolocation (Federal and non-Federal at 76-77.5 GHz and 78-81 GHz), space research (Federal and 
+non-Federal at 74-84 GHz), amateur (non-Federal at 76-81 GHz), and amateur satellite (non-Federal at 77-81 GHz).  
+47 C.F.R. § 2.106.  These services typically employ highly directional antennas because propagation loss is 
+significant over short distances at these frequencies.
+16 Notice and Order, 25 FCC Rcd. 601, 606-607 (2010) at para. 14.
+17 Id. at 609, para. 20.
+18 47 C.F.R. § 15.209(a).  Emission measurements must be performed such that the maximum emissions are found 
+by rotating the equipment under test (EUT), including pointing the EUT antenna directly at the measurement 
+antenna.
+19 47 C. F.R. § 15.35(b).  Devices operating under Section 15.209 of the rules are required to comply with a total 
+peak limit in their entire operating frequency band.  This standard was implemented when Part 15 devices primarily 
+employed narrowband emissions.  See discussion in Revision of Part 15 Rules regarding Ultra-Wideband Systems in 
+ET Docket 98-153, , Second Report and Order an Second Memorandum Opinion And Order, (Wide-Band Order) 
+19 FCC Rcd. 24558, 24565-24567 (2004) at paras. 16 and 21.
+20 Id. Depending on a number of factors (e.g., resolution bandwidth, pulse width, etc.), the spectrum analyzer may 
+not always display the true peak value of the measured emission.  This effect, called “pulse desensitization,” relates 
+to the capabilities of the measuring instrument, i.e., the spectrum analyzer does not have sufficient bandwidth to 
+measure all of the energy in the pulsed signal.  See Public Notice, OET Clarifies Equipment Authorization Policy for 
+Measurement of Broadband Emissions, DA 04-3946 (rel. Dec. 17, 2004). The application of the PDCF is a 
+necessary step in emission measurements to capture and report the true energy in pulsed signals if a total peak value 
+is required.
+Federal Communications Commission FCC 12-34 
+5
+8. Because LPR devices need higher power and wider bandwidth than that permitted under the 
+current rules to fully achieve the potential of radio frequency (RF) level-measuring technology, LPR 
+manufacturers also have considered whether they could operate under other Part 15 rules applicable to
+wide-band devices, i.e., those employing a bandwidth greater than 10 megahertz.21 Those rules allow 
+higher peak-to-average power ratios than are permitted by Section 15.35(b) and specify a power limit in 
+terms of power spectral density rather than total peak power, thus eliminating the need to apply a PDCF.22  
+Section 15.250 permits operation in the 5.925-7.250 GHz band but prohibits “fixed outdoor 
+infrastructure.”23 Section 15.252 only permits operation of radars mounted in terrestrial transportation 
+vehicles in the 16.2-17.7 GHz and 23.12-29.0 GHz bands.  Because of these various frequency and 
+operational restrictions, LPR devices currently cannot be certified to operate under either of these 
+alternative wide-band rules without grant of a waiver.
+9. On January 26, 2010, the Commission placed on public notice24 a request for waiver of 
+Section 15.252(a) of the Commission’s rules filed by Ohmart/VEGA to permit certification of LPR 
+devices installed at fixed locations at outdoor sites as well as inside storage tanks in the 24.6-27 GHz 
+frequency band.25 On January 3, 2011, the Commission also received a request for waiver of the 
+frequency band restrictions of Section 15.250 from Sutron Corporation to operate its water level probing 
+radar in the 5.460-7.250 GHz frequency band with fixed outdoor infrastructure.  Because these waiver 
+requests raise issues that are, in part, similar to those raised in this FNPRM, we are holding these two 
+requests in abeyance pending final action in this rulemaking proceeding.
+10. Over the past few years as the Commission has considered various issues related to LPR 
+operations in the United States, similar regulatory activities have taken place in Europe regarding the use 
+of RF devices in level measuring applications and certain issues regarding emission limits and 
+measurement techniques.  In 2006, the European Telecommunications Standards Institute (ETSI) adopted 
+a technical standard for TLPR devices.26 In 2010, the Electronic Communications Committee (ECC) 
+within the European Conference of Postal and Telecommunications Administrations (CEPT) published an 
+ECC Report of a study of the co-existence of LPR devices, including those used in open-air 
+environments, with various authorized services in the 6-8.5 GHz, 24.05-26.5 GHz, 57-64 GHz, and 
+75-85 GHz and adjacent frequency bands.27 This ECC Report ultimately served as the basis for an ETSI 
+  
+21 Section 15.252 requires the use of a bandwidth of at least 10 megahertz, and Section 15.250 requires the use of a 
+bandwidth of at least 50 megahertz.  47 C.F.R. §§ 15.250 and 15.252.
+22 Wide-band devices are required to comply with a peak limit based on power density in a specific bandwidth, not a 
+total peak limit over their entire operating frequency range.  Both Sections 15.250 and 15.252 permit a maximum 
+peak emission limit of 0 dBm as measured in a 50-megahertz resolution bandwidth.  47 C.F.R. §§ 15.250 and 
+15.252.
+23 47 C.F.R. § 15.250(c).  This rule prohibits fixed outdoor infrastructure to avoid the establishment of wide-area 
+networks of devices seeking to operate under this section.  See Wide-Band Order, 19 FCC Rcd. 24558, 24571 (2004)
+at para. 27.
+24 See Public Notice DA 10-128 (rel. Jan. 26, 2010). 
+25 Section 15.252(a) permits the use of field disturbance sensors within the frequency bands 16.2-17.7 GHz and 
+23.12-29.0 GHz but requires them to be mounted in terrestrial transportation vehicles, whereas Ohmart/VEGA’s 
+LPR devices would only be installed at fixed locations.  See Ohmart/VEGA Corporation Request for Waiver of 
+Section 15.252 to Permit the Marketing of Level Probing Radars in the 26 GHz Band, ET Docket No. 10-27.
+26 See ETSI TLPR Technical Standard.  See also, Notice and Order, 25 FCC Rcd. 601, 602 (2010) at para. 3.
+27 See ECC Report 139.
+Federal Communications Commission FCC 12-34 
+6
+technical standard for LPR devices.28  
+11. To determine the maximum allowable radiated emission limits for LPR devices operating in 
+each authorized frequency band, the ECC studied the interference potential of an LPR by taking into 
+account reflected emissions within a hemispherical boundary around the LPR device. The ECC assumed a 
+worst-case material reflectivity coefficient and limited these reflected emissions to -41.3 dBm at a 
+distance of 3 meters from the source, which is the same limit as the general emission limit in Section 
+15.209 of the Commission’s rules.29 Based on previous work within ETSI,30 the ECC determined the 
+main-beam emission level that correlates to a reflected emission level of -41.3 dBm.  The ECC also 
+determined that main-beam emissions must be measured with the LPR transmit and measurement 
+(receive) antennas “boresighted” to produce the maximum realizable antenna coupling.31 As compared to 
+the Part 15 rules, the main-beam emission limits derived from this ECC modeling effort would allow an 
+LPR device to operate at higher peak levels than Part 15 currently permits32 but would continue to provide 
+the same level of interference protection to authorized services as any other Part 15 device, provided that 
+the LPR antenna always maintains a downward position and utilizes a relatively narrow beamwidth.33  
+The ECC determined that because the LPR is always pointing downward, direct emissions from the LPR 
+antenna are focused toward the substance being measured, therefore only residual emissions reflected 
+from this material or from the ground surface would be seen by a potential victim receiver operating 
+within an authorized radio service located above (e.g., a satellite receiver) or horizontally relative to an 
+LPR transmitting source.  The ECC also determined that a main-beam emission limit would simplify 
+compliance measurements of LPR emissions, because emissions from the LPR would be measured 
+  
+28 See ETSI LPR Technical Standard. ETSI permits operation of LPR devices in the bands proposed by the ECC 
+Report.  Id., at p. 24.
+29 See ECC Report 139 at p. 19-20.  The ECC found that the worst-case reflection losses for calm water with a 
+0 degree angle of incidence are 1.9 dB, and up to 13 dB for solid granular materials such as dry sand, at angles of 
+incidence 0-33 degrees.  Id., at Annex 2, p. 63.  From test results obtained in practical measurements to verify 
+theoretical considerations, ECC concludes that “the results of lab measurements showed that for …fine dry sand 
+(measured under conditions of its natural surface coarseness, yet formed in a flat bed as opposed to conical shape 
+that would be more suitable for natural conditions), the reflection loss was around 14 dB and is little dependent on 
+the angle of incidence.”  Id.
+30 See Electromagnetic compatibility and Radio spectrum Matters (ERM); System Reference Document; Short 
+Range Devices (SRD); Equipment for Detecting Movement using Ultra-Wide Band (UWB) Radar Sensing 
+Technology; Level Probing Radar (LPR)-sensor equipment operating in the frequency bands 6 GHz to 8,5 GHz, 
+24,05 GHz to 26,5 GHz, 57 GHz to 64 GHz, 75 GHz to 85 GHz, European Telecommunications Standards Institute 
+(ETSI) Technical Report (TR) 102 601 V1.1.1 (2007-12), (ETSI LPR Technical Report).
+31 Antenna boresight is the axis of maximum gain (maximum radiated power)) of a directional antenna.
+32 Sections 15.209 and 15.35(b) impose a total peak limit of -21.3 dBm for operation of Part 15 devices above 
+960 MHz.  47 C.F.R. §§ 15.209 and 15.35(b).  Sections 15.250 and 15.252 impose a peak limit of 0 dBm in a 
+50-megahertz bandwidth for Part 15 devices operating in the 5.925-7.250 GHz, 16.2-17.7 GHz and 
+23.12-29.00 GHz frequency bands.  47 C.F.R. §§ 15.250 and 15.252.  The ECC LPR peak emission limits are 
++7 dBm for LPR devices operating in the 5.925-7.250 GHz band, +26 dBm for LPR devices operating in the 
+24.05-29.00 GHz band and +34 dBm for LPR devices operating in the 75-85 GHz band, as measured in a 
+50-megahertz resolution bandwidth.  The limits differ for each frequency band because the modeling took into 
+account the frequency-dependent propagation loss characteristics in each band.
+33 The Part 15 rules specify an average emission limit of -41.3 dBm from Part 15 devices operating above 960 MHz, 
+as the minimum protection to authorized services.  The ECC modeling provides for an equivalent main-beam 
+average emission limit of -33 dBm in the 5.925-7.250 GHz band, -14 dBm for LPR devices operating in the 
+24.05-29.00 GHz band, and -3 dBm for LPR devices operating in the 75-85 GHz band, as measured in a 
+1-megahertz resolution bandwidth.  The limits again differ for each frequency band because the modeling took into 
+account the frequency-dependent propagation loss characteristics in each band.
+Federal Communications Commission FCC 12-34 
+7
+directly in the main beam of the antenna where maximum emissions are found, thus avoiding the 
+measurement of reflected emissions that can be highly variable due to the variable site-related factors 
+involved with in situ testing.34
+III. DISCUSSION
+12. In this FNPRM, we propose a set of rules that would be applicable to LPR devices used in any 
+RF level-measuring application, whether in an open-air environment or inside an enclosure, to address the 
+needs for a comprehensive and consistent approach to LPR devices.  These proposals are intended to 
+allow for the introduction of more diverse applications of LPRs in several frequency bands and improve 
+the accuracy and reliability of these level-measuring tools beyond what is permitted under our current 
+Part 15 rules.  We also believe that the proposed rules will help to simplify equipment development and 
+certification of LPR devices as well as provide a simplified method for measuring the radiated emissions 
+from these devices.  
+13. As mentioned above, to date, the Commission has authorized LPR devices primarily for use 
+in tanks upon demonstration of compliance with Section 15.209 of the rules, which specifies an average 
+EIRP limit of -41.3 dBm for operations above 960 MHz.  In addition, these devices have also been 
+required to demonstrate that they comply with Section 15.35(b) of the rules, which sets a peak limit at 
+20 dB above the average limit, e.g., a peak EIRP limit of -21.3 dBm.  Pulsed LPR devices often must 
+reduce their peak power output in order to comply with this peak emission limit and thus may sacrifice 
+the necessary precision and accuracy required by many applications.  LPR devices using other modulation 
+techniques, e.g., FMCW, also need wider bandwidth in certain frequency ranges to achieve the necessary 
+measurement precision.  LPR devices need higher power and wider bandwidth than permitted under 
+Section 15.209 of the rules to fully achieve the potential of RF level-measuring technology.  In addition, 
+the Part 15 rules for similar wide-band devices such as Section 15.250 or 15.252 contain frequency and 
+operational restrictions which preclude the certification of LPR devices absent a waiver.
+14. In addition, as discussed below, the traditional practice of measuring radiated emissions at a 
+3-meter horizontal distance from the radiating source while varying the measurement antenna height from 
+1 meter to 4 meters may not yield repeatable results for LPR emissions when measured in situ.  The 
+difficulties in measuring reflected emissions from LPR devices that are pointed downward is one reason 
+why ETSI/ECC evaluated and ultimately adopted a comparable main-beam emission limit for LPR 
+devices.35
+15. In expanding the scope of this rulemaking proceeding, we are responding to an industry-wide 
+need to employ wider bandwidth and higher power to implement more diverse applications in RF 
+level-measuring while maintaining or improving accuracy and reliability.  Specifically, we propose to 
+amend Part 15 to provide a set of new rules to govern specifically the operation of LPR devices installed 
+both in open-air environments and inside storage tanks (TLPR applications) in the following frequency 
+bands:  5.925-7.250 GHz, 24.05-29.00 GHz, and 75-85 GHz.36 To permit LPR operation in the 
+75-85 GHz band, we also propose to modify existing Section 15.205 of the rules to remove the 
+prohibition on intentional emissions in this band.  We further propose to treat LPR and TLPR devices the 
+same with respect to emission limits and frequency bands of operation without any additional installation 
+limitations.  That is, a level measuring radar that complies with our proposed rules would be able to be 
+  
+34 ECC Report 139 at p. 2 and p. 11.  
+35 See discussion on Compliance Measurement in paragraph 33, infra.
+36 LPR devices are already permitted to operate in the 5.925-7.250 GHz and 24.05-29.00 GHz bands under Section 
+15.209 of the rules, as are many other types of unlicensed devices, and LPR devices may continue to be authorized 
+under this rule for use in these or other bands.  
+Federal Communications Commission FCC 12-34 
+8
+used in any application, whether outdoors in the open or inside any type of enclosure.  Accordingly, the 
+proposals for emission limits in this FNPRM would supersede the emission limit proposals for TLPR 
+devices in the Notice and Order.
+16. We are proposing emission limits for the main-beam emissions which are based on the ETSI 
+LPR Technical Standard and take into account the fact that there may be no additional attenuation 
+provided by a tank enclosure, as discussed in detail below.  The proposed limits would allow the main-
+beam emissions from LPRs to be higher in power than is allowed under the general emission limits in 
+Section 15.209.  However, the levels of reflected emissions are not expected to exceed those general 
+emission limits, and therefore no increased potential for interference is expected.  We also propose to 
+require that all spurious/unwanted emission limits from LPRs not exceed the general emission limits in 
+Section 15.209 when measured in the main beam of a device's transmit antenna; the measurement 
+procedure would also utilize elevation and azimuth measurement scans to determine the location at which 
+these unwanted emissions are maximized.37  To further protect authorized services operating in the same 
+and adjacent frequency bands, we propose to: (1) require the LPR antenna to be dedicated or integrated as 
+part of the transmitter and professionally installed in a downward position; (2) limit installations of LPR 
+devices to fixed locations; and (3) prohibit hand-held applications of LPR and the marketing of LPR 
+devices to residential consumers.38  
+17. We base these proposals on the various waiver and informal rule interpretation requests we 
+have received, and the emission limits adopted in Europe for LPR devices.  Although our proposals 
+would generally harmonize our rules with the European LPR regulations with respect to the limits for 
+fundamental emissions, they also would address the specific spectrum needs and restrictions in the U.S.39  
+The proposed rules are set forth in Appendix B.
+18. Frequency Bands of Operation. We propose to allow LPR operation under the new technical 
+rules in the following frequency bands:  5.925-7.250 GHz, 24.05-29.00 GHz, and 75-85 GHz.40 In the 
+Notice and Order, we proposed rules for TLPR devices in the 77-81 GHz band; in this FNPRM we 
+propose to expand the frequency bands for LPR operation under the new rules for both in-tank and in 
+open-air environments to include the 75-85 GHz band.  We seek comment on our proposals for LPR 
+operation in each of the frequency bands discussed below.
+19. We believe, for the reasons stated below, that allowing LPR devices to operate under the 
+  
+37 It is possible that the source of the worst-case unwanted emissions from a device may be its control circuitry 
+and/or RF leakage from its enclosure, rather than the device's transmitter circuitry and antenna.
+38 A “dedicated” antenna is an integrated antenna that is part of the main transmitter unit and cannot be replaced with 
+another antenna of different gain characteristics.
+39 ETSI permits TLPR and LPR devices to operate in several frequency bands that we do not include in our 
+proposals in this FNPRM.  For example, ETSI permits operation of TLPR devices inside tanks made of steel or 
+concrete or other material of comparable RF attenuation in the 4.5-7 GHz and 8.5-10.6 GHz bands and LPR 
+(including TLPR) devices in the 57-64 GHz band.  See ETSI TLPR Technical Standard at p. 20; ETSI LPR 
+Technical Standard at p. 24.  We take a different approach by proposing that each authorized band be available for 
+both LPR and TLPR applications.  This will allow manufacturers to take advantage of economies of scale by 
+marketing the same LPR device for a variety of RF level-measuring applications.
+40 We note that these frequencies are slightly different than those adopted by ETSI and also that in the U.S. there are 
+several “restricted” bands, as identified in Section 15.205(a) of our rules, 47 C.F.R. § 15.205(a), in some portions of 
+the ETSI LPR lower frequency range.  For instance, in the ETSI 6-8.5 GHz frequency range, in this country there 
+are restricted frequencies in the 7.25-7.75 GHz and 8.025-8.5 GHz bands, where the Federal Government operates 
+critical and sensitive services, such as fixed microwave, fixed satellite, and meteorological satellite services.  47 
+C.F.R. § 2.106.  Parties seeking use of these bands should request a waiver.
+Federal Communications Commission FCC 12-34 
+9
+technical rules we propose herein will not increase the likelihood of harmful interference to incumbent 
+authorized radiofrequency operations.  LPR devices are typically installed at fixed industrial sites, such as 
+quarries, paper mills, and ore refineries, or at facilities adjacent to bodies of water, such as dams, storm 
+water lift stations, and sewage treatment plants, all of which are generally well away from residences.  We 
+also propose requiring LPR devices to utilize narrow beamwidth transmit antennas focused in a 
+downward orientation.  This will serve to minimize the likelihood of interference to any incumbent 
+spectrum operations within proximity of a fixed LPR system.  Finally, as discussed below, the emission 
+limits proposed herein for LPR devices will ensure that incumbent operations are afforded similar 
+protection as currently provided by the existing emission limits in Section 15.209 of the rules. 
+20. Currently, unlicensed wide-band transmitter operation within the 5.925-7.250 GHz band is 
+permitted under Section 15.250 of our rules.  In this band, licensed uses include non-Federal fixed, fixed 
+satellite, and mobile services from 5.925 MHz to 7.125 MHz; and Federal fixed and space research 
+services (deep space & Earth-to-space) from 7.125 MHz to 7.250 MHz.41 Part 15 transmitters operating 
+in this band are prohibited from being used in toys or operating on board an aircraft or satellite.  They 
+cannot utilize a fixed outdoor infrastructure, including outdoor-mounted transmit antennas, to establish a 
+wide area communications network.42 We believe that our proposal to adopt rules to permit LPR 
+operation in the 5.925-7.250 GHz band, including permitting limited fixed outdoor installations, is 
+consistent with the intent underlying the usage restrictions in Section 15.250.  In this regard, LPRs will be 
+single, i.e., relatively isolated, transmitters whose individual operations outdoors will not result in a dense 
+deployment of transmitters.
+21. Unlicensed wide-band operation in the 23.12-29.0 GHz band is permitted under Section 
+15.252 of our rules.43 This band is shared between Federal and non-Federal services. Authorized 
+licensed operations include radiolocation, EESS (active), amateur, fixed, inter-satellite, radionavigation, 
+radiolocation satellite (Earth-to-space), fixed satellite (Earth-to-space), mobile, standard frequency and 
+time signal satellite (Earth-to-space), space research (space-to-Earth), and EESS (space-to-Earth) 
+services.  Currently, unlicensed transmitters operating in this band must be mounted on vehicles and 
+cannot be used in aviation applications.  To provide expanded flexibility for optimizing LPR applications 
+and to enhance global marketing opportunities by more closely harmonizing with ETSI in this frequency 
+range, we propose to permit LPR operation in the 24.05-29.00 GHz band.44 The proposed frequency band 
+is wider than that which ETSI has adopted; however, we believe that the risk of interference to incumbent 
+authorized services from LPR devices will be no greater than it is from existing Part 15 radars currently 
+operating in this band because LPR devices operate in a fixed downward-looking position. 
+22. Apart from a few exceptions, all spectrum above 38.6 GHz, including the 75-85 GHz band,45
+is designated by footnote as a “restricted band” in Section 15.205 of the rules.46 Consequently, unless 
+expressly permitted by rule or waiver, unlicensed devices are not allowed to intentionally radiate energy 
+  
+41 47 C.F.R. § 2.106.
+42 See n.23, supra. 
+43 47 C.F.R. § 15.252.
+44 ETSI only allows LPR operation in the 24.05-26.5 GHz band, presumably due to other European incumbent 
+services at frequencies higher than 26.5 GHz.  
+45 The Commission opened the 76-77 GHz band to unlicensed vehicular radars in 1995 in Amendment of Parts 2, 15 
+and 97 of the Commission’s Rules to Permit Use of Radio Frequencies Above 40 GHz for New Radio Applications, 
+First Report and Order and Second Notice of Proposed Rule Making, ET Docket 94-124, 11 FCC Rcd 4481 (1996).  
+46 47 C.F.R. § 15.205(a).  
+Federal Communications Commission FCC 12-34 
+10
+into a restricted band in order to protect sensitive radio services from harmful interference.47 The 
+Commission has permitted unlicensed operation within specific frequency bands above 38.6 GHz, e.g.,
+46.7-46.9 GHz, 57-64 GHz, 76-77 GHz, and 92-95 GHz.48
+23. The 75-85 GHz band is shared between Federal and non-Federal services.  Authorized 
+operations in this band currently include radio astronomy, fixed/mobile/fixed satellite, mobile satellite,
+broadcast and broadcast satellite, radiolocation, space research (space-to-Earth), amateur and amateur 
+satellite services.49 In addition, unlicensed vehicular radars are currently permitted to operate in the 
+76-77 GHz band.50 The services in this band typically employ highly directional antennas to overcome 
+the relatively higher propagation loss that occurs at these frequencies.51 In the Notice and Order, the 
+Commission proposed to allow TLPR operation in the 77-81 GHz band and also sought comment on 
+whether it should permit TLPR devices to operate in the broader 75-85 GHz band.52 No objections were 
+received from incumbent service operators with respect to TLPR operation in the 75-85 GHz band in 
+response to the Notice and Order.53 We believe that an extension of the frequency range to allow LPR 
+operation in the 75-85 GHz band will not adversely affect incumbent authorized users, because this band 
+is currently sparsely used54 and the propagation losses are significant at these frequencies, making 
+harmful interference unlikely beyond a short distance from the LPR device.55 We seek comment on this 
+proposal.
+24. Radiated Emission Limits. We propose to adopt radiated emission limits for LPR devices 
+operating in each of the proposed frequency bands as set forth in the table below.  These limits are 
+  
+47 See Revision of the Rules Regarding Operation of Radio Frequency Devices Without an Individual License, First 
+Report and Order, GEN Docket 87-389, 4 FCC Rcd 3493 (1989).  See also, 47 C.F.R. 15.205(a).
+48 See 47 C.F.R. §§ 15.253, 15.255 and 15.257.  The 57-64 GHz band is open to most types of unlicensed 
+operations, while the 46.7-46.9 GHz and 76-77 GHz bands are limited to unlicensed vehicular radars and operation 
+within the 92-95 GHz band is limited to indoor applications.  
+49 47 C.F.R. § 2.106.  
+50 47 C.F.R. § 15.253.  We note that the Commission has proposed to modify Sections 15.35 and 15.253 of the rules 
+to enable enhanced vehicular radar technologies in the 76-77 GHz band.  See Amendment of Sections 15.35 and 
+15.253 of the Commission’s Rules Regarding Operation of Radar Systems in the 76-77 GHz Band, and Amendment 
+of Section 15.253 of the Commission’s Rules to Permit Fixed Use of Radar in the 76-77 GHz Band, ET Docket Nos. 
+11-90 and 10-28, Notice of Proposed Rule Making, 26 FCC Rcd. 8107 (2011).
+51 There is approximately 58 dB of free space attenuation at 3 meters for a 6 GHz signal and 80 dB of free space 
+attenuation at 3 meters for an 80 GHz signal.  Free space path loss (FSPL) is calculated according to the formula 
+FSPL = 20 log F(GHz) + 20 log D(m) + 32.5, with frequency F in GHz and distance D in meters.
+52 Notice and Order, 25 FCC Rcd. 601, 606-607 (2010) at para. 14.
+53 We noted in the Notice and Order that Krohne America, an LPR manufacturer, states that the wider bandwidth 
+specified by ETSI is necessary for TLPR devices to accurately process and resolve the various reflected images 
+within tanks of different sizes and construction.  Notice and Order, 25 FCC Rcd. 601, 606 (2010) at para. 13.
+54 We note that the Commission is seeking comment on the best way to enable the use of foreign object detection 
+(FOD) radar equipment in the 78-81 GHz band and has granted a waiver of Section 90.103(b) of the rules to Trex 
+Enterprises Corporation.  In that proceeding, we seek comment on whether there is any potential for interference 
+from 78-81 GHz band radiolocation systems to other services in the 78-81 GHz band, including TLPR devices. See
+Amendment of the Commission’s Rules to Permit Radiolocation Operations in the 78-81 GHz Band, and Request by 
+the Trex Enterprises Corporation for Waiver of Section 90.103(b) of the Commission’s Rules, WT Docket No. 11-
+202, Notice of Proposed Rule Making and Order, 77 FR 1661 (Jan 11, 2012) at paras. 10-11 & 15-18.
+55 The wavelength of an LPR device operating at 75 GHz is 4 millimeters, and the free space path loss at this 
+frequency is approximately 79.5 dB at a distance of 3 meters (i.e., 750 wavelengths away) from the transmitter.  See 
+fn. 51, supra. 
+Federal Communications Commission FCC 12-34 
+11
+consistent with those adopted by ETSI.56 As discussed above, ETSI derived its emission limits for 
+main-beam emissions by mathematically correlating the reflected emissions from an LPR with the 
+existing Part 15 average emission limit for devices operating above 960 MHz.57 The proposed emission 
+limits therefore would maintain the existing level of interference protection to incumbent radio services.  
+We also believe that harmonization of our limits with the ETSI limits is desirable because it could serve 
+to expand global marketing opportunities for U.S. manufacturers.
+Frequency 
+Band
+(GHz)
+Average Emission 
+Limit (EIRP in 
+dBm/MHz) as 
+measured boresight 
+(Note 2)
+Peak Emission Limit 
+(EIRP in dBm 
+measured in 50 MHz) 
+as measured boresight 
+(Note 2)
+Equivalent Average 
+Reflected Emissions if 
+measured in situ (EIRP 
+in dBm/MHz) (Note 3)
+5.925-7.250 -33 +7 -55
+24.05-29.00 -14 +26 -41.3
+75-85 -3 +34 -41.3
+Notes:   1. Minimum bandwidth at the -10 dB points is 50 megahertz.
+2. All emission limits defined herein are based on boresight measurements (i.e., measurements 
+performed within the main beam of an LPR antenna).
+3. Equivalent reflected emissions include antenna back-lobe and side-lobe emissions and 
+worst-case reflections from material being measured.
+25. As previously discussed, ETSI/ECC based these limits on the results of mathematical 
+modeling which was supported by measurement data.58 ETSI/ECC’s modeling effort shows that if the 
+LPR complies with the main-beam (boresight) emission limits specified in the second and third columns 
+of the table above, any reflected emissions, including antenna back-lobe or side-lobe emissions and 
+worst-case reflections from the target material, will also comply with the existing average emission limit 
+specified in Section 15.209 for devices operating above 960 MHz, shown in the table’s fourth column.59  
+The main-beam emission limits vary with frequency band because the mathematical models accounted for 
+the frequency-dependent propagation loss characteristics associated with each band.60 We seek comment 
+  
+56 See ETSI LPR Technical Standard at p. 26 and 29 and ECC Technical Report 139 at p.3.
+57 ETSI/ECC calculated through mathematical modeling the amount of main-beam emissions of a 
+downward-pointing antenna that would limit reflected emissions to 500mV/m at a distance of 3 meters from the 
+source, which is equivalent to an EIRP level of -41.3 dBm (this is the same as the Part 15 existing average emission 
+limit.)  Its mathematical modeling took into account reflected emissions in the vertical plane above the LPR device–
+as in the case of an open-air LPR installation over water–as well as reflected emissions in the horizontal plane 
+around the LPR device with a worst-case scenario of material reflectivity coefficient.  ETSI/ECC determined that 
+because the LPR is always pointing downward, only reflected emissions would be seen by a potential victim 
+receiver of an authorized radio service located above (e.g., a satellite receiver) or horizontally relative to the LPR 
+transmitting source.
+58 ECC Report 139 at Annex 4.
+59 We note that the ETSI equivalent average reflected emission level in the 5.925-7.250 GHz band (used to derive 
+the average and peak main-beam limits) is more stringent than the -41.3 dBm limit in Section 15.209; however, we 
+still propose to harmonize with Europe on the derived main-beam limits for this frequency range.  We note also that 
+in our rules, the limits at these frequencies for some UWB devices are also more stringent than Section 15.209.  See 
+e.g., 47 C.F.R. §§ 15.510(c)(4) and 15.515(d). 
+Federal Communications Commission FCC 12-34 
+12
+on these proposed emission limits.
+26. We believe that the proposed LPR emission limits as measured in the main beam of the LPR 
+antenna will adequately protect against harmful interference to incumbent authorized services in any of 
+the proposed frequency bands, based on several factors.  First, LPR devices will be required to utilize 
+downward-focused narrow-beam transmit antennas, which are also needed to optimize level-measuring 
+performance.  Therefore, the only LPR emissions likely to be incident on an incumbent receiver within 
+proximity will be reflected from the target material and thus significantly attenuated.  Second, the 
+proposed LPR emission limits are consistent with the results expected from application of the existing 
+limits in radiated in situ measurements and therefore will maintain the existing level of protection 
+afforded to incumbent authorized services.61 Third, as the operating frequency increases, the propagation 
+path loss also increases as a result of the increased attenuating effects on radio waves from intervening 
+objects and atmospheric conditions.  Finally, as discussed below, we are proposing certain operational 
+conditions that would further reduce the likelihood of harmful interference to authorized services.  
+Accordingly, we conclude that LPR devices will be able to share spectrum with incumbent authorized 
+services in the proposed bands at the proposed emission limits.  We seek comment on this tentative 
+conclusion.  
+27. In the Notice and Order, for TLPR devices operating in the 77-81 GHz band in tanks with 
+very high RF attenuation characteristics, e.g., steel or concrete, we proposed an emission limit of 
++43 dBm on the transmitter’s peak EIRP and +23 dBm on the transmitter’s average EIRP levels for 
+fundamental emissions when measured in a laboratory setting, i.e., not installed in a tank.  We also 
+proposed to limit the radiated emissions from the TLPR device, when installed in representative tanks of 
+each material type for testing in situ, to the general radiated emission limits for intentional radiators in 
+Section 15.209(a) of our rules when measured outside of the TLPR tank enclosure in any direction.62 We 
+stated that emissions outside of the tank will likely be minimal when considering the tank enclosure’s 
+attenuation coefficient in addition to the absorption characteristics of the target material (liquid or solid), 
+and thus, any reflected signal will be mostly contained within the tank.63 We also noted that in situ testing 
+would require performance of compliance tests on a tank of each material type intended for use with the 
+LPR at three representative installation sites (e.g., a metallic tank at three representative installation sites, 
+a concrete tank at three representative installation sites), which could prove quite burdensome to an 
+applicant.64
+28. We are now proposing to treat TLPR devices in the same manner as LPR devices with 
+respect to both emission limits and frequency bands of operation.  Thus, if an LPR complies with these 
+proposed rules, it can be installed inside an enclosure or out in the open since the proposed emission 
+limits do not assume any additional attenuation provided by a tank enclosure.65 Although the emission 
+     
+60 Higher frequencies have more associated propagation losses.  For example, there are approximately 58 dB of free 
+space path loss at 3 meters for a 6 GHz signal versus 80 dB for an 80 GHz signal.
+61 See 47 C.F.R. §§ 15.250(d)(1), 15.252(b)(1) & (2), 15.509(d), 15.510(d)(3), 15.511(c), 15.513(d), 15.515(d), 
+15.517(c), and 15.519(c).
+62 Notice and Order, 25 FCC Rcd. 601, 604 (2010) at para. 8.  The general emission limit is 500µV/m as measured 
+at 3 meters from the tank enclosure, which is equivalent to an EIRP level of -41.3 dBm.  
+63 Id., at 605, para. 11.
+64 Id., at 609, para. 22.
+65 Further, the Notice and Order specifically proposed to limit the types of tanks to steel and concrete.  Tank 
+material selection depends on the type of substance to be measured, e.g., acidic substances may corrode a steel tank 
+but would not affect a plastic tank.  For electromagnetic compatibility considerations, if a tank enclosure is made of 
+a material that does not significantly attenuate the radar signal, unintentional emissions could escape through the 
+Federal Communications Commission FCC 12-34 
+13
+limits proposed herein are somewhat lower than the TLPR limits previously-proposed (e.g., +34 dBm 
+peak EIRP vs. +43 dBm peak EIRP, respectively), we note that the proposed limits do not assume any 
+tank enclosure attenuation.  We believe that this will alleviate the burdens involved in performing in situ
+compliance testing.  These proposals also will permit TLPR devices to be used with a variety of tank 
+materials, potentially increasing the useful applications of the technology.  Accordingly, we are proposing 
+a definition for LPR devices that would encompass open-air and in-tank applications.  We seek comment 
+on these proposals.
+29. Antenna Beamwidth.  We note that the ECC recommendations are based on modeling results 
+that assume the LPR antenna beamwidth is limited to less than 12 degrees for frequencies below 57 GHz 
+and less than 8 degrees in the 75-85 GHz bands.66 We note that maintaining a narrow antenna beamwidth 
+is also a performance criterion for optimizing LPR operations because a narrower beam reduces false 
+echoes from objects other than the desired target material.  We propose to adopt these antenna beamwidth 
+requirements and seek comment on this proposal.
+30. Antenna Side Lobe Gain.  In assessing compatibility between LPR devices and systems 
+operating in other radio services, the ETSI/ECC modeling effort assumed a maximum side lobe antenna 
+gain of -10 dBi for off-axis angles from the main beam of greater than 60 degrees.67 In addition to the 
+requirements for antenna beamwidth, we seek comment on the necessity of establishing limits on the gain 
+of the antenna in the side lobe region and off-axis angle where the gain is to be defined. 
+31. Automatic Power Control. ECC also recommends the implementation of automatic power 
+control (APC) with a dynamic range of 20 dB for LPRs.  We note that as a consequence of our proposed 
+emission limits, all reflected emissions from the LPR device will be kept at or below the Part 15.209 
+general emission limits.  Thus, as tentatively concluded above, harmful interference to other spectrum 
+users is not expected.  Therefore, we do not propose to adopt APC requirements for LPR devices.  Any 
+party advocating a requirement for APC should provide technical analyses as to why the emission limit in 
+Section 15.209 is not adequate.
+32. Compliance Measurement.  As stated above, a primary reason for ECC adoption of a 
+main-beam emission limit for LPR devices is to reduce the difficulties associated with measuring 
+reflected emissions from an LPR device in situ.68 We also note, in concurrence with ETSI/ECC, that the 
+current compliance practice of measuring reflected radiated emissions at a 3-meter horizontal distance 
+from the radiating source while varying the measurement antenna height from 1 meter to 4 meters often 
+does not yield repeatable results when LPR emissions are measured in situ. This is because the patterns 
+of reflected emissions tend to vary and are therefore difficult to measure consistently, propagation losses 
+in the higher frequency bands are significant, and it is not always practical to create a test bed that is 
+representative of all of the substances that an LPR will measure, making it difficult to determine the 
+worst-case reflectivity factor.  In addition, the current measurement procedure does not consider any 
+potential emissions that may radiate from the top of an LPR device.  The limits proposed herein will 
+     
+tank’s walls and the radar enclosure (mounting flange and flange gaskets, etc.) to increase the reflected emissions in 
+the vertical and horizontal planes relative to the radar.  Accordingly, an enclosure made of fiberglass or plastic 
+would provide very little RF attenuation and would be equivalent, or nearly so, to the radar transmitter operating in 
+an open-air environment.  We also note that there is a growing trend towards using plastic or fiberglass tanks.  
+66 ECC Report 139 at p. 3.  
+67 The side lobes are smaller beams that are away from the main beam.  These side lobes are usually radiation in 
+undesired directions which can never be completely eliminated.  The side lobe level (or side lobe ratio) is an 
+important parameter used to characterize antenna radiation patterns.
+68 ECC Report 139 at p. 2.
+Federal Communications Commission FCC 12-34 
+14
+account for such emissions that could be missed entirely when applying the existing in situ compliance 
+measurement procedures.  With a main-beam emission limit, emissions are to be evaluated with the 
+measurement antenna pointed directly at the LPR antenna, and as long the LPR complies with this limit, 
+its reflected emissions in any direction will generally not exceed the existing average emission limit in 
+Section 15.209, thereby maintaining the same level of interference protection to incumbent authorized 
+users.  We tentatively conclude that the main-beam emission limit will facilitate representative, reliable, 
+and repeatable emission measurements of the emissions from LPR devices.  We seek comment on this 
+tentative conclusion.  
+33. Based on our experience to date with compliance measurements of and the proposals herein 
+for main-beam emission limits for LPR devices, we seek comment on the following compliance 
+measurement procedures.  The Commission’s Office of Engineering and Technology may publish 
+specific information on how to conduct compliance testing following these procedures, e.g., by 
+publication in a guidance document or as specified in the rules.69
+· Radiated measurements of the fundamental emission bandwidth and power shall be made 
+with maximum main beam coupling between the LPR and test antennas (boresight).
+· Measurements of the unwanted emissions radiating from an LPR shall be made utilizing 
+elevation and azimuth scans to determine the location at which the emissions are maximized. 
+· All emissions at and below 960 MHz shall be measured with a CISPR quasi-peak detector.
+· The fundamental emission bandwidth measurement shall be made using a peak detector with 
+a resolution bandwidth of 1 MHz and a video bandwidth of at least 3 MHz.
+· The provisions in Sections 15.35(b) & (c) that limit the peak power to 20 dB above the 
+average limit and require emissions to be averaged over a 100 millisecond period do not 
+apply to devices operating under this section.
+· Compliance measurements of frequency-agile LPR devices shall be performed with any 
+related frequency sweep, step, or hop function activated.
+34. Operational and Marketing Restrictions. We propose to adopt operational restrictions to 
+require the antenna of an LPR device to be dedicated or integrated as part of the transmitter and 
+professionally installed in a downward position; to limit installations of LPR devices to fixed locations; to 
+prohibit hand-held applications of LPR devices; and to prohibit the marketing of LPR devices to 
+residential consumers.  We propose these restrictions to protect incumbent authorized services operating 
+in the same and adjacent frequency bands from harmful interference.  We seek comment on these 
+proposals.    
+35. Equipment Certification.  In the Notice and Order, we proposed to require that TLPR devices 
+designed to operate in the 77-81 GHz band be approved under the Commission’s certification procedures 
+and that certification be performed by the Commission's Laboratory rather than by Telecommunications 
+Certification Bodies (TCB).70 We noted that because a standard test procedure for LPR devices had not 
+yet been devised for use at these frequencies, this requirement would give the Commission time to 
+  
+69 See 47 C.F.R. § 2.947.
+70 TCBs are accredited third-party product certification bodies authorized to issue a grant of certification for certain 
+products in lieu of a traditional grant issued by the Commission.  Notice and Order, 25 FCC Rcd. 601, 610 (2010) at 
+para. 24.  See also, 47 C.F.R. §§ 2.1031-2.1060.
+Federal Communications Commission FCC 12-34 
+15
+develop appropriate measurement guidelines for devices intended for operation in this frequency band.  
+We observe, however, that the new proposals made herein will facilitate the direct measurement of 
+emissions within the main beam of the LPR antenna and are consistent with compliance measurement 
+methodologies currently used with other types of unlicensed transmitters.  We therefore propose to permit 
+TCBs to certify LPR devices operating under these proposed rules. We seek further comment on this 
+proposal.
+36. We are aware that some approvals of TLPRs have already been granted under Section 15.209 
+of our rules.  These devices may continue to operate under Section 15.209 if their worst-case radiated 
+emissions continue to comply with the limits in these rules.71 We recognize that a certified TLPR device 
+could be approved to operate under other conditions, e.g., outdoor installations in open-air environments, 
+in an enclosure with low RF attenuation characteristics, or with higher power.  To allow previously-
+certified devices to take advantage of the changes proposed in this FNPRM, we propose to allow the 
+responsible party to file for a permissive change72 request in accordance with the existing rules and 
+practices, provided that: (1) the LPR device operates only within the frequency bands authorized by rules 
+proposed herein; (2) measurement data taken in accordance with the measurement procedure proposed 
+above is provided to demonstrate compliance with the new emission limits specified in these proposed 
+rules; and (3) operational changes to the device are being implemented by software upgrade without any 
+hardware change. We seek comment on this proposal.
+37. Cost Benefit Analysis.  We believe that the benefits of the proposed regulations for 
+manufacturers and users outweigh any potential costs.  LPR devices need higher power and wider 
+bandwidth than that which is permitted under the existing Part 15 rules to fully achieve the potential of 
+this measuring technology.  Our proposed rules would provide a necessary remedy for these devices to 
+operate at the power levels and in the appropriate frequency bands required to deliver the needed accuracy 
+for diverse applications, thereby promoting the expanded development and use of this technology to the 
+benefit of businesses, consumers, and the economy.  The proposed higher power levels in the proposed 
+frequency bands would further the development of better and improved level-measuring tools, but these 
+  
+71 In the case of TLPR devices operating under waiver, these devices may continue to do so under the terms of the 
+waiver.  See, e.g., Krohne model BM702 operating at 8.5-9.9 GHz at 
+http://www.krohne.com/html/dlc/MA_BM702_e_72.pdf.  Krohne TLPR operation inside steel tanks in this band is 
+pursuant to a waiver of the 9-9.2 GHz and 9.3-9.5 GHz restricted bands of Section 15.205(a) issued in 2001 by 
+Bruce Franca, Acting Chief, Office of Engineering and Technology of the FCC, with concurrence of the National 
+Telecommunication Information Administration (NTIA).  See letter of September 5, 2001, from William Hatch of 
+NTIA to Bruce Franca, Acting Chief, OET, FCC; see also, letter of October 26, 2001, from Bruce A. Franca to Fish 
+& Richardson granting Krohne its waiver request, in Revision of Part 15 regarding Ultra-Wideband Transmission 
+Systems, ET Docket 98-153, First Report and Order, 17 FCC Rcd. 7435, 7450 (2002) fn 81.
+72 47 C.F.R. § 2.1043 defines three classes of permissive changes that may be made without obtaining a new grant of 
+equipment authorization and labeling a device with a new FCC identification number.  The three classes of 
+permissive changes are: (1) Class I, which includes those modifications in the equipment that do not degrade the 
+characteristics reported by the manufacturer and accepted by the Commission when certification is granted; (2) 
+Class II, which includes those modifications that degrade the performance characteristics as reported to the 
+Commission at the time of the initial certification; and (3) Class III, which includes modifications to the software of 
+a software defined radio transmitter that change the frequency range, modulation type, or maximum output power 
+(either radiated or conducted) outside the parameters previously approved or that change the circumstances under 
+which the transmitter operates in accordance with Commission rules.  47 C.F.R. § 2.1043(b).  No filing is required 
+with the Commission or a TCB for a Class I permissive change.  Class II and III permissive changes require an 
+abbreviated filing with the Commission or a TCB and an acknowledgement that the changes are acceptable before 
+the changed equipment can be marketed but do not require a complete application for certification or new FCC 
+identification number.  Class III permissive changes are not permitted on a device that has had a Class II permissive 
+change.  See also, Knowledge Data Base (KDB) No. 178919 at 
+https://apps.fcc.gov/oetcf/kdb/forms/FTSSearchResultPage.cfm?id=33013&switch=P.
+Federal Communications Commission FCC 12-34 
+16
+changes would not increase the potential for interference to authorized users beyond what is permitted 
+under the current rules.  In addition, the proposed rules will help to simplify equipment development and 
+certification of LPR devices, as well as provide a simplified method for measuring the radiated emissions 
+from these devices.  We seek comment on this analysis and any additional benefits that may result from 
+these proposed rules.  Parties that oppose these proposed rules should cite specific harms that they believe 
+would result from changing the rules. 
+IV. PROCEDURAL MATTERS
+38. Initial Regulatory Flexibility Analysis for the Further Notice of Proposed Rule Making. As 
+required by Section 603 of the Regulatory Flexibility Act, 5 U.S.C. § 603, the Commission has prepared 
+an Initial Regulatory Flexibility Analysis (IRFA) of the possible significant economic impact on small 
+entities of the proposals suggested in this document.  The IRFA is set forth in Appendix A.  
+39. Initial Paperwork Reduction Analysis.  The Further Notice of Proposed Rule Making does 
+not contain proposed new or modified information collection requirements.  
+40. Ex Parte Rules – Permit-But-Disclose Proceeding.  The proceeding that this Further Notice 
+of Proposed Rule Making initiates shall be treated as a "permit-but-disclose" proceeding in accordance 
+with the Commission’s ex parte rules.73 Persons making ex parte presentations must file a copy of any 
+written presentation or a memorandum summarizing any oral presentation within two business days after 
+the presentation (unless a different deadline applicable to the Sunshine period applies).  Persons making 
+oral ex parte presentations are reminded that memoranda summarizing the presentation must (1) list all 
+persons attending or otherwise participating in the meeting at which the ex parte presentation was made, 
+and (2) summarize all data presented and arguments made during the presentation.  If the presentation 
+consisted in whole or in part of the presentation of data or arguments already reflected in the presenter’s 
+written comments, memoranda or other filings in the proceeding, the presenter may provide citations to 
+such data or arguments in his or her prior comments, memoranda, or other filings (specifying the relevant 
+page and/or paragraph numbers where such data or arguments can be found) in lieu of summarizing them 
+in the memorandum.  Documents shown or given to Commission staff during ex parte meetings are 
+deemed to be written ex parte presentations and must be filed consistent with rule 1.1206(b).  In 
+proceedings governed by rule 1.49(f) or for which the Commission has made available a method of 
+electronic filing, written ex parte presentations and memoranda summarizing oral ex parte presentations, 
+and all attachments thereto, must be filed through the electronic comment filing system available for that 
+proceeding, and must be filed in their native format (e.g., .doc, .xml, .ppt, searchable .pdf).  Participants in 
+this proceeding should familiarize themselves with the Commission’s ex parte rules.
+41. Comments.  Pursuant to sections 1.415 and 1.419 of the Commission’s rules, 
+47 C.F.R. §§ 1.415, 1.419, interested parties may file comments and reply comments on or before the 
+dates indicated on the first page of this document.  Comments may be filed using the Commission’s 
+Electronic Comment Filing System (ECFS).  See Electronic Filing of Documents in Rulemaking 
+Proceedings, 63 FR 24121 (1998).
+§ Electronic Filers:  Comments may be filed electronically using the Internet by accessing the 
+ECFS:  http://fjallfoss.fcc.gov/ecfs2/
+§ Paper Filers:  Parties that choose to file by paper must file an original and one copy of each filing.  
+If more than one docket or rulemaking number appears in the caption of this proceeding, filers 
+must submit two additional copies for each additional docket or rulemaking number.
+  
+73 47 C.F.R. §§ 1.1200 et seq.
+Federal Communications Commission FCC 12-34 
+17
+Filings can be sent by hand or messenger delivery, by commercial overnight courier, or by first-
+class or overnight U.S. Postal Service mail.  All filings must be addressed to the Commission’s 
+Secretary, Office of the Secretary, Federal Communications Commission.
+§ All hand-delivered or messenger-delivered paper filings for the Commission’s Secretary 
+must be delivered to FCC Headquarters at 445 12th St., SW, Room TW-A325, 
+Washington, DC 20554.  The filing hours are 8:00 a.m. to 7:00 p.m.  All hand deliveries 
+must be held together with rubber bands or fasteners.  Any envelopes must be disposed of 
+before entering the building.  
+§ Commercial overnight mail (other than U.S. Postal Service Express Mail and Priority 
+Mail) must be sent to 9300 East Hampton Drive, Capitol Heights, MD 20743.
+§ U.S. Postal Service first-class, Express, and Priority mail must be addressed to 445 12th
+Street, SW, Washington DC 20554.
+People with Disabilities:  To request materials in accessible formats for people with disabilities (braille, 
+large print, electronic files, audio format), send an e-mail to fcc504@fcc.gov or call the Consumer & 
+Governmental Affairs Bureau at 202-418-0530 (voice), 202-418-0432 (tty).
+V. ORDERING CLAUSES
+42. IT IS ORDERED that pursuant to Sections 1, 4(i), 302, 303(e), 303(f), 303(g), and 303(r) of 
+the Communications Act of 1934, as amended, 47 U.S.C. Sections 151, 154(i), 302, 303(e), 303(f), 303(g), 
+and 303(r), this Further Notice of Proposed Rule Making IS ADOPTED.
+43. IT IS FURTHER ORDERED that NOTICE IS HEREBY GIVEN of the proposed regulatory 
+changes described in this Further Notice of Proposed Rulemaking, and that comment is sought on these 
+proposals.
+44. IT IS FURTHER ORDERED that the Commission’s Consumer and Governmental Affairs 
+Bureau, Reference Information Center, SHALL SEND a copy of this Further Notice of Proposed Rule 
+Making, including the Initial Regulatory Flexibility Analysis, to the Chief Counsel for Advocacy of the 
+Small Business Administration.
+FEDERAL COMMUNICATIONS COMMISSION
+Marlene H. Dortch
+Secretary
+Federal Communications Commission FCC 12-34 
+18
+APPENDIX A
+Initial Regulatory Flexibility Analysis
+As required by the Regulatory Flexibility Act of 1980, as amended (RFA),1 the Commission has 
+prepared this present Initial Regulatory Flexibility Analysis (IRFA) of the possible significant economic 
+impact on a substantial number of small entities by the policies and rules proposed in this Further Notice of 
+Proposed Rule Making (FNPRM).  Written public comments are requested on this IRFA.  Comments must 
+be identified as responses to the IRFA and must be filed by the deadlines for comments provided on the first 
+page of this FNPRM.  The Commission will send a copy of this FNPRM, including this IRFA, to the Chief 
+Counsel for Advocacy of the Small Business Administration (SBA).2 In addition, the FNPRM and IRFA (or 
+summaries thereof) will be published in the Federal Register.3
+A. Need for, and Objectives of, the Proposed Rules
+This rule making proposal is initiated to obtain comments regarding proposed changes to the 
+regulations for radio frequency devices that do not require a license to operate.  We propose to expand the 
+scope of the above proceeding to adopt technical rules for operation of specific types of low-power 
+transmitters called level probing radar (LPR) devices, including tank level probing radars (TLPR), on an 
+unlicensed basis under the provisions of Part 15 of the Commission’s rules in the following frequency 
+bands: 5.925-7.250 GHz, 24.05-29.00 GHz and 75-85 GHz.  We propose to amend our Part 15 rules to 
+revise the original proposed section 15.256 in the Notice of Proposed Rule Making and Order (Notice and 
+Order) to permit the operation of LPR devices installed both outdoors in the open and inside storage tanks 
+(TLPR) in the above frequency bands.  We propose to treat LPR and TLPR devices the same with respect 
+to emission limits and frequency bands of operation without any additional installation limitation.  That 
+is, a level-measuring radar that complies with our proposed rules will be able to be used in any 
+application, whether outdoors in the open or inside any type of enclosure, e.g., steel or plastic.  These 
+proposals will also extend the operation of TLPR devices from the originally proposed 77-81 GHz band 
+to the additional proposed frequency bands, at the new proposed main-beam emission limits.  We propose 
+emission limits for fundamental emissions depending on the LPR frequency bands of operation, as 
+measured in the antenna main beam, based on the LPR Technical Standards adopted in Europe, to 
+promote savings for manufacturers that operate in the global economy.  We propose to require that all 
+spurious/unwanted emission limits not exceed the general emission limits in Section 15.209 when 
+measured in the main beam of the LPR antenna, as well as utilizing elevation and azimuth scans to 
+determine the location at which the emissions are maximized.  To further protect authorized services 
+operating in the same and adjacent frequency bands, we also propose to adopt operational restrictions to 
+require the LPR antenna to be dedicated or integrated as part of the transmitter and professionally 
+installed in a downward position; to limit installations of LPR devices to fixed locations; and to prohibit 
+hand-held applications of LPR and the marketing of LPR devices to consumers.  We believe that our 
+proposals herein would enable LPR devices that will provide better accuracy and reliability in target 
+resolution to identify critical levels of materials such as fuel, water and sewer treated waste, and high-risk 
+substances.  The proposed amendments to our rules will permit these devices to operate effectively and 
+reliably, reducing storage tank overfill and spilling and minimizing exposure of maintenance personnel in 
+the case of high-risk materials, all without increasing the risk of interference to authorized services.
+  
+1 See 5 U.S.C. § 603.  The RFA, see 5 U.S.C. §§ 601 - 612, has been amended by the Small Business Regulatory 
+Enforcement Fairness Act of 1996 (SBREFA), Public Law No. 104-121, Title II, 110 Stat. 847 (1996). 
+2 See 5 U.S.C. § 603(a).
+3 Id.
+Federal Communications Commission FCC 12-34 
+19
+B.  Legal Basis.
+The proposed action is taken pursuant to Sections 1, 4(i), 302, 303(e), 303(f), 303(g), and 303(r) of 
+the Communications Act of 1934, as amended, 47 U.S.C. Sections 151, 154(i), 302, 303(e), 303(f), 303(g), 
+and 303(r).
+C.  Description and Estimate of the Number of Small Entities to Which the Proposed Rules Will 
+Apply.
+The RFA directs agencies to provide a description of and, where feasible, an estimate of the 
+number of small entities that may be affected by the proposed rules, if adopted.4 The RFA generally 
+defines the term "small entity" as having the same meaning as the terms "small business," "small 
+organization," and "small governmental jurisdiction."5 In addition, the term "small business" has the 
+same meaning as the term "small business concern" under the Small Business Act.6 A small business 
+concern is one which:  (1) is independently owned and operated; (2) is not dominant in its field of 
+operation; and (3) satisfies any additional criteria established by the SBA.7
+Radio and Television Broadcasting and Wireless Communications Equipment Manufacturing.  The 
+Census Bureau defines this category as follows:  “This industry comprises establishments primarily 
+engaged in manufacturing radio and television broadcast and wireless communications equipment. 
+Examples of products made by these establishments are: transmitting and receiving antennas, cable 
+television equipment, GPS equipment, pagers, cellular phones, mobile communications equipment, and 
+radio and television studio and broadcasting equipment.”8 The SBA has developed a small business size 
+standard for Radio and Television Broadcasting and Wireless Communications Equipment 
+Manufacturing, which is all such firms having 750 or fewer employees.9 According to Census Bureau 
+data for 2002, there were a total of 1,041 establishments in this category that operated for the entire 
+  
+4 5 U.S.C. § 603(b)(3). 
+5 5 U.S.C. § 601(6).
+6 5 U.S.C. § 601(3) (incorporating by reference the definition of “small business concern” in 15 U.S.C. § 632). Pursuant 
+to the RFA, the statutory definition of a small business applies “unless an agency, after consultation with the Office of 
+Advocacy of the Small Business Administration and after opportunity for public comment, establishes one or more 
+definitions of such term which are appropriate to the activities of the agency and publishes such definition(s) in the 
+Federal Register.”  5 U.S.C. § 601(3).
+7 Small Business Act, 15 U.S.C. § 632 (1996).
+8 U.S. Census Bureau, 2002 NAICS Definitions, “334220 Radio and Television Broadcasting and Wireless 
+Communications Equipment Manufacturing”; http://www.census.gov/epcd/naics02/def/NDEF334.HTM#N3342.
+9 13 C.F.R. § 121.201, NAICS code 334220.
+Federal Communications Commission FCC 12-34 
+20
+year.10 Of this total, 1,010 had fewer than 500 employees, and an additional 13 had between 500 and 999 
+employees.11 Thus, under this size standard, the majority of firms can be considered small.
+Wireless Service Providers.  The SBA has developed a small business size standard for wireless firms 
+within the two broad economic census categories of "Paging"12 and "Cellular and Other Wireless 
+Telecommunications."13 Under both categories, the SBA deems a wireless business to be small if it has 
+1,500 or fewer employees.  For the census category of Paging, Census Bureau data for 2002 show that 
+there were 807 firms in this category that operated for the entire year.14 Of this total, 804 firms had 
+employment of 999 or fewer employees, and three firms had employment of 1,000 employees or more.15  
+Thus, under this category and associated small business size standard, the majority of firms can be 
+considered small.  For the census category of Cellular and Other Wireless Telecommunications, Census 
+Bureau data for 2002 show that there were 1,397 firms in this category that operated for the entire year.16  
+Of this total, 1,378 firms had 999 or fewer employees, and 19 firms had 1,000 employees or more.17  
+Thus, under this second category and size standard, the majority of firms can, again, be considered small.
+We have proposed to reduce burdens wherever possible.  Our proposals for new technical rules 
+regarding LPR operation in the 5.925-7.250 GHz, 24.05-29.00 GHz, and 75-85 GHz would reduce burdens 
+on small entities.  LPR operation in these bands will increase the utilization of this spectrum by allowing 
+a radio-frequency type of level-measuring technology to access the spectrum that is currently not used 
+under the current technical rules for these types of industrial applications, resulting in more efficient use 
+of these bands.  Where possible we have made an effort to harmonize with international technical 
+standards in Europe to promote cost savings for small manufacturers competing in the global economy.  
+We will continue to examine further alternatives with the objectives of eliminating unnecessary 
+regulations and minimizing significant economic impact on small entities.  We seek comment on 
+significant alternatives commenters believe we should adopt.
+We do not expect that the rules proposed in this Further Notice of Proposed Rule Making will have a 
+significant negative economic impact on small businesses.
+  
+10 U.S. Census Bureau, American FactFinder, 2002 Economic Census, Industry Series, Industry Statistics by 
+Employment Size, NAICS code 334220 (released May 26, 2005); http://factfinder.census.gov.  The number of 
+“establishments” is a less helpful indicator of small business prevalence in this context than would be the number of 
+“firms” or “companies,” because the latter takes into account the concept of common ownership or control.  Any 
+single physical location for an entity is an establishment, even though that location may be owned by a different 
+establishment.  Thus, the numbers given may reflect inflated numbers of businesses in this category, including the 
+numbers of small businesses.  In this category, the Census Bureau breaks-out data for firms or companies only to 
+give the total number of such entities for 2002, which was 929.
+11 Id.  An additional 18 establishments had 1,000 or more employees.
+12 13 C.F.R. § 121.201, NAICS code 517211.
+13 13 C.F.R. § 121.201, NAICS code 517212.
+14 U.S. Census Bureau, 2002 Economic Census, Subject Series:  Information, “Establishment and Firm Size 
+(Including Legal Form of Organization,” Table 5, NAICS code 517211 (issued Nov. 2005).
+15 Id. The census data do not provide a more precise estimate of the number of firms that have 1,500 or fewer 
+employees; the largest category provided is for firms with “1000 employees or more.”
+16 U.S. Census Bureau, 2002 Economic Census, Subject Series:  Information, “Establishment and Firm Size 
+(Including Legal Form of Organization,” Table 5, NAICS code 517212 (issued Nov. 2005).
+17 Id. The census data do not provide a more precise estimate of the number of firms that have 1,500 or fewer 
+employees; the largest category provided is for firms with “1,000 employees or more.”
+Federal Communications Commission FCC 12-34 
+21
+D. Description of Projected Reporting, Recordkeeping, and Other Compliance Requirements
+Part 15 transmitters already are required to be authorized under the Commission’s certification 
+procedure as a prerequisite to marketing and importation.  The reporting and recordkeeping requirements 
+associated with these equipment authorizations would not be changed by the proposals contained in this 
+FNPRM.  The changes to the regulations would permit operation of unlicensed radar devices used in 
+specific industrial applications at frequencies already used by other Part 15 devices and in a higher 
+frequency band (75-85 GHz).
+E.  Federal Rules that May Duplicate, Overlap or Conflict with the Proposed Rules.
+None.
+Federal Communications Commission FCC 12-34 
+22
+APPENDIX B
+Proposed Rule Changes
+For the reasons discussed in the preamble, the Federal Communications Commission proposes to amend 
+47 C.F.R. Part 15 to read as follows:
+Part 15 – RADIO FREQUENCY DEVICES
+1.  The authority citation for Part 15 continues to read as follows:
+Authority:  47 U.S.C. 154, 202, 303, 304, 307 and 544A.
+2.  Section 15.3 is proposed to be amended by adding paragraph (hh) to read as follows: 
+Section 15.3 Definitions. 
+*              *              *              *              *
+(hh)  Level Probing Radar (LPR):  A short-range radar transmitter used in a wide range of 
+applications to measure the amount of various substances, mostly liquids or granulates.  LPR equipment 
+may operate in open-air environments or inside an enclosure containing the substance being measured.    
+*              *              *              *              *
+3.  Section 15.31 is proposed to be amended by revising paragraph (c) to read as follows: 
+Section 15.31 Measurement standards.
+*              *              *              *              *
+(c)  Except as otherwise indicated in § 15.256, for swept frequency equipment, measurements shall 
+be made with the frequency sweep stopped at those frequencies chosen for the measurements to be 
+reported.
+*              *              *              *              *
+4.  Section 15.35 is proposed to be amended by revising paragraph (b) to read as follows: 
+Section 15.35 Measurement detector functions and bandwidths.
+*              *              *              *              *
+(b)  Unless otherwise specified, on any frequency or frequencies above 1000 MHz, the radiated 
+emission limits are based on the use of measurement instrumentation employing an average detector 
+function.  Unless otherwise specified, measurements above 1000 MHz shall be performed using a 
+minimum resolution bandwidth of 1 MHz.  When average radiated emission measurements are specified 
+in this part, including average emission measurements below 1000 MHz, there also is a limit on the peak 
+level of the radio frequency emissions.  Unless otherwise specified, see, e.g., §§ 15.250, 15.252, 15.255, 
+Federal Communications Commission FCC 12-34 
+23
+15.256 and 15.509-15.519 of this part, the limit on peak radio frequency emissions is 20 dB above the 
+maximum permitted average emission limit applicable to the equipment under test.  This peak limit 
+applies to the total peak emission level radiated by the device, e.g., the total peak power level.  Note that 
+the use of a pulse desensitization correction factor may be needed to determine the total peak emission 
+level.  The instruction manual or application note for the measurement instrument should be consulted for 
+determining pulse desensitization factors, as necessary.
+*              *              *              *              *
+5.  Section 15.205 is proposed to be amended by revising paragraph (d)(4) to read as follows: 
+Section 15.205  Restricted bands of operation.
+*              *              *              *              *
+(d)  *     *     *
+*              *              *              *              *
+(4)  Any equipment operated under the provisions of § 15.253, § 15.255, § 15.256 in the frequency band 
+75-85 GHz, or § 15.257 of this part.
+*              *              *              *              *
+6.  Section 15.256 is proposed to be added to read as follows: 
+Section 15.256  Operation of level probing radars within the bands 5.925-7.250 GHz, 24.05-29.00 GHz, 
+and 75-85 GHz.
+(a) Operation under this section is limited to level probing radar (LPR) devices.
+(b) LPR devices operating under the provisions of this section shall utilize a dedicated or integrated 
+transmit antenna, and the system shall be professionally installed and maintained to ensure a downward 
+orientation of the transmit antenna.  
+(c) LPR devices operating under the provisions of this section shall be installed only at fixed 
+locations.  
+(d) Hand-held applications and marketing to residential consumers are prohibited.
+(e) The fundamental bandwidth of an LPR emission is defined as the width of the signal between two 
+points, one below and one above the center frequency, outside of which all emissions are attenuated by at 
+least 10 dB relative to the maximum transmitter output power when measured in an equivalent resolution 
+bandwidth.
+(1) The minimum fundamental emission bandwidth shall be 50 MHz for LPR operation under the 
+provisions of this section.
+(2) LPR devices operating under this section must confine their fundamental emission bandwidth 
+within the 5.925-7.250 GHz, 24.05-29.00 GHz, and 75-85 GHz bands under all conditions of 
+operation.
+(f) Fundamental Emissions Limits
+Federal Communications Commission FCC 12-34 
+24
+(1) All emission limits provided in this section are expressed in terms of Equivalent Isotropic 
+Radiated Power (EIRP).
+(2) The EIRP level is to be determined from the maximum measured power within a specified 
+bandwidth.  
+(i) The EIRP in 1 MHz is computed from the maximum power level measured within 
+any 1-MHz bandwidth using a power averaging detector;
+(ii) The EIRP in 50 MHz is computed from the maximum power level measured with a 
+peak detector in a 50-MHz bandwidth centered on the frequency at which the 
+maximum average power level is realized.
+(3) The EIRP limits for LPR operations in the bands authorized by this rule section are provided 
+in the following table:
+Frequency Band of 
+Operation (GHz)
+EIRP Limit in 1 MHz
+(dBm)
+EIRP Limit in 50 MHz
+(dBm)
+5.925-7.250 -33 7
+24.05-29.00 -14 26
+75-85 -3 34
+(g) Unwanted Emissions Limits
+(1) All emission limits provided in this section are expressed in terms of Equivalent Isotropic 
+Radiated Power (EIRP) and are computed based on the maximum average power level 
+measured within any 1-MHz bandwidth.
+(2) Unwanted emission limits applicable to LPR devices shall not exceed the general emission 
+limits in Section 15.209. 
+(h) Antenna Beamwidth
+(1) LPR devices operating under the provisions of this section within the 5.925-7.250 GHz and 
+24.05-29.00 GHz bands must use an antenna with a maximum half-power beamwidth of 
+12 degrees. 
+(2) LPR devices operating under the provisions of this section within the 75-85 GHz band must 
+use an antenna with a maximum half-power beamwidth of 8 degrees.
+(i) Antenna Side Lobe Gain
+(1) LPR devices operating under the provisions of this section must limit the side lobe antenna 
+gain to -10 dBi for off-axis angles from the main beam of greater than 60 degrees.
+(j) Measurement Procedures  
+(1) Radiated measurements of the fundamental emission bandwidth and power shall be made 
+with maximum main beam coupling between the LPR and test antennas (boresight).
+(2) Measurements of the unwanted emissions radiating from an LPR shall be made utilizing 
+elevation and azimuth scans to determine the location at which the emissions are maximized. 
+(3) All emissions at and below 960 MHz are based on measurements employing a CISPR 
+quasi-peak detector.
+(4) The fundamental emission bandwidth measurement shall be made using a peak detector with 
+a resolution bandwidth of 1 MHz and a video bandwidth of at least 3 MHz.
+Federal Communications Commission FCC 12-34 
+25
+(5) The provisions in Section 15.35(b) and (c) of this part that require emissions to be averaged 
+over a 100 millisecond period and that limits the peak power to 20 dB above the average limit 
+do not apply to devices operating under this section.
+(6) Compliance measurements of frequency-agile LPR devices shall be performed with any 
+related frequency sweep, step, or hop function activated. 
+(7) Compliance measurements shall be made in accordance with the specific procedures 
+published or otherwise authorized by the Commission.
