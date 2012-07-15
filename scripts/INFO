@@ -1,0 +1,42 @@
+Some programmes and addition programs and packages for Ubuntu on N900.
+Tha main objective of this project is to create some graphical applications for Ubuntu on N900. (controlling screen backlight, keyboard LEDs, RGB LED, Battery management)
+
+Forum: http://talk.maemo.org/showthread.php?t=82819
+The main project: https://launchpad.net/ubuntu-n900
+
+
+Info about individual scripts:
+===============================================
+I. control-panel.sh:
+	Small bash application. Provides some data about the N900 (battery, uptime, load, Accelerometer, Ambient light sensor ...)
+
+-----------------------------------------------
+II. charge.sh
+	Found on: http://elektranox.org/n900/installation/hardware.html
+	WARNING:Do NOT USE this unless YOU NOW what you are doing. I am not responsible for this script. 
+	Charging script. Requires i2c-tools, libi2c-dev, python-smbus (sudo apt-get install i2c-tools libi2c-dev python-smbus
+	You need to first plug in the wall charger into the N900 than launch the script immediately. This script closes under heavy
+	system load so do not leave your phone alone while charging.
+
+-----------------------------------------------
+III. demo folder
+	Some demo scripts, they have descriptive names.
+
+-----------------------------------------------
+IV. accel.sh
+        Reads raw data from the accelerometer.
+
+-----------------------------------------------
+V. ambient.sh
+	Reads data from the Ambient Light Sensor. The values are in Lux.
+
+-----------------------------------------------
+VI. keyboard-led.sh
+	Turns the keyboard backlight on and off according to the data coming from the Ambient Light Sensor. This script needs some 		optimalization, but will update it later. Run it like this: "sh keyboard-led.sh &" so that the script will continue to run 		after you have closed the terminal.
+
+-----------------------------------------------
+VII. charge-automatic.sh
+	Runs the charging script automatically when the power supply is connected to the device. Run it like this: 
+	"charge-automatic.sh &" You can disconnect the charger and reconnect it the script will start charging whenever you plug in 		the charger.
+	
+

@@ -1,0 +1,188 @@
+I updated the script. There was a lot of changes, but the most important is it now can replace not only logo, but R&D and USB icons with arbitrary dimentions and set background for USB icon.
+usage:
+logo.run [ -h ] [ -l image ] [ -r image ] [ -u image ] [ -c color ] [ -b color ]
+-h: shows this help.
+-l: specify a boot logo.
+-r: specify a R&D mode image.
+-u: specify a USB icon.
+Images must be 16bit BMP.
+-c: set backgroud color.
+Color must be in framebuffer 16bit format.
+It consists of two bytes: RRRR RGGG GGGB BBBB, where RRRRR, GGGGGG, and BBBBB — values of red, green and blue colors.
+And these bytes must be swapped because of little-endianness.
+So, for example, if you want to code red color, it will be 1111100000000000 = 00F8.
+-b: set background color for USB icon.
+This one is limited by one byte. I.e. if you specify AB, resulting color will be ABAB.
+logo.run
+
+
+
+
+
+
+
+Exuse me, that i am so long don't post the FAQ and sorry for my not so good english
+FAQ: Changing boot logo
+* All in this FAQ tested on N900 with hw-revision = 2101, but all offsets are the same for other revisions (thanks to hxka for this info).
+If you don't know your revision - "flasher-3.5 -i" will help you.
+1. What you need
+- RX-51_2009SE_20.2010.36-2_PR_COMBINED_MR0_ARM.bin
+- flasher-3.5
+- logo_compress.elf (attached to post)
+- image file you want to use (it should be 416x72 pixels)
+
+You need to unpack RX-51_2009SE_20.2010.36-2_PR_COMBINED_MR0_ARM.bin. There will be a lot of unpacked files - better if you will make this in some empty folder. Unpacking:
+Code:
+
+flasher-3.5 -F RX-51_2009SE_20.2010.36-2_PR_COMBINED_MR0_ARM.bin -u
+
+Find files "secondary..." and "xloader..." for your revision and rename them to some more shorter For example let's rename them to "secondary.bin" and "xloader.bin".
+And try to don't forget this files, we will need them later.
+
+2. Preparing source image
+Better if you convert your image to 16bpp BMP image. In this step you can see how your logo will look like You can convert your image using this:
+Linux: ImageMagick
+Windows: PixelFormer
+Check yourself: in this step your image must be ~59970 bytes.
+
+Then you need to cut off the header, because elf need raw rgb565 as input file. You can do it with any hex editor (but you need to be sure that your BMP is "top-down row order", NOT "bottom-up row order") or using this in Linux:
+Code:
+
+ffmpeg -vcodec bmp -i mylogo.bmp -vcodec rawvideo -f rawvideo -pix_fmt rgb565 rawbmp.bin
+
+* You can make this with any format, but with BMP you can already see the result logo and edit it for decreasing size of result logo.
+Check yourself: in this step your "rawbmp.bin" must be 59904 bytes.
+
+3. Creating compressed logo
+Put "logo_compress.elf" and your "rawbmp.bin" somewhere into your phone. (For example: /home/user/logo)
+And all you need is run this elf:
+Code:
+
+cd /home/user/logo
+./logo_compress.elf
+
+You will see something like this:
+Code:
+
+./logo_compress.elf 
+Size of 'rawbmp.bin' is 59904 bytes
+fread: 59904 bytes succesfully readed
+fopen: 'logo.bin' created
+
+It is mean that all ok and your logo successfully compressed in "logo.bin".
+
+4. Check "logo.bin"
+There is some limitations for result logo. The maximum size for "logo.bin" is 6646 bytes.
+If size of your "logo.bin" is more than needed, you must go to step 2. Preparing source image and edit your BMP. You must reduce the number of groups with non-recurring pixels. It is mean you must make smooth transitions of colors more sharper, for example.
+If size of your "logo.bin" is less than needed, you can go to the next step.
+
+5. Patching "secondary.bin"
+Do you remember your "secondary.bin" and "xloader.bin". Put them in some folder with. Upload your "logo.bin" from your phone and put it in this folder too. Now we can start patching.
+Patch "secondary.bin" with your "logo.bin":
+Code:
+
+cd /path/to/some/folder
+dd if=logo.bin of=secondary.bin bs=1 seek=75940 conv=notrunc
+
+Now better if we patch data with new lenght for image too:
+* In this example image size is 6646 bytes (in hex it is 0x19F6), you must write your size in the command.
+Code:
+
+echo -ne '\xBF\xF8\x3E\x61' | dd of=secondary.bin bs=1 seek=33240 conv=notrunc
+echo -ne '\xF6\x19' | dd of=secondary.bin bs=1 seek=33562 conv=notrunc
+
+And a little bonus You can change the background color too:
+In first command change bytes '\xFF\xFF\xFF\xFF' to needed color. Color must be 16 bit depth and bytes must be reversed and doubled Example:
+0xF800 is RED , it is meen you must write '\x00\xF8\x00\xF8'
+0x07E0 is GREEN , it is meen you must write '\xE0\x07\xE0\x07'
+0x001F is BLUE , it is meen you must write '\x1F\x00\x1F\x00'
+Code:
+
+echo -ne '\xFF\xFF\xFF\xFF' | dd of=secondary.bin bs=1 seek=36836 conv=notrunc
+echo -ne '\x17\xE0' | dd of=secondary.bin bs=1 seek=36834 conv=notrunc
+echo -ne '\xC0\x46\x40\x4A' | dd of=secondary.bin bs=1 seek=36574 conv=notrunc
+
+6. Flash your "secondary.bin"
+And finally all we need is flash your new "secondary.bin" to device.
+Code:
+
+flasher-3.5 -s "secondary.bin" -x "xloader.bin" -f
+
+Don't forget reboot your phone:
+Code:
+
+flasher-3.5 -R
+
+And after all you can see your new boot screen
+
+If somethings go wrong and your phone bricked, remember about Cold Flashing. 
+
+
+
+
+
+
+
+Don't know is there some people who interested in it, but why not. Maybe later, in my free time, i will post how to use icons and logo with custom width and height.
+
+A couple of weeks ago i had a little upgrade my elf Let it be version 1.1. Now elf can compress any files (first version work correct only with files that have 59904 bytes size).
+For what? Now it is possibble to compress images for changing USB and R&D icons
+You can find elf in attached archive.
+
+General FAQ about changing Nokia logo
+
+Fast FAQ for changing USB and R&D icons
+(If have questions - go to general FAQ)
+
+1. Preparing icons
+Format of icons must be the same as in general FAQ (16bpp BMP)
+Icon sizes:
+- 40x40 for USB
+- 64x54 for R&D
+
+2. Compress icons
+Your actions for compress the same as in general FAQ:
+- get RAW from your images
+- rename RAW to "rawbmp.bin", run elf and get compressed image in "logo.bin"
+
+3. Checking size of compressed images
+There is limitations for size of compressed image:
+- "logo.bin" for USB icon must be less or equal to 1089 bytes
+- "logo.bin" for R&D icon must be less or equal to 3954 bytes
+
+If all ok - next step, if not - edit your image for decreasing it's compressed size.
+
+4. Patch "secondary.bin"
+for USB icon:
+
+Code:
+
+dd if=logo.bin of=secondary.bin bs=1 seek=82596 conv=notrunc
+
+And again, better if we write value with new size of USB icon to "secondary.bin":
+* In this example size of "logo.bin" with USB icon equal to 1089 bytes, it is 0x441 bytes, that mean '\x41\x04'
+
+Code:
+
+echo -ne '\x41\x04' | dd of=secondary.bin bs=1 seek=33598 conv=notrunc
+echo -ne '\xBF\xF8\x56\x61' | dd of=secondary.bin bs=1 seek=33252 conv=notrunc
+echo -ne '\x3C' | dd of=secondary.bin bs=1 seek=33584 conv=notrunc
+
+for R&D icon:
+
+Code:
+
+dd if=logo.bin of=secondary.bin bs=1 seek=71976 conv=notrunc
+
+And again, better if we write value with new size of R&D icon to "secondary.bin":
+* In this example size of "logo.bin" with R&D icon equal to 3954 bytes, it is 0xF72 bytes, that mean '\x72\x0F'
+
+Code:
+
+echo -ne '\x72\x0F' | dd of=secondary.bin bs=1 seek=33596 conv=notrunc
+echo -ne '\xBF\xF8\x70\x61' | dd of=secondary.bin bs=1 seek=33226 conv=notrunc
+echo -ne '\x3C' | dd of=secondary.bin bs=1 seek=33584 conv=notrunc
+
+* Third command in both cases is the same. I write so for those who decide change only one icon. Because this command (third) is required for correct patching value with size of "logo.bin". If you change both icons - you can enter this command (third) only once.
+
+Thats all, flash your phone with new "secondary.bin" 
